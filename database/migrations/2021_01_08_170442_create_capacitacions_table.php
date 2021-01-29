@@ -15,7 +15,7 @@ class CreateCapacitacionsTable extends Migration
     {
         Schema::create('capacitacions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('if_filtro');
+            $table->integer('id_filtro');
             $table->bigInteger('cedula')->unsigned();
             $table->string('nombre');
             $table->string('estado');

@@ -428,7 +428,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <label for="obsFinales">Observaciones</label>
         <textarea class="form-control" name="obsFinales" id="" cols="3" rows="3"></textarea>
 
-  <div class="col-2"><input type="hidden" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
+  <div class="col-2"><input type="hidden" class="form-control" id="nombre" placeholder="nombre" name="nombre" value="{{ old('nombre', $filtro->nombre)}}"></div>
   <div class="col-2"><input type="hidden" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
   <div class="col-2"><input type="hidden" class="form-control" id="resultadoJefe" placeholder="resultadoJefe" name="resultadoJefe" value="no aplica o pendiente"></div>
   <div class="col-2"><input type="hidden" class="form-control" id="resultadoGer" placeholder="resultadoGer" name="resultadoGer" value="no aplica o pendiente"></div>

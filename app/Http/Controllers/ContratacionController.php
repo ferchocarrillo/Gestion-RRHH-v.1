@@ -110,10 +110,10 @@ class ContratacionController extends Controller
         $contratacion->estado           = $request->estado;
 
         $contratacion->save();
-      /// return back();
+      return back();
 
 
-       return response()->json($contratacion);
+      // return response()->json($contratacion);
     }
     /**
      * Display the specified resource.

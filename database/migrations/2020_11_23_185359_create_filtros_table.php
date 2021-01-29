@@ -30,13 +30,16 @@ class CreateFiltrosTable extends Migration
             $table->string('enviadoExm')->nullable();
             $table->string('PruebasE')->nullable();
             $table->string('yaTrabaja')->nullable();
-            $table->string('numeroEqu');
+            $table->string('numeroEqu')->nullable();
             $table->longText('observacion')->nullable();
             $table->string('noAsiste')->nullable();
             $table->string('NoResponde2')->nullable();
             $table->string('YaNoInt')->nullable();
             $table->string('Estudiante')->nullable();
             $table->string('noAsisteEnt')->nullable();
+            $table->string('entrevistaJefeInm')->nullable();
+            $table->string('entrevistaGerencia')->nullable();
+            $table->string('enviadocontratacion')->nullable();
             $table->longText('observacion2')->nullable();
 
             $table->string('usuario');

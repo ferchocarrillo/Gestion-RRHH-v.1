@@ -15,9 +15,9 @@ class CreateAreaTable extends Migration
     {
         Schema::dropIfExists('area');
         Schema::create('area', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('dependencia');
-            $table->string('area');
+            $table->increments('id_area');
+            $table->string('Id_dependencia');
+            $table->string('Area');
 
         });
     }

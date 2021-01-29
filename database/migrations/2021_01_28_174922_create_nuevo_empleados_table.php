@@ -16,7 +16,7 @@ class CreateNuevoEmpleadosTable extends Migration
         Schema::dropIfExists('nuevo_empleados');
         Schema::create('nuevo_empleados', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('id_filtro');
+            $table->integer('id_filtro');
             $table->unsignedBigInteger('cedula');
             $table->string('nombre');
             $table->date('fInicio');

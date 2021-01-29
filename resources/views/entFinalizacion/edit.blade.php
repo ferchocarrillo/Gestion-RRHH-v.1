@@ -212,6 +212,9 @@
                 <option value="no">No</option>
                 </select></p>
             </div>
+
+            <input type="hidden" id ="nombre" name="nombre" class="form-control" value="{{ $filtro->nombre }}" ></p>
+
             <div class="d-grid gap-2">
                 <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
                 <a href="{{route('entFinalizacion.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Continuar</a>

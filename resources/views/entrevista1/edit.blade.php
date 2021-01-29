@@ -38,7 +38,7 @@
 <div class="col-2"><label for="cedula">Cedula</label><input type="number" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
 &nbsp;&nbsp;&nbsp;
 
-{{--<div class="col-2"> <label for="nombres">Nombre</label><input type="text" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>--}}
+<div class="col-2"> <label for="nombres">Nombre</label><input type="text" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
 
 <div class="col-2"> <label for="telefono">Telefono</label> <input type="number" class="form-control" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono' , $filtro->telefono)}}"></div>
 
@@ -166,7 +166,7 @@
                     <span>&nbsp;</span>
 <select name="residencia" id="residencia"class="form-control" required><label for="residencia"></label>
                 <option value="">Ciudad de residencia</option>
-                @foreach($residencia as $residencias)<option value="{{ $residencias->id}}">
+                @foreach($residencia as $residencias)<option value="{{ $residencias->residencia}}">
                   {{ $residencias->residencia }}</option>
                 @endforeach
 </select>
@@ -309,7 +309,7 @@
                  {
 
                      $('#id_localidad').empty();
-                     $('#id_localidad').append("<option value=''>localidad</option>");
+                     $('#id_localidad').append("<option value=''>seleccion una localidad</option>");
                      $.each(result, function(index,value){
 
                          $('#id_localidad').append("<option value='"+value.localidad+"'>"+value.localidad+"</option>");

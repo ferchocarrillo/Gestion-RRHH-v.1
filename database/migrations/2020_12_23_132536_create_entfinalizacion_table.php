@@ -19,8 +19,11 @@ class CreateEntFinalizacionTable extends Migration
             $table->bigInteger('cedula')->unsigned();
             $table->string('nombre');
             $table->string('resultado');
+            $table->string('resultadoGer');
+            $table->string('resultadoJefe');
             $table->date('fechaCont');
             $table->longText('obsFinales');
+
             $table->timestamps();
         });
     }

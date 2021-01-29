@@ -16,7 +16,7 @@ class CreateAsignacionsTable extends Migration
         Schema::dropIfExists('asignacions');
         Schema::create('asignacions', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('id_filtro');
+            $table->integer('id_filtro');
             $table->unsignedBigInteger('cedula');
             $table->string('nombres');
             $table->date('fecha');

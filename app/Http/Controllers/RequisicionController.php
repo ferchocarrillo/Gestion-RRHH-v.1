@@ -90,8 +90,8 @@ class RequisicionController extends Controller
         $requisicion->cargo             = $request->cargo;
         $requisicion->cantidad          = $request->cantidad;
         $requisicion->sede              = $request->sede;
-        $requisicion->dependencia       = $request->dependencia;
-        $requisicion->id_area           = $request->id_area;
+        $requisicion->dependencias      = $request->dependencia;
+        $requisicion->area              = $request->id_area;
         $requisicion->motivos           = $request->motivos;
         $requisicion->reemplaza         = $request->reemplaza;
         $requisicion->cual              = $request->cual;

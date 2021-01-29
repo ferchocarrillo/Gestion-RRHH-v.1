@@ -48,6 +48,8 @@ class CreateContratacionsTable extends Migration
             $table->string('nucleo_familiar');
             $table->longText('documentos')->nullable();
             $table->longText('observaciones')->nullable();
+            $table->string('estado');
+
             $table->timestamps();
         });
     }

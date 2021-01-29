@@ -87,7 +87,7 @@ class EntFinalizacionController extends Controller
         $entFinalizacion = new EntFinalizacion();
              $entFinalizacion->id_filtro        = $request->id_filtro;
              $entFinalizacion->cedula           = $request->cedula;
-             $entFinalizacion->nombre          = $request->nombre;
+             $entFinalizacion->nombre           = $request->nombre;
              $entFinalizacion->resultado        = $request->resultado;
              $entFinalizacion->fechaCont        = $request->fechaCont;
              $entFinalizacion->obsFinales       = $request->obsFinales;
@@ -96,6 +96,7 @@ class EntFinalizacionController extends Controller
 
 
         $entFinalizacion->save();
+       // return response()->json($entFinalizacion);
         return back();
     }
 

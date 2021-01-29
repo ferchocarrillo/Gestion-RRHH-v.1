@@ -30,7 +30,7 @@ class CreateEntrevista5sTable extends Migration
             $table->string('fortalezas');
             $table->string('debilidades');
             $table->string('valores');
-            $table->string('satisafaccion');
+            $table->string('satisfaccion');
             $table->string('traumaticos');
             $table->string('cancelado');
             $table->string('motivoC')->nullable();
@@ -44,7 +44,7 @@ class CreateEntrevista5sTable extends Migration
             $table->string('plazo')->nullable();
             $table->string('grupoSoc');
             $table->string('cualGr')->nullable();
-            $table->string('tiempo')->nullable();
+            $table->string('cuantoTiempo')->nullable();
             $table->string('tiempoLibre');
             $table->string('estadoSalud');
             $table->string('tratamiento');

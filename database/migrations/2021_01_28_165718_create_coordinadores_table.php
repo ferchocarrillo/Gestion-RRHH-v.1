@@ -13,9 +13,9 @@ class CreateCoordinadoresTable extends Migration
      */
     public function up()
     {
-        Schema::create('_coordinadores', function (Blueprint $table) {
+        Schema::create('coordinadores', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('id_filtro');
+            $table->integer('id_filtro');
             $table->unsignedBigInteger('cedula');
             $table->string('nombre');
             $table->string('campaña');
@@ -33,6 +33,6 @@ class CreateCoordinadoresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_coordinadores');
+        Schema::dropIfExists('coordinadores');
     }
 }

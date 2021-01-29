@@ -20,6 +20,7 @@ class CreateEntrevista2sTable extends Migration
             $table->string('nombres');
             $table->bigInteger('telefono');
             $table->string('correo');
+            $table->string('sinfamilia')->nullable();
             $table->string('familiarp1')->nullable();
             $table->string('parentescop1')->nullable();
             $table->string('edadp1')->nullable();
