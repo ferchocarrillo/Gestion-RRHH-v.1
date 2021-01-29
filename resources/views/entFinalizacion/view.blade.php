@@ -101,7 +101,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
             </div>
           </div>
-          <center><h3>Datos Familiares  {{ $entrevista2s->sinfamilia}}</h3></center>
+          <center><h3>Datos Familiares  {{old('sinExp', $entrevista2s->sinfamilia)}}</h3></center>
 
           <div class="container">
             <div class="row">

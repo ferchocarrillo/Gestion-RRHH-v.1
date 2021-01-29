@@ -27,7 +27,9 @@ class DatabaseSeeder extends Seeder
         $this->call(LocalidadSeeder::class);
         $this->call(ResidenciaSeeder::class);
         $this->call(CargoEntSeeder::class);
-    $this->call(BancosSeeder::class);
-    $this->call(AreaSeeder::class);
+        $this->call(BancosSeeder::class);
+        $this->call(AreaSeeder::class);
+        $this->call(FocoSeeder::class);
+        $this->call(CampanaSeeder::class);
 }
 }

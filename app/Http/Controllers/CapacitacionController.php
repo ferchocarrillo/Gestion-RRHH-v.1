@@ -84,7 +84,7 @@ class CapacitacionController extends Controller
         $user_nombre = Auth::user()->name;
         $datosEntrevista=request()->except('_token');
         $request->validate([
-            'cedula'          => 'required|unique:capacitacion,cedula,',
+            'cedula'          => 'required|unique:capacitacions,cedula,',
         ]);
         $capacitacion = new Capacitacion();
         $capacitacion->id_filtro        = $request->id_filtro;

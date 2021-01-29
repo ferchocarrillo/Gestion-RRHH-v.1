@@ -19,6 +19,8 @@ class CreateNuevoEmpleadosTable extends Migration
             $table->integer('id_filtro');
             $table->unsignedBigInteger('cedula');
             $table->string('nombre');
+            $table->string('genero');
+            $table->string('rh');
             $table->date('fInicio');
             $table->string('direccion');
             $table->unsignedBigInteger('telefonof')->nullable();
