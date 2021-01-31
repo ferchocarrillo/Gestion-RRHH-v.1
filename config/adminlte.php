@@ -304,6 +304,11 @@ return [
     'icon'    => 'fas fa-file-signature',
     'icon_color' => 'orange'
     ],
+    ['text'    => 'Formato de ingreso',
+    'url'     => 'nuevoempleado',
+    'icon'    => 'far fa-question-circle',
+    'icon_color' => 'blue'
+    ],
 
 
 
@@ -321,7 +326,7 @@ return [
 
         ['text'    =>'Formulario de Entrevista',
         'url'     => 'entrevista1',
-        'icon'    => 'far fa-question-circle',
+        'icon'    => 'fas fa-comments',
         'icon_color' => 'orange'
         ],
 

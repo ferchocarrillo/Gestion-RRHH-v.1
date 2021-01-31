@@ -12,8 +12,8 @@ class FocoSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cargo')->truncate();
-        
+        DB::table('focos')->truncate();
+
         DB::table('focos')->insert(['foco'=> 'Azteca']);
         DB::table('focos')->insert(['foco'=> 'B2B']);
         DB::table('focos')->insert(['foco'=> 'Banda Ancha']);

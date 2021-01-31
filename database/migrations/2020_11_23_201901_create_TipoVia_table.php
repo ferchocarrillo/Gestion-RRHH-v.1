@@ -13,7 +13,7 @@ class CreateTipoViaTable extends Migration
      */
     public function up()
     {
-        Schema::create('TipoVia', function (Blueprint $table) {
+        Schema::create('tipovia', function (Blueprint $table) {
             $table->increments('id');
             $table->string('TipoVia');
         });
@@ -26,6 +26,6 @@ class CreateTipoViaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('TipoVia');
+        Schema::dropIfExists('tipovia');
     }
 }

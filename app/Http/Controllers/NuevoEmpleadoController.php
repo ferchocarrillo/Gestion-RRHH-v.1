@@ -7,6 +7,7 @@ use App\nuevoEmpleado;
 use Illuminate\Http\Request;
 use App\Capacitacion;
 use App\Contratacion;
+use App\Departamentos;
 use App\Filtro;
 use App\Foco;
 use App\JhonatanPermission\Models\Entrevista1;
@@ -67,11 +68,12 @@ class NuevoEmpleadoController extends Controller
     {
         $filtro = Filtro::findOrFail($id_filtro);
         $campanas = Campana::all();
+        $departamento = Departamentos::all();
         $nuevo = Entrevista1::findOrFail($id_filtro);
         $focos = Foco::all();
 
 
-        return view('nuevoempleado.edit', compact('nuevo','filtro','focos','campanas'));
+        return view('nuevoempleado.edit', compact('nuevo','filtro','focos','campanas', 'departamento'));
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cargo;
 use App\CargoNuevo;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,8 +19,8 @@ class CargoNuevoController extends Controller
     {
 
         $cargoses = Cargo::orderBy('cargo', 'asc')->paginate(10);
-        
-        
+
+
         return view('cargoNuevo.index',compact('cargoses'));
     }
 
@@ -43,11 +44,11 @@ class CargoNuevoController extends Controller
      */
     public function store(Request $request, Cargo $cargos)
     {
-        
+
 
         $request->validate([
             'cargo'          => 'required|max:50|unique:cargo,cargo',
-  
+
         ]);
 
         $cargos = new Cargo();
@@ -80,11 +81,15 @@ class CargoNuevoController extends Controller
      */
     public function edit($id)
     {
-   
- 
+
+
         //return   $permission_role;
         //return $role;
+
+
         $cargos=Cargo::findOrFail($id);
+
+
         return view('cargoNuevo.edit', compact('cargos'));
     }
 
@@ -99,7 +104,7 @@ class CargoNuevoController extends Controller
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
-        
+
         $datoscargos=request()->except(['_token','_method']);
         Cargo::where('id','=',$id)->update($datoscargos);
         $cargos=Cargo::findOrFail($id);
@@ -121,10 +126,10 @@ class CargoNuevoController extends Controller
             Cargo::destroy($id);
 
 
-    
+
             return redirect()->route('cargoNuevo.index')
             ->with('status_success','registro successfully removed');
-    
+
         }
     }
 }
