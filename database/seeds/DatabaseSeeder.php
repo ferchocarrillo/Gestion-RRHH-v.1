@@ -31,5 +31,19 @@ class DatabaseSeeder extends Seeder
         $this->call(AreaSeeder::class);
         $this->call(FocoSeeder::class);
         $this->call(CampanaSeeder::class);
+        $this->call(NivelEduSeeder::class);
+        $this->call(ParentescoSeeder::class);
+        $this->call(TipoDocSeeder::class);
+        $this->call(TipoContratoSeeder::class);
+        $this->call(SupervisorSeeder::class);
+        $this->call(ModalidadSeeder::class);
+        $this->call(TipoModalidadSeeder::class);
+        $this->call(CesantiasSeeder::class);
+        $this->call(PensionesSeeder::class);
+        $this->call(EpsSeeder::class);
+
+
+
+
 }
 }

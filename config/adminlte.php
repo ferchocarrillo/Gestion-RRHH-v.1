@@ -367,6 +367,7 @@ return [
     'url'     => 'capacitacion',
     'icon'    => 'fa fa-id-badge',
     'icon_color' => 'yellow'
+
     ],
 ],
 ],

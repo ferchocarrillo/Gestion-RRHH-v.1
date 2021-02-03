@@ -229,7 +229,7 @@
                     <option value="soltero(a)">Soltero(a)</option>
                     <option value="casado(a)">Casado(a)</option>
                     <option value="separado(a)">Separado(a)</option>
-                    <option value="UnionL"> Union Libre</option>
+                    <option value="Union libre"> Union Libre</option>
                     <option value="viudo(a)"> Viudo(a)</option>
                 </select>
             </p>

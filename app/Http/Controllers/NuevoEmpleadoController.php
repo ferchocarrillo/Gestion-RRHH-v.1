@@ -6,11 +6,23 @@ use App\Campana;
 use App\nuevoEmpleado;
 use Illuminate\Http\Request;
 use App\Capacitacion;
+use App\Cesantias;
 use App\Contratacion;
 use App\Departamentos;
+use App\Eps;
 use App\Filtro;
 use App\Foco;
 use App\JhonatanPermission\Models\Entrevista1;
+use App\JhonatanPermission\Models\Entrevista2;
+use App\Modalidad;
+use App\nivelEdu;
+use App\parentesco;
+use App\Pensiones;
+use App\Sede;
+use App\Supervisor;
+use App\tipoContrato;
+use App\tipoDoc;
+use App\TipoModalidad;
 
 class NuevoEmpleadoController extends Controller
 {
@@ -71,9 +83,21 @@ class NuevoEmpleadoController extends Controller
         $departamento = Departamentos::all();
         $nuevo = Entrevista1::findOrFail($id_filtro);
         $focos = Foco::all();
+        $NivelEdus = nivelEdu::all();
+        $parentescos = parentesco::all();
+        $tipo_docs = tipoDoc::all();
+        $nuevo2 = Entrevista2::findOrFail($id_filtro);
+        $tipo_contratoses= tipoContrato::all();
+        $supervisores = Supervisor::all();
+        $sedes = Sede::all();
+        $modalidades = Modalidad::all();
+        $tipoModalidades = TipoModalidad::all();
+        $cesantiases = Cesantias::all();
+        $pensioneses = Pensiones::all();
+        $epses = Eps::all();
 
 
-        return view('nuevoempleado.edit', compact('nuevo','filtro','focos','campanas', 'departamento'));
+        return view('nuevoempleado.edit', compact('epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','nuevo2','parentescos','NivelEdus','nuevo','filtro','focos','campanas', 'departamento'));
     }
 
     /**
