@@ -23,6 +23,7 @@ use App\Supervisor;
 use App\tipoContrato;
 use App\tipoDoc;
 use App\TipoModalidad;
+use App\cajaCompensacion;
 
 class NuevoEmpleadoController extends Controller
 {
@@ -95,9 +96,11 @@ class NuevoEmpleadoController extends Controller
         $cesantiases = Cesantias::all();
         $pensioneses = Pensiones::all();
         $epses = Eps::all();
+        $cajaComps = cajaCompensacion::all();
+        $contratacion = Contratacion::findOrFail($id_filtro);
 
 
-        return view('nuevoempleado.edit', compact('epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','nuevo2','parentescos','NivelEdus','nuevo','filtro','focos','campanas', 'departamento'));
+        return view('nuevoempleado.edit', compact('contratacion','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','nuevo2','parentescos','NivelEdus','nuevo','filtro','focos','campanas', 'departamento'));
     }
 
     /**

@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CesantiasSeeder::class);
         $this->call(PensionesSeeder::class);
         $this->call(EpsSeeder::class);
-
+        $this->call(CajaCompensacionSeeder::class);
 
 
 

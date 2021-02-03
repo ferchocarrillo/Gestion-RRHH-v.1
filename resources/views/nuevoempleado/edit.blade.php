@@ -157,14 +157,14 @@
     <center><h3 aline="center">Datos de familiares</h3></center>
     <div class="row">
         <div id="tipo_docs1" name="tipo_docs1" class="col-6 col-md-2"><strong><p>Tipo Documento:</p></strong>
-            <select name="tipo_docs1" id="tipo_docs1" class="col-6 col-md-8" required> <label for="tipo_docs1"></label>
+            <select name="tipo_docs1" id="tipo_docs1" class="col-6 col-md-8" > <label for="tipo_docs1"></label>
                 <option value="">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
             </select>
         </div>
-        <div id="docfam1" name="docfam1" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam1" name="docfam1" class="col-6 col-md-12"required ></div>
+        <div id="docfam1" name="docfam1" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam1" name="docfam1" class="col-6 col-md-12" ></div>
         <div id="familiarp1" name="familiarp1" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp1" name="familiarp1" class="col-6 col-md-12" value="{{old('familiarp1', $nuevo2->familiarp1)}}"></div><br>
         <div id="parentescop1" name="parentescop1" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop1" name="parentescop1" class="col-6 col-md-12" value="{{old('parentescop1', $nuevo2->parentescop1)}}"></div><br>
         <div id="edadp1" name="edadp1" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp1" name="edadp1" class="col-6 col-md-4" value="{{old('edadp1', $nuevo2->edadp1)}}"></div><br>
@@ -175,14 +175,14 @@
 
     <div class="row">
         <div id="tipo_docs2" name="tipo_docs2" class="col-6 col-md-2"><strong><p>Tipo Documento:</p></strong>
-            <select name="tipo_docs1" id="tipo_docs2" class="col-6 col-md-8" required> <label for="tipo_docs2"></label>
+            <select name="tipo_docs1" id="tipo_docs2" class="col-6 col-md-8" > <label for="tipo_docs2"></label>
                 <option value="">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
             </select>
         </div>
-        <div id="docfam2" name="docfam2" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam2" name="docfam2" class="col-6 col-md-12"required ></div>
+        <div id="docfam2" name="docfam2" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam2" name="docfam2" class="col-6 col-md-12"></div>
         <div id="familiarp2" name="familiarp2" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp2" name="familiarp2" class="col-6 col-md-12" value="{{old('familiarp2', $nuevo2->familiarp2)}}"></div><br>
         <div id="parentescop2" name="parentescop2" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop2" name="parentescop2" class="col-6 col-md-12" value="{{old('parentescop2', $nuevo2->parentescop2)}}"></div><br>
         <div id="edadp2" name="edadp2" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp2" name="edadp2" class="col-6 col-md-4" value="{{old('edadp2', $nuevo2->edadp2)}}"></div><br>
@@ -191,16 +191,16 @@
     </div>
     <div class="row">
         <div id="tipo_docs3" name="tipo_docs3" class="col-6 col-md-2"><strong><p>Tipo Documento:</p></strong>
-            <select name="tipo_docs3" id="tipo_docs3" class="col-6 col-md-8" required> <label for="tipo_docs3"></label>
+            <select name="tipo_docs3" id="tipo_docs3" class="col-6 col-md-8" > <label for="tipo_docs3"></label>
                 <option value="">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
             </select>
         </div>
-        <div id="docfam3" name="docfam3" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam3" name="docfam3" class="col-6 col-md-12"required ></div>
+        <div id="docfam3" name="docfam3" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam3" name="docfam3" class="col-6 col-md" ></div>
         <div id="familiarp3" name="familiarp3" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp3" name="familiarp3" class="col-6 col-md-12" value="{{old('familiarp3', $nuevo2->familiarp3)}}"></div><br>
-        <div id="parentescop3" name="parentescop3" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop3" name="parentescop3" class="col-6 col-md-12" value="{{old('parentescop3', $nuevo2->parentescop3)}}"></div><br>
+        <div id="parentescop3" name="parentescop3" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop3" name="parentescop3" class="col-6 col-md" value="{{old('parentescop3', $nuevo2->parentescop3)}}"></div><br>
         <div id="edadp3" name="edadp3" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp3" name="edadp3" class="col-6 col-md-4" value="{{old('edadp3', $nuevo2->edadp3)}}"></div><br>
         <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam3" name="epsFam3" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div ><p><strong>Caja:</strong></p><input type="checkbox" id="alergia3" name="alergia3" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
@@ -208,14 +208,14 @@
 
     <div class="row">
         <div id="tipo_docs4" name="tipo_docs4" class="col-6 col-md-2"><strong><p>Tipo Documento:</p></strong>
-            <select name="tipo_docs4" id="tipo_docs4" class="col-6 col-md-8" required> <label for="tipo_docs4"></label>
+            <select name="tipo_docs4" id="tipo_docs4" class="col-6 col-md-8" > <label for="tipo_docs4"></label>
                 <option value="">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
             </select>
         </div>
-        <div id="docfam4" name="docfam4" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam4" name="docfam4" class="col-6 col-md-12"required ></div>
+        <div id="docfam4" name="docfam4" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam4" name="docfam4" class="col-6 col-md-12"></div>
         <div id="familiarp4" name="familiarp4" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp4" name="familiarp4" class="col-6 col-md-12" value="{{old('familiarp4', $nuevo2->familiarp4)}}"></div><br>
         <div id="parentescop4" name="parentescop4" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop4" name="parentescop4" class="col-6 col-md-12" value="{{old('parentescop4', $nuevo2->parentescop4)}}"></div><br>
         <div id="edadp4" name="edadp4" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp4" name="edadp4" class="col-6 col-md-4" value="{{old('edadp4', $nuevo2->edadp4)}}"></div><br>
@@ -304,7 +304,6 @@
             </select>
         </div>
 
-        <div class="row">
             <div id="pensiones" name="pensiones" class="col-4 col-md"><strong><p>Fondo Pensiones:</p></strong>
                 <select name="pensiones" id="pensiones" class="col-4 col-md" required> <label for="pensiones"></label>
                     <option value="">Asigne una</option>
@@ -313,8 +312,7 @@
                         @endforeach
                 </select>
             </div>
-            <div class="row">
-                <div id="eps" name="eps" class="col-4 col-md"><strong><p>Eps:</p></strong>
+            <div id="eps" name="eps" class="col-4 col-md"><strong><p>Eps:</p></strong>
                     <select name="eps" id="eps" class="col-4 col-md" required> <label for="epsess"></label>
                         <option value="">Asigne una</option>
                             @foreach($epses as $eps)
@@ -323,8 +321,33 @@
                     </select>
                 </div>
 
+                   <div id="cajaComp" name="cajaComp" class="col-4 col-md"><strong><p>Caja de Compensación:</p></strong>
+                        <select name="cajaComp" id="cajaComp" class="col-4 col-md" required> <label for="cajaComp"></label>
+                            <option value="">Asigne una</option>
+                                @foreach($cajaComps as $cajaComp)
+                            <option value="{{ $cajaComp->entidad}}">{{ $cajaComp->entidad }}</option>
+                                @endforeach
+                        </select>
+                    </div>
+
+                    <div id="ips" name="ips" class="col-4 col-md"><strong><p>Ips: </p></strong><input type="text" id="ips" name="ips" class="col-6 col-md"></div>
+                    <input type="hidden" id="arl" name="arl" class="col-6 col-md" value= "Arl Sura">
 </div>
 </div>
+
+<hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
+
+<div class="container">
+
+    <div class="row">
+
+<div id="Tcuenta" name="Tcuenta" class="col-6 col-md-3"><strong><p>Tipo de cuenta:</p></strong>Ahorros</div>
+<div id="nCuenta" name="nCuenta" class="col-4 col-md"><strong><p>Numero de cuenta: </p></strong><input type="number" id="nCuenta" name="nCuenta" class="col-6 col-md"></div>
+<div id="bancos" name="bancos" class="col-6 col-md-2"><strong><p>Banco:</p></strong><input id="bancos" name="bancos" class="col-6 col-md-12" value="{{old('bancos', $contratacion->bancos)}}"></div><br>
+<div id="estado" name="estado" class="col-4 col-md"><strong><p>Estado: </p></strong>{{old('estado', $contratacion->estado)}}</div>
+</div>
+</div>
+
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
 <div class="container">
