@@ -205,14 +205,32 @@
 
 
                  <!-- Force next columns to break to new line -->
+
+                 <div class="row">
+
+                 
                   <div class="form-group">
+                         <div class="form-group">
                     <div class="form-check">&nbsp;&nbsp;&nbsp;
-                      <input class="form-check-input" type="checkbox" value="activo" id="estado" name="estado" required>
+                      <input class="form-check-input" type="radio" value="activo" id="estado" name="estado" required>
             <strong> <label class="form-check-label" for="estado">
                         El usuario quedara Registrado como Activo
                       </label></strong>
                     </div>
                   </div>
+
+
+                  <div class="form-group">
+                    <div class="form-check">&nbsp;&nbsp;&nbsp;
+                      <input class="form-check-input" type="radio" value="inactivo" id="estado" name="estado" required>
+            <strong> <label class="form-check-label" for="estado">
+                        No continua con el proceso
+                      </label></strong>
+                    </div>
+                  </div>
+
+
+                </div>
 
                  <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
                  <!-- Force next columns to break to new line -->
