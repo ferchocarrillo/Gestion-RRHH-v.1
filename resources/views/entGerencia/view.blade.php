@@ -395,7 +395,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
         <!-- Force next columns to break to new line -->
         <div class="w-100 d-none d-md-block"></div>
-        <div class="col"><p class="h6">¿Ha sufrido accidentes? </p>  {{ $entrevista5s->acceidentes}} {{ $entrevista5s->cuantoTiempo}}</div>
+        <div class="col"><p class="h6">¿Ha sufrido accidentes? </p>  {{ old('acceidentes', $entrevista5s->acceidentes) }} {{ old('cuantoTiempo', $entrevista5s->cuantoTiempo) }}</div>
         <div class="col"><p class="h6">Que accidente tuvo</p> {{ $entrevista5s->cualAc}}</div>
         <div class="col"><p class="h6">Ha tenido procesos anteriores en Mentius?</p>{{ $entrevista5s->procesosAnt}}</div>
         <div class="col"><p class="h6">¿Tiene familiares en la compañía? </p>{{ $entrevista5s->familiaresMent}}</div>
@@ -403,9 +403,9 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
         <!-- Force next columns to break to new line -->
 
-        <div class="col"><p class="h6">Resultado Primera Entrevista</p>{{ $entFinalizacion->resultado}}</div>
-        <div class="col"><p class="h6">Fecha</p>{{ $entFinalizacion->fechaCont}}</div>
-        <div class="col"><p class="h6">Observaciones</p>{{ $entFinalizacion->obsFinales}}</div>
+        <div class="col"><p class="h6">Resultado Primera Entrevista</p>{{  old('resultado', $entFinalizacion->resultado)}}</div>
+        <div class="col"><p class="h6">Fecha</p>{{ old('fechaCont', $entFinalizacion->fechaCont)}}</div>
+        <div class="col"><p class="h6">Observaciones</p>{{ old('obsFinales', $entFinalizacion->obsFinales)}}</div>
 
 
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">

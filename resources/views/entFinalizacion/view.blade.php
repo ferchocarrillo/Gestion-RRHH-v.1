@@ -409,7 +409,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <label for="resultado">Resultado de la entrevista:</label>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        <select name="resultado" id="resultado">resultado de la entrevista
+        <select name="resultado" id="resultado"  >resultado de la entrevista
             <option value="0">Seleccione una opción</option>
         <option value="enviado a capacitacion">Enviado a capacitacion</option>
         <option value="enviado a contratación">Enviado a contratación</option>

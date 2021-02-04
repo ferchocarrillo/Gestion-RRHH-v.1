@@ -36,7 +36,7 @@
     <div class="row">
 
         <div id="tipoDoc" name="tipoDoc" class="col-6 col-md-2"><strong><p>Tipo de Documento:</p></strong>
-            <select type="text" name="tipoDoc" id="tipoDoc" class="col-6 col-md-5" placeholder="tipoDoc"required>
+            <select type="text" name="tipoDoc" id="tipoDoc"  style="font-size: 13px" class="col-6 col-md-5" placeholder="tipoDoc"required>
                                     <option value="0"></option>
                                     <option value="CC">CC</option>
                                     <option value="CE">CE</option>
@@ -44,7 +44,7 @@
             </select>
         </div>
         <div id="cedula" name="cedula" class="col-6 col-md-2"><strong><p>Cedula:</p></strong><br>{{ old('cedula', $nuevo->cedula)}}</div>
-            <div id="fexpe" name="fexpe" class="col-6 col-md-2"><strong><p>Fecha de Expedicion:</p></strong><input type="date"id="fexpe" name="fexpe" class="col-6 col-md-10" value=""></div>
+            <div id="fexpe" name="fexpe" class="col-6 col-md-2"><strong><p>Fecha de Expedicion:</p></strong><input type="date"id="fexpe" name="fexpe" style="font-size:0.3cm" class="col-6 col-md-10" value=""></div>
             <div id="depNac" name="depNac" class="col-6 col-md-2"><strong><p>Departamento de Expedicion:</p></strong>
                 <select name="departamento" id="departamento" class="col-6 col-md-8" required> <label for="departamento"></label>
                     <option value="">Escoja uno</option>

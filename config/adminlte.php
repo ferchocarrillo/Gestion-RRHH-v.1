@@ -87,7 +87,7 @@ return [
     'layout_boxed' => null,
     'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => true,
-    'layout_fixed_footer' => null,
+    'layout_fixed_footer' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -166,7 +166,7 @@ return [
     |
     */
 
-    'right_sidebar' => false,
+    'right_sidebar' => true,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,

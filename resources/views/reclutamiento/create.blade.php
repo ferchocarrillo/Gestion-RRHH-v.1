@@ -59,7 +59,7 @@
             <input type="text" id ="tiempo" name="tiempo" class="form-control" placeholder="Tiempo de Vigencia" required>
         </p>
         <label for="finicio" class="text-left" >Foto</label>
-               <input type="file" class="form-control" name="Foto" id "Foto" value="">
+               <input type="file" class="form-control" name="Foto" id "Foto" value="" required>
             </div>
             <label for="publicacion" class="col-form-label col-sm-12 pt-0" >Fuentes de Publicacion</label>
       <div class="row">
