@@ -36,7 +36,9 @@ class EntGerenciaController extends Controller
      */
     public function index()
     {
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+
+        
+        $entrevistas = EntFinalizacion::orderBy('id', 'asc')->where('resultado','cargo requiere segunda entrevista')->paginate(10);
         return view('entGerencia.index',compact('entrevistas'));
     }
 
@@ -76,17 +78,20 @@ class EntGerenciaController extends Controller
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
         $datosEntrevista=request()->except('_token');
-
+        /*$request->validate([
+            'cedula'          => 'required|unique:entfinalizacion,cedula,',
+        ]);
+*/
         $entGerencia = new EntFinalizacion();
-        $entGerencia->id_filtro        = $request->id_filtro;
-        $entGerencia->cedula           = $request->cedula;
-        $entGerencia->nombre           = $request->nombres;
+        //$entGerencia->id_filtro        = $request->id_filtro;
+        //$entGerencia->cedula           = $request->cedula;
+        //$entGerencia->nombre           = $request->nombres;
         $entGerencia->resultadoGer     = $request->resultadoGer;
         $entGerencia->obsGerencia      = $request->obsGerencia;
 
         $entGerencia->save();
-       // return back();
-        return response()->json($entGerencia);
+        return back();
+        //return response()->json($entGerencia);
     }
 
 
@@ -120,28 +125,13 @@ class EntGerenciaController extends Controller
      * @param  \App\EntGerencia  $entGerencia
      * @return \Illuminate\Http\Response
      */
-        public function update (EntGerencia $entGerencia ,$id, Request $request)
+        public function update ($id, Request $request)
     {
-        $request->validate([
-            'resultadoGer'=>['required'],
-            'obsGerencia' =>'required',
-
-        ]);
-            $entGerencia->update([
-
-            'resultadoGer'=>$request->input('resultadoGer'),
-            'obsGerencia' =>$request->input('obsGerencia'),
-
-]);
-
-
-        return "se registro la entrevista con gerencia: {$entGerencia->resultadoGer}";
-       // return response()->json($entGerencia);
-        /*$datosentFinalizacion =request()->except(['_token','_method']);
+        $datosentFinalizacion =request()->except(['_token','_method']);
         EntFinalizacion::where('id_filtro','=',$id)->update($datosentFinalizacion);
         $entGerencia=EntFinalizacion::findOrFail($id);
 
-        return view('entGerencia.edit', compact('entGerencia','entFinalizacion'));*/
+        return view('entGerencia.edit', compact('entGerencia','entFinalizacion'));
     }
 
     /**

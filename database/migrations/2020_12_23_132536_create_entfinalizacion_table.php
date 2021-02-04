@@ -20,6 +20,7 @@ class CreateEntFinalizacionTable extends Migration
             $table->string('nombre');
             $table->string('resultado');
             $table->string('resultadoGer');
+            $table->longText('obsGerencia');
             $table->string('resultadoJefe');
             $table->date('fechaCont');
             $table->longText('obsFinales');

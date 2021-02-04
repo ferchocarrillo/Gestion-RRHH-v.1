@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
 
 class NivelEduSeeder extends Seeder
 {
@@ -12,6 +14,13 @@ class NivelEduSeeder extends Seeder
      */
     public function run()
     {
+
+        Schema::create('nivel_edus', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nivelEdu');
+
+        });
+
         DB::table('nivel_edus')->truncate();
 
         DB::table('nivel_edus')->insert(['nivelEdu'=> 'Bachiller']);
@@ -26,5 +35,15 @@ class NivelEduSeeder extends Seeder
         DB::table('nivel_edus')->insert(['nivelEdu'=> 'Postgrado']);
         DB::table('nivel_edus')->insert(['nivelEdu'=> 'Especialización']);
         DB::table('nivel_edus')->insert(['nivelEdu'=> 'Licenciado']);
+    }
+
+            /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('nivel_edus');
     }
 }

@@ -37,7 +37,7 @@ class EntJefeController extends Controller
      */
     public function index()
     {
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = EntFinalizacion::orderBy('id', 'asc')->where('resultado','cargo requiere segunda entrevista')->paginate(10);
         return view('entjefe.index',compact('entrevistas'));
     }
 
