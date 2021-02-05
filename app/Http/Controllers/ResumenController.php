@@ -38,7 +38,7 @@ class ResumenController extends Controller
      */
     public function index()
     {
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = EntFinalizacion::orderBy('id', 'asc')->paginate(10);
         return view('resumen.index',compact('entrevistas'));
     }
 

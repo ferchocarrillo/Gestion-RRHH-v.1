@@ -40,7 +40,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           <div class="container">
             <div class="row">
 
-              <div id="cedula" name="cedula" class="col"><p class="h6">Cedula:</p>  {{ $entrevista1s->cedula}}</div>
+              <div id="cedula" name="cedula" class="col" type="number"><p class="h6">Cedula:</p>  {{ $entrevista1s->cedula}}</div>
               <div class="col"><p class="h6">Teléfono:</p>  {{ $entrevista1s->telefono}}</div>
               <div class="col"><p class="h6">Correo:</p> {{ $entrevista1s->correo}}</div>
               <div class="col"><p class="h6">Cargo:</p>  {{ $entrevista1s->cargo}}</div>
@@ -403,8 +403,8 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
         <!-- Force next columns to break to new line -->
 
-        <div class="col"><p class="h6">Resultado Primera Entrevista</p>{{  old('resultado', $entFinalizacion->resultado)}}</div>
-        <div class="col"><p class="h6">Fecha</p>{{ old('fechaCont', $entFinalizacion->fechaCont)}}</div>
+        <div class="col" ><p class="h6">Resultado Primera Entrevista</p>{{  old('resultado', $entFinalizacion->resultado)}}</div>
+        <div class="col"><p class="h6" type="date">Fecha</p>{{ old('fechaCont', $entFinalizacion->fechaCont)}}</div>
         <div class="col"><p class="h6">Observaciones</p>{{ old('obsFinales', $entFinalizacion->obsFinales)}}</div>
 
 
@@ -425,10 +425,11 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <textarea class="form-control" name="obsGerencia" id="" cols="3" rows="3"></textarea>
 
 
-    <div class="col-2"><input type="hidden" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
-    <div class="col-2"><input type="hidden" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
-
-
+    <div class="col-2"><input type="hidden"  type="text" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
+    <div class="col-2"><input type="hidden"  type="number" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
+    <div class="col-2"><input type="hidden"  type="text" class="form-control" id="resultado" placeholder="resultado" name="resultado" value="{{ old('resultado', $entFinalizacion->resultado)}}"></div>
+    <div class="col-2"><input type="hidden"  type="text" class="form-control" id="fechaCont" placeholder="fechaCont" name="fechaCont" value="{{ old('fechaCont', $entFinalizacion->fechaCont)}}"></div>
+    <div class="col-2"><input type="hidden"  type="text" class="form-control" id="obsFinales" placeholder="obsFinales" name="obsFinales" value="{{ old('obsFinales', $entFinalizacion->obsFinales)}}"></div>
       </div>
 </div>
 

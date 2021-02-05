@@ -38,10 +38,10 @@
                                             <th scope="col">#</th>
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
-                                            <th scope="col">Telefono</th>
-                                            <th scope="col">Perfil</th>
-                                            <th scope="col">Campaña</th>
-                                            <th colspan="6">Entrevista Gerencia</th>
+                                            <th scope="col">Entrevista Gerencia</th>
+                                            <th scope="col">Observaciones</th>
+            
+                                            <th colspan="6">Visualizar</th>
                                           </tr>
                                         </thead>
                                         <tbody>
@@ -50,10 +50,10 @@
                                                 <th scope="row">{{ $entrevista->id}}</th>
                                                 <td>{{ $entrevista->cedula}}</td>
                                                 <td>{{ $entrevista->nombre}}</td>
-                                               <td>{{ $entrevista->telefono}}</td>
+                                               <td>{{ $entrevista->resultadoGer}}</td>
 
-                                                <td>{{ $entrevista->perfil}}</td>
-                                                <td>{{ $entrevista->campaña}}</td>
+                                                <td>{{ $entrevista->obsGerencia}}</td>
+
 
                                                 <td>
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}

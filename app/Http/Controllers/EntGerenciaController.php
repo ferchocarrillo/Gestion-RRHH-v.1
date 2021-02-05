@@ -15,6 +15,7 @@ use App\Prefijo;
 use App\Orientacion;
 use App\Adicional2;
 use App\Adicional;
+use App\Aprobacion;
 use App\Entrevista1;
 use App\Entrevista2;
 use App\Entrevista3;
@@ -78,14 +79,18 @@ class EntGerenciaController extends Controller
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
         $datosEntrevista=request()->except('_token');
-        /*$request->validate([
+        $request->validate([
             'cedula'          => 'required|unique:entfinalizacion,cedula,',
         ]);
-*/
+
         $entGerencia = new EntFinalizacion();
-        //$entGerencia->id_filtro        = $request->id_filtro;
-        //$entGerencia->cedula           = $request->cedula;
-        //$entGerencia->nombre           = $request->nombres;
+        $entGerencia->id_filtro        = $request->id_filtro;
+        $entGerencia->nombre           = $request->nombres;
+
+        $entGerencia->cedula           = $request->cedula;
+        $entGerencia->resultado        = $request->resultado;
+        $entGerencia->fechaCont        = $request->fechaCont;
+        $entGerencia->obsFinales       = $request->obsFinales;
         $entGerencia->resultadoGer     = $request->resultadoGer;
         $entGerencia->obsGerencia      = $request->obsGerencia;
 
@@ -105,18 +110,18 @@ class EntGerenciaController extends Controller
     public function edit($id)
 
     {
-        $this->authorize('haveaccess','entFinalizacion.edit');
-
+        $this->authorize('haveaccess','entGerencia.edit');
+        $aprobaciones = Aprobacion::all();
         $filtro=Filtro::findOrFail($id);
         $entrevista1s=entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista2s=Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista3s=Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista4s=Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista5s=Entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entFinalizacion=entFinalizacion::findOrFail($id)->first();
+        $entFinalizacion=entFinalizacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
        /* $entGerencia=entGerencia::all();*/
 
-       return view('entGerencia.view', compact('entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
+       return view('entGerencia.edit', compact('aprobaciones','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
     }
     /**
      * Update the specified resource in storage.
