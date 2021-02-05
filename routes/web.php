@@ -97,6 +97,11 @@ Route::resource('cargoNuevo',       CargoNuevoController::class);
 Route::resource('novedades',        NovedadesController::class);
 Route::resource('asignacion',       AsignacionController::class);
 Route::resource('nuevoempleado',    NuevoEmpleadoController::class);
+Route::resource('entrevistaFull',   EntrevistaFullController::class);
+
+
+
+
 Route::get('/', 'PaginaController@inicio')->name('inicio');
 
 

@@ -14,7 +14,7 @@ class NivelEduSeeder extends Seeder
      */
     public function run()
     {
-
+        Schema::dropIfExists('nivel_edus');
         Schema::create('nivel_edus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nivelEdu');

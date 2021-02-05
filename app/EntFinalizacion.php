@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class EntFinalizacion extends Model
 {
-    protected $table='entfinalizacion';
+    protected $fillable = ['ent_finalizacions'];
+
+   //protected $table=('ent_finalizacions');
+
 }

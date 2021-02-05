@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Cargo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Database\Eloquent\Model;
@@ -28,9 +28,9 @@ class FiltroController extends Controller
     public function index()
     {
 
-        $perfiles = Perfil::all();
+        $cargos = Cargo::all();
         $filtros = Filtro::orderBy('cedula', 'asc')->paginate(10);
-        return view('filtro.index',compact('filtros','perfiles'));
+        return view('filtro.index',compact('filtros','cargos'));
     }
 
     public function searchfiltro( Request $request)
@@ -52,9 +52,9 @@ class FiltroController extends Controller
     public function create()
     {
         $filtros = Filtro::all();
-        $perfiles = Perfil::all();
+        $cargos = Cargo::all();
         $reclutamientos = Reclutamiento::all();
-        return view('filtro.create', compact('filtros','perfiles'));
+        return view('filtro.create', compact('filtros','cargos'));
     }
 
     /**

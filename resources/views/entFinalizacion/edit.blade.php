@@ -7,223 +7,441 @@
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
 
+
 <div class="page-header">
     <br>
-      <h3>fizalizacion</h3>
+      <h3>Registro de Entrevista</h3>
 </div>
 </center>
 <br>
+
+<form action="{{ url('/entFinalizacion/')}}"
+method="POST"
+enctype="multipart/form-data"
+class="form-horizontal"
+style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+{{csrf_field()}}
+
 <div class="col-sm-12">
+    <div class="col-2"><label for="id_filtro"></label><input type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
     <center><p>
-        <div class="p-3 mb-2 bg-info text-white">
-            Datos Personales
+        <div class="p-3 mb-2 bg-info text-white" id ="nombres" name="nombres">
+          <h3> {{ $entrevista1s->nombres}}</h3>
         </div>
     </p></center>
     </div>
     </body>
-    <form action="{{ url('/entFinalizacion/')}}"
-          method="POST"
-          enctype="multipart/form-data"
-          class="form-horizontal"
-          style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-          {{csrf_field()}}
 
 
-          <div> Cedula:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->cedula }}</div>
-          <div> Nombres:&nbsp;{{ $filtro->nombre }}</div>
-          <div> Telefono: &nbsp;{{ $filtro->telefono }}</div>
-          <div> Correo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->correo }}</div>
-          <div> Perfil:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{ $filtro->perfil }}</div>
-          <div> Campaña:&nbsp;{{ $filtro->campaña }}</div>
-          <div> Fuente:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->fuente }}</div>
-          <div> Cargo:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $Entrevista1->id }}</div>
+          <center><h3>Datos Generales</h3></center>
+          <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
-          @foreach($Entrevista1s as $Entrevista1)
-          <option value="{{ $Entrevista1->cargo}}">{{ $Entrevista1->cargo }}</option>
-          @endforeach
+          <div class="container">
+            <div class="row">
+
+              <div id="cedula" name="cedula" class="col"><p class="h6">Cedula:</p>  {{ $entrevista1s->cedula}}</div>
+              <div class="col"><p class="h6">Teléfono:</p>  {{ $entrevista1s->telefono}}</div>
+              <div class="col"><p class="h6">Correo:</p> {{ $entrevista1s->correo}}</div>
+              <div class="col"><p class="h6">Cargo:</p>  {{ $entrevista1s->cargo}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
+              <!-- Force next columns to break to new line -->
+               <div class="w-100 d-none d-md-block"></div>
+               <div class="col"><p class="h6">Persona que lo referencia:</p> {{ $entrevista1s->referencia}}</div>
+               <div class="col"><p class="h6">Edad:</p>{{ $entrevista1s->edad}}</div>
+               <div class="col"><p class="h6">Fecha de nacimiento:</p> {{ $entrevista1s->fnacimiento}}</div>
+               <div class="col"><p class="h6">Departamento y ciudad de nacimiento:</p> {{ $entrevista1s->departamento}} | {{ $entrevista1s->id_ciudad}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
+              <!-- Force next columns to break to new line -->
+               <div class="w-100 d-none d-md-block"></div>
+               <div class="col"><p class="h6">Dirección:</p> {{ $entrevista1s->TipoVia}} {{ $entrevista1s->dr1}} {{ $entrevista1s->Prefijo1}} # {{ $entrevista1s->dr2}} {{ $entrevista1s->Prefijo2}} {{ $entrevista1s->dr3}} {{ $entrevista1s->orientacion}} {{ $entrevista1s->adicional}} {{ $entrevista1s->ad1}} {{ $entrevista1s->adicional2}} {{ $entrevista1s->ad2}} {{ $entrevista1s->adicional3}} {{ $entrevista1s->ad3}}</div>
+               <div class="col"><p class="h6">Barrio:</p> {{ $entrevista1s->barrio}}</div>
+               <div class="col"><p class="h6">Localidad:</p>{{ $entrevista1s->id_localidad}}</div>
+
+               <div class="col"><p class="h6">Lugar de residencia:</p> {{ $entrevista1s->residencia}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
+               <!-- Force next columns to break to new line -->
+               <div class="w-100 d-none d-md-block"></div>
+               <div class="col"><p class="h6">Tel fijo:</p>{{ $entrevista1s->tFijo}}</div>
+               <div class="col"><p class="h6">Tel celular:</p> {{ $entrevista1s->tCelular}}</div>
+               <div class="col"><p class="h6">Tel celular 2:</p> {{ $entrevista1s->tCelular2}}</div>
+               <div class="col"><p class="h6"></p> {{ $entrevista1s->xxxxx}}</div>
+
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
+
+               <!-- Force next columns to break to new line -->
+               <div class="w-100 d-none d-md-block"></div>
+               <div class="col"><p class="h6">Tipo de Vivienda:</p>{{ $entrevista1s->tVivienda}}</div>
+               <div class="col"><p class="h6">Valor:</p> {{ $entrevista1s->valor}}</div>
+               <div class="col"><p class="h6">Nombre del Arrendador:</p> {{ $entrevista1s->arrendador}}</div>
+               <div class="col"><p class="h6">Correo del Arrendador:</p> {{ $entrevista1s->correoArr}}</div>
+
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
+               <!-- Force next columns to break to new line -->
+               <div class="w-100 d-none d-md-block"></div>
+               <div class="col"><p class="h6">Servicio militar, donde?:</p>{{ $entrevista1s->sMilitar}}  {{ $entrevista1s->donde}}</div>
+               <div class="col"><p class="h6">Estado Civil:</p> {{ $entrevista1s->eCivil}}</div>
+               <div class="col"><p class="h6">Hace Cuanto:</p> {{ $entrevista1s->cuanto}}</div>
+               <div class="col"><p class="h6">Con Quien Vive:</p> {{ $entrevista1s->quien}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
+               <!-- Force next columns to break to new line -->
+               <div class="w-100 d-none d-md-block"></div>
+               <div class="col"><p class="h6">Que conoce de Mentius:</p>{{ $entrevista1s->conoce}}  {{ $entrevista1s->donde}}</div>
+
+
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 
 
 
 
-
-<div class="container">
-    <div class="card-body" style="background-image: linear-gradient(#FFFFFF, #FEFFF1);">
-        <div class="row col-xs-12">
-            <div style="width:560px">
-                <p><input type="text" id ="aspiracion" name="aspiracion" class="form-control" placeholder="&#36; Aspiracion Salarial" required></p>
             </div>
-            <div style="width:455px">
-                <p><select type="text" id ="personasC" name="personasC" class="form-control" placeholder="Ha tenido personas a cargo?" required>
-                      <option value="0">Ha tenido personas a cargo?</option>
-                      <option value="si">Si</option>
-                      <option value="no">No</option>
-                </select></p>
-            </div>
+          </div>
+          <center><h3>Datos Familiares  {{old('sinExp', $entrevista2s->sinfamilia)}}</h3></center>
 
-            <div style="width:1015px">
-                <p><input type="text" id ="acCambio" name="acCambio" class="form-control" placeholder="Actividades realizadas en los lapsos de cambio ocupación" required></p>
-            </div>
+          <div class="container">
+            <div class="row">
 
-            <div style="width:310px">
-                <p><input type="text" id ="tiempoDes" name="tiempoDes" class="form-control" placeholder="Hace cuanto esta desmpleado" required></p>
-            </div>
-            <div style="width:705px">
-                <p><input type="text" id ="queHizo" name="queHizo" class="form-control" placeholder="Que ha realizado en ese tiempo" required></p>
-            </div>
 
-            <div style="width:400px">
-                <p><select type="text" id ="otroProceso" name="otroProceso" class="form-control" placeholder="Esta en proceso de seleccion en otra empresa?" required>
-                  <option value="0"> Esta en proceso de seleccion en otra empresa?</option>
-                  <option value="si">Si</option>
-                  <option value="no">No</option>
-                </select></p>
-            </div>
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col"><p class="h6">Nombre</p></div>
+                <div class="col"><p class="h6">Parentesco</p></div>
+                <div class="col"><p class="h6">Edad</p> </div>
+                <div class="col"><p class="h6">Ocupación</p></div>
+                <div class="col"><p class="h6">Teléfono</p> </div>
+                <hr width=100% align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
-            <div style="width:615px">
-                <p><input type="text" id ="CualOtra" name="CualOtra" class="form-control" placeholder="Cual?"></p>
-            </div>
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista2s->familiarp1}}</div>
+                <div class="col">{{ $entrevista2s->parentescop1}}</div>
+                <div class="col">{{ $entrevista2s->edadp1}}</div>
+                <div class="col">{{ $entrevista2s->ocupacionp1}}</div>
+                <div class="col">{{ $entrevista2s->telefonop1}}</div>
 
-            <div style="width:1015px">
-                <p><input type="text" id ="fortalezas" name="fortalezas" class="form-control" placeholder="Cuales son sus fortalezas" required></p>
-            </div>
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista2s->familiarp2}}</div>
+                <div class="col">{{ $entrevista2s->parentescop2}}</div>
+                <div class="col">{{ $entrevista2s->edadp2}}</div>
+                <div class="col">{{ $entrevista2s->ocupacionp2}}</div>
+                <div class="col">{{ $entrevista2s->telefonop2}}</div>
 
-            <div style="width:1015px">
-                <p><input type="text" id ="debilidades" name="debilidades" class="form-control" placeholder="Cuales son sus debilidades" required></p>
-            </div>
 
-            <div style="width:1015px">
-                <p><input type="text" id ="valores" name="valores" class="form-control" placeholder="Cuales valores le inculco su familia" required></p>
-            </div>
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista2s->familiarp3}}</div>
+                <div class="col">{{ $entrevista2s->parentescop3}}</div>
+                <div class="col">{{ $entrevista2s->edadp3}}</div>
+                <div class="col">{{ $entrevista2s->ocupacionp3}}</div>
+                <div class="col">{{ $entrevista2s->telefonop3}}</div>
 
-            <div style="width:1015px">
-                <p><input type="text" id ="satisafaccion" name="satisafaccion" class="form-control" placeholder="Que aspectos de su vida le han generado satisfaccion" required></p>
-            </div>
 
-            <div style="width:1015px">
-                <p><input type="text" id ="traumaticos" name="traumaticos" class="form-control" placeholder="Que aspectos de su vida han sido traumaticos" required></p>
-            </div>
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista2s->familiarp4}}</div>
+                <div class="col">{{ $entrevista2s->parentescop4}}</div>
+                <div class="col">{{ $entrevista2s->edadp4}}</div>
+                <div class="col">{{ $entrevista2s->ocupacionp4}}</div>
+                <div class="col">{{ $entrevista2s->telefonop4}}</div>
 
-            <div style="width:400px">
-                <p><select type="text" id ="cancelado" name="cancelado" class="form-control" placeholder="Le han cancelado contrato en otra empresa?" required>
-                    <option value="0">Le han cancelado contrato en otra empresa?</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select></p>
-            </div>
 
-            <div style="width:615px">
-                <p><input type="text" id ="motivoC" name="motivoC" class="form-control" placeholder="Motivo"></p>
-            </div>
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista2s->familiarp5}}</div>
+                <div class="col">{{ $entrevista2s->parentescop5}}</div>
+                <div class="col">{{ $entrevista2s->edadp5}}</div>
+                <div class="col">{{ $entrevista2s->ocupacionp5}}</div>
+                <div class="col">{{ $entrevista2s->telefonop5}}</div>
 
-            <div style="width:400px">
-                <p><select type="text" id ="problemas" name="problemas" class="form-control" placeholder="Tiene problemas judiciales?" required>
-                    <option value="0">Tiene problemas judiciales?</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select></p>
-            </div>
 
-            <div style="width:615px">
-                <p><input type="text" id ="motivoJ" name="motivoJ" class="form-control" placeholder="Motivo"></p>
-            </div>
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista2s->familiarp6}}</div>
+                <div class="col">{{ $entrevista2s->parentescop6}}</div>
+                <div class="col">{{ $entrevista2s->edadp6}}</div>
+                <div class="col">{{ $entrevista2s->ocupacionp6}}</div>
+                <div class="col">{{ $entrevista2s->telefonop6}}</div>
 
-            <div style="width:400px">
-                <p><select type="text" id ="fuma" name="fuma" class="form-control" placeholder="Fuma?" required>
-                    <option value="0">Fuma?</option>
-                    <option value="si">Si</option>
-                    <option value="no">No</option>
-                </select></p>
-            </div>
 
-            <div style="width:615px">
-                <p><input type="text" id ="frecuencia" name="frecuencia" class="form-control" placeholder="Con que frecuencia"></p>
-            </div>
-            <div style="width:150px">
-                <p><select type="text" id ="deudas" name="deudas" class="form-control" placeholder="posee deudas?" required>
-                  <option value="0">Posee deudas?</option>
-                  <option value="si">Si</option>
-                  <option value="no">No</option>
-                </select></p>
-            </div>
-            <div style="width:289px">
-                <p><input type="text" id ="debeA" name="debeA" class="form-control" placeholder="Con quien"></p>
-            </div>
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista2s->familiarp7}}</div>
+                <div class="col">{{ $entrevista2s->parentescop7}}</div>
+                <div class="col">{{ $entrevista2s->edadp7}}</div>
+                <div class="col">{{ $entrevista2s->ocupacionp7}}</div>
+                <div class="col">{{ $entrevista2s->telefonop7}}</div>
+                <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 
-            <div style="width:289px">
-                <p><input type="text" id ="cuantoDebe" name="cuantoDebe" class="form-control" placeholder="Cuanto"></p>
-            </div>
-
-            <div style="width:289px">
-                <p><input type="text" id ="plazo" name="plazo" class="form-control" placeholder="A que plazo"></p>
-            </div>
-
-            <div style="width:350px">
-                <p><select type="text" id ="grupoSoc" name="grupoSoc" class="form-control" placeholder="Pertenece a algun grupo social?" required>
-                <option value="0">Pertenece a algun grupo social?</option>
-                <option value="si">Si</option>
-                <option value="no">No</option>
-                </select></p>
-            </div>
-
-            <div style="width:333px">
-                <p><input type="text"id ="cualGr"name="cualGr"class="form-control"placeholder="Cual"></p>
-            </div>
-
-            <div style="width:333px">
-                <p><input type="text" id ="tiempo" name="tiempo" class="form-control" placeholder="Tiempo"></p>
-            </div>
-
-            <div style="width:1015px">
-                <p><input type="text" id ="tiempoLibre" name="tiempoLibre" class="form-control" placeholder="Que hace en su tiempo libre?" required></p>
-            </div>
-
-            <div style="width:507px">
-                <p><input type="text" id ="estadoSalud" name="estadoSalud" class="form-control" placeholder="Cual es su estado de salud?" required></p>
-            </div>
-
-            <div style="width:507px">
-                <p><input type="text" id ="tratamiento" name="tratamiento" class="form-control" placeholder="Tratamientos medicos" required></p>
-            </div>
-
-            <div style="width:350px">
-                <p><select type="text" id ="accidentes" name="accidentes" class="form-control" placeholder="Ha sufrido accidentes?" required
-                <option value="0"> Ha sufrido accidentes?</option>
-                <option value="si">Si</option>
-                <option value="no">No</option>
-                </select></p>
-            </div>
-
-            <div style="width:665px">
-                <p><input type="text" id ="cualAc" name="cualAc" class="form-control" placeholder="Cuales"></p>
-            </div>
-
-            <div style="width:507px">
-                <p><select type="text" id ="procesosAnt" name="procesosAnt" class="form-control" placeholder="Anteriormente ha realiazado procesos en Mentius?" required>
-                <option value="0"> Anteriormente ha realiazado procesos en Mentius?</option>
-                <option value="si">Si</option>
-                <option value="no">No</option>
-                </select></p>
-            </div>
-
-            <div style="width:507px">
-                <p><select type="text" id ="familiaresMent" name="familiaresMent" class="form-control" placeholder="Tiene familiares trabajando en Mentius?" required>
-                <option value="0">Tiene familiares trabajando en Mentius?</option>
-                <option value="si">Si</option>
-                <option value="no">No</option>
-                </select></p>
-            </div>
-
-            <input type="hidden" id ="nombre" name="nombre" class="form-control" value="{{ $filtro->nombre }}" ></p>
-
-            <div class="d-grid gap-2">
-                <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
-                <a href="{{route('entFinalizacion.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Continuar</a>
-            </div>
             </div>
         </div>
+
+
+<center><h3>Historial Academico</h3></center>
+<div class="container">
+    <div class="row">
+ <!-- Force next columns to break to new line -->
+
+
+
+ <div class="w-100 d-none d-md-block"></div>
+ <div class="col"><p class="h6">Grado</p></div>
+ <div class="col"><p class="h6">Institución</p> </div>
+ <div class="col"><p class="h6">Duración en años</p></div>
+ <div class="col"><p class="h6">Fecha</p></div>
+ <div class="col"><p class="h6">Titulo</p></div>
+ <div class="col"><p class="h6">Estado</p> </div>
+
+ <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
+
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista3s->Grado1}}</div>
+                <div class="col">{{ $entrevista3s->institucion1}} </div>
+                <div class="col">{{ $entrevista3s->años1}}</div>
+                <div class="col">{{ $entrevista3s->fecha1}}</div>
+                <div class="col">{{ $entrevista3s->titulo1}}</div>
+                <div class="col">{{ $entrevista3s->estado1}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista3s->Grado2}}</div>
+                <div class="col">{{ $entrevista3s->institucion2}} </div>
+                <div class="col">{{ $entrevista3s->años2}}</div>
+                <div class="col">{{ $entrevista3s->fecha2}}</div>
+                <div class="col">{{ $entrevista3s->titulo2}}</div>
+                <div class="col">{{ $entrevista3s->estado2}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista3s->Grado3}}</div>
+                <div class="col">{{ $entrevista3s->institucion3}} </div>
+                <div class="col">{{ $entrevista3s->años3}}</div>
+                <div class="col">{{ $entrevista3s->fecha3}}</div>
+                <div class="col">{{ $entrevista3s->titulo3}}</div>
+                <div class="col">{{ $entrevista3s->estado3}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista3s->Grado4}}</div>
+                <div class="col">{{ $entrevista3s->institucion4}} </div>
+                <div class="col">{{ $entrevista3s->años4}}</div>
+                <div class="col">{{ $entrevista3s->fecha4}}</div>
+                <div class="col">{{ $entrevista3s->titulo4}}</div>
+                <div class="col">{{ $entrevista3s->estado4}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista3s->Grado5}}</div>
+                <div class="col">{{ $entrevista3s->institucion5}} </div>
+                <div class="col">{{ $entrevista3s->años5}}</div>
+                <div class="col">{{ $entrevista3s->fecha5}}</div>
+                <div class="col">{{ $entrevista3s->titulo5}}</div>
+                <div class="col">{{ $entrevista3s->estado5}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+                <div class="col">{{ $entrevista3s->Grado6}}</div>
+                <div class="col">{{ $entrevista3s->institucion6}} </div>
+                <div class="col">{{ $entrevista3s->años6}}</div>
+                <div class="col">{{ $entrevista3s->fecha6}}</div>
+                <div class="col">{{ $entrevista3s->titulo6}}</div>
+                <div class="col">{{ $entrevista3s->estado6}}</div>
+                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+            </div>
+        </div>
+
+        <center><h3>Historial Laboral {{ $entrevista4s->sinExp }} </h3></center>
+        <div class="container">
+            <div class="row">
+
+                       <!-- Force next columns to break to new line -->
+         <div class="w-100 d-none d-md-block"></div>
+         <div class="col"></div>
+         <!-- Force next columns to break to new line -->
+
+
+
+         <div class="w-100 d-none d-md-block"></div>
+         <div class="col"><p class="h6">Empresa</p></div>
+         <div class="col"><p class="h6">Fecha de inicio</p> </div>
+         <div class="col"><p class="h6">Fecha de retiro</p></div>
+         <div class="col"><p class="h6">Cargo</p></div>
+         <div class="col"><p class="h6">Jefe Inmediato</p></div>
+         <div class="col"><p class="h6">Teléfono</p> </div>
+         <div class="col"><p class="h6">Salario</p> </div>
+         <div class="col"><p class="h6">Motivo de retiro</p> </div>
+         <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
+
+         <!-- Force next columns to break to new line -->
+         <div class="w-100 d-none d-md-block"></div>
+         <div class="col">{{ $entrevista4s->empresa1}}</div>
+         <div class="col">{{ $entrevista4s->fechain1}} </div>
+         <div class="col">{{ $entrevista4s->fechart1}}</div>
+
+         <div class="col">{{ $entrevista4s->hlcargo1}}</div>
+         <div class="col">{{ $entrevista4s->jefeinm1}}</div>
+         <div class="col">{{ $entrevista4s->teleinf1}}</div>
+         <div class="col">{{ $entrevista4s->salarioh1}}</div>
+         <div class="col">{{ $entrevista4s->motivor1}}</div>
+         <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+         <!-- Force next columns to break to new line -->
+         <div class="w-100 d-none d-md-block"></div>
+         <div class="col">{{ $entrevista4s->empresa2}}</div>
+         <div class="col">{{ $entrevista4s->fechain2}} </div>
+         <div class="col">{{ $entrevista4s->fechart2}}</div>
+
+         <div class="col">{{ $entrevista4s->hlcargo2}}</div>
+         <div class="col">{{ $entrevista4s->jefeinm2}}</div>
+         <div class="col">{{ $entrevista4s->teleinf2}}</div>
+        <div class="col">{{ $entrevista4s->salarioh2}}</div>
+         <div class="col">{{ $entrevista4s->motivor2}}</div>
+         <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+         <!-- Force next columns to break to new line -->
+         <div class="w-100 d-none d-md-block"></div>
+         <div class="col">{{ $entrevista4s->empresa3}}</div>
+         <div class="col">{{ $entrevista4s->fechain3}} </div>
+         <div class="col">{{ $entrevista4s->fechart3}}</div>
+
+         <div class="col">{{ $entrevista4s->hlcargo3}}</div>
+         <div class="col">{{ $entrevista4s->jefeinm3}}</div>
+         <div class="col">{{ $entrevista4s->teleinf3}}</div>
+        <div class="col">{{ $entrevista4s->salarioh3}}</div>
+         <div class="col">{{ $entrevista4s->motivor3}}</div>
+
+         <!-- Force next columns to break to new line -->
+         <div class="w-100 d-none d-md-block"></div>
+         <div class="col">{{ $entrevista4s->empresa4}}</div>
+         <div class="col">{{ $entrevista4s->fechain4}} </div>
+         <div class="col">{{ $entrevista4s->fechart4}}</div>
+
+         <div class="col">{{ $entrevista4s->hlcargo4}}</div>
+         <div class="col">{{ $entrevista4s->jefeinm4}}</div>
+         <div class="col">{{ $entrevista4s->teleinf4}}</div>
+        <div class="col">{{ $entrevista4s->salarioh4}}</div>
+         <div class="col">{{ $entrevista4s->motivor4}}</div>
+
+         <!-- Force next columns to break to new line -->
+         <div class="w-100 d-none d-md-block"></div>
+         <div class="col">{{ $entrevista4s->empresa5}}</div>
+         <div class="col">{{ $entrevista4s->fechain5}} </div>
+         <div class="col">{{ $entrevista4s->fechart5}}</div>
+
+         <div class="col">{{ $entrevista4s->hlcargo5}}</div>
+         <div class="col">{{ $entrevista4s->jefeinm5}}</div>
+         <div class="col">{{ $entrevista4s->teleinf5}}</div>
+        <div class="col">{{ $entrevista4s->salarioh5}}</div>
+         <div class="col">{{ $entrevista4s->motivor5}}</div>
+
+        </div>
     </div>
+
+
+<center><h3>Generalidades</h3></center>
+<hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
+<div class="container">
+    <div class="row">
+
+        <div class="col"><p class="h6">Aspiración salarial</p>  {{ $entrevista5s->aspiracion}} </div>
+        <div class="col"><p class="h6">Ha tenido personas a cargo</p>  {{ $entrevista5s->personasC}} </div>
+        <div class="col"><p class="h6">Actividades realizadas</p> {{ $entrevista5s->acCambio}}</div>
+        <div class="col"><p class="h6">Cuanto tiempo estuvo desempleado</p>  {{ $entrevista1s->tiempoDes}}</div>
+        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+        <!-- Force next columns to break to new line -->
+        <div class="w-100 d-none d-md-block"></div>
+        <div class="col"><p class="h6">Que hizo en ese tiempo</p>  {{ $entrevista5s->queHizo}} </div>
+        <div class="col"><p class="h6">Esta en otro proceso de selección</p>  {{ $entrevista5s->otroProceso}} </div>
+        <div class="col"><p class="h6">Cual otra</p> {{ $entrevista5s->CualOtra}}</div>
+        <div class="col"><p class="h6">Mencione sus fortalezas</p>  {{ $entrevista5s->fortalezas}} </div>
+
+        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+        <!-- Force next columns to break to new line -->
+        <div class="w-100 d-none d-md-block"></div>
+
+        <div class="col"><p class="h6">Mencione sus debilidades</p>  {{ $entrevista5s->debilidades}} </div>
+        <div class="col"><p class="h6">Que valores le inculco su familia</p> {{ $entrevista5s->valores}}</div>
+        <div class="col"><p class="h6">Aspectos que le generan satisfacción</p>  {{ $entrevista5s->satisfaccion}}</div>
+        <div class="col"><p class="h6">Aspectos traumáticos</p>  {{ $entrevista5s->traumaticos}}</div>
+
+        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+        <!-- Force next columns to break to new line -->
+        <div class="w-100 d-none d-md-block"></div>
+        <div class="col"><p class="h6">¿Le han cancelado contrato? </p>  {{ $entrevista5s->cancelado}} </div>
+        <div class="col"><p class="h6">Cual fue el motivo</p>  {{ $entrevista5s->motivoC}} </div>
+        <div class="col"><p class="h6">Ha tenido problemas judiciales</p> {{ $entrevista5s->problemas}}</div>
+        <div class="col"><p class="h6">Cual fue la razón</p>{{ $entrevista5s->motivoJ}}</div>
+
+
+
+        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+        <!-- Force next columns to break to new line -->
+        <div class="w-100 d-none d-md-block"></div>
+
+        <div class="col"><p class="h6">¿Fuma? con qué frecuencia</p>  {{ $entrevista5s->fuma}} , {{ $entrevista5s->frecuencia}} </div>
+        <div class="col"><p class="h6">¿Tiene deudas? </p> {{ $entrevista5s->deudas}}</div>
+        <div class="col"><p class="h6">A quien le debe</p>{{ $entrevista5s->debeA}}</div>
+        <div class="col"><p class="h6">Cuanto y a qué plazo </p>{{$entrevista5s->cuantoDebe}} {{ $entrevista5s->plazo}}</div>
+
+
+        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+        <!-- Force next columns to break to new line -->
+        <div class="w-100 d-none d-md-block"></div>
+        <div class="col"><p class="h6">¿Pertenece a algún grupo social? hace cuanto </p>  {{ $entrevista5s->grupoSoc}} {{ $entrevista5s->cuantoTiempo}}</div>
+        <div class="col"><p class="h6">Que hace en su tiempo libre</p> {{ $entrevista5s->tiempoLibre}}</div>
+        <div class="col"><p class="h6">¿Cuál es su estado de salud? </p>{{ $entrevista5s->estadoSalud}}</div>
+        <div class="col"><p class="h6">¿Sigue algún tratamiento? </p>{{ $entrevista5s->tratamiento}}</div>
+
+        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+        <!-- Force next columns to break to new line -->
+        <div class="w-100 d-none d-md-block"></div>
+        <div class="col"><p class="h6">¿Ha sufrido accidentes? </p>  {{ $entrevista5s->acceidentes}} {{ $entrevista5s->cuantoTiempo}}</div>
+        <div class="col"><p class="h6">Que accidente tuvo</p> {{ $entrevista5s->cualAc}}</div>
+        <div class="col"><p class="h6">Ha tenido procesos anteriores en Mentius?</p>{{ $entrevista5s->procesosAnt}}</div>
+        <div class="col"><p class="h6">¿Tiene familiares en la compañía? </p>{{ $entrevista5s->familiaresMent}}</div>
+
+        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+        <!-- Force next columns to break to new line -->
+
+        <label for="resultado">Resultado de la entrevista:</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <select name="resultado" id="resultado"  >resultado de la entrevista
+            <option value="0">Seleccione una opción</option>
+        <option value="enviado a capacitacion">Enviado a capacitacion</option>
+        <option value="enviado a contratación">Enviado a contratación</option>
+        <option value="cargo requiere segunda entrevista">Cargo requiere segunda entrevista</option>
+        <option value="no contratado">No contratado</option>
+        <option value="no aplica para el cargo">No aplica para el cargo</option>
+        <option value="postulado desistio de la oferta">Postulado desistio de la oferta</option>
+        <option value="otro">Otro</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="fechaCont">Fecha de contratacion</label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="date" name="fechaCont" id="fechaCont">
+        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+        <!-- Force next columns to break to new line -->
+        <label for="obsFinales">Observaciones</label>
+        <textarea class="form-control" name="obsFinales" id="" cols="3" rows="3"></textarea>
+
+  <div class="col-2"><input type="hidden" class="form-control" id="nombre" placeholder="nombre" name="nombre" value="{{ old('nombre', $filtro->nombre)}}"></div>
+  <div class="col-2"><input type="hidden" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
+  <div class="col-2"><input type="hidden" class="form-control" id="resultadoJefe" placeholder="resultadoJefe" name="resultadoJefe" value="no aplica o pendiente"></div>
+  <div class="col-2"><input type="hidden" class="form-control" id="resultadoGer" placeholder="resultadoGer" name="resultadoGer" value="no aplica o pendiente"></div>
 </div>
-</fieldset>
+</div>
+<br>
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input class="btn btn-primary btn-lg active" type="submit" value="Registrar">
+
+<a href="{{route('entFinalizacion.index')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
 </form>
 
       <script src="{{asset('js/app.js')}}"></script>
@@ -235,58 +453,15 @@
       <script>
       Swal.fire(
         'ENTREVISTA',
-        'Aqui podras registrar algunas generalidades',
+        'Este es el resumen de todo lo consignado durante la entrevista',
         'success'
       )
       </script>
-<script>
-    $(document).ready(function() {
-         $('#departamento').on('change', function(e) {
-             var id = $('#departamento').val();
-             $.ajax({
-                 url: "{{ route('Ciudad')}}",
-                 data: "id="+id+"&_token={{ csrf_token()}}",
-                 dataType: "json",
-                 method: "POST",
-                 success: function(result)
-                 {
 
-                     $('#id_ciudad').empty();
-                     $('#id_ciudad').append("<option value=''>Ingrese Ciudad o Municipio</option>");
-                     $.each(result, function(index,value){
 
-                         $('#id_ciudad').append("<option value='"+value.Municipio+"'>"+value.Municipio+"</option>");
-                     });
-                 }
-             });
-         });
-     });
- </script>
 
- <script>
-    $(document).ready(function() {
-         $('#residencia').on('change', function(e) {
-             var id = $('#residencia').val();
-             $.ajax({
-                 url: "{{ route('Ciudad2')}}",
-                 data: "id="+id+"&_token={{ csrf_token()}}",
-                 dataType: "json",
-                 method: "POST",
-                 success: function(result)
-                 {
-
-                     $('#id_localidad').empty();
-                     $('#id_localidad').append("<option value=''>localidad</option>");
-                     $.each(result, function(index,value){
-
-                         $('#id_localidad').append("<option value='"+value.localidad+"'>"+value.localidad+"</option>");
-                     });
-                 }
-             });
-         });
-     });
- </script>
 
  @stop
+
 
       @endsection

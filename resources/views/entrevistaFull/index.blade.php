@@ -21,7 +21,7 @@
 </div>
 </p>
 
-<br>         <form name="f1" action="{{ url('/entGerencia')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<br>         <form name="f1" action="{{ url('/entrevista1')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
                         <center>
@@ -38,28 +38,34 @@
                                             <th scope="col">#</th>
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
-                                            <th scope="col">Entrevista Gerencia</th>
-                                            <th scope="col">Observaciones</th>
-            
-                                            <th colspan="6">Visualizar</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">resultado RRHH</th>
+                                            <th scope="col">observaciones</th>
+                                            <th scope="col">Gerencia</th>
+                                            <th scope="col">obs Gerencia</th>
+                                            <th scope="col">J. inmediato</th>
+                                            <th scope="col">obs jefe</th>
+
+                                            <th colspan="6">Etapas de la entrevista</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($entrevistas as $entrevista)
+                                            @foreach ($fulls as $full)
                                             <tr>
-                                                <th scope="row">{{ $entrevista->id}}</th>
-                                                <td>{{ $entrevista->cedula}}</td>
-                                                <td>{{ $entrevista->nombre}}</td>
-                                               <td>{{ $entrevista->resultadoGer}}</td>
-
-                                                <td>{{ $entrevista->obsGerencia}}</td>
+                                                <th scope="row">{{ $full->id}}</th>
+                                                <td>{{ $full->cedula}}</td>
+                                                <td>{{ $full->nombres}}</td>
+                                                    <td>{{ $full->telefono}}</td>
+                                       @endforeach
+                                                    @foreach ($finalizated as $final)
+                                                    <td>{{ $final->resultadoGen}}</td>
 
 
                                                 <td>
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}
                                                   {{-- <a href="{{url('/entrevista2/'.$entrevista->id.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>--}}
                                                     {{--<a href="{{url('/entrevista3/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>--}}
-                                                    <a href="{{url('/entGerencia/'.$entrevista->id_filtro.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Ver Hoja de vida</a>
+                                                    <a href="{{url('/entrevistafull/'.$full->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Gestionar Resultados</a>
 
                                             </form>
                                                 </td>
@@ -74,7 +80,7 @@
                       </div>
 
                     </form>
-                    {{ $entrevistas->links()}}
+                    {{ $fulls->links()}}
 
        {{--             <p>
                         clic <a href="{{route('entrevista1.excel')}}">Aqui</a>

@@ -37,8 +37,7 @@ class EntGerenciaController extends Controller
      */
     public function index()
     {
-
-        
+       
         $entrevistas = EntFinalizacion::orderBy('id', 'asc')->where('resultado','cargo requiere segunda entrevista')->paginate(10);
         return view('entGerencia.index',compact('entrevistas'));
     }
@@ -55,6 +54,10 @@ class EntGerenciaController extends Controller
         $entFinalizacion = EntFinalizacion::all();
         $reclutamientos=Reclutamiento::all();
         return view('entGerencia.create',compact('entGerencia','entFinalizacion','reclutamientos'));
+    
+    
+    
+    
     }
 
 
@@ -74,29 +77,35 @@ class EntGerenciaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, EntFinalizacion $entrevistas)
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
         $datosEntrevista=request()->except('_token');
         $request->validate([
-            'cedula'          => 'required|unique:entfinalizacion,cedula,',
-        ]);
+           'nombre'          => 'required|unique:entfinalizacion,nombre,',
+         ]);
 
-        $entGerencia = new EntFinalizacion();
-        $entGerencia->id_filtro        = $request->id_filtro;
-        $entGerencia->nombre           = $request->nombres;
+        $entrevistas = new EntFinalizacion();
+        $entrevistas->id_filtro        = $request->id_filtro;
+        $entrevistas->nombre           = $request->nombres;
 
-        $entGerencia->cedula           = $request->cedula;
-        $entGerencia->resultado        = $request->resultado;
-        $entGerencia->fechaCont        = $request->fechaCont;
-        $entGerencia->obsFinales       = $request->obsFinales;
-        $entGerencia->resultadoGer     = $request->resultadoGer;
-        $entGerencia->obsGerencia      = $request->obsGerencia;
+        $entrevistas->cedula           = $request->cedula;
+        $entrevistas->resultado        = $request->resultado;
+        $entrevistas->fechaCont        = $request->fechaCont;
+        $entrevistas->obsFinales       = $request->obsFinales;
+        $entrevistas->resultadoGer     = $request->resultadoGer;
+        $entrevistas->obsGerencia      = $request->obsGerencia;
 
-        $entGerencia->save();
-        return back();
-        //return response()->json($entGerencia);
+        $entrevistas->save();
+        //return back();
+       //return response()->json($entGerencia);
+
+        //$entrevistas->update($request->all());
+        //return redirect()->route('entFinalizacion.index')
+        //->with('status_success','EntFinalizacion updated successfully');
+        return response()->json($entrevistas);
+
     }
 
 
@@ -104,15 +113,15 @@ class EntGerenciaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\EntGerencia  $entGerencia
+     * @param  \App\entFinalizacion  $entGerencia
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
 
     {
         $this->authorize('haveaccess','entGerencia.edit');
-        $aprobaciones = Aprobacion::all();
-        $filtro=Filtro::findOrFail($id);
+       
+        /*$filtro=Filtro::findOrFail($id);
         $entrevista1s=entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista2s=Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista3s=Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
@@ -120,23 +129,33 @@ class EntGerenciaController extends Controller
         $entrevista5s=Entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entFinalizacion=entFinalizacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
        /* $entGerencia=entGerencia::all();*/
+        $entrevista1s= Entrevista1::findOrFail($id);
+        $entrevista2s= Entrevista2::findOrFail($id);
+        $entrevista3s= Entrevista3::findOrFail($id);
+        $entrevista4s= Entrevista4::findOrFail($id);
+        $entrevista5s= Entrevista5::findOrFail($id);
+        $entFinalizacion=entFinalizacion::findOrFail($id);
+        $aprobaciones = Aprobacion::all();
 
-       return view('entGerencia.edit', compact('aprobaciones','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
+        $filtro=Filtro::findOrFail($id);
+       return view('entGerencia.edit', compact('aprobaciones','filtro','entrevista1s','entrevista2s','entrevista3s','entFinalizacion','entrevista4s','entrevista5s'));
+
+      // return view('entGerencia.edit', compact('aprobaciones','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
     }
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EntGerencia  $entGerencia
+     * @param  \App\EntFinalizacion  $entFinalizacion
      * @return \Illuminate\Http\Response
      */
-        public function update ($id, Request $request)
+    public function update(Request $request, $id)
     {
-        $datosentFinalizacion =request()->except(['_token','_method']);
-        EntFinalizacion::where('id_filtro','=',$id)->update($datosentFinalizacion);
-        $entGerencia=EntFinalizacion::findOrFail($id);
-
-        return view('entGerencia.edit', compact('entGerencia','entFinalizacion'));
+        $datosFiltro =request()->except(['_token','_method']);
+        EntFinalizacion::where('id','=',$id)->update($datosFiltro);
+        $filtro=EntFinalizacion::findOrFail($id);
+     return response()->json($filtro);
+     //return view('entGerencia.edit', compact('filtro'));
     }
 
     /**

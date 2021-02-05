@@ -416,8 +416,8 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
     
         <div class="form-group col-md-2">
-            <label for="aprobacions">Entrevista con gerencia</label>
-            <select type="text" style="width:250px" name="aprobacions" id="aprobacions" placeholder="Aprobacion Gerencia">
+            <label for="resultadoGer">Entrevista con gerencia</label>
+            <select type="text" style="width:250px" name="resultadoGer" id="resultadoGer" placeholder="Aprobacion Gerencia">
                 <option value=>{{ old('resultadoGer', $entFinalizacion->resultadoGer)}}</option>
                 @foreach($aprobaciones as $aprobacions)<option value="{{ $aprobacions->aprobacion}}">
                     {{ $aprobacions->aprobacion }}</option>

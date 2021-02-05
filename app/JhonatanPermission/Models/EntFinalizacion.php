@@ -4,16 +4,16 @@ namespace App\JhonatanPermission\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Types\This;
-use App\Http\Controllers\Entrevista1Controller;
+use App\Http\Controllers\EntFinalizacionController;
 
 
 
 
-class Entrevista1 extends Model
+class EntFinalizacion extends Model
 
 
 {
-    protected $fillable = ['EntFinalizacion'];
+    protected $fillable = ['ent_finalizacions'];
 
 
     public function EntFinalizacion()
