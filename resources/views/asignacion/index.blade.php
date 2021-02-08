@@ -68,8 +68,8 @@
                                 @csrf
                                 @method('DELETE')
                 
-                        <a href="{{url('/asignacion/'.$asignacion->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
-                        <button class="btn btn-warning btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>
+                        <a href="{{url('/asignacion/'.$asignacion->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Asignar</a>
+                     {{--   <button class="btn btn-warning btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
                        </form>
                     </td>
                 </tr>

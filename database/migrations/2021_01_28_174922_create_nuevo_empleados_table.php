@@ -17,7 +17,7 @@ class CreateNuevoEmpleadosTable extends Migration
         Schema::create('nuevo_empleados', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_filtro');
-            $table->string('nombre');
+            $table->string('nombres');
             $table->string('tipoDoc');
             $table->unsignedBigInteger('cedula');
             $table->date('fexpe');
@@ -47,34 +47,10 @@ class CreateNuevoEmpleadosTable extends Migration
             $table->string('Preexistencia');
             $table->string('alergias');
             $table->string('medicamentos');
-            $table->string('tipo_docs1')->nullable();
-            $table->unsignedBigInteger('docfam1')->nullable();
             $table->string('familiarp1')->nullable();
-            $table->string('parentescop1')->nullable();
-            $table->unsignedInteger('edadp1')->nullable();
-            $table->string('epsFam1')->nullable();
-            $table->string('alergias1')->nullable();
-            $table->string('tipo_docs2')->nullable();
-            $table->unsignedBigInteger('docfam2')->nullable();
             $table->string('familiarp2')->nullable();
-            $table->string('parentescop2')->nullable();
-            $table->unsignedInteger('edadp2')->nullable();
-            $table->string('epsFam2')->nullable();
-            $table->string('alergias2')->nullable();
-            $table->string('tipo_docs3')->nullable();
-            $table->unsignedBigInteger('docfam3')->nullable();
             $table->string('familiarp3')->nullable();
-            $table->string('parentescop3')->nullable();
-            $table->unsignedInteger('edadp3')->nullable();
-            $table->string('epsFam3')->nullable();
-            $table->string('alergias3')->nullable();
-            $table->string('tipo_docs4')->nullable();
-            $table->unsignedBigInteger('docfam4')->nullable();
             $table->string('familiarp4')->nullable();
-            $table->string('parentescop4')->nullable();
-            $table->unsignedInteger('edadp4')->nullable();
-            $table->string('epsFam4')->nullable();
-            $table->string('alergias4')->nullable();
             $table->unsignedBigInteger('salario')->nullable();
             $table->date('ingreso');
             $table->string('tipo_contratos');
@@ -94,6 +70,7 @@ class CreateNuevoEmpleadosTable extends Migration
             $table->string('estado');
             $table->string('foco');
             $table->string('campaña');
+            $table->string('usuario');
             $table->timestamps();
         });
     }
