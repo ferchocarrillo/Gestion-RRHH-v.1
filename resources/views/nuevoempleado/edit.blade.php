@@ -78,11 +78,11 @@
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 
             <div class="row">
-                <input type="hidden" id="direccion" name="direccion" value={{old ('TipoVia',$nuevos->TipoVia)}} {{ $nuevos->dr1}} {{ $nuevos->Prefijo1}} # {{ $nuevos->dr2}} {{ $nuevos->Prefijo2}} - {{ $nuevos->dr3}} {{ $nuevos->orientacion}} {{ $nuevos->adicional}} {{ $nuevos->ad1}} {{ $nuevos->adicional2}} {{ $nuevos->ad2}} {{ $nuevos->adicional3}} {{ $nuevos->ad3}}>
+                <input type="hidden" id="direccion" name="direccion" value="{{old ('TipoVia',$nuevos->TipoVia)}} {{ $nuevos->dr1}} {{ $nuevos->Prefijo1}} # {{ $nuevos->dr2}} {{ $nuevos->Prefijo2}} - {{ $nuevos->dr3}} {{ $nuevos->orientacion}} {{ $nuevos->adicional}} {{ $nuevos->ad1}} {{ $nuevos->adicional2}} {{ $nuevos->ad2}} {{ $nuevos->adicional3}} {{ $nuevos->ad3}}">
                 <input type="hidden" id="residencia" name="residencia" value={{ old('residencia', $nuevos->residencia)}} | {{ old('localidad', $nuevos->id_localidad)}}>
                 <input type="hidden" id="lugarNac" name="lugarNac" value={{ old('departamento', $nuevos->departamento)}} | {{old('id_ciudad', $nuevos->id_ciudad) }} | {{ old('fnacimiento', $nuevos->fnacimiento)}}>
                 <input type="hidden" id="edad" name="edad" value={{ old('edad', $nuevos->edad)}}>
-                <input type="text" id="direccion" name="direccion" value={{ $nuevos->TipoVia}} {{ $nuevos->dr1}} {{ $nuevos->Prefijo1}} # {{ $nuevos->dr2}} {{ $nuevos->Prefijo2}} {{ $nuevos->dr3}} {{ $nuevos->orientacion}} {{ $nuevos->adicional}} {{ $nuevos->ad1}} {{ $nuevos->adicional2}} {{ $nuevos->ad2}} {{ $nuevos->adicional3}} {{ $nuevos->ad3}}>
+               
 
 
 
@@ -242,14 +242,7 @@
             @endforeach
     </select>
 </div>
-<div id="supervisor" name="supervisor" class="col-4 col-md"><strong><p>Supervisor:</p></strong>
-    <select name="supervisor" id="supervisor" class="col-4 col-md" required> <label for="supervisor"></label>
-        <option value="">Asigne uno</option>
-            @foreach($supervisores as $supervisor)
-        <option value="{{ $supervisor->supervisor}}">{{ $supervisor->supervisor }}</option>
-            @endforeach
-    </select>
-</div>
+
 </div>
 </div>
 
@@ -360,8 +353,19 @@
 {{ $campana->campana }}</option>
 @endforeach
 </select>
+
 </div>
+<div id="supervisor" name="supervisor" class="col-4 col-md"><strong><p>Supervisor:</p></strong>
+    <select name="supervisor" id="supervisor" class="col-4 col-md" required> <label for="supervisor"></label>
+        <option value="">Asigne uno</option>
+            @foreach($supervisores as $supervisor)
+        <option value="{{ $supervisor->supervisor}}">{{ $supervisor->supervisor }}</option>
+            @endforeach
+    </select>
 </div>
+
+</div>
+<br><br>
 </div>
 
 <div class="form-group">

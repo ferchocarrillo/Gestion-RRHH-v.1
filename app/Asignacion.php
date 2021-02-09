@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Asignacion extends Model
 {
-    protected $table='contratacions';
+    protected $table='asignacions';
+
+    protected $fillable=['_token'];
 }
