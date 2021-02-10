@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Peril extends Model
+class MotivoRetiro extends Model
 {
-    protected $table='cargo';
+    //
 }

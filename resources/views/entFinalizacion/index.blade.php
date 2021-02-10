@@ -40,8 +40,8 @@
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
 
-                                            <th scope="col">Perfil</th>
-                                            <th scope="col">Campaña</th>
+                                            <th scope="col">resultadoGer</th>
+                                            <th scope="col">obsGerencia</th>
 
                                             <th colspan="6">Etapas de la entrevista</th>
                                           </tr>

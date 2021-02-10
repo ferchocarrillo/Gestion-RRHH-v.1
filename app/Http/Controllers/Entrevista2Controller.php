@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Entrevista1;
 use App\entrevista2;
 use App\Filtro;
 use App\reclutamiento;
@@ -72,7 +73,7 @@ class Entrevista2Controller extends Controller
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
         $datosEntrevista=request()->except('_token');
-
+ 
         $request->validate([
             'cedula'          => 'required|unique:entrevista2s,cedula,',
         ]);

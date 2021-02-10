@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class TipoVia extends Model
 {
-    protected $table='tipovia';
+    protected $table='tipo_vias';
 }

@@ -128,7 +128,9 @@ class Entrevista1Controller extends Controller
 
 
         $entrevista1s->save();
+
         return back();
+        return view('entrevista2.index');
     }
 
     /**
@@ -151,6 +153,9 @@ class Entrevista1Controller extends Controller
      */
     public function edit($id)
     {
+        
+        
+        
         $cargoEnt = CargoEnt::all();
         $departamento = Departamentos::all();
         $TipoVias = TipoVia::all();

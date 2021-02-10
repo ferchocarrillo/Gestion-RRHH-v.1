@@ -18,5 +18,14 @@ class TipoDocSeeder extends Seeder
         DB::table('tipo_docs')->insert([     'tipo_doc'=> 'CC',]);
         DB::table('tipo_docs')->insert([     'tipo_doc'=> 'CE',]);
         DB::table('tipo_docs')->insert([     'tipo_doc'=> 'PEP',]);
+        DB::table('tipo_docs')->insert([     'tipo_doc'=> 'RC',]);
+        DB::table('tipo_docs')->insert([     'tipo_doc'=> 'TI',]);
+        DB::table('tipo_docs')->insert([     'tipo_doc'=> 'MS',]);
+        DB::table('tipo_docs')->insert([     'tipo_doc'=> 'AS',]);
+        DB::table('tipo_docs')->insert([     'tipo_doc'=> 'PAS',]);
+
+
+
+
     }
 }

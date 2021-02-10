@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\nivelEdu;
+use App\entrevistaFull;
+use App\JhonatanPermission\Models\EntFinalizacion;
+use App\JhonatanPermission\Models\Entrevista1;
 use Illuminate\Http\Request;
 
-class NivelEduController extends Controller
+class EntrevistaFullController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,11 @@ class NivelEduController extends Controller
      */
     public function index()
     {
-        //
+
+        $finalizated = EntFinalizacion::all();
+        $fulls = Entrevista1::orderBy('created_at', 'desc')->paginate(10);
+        return view('entrevistaFull.index', compact('fulls', 'finalizated'));
+
     }
 
     /**
@@ -41,10 +47,10 @@ class NivelEduController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\nivelEdu  $nivelEdu
+     * @param  \App\entrevistaFull  $entrevistaFull
      * @return \Illuminate\Http\Response
      */
-    public function show(nivelEdu $nivelEdu)
+    public function show(entrevistaFull $entrevistaFull)
     {
         //
     }
@@ -52,10 +58,10 @@ class NivelEduController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\nivelEdu  $nivelEdu
+     * @param  \App\entrevistaFull  $entrevistaFull
      * @return \Illuminate\Http\Response
      */
-    public function edit(nivelEdu $nivelEdu)
+    public function edit(entrevistaFull $entrevistaFull)
     {
         //
     }
@@ -64,10 +70,10 @@ class NivelEduController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\nivelEdu  $nivelEdu
+     * @param  \App\entrevistaFull  $entrevistaFull
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, nivelEdu $nivelEdu)
+    public function update(Request $request, entrevistaFull $entrevistaFull)
     {
         //
     }
@@ -75,10 +81,10 @@ class NivelEduController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\nivelEdu  $nivelEdu
+     * @param  \App\entrevistaFull  $entrevistaFull
      * @return \Illuminate\Http\Response
      */
-    public function destroy(nivelEdu $nivelEdu)
+    public function destroy(entrevistaFull $entrevistaFull)
     {
         //
     }

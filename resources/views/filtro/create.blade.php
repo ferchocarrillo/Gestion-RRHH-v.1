@@ -38,30 +38,14 @@
 
 
             <p>
-            <select name="perfil"  class="form-control" required>
-                <option value="0" selected>Perfil
-                    <option value="Atención al cliente">Atención al cliente
-                        <option value="Ventas telefonía" >Ventas telefonía
-                            <option value="Ventas seguros" >Ventas seguros
-                                <option value="Cobranza" >Cobranza
-                                    <option value="Supervisor" >Supervisor
-                                        <option value="Administrativo" >Administrativo
-                                            <option value="Archivo" >Archivo
-                                                <option value="Servicios generales​" >Servicios generales​
-                                                    <option value="Atención presencial​" >Atención presencial​
-                                                    <option value="Venta presencial" >Venta presencial
-                                                <option value="Ya estuvo en Mentius" >Ya estuvo en Mentius
-                                            <option value="Nacionalidad" >Nacionalidad
-                                        <option value="No experiencia" >No experiencia
-                                    <option value="Contable" >Contable
-                                <option value="SST" >SST
-                            <option value="Backoffice" >Backoffice
-                        <option value="Calidad" >Calidad
-                    <option value="Bienestar" >Bienestar
-                <option value="Contratación" >Contratación
-            <option value="Reclutamiento" >Reclutamiento
-            </select>
-            </p>
+                
+                <select type="text" class="form-control" name="perfil" id="perfil" placeholder="Perfil">
+                    <option value=>Perfiles</option>
+                    @foreach($cargos as $cargo)<option value="{{ $cargo->cargo}}">
+                        {{ $cargo->cargo }}</option>
+                      @endforeach
+                </select>
+         </p>
             <p>
         <select name="campaña"  class="form-control" required>
                 <option value="0" selected>Campaña

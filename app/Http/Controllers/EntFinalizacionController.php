@@ -38,9 +38,9 @@ class EntFinalizacionController extends Controller
      */
     public function index()
     {
+   
+
         $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
-
-
 
         return view('entFinalizacion.index',compact('entrevistas'));
     }
@@ -89,10 +89,13 @@ class EntFinalizacionController extends Controller
              $entFinalizacion->cedula           = $request->cedula;
              $entFinalizacion->nombre           = $request->nombre;
              $entFinalizacion->resultado        = $request->resultado;
+             $entFinalizacion->resultadoGer     = $request->resultadoGer;
+             $entFinalizacion->obsGerencia      = $request->obsGerencia;
+             $entFinalizacion->resultadoJefe    = $request->resultadoJefe;
+             $entFinalizacion->obsjefe          = $request->obsjefe;           
              $entFinalizacion->fechaCont        = $request->fechaCont;
              $entFinalizacion->obsFinales       = $request->obsFinales;
-             $entFinalizacion->resultadoGer     = $request->resultadoGer;
-             $entFinalizacion->resultadoJefe    = $request->resultadoJefe;
+
 
 
         $entFinalizacion->save();

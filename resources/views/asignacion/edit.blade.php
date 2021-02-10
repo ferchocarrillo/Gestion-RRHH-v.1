@@ -15,25 +15,60 @@
                 <!-- Force next columns to break to new line -->
                 <h3 aline="center">Datos Iniciales Colaborador</h3>
             </center>
+
+            <center><p>
+                <div class="p-3 mb-2 bg-info text-white" id ="nombres" name="nombres">
+                  <h3> {{ $contatacion->nombre}}</h3>
+                </div>
+            </p></center>
+
+
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
             <!-- Force next columns to break to new line -->
-            <form name="f1" action="{{ url('/asignacion/'.$asignacion->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+            <form name="f1" action="{{ url('/asignacion')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                 @csrf
-                @method('PATCH')
+                @method('POST')
 
                 <div class="container">
                     <div class="row">
-                    <div id="cedula" name="cedula" class="col-6 col-md-3"><strong><p>Cedula:</p></strong>{{ old('cedula', $asignacion->cedula)}}</div><br>
-                    <div id="nombre" name="nombre" class="col-6 col-md-3"><strong><p>Nombre:</p></strong>{{ old('cedula', $asignacion->nombre)}}</div><br>
-                    <div id="perfil" name="perfil" class="col-6 col-md-3"><strong><p>Perfil:</p></strong>{{ old('perfil', $asignacion->perfil)}}</div><br>
-                    <div id="campaña" name="campaña" class="col-6 col-md-3"><strong><p>Campaña:</p></strong>{{ old('campaña', $asignacion->campaña)}}</div>
+<input type="hidden" id="id_filtro" name="id_filtro" value="{{$contatacion->id_filtro}}">
+<input type="hidden" id="cedula" name="cedula" value="{{ old('cedula', $contatacion->cedula)}}">
+<input type="hidden" id="nombre" name="nombre" value="{{ old('nombre', $contatacion->nombre)}}">
+<input type="hidden" id="ingreso" name="ingreso" value="{{ old('ingreso', $newEmployes->ingreso)}}">
+<input type="hidden" id="campaña" name="campaña" value="{{ old('campaña', $newEmployes->campana)}}">
+<input type="hidden" id="estado" name="estado" value="{{ old('estado', $newEmployes->estado)}}">
+
+
+
+                    <div class="col-6 col-md-3"><strong><p>Cedula:</p></strong>{{ old('cedula', $contatacion->cedula)}}</div><br>
+                    <div class="col-6 col-md-3"><strong><p>Nombre:</p></strong>{{ old('cedula', $contatacion->nombre)}}</div><br>
+                    <div id="perfil" name="perfil" class="col-6 col-md-3"><strong><p>Perfil:</p></strong>{{ old('perfil', $contatacion->perfil)}}</div><br>
+                    <div class="col-6 col-md-3"><strong><p>Campaña:</p></strong>{{ old('campaña', $newEmployes->campana)}}</div>
                 </div>
                 <br><br>
                 <div class="row">
-                
-                
-            
-                <div id="cargo" name="cargo"  class="col-6 col-md-4"><strong><p>Cargo:</p></strong><select name="cargo" id="cargo">
+
+                                <div id="foco" name="foco" class="col-6 col-md-4"><strong><p>Foco</p></strong>
+                                <select name="foco" id="foco" class="form-control" required>
+                <option value="">Foco</option>
+                @foreach ($focos as $foco)
+                <option value="{{ $foco->foco }}">{{ $foco->foco }}</option>
+                @endforeach
+                </select>
+                </div>
+
+                <div id="jinmedato" name="jinmedato" class="col-6 col-md-4"><strong><p>Jefe Inmediato</p></strong>
+                    <select name="jinmedato" id="jinmedato" class="form-control" required>
+                    <option value="">Coordinador</option>    
+                    @foreach ($cordinadores as $coordinador)
+                    <option value="{{$coordinador->supervisor}}">{{$coordinador->supervisor}}</option>
+                        
+                    @endforeach
+                    
+                    </select></div>
+
+                <div id="cargo" name="cargo"  class="col-6 col-md-4"><strong><p>Cargo:</p></strong>
+                    <select name="cargo" id="cargo" class="form-control" required>
                     <option value=""> Seleccione un cargo</option>
                     @foreach ($cargos as $cargo)
                     <option value="{{ $cargo->cargo}}">{{ $cargo->cargo }}</option>        
@@ -41,56 +76,41 @@
             </select></div>
 
             <div class="col">
-                <label for="dependencia"><strong><p>Dependencia:</p></strong></label>
-                <select name="dependencia"  id="dependencia" class="col-6 col-md-12" required>
 
-                    <option value="">Dependencias</option>
-                    @foreach ($dependencias as $dependencia)
-                    <option value="{{ $dependencia->dependencia}}">{{ $dependencia->dependencia }}</option>
-                    @endforeach
-
-                </select>
+                <div class="col-xs-4"><strong><p>Dependencia:</p></strong>
+                    <select name="dependencia"  id="dependencia" class="form-control" required>
+                        <option value="">Dependencias</option>
+                        @foreach ($dependencias as $dependencia)
+                        <option value="{{ $dependencia->dependencia}}">{{ $dependencia->dependencia }}</option>
+                        @endforeach
+                    </select>
+                    </div>
                 </div>
+               <div class="col">
+                <div class="col-sm-8"> <strong><p>Area:</p></strong>
+                    <select name="id_area" id="id_area" class="form-control" placeholder="Area" required> </select>
+                </div>
+                </div>
+            <br><br><br><br>
 
-<div class="col">
-    <label for="id_area"><strong><p>Area:</p></strong></label>
-<select name="id_area" id="id_area" class="col-6 col-md-12" placeholder="Area" required> </select>
-</select>
-</div>
-            
-        
-            <br>
-            <br>
-            <br>
-            <br>
 
-        
     </div>
-
-
-           {{--     <div class="row">
-
-                
-                <input class="btn btn-primary btn-lg active" type="submit" value="Registrar">
-                &nbsp;&nbsp;&nbsp;
-               <a href="{{route('documento.index')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
-            </div>
-              --}}
-    
-        </div>
-
-</div>
-</div>
-</div>
+    <div class="row">
+    <textarea name="observaciones" id="observaciones" class="form-control" rows="3" placeholder="Observaciones de ingreso"></textarea>
+</div>     
 <br>
-            <br>
-            <br>
-            <br>
-
+    <div class="row">
+                <input class="btn btn-primary btn-lg active" type="submit" value="Asignar">
+                &nbsp;&nbsp;&nbsp;
+               <a href="{{route('asignacion.index')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
+            </div>
+        </div>
 </div>
-
+</div>
+</div>
+<br><br><br><br>
+</div>
 </form>
-
                   <!-- Bootstrap CSS-->
                   <link href="{{ asset('theme/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
                   <!-- Bootstrap JS-->
@@ -106,8 +126,8 @@
                           @section('js')
                   <script>
                   Swal.fire(
-                    'REQUISICIONES',
-                    'Recuerden realizar sus requisiciónes de personal con MINIMO 5 DIAS DE ANTICIPACIÓN,  a la fecha de inicio de labores solicitada',
+                    'ASIGNACIONES',
+                    'Aqui podra asignar varias de las instancias del asesor dentro de la operacion, esta operacion no tiene limite de cambios.',
                     'success'
                   )
                   </script>
