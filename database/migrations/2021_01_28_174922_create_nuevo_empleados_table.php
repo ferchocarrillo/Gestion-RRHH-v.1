@@ -70,6 +70,7 @@ class CreateNuevoEmpleadosTable extends Migration
             $table->string('estado');
             $table->string('foco');
             $table->string('campaña');
+            $table->string('fuente');
             $table->string('usuario');
             $table->timestamps();
         });

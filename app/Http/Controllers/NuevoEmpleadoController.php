@@ -63,69 +63,69 @@ class NuevoEmpleadoController extends Controller
             $familiarp1 = $request->get('familiarp1');
             $parentescop1 = $request->get('parentescop1');
             $edadp1 = $request->get('edadp1');
-            $epsFam1 = $request->get('epsFam1');           
+            $epsFam1 = $request->get('epsFam1');
             $caja1 = $request->get('caja1');
-            
+
             $tipo_docs2 = $request->get('tipo_docs2');
             $docfam2 = $request->get('docfam2');
             $familiarp2 = $request->get('familiarp2');
             $parentescop2 = $request->get('parentescop2');
             $edadp2 = $request->get('edadp2');
-            $epsFam2 = $request->get('epsFam2');           
+            $epsFam2 = $request->get('epsFam2');
             $caja2 = $request->get('caja2');
-    
+
             $tipo_docs3 = $request->get('tipo_docs3');
             $docfam3 = $request->get('docfam3');
             $familiarp3 = $request->get('familiarp3');
             $parentescop3 = $request->get('parentescop3');
             $edadp3 = $request->get('edadp3');
-            $epsFam3 = $request->get('epsFam3');           
+            $epsFam3 = $request->get('epsFam3');
             $caja3 = $request->get('caja3');
-    
+
             $tipo_docs4 = $request->get('tipo_docs4');
             $docfam4 = $request->get('docfam4');
             $familiarp4 = $request->get('familiarp4');
             $parentescop4 = $request->get('parentescop4');
             $edadp4 = $request->get('edadp4');
-            $epsFam4 = $request->get('epsFam4');           
+            $epsFam4 = $request->get('epsFam4');
             $caja4 = $request->get('caja4');
-           
-           
-            
+
+
+
             $user_id = Auth::user()->id;
             $user_nombre = Auth::user()->name;
-    
+
             $datosFiltro=request()->except('_token');
-    
+
             if($request->hasFile('Foto')){
                 $datosFiltro['Foto']=$request->file('Foto')->store('uploads','public');
             }
            /* $request->validate([
                 'cedula'          => 'required|unique:nuevoempleado,cedula,',
-    
-    
+
+
             ]);*/
-    
+
             $nuevo = new nuevoEmpleado();
-    
+
             $nuevo->id_filtro              = $request->id_filtro;
-            $nuevo->nombre                 = $request->nombre;          
-            $nuevo->tipoDoc                = $request->tipoDoc;          
-            $nuevo->cedula                 = $request->cedula;            
+            $nuevo->nombres                 = $request->nombre;
+            $nuevo->tipoDoc                = $request->tipoDoc;
+            $nuevo->cedula                 = $request->cedula;
             $nuevo->fexpe                  = $request->fexpe;
-            $nuevo->departamento           = $request->departamento;
+            $nuevo->depNac                 = $request->depNac;
             $nuevo->id_ciudad              = $request->id_ciudad;
             $nuevo->correo                 = $request->correo;
             $nuevo->tCelular               = $request->tCelular;
-            $nuevo->tFijo                  = $request->tFijo;   
-            $nuevo->eCivil                 = $request->eCivil;            
-            $nuevo->direccion              = $request->direccion;                   
+            $nuevo->tFijo                  = $request->tFijo;
+            $nuevo->eCivil                 = $request->eCivil;
+            $nuevo->direccion              = $request->direccion;
             $nuevo->residencia             = $request->residencia;
-            $nuevo->lugarNac               = $request->lugarNac; 
-            $nuevo->edad                   = $request->edad;            
-            $nuevo->genero                 = $request->genero;            
+            $nuevo->lugarNac               = $request->lugarNac;
+            $nuevo->edad                   = $request->edad;
+            $nuevo->genero                 = $request->genero;
             $nuevo->rh                     = $request->rh;
-            $nuevo->nivelEdu               = $request->nivelEdu;            
+            $nuevo->nivelEdu               = $request->nivelEdu;
             $nuevo->cargo                  = $request->cargo;
             $nuevo->corporativo            = $request->corporativo;
             $nuevo->personaContacto        = $request->personaContacto;
@@ -145,27 +145,27 @@ class NuevoEmpleadoController extends Controller
             $nuevo->familiarp4             = $request->$tipo_docs4. ',' .$docfam4. ',' .$familiarp4. ',' .$parentescop4. ',' .$edadp4. ','.$epsFam4. ',' .$caja4 ;
             $nuevo->salario                = $request->salario;
             $nuevo->ingreso                = $request->ingreso;
-            $nuevo->tipo_contratos         = $request->tipo_contratos;   
-            $nuevo->supervisor             = $request->supervisor;            
-            $nuevo->sede                   = $request->sede;            
-            $nuevo->modalidad              = $request->modalidad;           
+            $nuevo->tipo_contratos         = $request->tipo_contratos;
+            $nuevo->supervisor             = $request->supervisor;
+            $nuevo->sede                   = $request->sede;
+            $nuevo->modalidad              = $request->modalidad;
             $nuevo->tipoModalidad          = $request->tipoModalidad;
             $nuevo->cesantias              = $request->cesantias;
             $nuevo->pensiones              = $request->pensiones;
             $nuevo->eps                    = $request->eps;
             $nuevo->cajaComp               = $request->cajaComp;
-            $nuevo->ips                    = $request->ips;            
+            $nuevo->ips                    = $request->ips;
             $nuevo->arl                    = $request->arl;
             $nuevo->Tcuenta                = $request->Tcuenta;
             $nuevo->nCuenta                = $request->nCuenta;
             $nuevo->bancos                 = $request->bancos;
             $nuevo->estado                 = $request->estado;
             $nuevo->foco                   = $request->foco;
-            $nuevo->campana                = $request->campana;
-            $nuevo->fuente                = $request->fuente;
+            $nuevo->campaña                = $request->campana;
+            $nuevo->fuente                 = $request->fuente;
             $nuevo->usuario                = $user_id.','.$user_nombre;
-    
-    
+
+
             $nuevo->save();
 
                //return response()->json($nuevo);
@@ -198,15 +198,15 @@ class NuevoEmpleadoController extends Controller
         $familiarp1 = $request->get('familiarp1');
         $parentescop1 = $request->get('parentescop1');
         $edadp1 = $request->get('edadp1');
-        $epsFam1 = $request->get('epsFam1');           
+        $epsFam1 = $request->get('epsFam1');
         $caja1 = $request->get('caja1');
-        
+
         $tipo_docs2 = $request->tipo_docs2;
         $docfam2 = $request->docfam2;
         $familiarp2 = $request->familiarp2;
         $parentescop2 = $request->parentescop2;
         $edadp2 = $request->edadp2;
-        $epsFam2 = $request->epsFam2;           
+        $epsFam2 = $request->epsFam2;
         $caja2 = $request->caja2;
 
         $tipo_docs3 = $request->tipo_docs3;
@@ -214,7 +214,7 @@ class NuevoEmpleadoController extends Controller
         $familiarp3 = $request->familiarp3;
         $parentescop3 = $request->parentescop3;
         $edadp3 = $request->edadp3;
-        $epsFam3 = $request->epsFam3;           
+        $epsFam3 = $request->epsFam3;
         $caja3 = $request->caja3;
 
         $tipo_docs4 = $request->tipo_docs4;
@@ -222,7 +222,7 @@ class NuevoEmpleadoController extends Controller
         $familiarp4 = $request->familiarp4;
         $parentescop4 = $request->parentescop4;
         $edadp4 = $request->edadp4;
-        $epsFam4 = $request->epsFam4;           
+        $epsFam4 = $request->epsFam4;
         $caja4 = $request->caja4;
 
         $filtro = Filtro::findOrFail($id_filtro);
@@ -248,7 +248,7 @@ class NuevoEmpleadoController extends Controller
 
        // return response()->json($nuevo);
         return view('nuevoempleado.edit', compact( 'nuevo','contratacion','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','nuevo2','parentescos','NivelEdus','nuevos','filtro','focos','campanas', 'departamento'));
-        
+
     }
 
     /**

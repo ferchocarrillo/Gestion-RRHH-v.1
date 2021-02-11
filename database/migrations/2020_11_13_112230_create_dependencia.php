@@ -17,6 +17,7 @@ class CreateDependencia extends Migration
         Schema::create('dependencia', function (Blueprint $table) {
             $table->increments('id');
             $table->string('dependencia');
+
         });
     }
 
