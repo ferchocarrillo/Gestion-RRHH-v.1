@@ -22,57 +22,6 @@
                             <div class="card">
                                 <div class="card-body">
 <div class="row">
-                                    
-                                    <br>
-                                    <p align="right">
-                                        <div class="col-md-6">
-                                    <form action="/searchNovedades" method="GET">
-                                    <div class="input-group">
-                            <input type="searchNovedades" name="searchNovedades" class="form-control">
-                            <span class="input-group-prepend">
-                                <button type="submit" class="btn btn-primary">Buscar por Cedula</button>
-                                </span>
-                            </div>
-                        </form>
-                    </div>
-                    </p>
-                    <br>
-                                    <p align="right">
-                                        <div class="col-md-6">
-                                    <form action="/searchCoord" method="GET">
-                                    <div class="input-group">
-                            <input type="searchCoord" name="searchCoord" class="form-control">
-                            <span class="input-group-prepend">
-                                <button type="submit" class="btn btn-primary">Buscar por Jefe inmediato</button>
-                                </span>
-                            </div>
-                        </form>
-                    </div>
-                    </p>
-
-                </div>
-
-
-                    
-                    
-                    
-                {{--    <h6>Total de Novedades:  {{ $novedadess->total() }}</h6>
-                    @foreach ($countRequises as $countRequis)
-                    <h6>Cantidad de Aprobados:   {{ $countRequis }}</h6>
-                    @endforeach
-                    @foreach ($countRequi2ses as $countRequi2s)
-                    <h6>Cantidad de Rechazados:   {{ $countRequi2s }}</h6>
-                    @endforeach
-                    @foreach ($countRequi3ses as $countRequi3s)
-                    <h6>Cantidad de Pendientes:   {{ $countRequi3s }}</h6>
-                    @endforeach
-                    @foreach ($countRequi4ses as $countRequi4s)
-                    <h6>Cantidad de sin Gestion:   {{ $countRequi4s }}</h6>
-                    @endforeach
-                    --}}
-                    
-                    
-                    
                                     <div class="card-body">
                                  @include('custom.message')
                     
@@ -82,13 +31,14 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Cedula</th>
                                                 <th scope="col">Nombres</th>
-                                                <th scope="col">Fecha</th>
+                                                <th scope="col">Fecha Ingreso</th>
                                                 <th scope="col">Campaña</th>
                                                 <th scope="col">Area</th>
                                                 <th scope="col">Cargo</th>
+                                                <th scope="col">Foco</th>
                                                 <th scope="col">Jefe inmediato</th>
                                                 <th scope="col">Novedades</th>
-                                                <th scope="col">Observaciones</th>
+
                                                 <th colspan="3"></th>
                                               </tr>
                                             </thead>
@@ -101,13 +51,14 @@
                                                     <th scope="row">{{ $novedades->id}}</th>
                                                     <td>{{ $novedades->cedula}}</td>
                                                     <td>{{ $novedades->nombres}}</td>
-                                                    <td>{{ $novedades->fecha}}</td>
+                                                    <td>{{ $novedades->ingreso}}</td>
                                                     <td>{{ $novedades->campaña}}</td>
-                                                    <td>{{ $novedades->area}}</td>
+                                                    <td>{{ $novedades->id_area}}</td>
                                                     <td>{{ $novedades->cargo}}</td>
-                                                    <td>{{ $novedades->jinmediato}}</td>
+                                                    <td>{{ $novedades->foco}}</td>
+                                                    <td>{{ $novedades->jinmedato}}</td>
                                                     <td>{{ $novedades->novedad}}</td>
-                                                    <td>{{ $novedades->observaciones}}</td>
+                                                
                     
                                                     <td>
                                                         <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
@@ -151,9 +102,12 @@
                             </div>
                         </div>
                     </div>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                     <p>
                         clic <a href="{{route('requisicion.excel')}}">Aqui</a>
-                        para descargar en Excel la base de requisicion
+                        para descargar en Excel la base de novedades
                         </p>
                     <script src="{{asset('js/app.js')}}"></script>
                                   </body>

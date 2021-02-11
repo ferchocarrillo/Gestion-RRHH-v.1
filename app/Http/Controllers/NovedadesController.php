@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Asignacion;
 use App\Novedades;
 use Illuminate\Http\Request;
 use App\Contratacion;
+use Dotenv\Result\Success;
+
 
 class NovedadesController extends Controller
 {
@@ -16,30 +19,30 @@ class NovedadesController extends Controller
     public function index()
     {
         
-        $activos = Contratacion::orderBy('nombre', 'asc')->paginate(10);
+        $activos = Asignacion::orderBy('created_at', 'desc')->paginate(10);
         return view('novedades.index',compact('activos'));
     }
+
+
+
+
 
     public function searchNovedades( Request $request)
 
     {   
-        $activos = Contratacion::all();
+        $activos = Asignacion::all();
 
         $searchNovedades = $request->get('searchNovedades');
-        $activos= Contratacion::firstOrNew()->where('cedula', 'like', '%'.$searchNovedades.'%')->paginate(5);
-        return view('novedades.index', ['cedula' => $activos]);
+        $activos= Asignacion::firstOrNew()->where('cedula', 'like', '%'.$searchNovedades.'%')->paginate(30);
+        $novedades = Novedades::where('Id_filtro', '=', $activos->id)->get();
+
+        return Asignacion::make('otra.novedad')
+        ->with('asignacion', $activos)
+        ->with('novedades', $novedades);
     }
 
 
-    public function searchCoord( Request $request)
 
-    {   
-        $activos = Contratacion::all();
-
-        $searchCoord = $request->get('searchCoord');
-        $activos= Contratacion::firstOrNew()->where('jinmediato', 'like', '%'.$searchCoord.'%')->paginate(5);
-        return view('novedades.index', ['cedula' => $activos]);
-    }
     /**
      * Show the form for creating a new resource.
      *

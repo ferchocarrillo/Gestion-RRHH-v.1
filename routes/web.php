@@ -102,6 +102,8 @@ Route::resource('entrevistaFull',   EntrevistaFullController::class);
 
 
 
+
+
 Route::get('/', 'PaginaController@inicio')->name('inicio');
 
 
