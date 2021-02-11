@@ -35,7 +35,7 @@ class CreateNuevoEmpleadosTable extends Migration
             $table->string('rh');
             $table->string('nivelEdu');
             $table->string('cargo');
-            $table->string('corporativo');
+            $table->boolean('corporativo');
             $table->string('personaContacto');
             $table->string('parentesco');
             $table->string('personaDireccion');
