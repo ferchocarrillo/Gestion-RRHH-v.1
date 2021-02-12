@@ -6,7 +6,9 @@ use App\Asignacion;
 use App\Novedades;
 use Illuminate\Http\Request;
 use App\Contratacion;
+use App\Filtro;
 use Dotenv\Result\Success;
+use App\TipoNovedad;
 
 
 class NovedadesController extends Controller
@@ -84,9 +86,16 @@ class NovedadesController extends Controller
      * @param  \App\Novedades  $novedades
      * @return \Illuminate\Http\Response
      */
-    public function edit(Novedades $novedades)
+    public function edit($id_filtro)
     {
-        //
+        
+        $asignacion = Asignacion::findOrFail($id_filtro);
+        $tipoNovedades = TipoNovedad::all();
+
+
+
+
+        return view('novedades.edit',compact('asignacion','tipoNovedades'));
     }
 
     /**

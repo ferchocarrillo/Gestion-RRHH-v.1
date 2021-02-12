@@ -1,12 +1,17 @@
 @extends('adminlte::page')
-
+<link rel="stylesheet" href="{{asset('css/app.css')}}">
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
-                <div class="card-header"><h2>Creacion de Cargos</h2></div>
+             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                    <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+                   {{-- <h3 aline="center" style="color:#DDE8EA">Formulario de Requisiciones</h3>--}}
+                </center>
 
+            <div class="card" style="background-image: linear-gradient(#1d4862, #1d4862);color:white;">
+                <div class="card-header" ><h2 ><strong>Creacion de Cargos</strong></h2></div>
+               
                 <div class="card-body">
                    @include('custom.message')
 
@@ -17,7 +22,7 @@
 
                      <div class="container">
 
-                        <h3>Datos requeridos</h3>
+                        <div class="card-title" ><h3 style="color:white;"><strong>Datos requeridos</strong></h3></div>
 
                          <div class="form-group">
                             <input type="text" class="form-control"

@@ -1,10 +1,11 @@
 @extends('adminlte::page')
 @section('content')
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
 <div class="container" >
     <div class="pull-right">
         <div class="col-md-20" >
-            <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);"">
+            
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
     <link rel="shortcut icon" href="home">
@@ -12,11 +13,18 @@
 
 
 <body style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-  
+  <div class="card-header">
     <center>
-    <img src="\theme\images\isotipo-slogan.png"  align= "center" height="70" width="200">
-   <h1 align= "center">Estadisticas y Graficos de Gestion RR.HH</h1>
-</center>
+    <img src="\theme\images\isotipo-slogan.png"  align= "center" height="150" width="400">
+    <br><br>
+
+
+
+
+   <h1  align= "center"> 
+    Estadisticas y Graficos de Gestion RR.HH
+ </h1>
+</center></div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 </body>
     <div class="row">

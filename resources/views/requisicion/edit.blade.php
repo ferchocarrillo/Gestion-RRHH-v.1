@@ -5,11 +5,16 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="70" width="150">
+<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+    <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+  
+</center>
+
+
 <center>
 
 
-<div class="page-header">
+<div class="card-header">
       <h3>Editor de Gestion Requisicion</h3>
 </div>
 </center>
@@ -20,7 +25,8 @@
 
 
 
-
+<div class="container">
+    <div class="card">
 
     <div class="form-row">
    <div class="col-3">
@@ -138,8 +144,9 @@
          </div>
         </div>
 <div class="card" >
-    <div>
-        <label for="revisado">Exclusivo Area RR.HH</label>
+    <div class="card-header" >
+    <center> <h4 for="revisado">Exclusivo Area RR.HH</h4></center>
+    </div>
         <select name=revisado onchange="cambia_estadorevisado()" class="form-control">
 
         <option value="0" selected>Seleccione...
@@ -155,7 +162,10 @@
         </div>
     </div>
 </div>
-<h6>Perfil Oculto</h6>
+
+<div class="card-header">
+<center><h4>Perfil Oculto</h4></center>
+</div>
 <div class="card-body">
     <div class="form-row">
  <div class="col-6">
@@ -233,20 +243,21 @@
     <input type="text" class="form-control" name="nacionalidad" id="nacionalidad">
     </div>
 </div>
-
+<br><br>
+<input class="btn btn-lg btn-primary btn-lg" type="submit" value="EDITAR">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{route('requisicion.index')}}" class="btn btn-danger btn-lg" role="button" aria-pressed="true">VOLVER</a>
 
 
 </div>
 </div>
 
-
+</div>
+</div>
 <br>
 
 
-    <input class="btn btn-lg btn-primary" type="submit" value="EDITAR">
-
-    <a href="{{route('requisicion.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a>
-
+  
     </form>
 
 

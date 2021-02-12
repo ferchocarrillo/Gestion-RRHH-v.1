@@ -238,6 +238,7 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
+  
 }
 
 button {
@@ -258,6 +259,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+
 }
 
 button,
@@ -4959,6 +4961,7 @@ input[type=button].btn-block {
   min-width: 0;
   word-wrap: break-word;
   background-color: rgb(231, 240, 236);
+  background-image: linear-gradient(#EAF2F8, #AAB7B8);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -4988,6 +4991,9 @@ input[type=button].btn-block {
 
 .card-title {
   margin-bottom: 0.75rem;
+  min-height: 1px;
+  padding: 1.25rem;
+ color:var(--gray-dark);
 }
 
 .card-subtitle {
@@ -5011,7 +5017,18 @@ input[type=button].btn-block {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
+  background-image: linear-gradient(#EAF2F8, #AAB7B8);
+  color:rgba(16, 202, 235, 0.925);
+  -webkit-text-fill-color: rgba(16, 202, 235, 0.925);
+  -webkit-text-stroke: 1.2px black;text-shadow:  10px 3px 8px #436880;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+------
+
+
+
+  
+
+  
 }
 
 .card-header:first-child {
@@ -10877,5 +10894,10 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+
+  .conteiner-foto .form-control{
+  color: yellow;
+}
+
 }
 

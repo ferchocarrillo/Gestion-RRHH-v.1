@@ -1,24 +1,30 @@
 @extends('adminlte::page')
 @section('content')
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="{{ asset('js/app.js') }}" defer></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-                    <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "center" height="70" width="150">
-                </body>
-
+<div class="container">
+    <div class="pull-right">
+        <div class="col-md-12">
+            <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+            </body>
+            <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+               {{-- <h3 aline="center" style="color:#DDE8EA">Formulario de Requisiciones</h3>--}}
+            </center>
 
 
 <form name="f1" action="{{ url('/filtro')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
 
-        <div class="panel panel-default">
-            <div class="card text-center">
-                <h1 align= "center" >Registro Inicial de Hojas de Vida</h1>
+
+                      <div class="panel panel-default" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <h2 aline="center" style="color:#EAF2F8"> Registro Inicial de Hojas de Vida</h2>
+                              </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="card">
+                            <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                                 <div class="card-body">
             <p>
                 <input type="date" id ="fregistro" name="fregistro" class="form-control" placeholder="fecha de registro" required>
@@ -78,17 +84,17 @@
      </div>
 </div>
 <div class="col-sm-6">
-<div class="card">
+<div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <div class="card-body">
-<p>
+
     <div class="card-header">
-        Primer Filtro
+      <p><i><span style="font-family:Verdana;font-size:7mm;color:#EAF2F8;"><strong >  PRIMER FILTRO</strong></span></i></p>
     </div>
 </p>
 <fieldset class="form-group">
     <div class="row">
         <div class="col-sm-12">
-          <div class="card">
+          <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="card-body">
 
       <div style="width:200px">
@@ -181,7 +187,7 @@
                            <div>
                        </div>
                    </div>
-               <div>
+               <div  class="card-header" style="font-size: 8mm" >
                                     <label for="observacion">Observaciones</label>
                                      <textarea class="form-control" id="observacion" name="observacion" rows="3"></textarea>
                             </div>
@@ -200,11 +206,12 @@
 </fieldset>
 
 <div class="form-row">
-    <button type="submit" class="btn btn-primary btn-sm">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary btn-lg">
         <i class="fa fa-dot-circle-o"></i>REGISTRAR
     </button>
-
-    <a href="{{route('filtro.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Volver</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{{route('filtro.index')}}" class="btn btn-danger btn-lg" role="button" aria-pressed="true">Volver</a>
 
 </div>
 </form>

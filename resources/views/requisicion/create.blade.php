@@ -8,7 +8,7 @@
             </body>
             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                 <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
-               {{-- <h3 aline="center" style="color:#DDE8EA">Formulario de Requisiciones</h3>--}}
+              
             </center>
 
            
@@ -16,10 +16,10 @@
                 <form name="f1" action="{{ url('/requisicion')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
-                        <div class="panel panel-default" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-                        <div class="card text-center">
-                            <div class="card-header"style= "background-image: linear-gradient(#1d4862, #1d4862);">
-                                <h2 aline="center" style="color:#EAF2F8"> Datos de la Requisición</h2>
+                        <div class="panel panel-default" div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                        <div class="card-header" aline="center" >
+                            <div class="card text-center">
+                                <h2 > Datos de la Requisición</h2>
                               </div>
                     <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                         <div class="card-body">
@@ -72,7 +72,7 @@
 
 <div class="panel panel-default">
     <div class="card text-center">
-        <div class="card-header" style= "background-image: linear-gradient(#1d4862, #1d4862);">
+        <div class="card-header">
            <h3 style="color:#EAF2F8">
                 Motivo de la Requisición</h3>
           </div>

@@ -1,23 +1,27 @@
 @extends('adminlte::page')
 @section('content')
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
-<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-<script src="{{ asset('js/app.js') }}" defer></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "center" height="70" width="150">
-</body>
-      <h1 align= "center" >Formulario de Publicaciones</h1>
+<div class="container">
+    <div class="pull-right">
+        <div class="col-md-12">
+            <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+            </body>
+            <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+               {{-- <h3 aline="center" style="color:#DDE8EA">Formulario de Requisiciones</h3>--}}
+            </center>
+
+       <div class="card-header">    
+      <h3 align= "center" >DATOS DE LA PUBLICACION</h3></div>
       <form name="f1" action="{{ url('/reclutamiento')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
           {{csrf_field()}}
           <form>
               <div class="panel panel-default">
               <div class="card text-center">
-                  <div class="card-header">
-                      Datos de la Publicación
-                    </div>
+                  
                     <div class="row">
                       <div class="col-sm-6">
-                        <div class="card">
+                        <div class="card" >
                           <div class="card-body">
 
 <p>
@@ -49,22 +53,32 @@
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="card">
+        <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);" >
           <div class="card-body">
-<p>
+      
+
+
+<div class="row">
+            <p>
     <label for="finicio" class="text-left" >Fecha de inicio</label>
     <input type="date" id ="finicio" name="finicio" class="form-control" placeholder="Fecha de inicio" required>
 </p>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <p>
-            <input type="text" id ="tiempo" name="tiempo" class="form-control" placeholder="Tiempo de Vigencia" required>
+              <label for="tiempo" class="text-left" >Tiempo de vigencia</label><input type="text" id ="tiempo" name="tiempo" class="form-control" placeholder="" required>
         </p>
-        <label for="finicio" class="text-left" >Foto</label>
-               <input type="file" class="form-control" name="Foto" id "Foto" value="" required>
+      </div>
+
+        <div class="conteiner-foto">
+     
+        <label for="foto" class="text-left">Foto</label>
+        <input type="file" class="form-control" name="Foto" id "Foto" value=""  required>
             </div>
-            <label for="publicacion" class="col-form-label col-sm-12 pt-0" >Fuentes de Publicacion</label>
+            <label for="publicacion" class="col-form-label col-sm-12 pt-0" style= "background-image: linear-gradient(#1d4862, #1d4862);color:white;" >Fuentes de Publicacion</label>
       <div class="row">
         <div class="col-sm-6">
-          <div class="card">
+          <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="card-body">
 
       <div style="width:100px">
@@ -129,7 +143,7 @@
     </div>
 </div>
 <div class="col-sm-6">
-    <div class="card">
+    <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
       <div class="card-body">
 <div style="width:100px">
         <tr valign="bottom">
@@ -199,14 +213,19 @@
     </div>
     </div>
     </div>
-    <div class="form-row">
-                <button type="submit" class="btn btn-primary btn-sm">
+    <center><div class="form-row">
+      &nbsp;&nbsp;&nbsp;&nbsp;
+
+      <button type="submit" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i>REGISTRAR
                 </button>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
                 <a href=({{ route('reclutamiento.create')}})><button type="reset"  class="btn btn-danger btn-sm">
                     <i class="fa fa-ban"></i> VOLVER
                 </button></a>
     </div>
+  </center>
  </form>
 
 
