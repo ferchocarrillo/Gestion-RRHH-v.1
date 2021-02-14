@@ -23,7 +23,7 @@ class AsignacionController extends Controller
     public function index()
     {
         $asignaciones = Contratacion::orderby('id', 'asc')->where('estado','=','activo')->paginate(10);
-        $contatacion= Contratacion::all();   
+        $contatacion= Contratacion::all();
         return view('asignacion.index',compact('asignaciones','contatacion'));
     }
 
@@ -34,12 +34,12 @@ class AsignacionController extends Controller
      */
     public function create($id)
     {
-        
+
         $filtros = Filtro::all();
         $cargos = Cargo::all();
         $newEmployes = nuevoEmpleado::all();
         return view('asignacion.index', compact('newEmployes','cargos','filtros','contatacion'));
-    
+
     }
 
     /**
@@ -70,9 +70,9 @@ class AsignacionController extends Controller
         $asignaciones->ingreso               = $request->ingreso;
         $asignaciones->cargo                 = $request->cargo;
         $asignaciones->dependencia           = $request->dependencia;
-        $asignaciones->id_area               = $request->id_area;     
-        $asignaciones->campaña               = $request->campaña;         
-        $asignaciones->foco                  = $request->foco;          
+        $asignaciones->id_area               = $request->id_area;
+        $asignaciones->campaña               = $request->campaña;
+        $asignaciones->foco                  = $request->foco;
         $asignaciones->jinmedato             = $request->jinmedato;
         $asignaciones->observaciones         = $request->observaciones;
         $asignaciones->estado                = $request->estado;
@@ -100,9 +100,9 @@ class AsignacionController extends Controller
      */
     public function edit($id)
     {
-        
+
         $this->authorize('haveaccess','asignacion.edit');
-        $contatacion= Contratacion::all();
+        $contatacion= Contratacion::findOrFail($id);
         $asignaciones = Asignacion::all();
         $cordinadores = Supervisor::all();
         $focos = Foco::all();
@@ -112,7 +112,7 @@ class AsignacionController extends Controller
         $asignaciones = Asignacion::all();
        return view('asignacion.edit', compact('newEmployes','asignaciones','cordinadores','focos','contatacion','cargos','dependencias'));
       // return response()->json($asignaciones);
-        
+
     }
 
     /**
