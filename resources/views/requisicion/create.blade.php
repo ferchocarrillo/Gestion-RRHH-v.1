@@ -8,10 +8,10 @@
             </body>
             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                 <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
-              
+
             </center>
 
-           
+
 
                 <form name="f1" action="{{ url('/requisicion')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
@@ -26,12 +26,18 @@
                             <div class="form-row">
                                 <div class="col-4">
 
-                            <select name="cargo" id="cargo" class="form-control"  required>
+<main>
+                                    <input list="cargo" class="form-control" placeholder="Cargo" required />
+                                    <datalist name="cargo" id="cargo">
+
+
                             <option value="">Cargo</option>
                             @foreach($cargo as $cargos)
                                 <option value="{{ $cargos->cargo}}">{{ $cargos->cargo }}</option>
                             @endforeach
-                         </select>
+
+                        </datalist>
+
                     </div>
 
                         <div class="col">
@@ -39,12 +45,16 @@
                     </div>
 
     <div class="col">
-                        <select name="sede" id="sede" class="form-control"  required>
+
+        <input list="sede" class="form-control" placeholder="Sede" required />
+        <datalist name="sede" id="sede" >
+
+
                            <option value="">Sede</option>
                            @foreach($sede as $sedes)
                                <option value="{{ $sedes->sede}}">{{ $sedes->sede }}</option>
                            @endforeach
-                     </select>
+                        </datalist>
                     </div>
 
     <div class="col">
@@ -57,7 +67,7 @@
 
                         </select>
 
-                        
+
                         </div>
 
     <div class="col">
@@ -77,21 +87,21 @@
                 Motivo de la Requisición</h3>
           </div>
 <div class="card" >
-    
+
     <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <div class="pull-right" >
     <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);" >
-        
+
         <div class="form-row">
-         
-        
+
+
             <input class="form-check-input" type="radio" value="maternidad/incapacidad" name="motivos" id="motivos">
            <strong><label class="form-check-label" for="reemplaza">
                 Reemplazo por Maternidad / Incapacidad</label></strong>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="text" id ="reemplaza"  class="col-sm-7 col-form-label" name= "reemplaza"   align='right' placeholder="A quien reemplaza?">
-            
+
             </div>
             <br>
             <div class="form-row">
@@ -101,13 +111,13 @@
                <strong> <label class="form-check-label" for="otro">
                 Otro</label></strong>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="text" id ="cual" name="cual" class="col-sm-7 col-form-label"  align='right' placeholder="Cual?">
                 </div>
-            
+
 <br>
 <div class="form-row">
             <div><input class="form-check-input" type="radio" value="retiro" name="motivos" id="motivos">
@@ -122,7 +132,7 @@
                 Nuevo Cargo
             </label></strong>
         </div>
-    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div >
             <input class="form-check-input" type="radio" value="nuevoCupo" name="motivos" id="motivos">
            <strong> <label class="form-check-label" for="nuevo_cupo">
@@ -133,21 +143,21 @@
 </div>
 </div>
 <div class="form-row">
-            
+
           </div>
-        
+
 
             <div>
                 <div class="col-12">
-                
+
             </div>
             </div>
             <br>
 
             <div>
-                
+
         </div>
-        
+
     </div>
 </div>
 </div>
@@ -160,13 +170,14 @@
         </div>
 
         <div class="col-6">
-        <select name="dias" class="form-control" required>
+            <input list="dias" class="form-control" placeholder="Dias" required />
+            <datalist name="dias" id="dias">
 
-     <option value="0" selected>Dias a trabajar
+     <option value="" selected>Dias a trabajar
      <option value="lunes a viernes">lunes a viernes
      <option value="lunes a sabado">lunes a sabado
      <option value="domingo a domingo">domingo a domingo
-     </select>
+    </datalist>
      </div>
     </div>
     <br>
@@ -196,7 +207,7 @@
     <input type="date" id="finicio" name="finicio" class="form-control" required>
                           </div>
                         </div>
-                    
+
                 </div>
              </div>
         <div class="col-sm-3 col-form-label">
@@ -211,12 +222,14 @@
             <i class="fa fa-ban"></i> VOLVER
         </button></a>
      </div>
+</main>
+
     </form>
 
 
 
 
-      
+
 
 
     </div>
