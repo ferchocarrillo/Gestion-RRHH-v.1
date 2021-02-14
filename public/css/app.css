@@ -238,7 +238,7 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
-  
+
 }
 
 button {
@@ -5026,9 +5026,9 @@ input[type=button].btn-block {
 
 
 
-  
 
-  
+
+
 }
 
 .card-header:first-child {
@@ -10896,7 +10896,8 @@ a.text-dark:focus {
   }
 
   .conteiner-foto .form-control{
-  color: yellow;
+
+  color: #060700;
 }
 
 }

@@ -7,18 +7,20 @@
             <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             </body>
             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-                <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
-               {{-- <h3 aline="center" style="color:#DDE8EA">Formulario de Requisiciones</h3>--}}
+                <img src="\theme\images\isotipo-slogan.png" alt="logo de la empresa" float="left" height="120" width="300">
+
+
+
             </center>
 
-       <div class="card-header">    
+       <div class="card-header">
       <h3 align= "center" >DATOS DE LA PUBLICACION</h3></div>
       <form name="f1" action="{{ url('/reclutamiento')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
           {{csrf_field()}}
           <form>
               <div class="panel panel-default">
               <div class="card text-center">
-                  
+
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="card" >
@@ -55,7 +57,7 @@
       <div class="col-sm-6">
         <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);" >
           <div class="card-body">
-      
+
 
 
 <div class="row">
@@ -71,11 +73,11 @@
       </div>
 
         <div class="conteiner-foto">
-     
+
         <label for="foto" class="text-left">Foto</label>
         <input type="file" class="form-control" name="Foto" id "Foto" value=""  required>
             </div>
-            <label for="publicacion" class="col-form-label col-sm-12 pt-0" style= "background-image: linear-gradient(#1d4862, #1d4862);color:white;" >Fuentes de Publicacion</label>
+            <label for="publicacion"  class="card-header" style="font-size: 7mm"  >Fuentes de Publicacion</label>
       <div class="row">
         <div class="col-sm-6">
           <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
@@ -220,7 +222,7 @@
                     <i class="fa fa-dot-circle-o"></i>REGISTRAR
                 </button>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href=({{ route('reclutamiento.create')}})><button type="reset"  class="btn btn-danger btn-sm">
                     <i class="fa fa-ban"></i> VOLVER
                 </button></a>
