@@ -1,27 +1,37 @@
 @extends('adminlte::page')
 @section('content')
+@include('custom.message')
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
-<div class="container">
-    <div class="pull-right">
-        <div class="col-md-12">
-            <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-               <br> <h6>&nbsp;&nbsp;&nbsp;&nbsp;Cantidad de Registros:  {{ $contratacions->total() }}</h6>
-                <br>
-                <div class="col-md-4">
-                <form action="/searchDocumento" method="GET">
+
+
+
+<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+    <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+</center>
+              <p align="right">
+                    <div class="col-md-4">
+                <form action="/searchcontratacion" method="GET">
                 <div class="input-group">
-        <input type="searchDocumento" name="searchDocumento" class="form-control">
+        <input type="searchcontratacion" name="searchcontratacion" class="form-control">
         <span class="input-group-prepend">
-            <button type="submit" class="btn btn-primary">Buscar por Cedula</button>
+            <button type="submit" class="btn btn-primary">Buscar por Numero</button>
             </span>
         </div>
     </form>
 </div>
-<br>
+</p>
 
-<table class="table table-striped table-bordered table-hover table-dark">
-    <thead class="thead-dark">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+              <table class="table table-striped table-bordered table-hover table-dark">
+                  <thead>
     <tr>
         <th scope="col">#</th>
         <th scope="col">Cedula</th>
@@ -54,7 +64,7 @@
         </tbody>
         </table>
         {{ $contratacions->links() }}
-
+    </div>
 <script src="{{asset('js/app.js')}}"></script>
 </body>
 @section('css')

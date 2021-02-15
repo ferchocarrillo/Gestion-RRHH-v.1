@@ -6,15 +6,27 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
-
-
 <div class="page-header">
     <br>
-      <h3>contratación</h3>
+      <h3>Contratacion</h3>
 </div>
 </center>
 <br>
+<div class="conteiner">
 
+    <center><p>
+        <div class="card-header">
+           <h3>{{( $filtro->nombre)}}</h3>
+        </div>
+    </p></center>
+
+    
+
+  
+ 
+    </body>
+
+    <div class="container">
 <form action="{{ url('/contratacion/')}}"
 method="POST"
 enctype="multipart/form-data"
@@ -32,7 +44,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     </div>
     </body>
 
-
+  </div>
           <center><h3>Datos Generales</h3></center>
           <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
@@ -71,7 +83,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
       </div>
 </div>
 
-
+</div>
 
 
 <input class="btn btn-primary btn-lg active" type="submit" value="Registrar">

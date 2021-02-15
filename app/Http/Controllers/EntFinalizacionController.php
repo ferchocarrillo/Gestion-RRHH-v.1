@@ -111,10 +111,10 @@ class EntFinalizacionController extends Controller
      */
     public function show($id, Request $request)
     {
-        $this->authorize('haveaccess','entFinalizacion.view');
+        $this->authorize('haveaccess','entFinalizacion.edit');
         $entrevista1s=Entrevista1::all();
         $filtro=Filtro::all();
-        return view('entFinalizacion.view', compact('entrevista1s','filtro'));
+        return view('entFinalizacion.edit', compact('entrevista1s','filtro'));
     }
 
     /**
@@ -126,19 +126,16 @@ class EntFinalizacionController extends Controller
     public function edit($id, Request $request)
 
     {
-
-
-
         $this->authorize('haveaccess','entFinalizacion.edit');
 
         $filtro=Filtro::findOrFail($id);
-
+     
         $entrevista1s=entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista2s=Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista3s=Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista4s=Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista5s=Entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entFinalizacion=entFinalizacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        $entFinalizacion=entFinalizacion::all();
         $entGerencia=EntGerencia::all();
 
        return view('entFinalizacion.view', compact('entGerencia','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));

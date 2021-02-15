@@ -12,7 +12,10 @@
             </center>
 
 
-<form name="f1" action="{{ url('/filtro')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<form  action="{{ url('/filtro')}}" 
+method="POST" 
+enctype="multipart/form-data" 
+class="form-horizontal">
                     {{csrf_field()}}
                     <form>
 
@@ -45,42 +48,38 @@
 
             <p>
                 
-                <select type="text" class="form-control" name="perfil" id="perfil" placeholder="Perfil">
-                    <option value=>Perfiles</option>
-                    @foreach($cargos as $cargo)<option value="{{ $cargo->cargo}}">
-                        {{ $cargo->cargo }}</option>
-                      @endforeach
-                </select>
-         </p>
-            <p>
-        <select name="campaña"  class="form-control" required>
-                <option value="0" selected>Campaña
-                    <option value="Vanti SAC (VTS)"> Vanti SAC (VTS)
-                        <option value="Vanti seguros (VS)" >Vanti seguros (VS)
-                            <option value="Movistar (MO)" >Movistar (MO)
-                        <option value="ETB (E)" >ETB (E)
-                    <option value="Cobranzas (CB)" >Cobranzas (CB)
-                <option value="Administrativo (ADM)" >Administrativo (ADM)
-            <option value="Staff (STA)" >Staff (STA)
-        </select>
-            </p>
-            <p>
-        <select name="fuente" id="fuente" class="form-control" required>
-                <option value="0">Por donde conocio la Oferta</option>
-                   <option value="Vincuventas">Vincuventas</option>
-                       <option value="Computrabajo">Computrabajo</option>
-                           <option value="SNE">SNE</option>
-                               <option value="Compensar">Compensar</option>
-                                   <option value="rt">Referidos Trabajadores</option>
-                                <option value="rj">Referidos Jefes</option>
-                            <option value="rc">Referidos Clientes</option>
-                        <option value="univ">Universidades</option>
-                    <option value="redes">Redes Sociales</option>
-                <option value="hv">Hv Presenciales</option>
-            <option value="funda">Fundaciones</option>
-        </select>
-           </p>
-        </div>
+<input list="cargos" type="text" name="cargos" class="form-control" placeholder="Perfiles" >
+
+<datalist name="cargos" id="cargos">
+  <option value="">Perfiles</option>
+  @foreach($cargos as $cargo)<option value="{{ $cargo->cargo}}">
+      {{ $cargo->cargo }}</option>
+    @endforeach
+</datalist>
+</p>
+<p>
+<input list="campana" type="text" name="campana" class="form-control" placeholder="Campañas">
+
+<datalist name="campana" id="campana" >
+  <option value="">Campañas</option>
+  @foreach($campanas as $campana)<option value="{{ $campana->campana}}">
+      {{ $campana->campana }}</option>
+    @endforeach
+</datalist>
+</p>
+
+<p>
+  <input list="fuente" type="text" name="fuente" class="form-control" placeholder="Por donde conocio la oferta">
+  
+  <datalist name="fuente" id="fuente" >
+    <option value="">Fuentes</option>
+    @foreach($fuentes as $fuente)<option value="{{ $fuente->fuente}}">
+        {{ $fuente->fuente }}</option>
+      @endforeach
+  </datalist>
+  </p>
+
+         </div>
      </div>
 </div>
 <div class="col-sm-6">

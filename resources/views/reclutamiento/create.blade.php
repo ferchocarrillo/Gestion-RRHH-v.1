@@ -77,7 +77,9 @@
         <label for="foto" class="text-left">Foto</label>
         <input type="file" class="form-control" name="Foto" id "Foto" value=""  required>
             </div>
-            <label for="publicacion"  class="card-header" style="font-size: 7mm"  >Fuentes de Publicacion</label>
+            <br>
+            <h3 for="publicacion"  class="card-header" style="font-size: 7mm"  >Fuentes de Publicacion</h3>
+            <br>
       <div class="row">
         <div class="col-sm-6">
           <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">

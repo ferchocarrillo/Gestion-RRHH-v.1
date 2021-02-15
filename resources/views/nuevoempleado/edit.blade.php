@@ -38,30 +38,33 @@
 
                 <div class="container">
     <div class="row">
-
-        <div id="tipoDoc" name="tipoDoc" class="col-6 col-md-2"><strong><p>Tipo de Documento:</p></strong>
-            <select type="text" name="tipoDoc" id="tipoDoc"  style="font-size: 13px" class="col-6 col-md-8" placeholder="tipoDoc"required>
-                                    <option value="0"></option>
-                                    <option value="CC">CC</option>
-                                    <option value="CE">CE</option>
-                                    <option value="PEP">PEP</option>
-            </select>
+        <div class="col-6 col-md-2"><strong><p><a style="color: red">*</a>Tipo de Documento:</p></strong>
+        <p>
+            <input list="tipoDoc" type="text" name="tipoDoc"  style="width:100px"class="form-control">
+            
+            <datalist name="tipoDoc" id="tipoDoc" >
+              <option value="">Tipo de Documento</option>
+              @foreach($t_docs as $tipo_doc2)<option value="{{ $tipo_doc2->tipo_doc2}}">
+                  {{ $tipo_doc2->tipo_doc2 }}</option>
+                @endforeach
+            </datalist>
+            </p>
         </div>
         
         <input type="hidden" id="cedula" name="cedula" value={{ old('cedula', $nuevos->cedula)}}>
         <div class="col-6 col-md-2"><strong><p>Cedula:</p></strong><br>{{ old('cedula', $nuevos->cedula)}}</div>
-            <div id="fexpe" name="fexpe" class="col-6 col-md-2"><strong><p>Fecha de Expedicion:</p></strong><input type="date"id="fexpe" name="fexpe" style="font-size:0.3cm" style="width : 1px; heigth : 1px" value=""></div>
-            <div id="depNac" name="depNac" class="col-6 col-md-2"><strong><p>Departamento de Expedicion:</p></strong>
-                <select name="departamento" id="departamento" class="col-6 col-md-12" required> <label for="departamento"></label>
+            <div id="fexpe" name="fexpe" class="col-6 col-md-2"><strong><p>Fecha de Expedicion:</p></strong><input type="date"id="fexpe" name="fexpe" style="font-size:0.3cm" class="form-control" value=""></div>
+            <div class="col-6 col-md-2"><strong><p><a style="color: red">*</a>Departamento de Expedicion:</p></strong>
+                <select name="departamento" id="departamento"class="form-control" required> <label for="departamento"></label>
                     <option value="">Escoja uno</option>
                         @foreach($departamento as $departamentos)
                     <option value="{{ $departamentos->Nombre}}">{{ $departamentos->Nombre }}</option>
                         @endforeach
                 </select>
             </div>
-            <div id="depNac" name="depNac" class="col-6 col-md-3"><strong><p>Municipio o ciudad de Expedicion:</p></strong>
+            <div  class="col-6 col-md-3"><strong><p><a style="color: red">*</a>Municipio o ciudad de Expedicion:</p></strong>
 
-                <select name="id_ciudad" id="id_ciudad" "col-6 col-md-10" placeholder="Ciudad de Expedicion" required> </select>
+                <select name="id_ciudad" id="id_ciudad" class="form-control" placeholder="Ciudad de Expedicion" required> </select>
             </div>
     </div>
     <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
@@ -71,8 +74,8 @@
                 
                 
                 <div class="col-6 col-md-3"><strong><p>Correo:</p></strong>{{ old('correo', $nuevos->correo)}}</div>
-                <div id="tCelular" name="tCelular" class="col-6 col-md-3"><strong><p>Celular:</p></strong><input type="number"id="tCelular" name="tCelular" class="col-6 col-md-10" value="{{ old('tCelular', $nuevos->tCelular)}}"></div><br>
-                <div id="tFijo" name="tFijo" class="col-6 col-md-3"><strong><p>Tel Fijo:</p></strong><input type="number"id="tFijo" name="tFijo" class="col-6 col-md-6" value="{{ old('tFijo', $nuevos->tFijo)}}"></div><br>
+                <div id="tCelular" name="tCelular" class="col-6 col-md-3"><strong><p>Celular:</p></strong><input type="number"id="tCelular" name="tCelular" class="form-control" value="{{ old('tCelular', $nuevos->tCelular)}}"></div><br>
+                <div id="tFijo" name="tFijo" class="col-6 col-md-3"><strong><p>Tel Fijo:</p></strong><input type="number"id="tFijo" name="tFijo" class="form-control" value="{{ old('tFijo', $nuevos->tFijo)}}"></div><br>
                 <div  class="col-6 col-md-3"><strong><p>Estado Civil:</p></strong>{{ old('eCivil', $nuevos->eCivil)}}</div>
             </div>
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
@@ -97,69 +100,96 @@
 
             <div class="row">
 
-                <div id="genero" name="genero" class="col-6 col-md-2"><strong><p>Genero:</p></strong>
-                    <select type="text" name="genero" id="genero" class="col-6 col-md-12" placeholder="Genero"required>
-                                            <option value="0"></option>
-                                            <option value="masculino">Masculino</option>
-                                            <option value="femenino">Femenino</option>
-                                            <option value="otro">Otro</option>
+                &nbsp;&nbsp;&nbsp;
 
-                    </select>
-                </div><br>
-                <div id="rh" name="rh" class="col-6 col-md-2"><strong><p>RH:</p></strong>
-                    <select type="text" name="rh" id="rh" class="col-6 col-md-8" placeholder="RH"required>
-                                            <option value="0"></option>
-                                            <option value="O-">O-</option>
-                                            <option value="O+">O+</option>
-                                            <option value="A-">A-</option>
-                                            <option value="A+">A+</option>
-                                            <option value="B-">B-</option>
-                                            <option value="B+">B+</option>
-                                            <option value="AB-">AB-</option>
-                                            <option value="AB+">AB+</option>
-                    </select>
+                <div ><strong><p><a style="color: red">*</a>Genero:</p></strong>
+                    <p>
+                        <input list="genero" type="text" name="genero"  style="width:100px" class="form-control">
+                        
+                        <datalist name="genero" id="genero" >
+                          <option value="">Tipo de Documento</option>
+                          @foreach($generos as $genero)<option value="{{ $genero->genero}}">
+                              {{ $genero->genero }}</option>
+                            @endforeach
+                        </datalist>
+                        </p>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;
 
 
+
+<br>
+<div ><strong><p><a style="color: red">*</a>RH:</p></strong>
+    <p>
+        <input list="rh" type="text" name="rh"  style="width:100px" class="form-control">
+        
+        <datalist name="rh" id="rh" >
+          <option value="">Tipo de Documento</option>
+          @foreach($tipo_rhs as $tipo_rh)<option value="{{ $tipo_rh->tipo_rh}}">
+              {{ $tipo_rh->tipo_rh }}</option>
+            @endforeach
+        </datalist>
+        </p>
     </div>
-    <div id="nivelEdu" name="nivelEdu" class="col-6 col-md-3"><strong><p>Nivel Educativo:</p></strong>
-        <select name="nivelEdu" id="nivelEdu" class="col-6 col-md-8" required> <label for="nivelEdu"></label>
-            <option value="">Escoja uno</option>
+    &nbsp;&nbsp;&nbsp;
+
+    <div ><strong><p><a style="color: red">*</a>Nivel Educativo:</p></strong>
+        <p>
+            <input list="nivelEdu" type="text" name="nivelEdu"  style="width:250px" class="form-control">
+            
+            <datalist name="nivelEdu" id="nivelEdu" >
+                <option value="">Escoja uno</option>
                 @foreach($NivelEdus as $nivelEdu)
             <option value="{{ $nivelEdu->nivelEdu}}">{{ $nivelEdu->nivelEdu }}</option>
                 @endforeach
-        </select>
-    </div>
-    <input type="hidden" id="cargo" name="cargo" value={{ old('cargo', $nuevos->cargo)}}>
-    <div  class="col-4 col-md-2"><strong><p>Cargo:</p></strong>{{ old('cargo', $nuevos->cargo)}}</div><br>
-    <input type="checkbox" id="corporativo" name="corporativo" class="col-4 col-md-2" data-toggle="toggle" data-size="small" data-onstyle="success" data-offstyle="danger" data-on="Correo corporativo Si" data-off="Correo corportativo No" >
-    <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
+            </datalist>
+            </p>
+        </div>
+        &nbsp;&nbsp;&nbsp;   
 
+    <input type="hidden" id="cargo" name="cargo" value={{ old('cargo', $nuevos->cargo)}}>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p><div><strong><p>Cargo:</p></strong>{{ old('cargo', $nuevos->cargo)}}</div></p>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="checkbox" id="corporativo" name="corporativo"  data-toggle="toggle" data-size="med" data-onstyle="success" data-offstyle="danger" data-on="Correo corporativo Si" data-off="Correo corportativo No" ></span>
+    <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
+</div>
         <div class="row">
-            <div id="personaContacto" name="personaContacto" class="col-6 col-md-2"><strong><p>Persona de contacto:</p></strong><input type="text"id="personaContacto" name="personaContacto" class="col-6 col-md-12" required></div><br>
-            <div id="parentesco" name="parentesco" class="col-6 col-md-2"><strong><p>Parentesco:</p><br></strong>
-                <select name="parentesco" id="parentesco" class="col-6 col-md-8" required> <label for="parentesco"></label>
-                    <option value="">Escoja uno</option>
+
+            <div id="personaContacto" name="personaContacto" class="col-6 col-md-2"><strong><p><a style="color: red">*</a>Persona de contacto:</p></strong><input type="text"id="personaContacto" name="personaContacto" class="form-control" required></div><br>
+           
+           
+            <div ><strong><p><a style="color: red">*</a>Parentesco:</p><span><br></span></strong>
+                <p>
+                    <input list="parentesco" type="text" name="parentesco"  style="width:250px" class="form-control">
+                    
+                    <datalist name="parentesco" id="parentesco" >
+                        <option value="">Escoja uno</option>
                         @foreach($parentescos as $parentesco)
                     <option value="{{ $parentesco->parentesco}}">{{ $parentesco->parentesco }}</option>
                         @endforeach
-                </select>
-            </div>
+                    </datalist>
+                    </p>
+                </div>
+           
 
 
-            <div id="personaDireccion" name="personaDireccion" class="col-6 col-md-3"><strong><p>Direccion:</p><br></strong><input type="text"id="personaDireccion" name="personaDireccion" class="col-6 col-md-12" required></div><br>
-            <div id="contactof" name="contactof" class="col-6 col-md-2"><strong><p>Telefono fijo contacto:</p></strong><input type="text"id="contactof" name="contactof" class="col-6 col-md-12" ></div><br>
-            <div id="contactoCelular" name="contactoCelular" class="col-6 col-md-2"><strong><p>Celular de contacto:</p></strong>&nbsp;<input type="text"id="contactoCelular" name="contactoCelular" class="col-6 col-md-12"required ></div><br>
+
+            <div id="personaDireccion" name="personaDireccion" class="col-6 col-md-3"><strong><p><a style="color: red">*</a>Direccion:</p><br></strong><input type="text"id="personaDireccion" name="personaDireccion" class="form-control" required></div><br>
+            <div id="contactof" name="contactof" class="col-6 col-md-2"><strong><p>Telefono fijo contacto:</p></strong><input type="text"id="contactof" name="contactof" class="form-control" ></div><br>
+            <div id="contactoCelular" name="contactoCelular" class="col-6 col-md-2"><strong><p><a style="color: red">*</a>Celular de contacto:</p></strong><input type="text"id="contactoCelular" name="contactoCelular" class="form-control"required ></div><br>
     </div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
     <div class="row">
 
-        <div id="numHijos" name="numHijos" class="col-4 col-md"><strong><p>Numero <br>de Hijos: </p></strong><input type="number" id="numHijos" name="numHijos" class="col-6 col-md"></div>
-        <div id="hijosMAs" name="hijosMAs" class="col-4 col-md"><strong><p>Hijos <br>masculinos:</p></strong><input type="number" id="hijosMAs" name="hijosMAs" class="col-6 col-md"></div>
-        <div id="hijosFem" name="hijosFem" class="col-4 col-md"><strong><p>Hijos <br>femininos: </p></strong><input type="number" id="hijosFem" name="hijosFem" class="col-6 col-md"></div>
-        <div ><p><strong>Preexistencia <br>medica:</strong></p><input type="checkbox" id="Preexistencia" name="Preexistencia" class="custom-control-input" data-toggle="toggle" data-size="small" data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div ><p><strong>Tiene <br>Alergias:</strong></p><input type="checkbox" id="alergias" name="alergias" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
-        <div id="medicamentos" name="medicamentos"   class="col-4 col-md"><strong><p>Medicamentos que toma actualmente: </p></strong><input type="text" id="medicamentos" name="medicamentos" class="col-6 col-md-12"></div>
+        <div id="numHijos" name="numHijos" class="col-4 col-md"><strong><p>Numero <br>de Hijos: </p></strong><input type="number" id="numHijos" name="numHijos" class="form-control"></div>
+        <div id="hijosMAs" name="hijosMAs" class="col-4 col-md"><strong><p>Hijos <br>masculinos:</p></strong><input type="number" id="hijosMAs" name="hijosMAs" class="form-control"></div>
+        <div id="hijosFem" name="hijosFem" class="col-4 col-md"><strong><p>Hijos <br>femininos: </p></strong><input type="number" id="hijosFem" name="hijosFem" class="form-control"></div>
+        <div ><p><strong>Preexistencia <br>medica:</strong></p><input type="checkbox" id="Preexistencia" name="Preexistencia" class="custom-control-input" data-toggle="toggle" data-size="med" data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div ><p><strong>Tiene <br>Alergias:</strong></p><input type="checkbox" id="alergias" name="alergias" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
+        <div id="medicamentos" name="medicamentos"   class="col-4 col-md"><strong><p>Medicamentos que toma actualmente: </p></strong><input type="text" id="medicamentos" name="medicamentos" class="form-control"></div>
     </div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 <div class="container">

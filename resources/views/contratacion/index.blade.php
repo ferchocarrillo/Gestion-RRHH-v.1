@@ -5,10 +5,14 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-                    <link rel="shortcut icon" href="home"><img src="\theme\images\icon\logo.jpg"  align= "center" height="70" width="150">
-                </body>
-                <br>
-                <p align="right">
+
+
+
+
+<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+    <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+</center>
+              <p align="right">
                     <div class="col-md-4">
                 <form action="/searchcontratacion" method="GET">
                 <div class="input-group">
@@ -20,6 +24,10 @@
     </form>
 </div>
 </p>
+<div class="container"
+              
+
+
 
 <br>         <form name="f1" action="{{ url('/contratacion')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
 {{csrf_field()}}

@@ -6,21 +6,27 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
-
 <div class="page-header">
     <br>
-      <h3>Registro de Entrevista</h3>
+      <h3>Datos Iniciales</h3>
 </div>
 </center>
 <br>
-<div class="col-sm-12">
+<div class="conteiner">
+
     <center><p>
-        <div class="p-3 mb-2 bg-info text-white">
-       <h3>{{ old('nombre', $filtro->nombre)}}</h3>
+        <div class="card-header">
+           <h3>{{( $filtro->nombre)}}</h3>
         </div>
     </p></center>
-    </div>
+
+    
+
+  
+ 
     </body>
+
+    <div class="container">
     <form action="{{ url('/entrevista1/')}}"
           method="POST"
           enctype="multipart/form-data"
@@ -29,24 +35,32 @@
           {{csrf_field()}}
 
 
-<fieldset class="form-group">
-    <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);>
-        <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-            <div class="row">
+
+          <fieldset class="form-group">
+            <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                    <div class="row">
 
 
-<div class="col-2"><label for="cedula">Cedula</label><input type="number" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
-&nbsp;&nbsp;&nbsp;
+<p>
+<div class="col-auto"><label for="cedula">Cedula</label><input type="number" class="form-control" style="width: 240px" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
+</p>
 
-<div class="col-2"> <label for="nombres">Nombre</label><input type="text" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
-
-<div class="col-2"> <label for="telefono">Telefono</label> <input type="number" class="form-control" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono' , $filtro->telefono)}}"></div>
-
-<div class="col-2"> <label for="correo">Correo</label> <input type="mail" class="form-control" id="correo" placeholder="correo" name="correo" value="{{ old('correo' , $filtro->correo)}}"></div>
-<div class="col-2"><label for="id_filtro"></label><input type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
-            </div>
-        </div>
-    </div>
+<p>
+<div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 240px" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
+</p>
+<p>
+<div class="col-auto"> <label for="telefono">Telefono</label> <input type="number" class="form-control" style="width: 240px" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono' , $filtro->telefono)}}"></div>
+</p>
+<p>
+<div class="col-auto"> <label for="correo">Correo</label> <input type="mail" class="form-control" style="width: 200px" id="correo" placeholder="correo" name="correo" value="{{ old('correo' , $filtro->correo)}}"></div>
+</p>
+<p>
+<div class="col-auto"><label for="id_filtro"></label><input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
+</p>
+</div>
+</div>
+</div>
 </fieldset>
 
 <div class="col-sm-12"><center><p><div class="card-header">Datos Generales</div></p></center></div>
@@ -55,12 +69,18 @@
     <div class="container">
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="row col-xs-12">
-                <select type="text" style="width:510px" id ="cargo" name="cargo" class="form-control" placeholder="Pertenece a algun grupo social?" required>
-                    <option value="">Seleccione un cargo</option>
-                    @foreach($cargoEnt as $cargoEnts)<option value="{{ $cargoEnts->cargo}}">
-                      {{ $cargoEnts->cargo }}</option>
-                    @endforeach
-</select>
+
+                <p>
+                    <input list="cargo" type="text" name="cargo"  style="width:510px"class="form-control" placeholder="Seleccione un cargo">
+                    
+                    <datalist name="cargo" id="cargo" >
+                      <option value="">Campañas</option>
+                      @foreach($cargos as $cargo)<option value="{{ $cargo->cargo}}">
+                          {{ $cargo->cargo }}</option>
+                        @endforeach
+                    </datalist>
+                    </p>
+
 
 
 <div style="width:510px"><p> <input type="text" id ="referencia" name="referencia" class="form-control" placeholder="Quien lo Referencia" required></p></div>
@@ -81,102 +101,137 @@
 
 <div class="col-sm-12">
     <center><p>
-     <div class="p-3 mb-2 bg-info text-white">Datos Residencia</div>
+     <div class="card-header">Datos Residencia</div>
     </p></center>
 </div>
 
 <div class="col-sm-14 col-form-label">
     <div class="input-group input-group-sm">
-        <span class="input-group-text">Direccion</span>
-            <select name="TipoVia" id="TipoVia"class="form-control" required>
-            <label for="TipoVia"></label>
-            <option value="0">Tipo Via</option>
-                @foreach($TipoVias as $TipoVia)<option value="{{ $TipoVia->TipoVia}}">
-                    {{ $TipoVia->TipoVia }}</option>
-                @endforeach
-            </select>
+        <span class="input-group-text" style="height:38px" >Direccion</span>
 
-<input type="text" name="dr1" id="dr1" class="form-control" required>
-            <select name="prefijo1" id="prefijo1"class="form-control">
-            <label for="prefijo1"></label>
-            <option value="">Prefijo</option>
-                @foreach($prefijos as $prefijo)<option value="{{ $prefijo->prefijo}}">
-                    {{ $prefijo->prefijo }}</option>
+        <p>
+            <input list="TipoVia" type="text" name="TipoVia"  class="form-control" style="width: 240px"  placeholder="Tipo via">
+            
+            <datalist name="TipoVia" id="TipoVia" >
+                <option value="">Tipo Via</option>
+                @foreach($TipoVias as $TipoVia)<option value="{{ $TipoVia->tipo_vias}}">
+                    {{ $TipoVia->tipo_vias }}</option>
                 @endforeach
-            </select>
+            </datalist>
+        </p>
+
+
+<p>
+<input type="text" name="dr1" id="dr1" class="form-control"  style="width:70px" required>
+</p>
+
+<p>
+    <input list="prefijo1" type="text" name="prefijo1"  class="form-control" style="width: 120px"  placeholder="Prefijo">
+    
+    <datalist name="prefijo1" id="prefijo1" >
+        <option value="">Prefijo</option>
+        @foreach($prefijos as $prefijo)<option value="{{ $prefijo->prefijo}}">
+            {{ $prefijo->prefijo }}</option>
+        @endforeach
+    </datalist>
+</p>
+
+
                         <span>&nbsp; # &nbsp; </span>
-<input type="number" name="dr2" id="dr2" class="form-control" required>
-             <select name="prefijo2" id="prefijo2"class="form-control">
-             <label for="prefijo2"></label>
-             <option value="">Prefijo</option>
-                @foreach($prefijos as $prefijo)<option value="{{ $prefijo->prefijo}}">
-                    {{ $prefijo->prefijo }}</option>
-                @endforeach
-             </select>
-                <span>&nbsp; - &nbsp; </span>
-             <input type="number" name="dr3" id="dr3" class="form-control" required>
+<p><input type="number" name="dr2" id="dr2" class="form-control"  style="width:70px" required></p>
 
-             <select name="orientacion" id="orientacion"class="form-control">
-             <label for="orientacion"></label>
-             <option value="">Orientacion</option>
-                @foreach($orientaciones as $orientacion)<option value="{{ $orientacion->orientacion}}">
-                  {{ $orientacion->orientacion }}</option>
-                @endforeach
-             </select>
+<p>
+    <input list="prefijo2" type="text" name="prefijo2"  class="form-control" style="width: 120px"  placeholder="Prefijo">
+    
+    <datalist name="prefijo2" id="prefijo2" >
+        <option value="">Prefijo</option>
+        @foreach($prefijos as $prefijo)<option value="{{ $prefijo->prefijo}}">
+            {{ $prefijo->prefijo }}</option>
+        @endforeach
+    </datalist>
+</p>
+
+
+                <span>&nbsp; - &nbsp; </span>
+                <p><input type="number" name="dr3" id="dr3" class="form-control"  style="width:70px" required></p>
+
+                <p>
+                    <input list="orientacion" type="text" name="orientacion"  class="form-control" style="width: 220px"  placeholder="Orientacion">
+                    
+                    <datalist name="orientacion" id="orientacion" >
+                        <option value="">Orientacion</option>
+                        @foreach($orientaciones as $orientacion)<option value="{{ $orientacion->orientacion}}">
+                          {{ $orientacion->orientacion }}</option>
+                        @endforeach
+                    </datalist>
+                </p>
+
     </div>
 </div>
 
 <div class="col-sm-14 col-form-label">
     <div class="input-group input-group-sm">
-        <span class="input-group-text">Complementos</span>
-             <select name="adicional" id="adicional"class="form-control">
-             <option value="">Adicionales</option>
+        <span class="input-group-text" style="height:38px">Complementos</span>
+
+        <p>
+            <input list="adicional" type="text" name="adicional"  class="form-control" style="width: 220px"  placeholder="Adicional">
+            
+            <datalist name="adicional" id="adicional" >
+                <option value="">Adicionales</option>
                 @foreach($adicionales as $adicional)<option value="{{ $adicional->adicional}}">
                   {{ $adicional->adicional }}</option>
                 @endforeach
-             </select>
+            </datalist>
+        </p>
 
-<input type="text" name="ad1" id="ad1" class="form-control">
+
+<p><input type="text" name="ad1" id="ad1" class="form-control"  style="width:70px"></p>
         <span>&nbsp; - &nbsp; </span>
-             <select name="adicional2" id="adicional2"class="form-control">
-             <label for="adicional2"></label>
-             <option value="">Adicionales</option>
+        <p>
+            <input list="adicional2" type="text" name="adicional2"  class="form-control" style="width: 220px"  placeholder="Adicional">
+            
+            <datalist name="adicional2" id="adicional2" >
+                <option value="">Adicionales</option>
                 @foreach($adicionales as $adicional)<option value="{{ $adicional->adicional}}">
                   {{ $adicional->adicional }}</option>
                 @endforeach
-            </select>
+            </datalist>
+        </p>
 
-<input type="text" name="ad2" id="ad2" class="form-control" >
+<p><input type="text" name="ad2" id="ad2" class="form-control"  style="width:70px"></p>
+
                     <span>&nbsp; - &nbsp; </span>
-<select name="adicional3" id="adicional3"class="form-control">
-             <label for="adicional3"></label>
-             <option value="">Adicionales</option>
+        <p>
+            <input list="adicional3" type="text" name="adicional3"  class="form-control" style="width: 220px"  placeholder="Adicional">
+            
+            <datalist name="adicional3" id="adicional3" >
+                <option value="">Adicionales</option>
                 @foreach($adicional2es as $adicional2)<option value="{{ $adicional2->adicional}}">
                      {{ $adicional2->adicional }}</option>
                 @endforeach
-</select>
-
-<input type="text" name="ad3" id="ad3" class="form-control" >
+            </datalist>
+        </p>
+<p><input type="text" name="ad3" id="ad3" class="form-control"  style="width:70px"></p>
 
     </div>
 </div>
 
 <div class="input-group input-group-sm">
-<input type="text" name="barrio" id="barrio" class="form-control" placeholder="Barrio" >
+    <p><input type="text" name="barrio" id="barrio" class="form-control"  style="width:200px" placeholder="Barrio" ></p>
+
                     <span>&nbsp;</span>
-<select name="residencia" id="residencia"class="form-control" required><label for="residencia"></label>
+                    <p><select name="residencia" id="residencia" class="form-control" style="width: 200px" required><label for="residencia"></label>
                 <option value="">Ciudad de residencia</option>
                 @foreach($residencia as $residencias)<option value="{{ $residencias->residencia}}">
                   {{ $residencias->residencia }}</option>
                 @endforeach
-</select>
-<select name="id_localidad" id="id_localidad" class="form-control" placeholder="localidad"required </select>
+</select></p>
 
-<input type="number" name="tFijo" id="tFijo" class="form-control" placeholder="Telefono fijo">
-                   <span>&nbsp;</span>
-<input type="number" name="tCelular" id="tCelular" class="form-control" placeholder="Celular principal" required>
-                   <span>&nbsp;</span>
-<input type="number" name="tCelular2" id="tCelular2" class="form-control" placeholder="Celular secundario" >
+<p><select name="id_localidad" id="id_localidad" class="form-control" style="width: 200px" placeholder="localidad"required> </select></p>
+<p><input type="number" name="tFijo" id="tFijo" class="form-control" style="width: 150px" placeholder="Telefono fijo"></p>
+<p><input type="number" name="tCelular" id="tCelular" class="form-control" style="width: 150px" placeholder="Celular principal" required></p>              
+<p><input type="number" name="tCelular2" id="tCelular2" class="form-control" style="width: 150px" placeholder="Celular secundario" ></p>               
+
             </div>
         </div>
     </div>
@@ -184,7 +239,9 @@
 
 <div class="col-sm-12">
     <center><p>
-        <div class="p-3 mb-2 bg-info text-white">
+
+
+        <div class="card-header">
             Informacion Adicional
         </div>
     </p></center>
@@ -193,48 +250,62 @@
     <div class="container">
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="row col-xs-12">
-                <div style="width:200px">
-                    <p>
-<select type="text"name="tVivienda"id="tVivienda"class="form-control"placeholder="Tipo de Vivienda"required>
-                        <option value="0"> Tipo Vivienda </option>
-                        <option value="arrendada"> Arrendada</option>
-                        <option value="propia">Propia</option>
-                        <option value="familiar">Familiar</option>
-</select>
-                    </p>
-                </div>
+
+                {{--  --}}
+
+
+
+
+                
+                   <p>
+                        <input list="tVivienda" type="text" name="tVivienda"  style="width:200px"class="form-control" placeholder="Tipo de vivienda">
+                        
+                        <datalist name="tVivienda" id="tVivienda" >
+                          <option value="">Tipo de vivienda</option>
+                          @foreach($tViviendas as $tVivienda)<option value="{{ $tVivienda->tvivienda}}">
+                              {{ $tVivienda->tvivienda }}</option>
+                            @endforeach
+                        </datalist>
+                        </p>
+                
                 <span>&nbsp;</span>
 <div style="width:210px"><p>
-<input type="number"name="valor"id="valor"class="form-control"placeholder="&#36; Valor del arriendo"></p>
+<input type="number"name="valor"id="valor"class="form-control" placeholder="&#36; Valor del arriendo"></p>
 </div>
                 <span>&nbsp;</span>
 <div style="width:270px"><p><input type="text"id ="arrendador"name="arrendador"class="form-control"placeholder="Nombre del arrendador"></p></div>
                 <span>&nbsp;</span>
 <div style="width:340px"><p><input type="mail" id ="correoArr" name="correoArr" class="form-control" placeholder="Correo Electronico arrendador"></p></div>
                 <span>&nbsp;</span>
-<div style="width:200px"><p>
-    <select type="text" name="sMilitar" id="sMilitar" class="form-control" placeholder="Servicio Militar" required>
-        <option value="0"> Servicio Militar</option>
-            <option value="si">Si</option>
-            <option value="no"> No</option>
-    </select></p>
-</div>
+
+                <p>
+                    <input list="sMilitar" type="text" name="sMilitar"  style="width:220px"class="form-control" placeholder="¿Presto servicio militar?">
+                    
+                    <datalist name="sMilitar" id="sMilitar" >
+                      <option value="">Tipo de vivienda</option>
+                      @foreach($sMilitars as $sMilitar)<option value="{{ $sMilitar->sMilitar}}">
+                          {{ $sMilitar->sMilitar }}</option>
+                        @endforeach
+                    </datalist>
+                    </p>
+
+
                 <span>&nbsp;</span>
 <div style="width:200px"><p><input type="text" id ="donde" name="donde" class="form-control" placeholder="Donde"></p></div>
                 <span>&nbsp;</span>
-        <div style="width:170px">
-            <p>
-                <select type="text" name="eCivil" id="eCivil" class="form-control" placeholder="Estado Civil" required>
-                    <option value="0">Estado Civil </option>
-                    <option value="soltero(a)">Soltero(a)</option>
-                    <option value="casado(a)">Casado(a)</option>
-                    <option value="separado(a)">Separado(a)</option>
-                    <option value="Union libre"> Union Libre</option>
-                    <option value="viudo(a)"> Viudo(a)</option>
-                </select>
-            </p>
-        </div>
-                                <span>&nbsp;</span>
+
+                <p>
+                    <input list="eCivil" type="text" name="eCivil"  style="width:170px"class="form-control" placeholder="Estado Civil">
+                    
+                    <datalist name="eCivil" id="eCivil" >
+                      <option value="">Estado Civil</option>
+                      @foreach($eCivils as $eCivil)<option value="{{ $eCivil->e_civil}}">
+                          {{ $eCivil->e_civil }}</option>
+                        @endforeach
+                    </datalist>
+                    </p>
+
+                                  <span>&nbsp;</span>
 <div style="width:180px"><p>
     <input type="text" id ="cuanto" name="cuanto" class="form-control" placeholder="Hace cuanto"></p>
 </div>
@@ -252,12 +323,14 @@
     <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
     <a href="{{route('entrevista2.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Continuar</a>
 </div>
+
             </div>
         </div>
     </div>
 </div>
 </fieldset>
 </form>
+</div>
 
       <script src="{{asset('js/app.js')}}"></script>
               </body>

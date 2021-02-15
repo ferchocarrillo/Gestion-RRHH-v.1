@@ -45,6 +45,12 @@ class DatabaseSeeder extends Seeder
      $this->call(AprobacionSeeder::class);
      $this->call(MotivoRetiroSeeder::class);     
      $this->call(TipoNovedadSeeder::class);
-
+     $this->call(FuenteSeeder::class);
+     $this->call(TViviendaSeeder::class);
+     $this->call(SMilitarSeeder::class);     
+     $this->call(ECivilSeeder::class); 
+     $this->call(GeneroSeeder::class);
+     $this->call(TipoDoc2Seeder::class);
+     $this->call(RhSeeder::class);     
 }
 }

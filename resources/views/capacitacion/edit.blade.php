@@ -6,20 +6,19 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
-
 <div class="page-header">
     <br>
-      <h3>CHECKLIST DE DOCUMENTOS</h3>
+      <h3>Checklist de documentos</h3>
 </div>
 </center>
 <br>
-<div class="col-sm-12">
+<div class="conteiner">
+
     <center><p>
-        <div class="p-3 mb-2 bg-info text-white">
-            Datos Personales
+        <div class="card-header">
+           <h3>{{( $filtro->nombre)}}</h3>
         </div>
     </p></center>
-    </div>
     </body>
     <form action="{{ url('/contratacion/')}}"
           method="POST"
@@ -29,22 +28,25 @@
           {{csrf_field()}}
 
         <div class="container">
+<div class="card">
           <div class="row">
 
             {{--<div ><strong> Id:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->id }}</div> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;--}}
-            <div><strong> Cedula:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->cedula }}</div> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-          <div><strong> Nombres:</strong>&nbsp;{{ $filtro->nombre }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-          <div><strong> Telefono: </strong>&nbsp;{{ $filtro->telefono }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            <div><strong> Cedula:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->cedula }}</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div><strong> Nombres:</strong>&nbsp;{{ $filtro->nombre }}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <div><strong> Telefono: </strong>&nbsp;{{ $filtro->telefono }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
           <div><strong> Correo:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->correo }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
 
         </div>
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
         <div class="row">
-            <div><strong> Perfil:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{ $filtro->perfil }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <div> <strong>Campaña:</strong>&nbsp;{{ $filtro->campaña }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;<div><strong> Perfil:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;{{ $filtro->perfil }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div> <strong>Campaña:</strong>&nbsp;{{ $filtro->campaña }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <div> <strong>Fuente:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->fuente }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
         </div>
-    </div>
+      </div>
     <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 
 <center><h3>DOCUMENTOS SOLICITADOS</h3></center>
@@ -481,7 +483,7 @@
 
 
 <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
-<a href="{{route('capacitacion.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Volver</a>
+<a href="{{route('contratacion.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Volver</a>
 
 </div>
 
@@ -501,6 +503,7 @@
 </div>
 </fieldset>
 </form>
+</div>
 
       <script src="{{asset('js/app.js')}}"></script>
               </body>

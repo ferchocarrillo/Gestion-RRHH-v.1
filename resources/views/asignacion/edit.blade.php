@@ -36,16 +36,17 @@
 <input type="hidden" id="id_filtro" name="id_filtro" value="{{$contatacion->id_filtro}}">
 <input type="hidden" id="cedula" name="cedula" value="{{ old('cedula', $contatacion->cedula)}}">
 <input type="hidden" id="nombre" name="nombre" value="{{ old('nombre', $contatacion->nombre)}}">
-<input type="hidden" id="ingreso" name="ingreso" value="{{ old('ingreso', $newEmployes->ingreso)}}">
-<input type="hidden" id="campaña" name="campaña" value="{{ old('campaña', $newEmployes->campana)}}">
-<input type="hidden" id="estado" name="estado" value="{{ old('estado', $newEmployes->estado)}}">
+<input type="hidden" id="ingreso" name="ingreso" value="{{ old('ingreso', $contatacion->ingreso)}}">
+<input type="hidden" id="campaña" name="campaña" value="{{ old('campaña', $contatacion->campaña)}}">
+<input type="hidden" id="estado" name="estado" value="{{ old('estado', $contatacion->estado)}}">
 
 
 
         <div class="col-6 col-md-3"><strong><p>Cedula:</p></strong>{{ old('cedula', $contatacion->cedula)}}</div><br>
-        <div class="col-6 col-md-3"><strong><p>Nombre:</p></strong>{{ old('cedula', $contatacion->nombre)}}</div><br>
         <div id="perfil" name="perfil" class="col-6 col-md-3"><strong><p>Perfil:</p></strong>{{ old('perfil', $contatacion->perfil)}}</div><br>
-        <div class="col-6 col-md-3"><strong><p>Campaña:</p></strong>{{ old('campaña', $newEmployes->campana)}}</div>
+        <div class="col-6 col-md-3"><strong><p>Campaña:</p></strong>{{ old('campaña', $contatacion->campaña)}}</div>
+        <div class="col-6 col-md-3"><strong><p>Estado:</p></strong>{{ old('estado', $contatacion->estado)}}</div>
+
     </div>
     <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
     <!-- Force next columns to break to new line -->
@@ -84,8 +85,10 @@
 <br>
 <div class="row">
 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <p>
     <span><strong>Dependencia</strong></span>
-    <select  style="height:30px, width:250px;" name="dependencia" id="dependencia"  required>
+    <select  class="form-control" name="dependencia" id="dependencia"  required>
     <datalist id="dependencia" name="dependencia"  >
         <option value="" >Dependencias</option>
                         @foreach ($dependencias as $dependencia)
@@ -93,16 +96,14 @@
                         @endforeach
                     </select>
     </datalist>
+</p>
+&nbsp;&nbsp;&nbsp;&nbsp;
+        <p>
+                        <span><strong>Area:</strong></span>
+                            <select name="id_area" id="id_area" class="form-control" style="height:45px, width:250px;"  placeholder="Area" required> </select>
+        </p>
 
-
-                <div> <strong><p>Area:</p></strong>
-                    <select name="id_area" id="id_area" class="col-6 col-md"  placeholder="Area" required> </select>
-                </div>
-
-            </div>
-
-
-
+    </div>
 
 
     <div class="row">

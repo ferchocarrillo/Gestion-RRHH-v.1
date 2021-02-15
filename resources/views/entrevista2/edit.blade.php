@@ -6,21 +6,27 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
-
 <div class="page-header">
     <br>
-      <h3>Datos Familiares</h3>
+      <h3>Datos Iniciales</h3>
 </div>
 </center>
 <br>
-<div class="col-sm-12">
+<div class="conteiner">
+
     <center><p>
-        <div class="p-3 mb-2 bg-info text-white">
+        <div class="card-header">
            <h3>{{( $filtro->nombre)}}</h3>
         </div>
     </p></center>
-    </div>
+
+    
+
+  
+ 
     </body>
+
+    <div class="container">
     <form action="{{ url('/entrevista2/')}}"
           method="POST"
           enctype="multipart/form-data"
@@ -29,28 +35,43 @@
           {{csrf_field()}}
 
 
-<fieldset class="form-group">
-    <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);>
-        <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-            <div class="row">
-<div class="col-2"><label for="id_filtro"></label><input type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
 
-<div class="col-2"><label for="cedula">Cedula</label><input type="number" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
+          <fieldset class="form-group">
+            <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                    <div class="row">
 
-<div class="col-2"> <label for="nombres">Nombres</label><input type="text" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
 
-<div class="col-2"> <label for="telefono">Telefono</label> <input type="number" class="form-control" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono' , $filtro->telefono)}}"></div>
+<p>
+<div class="col-auto"><label for="cedula">Cedula</label><input type="number" class="form-control" style="width: 240px" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
+</p>
 
-<div class="col-2"> <label for="correo">Correo</label> <input type="mail" class="form-control" id="correo" placeholder="correo" name="correo" value="{{ old('correo' , $filtro->correo)}}"></div>
-            </div>
-        </div>
-    </div>
+<p>
+<div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 240px" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
+</p>
+<p>
+<div class="col-auto"> <label for="telefono">Telefono</label> <input type="number" class="form-control" style="width: 240px" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono' , $filtro->telefono)}}"></div>
+</p>
+<p>
+<div class="col-auto"> <label for="correo">Correo</label> <input type="mail" class="form-control" style="width: 200px" id="correo" placeholder="correo" name="correo" value="{{ old('correo' , $filtro->correo)}}"></div>
+</p>
+<p>
+<div class="col-auto"><label for="id_filtro"></label><input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
+</p>
+</div>
+</div>
+</div>
 </fieldset>
 
-&nbsp;&nbsp;&nbsp;<input type="checkbox" name="sinfamilia" id="sinfamilia"  value="No registran" ><label for="sinfamilia">&nbsp;&nbsp;&nbsp;&nbsp;Sin Familiares</label>
+
 
 <fieldset class="form-group">
     <div class="container">
+
+        <p>
+            <input type="checkbox" name="sinfamilia" id="sinfamilia"  value="No registran" ><label for="sinfamilia">&nbsp;&nbsp;&nbsp;&nbsp;Sin Familiares </label>&nbsp;&nbsp;<i>*solo se debera señalar esta opcion en caso de que el postulado no cuente con ningun familiar conocido</i>
+        </p>
+        
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="row col-xs-12">
                 <div style="width:270px"><p>
@@ -202,8 +223,10 @@
         </div>
     </div>
 </div>
+</div>
 </fieldset>
 </form>
+</div>
 
       <script src="{{asset('js/app.js')}}"></script>
               </body>

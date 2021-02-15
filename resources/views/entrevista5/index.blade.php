@@ -5,22 +5,26 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-                    <link rel="shortcut icon" href="home"><img src="\theme\images\icon\logo.jpg"  align= "center" height="70" width="150">
-                </body>
-                <br>
-                <p align="right">
-                    <div class="col-md-4">
-                <form action="/searchEntrevista" method="GET">
-                <div class="input-group">
-        <input type="searchEntrevista" name="searchEntrevista" class="form-control">
-        <span class="input-group-prepend">
-            <button type="submit" class="btn btn-primary">Buscar por Numero</button>
-            </span>
-        </div>
-    </form>
+
+
+
+
+<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+    <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+</center>
+    <p 
+        <div class="col-md-4">
+    <form action="/searchEntrevista" method="GET">
+    <div class="input-group">
+    <p><input type="searchEntrevista" name="searchEntrevista" class="form-control" ></p>
+<span class="input-group-prepend">
+    <p><button type="submit" class="btn btn-primary">Buscar por Numero</button></p>
+</span>
+</div>
+</form>
 </div>
 </p>
-
+<div class="container">
 <br>         <form name="f1" action="{{ url('/entrevista1')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
@@ -63,27 +67,27 @@
                                                     {{--<a href="{{url('/entrevista3/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>--}}
                                                     <a href="{{url('/entrevista5/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Adicionales</a>
 
-                                            </form>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                      </table>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                  </table>
 
-                                  </div>
                               </div>
                           </div>
                       </div>
+                  </div>
 
-                    </form>
-                    {{ $entrevistas->links()}}
+                </form>
+                {{ $entrevistas->links()}}
 
-                    <p>
-                        clic <a href="{{route('entrevista1.excel')}}">Aqui</a>
-                        Descarga la entrevista en excel
-                        </p>
+                <p>
+                    clic <a href="{{route('entrevista1.excel')}}">Aqui</a>
+                    Descarga la entrevista en excel
+                    </p>
 
-
+                </div>
 
                 <!-- Bootstrap CSS-->
                 <link href="{{ asset('theme/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">

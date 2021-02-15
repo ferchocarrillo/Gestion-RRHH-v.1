@@ -25,6 +25,9 @@ use App\tipoContrato;
 use App\tipoDoc;
 use App\TipoModalidad;
 use App\cajaCompensacion;
+use App\Genero;
+use App\rh;
+use App\tipoDoc2;
 
 class NuevoEmpleadoController extends Controller
 {
@@ -110,10 +113,10 @@ class NuevoEmpleadoController extends Controller
 
             $nuevo->id_filtro              = $request->id_filtro;
             $nuevo->nombres                 = $request->nombre;
-            $nuevo->tipoDoc                = $request->tipoDoc;
+            $nuevo->tipo_doc2                = $request->tipoDoc;
             $nuevo->cedula                 = $request->cedula;
             $nuevo->fexpe                  = $request->fexpe;
-            $nuevo->depNac                 = $request->depNac;
+            $nuevo->depNac                 = $request->departamento;
             $nuevo->id_ciudad              = $request->id_ciudad;
             $nuevo->correo                 = $request->correo;
             $nuevo->tCelular               = $request->tCelular;
@@ -139,7 +142,7 @@ class NuevoEmpleadoController extends Controller
             $nuevo->Preexistencia          = $request->Preexistencia;
             $nuevo->alergias               = $request->alergias;
             $nuevo->medicamentos           = $request->medicamentos;
-            $nuevo->familiarp1             = $request->$tipo_docs1. ',' .$docfam1. ',' .$familiarp1. ',' .$parentescop1. ',' .$edadp1. ','.$epsFam1. ',' .$caja1 ;
+            $nuevo->familiarp1             = $request->$tipoDoc. ',' .$docfam1. ',' .$familiarp1. ',' .$parentescop1. ',' .$edadp1. ','.$epsFam1. ',' .$caja1 ;
             $nuevo->familiarp2             = $request->$tipo_docs2. ',' .$docfam2. ',' .$familiarp2. ',' .$parentescop2. ',' .$edadp2. ','.$epsFam2. ',' .$caja2 ;
             $nuevo->familiarp3             = $request->$tipo_docs3. ',' .$docfam3. ',' .$familiarp3. ',' .$parentescop3. ',' .$edadp3. ','.$epsFam3. ',' .$caja3 ;
             $nuevo->familiarp4             = $request->$tipo_docs4. ',' .$docfam4. ',' .$familiarp4. ',' .$parentescop4. ',' .$edadp4. ','.$epsFam4. ',' .$caja4 ;
@@ -225,6 +228,8 @@ class NuevoEmpleadoController extends Controller
         $epsFam4 = $request->epsFam4;
         $caja4 = $request->caja4;
 
+
+        $t_docs= tipoDoc2 ::all();
         $filtro = Filtro::findOrFail($id_filtro);
         $campanas = Campana::all();
         $departamento = Departamentos::all();
@@ -245,9 +250,11 @@ class NuevoEmpleadoController extends Controller
         $cajaComps = cajaCompensacion::all();
         $contratacion = Contratacion::findOrFail($id_filtro);
         $nuevo = nuevoEmpleado::all();
+        $generos = Genero::all();
+        $tipo_rhs = rh::all();
 
        // return response()->json($nuevo);
-        return view('nuevoempleado.edit', compact( 'nuevo','contratacion','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','nuevo2','parentescos','NivelEdus','nuevos','filtro','focos','campanas', 'departamento'));
+        return view('nuevoempleado.edit', compact( 'tipo_rhs','generos','t_docs','nuevo','contratacion','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','nuevo2','parentescos','NivelEdus','nuevos','filtro','focos','campanas', 'departamento'));
 
     }
 

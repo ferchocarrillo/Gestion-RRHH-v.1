@@ -15,27 +15,21 @@
 </center>
 <br>
 
-<form action="{{ url('/entFinalizacion/')}}"
+<form action="{{ url('/entFinalizacion')}}"
 method="POST"
 enctype="multipart/form-data"
-class="form-horizontal"
-style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+class="form-horizontal">
 {{csrf_field()}}
 
 <div class="col-sm-12">
     <div class="col-2"><label for="id_filtro"></label><input type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
     <center><p>
-        <div class="p-3 mb-2 bg-info text-white" id ="nombres" name="nombres">
+        <div class="card-header" id ="nombres" name="nombres">
           <h3> {{ $entrevista1s->nombres}}</h3>
         </div>
     </p></center>
     </div>
     </body>
-
-
-          <center><h3>Datos Generales</h3></center>
-          <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
-
           <div class="container">
             <div class="row">
 

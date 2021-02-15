@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Campana;
 use App\Cargo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -16,7 +17,7 @@ use App\JhonatanPermission\Models\Reclutamiento;
 use stdClass;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\PortaExport;
-
+use App\Fuente;
 
 class FiltroController extends Controller
 {
@@ -51,10 +52,12 @@ class FiltroController extends Controller
      */
     public function create()
     {
+        $campanas= Campana::all();
+        $fuentes = Fuente::all();
         $filtros = Filtro::all();
         $cargos = Cargo::all();
         $reclutamientos = Reclutamiento::all();
-        return view('filtro.create', compact('filtros','cargos'));
+        return view('filtro.create', compact('filtros','fuentes','campanas','cargos'));
     }
 
     /**
@@ -86,8 +89,8 @@ class FiltroController extends Controller
         $filtro->cedula                 = $request->cedula;
         $filtro->telefono               = $request->telefono;
         $filtro->correo                 = $request->correo;
-        $filtro->perfil                 = $request->perfil;
-        $filtro->campaña                = $request->campaña;
+        $filtro->perfil                 = $request->cargos;
+        $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
         $filtro->citadoE                = $request->citadoE;
         $filtro->noAplica               = $request->noAplica;
@@ -110,6 +113,8 @@ class FiltroController extends Controller
 
 
         $filtro->save();
+
+        //return response()->json($filtro);
         return back();
     }
 

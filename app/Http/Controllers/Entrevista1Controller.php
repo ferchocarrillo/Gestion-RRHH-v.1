@@ -14,12 +14,16 @@ use App\Orientacion;
 use App\Entrevista1;
 use App\Adicional2;
 use App\Adicional;
+use App\Cargo;
 use App\Residencia;
 use App\cargoEnt;
+use App\eCivil;
 use App\User;
 use stdClass;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EntrevistaExport;
+use App\sMilitar;
+use App\tVivienda;
 
 class Entrevista1Controller extends Controller
 {
@@ -37,7 +41,7 @@ class Entrevista1Controller extends Controller
     {
 
 
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(20);
         return view('entrevista1.index',compact( 'entrevistas'));
     }
 
@@ -59,7 +63,7 @@ class Entrevista1Controller extends Controller
 
 
         $searchEntrevista = $request->get('searchEntrevista');
-        $entrevistas= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
+        $entrevistas= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(20);
         return view('entrevista1.index', ['entrevistas' => $entrevistas]);
     }
 
@@ -153,9 +157,9 @@ class Entrevista1Controller extends Controller
      */
     public function edit($id)
     {
+        $filtro=Filtro::findOrFail($id); 
         
-        
-        
+        $cargos = Cargo::all();
         $cargoEnt = CargoEnt::all();
         $departamento = Departamentos::all();
         $TipoVias = TipoVia::all();
@@ -164,10 +168,13 @@ class Entrevista1Controller extends Controller
         $adicionales = Adicional::all();
         $adicional2es = Adicional2::all();
         $residencia = Residencia::all();
+        $tViviendas = tVivienda::all();
+        $sMilitars = sMilitar::all();
+        $eCivils= eCivil::all();
        $this->authorize('haveaccess','entrevista1.edit');
-       $filtro=Filtro::findOrFail($id);
+       
 
-       return view('entrevista1.edit', compact('cargoEnt','filtro','departamento','residencia','adicional2es','adicionales','orientaciones','TipoVias','prefijos'));
+       return view('entrevista1.edit', compact('eCivils','sMilitars','tViviendas','cargos','cargoEnt','filtro','departamento','residencia','adicional2es','adicionales','orientaciones','TipoVias','prefijos'));
 
     }
 
