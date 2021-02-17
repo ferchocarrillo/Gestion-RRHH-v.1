@@ -190,7 +190,7 @@
             </div>
 
             <div style="width:333px">
-                <p><input type="text" id ="tiempo" name="tiempo" class="form-control" placeholder="Tiempo"></p>
+                <p><input type="text" id ="cuantoTiempo" name="cuantoTiempo" class="form-control" placeholder="Cuanto Tiempo"></p>
             </div>
 
             <div style="width:1015px">

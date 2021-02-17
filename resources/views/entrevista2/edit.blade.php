@@ -95,7 +95,7 @@
                     </p>
                     </div>
 <div style="width:270px"><p>
-                    <input type="text" id ="familiar2" name="familiar2" class="form-control" placeholder="Nombre">
+                    <input type="text" id ="familiarp2" name="familiarp2" class="form-control" placeholder="Nombre">
                     </p>
                     </div>
 <div style="width:200px"><p>
@@ -134,7 +134,7 @@
                     </p>
                     </div>
 <div style="width:270px"><p>
-                    <input type="text" id ="familiar4" name="familiar4" class="form-control" placeholder="Nombre">
+                    <input type="text" id ="familiarp4" name="familiarp4" class="form-control" placeholder="Nombre">
                     </p>
                     </div>
 <div style="width:200px"><p>

@@ -31,7 +31,13 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     </p></center>
     </div>
     </body>
+<div class="row">
 
+
+
+    <div class="col-sm-12">
+      <div class="card">
+      <div class="card-body">
 
           <center><h3>Datos Generales</h3></center>
           <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
@@ -47,37 +53,64 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
 
 
-        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-        <!-- Force next columns to break to new line -->
+        <div class="col-sm-12">
+          <div class="card">
+          <div class="card-body">
+   <fieldset>
 
-        <label style="width:350px" for="estado">Resultado de la Capacitacion</label>
-        &nbsp;&nbsp;
+<p>
+        <input list="estado" type="text" name="estado" class="form-control" style="width:500px" placeholder="Resultado de la capacitacion" required>
+    
+        <datalist name="estado" id="estado" >
+          <option value="">Resultado de la capacitacion</option>
+      
+          @foreach($aprobacions as $estado)<option value="{{ $estado->aprobacion}}">
+            {{ $estado->aprobacion }}</option>
+          @endforeach
+        </datalist>
+      </p>
 
-    <select  style="width:250px" name="estado" id="estado">Resultado de la Capacitacion
+    </fieldset>
 
-    <option value="0">Seleccione una opción</option>
-    <option value="Aprobado">Aprobado</option>
-    <option value="No aprobado">No aprobado</option>
-    </select>
-    <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-    <label for="observaciones">Observaciones</label>
-    <textarea class="form-control" name="observaciones" id="" cols="3" rows="3"></textarea>
-
-
-    <div class="col-2"><input type="hidden" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
-    <div class="col-2"><input type="hidden" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
-
-
-      </div>
+    <i>Observaciones</i><textarea type="text" class="form-control" id="observaciones" rows="3"  col="20" name="observaciones" > </textarea>
+  </div>  
+</div>
 </div>
 
 
 
+</div>
+<div class="card-body">
+
+  <span style=”text-align: justify;>* Este modulo es exculusivo del area de formación y debera ser utilizado con el fin de dar la calificacion final de sus procesos. sin el APROBADO, el postulado no quedara ACTIVO en la base de datos</span>
+  <br> 
+  <span style=”text-align: justify;>* si por alguna razoon la informacion se consigno erradamente se debera comunicar con el area de desarrollo para modificar la nota final</span>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+</div>
 
 <input class="btn btn-primary btn-lg active" type="submit" value="Registrar">
 
 <a href="{{route('home')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
 </form>
+
+</div>
+</div>
+</div>
+<div class="col-2"><input type="hidden" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
+<div class="col-2"><input type="hidden" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
+
+
+
+
+
 
       <script src="{{asset('js/app.js')}}"></script>
               </body>

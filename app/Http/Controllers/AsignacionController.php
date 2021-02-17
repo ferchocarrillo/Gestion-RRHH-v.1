@@ -62,22 +62,23 @@ class AsignacionController extends Controller
             'nombre'          => 'required|unique:filtros,nombre,',
         ]);*/
 
-        $asignaciones = new Asignacion();
+        $asignaciones = new Contratacion();
 
         $asignaciones->id_filtro             = $request->id_filtro;
         $asignaciones->cedula                = $request->cedula;
-        $asignaciones->nombres               = $request->nombre;
-        $asignaciones->ingreso               = $request->ingreso;
-        $asignaciones->cargo                 = $request->cargo;
-        $asignaciones->dependencia           = $request->dependencia;
-        $asignaciones->id_area               = $request->id_area;
-        $asignaciones->campaña               = $request->campaña;
-        $asignaciones->foco                  = $request->foco;
-        $asignaciones->jinmedato             = $request->jinmedato;
-        $asignaciones->observaciones         = $request->observaciones;
+        $asignaciones->nombre               = $request->nombre;
+        
+       // $asignaciones->perfil                = $request->cargo;
+       // $asignaciones->dependencia           = $request->dependencia;
+       // $asignaciones->id_area               = $request->id_area;
+        //$asignaciones->campaña               = $request->campaña;
+        //$asignaciones->foco                  = $request->foco;
+        //$asignaciones->jinmedato             = $request->jinmedato;
+        //$asignaciones->observaciones         = $request->observaciones;
         $asignaciones->estado                = $request->estado;
         $asignaciones->save();
-        return back();
+        //return back();
+        return response()->json($asignaciones);
 
     }
 
@@ -124,17 +125,17 @@ class AsignacionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $contatacion= Contratacion::all();
+        $contatacion= Contratacion::findOrFail($id);
         $asignaciones = Asignacion::all();
         $cordinadores = Supervisor::all();
         $focos = Foco::all();
         $cargos= Cargo::all();
         $newEmployes = nuevoEmpleado::all();
         $dependencias = Dependencia::all();
-        $datosAsignaciones =request()->except(['_token','_method']);
-        Asignacion::where('id','=',$id)->update($datosAsignaciones);
+        $datosAsignaciones =request()->except(['_token','_method', 'telefono']);
+        Contratacion::where('id','=',$id)->update($datosAsignaciones);
         //$asigantion = Asignacion::all();
-        $asignaciones=Asignacion::findOrFail($id);
+        $asignaciones=Asignacion::all();
     // return response()->json($asigantion);
      return view('asignacion.edit', compact('dependencias','newEmployes','cargos','focos','asignaciones','contatacion','cordinadores'));
     }

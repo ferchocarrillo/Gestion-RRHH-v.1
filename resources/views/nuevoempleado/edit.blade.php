@@ -38,7 +38,7 @@
 
                 <div class="container">
     <div class="row">
-        <div class="col-6 col-md-2"><strong><p><a style="color: red">*</a>Tipo de Documento:</p></strong>
+        <div class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Tipo de Documento:</p></strong>
         <p>
             <input list="tipoDoc" type="text" name="tipoDoc"  style="width:100px"class="form-control">
             
@@ -53,8 +53,8 @@
         
         <input type="hidden" id="cedula" name="cedula" value={{ old('cedula', $nuevos->cedula)}}>
         <div class="col-6 col-md-2"><strong><p>Cedula:</p></strong><br>{{ old('cedula', $nuevos->cedula)}}</div>
-            <div id="fexpe" name="fexpe" class="col-6 col-md-2"><strong><p>Fecha de Expedicion:</p></strong><input type="date"id="fexpe" name="fexpe" style="font-size:0.3cm" class="form-control" value=""></div>
-            <div class="col-6 col-md-2"><strong><p><a style="color: red">*</a>Departamento de Expedicion:</p></strong>
+            <div id="fexpe" name="fexpe" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Fecha de Expedicion:</p></strong><input type="date"id="fexpe" name="fexpe" style="font-size:0.3cm" class="form-control" value=""></div>
+            <div class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Departamento de Expedicion:</p></strong>
                 <select name="departamento" id="departamento"class="form-control" required> <label for="departamento"></label>
                     <option value="">Escoja uno</option>
                         @foreach($departamento as $departamentos)
@@ -62,7 +62,7 @@
                         @endforeach
                 </select>
             </div>
-            <div  class="col-6 col-md-3"><strong><p><a style="color: red">*</a>Municipio o ciudad de Expedicion:</p></strong>
+            <div  class="col-6 col-md-3"><strong><p><a style="color: red">* </a>Municipio o ciudad de Expedicion:</p></strong>
 
                 <select name="id_ciudad" id="id_ciudad" class="form-control" placeholder="Ciudad de Expedicion" required> </select>
             </div>
@@ -74,7 +74,7 @@
                 
                 
                 <div class="col-6 col-md-3"><strong><p>Correo:</p></strong>{{ old('correo', $nuevos->correo)}}</div>
-                <div id="tCelular" name="tCelular" class="col-6 col-md-3"><strong><p>Celular:</p></strong><input type="number"id="tCelular" name="tCelular" class="form-control" value="{{ old('tCelular', $nuevos->tCelular)}}"></div><br>
+                <div id="tCelular" name="tCelular" class="col-6 col-md-3"><strong><p><a style="color: red">* </a>Celular:</p></strong><input type="number"id="tCelular" name="tCelular" class="form-control" value="{{ old('tCelular', $nuevos->tCelular)}}"></div><br>
                 <div id="tFijo" name="tFijo" class="col-6 col-md-3"><strong><p>Tel Fijo:</p></strong><input type="number"id="tFijo" name="tFijo" class="form-control" value="{{ old('tFijo', $nuevos->tFijo)}}"></div><br>
                 <div  class="col-6 col-md-3"><strong><p>Estado Civil:</p></strong>{{ old('eCivil', $nuevos->eCivil)}}</div>
             </div>
@@ -102,7 +102,7 @@
 
                 &nbsp;&nbsp;&nbsp;
 
-                <div ><strong><p><a style="color: red">*</a>Genero:</p></strong>
+                <div ><strong><p><a style="color: red">* </a>Genero:</p></strong>
                     <p>
                         <input list="genero" type="text" name="genero"  style="width:100px" class="form-control">
                         
@@ -119,7 +119,7 @@
 
 
 <br>
-<div ><strong><p><a style="color: red">*</a>RH:</p></strong>
+<div ><strong><p><a style="color: red">* </a>RH:</p></strong>
     <p>
         <input list="rh" type="text" name="rh"  style="width:100px" class="form-control">
         
@@ -133,7 +133,7 @@
     </div>
     &nbsp;&nbsp;&nbsp;
 
-    <div ><strong><p><a style="color: red">*</a>Nivel Educativo:</p></strong>
+    <div ><strong><p><a style="color: red">* </a>Nivel Educativo:</p></strong>
         <p>
             <input list="nivelEdu" type="text" name="nivelEdu"  style="width:250px" class="form-control">
             
@@ -157,10 +157,10 @@
 </div>
         <div class="row">
 
-            <div id="personaContacto" name="personaContacto" class="col-6 col-md-2"><strong><p><a style="color: red">*</a>Persona de contacto:</p></strong><input type="text"id="personaContacto" name="personaContacto" class="form-control" required></div><br>
+            <div id="personaContacto" name="personaContacto" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Persona de contacto:</p></strong><input type="text"id="personaContacto" name="personaContacto" class="form-control" required></div><br>
            
            
-            <div ><strong><p><a style="color: red">*</a>Parentesco:</p><span><br></span></strong>
+            <div ><strong><p><a style="color: red">* </a>Parentesco:</p><span><br></span></strong>
                 <p>
                     <input list="parentesco" type="text" name="parentesco"  style="width:250px" class="form-control">
                     
@@ -176,9 +176,9 @@
 
 
 
-            <div id="personaDireccion" name="personaDireccion" class="col-6 col-md-3"><strong><p><a style="color: red">*</a>Direccion:</p><br></strong><input type="text"id="personaDireccion" name="personaDireccion" class="form-control" required></div><br>
+            <div id="personaDireccion" name="personaDireccion" class="col-6 col-md-3"><strong><p><a style="color: red">* </a>Direccion:</p><br></strong><input type="text"id="personaDireccion" name="personaDireccion" class="form-control" required></div><br>
             <div id="contactof" name="contactof" class="col-6 col-md-2"><strong><p>Telefono fijo contacto:</p></strong><input type="text"id="contactof" name="contactof" class="form-control" ></div><br>
-            <div id="contactoCelular" name="contactoCelular" class="col-6 col-md-2"><strong><p><a style="color: red">*</a>Celular de contacto:</p></strong><input type="text"id="contactoCelular" name="contactoCelular" class="form-control"required ></div><br>
+            <div id="contactoCelular" name="contactoCelular" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Celular de contacto:</p></strong><input type="text"id="contactoCelular" name="contactoCelular" class="form-control"required ></div><br>
     </div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
@@ -195,155 +195,206 @@
 <div class="container">
     <center><h3 aline="center">Datos de familiares</h3></center>
     <div class="row">
-        <div id="tipo_docs1" name="tipo_docs1" class="col-6 col-md-2"><strong><p>Tipo Documento:</p></strong>
-            <select name="tipo_docs1" id="tipo_docs1" class="col-6 col-md-8" > <label for="tipo_docs1"></label>
-                <option value="">Escoja uno</option>
+
+
+        <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
+            <p><input list="tipo_docs1" type="text" name="tipo_docs1"  style="width:100px" class="form-control">
+               <datalist name="tipo_docs1" id="tipo_docs1" >
+                    <option value="">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
-            </select>
-        </div>
-        <div id="docfam1" name="docfam1" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam1" name="docfam1" class="col-6 col-md-12" ></div>
-        <div id="familiarp1" name="familiarp1" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp1" name="familiarp1" class="col-6 col-md-12" value="{{old('familiarp1', $nuevo2->familiarp1)}}"></div><br>
-        <div id="parentescop1" name="parentescop1" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop1" name="parentescop1" class="col-6 col-md-12" value="{{old('parentescop1', $nuevo2->parentescop1)}}"></div><br>
-        <div id="edadp1" name="edadp1" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp1" name="edadp1" class="col-6 col-md-4" value="{{old('edadp1', $nuevo2->edadp1)}}"></div><br>
-        <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam1" name="epsFam1" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja1" name="caja1" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
+                </datalist>
+                </p>
+            </div>
+
+
+        
+        <div id="docfam1" name="docfam1" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam1" name="docfam1" class="form-control" ></div>
+        <div id="familiarp1" name="familiarp1" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp1" name="familiarp1" class="form-control" value="{{old('familiarp1', $nuevo2->familiarp1)}}"></div><br>
+        <div id="parentescop1" name="parentescop1" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop1" name="parentescop1" class="form-control" value="{{old('parentescop1', $nuevo2->parentescop1)}}"></div><br>
+        <div id="edadp1" name="edadp1" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp1" name="edadp1" class="form-control" value="{{old('edadp1', $nuevo2->edadp1)}}"></div><br>
+        <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam1" name="epsFam1" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja1" name="caja1" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
     </div>
     <div class="row">
-        <div id="tipo_docs2" name="tipo_docs2" class="col-6 col-md-2"><strong><p>Tipo Documento:</p></strong>
-            <select name="tipo_docs2" id="tipo_docs2" class="col-6 col-md-8" > <label for="tipo_docs2"></label>
-                <option value="">Escoja uno</option>
+
+
+        <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
+            <p><input list="tipo_docs2" type="text" name="tipo_docs2"  style="width:100px" class="form-control">
+               <datalist name="tipo_docs2" id="tipo_docs2" >
+                    <option value="">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
-            </select>
+                </datalist>
+                </p>
+            </div>
+    
+            <div id="docfam2" name="docfam2" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam2" name="docfam2" class="form-control" ></div>
+            <div id="familiarp2" name="familiarp2" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp2" name="familiarp2" class="form-control" value="{{old('familiarp2', $nuevo2->familiarp2)}}"></div><br>
+            <div id="parentescop2" name="parentescop2" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop2" name="parentescop2" class="form-control" value="{{old('parentescop2', $nuevo2->parentescop2)}}"></div><br>
+            <div id="edadp2" name="edadp2" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp2" name="edadp2" class="form-control" value="{{old('edadp2', $nuevo2->edadp2)}}"></div><br>
+            <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam2" name="epsFam2" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja2" name="caja2" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
         </div>
-        <div id="docfam2" name="docfam2" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam2" name="docfam2" class="col-6 col-md-12"></div>
-        <div id="familiarp2" name="familiarp2" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp2" name="familiarp2" class="col-6 col-md-12" value="{{old('familiarp2', $nuevo2->familiarp2)}}"></div><br>
-        <div id="parentescop2" name="parentescop2" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop2" name="parentescop2" class="col-6 col-md-12" value="{{old('parentescop2', $nuevo2->parentescop2)}}"></div><br>
-        <div id="edadp2" name="edadp2" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp2" name="edadp2" class="col-6 col-md-4" value="{{old('edadp2', $nuevo2->edadp2)}}"></div><br>
-        <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam2" name="epsFam2" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja2" name="caja2" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
-    </div>
+   
     <div class="row">
-        <div id="tipo_docs3" name="tipo_docs3" class="col-6 col-md-2"><strong><p>Tipo Documento:</p></strong>
-            <select name="tipo_docs3" id="tipo_docs3" class="col-6 col-md-8" > <label for="tipo_docs3"></label>
-                <option value="">Escoja uno</option>
+        <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
+            <p><input list="tipo_docs3" type="text" name="tipo_docs3"  style="width:100px" class="form-control">
+               <datalist name="tipo_docs3" id="tipo_docs3" >
+                    <option value="">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
-            </select>
+                </datalist>
+                </p>
+            </div>
+    
+            <div id="docfam3" name="docfam3" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam3" name="docfam3" class="form-control" ></div>
+            <div id="familiarp3" name="familiarp3" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp3" name="familiarp3" class="form-control" value="{{old('familiarp3', $nuevo2->familiarp3)}}"></div><br>
+            <div id="parentescop3" name="parentescop3" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop3" name="parentescop3" class="form-control" value="{{old('parentescop3', $nuevo2->parentescop3)}}"></div><br>
+            <div id="edadp3" name="edadp3" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp3" name="edadp3" class="form-control" value="{{old('edadp3', $nuevo2->edadp3)}}"></div><br>
+            <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam3" name="epsFam3" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja3" name="caja3" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
         </div>
-        <div id="docfam3" name="docfam3" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam3" name="docfam3" class="col-6 col-md" ></div>
-        <div id="familiarp3" name="familiarp3" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp3" name="familiarp3" class="col-6 col-md-12" value="{{old('familiarp3', $nuevo2->familiarp3)}}"></div><br>
-        <div id="parentescop3" name="parentescop3" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop3" name="parentescop3" class="col-6 col-md" value="{{old('parentescop3', $nuevo2->parentescop3)}}"></div><br>
-        <div id="edadp3" name="edadp3" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp3" name="edadp3" class="col-6 col-md-4" value="{{old('edadp3', $nuevo2->edadp3)}}"></div><br>
-        <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam3" name="epsFam3" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja3" name="caja3" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
-    </div>
-    <div class="row">
-        <div id="tipo_docs4" name="tipo_docs4" class="col-6 col-md-2"><strong><p>Tipo Documento:</p></strong>
-            <select name="tipo_docs4" id="tipo_docs4" class="col-6 col-md-8" > <label for="tipo_docs4"></label>
-                <option value="">Escoja uno</option>
-                    @foreach($tipo_docs as $tipo_doc)
-                <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
-                    @endforeach
-            </select>
-        </div>
-        <div id="docfam4" name="docfam4" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="number"id="docfam4" name="docfam4" class="col-6 col-md-12"></div>
-        <div id="familiarp4" name="familiarp4" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp4" name="familiarp4" class="col-6 col-md-12" value="{{old('familiarp4', $nuevo2->familiarp4)}}"></div><br>
-        <div id="parentescop4" name="parentescop4" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop4" name="parentescop4" class="col-6 col-md-12" value="{{old('parentescop4', $nuevo2->parentescop4)}}"></div><br>
-        <div id="edadp4" name="edadp4" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp4" name="edadp4" class="col-6 col-md-4" value="{{old('edadp4', $nuevo2->edadp4)}}"></div><br>
-        <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam4" name="epsFam4" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja4" name="caja4" data-toggle="toggle" data-size="small"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
-    </div>
+ 
+        <div class="row">
+            <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
+                <p><input list="tipo_docs4" type="text" name="tipo_docs4"  style="width:100px" class="form-control">
+                   <datalist name="tipo_docs4" id="tipo_docs4" >
+                        <option value="">Escoja uno</option>
+                        @foreach($tipo_docs as $tipo_doc)
+                    <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
+                        @endforeach
+                    </datalist>
+                    </p>
+                </div>
+        
+                <div id="docfam4" name="docfam4" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam4" name="docfam4" class="form-control" ></div>
+                <div id="familiarp4" name="familiarp4" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp4" name="familiarp4" class="form-control" value="{{old('familiarp4', $nuevo2->familiarp4)}}"></div><br>
+                <div id="parentescop4" name="parentescop4" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop4" name="parentescop3" class="form-control" value="{{old('parentescop4', $nuevo2->parentescop4)}}"></div><br>
+                <div id="edadp4" name="edadp4" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp4" name="edadp4" class="form-control" value="{{old('edadp4', $nuevo2->edadp4)}}"></div><br>
+                <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam4" name="epsFam4" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja4" name="caja4" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
+            </div>
 </div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 <div class="container">
 <div class="row">
-    <div id="salario" name="salario" class="col-4 col-md"><strong><p>Salario: </p></strong><input type="number" id="salario" name="salario" class="col-6 col-md" required></div>
-    <div id="ingreso" name="ingreso" class="col-4 col-md"><strong><p>Ingreso: </p></strong><input type="date" id="ingreso" name="ingreso" class="col-6 col-md" required></div>
-<div id="tipo_contratos" name="tipo_contratos" class="col-4 col-md"><strong><p>Tipo Contrato:</p></strong>
-    <select name="tipo_contratos" id="tipo_contratos" class="col-4 col-md" required> <label for="tipo_contratos"></label>
-        <option value="">Escoja uno</option>
+    <div id="salario" name="salario" class="col-4 col-md"><strong><p><a style="color: red" >* </a>Salario: </p></strong><input type="number" id="salario" name="salario" class="form-control" required></div>
+    <div id="ingreso" name="ingreso" class="col-4 col-md"><strong><p><a style="color: red" >* </a>Ingreso: </p></strong><input type="date" id="ingreso" name="ingreso" class="form-control" required></div>
+
+
+    <div ><strong><p><a style="color: red" >* </a>Tipo Contrato:</p><span></span></strong>
+        <p><input list="tipo_contratos" type="text" name="tipo_contratos"   class="form-control">
+           <datalist name="tipo_contratos" id="tipo_contratos" >
+            <option value="">Escoja uno</option>
             @foreach($tipo_contratoses as $tipo_contratos)
         <option value="{{ $tipo_contratos->tipoCon}}">{{ $tipo_contratos->tipoCon }}</option>
             @endforeach
-    </select>
-</div>
-
+            </datalist>
+            </p>
+        </div>
 </div>
 </div>
 
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 <div class="container">
 <div class="row">
-<div id="sede" name="sede" class="col-4 col-md"><strong><p>Sede:</p></strong>
-    <select name="sede" id="sede" class="col-4 col-md" required> <label for="sede"></label>
-        <option value="">Asigne una</option>
+
+    <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Sede:</p><span></span></strong>
+        <p><input list="sede" type="text" name="sede"   class="form-control">
+           <datalist name="sede" id="sede" >
+            <option value="">Asigne una</option>
             @foreach($sedes as $sede)
         <option value="{{ $sede->sede}}">{{ $sede->sede }}</option>
             @endforeach
-    </select>
-</div>
-<div id="modalidad" name="modalidad" class="col-4 col-md"><strong><p>Modalidad:</p></strong>
-    <select name="modalidad" id="modalidad" class="col-4 col-md" required> <label for="modalidad"></label>
-        <option value="">Asigne una</option>
-            @foreach($modalidades as $modalidad)
-        <option value="{{ $modalidad->modalidad}}">{{ $modalidad->modalidad }}</option>
-            @endforeach
-    </select>
-</div>
-<div id="tipoModalidad" name="tipoModalidad" class="col-4 col-md"><strong><p>Tipo:</p></strong>
-    <select name="tipoModalidad" id="tipoModalidad" class="col-4 col-md" required> <label for="tipoModalidad"></label>
-        <option value="">Asigne una</option>
-            @foreach($tipoModalidades as $tipoModalidad)
-        <option value="{{ $tipoModalidad->tipoModalidad}}">{{ $tipoModalidad->tipoModalidad }}</option>
-            @endforeach
-    </select>
-</div>
+            </datalist>
+            </p>
+        </div>
+
+        <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Modalidad:</p><span></span></strong>
+            <p><input list="modalidad" type="text" name="modalidad"   class="form-control">
+               <datalist name="modalidad" id="modalidad" >
+                <option value="">Asigne una</option>
+                @foreach($modalidades as $modalidad)
+            <option value="{{ $modalidad->modalidad}}">{{ $modalidad->modalidad }}</option>
+                @endforeach
+                </datalist>
+                </p>
+            </div>
+            
+            <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Tipo de Modalidad:</p><span></span></strong>
+                <p><input list="tipoModalidad" type="text" name="tipoModalidad"   class="form-control">
+                   <datalist name="tipoModalidad" id="tipoModalidad" >
+                    <option value="">Asigne una</option>
+                    @foreach($tipoModalidades as $tipoModalidad)
+                <option value="{{ $tipoModalidad->tipoModalidad}}">{{ $tipoModalidad->tipoModalidad }}</option>
+                    @endforeach
+                    </datalist>
+                    </p>
+                </div>
 </div>
 </div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
 <div class="container">
     <div class="row">
-        <div id="cesantias" name="cesantias" class="col-4 col-md"><strong><p>Fondo Cesantias:</p></strong>
-            <select name="cesantias" id="cesantias" class="col-4 col-md" required> <label for="cesantias"></label>
+
+
+
+        <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Fondo Cesantias:</p><span></span></strong>
+            <p><input list="cesantias" type="text" name="cesantias"   class="form-control">
+               <datalist name="cesantias" id="cesantias" >
                 <option value="">Asigne una</option>
                     @foreach($cesantiases as $cesantias)
                 <option value="{{ $cesantias->fondo}}">{{ $cesantias->fondo }}</option>
                     @endforeach
-            </select>
-        </div>
-            <div id="pensiones" name="pensiones" class="col-4 col-md"><strong><p>Fondo Pensiones:</p></strong>
-                <select name="pensiones" id="pensiones" class="col-4 col-md" required> <label for="pensiones"></label>
-                    <option value="">Asigne una</option>
-                        @foreach($pensioneses as $pensiones)
-                    <option value="{{ $pensiones->fondo}}">{{ $pensiones->fondo }}</option>
-                        @endforeach
-                </select>
+                </datalist>
+                </p>
             </div>
-            <div id="eps" name="eps" class="col-4 col-md"><strong><p>Eps:</p></strong>
-                    <select name="eps" id="eps" class="col-4 col-md" required> <label for="epsess"></label>
-                        <option value="">Asigne una</option>
-                            @foreach($epses as $eps)
-                        <option value="{{ $eps->entidad}}">{{ $eps->entidad }}</option>
-                            @endforeach
-                    </select>
+
+            <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Fondo Pensiones:</p><span></span></strong>
+                <p><input list="pensiones" type="text" name="pensiones"   class="form-control">
+                   <datalist name="pensiones" id="pensiones" >
+                    <option value="">Asigne una</option>
+                    @foreach($pensioneses as $pensiones)
+                <option value="{{ $pensiones->fondo}}">{{ $pensiones->fondo }}</option>
+                    @endforeach
+                    </datalist>
+                    </p>
                 </div>
 
-                   <div id="cajaComp" name="cajaComp" class="col-4 col-md"><strong><p>Caja de Compensación:</p></strong>
-                        <select name="cajaComp" id="cajaComp" class="col-4 col-md" required> <label for="cajaComp"></label>
-                            <option value="">Asigne una</option>
-                                @foreach($cajaComps as $cajaComp)
-                            <option value="{{ $cajaComp->entidad}}">{{ $cajaComp->entidad }}</option>
-                                @endforeach
-                        </select>
+
+                <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Eps:</p><span></span></strong>
+                    <p><input list="eps" type="text" name="eps"   class="form-control">
+                       <datalist name="eps" id="eps" >
+                        <option value="">Asigne una</option>
+                        @foreach($epses as $eps)
+                    <option value="{{ $eps->entidad}}">{{ $eps->entidad }}</option>
+                        @endforeach
+                        </datalist>
+                        </p>
                     </div>
 
-                    <div id="ips" name="ips" class="col-4 col-md"><strong><p>Ips: </p></strong><input type="text" id="ips" name="ips" class="col-6 col-md"></div>
+
+                    <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Caja Compensación:</p><span></span></strong>
+                        <p><input list="cajaComp" type="text" name="cajaComp"   class="form-control">
+                           <datalist name="cajaComp" id="cajaComp" >
+                            <option value="">Asigne una</option>
+                            @foreach($cajaComps as $cajaComp)
+                        <option value="{{ $cajaComp->entidad}}">{{ $cajaComp->entidad }}</option>
+                            @endforeach
+                            </datalist>
+                            </p>
+                        </div>
+   
+      
+
+
+
+                    <div id="ips" name="ips" class="col-4 col-md"><strong><p>Ips: </p></strong><input type="text" id="ips" name="ips" class="form-control"></div>
                     <input type="hidden" id="arl" name="arl" class="col-6 col-md" value= "Arl Sura">
 </div>
 </div>
@@ -352,10 +403,11 @@
 <div class="container">
 
     <div class="row">
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <input type="hidden" id="Tcuenta" name="Tcuenta" class="col-6 col-md" value= "Ahorros">
-<div  class="col-6 col-md-3" type="text"><strong><p>Tipo de cuenta:</p></strong>Ahorros</div>
-<div id="nCuenta" name="nCuenta" class="col-4 col-md"><strong><p>Numero de cuenta: </p></strong><input type="number" id="nCuenta" name="nCuenta" class="col-6 col-md"></div>
-<div id="bancos" name="bancos" class="col-6 col-md-2"><strong><p>Banco:</p></strong><input id="bancos" name="bancos" class="col-6 col-md-12" value="{{old('bancos', $contratacion->bancos)}}"></div><br>
+<div  type="text"><strong><p>Tipo de cuenta:</p></strong>Ahorros</div>
+<div id="nCuenta" name="nCuenta" class="col-4 col-md"><strong><p><a style="color: red">* </a>Numero de cuenta: </p></strong><input type="number" id="nCuenta" name="nCuenta" class="form-control"></div>
+<div id="bancos" name="bancos" class="col-6 col-md-2"><strong><p>Banco:</p></strong><input id="bancos" name="bancos" class="form-control" value="{{old('bancos', $contratacion->bancos)}}"></div><br>
 
 <input type="hidden" id="estado" name="estado" value={{old('estado', $contratacion->estado)}}>
 <div class="col-2"> <label></label><input type="hidden" class="form-control" id="nombre" placeholder="nombre" name="nombre" value="{{ old('nombre', $filtro->nombre)}}"></div>
@@ -367,32 +419,45 @@
 <div class="container">
     <center><h3 aline="center">Asignacion Inicial</h3></center>
     <div class="row">
-        <div id="foco" name="foco" class="col-6 col-md-4"><strong><p>Foco:</p></strong>
-            <select type="text" name="foco" id="foco" class="col-8 col-md-12" placeholder="foco"required>
-    <option  value="">Seleccion un foco</option>
-    @foreach($focos as $foco)<option value="{{ $foco->foco}}">
-      {{ $foco->foco }}</option>
-    @endforeach
-</select>
-</div>
 
-<div id="campana" name="campana" class="col-6 col-md-4"><strong><p>Campaña:</p></strong>
-    <select type="text" name="campana" id="campana" class="col-8 col-md-12" placeholder="campana"required>
-<option  value="">Seleccion un foco</option>
-@foreach($campanas as $campana)<option value="{{ $campana->campana}}">
-{{ $campana->campana }}</option>
-@endforeach
-</select>
 
-</div>
-<div id="supervisor" name="supervisor" class="col-4 col-md"><strong><p>Supervisor:</p></strong>
-    <select name="supervisor" id="supervisor" class="col-4 col-md" required> <label for="supervisor"></label>
-        <option value="">Asigne uno</option>
-            @foreach($supervisores as $supervisor)
-        <option value="{{ $supervisor->supervisor}}">{{ $supervisor->supervisor }}</option>
-            @endforeach
-    </select>
-</div>
+        <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Foco:</p><span></span></strong>
+            <p><input list="foco" type="text" name="foco"   class="form-control">
+               <datalist name="foco" id="foco" >
+                <option  value="">Seleccion un foco</option>
+                @foreach($focos as $foco)<option value="{{ $foco->foco}}">
+                  {{ $foco->foco }}</option>
+                @endforeach
+                </datalist>
+                </p>
+            </div>
+
+
+            <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Campaña:</p><span></span></strong>
+                <p><input list="campana" type="text" name="campana"   class="form-control">
+                   <datalist name="campana" id="campana" >
+                    <option  value="">Seleccion una Campaña</option>
+                    @foreach($campanas as $campana)<option value="{{ $campana->campana}}">
+                    {{ $campana->campana }}</option>
+                    @endforeach
+                    </datalist>
+                    </p>
+                </div>
+
+                <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Supervisor:</p><span></span></strong>
+                    <p><input list="supervisor" type="text" name="supervisor"   class="form-control">
+                       <datalist name="supervisor" id="supervisor" >
+                        <option value="">Asigne uno</option>
+                        @foreach($supervisores as $supervisor)
+                    <option value="{{ $supervisor->supervisor}}">{{ $supervisor->supervisor }}</option>
+                        @endforeach
+                        </datalist>
+                        </p>
+                    </div>
+
+
+
+
 
 </div>
 <br><br>

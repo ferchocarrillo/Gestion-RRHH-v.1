@@ -16,6 +16,7 @@ use App\Prefijo;
 use App\Orientacion;
 use App\Adicional2;
 use App\Adicional;
+use App\Aprobacion;
 use App\EntGerencia;
 use App\EntJefe;
 use App\Entrevista1;
@@ -137,8 +138,11 @@ class CapacitacionController extends Controller
         $entJefe=EntJefe::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $bancoses = Bancos::all();
         $capacitacion = Capacitacion::all();
+$aprobacions = Aprobacion::all();
 
-       return view('capacitacion.view', compact('bancoses','capacitacion','entJefe','entGerencia','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
+
+
+       return view('capacitacion.view', compact('aprobacions','bancoses','capacitacion','entJefe','entGerencia','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
     }
 
     /**

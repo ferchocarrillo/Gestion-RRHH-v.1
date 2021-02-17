@@ -142,7 +142,7 @@ class NuevoEmpleadoController extends Controller
             $nuevo->Preexistencia          = $request->Preexistencia;
             $nuevo->alergias               = $request->alergias;
             $nuevo->medicamentos           = $request->medicamentos;
-            $nuevo->familiarp1             = $request->$tipoDoc. ',' .$docfam1. ',' .$familiarp1. ',' .$parentescop1. ',' .$edadp1. ','.$epsFam1. ',' .$caja1 ;
+            $nuevo->familiarp1             = $request->$tipo_docs1. ',' .$docfam1. ',' .$familiarp1. ',' .$parentescop1. ',' .$edadp1. ','.$epsFam1. ',' .$caja1 ;
             $nuevo->familiarp2             = $request->$tipo_docs2. ',' .$docfam2. ',' .$familiarp2. ',' .$parentescop2. ',' .$edadp2. ','.$epsFam2. ',' .$caja2 ;
             $nuevo->familiarp3             = $request->$tipo_docs3. ',' .$docfam3. ',' .$familiarp3. ',' .$parentescop3. ',' .$edadp3. ','.$epsFam3. ',' .$caja3 ;
             $nuevo->familiarp4             = $request->$tipo_docs4. ',' .$docfam4. ',' .$familiarp4. ',' .$parentescop4. ',' .$edadp4. ','.$epsFam4. ',' .$caja4 ;

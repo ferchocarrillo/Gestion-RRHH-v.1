@@ -254,16 +254,17 @@ class="form-horizontal">
             <div class="row">
 
                        <!-- Force next columns to break to new line -->
-         <div class="w-100 d-none d-md-block"></div>
+         
          <div class="col"></div>
          <!-- Force next columns to break to new line -->
 
 
-
-         <div class="w-100 d-none d-md-block"></div>
+<table class="table table-dark table-hover">
+         <div class="table table-dark table-hover"></div>
          <div class="col"><p class="h6">Empresa</p></div>
          <div class="col"><p class="h6">Fecha de inicio</p> </div>
          <div class="col"><p class="h6">Fecha de retiro</p></div>
+         <div class="col"><p class="h6">Duracion en dias</p></div>
          <div class="col"><p class="h6">Cargo</p></div>
          <div class="col"><p class="h6">Jefe Inmediato</p></div>
          <div class="col"><p class="h6">Teléfono</p> </div>
@@ -276,7 +277,7 @@ class="form-horizontal">
          <div class="col">{{ $entrevista4s->empresa1}}</div>
          <div class="col">{{ $entrevista4s->fechain1}} </div>
          <div class="col">{{ $entrevista4s->fechart1}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo1}}</div>
          <div class="col">{{ $entrevista4s->hlcargo1}}</div>
          <div class="col">{{ $entrevista4s->jefeinm1}}</div>
          <div class="col">{{ $entrevista4s->teleinf1}}</div>
@@ -288,7 +289,7 @@ class="form-horizontal">
          <div class="col">{{ $entrevista4s->empresa2}}</div>
          <div class="col">{{ $entrevista4s->fechain2}} </div>
          <div class="col">{{ $entrevista4s->fechart2}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo2}}</div>
          <div class="col">{{ $entrevista4s->hlcargo2}}</div>
          <div class="col">{{ $entrevista4s->jefeinm2}}</div>
          <div class="col">{{ $entrevista4s->teleinf2}}</div>
@@ -300,7 +301,7 @@ class="form-horizontal">
          <div class="col">{{ $entrevista4s->empresa3}}</div>
          <div class="col">{{ $entrevista4s->fechain3}} </div>
          <div class="col">{{ $entrevista4s->fechart3}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo3}}</div>
          <div class="col">{{ $entrevista4s->hlcargo3}}</div>
          <div class="col">{{ $entrevista4s->jefeinm3}}</div>
          <div class="col">{{ $entrevista4s->teleinf3}}</div>
@@ -312,7 +313,7 @@ class="form-horizontal">
          <div class="col">{{ $entrevista4s->empresa4}}</div>
          <div class="col">{{ $entrevista4s->fechain4}} </div>
          <div class="col">{{ $entrevista4s->fechart4}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo4}}</div>
          <div class="col">{{ $entrevista4s->hlcargo4}}</div>
          <div class="col">{{ $entrevista4s->jefeinm4}}</div>
          <div class="col">{{ $entrevista4s->teleinf4}}</div>
@@ -324,7 +325,7 @@ class="form-horizontal">
          <div class="col">{{ $entrevista4s->empresa5}}</div>
          <div class="col">{{ $entrevista4s->fechain5}} </div>
          <div class="col">{{ $entrevista4s->fechart5}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo5}}</div>
          <div class="col">{{ $entrevista4s->hlcargo5}}</div>
          <div class="col">{{ $entrevista4s->jefeinm5}}</div>
          <div class="col">{{ $entrevista4s->teleinf5}}</div>
@@ -333,7 +334,7 @@ class="form-horizontal">
 
         </div>
     </div>
-
+  </table>
 
 <center><h3>Generalidades</h3></center>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">

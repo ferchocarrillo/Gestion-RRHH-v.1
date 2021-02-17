@@ -112,6 +112,25 @@ class Entrevista3Controller extends Controller
         $entrevista3s->fecha6           = $request->fecha6;
         $entrevista3s->titulo6          = $request->titulo6;
         $entrevista3s->estado6          = $request->estado6;
+        $entrevista3s->Grado7           = $request->Grado7;
+        $entrevista3s->institucion7     = $request->institucion7;
+        $entrevista3s->años7            = $request->años7;
+        $entrevista3s->fecha7           = $request->fecha7;
+        $entrevista3s->titulo7          = $request->titulo7;
+        $entrevista3s->estado7          = $request->estado7;
+        $entrevista3s->Grado8           = $request->Grado8;
+        $entrevista3s->institucion8     = $request->institucion8;
+        $entrevista3s->años8            = $request->años8;
+        $entrevista3s->fecha8           = $request->fecha8;
+        $entrevista3s->titulo8          = $request->titulo8;
+        $entrevista3s->estado8          = $request->estado8;
+
+
+
+
+
+
+
         $entrevista3s->save();
         return back();
     }

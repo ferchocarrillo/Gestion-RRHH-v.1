@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -98,7 +100,6 @@ Route::resource('novedades',        NovedadesController::class);
 Route::resource('asignacion',       AsignacionController::class);
 Route::resource('nuevoempleado',    NuevoEmpleadoController::class);
 Route::resource('entrevistaFull',   EntrevistaFullController::class);
-
 
 
 

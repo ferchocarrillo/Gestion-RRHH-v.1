@@ -34,7 +34,7 @@
             {{--<div ><strong> Id:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->id }}</div> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;--}}
             &nbsp;&nbsp;&nbsp;
             <div><strong> Cedula:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->cedula }}</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div><strong> Nombres:</strong>&nbsp;{{ $filtro->nombre }}</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
             
             <div><strong> Telefono: </strong>&nbsp;{{ $filtro->telefono }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
           <div><strong> Correo:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $filtro->correo }}</div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
@@ -54,415 +54,310 @@
 <div class="container">
 
     <div class="card-body" style="background-image: linear-gradient(#FFFFFF, #FEFFF1);">
-        <div class="column">
-        <div class="row col-xs-12">
-            <label for="hdv">Hoja de vida actualizada con foto</label>
-{{---espaciado--}}
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-            <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="hv" id="hv1" value="Si">
-            <label class="form-check-label" for="hv1">Si</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="hv" id="hv2" value="No">
-            <label class="form-check-label" for="hv2">No</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="hv" id="hv3" value="Pendiente">
-            <label class="form-check-label" for="hv3">Pendiente</label>
-        </div>
-
-    </div>
-    <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-    <div class="row col-xs-12">
-        <label for="hdv">Fotocopia de  servicio publico</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="serv_publico" id="serv_publico1" value="Si">
-        <label class="form-check-label" for="serv_publico1">Si</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="serv_publico" id="serv_publico2" value="No">
-        <label class="form-check-label" for="serv_publico2">No</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="serv_publico" id="serv_publico3" value="Pendiente">
-        <label class="form-check-label" for="serv_publico3">Pendiente</label>
-    </div>
-
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+<p>
+  <fieldset>
+    <legend style="width: 300em"><strong><a style="color: red">* </a></strong>Hoja de vida actualizada con foto</legend>
+    <input type="radio" required name="hv" id="hv1" value="si"><label for="hv1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+    <input type="radio" required name="hv" id="hv2" value="no"><label for="hv2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+    <input type="radio" required name="hv" id="hv3" value="pendiente"><label for="hv3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+  </fieldset>
+</p>
 </div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-<div class="row col-xs-12">
-    <label for="hdv">Apertura cuenta de nomina</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-    <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_bancaria" id="cert_bancaria1" value="Si">
-    <label class="form-check-label" for="cert_bancaria1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_bancaria" id="cert_bancaria2" value="No">
-    <label class="form-check-label" for="cert_bancaria2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_bancaria" id="cert_bancaria3" value="Pendiente" >
-    <label class="form-check-label" for="cert_bancaria3" >Pendiente</label>
 </div>
-<p><select name="bancos" id="bancos" class="form-control">
-<option value="0">seleccione el banco</option>
-
-@foreach($bancoses as $bancos)<option value="{{ $bancos->banco}}">
-    {{ $bancos->banco }}</option>
-  @endforeach
-
-
-</select></p>
 </div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<div class="row col-xs-12">
-    <label for="hdv">Examen medico ocupacional emitido por el laboratorio</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-    <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ex_medico" id="ex_medico1" value="Si">
-    <label class="form-check-label" for="ex_medico1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ex_medico" id="ex_medico2" value="No">
-    <label class="form-check-label" for="ex_medico2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ex_medico" id="ex_medico3" value="Pendiente" >
-    <label class="form-check-label" for="ex_medico3">Pendiente</label>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+  <p>
+    <fieldset>
+      <legend><strong><a style="color:red">* </a></strong>Fotocopia de  servicio publico</legend>
+      <input type="radio" required name="serv_publico" id="serv_publico1" value="si"><label for="hv1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+      <input type="radio" required name="serv_publico" id="serv_publico2" value="no"><label for="hv2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+      <input type="radio" required name="serv_publico" id="serv_publico3" value="pendiente"><label for="hv3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+    </fieldset>
+  </p>
+</div>
+</div>
+</div>
 </div>
 
-</div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-<div class="row col-xs-12">
-    <label for="hdv">Antecedentes disciplinarios emitidos por la procuraduría </label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-    <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ant_procuraduria" id="ant_procuraduria1" value="Si">
-    <label class="form-check-label" for="ant_procuraduria1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ant_procuraduria" id="ant_procuraduria2" value="No">
-    <label class="form-check-label" for="ant_procuraduria2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ant_procuraduria" id="ant_procuraduria3" value="Pendiente" >
-    <label class="form-check-label" for="ant_procuraduria3">Pendiente</label>
-</div>
-
-</div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-<div class="row col-xs-12">
-    <label for="hdv">Pasado judicial emitido por la Policía Nacional</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ant_ponal" id="ant_ponal1" value="Si">
-    <label class="form-check-label" for="ant_ponal1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ant_ponal" id="ant_ponal2" value="No">
-    <label class="form-check-label" for="ant_ponal2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ant_ponal" id="ant_ponal3" value="Pendiente" >
-    <label class="form-check-label" for="ant_ponal3">Pendiente</label>
-</div>
+ <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+<p>
+  <fieldset>
+    <legend style="width: 300em"><strong><a style="color:red">* </a></strong>Apertura cuenta de nomina</legend>
+    <input type="radio" required name="cert_bancaria" id="cert_bancaria1" value="si"><label for="cert_bancaria1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+    <input type="radio" required name="cert_bancaria" id="cert_bancaria2" value="no"><label for="cert_bancaria2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+    <input type="radio" required name="cert_bancaria" id="cert_bancaria3" value="pendiente"><label for="cert_bancaria3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+    &nbsp;&nbsp;
+    <input list="bancos" type="text" name="bancos"  style="width:200px" placeholder="Seleccione el banco" required>
+    
+    <datalist name="bancos" id="bancos" >
+      <option value="">Seleccione el banco</option>
+  
+      @foreach($bancoses as $bancos)<option value="{{ $bancos->banco}}">
+          {{ $bancos->banco }}</option>
+        @endforeach
+    </datalist>
+  
+  </fieldset>
+  
+  
+ 
+</p>
 
 </div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-
-
-<div class="row col-xs-12">
-    <label for="hdv">5 fotocopias de la cedula de ciudadanía ampliada al 150% </label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="copia_cedula" id="copia_cedula1" value="Si">
-    <label class="form-check-label" for="copia_cedula1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="copia_cedula" id="copia_cedula2" value="No">
-    <label class="form-check-label" for="copia_cedula2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="copia_cedula" id="copia_cedula3" value="Pendiente">
-    <label class="form-check-label" for="copia_cedula3">Pendiente</label>
 </div>
-<p><input type="number" id="cantidadcedula" name="cantidadcedula" placeholder="Cantidad entregada"  class="form-control"></p>
 </div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+  <p>
+    <fieldset>
+      <legend><strong><a style="color:red">* </a></strong>Examen Medico</legend>
+      <input type="radio" required name="ex_medico" id="ex_medico1" value="si"><label for="ex_medico1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+      <input type="radio" required name="ex_medico" id="ex_medico2" value="no"><label for="ex_medico2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+      <input type="radio" required name="ex_medico" id="ex_medico3" value="pendiente"><label for="ex_medico3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+    </fieldset>
+  </p>
+</div>
+</div>
+</div>
+</div>
+{{--  --}}
 
 
-
-<div class="row col-xs-12">
-    <label for="hdv">Fotocopia de la libreta militar</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="libreta_militar" id="libreta_militar1" value="Si">
-    <label class="form-check-label" for="libreta_militar1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="libreta_militar" id="libreta_militar2" value="No">
-    <label class="form-check-label" for="libreta_militar2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="libreta_militar" id="libreta_militar3" value="No aplica" >
-    <label class="form-check-label" for="libreta_militar3">No aplica</label>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+<p>
+<fieldset>
+<legend style="width: 300em"><strong><a style="color: red">* </a></strong>Antecedentes disciplinarios procuraduría</legend>
+<input type="radio" required name="ant_procuraduria" id="ant_procuraduria1" value="si"><label for="ant_procuraduria1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="ant_procuraduria" id="ant_procuraduria2" value="no"><label for="ant_procuraduria2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="ant_procuraduria" id="ant_procuraduria3" value="pendiente"><label for="ant_procuraduria3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+</fieldset>
+</p>
+</div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="card">
+<div class="card-body">
+<p>
+<fieldset>
+<legend><strong><a style="color:red">* </a></strong>Pasado judicial Policía Nacional</legend>
+<input type="radio" required name="ant_ponal" id="ant_ponal1" value="si"><label for="ant_ponal1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="ant_ponal" id="ant_ponal2" value="no"><label for="ant_ponal2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="ant_ponal" id="ant_ponal3" value="pendiente"><label for="ant_ponal3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+</fieldset>
+</p>
+</div>
+</div>
+</div>
 </div>
 
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+<p>
+<fieldset>
+<legend style="width: 300em"><strong><a style="color: red">* </a></strong>5 fotocopias CC ampliada al 150%</legend>
+<input type="radio" required name="copia_cedula" id="copia_cedula1" value="si"><label for="copia_cedula1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="copia_cedula" id="copia_cedula2" value="no"><label for="copia_cedula2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="copia_cedula" id="copia_cedula3" value="pendiente"><label for="copia_cedula3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+&nbsp;&nbsp;&nbsp;<input type="text" id="cantidadcedula" name="cantidadcedula" style="width:200px"  placeholder="Cantidad entregada" >
+</fieldset>
+</p>
 </div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+</div>
+</div>
+<div class="col-sm-6">
+<div class="card">
+<div class="card-body">
+<p>
+<fieldset>
+<legend><strong><a style="color:red">* </a></strong>Copia libreta militar</legend>
+<input type="radio" required name="libreta_militar" id="libreta_militar1" value="si"><label for="libreta_militar1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="libreta_militar" id="libreta_militar2" value="no"><label for="libreta_militar2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="libreta_militar" id="libreta_militar3" value="no aplica"><label for="libreta_militar3"><i>&nbsp;&nbsp;&nbsp;</i>No aplica</label>
+
+</fieldset>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
 <strong><center>CERTIFICADOS DE ESTUDIOS</center></strong>
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<div class="row col-xs-12">
-    <label for="hdv">Certificado de bachiller</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
 
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_bachiller" id="cert_bachiller1" value="Si">
-    <label class="form-check-label" for="cert_bachiller1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_bachiller" id="cert_bachiller2" value="No">
-    <label class="form-check-label" for="cert_bachiller2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_bachiller" id="cert_bachiller3" value="Pendiente">
-    <label class="form-check-label" for="cert_bachiller3">Pendiente</label>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+<p>
+<fieldset>
+<legend style="width: 300em"><strong><a style="color: red">* </a></strong>Certificado de bachiller</legend>
+<input type="radio" required name="cert_bachiller" id="cert_bachiller1" value="si"><label for="cert_bachiller1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="cert_bachiller" id="cert_bachiller2" value="no"><label for="cert_bachiller2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="cert_bachiller" id="cert_bachiller3" value="pendiente"><label for="cert_bachiller3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+
+</fieldset>
+</p>
+</div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="card">
+<div class="card-body">
+<p>
+<fieldset>
+<legend><strong><a style="color:red">* </a></strong>Técnico, tecnólogo o profesional</legend>
+<input type="radio" required name="cert_otros" id="cert_otros1" value="si"><label for="cert_otros1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="cert_otros" id="cert_otros2" value="no"><label for="cert_otros2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="cert_otros" id="cert_otros3" value="pendiente"><label for="cert_otros3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+&nbsp;&nbsp;&nbsp;<input type="number" id="cantidadcert"style="width:200px" name="cantidadcert" placeholder="Cantidad entregada" >
+</fieldset>
+</p>
+</div>
+</div>
+</div>
 </div>
 
-</div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-
-
-
-<div class="row col-xs-12">
-    <label for="hdv">Certificado técnico, tecnólogo o profesional </label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_otros" id="cert_otros1" value="Si">
-    <label class="form-check-label" for="cert_otros1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_otros" id="cert_otros2" value="No">
-    <label class="form-check-label" for="cert_otros2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_otros" id="cert_otros3" value="Pendiente">
-    <label class="form-check-label" for="cert_otros3">Pendiente</label>
-</div>
-<p><input type="number" id="cantidadcert" name="cantidadcert" placeholder="Cantidad entregada"  class="form-control"></p>
-</div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-
-
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 <strong><center>REFERENCIAS</center></strong>
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<div class="row col-xs-12">
-    <label for="hdv">2 referencias laborales últimos empleos</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
 
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ref_laborales" id="ref_laborales1" value="Si">
-    <label class="form-check-label" for="ref_laborales1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ref_laborales" id="ref_laborales2" value="No">
-    <label class="form-check-label" for="ref_laborales2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ref_laborales" id="ref_laborales3" value="Pendiente">
-    <label class="form-check-label" for="ref_laborales3">Pendiente</label>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+<p>
+<fieldset>
+<legend style="width: 300em"><strong><a style="color: red">* </a></strong>2 referencias laborales últimos empleos</legend>
+<input type="radio" required name="ref_laborales" id="ref_laborales1" value="si"><label for="ref_laborales1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="ref_laborales" id="ref_laborales2" value="no"><label for="ref_laborales2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="ref_laborales" id="ref_laborales3" value="pendiente"><label for="ref_laborales3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+&nbsp;&nbsp;&nbsp;<input type="number" id="cantidadlab"style="width:200px" name="cantidadlab" placeholder="Cantidad entregada" >
+</fieldset>
+</p>
 </div>
-<p><input type="number" id="cantidadlab" name="cantidadlab" placeholder="Cantidad entregada"  class="form-control"></p>
 </div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-
-
-<div class="row col-xs-12">
-    <label for="hdv">2 referencias personales vigentes y firmadas en original</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ref_personales" id="ref_personales1" value="Si">
-    <label class="form-check-label" for="ref_personales1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ref_personales" id="ref_personales2" value="No">
-    <label class="form-check-label" for="ref_personales2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="ref_personales" id="ref_personales3" value="Pendiente">
-    <label class="form-check-label" for="ref_personales3">Pendiente</label>
 </div>
-<p><input type="number" id="cantidadper" name="cantidadper" placeholder="Cantidad entregada"  class="form-control"></p>
+<div class="col-sm-6">
+<div class="card">
+<div class="card-body">
+<p>
+<fieldset>
+<legend><strong><a style="color:red">* </a></strong>2 referencias personales en original</legend>
+<input type="radio" required name="ref_personales" id="ref_personales1" value="si"><label for="ref_personales1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="ref_personales" id="ref_personales2" value="no"><label for="ref_personales2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="ref_personales" id="ref_personales3" value="pendiente"><label for="ref_personales3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+&nbsp;&nbsp;&nbsp;<input type="number" id="cantidadper"style="width:200px" name="cantidadper" placeholder="Cantidad entregada" >
+</fieldset>
+</p>
 </div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+</div>
+</div>
+</div>
 
-
-
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 <strong><center>AFILIACION A EPS, CCF</center></strong>
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<div class="row col-xs-12">
-    <label for="hdv">Certificado EPS  actual, no mayor a 30 días </label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
 
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_eps" id="cert_eps1" value="Si">
-    <label class="form-check-label" for="cert_eps1">Si</label>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+<p>
+<fieldset>
+<legend style="width: 300em"><strong><a style="color: red">* </a></strong>Certificado EPS</legend>
+<input type="radio" required name="cert_eps" id="cert_eps1" value="si"><label for="cert_eps1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="cert_eps" id="cert_eps2" value="no"><label for="cert_eps2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="cert_eps" id="cert_eps3" value="pendiente"><label for="cert_eps3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+</fieldset>
+</p>
+</div>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="card">
+<div class="card-body">
+<p>
+<fieldset>
+<legend><strong><a style="color:red">* </a></strong>Certificado Pensiones</legend>
+<input type="radio" required name="cert_pensiones" id="cert_pensiones1" value="si"><label for="cert_pensiones1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="cert_pensiones" id="cert_pensiones2" value="no"><label for="cert_pensiones2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="cert_pensiones" id="cert_pensiones3" value="pendiente"><label for="cert_pensiones3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+
+</fieldset>
+</p>
+</div>
+</div>
+</div>
+
+<div class="col-sm-4">
+  <div class="card">
+  <div class="card-body">
+  <p>
+  <fieldset>
+  <legend><strong><a style="color:red">* </a></strong>Certificado Cesantias</legend>
+  <input type="radio" required name="cert_cesantias" id="cert_cesantias1" value="si"><label for="cert_cesantias1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+  <input type="radio" required name="cert_cesantias" id="cert_cesantias2" value="no"><label for="cert_cesantias2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+  <input type="radio" required name="cert_cesantias" id="cert_cesantias3" value="pendiente"><label for="cert_cesantias3"><i>&nbsp;&nbsp;&nbsp;</i>Pendiente</label>
+  
+  </fieldset>
+  </p>
   </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_eps" id="cert_eps2" value="No">
-    <label class="form-check-label" for="cert_eps2">No</label>
   </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_eps" id="cert_eps3" value="Pendiente">
-    <label class="form-check-label" for="cert_eps3">Pendiente</label>
-</div>
-</div>
-
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-
-<div class="row col-xs-12">
-    <label for="hdv">Certificado fondo de pensiones, no mayor a 30 días</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_pensiones" id="cert_pensiones1" value="Si">
-    <label class="form-check-label" for="cert_pensiones1">Si</label>
   </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_pensiones" id="cert_pensiones2" value="No">
-    <label class="form-check-label" for="cert_pensiones2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_pensiones" id="cert_pensiones3" value="Pendiente">
-    <label class="form-check-label" for="cert_pensiones3">Pendiente</label>
 </div>
 
-</div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-</div>
-
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-
-<div class="row col-xs-12">
-    <label for="hdv">Certificado fondo de cesantías, no mayor a 30 días</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
-
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_cesantias" id="cert_cesantias1" value="Si">
-    <label class="form-check-label" for="cert_cesantias1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_cesantias" id="cert_cesantias2" value="No">
-    <label class="form-check-label" for="cert_cesantias2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_cesantias" id="cert_cesantias3" value="Pendiente">
-    <label class="form-check-label" for="cert_cesantias3">Pendiente</label>
-</div>
-
-</div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-
-
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 <strong><center>OTROS DOCUMENTOS</center></strong>
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=70%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<div class="row col-xs-12">
-    <label for="hdv">Documentos de identificación de núcleo familiar</label>
-{{---espaciado--}}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-{{---espaciado--}}
 
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="nucleo_familiar" id="nucleo_familiar1" value="Si">
-    <label class="form-check-label" for="nucleo_familiar1">Si</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="nucleo_familiar" id="nucleo_familiar2" value="No">
-    <label class="form-check-label" for="nucleo_familiar2">No</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="nucleo_familiar" id="nucleo_familiar3" value="No Aplica">
-    <label class="form-check-label" for="nucleo_familiar3">No Aplica</label>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+<p>
+<fieldset>
+<legend style="width: 300em"><strong><a style="color: red">* </a></strong>Documentos nucleo familiar</legend>
+<input type="radio" required name="nucleo_familiar" id="nucleo_familiar1" value="si"><label for="nucleo_familiar1"><i>&nbsp;&nbsp;&nbsp;</i>Sí</label>
+<input type="radio" required name="nucleo_familiar" id="nucleo_familiar2" value="no"><label for="nucleo_familiar2"><i>&nbsp;&nbsp;&nbsp;</i>No</label>
+<input type="radio" required name="nucleo_familiar" id="nucleo_familiar3" value="no aplica"><label for="nucleo_familiar3"><i>&nbsp;&nbsp;&nbsp;</i>No aplica</label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<i>Relacionelos Aqui</i><textarea type="text" class="form-control" id="documentos" rows="3"  col="20" name="documentos" > </textarea>
+
+</fieldset>
+</p>
 </div>
-
-<div class="form-floating">
-    <textarea class="form-control form-control-lg col-12" cols="40" placeholder="Relacione los documentos aqui" id="documentos" name="documentos" style="height: 100px"></textarea>
 </div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-<div class="form-floating">
-    <textarea class="form-control" cols="134" placeholder="Observaciones Generales" id="observaciones" name="observaciones" style="height: 100px"></textarea>
 </div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
+<div class="col-sm-6">
+<div class="card">
+<div class="card-body">
+<p>
+<fieldset>
+<legend><strong><a style="color:red"> </a></strong>Observaciones Generales</legend>
+&nbsp;&nbsp;&nbsp;<textarea type="text" class="form-control" id="observaciones" rows="3"  col="20" name="observaciones" ></textarea>
+</fieldset>
+</p>
+</div>
+</div>
+</div>
+</div>
 
 <div class="col-2"><input type="hidden" class="form-control" id="id_filtro"  name="id_filtro" value="{{ old('id_filtro', $filtro->id)}}"></div>
 <div class="col-2"><input type="hidden" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
@@ -497,8 +392,7 @@
 
 
 
-            </div>
-        </div>
+          
     </div>
 </div>
 </fieldset>

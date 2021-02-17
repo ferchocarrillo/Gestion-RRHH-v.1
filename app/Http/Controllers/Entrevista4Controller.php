@@ -70,6 +70,45 @@ class Entrevista4Controller extends Controller
      /*   $request->validate([
             'cedula'          => 'required|unique:entrevista4s,cedula,',
         ]);*/
+Carbon::setLocale('es');
+Carbon::now();
+$hoy = Carbon::now();
+
+$date1 = $request->input('fechain1');
+$date2 = $request->input('fechart1');
+$tiempoA = $hoy->floatDiffInRealDays($date1);
+$tiempoB = $hoy->floatDiffInRealDays($date2);
+ 
+$tiempo1 = $tiempoA - $tiempoB;
+
+$date3 = $request->input('fechain2');
+$date4 = $request->input('fechart2');
+$tiempoC = $hoy->floatDiffInRealDays($date3);
+$tiempoD = $hoy->floatDiffInRealDays($date4);
+ 
+$tiempo2 = $tiempoC - $tiempoD;
+
+$date5 = $request->input('fechain3');
+$date6 = $request->input('fechart3');
+$tiempoE = $hoy->floatDiffInRealDays($date5);
+$tiempoF = $hoy->floatDiffInRealDays($date6);
+ 
+$tiempo3 = $tiempoE - $tiempoF;
+
+$date7 = $request->input('fechain4');
+$date8 = $request->input('fechart4');
+$tiempoG = $hoy->floatDiffInRealDays($date7);
+$tiempoH = $hoy->floatDiffInRealDays($date8);
+ 
+$tiempo4 = $tiempoG - $tiempoH;
+
+$date9 = $request->input('fechain5');
+$date10 = $request->input('fechart5');
+$tiempoI = $hoy->floatDiffInRealDays($date9);
+$tiempoJ = $hoy->floatDiffInRealDays($date10);
+ 
+$tiempo5 = $tiempoI - $tiempoJ;
+
 
         $entrevista4s = new Entrevista4();
         $entrevista4s->id_filtro        = $request->id_filtro;
@@ -80,6 +119,7 @@ class Entrevista4Controller extends Controller
         $entrevista4s->empresa1         = $request->empresa1;
         $entrevista4s->fechain1         = $request->fechain1;
         $entrevista4s->fechart1         = $request->fechart1;
+        $entrevista4s->tiempo1          = $tiempo1;
         $entrevista4s->sinExp           = $request->sinExp;
         $entrevista4s->hlcargo1         = $request->hlcargo1;
         $entrevista4s->jefeinm1         = $request->jefeinm1;
@@ -89,7 +129,7 @@ class Entrevista4Controller extends Controller
         $entrevista4s->empresa2         = $request->empresa2;
         $entrevista4s->fechain2         = $request->fechain2;
         $entrevista4s->fechart2         = $request->fechart2;
-
+        $entrevista4s->tiempo2          = $tiempo2;
         $entrevista4s->hlcargo2         = $request->hlcargo2;
         $entrevista4s->jefeinm2         = $request->jefeinm2;
         $entrevista4s->teleinf2         = $request->teleinf2;
@@ -98,7 +138,7 @@ class Entrevista4Controller extends Controller
         $entrevista4s->empresa3         = $request->empresa3;
         $entrevista4s->fechain3         = $request->fechain3;
         $entrevista4s->fechart3         = $request->fechart3;
-
+        $entrevista4s->tiempo3          = $tiempo3;
         $entrevista4s->hlcargo3         = $request->hlcargo3;
         $entrevista4s->jefeinm3         = $request->jefeinm3;
         $entrevista4s->teleinf3         = $request->teleinf3;
@@ -107,7 +147,7 @@ class Entrevista4Controller extends Controller
         $entrevista4s->empresa4         = $request->empresa4;
         $entrevista4s->fechain4         = $request->fechain4;
         $entrevista4s->fechart4         = $request->fechart4;
-
+        $entrevista4s->tiempo4          = $tiempo4;
         $entrevista4s->hlcargo4         = $request->hlcargo4;
         $entrevista4s->jefeinm4         = $request->jefeinm4;
         $entrevista4s->teleinf4         = $request->teleinf4;
@@ -116,7 +156,7 @@ class Entrevista4Controller extends Controller
         $entrevista4s->empresa5         = $request->empresa5;
         $entrevista4s->fechain5         = $request->fechain5;
         $entrevista4s->fechart5         = $request->fechart5;
-
+        $entrevista4s->tiempo5          = $tiempo5;
         $entrevista4s->hlcargo5         = $request->hlcargo5;
         $entrevista4s->jefeinm5         = $request->jefeinm5;
         $entrevista4s->teleinf5         = $request->teleinf5;
