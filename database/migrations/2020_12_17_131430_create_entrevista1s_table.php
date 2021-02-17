@@ -55,6 +55,7 @@ class CreateEntrevista1sTable extends Migration
             $table->string('cuanto')->nullable();
             $table->string('quien')->nullable();
             $table->string('conoce')->nullable();
+            $table->string('entvOK');
         $table->timestamps();
         });
     }

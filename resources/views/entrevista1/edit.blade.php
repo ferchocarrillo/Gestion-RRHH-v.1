@@ -4,14 +4,22 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<a href="{{route('entrevista1.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="} " /></a>
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
+<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:800px; visibility:visible z-index:1" align= "auto" height="80" width="200">
+<br>
+<br>
 <div class="page-header">
+    
     <br>
       <h3>Datos Iniciales</h3>
 </div>
 </center>
-<br>
+
+
+
+
+
 <div class="conteiner">
 
     <center><p>
@@ -33,7 +41,7 @@
           class="form-horizontal"
           style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           {{csrf_field()}}
-
+<input type="hidden" name="_method" value="PATCH">
 
 
           <fieldset class="form-group">
@@ -57,6 +65,38 @@
 </p>
 <p>
 <div class="col-auto"><label for="id_filtro"></label><input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
+<div class="col-auto"><label for="perfil"></label><input type="hidden" class="form-control" style="width: 240px" id="perfil" placeholder="perfil" name="perfil" value="{{ old('perfil', $filtro->perfil)}}"></div>
+<div class="col-auto"><label for="campana"></label><input type="hidden" class="form-control" style="width: 240px" id="campana" placeholder="campana" name="campana" value="{{ old('campana', $filtro->campaña)}}"></div>
+<div class="col-auto"><label for="fuente"></label><input type="hidden" class="form-control" style="width: 240px" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtro->fuente)}}"></div>
+<p><input type="hidden"  id="fregistro" name="fregistro" value="{{ $filtro->fregistro }}"></p>
+<p><input type="hidden"  id="nombre" name="nombre" value="{{ $filtro->nombre }}"></p>
+<p><input type="hidden"  id="cedula" name="cedula" value="{{ $filtro->cedula }}"></p>
+<p><input type="hidden"  id="telefono" name="telefono" value="{{ $filtro->telefono }}"></p>
+<p><input type="hidden"  id="correo" name="correo" value="{{ $filtro->correo }}"></p>
+
+<p><input type="hidden"  id="fuente" name="fuente" value="{{ $filtro->fuente }}"></p>
+<p><input type="hidden"  id="citadoE" name="citadoE" value="{{ $filtro->citadoE }}"></p>
+<p><input type="hidden"  id="noAplica" name="noAplica" value="{{ $filtro->noAplica }}"></p>
+<p><input type="hidden"  id="noInteresado" name="noInteresado" value="{{ $filtro->noInteresado }}"></p>
+<p><input type="hidden"  id="enviadoCapa" name="enviadoCapa" value="{{ $filtro->enviadoCapa }}"></p>
+<p><input type="hidden"  id="entrevistaJefeInm" name="entrevistaJefeInm" value="{{ $filtro->entrevistaJefeInm }}"></p>
+<p><input type="hidden"  id="entrevistaGerencia" name="entrevistaGerencia" value="{{ $filtro->entrevistaGerencia }}"></p>
+<p><input type="hidden"  id="enviadocontratacion" name="enviadocontratacion" value="{{ $filtro->enviadocontratacion }}"></p>
+<p><input type="hidden"  id="enviadoExm" name="enviadoExm" value="{{ $filtro->enviadoExm }}"></p>
+<p><input type="hidden"  id="PruebasE" name="PruebasE" value="{{ $filtro->PruebasE }}"></p>
+<p><input type="hidden"  id="yaTrabaja" name="yaTrabaja" value="{{ $filtro->yaTrabaja }}"></p>
+<p><input type="hidden"  id="numeroEqu" name="numeroEqu" value="{{ $filtro->numeroEqu }}"></p>
+<p><input type="hidden"  id="observacion" name="observacion" value="{{ $filtro->observacion }}"></p>
+<p><input type="hidden"  id="noAsiste" name="noAsiste" value="{{ $filtro->noAsiste }}"></p>
+<p><input type="hidden"  id="NoResponde2" name="NoResponde2" value="{{ $filtro->NoResponde2 }}"></p>
+<p><input type="hidden"  id="YaNoInt" name="YaNoInt" value="{{ $filtro->YaNoInt }}"></p>
+<p><input type="hidden"  id="Estudiante" name="Estudiante" value="{{ $filtro->Estudiante }}"></p>
+<p><input type="hidden"  id="observacion2" name="observacion2" value="{{ $filtro->observacion2 }}"></p>
+<p><input type="hidden"  id="noAsisteEnt" name="noAsisteEnt" value="{{ $filtro->noAsisteEnt }}"></p>
+<p><input type="hidden"  id="entvOK" name="entvOK" value="{{ $filtro->entvOK }}"></p>
+
+
+
 </p>
 </div>
 </div>
@@ -319,12 +359,18 @@
     <textarea class="form-control" id="conoce" name="conoce" rows="4"></textarea>
 </div>
 
+<input type="hidden" name="entvOK" id="entvOK" value="entrevista 1 ok">
+
 <div class="d-grid gap-2">
     <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
     <a href="{{route('entrevista2.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Continuar</a>
 </div>
+<br>
+<br>
+<br>
 
-            </div>
+
+</div>
         </div>
     </div>
 </div>

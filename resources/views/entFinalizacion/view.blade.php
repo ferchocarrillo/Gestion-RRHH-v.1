@@ -293,7 +293,7 @@ class="form-horizontal">
          <div class="col">{{ $entrevista4s->hlcargo2}}</div>
          <div class="col">{{ $entrevista4s->jefeinm2}}</div>
          <div class="col">{{ $entrevista4s->teleinf2}}</div>
-        <div class="col">{{ $entrevista4s->salarioh2}}</div>
+         <div class="col">{{ $entrevista4s->salarioh2}}</div>
          <div class="col">{{ $entrevista4s->motivor2}}</div>
          <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
          <!-- Force next columns to break to new line -->
@@ -305,7 +305,7 @@ class="form-horizontal">
          <div class="col">{{ $entrevista4s->hlcargo3}}</div>
          <div class="col">{{ $entrevista4s->jefeinm3}}</div>
          <div class="col">{{ $entrevista4s->teleinf3}}</div>
-        <div class="col">{{ $entrevista4s->salarioh3}}</div>
+         <div class="col">{{ $entrevista4s->salarioh3}}</div>
          <div class="col">{{ $entrevista4s->motivor3}}</div>
 
          <!-- Force next columns to break to new line -->
@@ -317,7 +317,7 @@ class="form-horizontal">
          <div class="col">{{ $entrevista4s->hlcargo4}}</div>
          <div class="col">{{ $entrevista4s->jefeinm4}}</div>
          <div class="col">{{ $entrevista4s->teleinf4}}</div>
-        <div class="col">{{ $entrevista4s->salarioh4}}</div>
+         <div class="col">{{ $entrevista4s->salarioh4}}</div>
          <div class="col">{{ $entrevista4s->motivor4}}</div>
 
          <!-- Force next columns to break to new line -->
@@ -329,7 +329,7 @@ class="form-horizontal">
          <div class="col">{{ $entrevista4s->hlcargo5}}</div>
          <div class="col">{{ $entrevista4s->jefeinm5}}</div>
          <div class="col">{{ $entrevista4s->teleinf5}}</div>
-        <div class="col">{{ $entrevista4s->salarioh5}}</div>
+         <div class="col">{{ $entrevista4s->salarioh5}}</div>
          <div class="col">{{ $entrevista4s->motivor5}}</div>
 
         </div>

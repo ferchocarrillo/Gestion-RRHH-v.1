@@ -36,7 +36,7 @@ class Entrevista2Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = Entrevista1::orderBy('id', 'asc')->paginate(10);
         return view('entrevista2.index',compact( 'entrevistas'));
     }
 

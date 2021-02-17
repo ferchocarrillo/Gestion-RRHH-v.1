@@ -24,6 +24,8 @@
 </form>
 </div>
 </p>
+
+
 <div class="container">
 
 
@@ -46,8 +48,8 @@
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
 
-                                            <th scope="col">Perfil</th>
-                                            <th scope="col">Campaña</th>
+                                            <th scope="col">Cargo</th>
+                                           
 
                                             <th colspan="6">Etapas de la entrevista</th>
                                           </tr>
@@ -57,16 +59,15 @@
                                             <tr>
                                                 <th scope="row">{{ $entrevista->id}}</th>
                                                 <td>{{ $entrevista->cedula}}</td>
-                                                <td>{{ $entrevista->nombre}}</td>
+                                                <td>{{ $entrevista->nombres}}</td>
                                                <td>{{ $entrevista->telefono}}</td>
 
-                                                <td>{{ $entrevista->perfil}}</td>
-                                                <td>{{ $entrevista->campaña}}</td>
-
+                                                <td>{{ $entrevista->cargo}}</td>
+                    
                                                 <td>
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}
                                                    <a href="{{url('/entrevista2/'.$entrevista->id.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>
-                                                    {{-- <a href="{{url('/entrevista3/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>--}}
+                                                     
                                                   {{--   <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Laborales</a>--}}
 
                                             </form>

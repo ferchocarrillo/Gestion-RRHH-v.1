@@ -33,7 +33,7 @@
 
                         <div class="card-header">
                         <center>
-                            <h2>Listado de Postulados</h2>
+                            <h2>Listado de Postulados a Entrevistar</h2>
                       </center>
                     </div>
 
@@ -50,7 +50,6 @@
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
-
                                             <th scope="col">Perfil</th>
                                             <th scope="col">Campaña</th>
 
@@ -63,14 +62,22 @@
                                                 <th scope="row">{{ $entrevista->id}}</th>
                                                 <td>{{ $entrevista->cedula}}</td>
                                                 <td>{{ $entrevista->nombre}}</td>
-                                               <td>{{ $entrevista->telefono}}</td>
-
+                                                <td>{{ $entrevista->telefono}}</td>
                                                 <td>{{ $entrevista->perfil}}</td>
                                                 <td>{{ $entrevista->campaña}}</td>
 
+
+
+
                                                 <td>
+                                                   
+                                             {{-- @foreach ($entrevista1s as $entrevista1)
+                                             <td>{{ $entrevista1->entvOK}}</td>
+                                             @endforeach        --}}
+                                            
+
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Basicos</a>
-                                                   {{-- <a href="{{url('/entrevista2/'.$entrevista->id.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>
+                                                    <a href="{{url('/filtro/'.$entrevista->id.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">No asiste</a>{{--
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Laborales</a>--}}
 

@@ -40,8 +40,8 @@ class Entrevista1Controller extends Controller
     public function index()
     {
 
-
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(20);
+        
+        $entrevistas = Filtro::orderBy('id', 'asc')->where('citadoE','=','Citado Entrevista')->whereNull('noAsisteEnt')->paginate(20);
         return view('entrevista1.index',compact( 'entrevistas'));
     }
 
@@ -88,6 +88,8 @@ class Entrevista1Controller extends Controller
         ]);
         $entrevista1s = new Entrevista1();
 
+
+
         $entrevista1s->id_filtro        = $request->id_filtro;
         $entrevista1s->cedula           = $request->cedula;
         $entrevista1s->nombres          = $request->nombres;
@@ -128,13 +130,44 @@ class Entrevista1Controller extends Controller
         $entrevista1s->cuanto           = $request->cuanto;
         $entrevista1s->quien            = $request->quien;
         $entrevista1s->conoce           = $request->conoce;
-
-
+        $entrevista1s->entvOK           =$request->entvOK;
 
         $entrevista1s->save();
 
-        return back();
-        return view('entrevista2.index');
+        $filtro = new Filtro();
+       //$filtro->fregistro              = $request->fregistro;
+       //$filtro->nombre                 = $request->nombre;
+       //$filtro->cedula                 = $request->cedula;
+       //$filtro->telefono               = $request->telefono;
+       //$filtro->correo                 = $request->correo;
+       //$filtro->perfil                 = $request->cargos;
+       //$filtro->campaña                = $request->campana;
+       //$filtro->fuente                 = $request->fuente;
+       //$filtro->citadoE                = $request->citadoE;
+       //$filtro->noAplica               = $request->noAplica;
+       //$filtro->noInteresado           = $request->noInteresado;
+       //$filtro->enviadoCapa            = $request->enviadoCapa;
+       //$filtro->entrevistaJefeInm      = $request->entrevistaJefeInm;
+       //$filtro->entrevistaGerencia     = $request->entrevistaGerencia;
+       //$filtro->enviadocontratacion    = $request->enviadocontratacion;
+       //$filtro->enviadoExm             = $request->enviadoExm;
+       //$filtro->PruebasE               = $request->PruebasE;
+       //$filtro->yaTrabaja              = $request->yaTrabaja;
+       //$filtro->numeroEqu              = $request->numeroEqu;
+       //$filtro->observacion            = $request->observacion;
+       //$filtro->usuario                = $user_id.','.$user_nombre;
+       //$filtro->noAsiste               = $request->noAsiste;
+       //$filtro->NoResponde2            = $request->NoResponde2;
+       //$filtro->YaNoInt                = $request->YaNoInt;
+       //$filtro->Estudiante             = $request->Estudiante;
+       //$filtro->observacion2           = $request->observacion2;
+      //  $filtro->entvOK                 =$request->entvOK;
+        // $filtro->store()->save();
+        Filtro::create($request->all());
+        
+        return response()->json($filtro, $entrevista1s);
+        //return back();
+        //return view('entrevista2.index');
     }
 
     /**
@@ -187,11 +220,18 @@ class Entrevista1Controller extends Controller
      */
     public function update(Request $request, $id)
     {
+      
+      
+        $datosfiltro=request()->except(['_token','_method']);
+        filtro::where('id','=',$id)->update($datosfiltro);
+        $filtro=Filtro::findOrFail($id);
+
         $datosentrevista1 =request()->except(['_token','_method']);
-        entrevista1::where('id','=',$id)->update($datosentrevista1);
+        entrevista1::where('id_filtro','=',$id)->update($datosentrevista1);
         $entrevista1=entrevista1::findOrFail($id);
-     //return response()->json($entrevista1);
-     return view('entrevista1.edit', compact('entrevista1'));
+
+     //return response()->json($entrevista1, $filtro);
+     return view('entrevista1.edit', compact('entrevista1','filtro'));
     }
 
    /**
