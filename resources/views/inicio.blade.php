@@ -1,3 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=1">
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="inicio/styles.css">
+<link href="{{ asset('theme/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
+<script src="{{asset('theme/vendor/bootstrap-4.1/popper.min.js')}}"></script>
+<script src="{{asset('theme/vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,500;1,200&display=swap" rel="stylesheet">
+<body>
+<title>Mentius - Recursos Humanos</title>
+</head>
+<body>
+<header class="hero">
+        <div class="textos-hero">
+            <h1>Bienvenido a Mentius Recursos Humanos</h1>
+            <p>Hacemos de la excelencia nuestra mejor hoja de presentacion</p>
+    <!--<a href="#contacto">contactame</a>--> <!--boton para hacer escrol-->
+        </div>
+      <div class="svg-hero">
+          <svg viewBox="0 0 1320 280" >
+             <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 500 L0 500" fill=" #fff "/>
+             <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 500 L0 500" fill=" #fff "/>
+             <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 500 L0 500" fill=" #fff "/>
+             <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 500 L0 500" fill=" #fff "/>
+          </svg>
+      </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @extends('plantilla')
 @section('contenedor')
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">

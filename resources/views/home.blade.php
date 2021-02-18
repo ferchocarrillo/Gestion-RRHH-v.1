@@ -5,7 +5,7 @@
 <div class="container" >
     <div class="pull-right">
         <div class="col-md-20" >
-            
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
     <link rel="shortcut icon" href="home">
@@ -21,7 +21,7 @@
 
 
 
-   <h1  align= "center"> 
+   <h1  align= "center">
     Estadisticas y Graficos de Gestion RR.HH
  </h1>
 </center></div>

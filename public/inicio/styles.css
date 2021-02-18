@@ -1,0 +1,40 @@
+.hero{
+    background-image: linear-gradient(120deg, rgba(224, 195, 252, 0.692) 0%,
+    rgba(142, 197, 252, 0.692) 100%), url("../imagenes/fondo1.jpg");/*degrade con imagen*/
+    width: 100%;/*ancho de la imagen*/
+    height: 657px;/*altura de la imagen*/
+    background-repeat: no-repeat;/*si la imagen no no ocupa el espacio no se repite*/
+    background-size: cover;/**/
+    background-position: center;/**/
+    background-attachment: fixed;/**/
+    position: relative;/**/
+    overflow: hidden;/*comando para que nada salga del hero*/
+    }
+    .textos-hero{
+        height: 500px;/*posicion del titulo en cuanto al techo */
+        color: rgb(246, 246, 246);/*color de la letra*/
+        display: flex;/*posicion de la letra fija */
+        flex-direction: column;/*organizacion de le la letra por columnas */
+        justify-content: center;/*posicion de de la letra */
+        align-items: center;/*lineamiento de la letra*/
+    }
+    .textos-hero h1{
+        font-size: 80px;/*tamaño de la letra del titulo*/
+    }
+    .textos-hero p{
+        font-size: 30px;/*tamaño de la letra del parrafo*/
+        margin-bottom: 30px;/*distancia del boton en cuanto al parrafo*/
+    }
+    .textos-hero a{
+        display: inline-block;/*propiedades de bloque y linea */
+        text-decoration: none;/*quita la linea inferior del enlase*/
+        padding: 12px 28px;/*tamaño del boton */
+        background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);/*color del boton en drade*/
+        border-radius: 30px;/*circunferencia del boton */
+        color: #ffffff;/*color de la letra del boton*/
+    }
+    .svg-hero{
+        position: absolute;/*pocionamiento de las ondas */
+        bottom: 0;
+        left: 0;
+        width: 100%;/*ancho de las ondas*/
