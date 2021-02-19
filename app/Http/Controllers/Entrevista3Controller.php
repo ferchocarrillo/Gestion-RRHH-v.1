@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\entrevista3;
 use App\Entrevista2;
+use App\Entrevista1;
 use App\Filtro;
 use App\reclutamiento;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class Entrevista3Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Entrevista2::orderBy('id', 'asc')->where('entvOK','=','entrevista 2 ok')
+        $entrevistas = Entrevista2::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 2 ok')
         ->paginate(20);
         return view('entrevista3.index',compact( 'entrevistas'));
     }
@@ -53,7 +54,7 @@ class Entrevista3Controller extends Controller
 
 
         $searchEntrevista = $request->get('searchEntrevista');
-        $entrevistas3= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
+        $entrevistas3= Entrevista1::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
         return view('entrevista3.index', ['entrevistas3' => $entrevistas3]);
     }
 
@@ -151,7 +152,7 @@ class Entrevista3Controller extends Controller
     public function edit($id)
     {
         $this->authorize('haveaccess','entrevista3.edit');
-       $filtro=Filtro::findOrFail($id);
+       $filtro= Entrevista1::findOrFail($id);
 
        return view('entrevista3.edit', compact('filtro'));
     }

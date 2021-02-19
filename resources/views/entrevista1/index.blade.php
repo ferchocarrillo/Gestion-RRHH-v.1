@@ -75,7 +75,7 @@
                                              @endforeach        --}}
                                             
 
-                                                    <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Basicos</a>
+                                                    <a href="{{url('/entrevista1/'.$entrevista->id_filtro.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Basicos</a>
                                                     <a href="{{url('/filtro/'.$entrevista->id.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">No asiste</a>{{--
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Laborales</a>--}}

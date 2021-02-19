@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\entrevista4;
 use App\Entrevista3;
+use App\Entrevista1;
 use Illuminate\Http\Request;
 use App\Filtro;
 use App\reclutamiento;
@@ -30,7 +31,7 @@ class Entrevista4Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Entrevista3::orderBy('id', 'asc')->where('entvOK','=','entrevista 3 ok')
+        $entrevistas = Entrevista3::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 3 ok')
         ->paginate(20);
         return view('entrevista4.index',compact( 'entrevistas'));
     }
@@ -53,7 +54,7 @@ class Entrevista4Controller extends Controller
 
 
         $searchEntrevista = $request->get('searchEntrevista');
-        $entrevistas4= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
+        $entrevistas4= Entrevista1::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
         return view('entrevista4.index', ['entrevistas4' => $entrevistas4]);
     }
 
@@ -188,8 +189,8 @@ $tiempo5 = $tiempoI - $tiempoJ;
      */
     public function edit($id)
     {
-        $this->authorize('haveaccess','entrevista4.edit');
-       $filtro=Filtro::findOrFail($id);
+       $this->authorize('haveaccess','entrevista4.edit');
+       $filtro=Entrevista1::findOrFail($id);
 
 
        return view('entrevista4.edit', compact('filtro'));
@@ -204,7 +205,7 @@ $tiempo5 = $tiempoI - $tiempoJ;
     public function update(Request $request, $id)
     {
         $datosentrevista4 =request()->except(['_token','_method']);
-        entrevista4::where('id','=',$id)->update($datosentrevista4);
+        entrevista4::where('id_filtro','=',$id)->update($datosentrevista4);
         $entrevista4=entrevista4::findOrFail($id);
      //return response()->json($entrevista1);
      return view('entrevista4.edit', compact('entrevista4'));

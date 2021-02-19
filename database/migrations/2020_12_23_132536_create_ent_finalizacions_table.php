@@ -14,7 +14,7 @@ class Create_Ent_finalizacions_Table extends Migration
     public function up()
     {
 
-        Schema::dropIfExists('ent_finalizacions');
+        
         Schema::create('ent_finalizacions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_filtro');

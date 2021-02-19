@@ -68,7 +68,7 @@
 <div class="col-auto"><label for="perfil"></label><input type="hidden" class="form-control" style="width: 240px" id="perfil" placeholder="perfil" name="perfil" value="{{ old('perfil', $filtro->perfil)}}"></div>
 <div class="col-auto"><label for="campana"></label><input type="hidden" class="form-control" style="width: 240px" id="campana" placeholder="campana" name="campana" value="{{ old('campana', $filtro->campaña)}}"></div>
 <div class="col-auto"><label for="fuente"></label><input type="hidden" class="form-control" style="width: 240px" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtro->fuente)}}"></div>
-<p><input type="hidden"  id="fregistro" name="fregistro" value="{{ $filtro->fregistro }}"></p>
+{{-- <p><input type="hidden"  id="fregistro" name="fregistro" value="{{ $filtro->fregistro }}"></p> --}}
 <p><input type="hidden"  id="nombre" name="nombre" value="{{ $filtro->nombre }}"></p>
 <p><input type="hidden"  id="cedula" name="cedula" value="{{ $filtro->cedula }}"></p>
 <p><input type="hidden"  id="telefono" name="telefono" value="{{ $filtro->telefono }}"></p>

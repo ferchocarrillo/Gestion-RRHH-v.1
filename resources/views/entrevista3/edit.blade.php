@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
 <div class="page-header">
     <br>
-      <h3>Datos Iniciales</h3>
+      <h3>Datos Academicos</h3>
 </div>
 </center>
 <br>
@@ -17,7 +17,7 @@
 
     <center><p>
         <div class="card-header">
-           <h3>{{( $filtro->nombre)}}</h3>
+           <h3>{{( $filtro->nombres)}}</h3>
         </div>
     </p></center>
 
@@ -48,7 +48,7 @@
 </p>
 
 <p>
-<div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 240px" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
+<div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 240px" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombres)}}"></div>
 </p>
 <p>
 <div class="col-auto"> <label for="telefono">Telefono</label> <input type="number" class="form-control" style="width: 240px" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono' , $filtro->telefono)}}"></div>

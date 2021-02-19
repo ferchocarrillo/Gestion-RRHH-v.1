@@ -4,6 +4,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<a href="{{route('home')}}"><img src="https://images.cooltext.com/5506727.png" width="60" height="70" alt="regreso a home" /></a>
+
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
 
@@ -15,27 +17,22 @@
 </center>
 <br>
 
-<form action="{{ url('/entFinalizacion')}}"
-method="POST"
-enctype="multipart/form-data"
-class="form-horizontal"
-style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-{{csrf_field()}}
+<form  action="{{ url('/entFinalizacion')}}" 
+method="POST" 
+enctype="multipart/form-data" 
+class="form-horizontal">
+                    {{csrf_field()}}
+                    <form>
 
 <div class="col-sm-12">
-    <div class="col-2"><label for="id_filtro"></label><input type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
+    <div class="col-2"><label for="id_filtro"></label><input type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $entrevista1s->id)}}"></div>
     <center><p>
-        <div class="p-3 mb-2 bg-info text-white" id ="nombres" name="nombres">
+        <div class="card-header" id ="nombres" name="nombres">
           <h3> {{ $entrevista1s->nombres}}</h3>
         </div>
     </p></center>
     </div>
     </body>
-
-
-          <center><h3>Datos Generales</h3></center>
-          <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
-
           <div class="container">
             <div class="row">
 
@@ -260,16 +257,17 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="row">
 
                        <!-- Force next columns to break to new line -->
-         <div class="w-100 d-none d-md-block"></div>
+         
          <div class="col"></div>
          <!-- Force next columns to break to new line -->
 
 
-
-         <div class="w-100 d-none d-md-block"></div>
+<table class="table table-dark table-hover">
+         <div class="table table-dark table-hover"></div>
          <div class="col"><p class="h6">Empresa</p></div>
          <div class="col"><p class="h6">Fecha de inicio</p> </div>
          <div class="col"><p class="h6">Fecha de retiro</p></div>
+         <div class="col"><p class="h6">Duracion en dias</p></div>
          <div class="col"><p class="h6">Cargo</p></div>
          <div class="col"><p class="h6">Jefe Inmediato</p></div>
          <div class="col"><p class="h6">Teléfono</p> </div>
@@ -282,7 +280,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $entrevista4s->empresa1}}</div>
          <div class="col">{{ $entrevista4s->fechain1}} </div>
          <div class="col">{{ $entrevista4s->fechart1}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo1}}</div>
          <div class="col">{{ $entrevista4s->hlcargo1}}</div>
          <div class="col">{{ $entrevista4s->jefeinm1}}</div>
          <div class="col">{{ $entrevista4s->teleinf1}}</div>
@@ -294,11 +292,11 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $entrevista4s->empresa2}}</div>
          <div class="col">{{ $entrevista4s->fechain2}} </div>
          <div class="col">{{ $entrevista4s->fechart2}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo2}}</div>
          <div class="col">{{ $entrevista4s->hlcargo2}}</div>
          <div class="col">{{ $entrevista4s->jefeinm2}}</div>
          <div class="col">{{ $entrevista4s->teleinf2}}</div>
-        <div class="col">{{ $entrevista4s->salarioh2}}</div>
+         <div class="col">{{ $entrevista4s->salarioh2}}</div>
          <div class="col">{{ $entrevista4s->motivor2}}</div>
          <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
          <!-- Force next columns to break to new line -->
@@ -306,11 +304,11 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $entrevista4s->empresa3}}</div>
          <div class="col">{{ $entrevista4s->fechain3}} </div>
          <div class="col">{{ $entrevista4s->fechart3}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo3}}</div>
          <div class="col">{{ $entrevista4s->hlcargo3}}</div>
          <div class="col">{{ $entrevista4s->jefeinm3}}</div>
          <div class="col">{{ $entrevista4s->teleinf3}}</div>
-        <div class="col">{{ $entrevista4s->salarioh3}}</div>
+         <div class="col">{{ $entrevista4s->salarioh3}}</div>
          <div class="col">{{ $entrevista4s->motivor3}}</div>
 
          <!-- Force next columns to break to new line -->
@@ -318,11 +316,11 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $entrevista4s->empresa4}}</div>
          <div class="col">{{ $entrevista4s->fechain4}} </div>
          <div class="col">{{ $entrevista4s->fechart4}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo4}}</div>
          <div class="col">{{ $entrevista4s->hlcargo4}}</div>
          <div class="col">{{ $entrevista4s->jefeinm4}}</div>
          <div class="col">{{ $entrevista4s->teleinf4}}</div>
-        <div class="col">{{ $entrevista4s->salarioh4}}</div>
+         <div class="col">{{ $entrevista4s->salarioh4}}</div>
          <div class="col">{{ $entrevista4s->motivor4}}</div>
 
          <!-- Force next columns to break to new line -->
@@ -330,16 +328,16 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $entrevista4s->empresa5}}</div>
          <div class="col">{{ $entrevista4s->fechain5}} </div>
          <div class="col">{{ $entrevista4s->fechart5}}</div>
-
+         <div class="col">{{ $entrevista4s->tiempo5}}</div>
          <div class="col">{{ $entrevista4s->hlcargo5}}</div>
          <div class="col">{{ $entrevista4s->jefeinm5}}</div>
          <div class="col">{{ $entrevista4s->teleinf5}}</div>
-        <div class="col">{{ $entrevista4s->salarioh5}}</div>
+         <div class="col">{{ $entrevista4s->salarioh5}}</div>
          <div class="col">{{ $entrevista4s->motivor5}}</div>
 
         </div>
     </div>
-
+  </table>
 
 <center><h3>Generalidades</h3></center>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
@@ -428,8 +426,8 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <label for="obsFinales">Observaciones</label>
         <textarea class="form-control" name="obsFinales" id="" cols="3" rows="3"></textarea>
 
-  <div class="col-2"><input type="hidden" class="form-control" id="nombre" placeholder="nombre" name="nombre" value="{{ old('nombre', $filtro->nombre)}}"></div>
-  <div class="col-2"><input type="hidden" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
+  <div class="col-2"><input type="hidden" class="form-control" id="nombre" placeholder="nombre" name="nombre" value="{{ old('nombre', $entrevista5s->nombre)}}"></div>
+  <div class="col-2"><input type="hidden" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $entrevista5s->cedula)}}"></div>
   <div class="col-2"><input type="hidden" class="form-control" id="resultadoJefe" placeholder="resultadoJefe" name="resultadoJefe" value="no aplica o pendiente"></div>
   <div class="col-2"><input type="hidden" class="form-control" id="resultadoGer" placeholder="resultadoGer" name="resultadoGer" value="no aplica o pendiente"></div>
 </div>

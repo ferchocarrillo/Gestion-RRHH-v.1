@@ -132,7 +132,7 @@ class Entrevista1Controller extends Controller
 
         $entrevista1s->save();
 
-        $filtro = new Filtro();
+        //$filtro = new Filtro();
        //$filtro->fregistro              = $request->fregistro;
        //$filtro->nombre                 = $request->nombre;
        //$filtro->cedula                 = $request->cedula;
@@ -161,11 +161,11 @@ class Entrevista1Controller extends Controller
        //$filtro->observacion2           = $request->observacion2;
       //  $filtro->entvOK                 =$request->entvOK;
         // $filtro->store()->save();
-        Filtro::create($request->all());
+       //Filtro::create($request->all());
         
-        return response()->json($filtro, $entrevista1s);
+        //return response()->json( $entrevista1s);
         //return back();
-        //return view('entrevista2.index');
+       return view('entrevista2.index');
     }
 
     /**

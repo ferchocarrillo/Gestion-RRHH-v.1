@@ -36,11 +36,12 @@ class Entrevista2Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Entrevista1::orderBy('id', 'asc')
+        $entrevistas = Entrevista1::orderBy('created_at', 'desc')
         ->where('entvOK','=','entrevista 1 ok')
         ->paginate(20);
         return view('entrevista2.index',compact( 'entrevistas'));
     }
+// andres blanco
 
     /**
      * Show the form for creating a new resource.
@@ -147,7 +148,7 @@ class Entrevista2Controller extends Controller
     {
 
        $this->authorize('haveaccess','entrevista2.edit');
-       $filtro=Filtro::findOrFail($id);
+       $filtro=Entrevista1::findOrFail($id);
 
        return view('entrevista2.edit', compact('filtro'));
 

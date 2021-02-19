@@ -51,7 +51,7 @@
                                         <tbody>
                                             @foreach ($entrevistas as $entrevista)
                                             <tr>
-                                                <th scope="row">{{ $entrevista->id}}</th>
+                                                <th scope="row">{{ $entrevista->id_filtro}}</th>
                                                 <td>{{ $entrevista->cedula}}</td>
                                                 <td>{{ $entrevista->nombres}}</td>
                                                <td>{{ $entrevista->telefono}}</td>
@@ -61,7 +61,7 @@
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}
                                                   {{-- <a href="{{url('/entrevista2/'.$entrevista->id.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>--}}
                                                     {{--<a href="{{url('/entrevista3/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>--}}
-                                                    <a href="{{url('/entFinalizacion/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a>
+                                                    <a href="{{url('/entFinalizacion/'.$entrevista->id_filtro.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a>
 
                                             </form>
                                                 </td>
