@@ -66,6 +66,7 @@ class CreateEntrevista4sTable extends Migration
             $table->bigInteger('teleinf5')->nullable();
             $table->string('salarioh5')->nullable();
             $table->string('motivor5')->nullable();
+            $table->string('entvOK');
 
             $table->timestamps();
         });

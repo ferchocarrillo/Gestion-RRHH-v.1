@@ -52,7 +52,7 @@ class CreateEntrevista5sTable extends Migration
             $table->string('cualAc')->nullable();
             $table->string('procesosAnt');
             $table->string('familiaresMent');
-
+            $table->string('entvOK');
             $table->timestamps();
         });
     }

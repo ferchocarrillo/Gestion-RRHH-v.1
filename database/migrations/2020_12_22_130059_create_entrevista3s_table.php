@@ -68,6 +68,7 @@ class CreateEntrevista3sTable extends Migration
             $table->date('fecha8')->nullable();
             $table->string('titulo8')->nullable();
             $table->string('estado8')->nullable();
+            $table->string('entvOK');
             $table->timestamps();
         });
     }

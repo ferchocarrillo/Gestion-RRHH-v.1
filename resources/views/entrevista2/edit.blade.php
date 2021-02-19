@@ -4,6 +4,8 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<a href="{{route('entrevista2.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de la entrevista datos familiares" /></a>
+
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
 <div class="page-header">
@@ -213,7 +215,7 @@
                     <input type="text" id ="telefonop7" name="telefonop7" class="form-control" placeholder="Telefono">
                     </p>
                     </div>
-
+                    <input type="hidden" name="entvOK" id="entvOK" value="entrevista 2 ok">
 
 <div class="d-grid gap-2">
     <input class="btn btn-lg btn-primary" type="submit" value="Registrar">

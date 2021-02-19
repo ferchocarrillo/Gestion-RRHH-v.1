@@ -39,9 +39,7 @@ class Entrevista1Controller extends Controller
      */
     public function index()
     {
-
-        
-        $entrevistas = Filtro::orderBy('id', 'asc')->where('citadoE','=','Citado Entrevista')->whereNull('noAsisteEnt')->paginate(20);
+        $entrevistas = Filtro::orderBy('id', 'asc')->where('citadoE','=','Citado Entrevista')->where('noAsisteEnt','=','')->paginate(20);
         return view('entrevista1.index',compact( 'entrevistas'));
     }
 

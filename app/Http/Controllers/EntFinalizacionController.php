@@ -40,7 +40,7 @@ class EntFinalizacionController extends Controller
     {
    
 
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = Entrevista5::orderBy('id', 'asc')->where('entvOK','=','entrevista 5 ok')->paginate(20);
 
         return view('entFinalizacion.index',compact('entrevistas'));
     }

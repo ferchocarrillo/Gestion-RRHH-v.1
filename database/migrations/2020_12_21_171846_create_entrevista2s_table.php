@@ -56,6 +56,7 @@ class CreateEntrevista2sTable extends Migration
             $table->string('edadp7')->nullable();
             $table->string('ocupacionp7')->nullable();
             $table->string('telefonop7')->nullable();
+            $table->string('entvOK');
             $table->timestamps();
         });
     }

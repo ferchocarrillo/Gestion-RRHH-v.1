@@ -5,7 +5,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+<a href="{{route('entrevista5.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de la entrevista de datos adicionales" /></a>
 
 
 
@@ -44,8 +44,6 @@
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
 
-                                            <th scope="col">resultadoGer</th>
-                                            <th scope="col">obsGerencia</th>
 
                                             <th colspan="6">Etapas de la entrevista</th>
                                           </tr>
@@ -55,11 +53,9 @@
                                             <tr>
                                                 <th scope="row">{{ $entrevista->id}}</th>
                                                 <td>{{ $entrevista->cedula}}</td>
-                                                <td>{{ $entrevista->nombre}}</td>
+                                                <td>{{ $entrevista->nombres}}</td>
                                                <td>{{ $entrevista->telefono}}</td>
 
-                                                <td>{{ $entrevista->perfil}}</td>
-                                                <td>{{ $entrevista->campaña}}</td>
 
                                                 <td>
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}

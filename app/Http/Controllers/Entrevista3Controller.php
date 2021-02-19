@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\entrevista3;
+use App\Entrevista2;
 use App\Filtro;
 use App\reclutamiento;
 use Illuminate\Http\Request;
@@ -29,7 +30,8 @@ class Entrevista3Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = Entrevista2::orderBy('id', 'asc')->where('entvOK','=','entrevista 2 ok')
+        ->paginate(20);
         return view('entrevista3.index',compact( 'entrevistas'));
     }
 
@@ -124,13 +126,7 @@ class Entrevista3Controller extends Controller
         $entrevista3s->fecha8           = $request->fecha8;
         $entrevista3s->titulo8          = $request->titulo8;
         $entrevista3s->estado8          = $request->estado8;
-
-
-
-
-
-
-
+        $entrevista3s->entvOK           = $request->entvOK;
         $entrevista3s->save();
         return back();
     }

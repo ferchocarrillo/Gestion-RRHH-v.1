@@ -13,7 +13,7 @@ class Entrevista1 extends Model
 'entrevistaJefeInm','entrevistaGerencia','enviadocontratacion',
 'enviadoExm','PruebasE','yaTrabaja','numeroEqu','observacion',
 'noAsiste','NoResponde2','YaNoInt','Estudiante','observacion2',
-'noAsisteEnt','entvOK'];
+'noAsisteEnt','entvOK'.'_token'];
 
     
     protected $table='entrevista1s';

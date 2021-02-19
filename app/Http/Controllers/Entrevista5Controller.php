@@ -17,6 +17,7 @@ use App\Adicional;
 use App\Residencia;
 use App\User;
 use stdClass;
+use App\entrevista4;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\Entrevista5Export;
 
@@ -29,7 +30,8 @@ class Entrevista5Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = Entrevista4::orderBy('id', 'asc')->where('entvOK','=','entrevista 4 ok')
+        ->paginate(20);
         return view('entrevista5.index',compact( 'entrevistas'));
     }
 
@@ -107,7 +109,7 @@ class Entrevista5Controller extends Controller
         $entrevista5s->cualAc           = $request->cualAc;
         $entrevista5s->procesosAnt      = $request->procesosAnt;
         $entrevista5s->familiaresMent   = $request->familiaresMent;
-
+        $entrevista5s->entvOK           = $request->entvOK;
         $entrevista5s->save();
         return back();
     }

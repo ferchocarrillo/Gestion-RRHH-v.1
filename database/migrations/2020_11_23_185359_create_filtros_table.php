@@ -41,7 +41,7 @@ class CreateFiltrosTable extends Migration
             $table->string('entrevistaGerencia')->nullable();
             $table->string('enviadocontratacion')->nullable();
             $table->longText('observacion2')->nullable();
-
+            $table->string('entvOK')->nullable();
             $table->string('usuario');
             $table->timestamps();
         });

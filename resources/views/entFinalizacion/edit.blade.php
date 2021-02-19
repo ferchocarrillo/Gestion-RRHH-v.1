@@ -15,7 +15,7 @@
 </center>
 <br>
 
-<form action="{{ url('/entFinalizacion/')}}"
+<form action="{{ url('/entFinalizacion')}}"
 method="POST"
 enctype="multipart/form-data"
 class="form-horizontal"

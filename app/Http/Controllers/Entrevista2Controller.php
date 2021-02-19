@@ -36,7 +36,9 @@ class Entrevista2Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Entrevista1::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = Entrevista1::orderBy('id', 'asc')
+        ->where('entvOK','=','entrevista 1 ok')
+        ->paginate(20);
         return view('entrevista2.index',compact( 'entrevistas'));
     }
 
@@ -119,7 +121,7 @@ class Entrevista2Controller extends Controller
         $entrevista2s->edadp7           = $request->edadp7;
         $entrevista2s->ocupacionp7      = $request->ocupacionp7;
         $entrevista2s->telefonop7       = $request->telefonop7;
-
+        $entrevista2s->entvOK           = $request->entvOK;
         $entrevista2s->save();
         return back();
     }

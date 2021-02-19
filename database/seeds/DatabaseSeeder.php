@@ -51,6 +51,9 @@ class DatabaseSeeder extends Seeder
      $this->call(ECivilSeeder::class); 
      $this->call(GeneroSeeder::class);
      $this->call(TipoDoc2Seeder::class);
-     $this->call(RhSeeder::class);     
+     $this->call(RhSeeder::class); 
+   //  $this->call(FiltroSeeder::class);     
+     
+     
 }
 }

@@ -5,7 +5,16 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-                    <link rel="shortcut icon" href="home"><img src="\theme\images\icon\logo.jpg"  align= "center" height="70" width="150">
+<a href="{{route('resumen.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de capacitaciones" /></a>
+
+
+<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+    <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+</center>
+
+ 
+ 
+ 
                 </body>
                 <br>
                 <p align="right">
@@ -39,22 +48,20 @@
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
-                                            <th scope="col">Perfil</th>
-                                            <th scope="col">Campaña</th>
+                                            
 
                                             <th colspan="6">&nbsp;</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($filtros as $filtro)
+                                            @foreach ($contrataciones as $filtro)
                                             <tr>
                                                 <th scope="row">{{ $filtro->id}}</th>
                                                 <td>{{ $filtro->cedula}}</td>
-                                                <td>{{ $filtro->nombre}}</td>
+                                                <td>{{ $filtro->nombres}}</td>
                                                <td>{{ $filtro->telefono}}</td>
 
-                                                <td>{{ $filtro->perfil}}</td>
-                                                <td>{{ $filtro->campaña}}</td>
+                                      
 
 
                                                 <td>
@@ -76,7 +83,7 @@
                       </div>
 
                     </form>
-                    {{ $filtros->links()}}
+                    {{ $contrataciones->links()}}
 
        {{--             <p>
                         clic <a href="{{route('entrevista1.excel')}}">Aqui</a>

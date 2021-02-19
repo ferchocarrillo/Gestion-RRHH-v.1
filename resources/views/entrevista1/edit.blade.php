@@ -4,7 +4,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<a href="{{route('entrevista1.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="} " /></a>
+<a href="{{route('entrevista1.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de la entrevista datos iniciales" /></a>
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:800px; visibility:visible z-index:1" align= "auto" height="80" width="200">
 <br>
@@ -41,7 +41,7 @@
           class="form-horizontal"
           style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           {{csrf_field()}}
-<input type="hidden" name="_method" value="PATCH">
+
 
 
           <fieldset class="form-group">

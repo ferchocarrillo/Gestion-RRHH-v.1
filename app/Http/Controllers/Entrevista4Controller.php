@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\entrevista4;
+use App\Entrevista3;
 use Illuminate\Http\Request;
 use App\Filtro;
 use App\reclutamiento;
@@ -29,7 +30,8 @@ class Entrevista4Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = Entrevista3::orderBy('id', 'asc')->where('entvOK','=','entrevista 3 ok')
+        ->paginate(20);
         return view('entrevista4.index',compact( 'entrevistas'));
     }
 
@@ -67,9 +69,9 @@ class Entrevista4Controller extends Controller
         $user_nombre = Auth::user()->name;
         $datosEntrevista=request()->except('_token');
 
-     /*   $request->validate([
+       $request->validate([
             'cedula'          => 'required|unique:entrevista4s,cedula,',
-        ]);*/
+        ]);
 Carbon::setLocale('es');
 Carbon::now();
 $hoy = Carbon::now();
@@ -162,7 +164,7 @@ $tiempo5 = $tiempoI - $tiempoJ;
         $entrevista4s->teleinf5         = $request->teleinf5;
         $entrevista4s->salarioh5        = $request->salarioh5;
         $entrevista4s->motivor5         = $request->motivor5;
-
+        $entrevista4s->entvOK           = $request->entvOK;
         $entrevista4s->save();
         return back();
     }

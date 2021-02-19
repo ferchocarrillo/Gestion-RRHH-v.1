@@ -42,9 +42,10 @@ class CapacitacionController extends Controller
      */
     public function index()
     {
-        $entrevista = Entrevista1::all();
-        $filtros = Filtro::orderBy('id', 'asc')->paginate(10);
-        return view('capacitacion.index',compact('filtros','entrevista'));
+        
+        $contrataciones = Entrevista5::orderBy('id', 'asc')->where('entvOK','=','entrevista 5 ok')
+        ->paginate(20);
+        return view('capacitacion.index',compact('contrataciones'));
     }
 
     /**
