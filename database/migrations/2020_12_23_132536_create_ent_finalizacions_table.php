@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Create_Ent_finalizacions_Table extends Migration
+class CreateEntFinalizacionsTable extends Migration
 {
     /**
      * Run the migrations.

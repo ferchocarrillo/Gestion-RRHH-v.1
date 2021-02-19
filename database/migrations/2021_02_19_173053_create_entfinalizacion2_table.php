@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEntfinalizacionTable extends Migration
+class CreateEntfinalizacion2Table extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateEntfinalizacionTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('entfinalizacion');
-        Schema::create('entfinalizacion', function (Blueprint $table) {
+        Schema::dropIfExists('entfinalizacion2');
+        Schema::create('entfinalizacion2', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_filtro');
             $table->bigInteger('cedula')->unsigned();
@@ -37,6 +37,6 @@ class CreateEntfinalizacionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entfinalizacion');
+        Schema::dropIfExists('entfinalizacion2');
     }
 }
