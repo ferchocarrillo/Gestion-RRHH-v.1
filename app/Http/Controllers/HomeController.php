@@ -52,36 +52,36 @@ class HomeController extends Controller
       $requisiciones = Requisicion::orderBy('revisado', 'asc')->paginate(10);
 
       $pruebaRequises['requisicions'] = Requisicion::where('revisado','<>',null)->count();
-      $countRequises['requisicions'] = Requisicion::where('revisado', 'Aprobado')->count();
+      $countRequises ['requisicions'] = Requisicion::where('revisado', 'Aprobado')->count();
       $countRequi2ses['requisicions'] = Requisicion::where('revisado', 'Rechazado')->count();
       $countRequi3ses['requisicions'] = Requisicion::where('revisado', 'Pendiente')->count();
       $countRequi4ses['requisicions'] = Requisicion::where('revisado', null)->count();
 
       $publicaciones = Reclutamiento::orderBy('created_at', 'asc')->paginate(10);
-      $countpublicas['reclutamientos'] = Reclutamiento::where('vincuventas', 'vincuventas')->count();
-      $count1publicas['reclutamientos'] = Reclutamiento::where('computrabajo', 'computrabajo')->count();
-      $count2publicas['reclutamientos'] = Reclutamiento::where('sne', 'sne')->count();
-      $count3publicas['reclutamientos'] = Reclutamiento::where('compensar', 'compensar')->count();
-      $count4publicas['reclutamientos'] = Reclutamiento::where('rt', 'rt')->count();
-      $count5publicas['reclutamientos'] = Reclutamiento::where('rj', 'rj')->count();
-      $count6publicas['reclutamientos'] = Reclutamiento::where('rc', 'rc')->count();
-      $count7publicas['reclutamientos'] = Reclutamiento::where('univ', 'univ')->count();
-      $count8publicas['reclutamientos'] = Reclutamiento::where('redes', 'redes')->count();
-      $count9publicas['reclutamientos'] = Reclutamiento::where('hv', 'hv')->count();
+      $countpublicas  ['reclutamientos'] = Reclutamiento::where('vincuventas', 'vincuventas')->count();
+      $count1publicas ['reclutamientos'] = Reclutamiento::where('computrabajo', 'computrabajo')->count();
+      $count2publicas ['reclutamientos'] = Reclutamiento::where('sne', 'sne')->count();
+      $count3publicas ['reclutamientos'] = Reclutamiento::where('compensar', 'compensar')->count();
+      $count4publicas ['reclutamientos'] = Reclutamiento::where('rt', 'rt')->count();
+      $count5publicas ['reclutamientos'] = Reclutamiento::where('rj', 'rj')->count();
+      $count6publicas ['reclutamientos'] = Reclutamiento::where('rc', 'rc')->count();
+      $count7publicas ['reclutamientos'] = Reclutamiento::where('univ', 'univ')->count();
+      $count8publicas ['reclutamientos'] = Reclutamiento::where('redes', 'redes')->count();
+      $count9publicas ['reclutamientos'] = Reclutamiento::where('hv', 'hv')->count();
       $count10publicas['reclutamientos'] = Reclutamiento::where('fundaciones', 'fundaciones')->count();
 
 
       $filtros = Filtro::orderBy('created_at', 'asc')->paginate(10);
-      $countfiltros['filtros']   = Filtro::where('citadoE', 'Citado Entrevista')->count();
-      $count1filtros['filtros']  = Filtro::where('noAplica', 'No Aplica')->count();
-      $count2filtros['filtros']  = Filtro::where('noInteresado', 'no interesado')->count();
-      $count3filtros['filtros']  = Filtro::where('enviadoCapa', 'enviado capa')->count();
-      $count4filtros['filtros']  = Filtro::where('enviadoExm', 'enviado a exam')->count();
-      $count5filtros['filtros']  = Filtro::where('PruebasE', 'Pruebas Eviadas')->count();
-      $count6filtros['filtros']  = Filtro::where('yaTrabaja', 'Ya trabaja')->count();
-      $count7filtros['filtros']  = Filtro::where('numeroEqu', 'Numero Equivocado')->count();
-      $count8filtros['filtros']  = Filtro::where('id', '<>',null)->count();
-      $count9filtros['filtros']  = Filtro::where('noAsiste', 'NoAsiste')->count();
+      $countfiltros  ['filtros'] = Filtro::where('citadoE', 'Citado Entrevista')->count();
+      $count1filtros ['filtros'] = Filtro::where('noAplica', 'No Aplica')->count();
+      $count2filtros ['filtros'] = Filtro::where('noInteresado', 'no interesado')->count();
+      $count3filtros ['filtros'] = Filtro::where('enviadoCapa', 'enviado capa')->count();
+      $count4filtros ['filtros'] = Filtro::where('enviadoExm', 'enviado a exam')->count();
+      $count5filtros ['filtros'] = Filtro::where('PruebasE', 'Pruebas Eviadas')->count();
+      $count6filtros ['filtros'] = Filtro::where('yaTrabaja', 'Ya trabaja')->count();
+      $count7filtros ['filtros'] = Filtro::where('numeroEqu', 'Numero Equivocado')->count();
+      $count8filtros ['filtros'] = Filtro::where('id', '<>',null)->count();
+      $count9filtros ['filtros'] = Filtro::where('noAsiste', 'NoAsiste')->count();
       $count10filtros['filtros'] = Filtro::where('NoResponde2', 'NoResponde2')->count();
       $count11filtros['filtros'] = Filtro::where('YaNoint', 'YaNoint')->count();
       $count12filtros['filtros'] = Filtro::where('estudiante', 'estudiante')->count();
@@ -103,7 +103,7 @@ class HomeController extends Controller
       $count10Fuentes['filtros'] = Filtro::where('fuente', 'funda')->count();
 
       $capacitaciones= Capacitacion::orderBy('created_at', 'asc')->paginate(10);
-      $capacitacionAps['capacitacion']= Capacitacion::where('estado','Aprobado')->count();
+      $capacitacionAps ['capacitacion']= Capacitacion::where('estado','Aprobado')->count();
       $capacitacionNaps['capacitacion']= Capacitacion::where('estado','NO aprobado')->count();
 
       $residencias= Entrevista1::orderBy('created_at', 'asc')->paginate(10);
@@ -113,7 +113,7 @@ class HomeController extends Controller
 
       return view('home' ,compact(
       'residencias',
-        'residencia1s',
+      'residencia1s',
       'residencia2s',
       'capacitaciones',
       'capacitacionNaps',

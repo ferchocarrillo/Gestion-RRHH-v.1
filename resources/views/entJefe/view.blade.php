@@ -278,6 +278,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $entrevista4s->empresa1}}</div>
          <div class="col">{{ $entrevista4s->fechain1}} </div>
          <div class="col">{{ $entrevista4s->fechart1}}</div>
+         <div class="col">{{ $entrevista4s->tiempo1}}</div>
 
          <div class="col">{{ $entrevista4s->hlcargo1}}</div>
          <div class="col">{{ $entrevista4s->jefeinm1}}</div>

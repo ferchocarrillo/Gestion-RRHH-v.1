@@ -26,6 +26,7 @@ use stdClass;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EntFinalizacionExport;
 use Illuminate\Support\Facades\DB;
+use App\resultadoRRHH;
 
 
 
@@ -53,17 +54,11 @@ class EntFinalizacionController extends Controller
     public function create($id)
     {
 
-        
-        $entrevista1s=entrevista1::where('id', Filtro::findOrFail($id)->id)->first();
-        $entrevista2s=Entrevista2::where('id', Filtro::findOrFail($id)->id)->first();
-        $entrevista3s=Entrevista3::where('id', Filtro::findOrFail($id)->id)->first();
-        $entrevista4s=Entrevista4::where('id', Filtro::findOrFail($id)->id)->first();
-        $entrevista5s=Entrevista5::where('id', Filtro::findOrFail($id)->id)->first();
         $entFinalizacion = EntFinalizacion::all();
         //$reclutamientos=Reclutamiento::all();
 
 
-        return view('entFinalizacion.create',compact('entFinalizacion','entrevista5s','entrevista4s','entrevista3s','entrevista2s', 'entrevista1s'));
+        return view('entFinalizacion.create',compact('entFinalizacion'));
     }
 
 
@@ -72,7 +67,7 @@ class EntFinalizacionController extends Controller
 
 
         $searchEntrevista = $request->get('searchEntrevista');
-        $searchEntFinalizacion= entrevista5::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
+        $searchEntFinalizacion= Entrevista5::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
         return view('entFinalizacion.index', ['searchEntFinalizacion' => $searchEntFinalizacion]);
     }
 
@@ -87,13 +82,13 @@ class EntFinalizacionController extends Controller
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
         $datosEntrevista=request()->except('_token');
-        $request->validate([
-            'cedula'          => 'required|unique:entfinalizacion,cedula,',
-        ]);
+         $request->validate([
+             'id'          => 'required|unique:EntFinalizacion,id_filtro,',
+         ]);
         $entFinalizacion = new EntFinalizacion();
              $entFinalizacion->id_filtro        = $request->id_filtro;
              $entFinalizacion->cedula           = $request->cedula;
-             $entFinalizacion->nombre           = $request->nombre;
+             $entFinalizacion->nombres          = $request->nombres;
              $entFinalizacion->resultado        = $request->resultado;
              $entFinalizacion->resultadoGer     = $request->resultadoGer;
              $entFinalizacion->obsGerencia      = $request->obsGerencia;
@@ -105,8 +100,8 @@ class EntFinalizacionController extends Controller
 
 
         $entFinalizacion->save();
-       return response()->json($entFinalizacion);
-        //return back();
+        //return response()->json($entFinalizacion);
+        return back();
     }
 
     /**
@@ -136,15 +131,16 @@ class EntFinalizacionController extends Controller
 
  
      
-        $entrevista1s=entrevista1::where('id', Filtro::findOrFail($id)->id)->first();
+        $entrevista1s=Entrevista1::where('id', Filtro::findOrFail($id)->id)->first();
         $entrevista2s=Entrevista2::where('id', Filtro::findOrFail($id)->id)->first();
         $entrevista3s=Entrevista3::where('id', Filtro::findOrFail($id)->id)->first();
         $entrevista4s=Entrevista4::where('id', Filtro::findOrFail($id)->id)->first();
         $entrevista5s=Entrevista5::where('id', Filtro::findOrFail($id)->id)->first();
-        $entFinalizacion=entFinalizacion::all();
-        $entGerencia=EntGerencia::all();
+        $filtros=entFinalizacion::findOrFail($id);
+        $resultados  = resultadoRRHH::all();
+        // $entGerencia=EntGerencia::all();
 
-       return view('entFinalizacion.edit', compact('entGerencia','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
+       return view('entFinalizacion.edit', compact('resultados','filtros','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
     }
 
     /**
@@ -157,10 +153,16 @@ class EntFinalizacionController extends Controller
     public function update(Request $request, $id)
     {
         $datosentFinalizacion =request()->except(['_token','_method']);
-        filtro::where('id','=',$id)->update($datosentFinalizacion);
-        $entFinalizacion=filtro::findOrFail($id);
-    return response()->json($entFinalizacion);
-     //return view('entFinalizacion.edit', compact('entFinalizacion'));
+        EntFinalizacion::where('id_filtro','=',$id)->update($datosentFinalizacion);
+        $filtros=entFinalizacion::findOrFail($id);
+        $entrevista1s= Entrevista1::findOrFail($id);
+        $entrevista2s= Entrevista2::findOrFail($id);
+        $entrevista3s= Entrevista3::findOrFail($id);
+        $entrevista4s= Entrevista4::findOrFail($id);
+        $entrevista5s= Entrevista5::findOrFail($id);
+        $resultados  = resultadoRRHH::all();
+    //return response()->json($entFinalizacion);
+    return view('entFinalizacion.edit',compact('entrevista1s','filtros','entrevista2s','entrevista3s','entrevista4s','entrevista5s', 'resultados'));
     }
 
     /**
@@ -172,7 +174,7 @@ class EntFinalizacionController extends Controller
     public function destroy($id)
     {
         $this->authorize('haveaccess','entFinalizacion.destroy');
-        entFinalizacion::destroy($id);
+        EntFinalizacion::destroy($id);
 
         return redirect()->route('entFinalizacion.index')
             ->with('status_success','registro successfully removed');

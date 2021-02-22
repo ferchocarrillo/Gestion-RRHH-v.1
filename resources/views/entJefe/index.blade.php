@@ -38,23 +38,19 @@
                                             <th scope="col">#</th>
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
-                                            <th scope="col">Telefono</th>
-                                            <th scope="col">Perfil</th>
-                                            <th scope="col">Campaña</th>
-                                            <th colspan="6">Entrevista Gerencia</th>
-                                          </tr>
+                                            <th scope="col">Resultado RRHH</th>
+                                            <th scope="col">Observaciones RRHH</th>
+                                            <th colspan="6"></th>
+                                        </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($entrevistas as $entrevista)
                                             <tr>
                                                 <th scope="row">{{ $entrevista->id}}</th>
                                                 <td>{{ $entrevista->cedula}}</td>
-                                                <td>{{ $entrevista->nombre}}</td>
-                                               <td>{{ $entrevista->telefono}}</td>
-
-                                                <td>{{ $entrevista->perfil}}</td>
-                                                <td>{{ $entrevista->campaña}}</td>
-
+                                                <td>{{ $entrevista->nombres}}</td>
+                                                <td>{{ $entrevista->resultado}}</td>
+                                                <td>{{ $entrevista->obsFinales}}</td>
                                                 <td>
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}
                                                   {{-- <a href="{{url('/entrevista2/'.$entrevista->id.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>--}}

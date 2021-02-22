@@ -38,7 +38,7 @@
                                             <th scope="col">#</th>
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
-                                            <th scope="col">Entrevista Gerencia</th>
+                                            <th scope="col">resultado entrevista RRHH</th>
                                             <th scope="col">Observaciones</th>
             
                                             <th colspan="6">Visualizar</th>
@@ -50,9 +50,11 @@
                                                 <th scope="row">{{ $entrevista->id}}</th>
                                                 <td>{{ $entrevista->cedula}}</td>
                                                 <td>{{ $entrevista->nombre}}</td>
-                                               <td>{{ $entrevista->resultadoGer}}</td>
+                                                <td>{{ $entrevista->resultado}}</td>
+                                                
+                                               
 
-                                                <td>{{ $entrevista->obsGerencia}}</td>
+                                               
 
 
                                                 <td>

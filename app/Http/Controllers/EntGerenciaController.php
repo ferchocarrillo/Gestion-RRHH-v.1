@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\EntJefe;
 use App\EntGerencia;
 use App\EntFinalizacion;
 use Illuminate\Http\Request;
@@ -15,7 +16,6 @@ use App\Prefijo;
 use App\Orientacion;
 use App\Adicional2;
 use App\Adicional;
-use App\Aprobacion;
 use App\Entrevista1;
 use App\Entrevista2;
 use App\Entrevista3;
@@ -37,7 +37,6 @@ class EntGerenciaController extends Controller
      */
     public function index()
     {
-       
         $entrevistas = EntFinalizacion::orderBy('id', 'asc')->where('resultado','cargo requiere segunda entrevista')->paginate(10);
         return view('entGerencia.index',compact('entrevistas'));
     }
@@ -50,26 +49,19 @@ class EntGerenciaController extends Controller
     public function create()
     {
 
-        $entGerencia = EntGerencia::all();
+        $entGerencia = EntJefe::all();
         $entFinalizacion = EntFinalizacion::all();
         $reclutamientos=Reclutamiento::all();
         return view('entGerencia.create',compact('entGerencia','entFinalizacion','reclutamientos'));
-    
-    
-    
-    
     }
-
-
     public function searchEntGerencia( Request $request)
     {
 
 
         $searchEntrevista = $request->get('searchEntrevista');
-        $searchEntGerencia= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
-        return view('entGerencia.index', ['searchEntGerencia' => $searchEntGerencia]);
+        $searchentGerencia= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
+        return view('entGerencia.index', ['searchentGerencia' => $searchentGerenciae]);
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -77,97 +69,77 @@ class EntGerenciaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, EntFinalizacion $entrevistas)
+    public function store(Request $request)
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
         $datosEntrevista=request()->except('_token');
         $request->validate([
-           'nombre'          => 'required|unique:entfinalizacion,nombre,',
-         ]);
+            'cedula'  => 'required|unique:ent_jefe,cedula,',
+        ]);
+        $entGerencia = new EntFinalizacion();
+        $entGerencia->id_filtro        = $request->id_filtro;
+        $entGerencia->cedula           = $request->cedula;
+        $entGerencia->nombres          = $request->nombres;
+        $entGerencia->resultado        = $request->resultado;
+        $entGerencia->obsFinales       = $request->obsFinales;
+        $entGerencia->fechaCont        = $request->fechaCont;
+        $entGerencia->resultadoGer     = $request->resultadoGer;
+        $entGerencia->obsJefe          = $request->obsGerencia;
 
-        $entrevistas = new EntFinalizacion();
-        $entrevistas->id_filtro        = $request->id_filtro;
-        $entrevistas->nombre           = $request->nombres;
-
-        $entrevistas->cedula           = $request->cedula;
-        $entrevistas->resultado        = $request->resultado;
-        $entrevistas->fechaCont        = $request->fechaCont;
-        $entrevistas->obsFinales       = $request->obsFinales;
-        $entrevistas->resultadoGer     = $request->resultadoGer;
-        $entrevistas->obsGerencia      = $request->obsGerencia;
-
-        $entrevistas->save();
-        //return back();
-       //return response()->json($entGerencia);
-
-        //$entrevistas->update($request->all());
-        //return redirect()->route('entFinalizacion.index')
-        //->with('status_success','EntFinalizacion updated successfully');
-        return response()->json($entrevistas);
-
+        $entGerencia->save();
+        return back();
+       // return response()->json($entGerencia);
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\EntJefe  $entJefe
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id, Request $request)
+    {
 
+    }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\entFinalizacion  $entGerencia
+     * @param  \App\EntJefe  $entJefe
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-
+    public function edit($id, Request $request)
     {
-        $this->authorize('haveaccess','entGerencia.edit');
-       
-        /*$filtro=Filtro::findOrFail($id);
+
+        $this->authorize('haveaccess','entFinalizacion.edit');
+
+        $filtros=EntFinalizacion::findOrFail($id);
         $entrevista1s=entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista2s=Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista3s=Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista4s=Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista5s=Entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entFinalizacion=entFinalizacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-       /* $entGerencia=entGerencia::all();*/
-        $entrevista1s= Entrevista1::findOrFail($id);
-        $entrevista2s= Entrevista2::findOrFail($id);
-        $entrevista3s= Entrevista3::findOrFail($id);
-        $entrevista4s= Entrevista4::findOrFail($id);
-        $entrevista5s= Entrevista5::findOrFail($id);
-        $entFinalizacion=entFinalizacion::findOrFail($id);
-        $aprobaciones = Aprobacion::all();
-
-        $filtro=Filtro::findOrFail($id);
-       return view('entGerencia.edit', compact('aprobaciones','filtro','entrevista1s','entrevista2s','entrevista3s','entFinalizacion','entrevista4s','entrevista5s'));
-
-      // return view('entGerencia.edit', compact('aprobaciones','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
+        
+       return view('entGerencia.edit', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtros'));
     }
+
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EntFinalizacion  $entFinalizacion
+     * @param  \App\EntJefe  $entJefe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update (Request $request, $id)
     {
-        $datosFiltro =request()->except(['_token','_method']);
-        EntFinalizacion::where('id','=',$id)->update($datosFiltro);
-        $filtro=EntFinalizacion::findOrFail($id);
-     return response()->json($filtro);
-     //return view('entGerencia.edit', compact('filtro'));
+        $datosentFinalizacion =request()->except(['_token','_method']);
+        EntFinalizacion::where('id','=',$id)->update($datosentFinalizacion);
+        $entGerencia=EntFinalizacion::findOrFail($id);
+        //return response()->json($entJefe);
+        return view('entGerencia.edit', compact('entGerencia'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\EntGerencia  $entGerencia
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(EntGerencia $entGerencia)
-    {
-        //
-    }
 
 
 }

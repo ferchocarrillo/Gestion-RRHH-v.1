@@ -52,7 +52,10 @@ class DatabaseSeeder extends Seeder
      $this->call(GeneroSeeder::class);
      $this->call(TipoDoc2Seeder::class);
      $this->call(RhSeeder::class); 
-  $this->call(FiltroSeeder::class);     
+  //$this->call(FiltroSeeder::class);     
+ $this->call(ResultadoRRHHSeeder::class); 
+
+  
      
      
 }

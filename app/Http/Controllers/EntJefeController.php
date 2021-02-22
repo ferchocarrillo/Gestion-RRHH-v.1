@@ -77,16 +77,19 @@ class EntJefeController extends Controller
         $request->validate([
             'cedula'  => 'required|unique:ent_jefe,cedula,',
         ]);
-        $entJefe = new EntJefe();
+        $entJefe = new EntFinalizacion();
         $entJefe->id_filtro        = $request->id_filtro;
         $entJefe->cedula           = $request->cedula;
-        $entJefe->nombre           = $request->nombres;
+        $entJefe->nombres          = $request->nombres;
+        $entJefe->resultado        = $request->resultado;
+        $entJefe->obsFinales       = $request->obsFinales;
+        $entJefe->fechaCont        = $request->fechaCont;
         $entJefe->resultadojefe    = $request->resultadojefe;
         $entJefe->obsJefe          = $request->obsJefe;
 
         $entJefe->save();
-        return back();
-       /// return response()->json($entJefe);
+      return view('home');
+      //  return response()->json($entJefe);
     }
 
     /**
@@ -97,11 +100,7 @@ class EntJefeController extends Controller
      */
     public function show($id, Request $request)
     {
-        $this->authorize('haveaccess','entGerencia.view');
-        $entJefe=EntJefe::all();
-        $entrevista1s=Entrevista1::all();
-        $filtro=Filtro::all();
-        return view('entJefe.view', compact('entjefe','entrevista1s','filtro'));
+
     }
 
     /**
@@ -115,16 +114,14 @@ class EntJefeController extends Controller
 
         $this->authorize('haveaccess','entFinalizacion.edit');
 
-        $filtro=Filtro::findOrFail($id);
+        $filtros=EntFinalizacion::findOrFail($id);
         $entrevista1s=entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista2s=Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista3s=Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista4s=Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista5s=Entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entFinalizacion=entFinalizacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entJefe=EntJefe::all();
-
-       return view('entJefe.view', compact('entJefe','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
+        
+       return view('entJefe.edit', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtros'));
     }
 
     /**
@@ -137,10 +134,10 @@ class EntJefeController extends Controller
     public function update (Request $request, $id)
     {
         $datosentFinalizacion =request()->except(['_token','_method']);
-        EntJefe::where('id','=',$id)->update($datosentFinalizacion);
-        $entJefe=EntJefe::findOrFail($id);
+        EntFinalizacion::where('id','=',$id)->update($datosentFinalizacion);
+        $entJefe=EntFinalizacion::findOrFail($id);
         //return response()->json($entJefe);
-        return view('entJefe.edit', compact('entJefe','entFinalizacion'));
+        return view('entJefe.edit', compact('entJefe'));
     }
 
 

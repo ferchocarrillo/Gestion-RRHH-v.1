@@ -64,7 +64,7 @@
 <div class="col-auto"> <label for="correo">Correo</label> <input type="mail" class="form-control" style="width: 200px" id="correo" placeholder="correo" name="correo" value="{{ old('correo' , $filtro->correo)}}"></div>
 </p>
 <p>
-<div class="col-auto"><label for="id_filtro"></label><input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id_filtro', $filtro->id_filtro)}}"></div>
+<div class="col-auto"><label for="id_filtro"></label><input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
 <div class="col-auto"><label for="perfil"></label><input type="hidden" class="form-control" style="width: 240px" id="perfil" placeholder="perfil" name="perfil" value="{{ old('perfil', $filtro->perfil)}}"></div>
 <div class="col-auto"><label for="campana"></label><input type="hidden" class="form-control" style="width: 240px" id="campana" placeholder="campana" name="campana" value="{{ old('campana', $filtro->campaña)}}"></div>
 <div class="col-auto"><label for="fuente"></label><input type="hidden" class="form-control" style="width: 240px" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtro->fuente)}}"></div>
