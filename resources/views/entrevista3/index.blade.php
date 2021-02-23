@@ -11,7 +11,7 @@
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
 </center>
-    <p 
+    <p
         <div class="col-md-4">
     <form action="/searchEntrevista" method="GET">
     <div class="input-group">
@@ -43,7 +43,7 @@
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
 
-                                       
+
 
                                             <th colspan="6">Etapas de la entrevista</th>
                                           </tr>
@@ -56,7 +56,7 @@
                                                 <td>{{ $entrevista->nombres}}</td>
                                                <td>{{ $entrevista->telefono}}</td>
 
-                                               
+
 
                                                 <td>
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}

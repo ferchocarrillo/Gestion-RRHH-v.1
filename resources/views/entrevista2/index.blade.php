@@ -12,7 +12,7 @@
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
 </center>
-    <p 
+    <p
         <div class="col-md-4">
     <form action="/searchEntrevista" method="GET">
     <div class="input-group">
@@ -49,25 +49,24 @@
                                             <th scope="col">Telefono</th>
 
                                             <th scope="col">Cargo</th>
-                                           
+
 
                                             <th colspan="6">Etapas de la entrevista</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($entrevistas as $entrevista)
+                                            @foreach ($filtros as $filtro)
                                             <tr>
-                                                <th scope="row">{{ $entrevista->id}}</th>
-                                                <td>{{ $entrevista->cedula}}</td>
-                                                <td>{{ $entrevista->nombres}}</td>
-                                               <td>{{ $entrevista->telefono}}</td>
+                                    <th scope="row">{{ $filtro->id}}</th>
+                                                <td>{{ $filtro->cedula}}</td>
+                                                <td>{{ $filtro->nombres}}</td>
+                                                <td>{{ $filtro->telefono}}</td>
+                                                <td>{{ $filtro->cargo}}</td>
 
-                                                <td>{{ $entrevista->cargo}}</td>
-                    
                                                 <td>
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}
-                                                   <a href="{{url('/entrevista2/'.$entrevista->id_filtro.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>
-                                                     
+                                                   <a href="{{url('/entrevista2/'.$filtro->id.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>
+
                                                   {{--   <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Laborales</a>--}}
 
                                             </form>
@@ -83,7 +82,7 @@
                       </div>
 
                     </form>
-                    {{ $entrevistas->links()}}
+                    {{ $filtros->links()}}
 
                     <p>
                         clic <a href="{{route('entrevista1.excel')}}">Aqui</a>
