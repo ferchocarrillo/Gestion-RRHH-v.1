@@ -39,8 +39,8 @@ class Entrevista1Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Filtro::orderBy('id', 'asc')->where('citadoE','=','Citado Entrevista')->where('noAsisteEnt','=','')->paginate(20);
-        return view('entrevista1.index',compact( 'entrevistas'));
+        $filtros = Filtro::orderBy('id', 'asc')->where('citadoE','=','Citado Entrevista')->where('noAsisteEnt','=','')->paginate(20);
+        return view('entrevista1.index',compact( 'filtros'));
     }
 
     /**
@@ -162,7 +162,7 @@ class Entrevista1Controller extends Controller
       //  $filtro->entvOK                 =$request->entvOK;
         // $filtro->store()->save();
        //Filtro::create($request->all());
-        
+
         //return response()->json( $entrevista1s);
         //return back();
        return view('entrevista2.index');
@@ -188,8 +188,8 @@ class Entrevista1Controller extends Controller
      */
     public function edit($id)
     {
-        $filtro=Filtro::findOrFail($id); 
-        
+        $filtro=Filtro::findOrFail($id);
+
         $cargos = Cargo::all();
         $cargoEnt = CargoEnt::all();
         $departamento = Departamentos::all();
@@ -203,7 +203,7 @@ class Entrevista1Controller extends Controller
         $sMilitars = sMilitar::all();
         $eCivils= eCivil::all();
        $this->authorize('haveaccess','entrevista1.edit');
-       
+
 
        return view('entrevista1.edit', compact('eCivils','sMilitars','tViviendas','cargos','cargoEnt','filtro','departamento','residencia','adicional2es','adicionales','orientaciones','TipoVias','prefijos'));
 
@@ -218,8 +218,8 @@ class Entrevista1Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-      
-      
+
+
         $datosfiltro=request()->except(['_token','_method']);
         filtro::where('id','=',$id)->update($datosfiltro);
         $filtro=Filtro::findOrFail($id);

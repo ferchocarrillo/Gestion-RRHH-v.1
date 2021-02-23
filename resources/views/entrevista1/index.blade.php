@@ -11,7 +11,7 @@
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
 </center>
-    <p 
+    <p
         <div class="col-md-4">
     <form action="/searchEntrevista" method="GET">
     <div class="input-group">
@@ -56,27 +56,27 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($entrevistas as $entrevista)
+                                            @foreach ($filtros as $entrevista)
                                             <tr>
-                                                <th scope="row">{{ $entrevista->id}}</th>
-                                                <td>{{ $entrevista->cedula}}</td>
-                                                <td>{{ $entrevista->nombre}}</td>
-                                                <td>{{ $entrevista->telefono}}</td>
-                                                <td>{{ $entrevista->perfil}}</td>
-                                                <td>{{ $entrevista->campaña}}</td>
+                                                <th scope="row">{{ $filtro->id}}</th>
+                                                <td>{{ $filtro->cedula}}</td>
+                                                <td>{{ $filtro->nombre}}</td>
+                                                <td>{{ $filtro->telefono}}</td>
+                                                <td>{{ $filtro->perfil}}</td>
+                                                <td>{{ $filtro->campaña}}</td>
 
 
 
 
                                                 <td>
-                                                   
+
                                              {{-- @foreach ($entrevista1s as $entrevista1)
                                              <td>{{ $entrevista1->entvOK}}</td>
                                              @endforeach        --}}
-                                            
 
-                                                    <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Basicos</a>
-                                                    <a href="{{url('/filtro/'.$entrevista->id.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">No asiste</a>{{--
+
+                                                    <a href="{{url('/entrevista1/'.$filtro->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Basicos</a>
+                                                    <a href="{{url('/filtro/'.$filtro->id.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">No asiste</a>{{--
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Laborales</a>--}}
 

@@ -43,20 +43,20 @@ class DatabaseSeeder extends Seeder
      $this->call(EpsSeeder::class);
      $this->call(CajaCompensacionSeeder::class);
      $this->call(AprobacionSeeder::class);
-     $this->call(MotivoRetiroSeeder::class);     
+     $this->call(MotivoRetiroSeeder::class);
      $this->call(TipoNovedadSeeder::class);
      $this->call(FuenteSeeder::class);
      $this->call(TViviendaSeeder::class);
-     $this->call(SMilitarSeeder::class);     
-     $this->call(ECivilSeeder::class); 
+     $this->call(SMilitarSeeder::class);
+     $this->call(ECivilSeeder::class);
      $this->call(GeneroSeeder::class);
      $this->call(TipoDoc2Seeder::class);
-     $this->call(RhSeeder::class); 
-  //$this->call(FiltroSeeder::class);     
- $this->call(ResultadoRRHHSeeder::class); 
+     $this->call(RhSeeder::class);
+  $this->call(FiltroSeeder::class);
+ $this->call(ResultadoRRHHSeeder::class);
 
-  
-     
-     
+
+
+
 }
 }
