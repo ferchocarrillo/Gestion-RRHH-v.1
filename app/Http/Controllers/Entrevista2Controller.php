@@ -36,10 +36,10 @@ class Entrevista2Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Entrevista1::orderBy('created_at', 'desc')
+        $filtros = Entrevista1::orderBy('created_at', 'desc')
         ->where('entvOK','=','entrevista 1 ok')
         ->paginate(20);
-        return view('entrevista2.index',compact( 'entrevistas'));
+        return view('entrevista2.index',compact( 'filtros'));
     }
 // andres blanco
 
@@ -76,7 +76,7 @@ class Entrevista2Controller extends Controller
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
         $datosEntrevista=request()->except('_token');
- 
+
         $request->validate([
             'cedula'          => 'required|unique:entrevista2s,cedula,',
         ]);

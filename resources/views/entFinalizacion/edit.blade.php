@@ -27,7 +27,7 @@
       @csrf
       @method('PATCH')
 
-    
+
 
           <div class="conteiner">
 
@@ -79,17 +79,17 @@
                 <div class="col-auto"> <label for="tvivienda">Tipo de Vivienda</label> <input type="text" class="form-control" style="width: 120px" id="tvivienda" placeholder="tvivienda" name="" value="{{ $entrevista1s->tVivienda}}" readonly></div>
               </p>
               <P>
-                <div class="col-auto"> <label for="barrio">Ciudad y localidad Residecia</label> <input type="text" class="form-control" style="width: 300px" id="barrio" placeholder="barrio" name="" value="{{ $entrevista1s->residencia}} | {{ $entrevista1s->id_localidad}} | {{ $entrevista1s->barrio}}" readonly></div>  
+                <div class="col-auto"> <label for="barrio">Ciudad y localidad Residecia</label> <input type="text" class="form-control" style="width: 300px" id="barrio" placeholder="barrio" name="" value="{{ $entrevista1s->residencia}} | {{ $entrevista1s->id_localidad}} | {{ $entrevista1s->barrio}}" readonly></div>
               </P>
               <P>
-                <div class="col-auto"> <label for="telefonos">Telefonos</label> <input type="text" class="form-control" style="width: 280px" id="telefonos" placeholder="telefonos" name="" value="{{ $entrevista1s->tFijo}}  {{ $entrevista1s->tCelular}}  {{ $entrevista1s->tCelular2}}" readonly></div>  
+                <div class="col-auto"> <label for="telefonos">Telefonos</label> <input type="text" class="form-control" style="width: 280px" id="telefonos" placeholder="telefonos" name="" value="{{ $entrevista1s->tFijo}}  {{ $entrevista1s->tCelular}}  {{ $entrevista1s->tCelular2}}" readonly></div>
               </P>
 
               <P>
-                <div class="col-auto"> <label for="conoce">Que Conoce de Mentius</label> <input type="text" class="form-control" style="width: 300px" id="conoce" placeholder="conoce" name="" value="{{ $entrevista1s->conoce}}" readonly></div>  
+                <div class="col-auto"> <label for="conoce">Que Conoce de Mentius</label> <input type="text" class="form-control" style="width: 300px" id="conoce" placeholder="conoce" name="" value="{{ $entrevista1s->conoce}}" readonly></div>
               </P>
               <P>
-                <div class="col-auto"> <label for="eCivil">Estado civil</label> <input type="text" class="form-control" style="width: 120px" id="eCivil" placeholder="eCivil" name="" value="{{ $entrevista1s->eCivil}}" readonly></div>  
+                <div class="col-auto"> <label for="eCivil">Estado civil</label> <input type="text" class="form-control" style="width: 120px" id="eCivil" placeholder="eCivil" name="" value="{{ $entrevista1s->eCivil}}" readonly></div>
               </P>
 
 
@@ -103,23 +103,23 @@
         <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                 <div class="row">
-               
 
-                 
+
+
                     <div class="w-100 d-none d-md-block"></div>
                     <div class="col"><p class="h6">Nombre</p></div>
                     <div class="col"><p class="h6">Parentesco</p></div>
                     <div class="col"><p class="h6">Edad</p> </div>
                     <div class="col"><p class="h6">Ocupación</p></div>
                     <div class="col"><p class="h6">Teléfono</p> </div>
-                   
+
                     <!-- Force next columns to break to new line -->
                    <div class="w-100 d-none d-md-block"></div>
                    <div class="col">{{ $entrevista2s->sinfamilia }}</div>
                    <div class="col">{{ $entrevista2s->sinfamilia }}</div>
                    <div class="col">{{ $entrevista2s->sinfamilia }}</div>
                    <div class="col">{{ $entrevista2s->sinfamilia }}</div>
-                   <div class="col">{{ $entrevista2s->sinfamilia }}</div>          
+                   <div class="col">{{ $entrevista2s->sinfamilia }}</div>
 
                     <!-- Force next columns to break to new line -->
                     <div class="w-100 d-none d-md-block"></div>
@@ -290,15 +290,15 @@
                     <div class="col">{{ $entrevista4s->sinExp}} </div>
                     <div class="col">{{ $entrevista4s->sinExp}}</div>
                     <div class="col">{{ $entrevista4s->sinExp}}</div>
-           
+
                     <div class="col">{{ $entrevista4s->sinExp}}</div>
                     <div class="col">{{ $entrevista4s->sinExp}}</div>
                     <div class="col">{{ $entrevista4s->sinExp}}</div>
                     <div class="col">{{ $entrevista4s->sinExp}}</div>
                     <div class="col">{{ $entrevista4s->sinExp}}</div>
                     <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-         
-         
+
+
          <div class="w-100 d-none d-md-block"></div>
          <div class="col">{{ $entrevista4s->empresa1}}</div>
          <div class="col">{{ $entrevista4s->fechain1}} </div>
@@ -380,16 +380,16 @@
          <div class="col"><p class="h6">Esta en otro proceso de selección</p>  {{ $entrevista5s->otroProceso}} </div>
          <div class="col"><p class="h6">Cual otra</p> {{ $entrevista5s->CualOtra}}</div>
          <div class="col"><p class="h6">Mencione sus fortalezas</p>  {{ $entrevista5s->fortalezas}} </div>
- 
+
          <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
          <!-- Force next columns to break to new line -->
          <div class="w-100 d-none d-md-block"></div>
- 
+
          <div class="col"><p class="h6">Mencione sus debilidades</p>  {{ $entrevista5s->debilidades}} </div>
          <div class="col"><p class="h6">Que valores le inculco su familia</p> {{ $entrevista5s->valores}}</div>
          <div class="col"><p class="h6">Aspectos que le generan satisfacción</p>  {{ $entrevista5s->satisfaccion}}</div>
          <div class="col"><p class="h6">Aspectos traumáticos</p>  {{ $entrevista5s->traumaticos}}</div>
- 
+
          <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
          <!-- Force next columns to break to new line -->
          <div class="w-100 d-none d-md-block"></div>
@@ -397,19 +397,19 @@
          <div class="col"><p class="h6">Cual fue el motivo</p>  {{ $entrevista5s->motivoC}} </div>
          <div class="col"><p class="h6">Ha tenido problemas judiciales</p> {{ $entrevista5s->problemas}}</div>
          <div class="col"><p class="h6">Cual fue la razón</p>{{ $entrevista5s->motivoJ}}</div>
- 
- 
- 
+
+
+
          <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
          <!-- Force next columns to break to new line -->
          <div class="w-100 d-none d-md-block"></div>
- 
+
          <div class="col"><p class="h6">¿Fuma? con qué frecuencia</p>  {{ $entrevista5s->fuma}} , {{ $entrevista5s->frecuencia}} </div>
          <div class="col"><p class="h6">¿Tiene deudas? </p> {{ $entrevista5s->deudas}}</div>
          <div class="col"><p class="h6">A quien le debe</p>{{ $entrevista5s->debeA}}</div>
          <div class="col"><p class="h6">Cuanto y a qué plazo </p>{{$entrevista5s->cuantoDebe}} {{ $entrevista5s->plazo}}</div>
- 
- 
+
+
          <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
          <!-- Force next columns to break to new line -->
          <div class="w-100 d-none d-md-block"></div>
@@ -417,7 +417,7 @@
          <div class="col"><p class="h6">Que hace en su tiempo libre</p> {{ $entrevista5s->tiempoLibre}}</div>
          <div class="col"><p class="h6">¿Cuál es su estado de salud? </p>{{ $entrevista5s->estadoSalud}}</div>
          <div class="col"><p class="h6">¿Sigue algún tratamiento? </p>{{ $entrevista5s->tratamiento}}</div>
- 
+
          <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
          <!-- Force next columns to break to new line -->
          <div class="w-100 d-none d-md-block"></div>
@@ -431,7 +431,7 @@
  </div>
  <fieldset class="form-group">
     <div class="container" style="background-image: linear-gradient(#ffffff, #ffffff);">
-        
+
             <div class="row">
  <div class="w-100 d-none d-md-block"></div>
  <div class="col"><p class="h6">RRHH</p></div>
@@ -443,9 +443,9 @@
  <div class="w-100 d-none d-md-block"></div>
 
  <p>
-                
+
   <input list="resultado" type="text" name="resultado" class="form-control" placeholder="Resultado" >
-  
+
   <datalist name="resultado" id="resultado">
     <option value="">Resultado</option>
     @foreach($resultados as $resultado)<option value="{{ $resultado->resultado}}">
@@ -459,12 +459,12 @@
  <div class="col">{{ $filtros->resultadoJefe}}</div>
  &nbsp;&nbsp;&nbsp;&nbsp;
 
- 
+
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;&nbsp;
 
- 
+
 </div>
 </div>
 <br>
@@ -480,7 +480,7 @@
 </div>
 </div>
 
-        
+
 
 
 </form>

@@ -10,7 +10,7 @@
 <br>
 <br>
 <div class="page-header">
-    
+
     <br>
       <h3>Datos Iniciales</h3>
 </div>
@@ -28,10 +28,10 @@
         </div>
     </p></center>
 
-    
 
-  
- 
+
+
+
     </body>
 
     <div class="container">
@@ -112,7 +112,7 @@
 
                 <p>
                     <input list="cargo" type="text" name="cargo"  style="width:510px"class="form-control" placeholder="Seleccione un cargo">
-                    
+
                     <datalist name="cargo" id="cargo" >
                       <option value="">Campañas</option>
                       @foreach($cargos as $cargo)<option value="{{ $cargo->cargo}}">
@@ -151,7 +151,7 @@
 
         <p>
             <input list="TipoVia" type="text" name="TipoVia"  class="form-control" style="width: 240px"  placeholder="Tipo via">
-            
+
             <datalist name="TipoVia" id="TipoVia" >
                 <option value="">Tipo Via</option>
                 @foreach($TipoVias as $TipoVia)<option value="{{ $TipoVia->tipo_vias}}">
@@ -167,7 +167,7 @@
 
 <p>
     <input list="prefijo1" type="text" name="prefijo1"  class="form-control" style="width: 120px"  placeholder="Prefijo">
-    
+
     <datalist name="prefijo1" id="prefijo1" >
         <option value="">Prefijo</option>
         @foreach($prefijos as $prefijo)<option value="{{ $prefijo->prefijo}}">
@@ -182,7 +182,7 @@
 
 <p>
     <input list="prefijo2" type="text" name="prefijo2"  class="form-control" style="width: 120px"  placeholder="Prefijo">
-    
+
     <datalist name="prefijo2" id="prefijo2" >
         <option value="">Prefijo</option>
         @foreach($prefijos as $prefijo)<option value="{{ $prefijo->prefijo}}">
@@ -197,7 +197,7 @@
 
                 <p>
                     <input list="orientacion" type="text" name="orientacion"  class="form-control" style="width: 220px"  placeholder="Orientacion">
-                    
+
                     <datalist name="orientacion" id="orientacion" >
                         <option value="">Orientacion</option>
                         @foreach($orientaciones as $orientacion)<option value="{{ $orientacion->orientacion}}">
@@ -215,7 +215,7 @@
 
         <p>
             <input list="adicional" type="text" name="adicional"  class="form-control" style="width: 220px"  placeholder="Adicional">
-            
+
             <datalist name="adicional" id="adicional" >
                 <option value="">Adicionales</option>
                 @foreach($adicionales as $adicional)<option value="{{ $adicional->adicional}}">
@@ -229,7 +229,7 @@
         <span>&nbsp; - &nbsp; </span>
         <p>
             <input list="adicional2" type="text" name="adicional2"  class="form-control" style="width: 220px"  placeholder="Adicional">
-            
+
             <datalist name="adicional2" id="adicional2" >
                 <option value="">Adicionales</option>
                 @foreach($adicionales as $adicional)<option value="{{ $adicional->adicional}}">
@@ -243,7 +243,7 @@
                     <span>&nbsp; - &nbsp; </span>
         <p>
             <input list="adicional3" type="text" name="adicional3"  class="form-control" style="width: 220px"  placeholder="Adicional">
-            
+
             <datalist name="adicional3" id="adicional3" >
                 <option value="">Adicionales</option>
                 @foreach($adicional2es as $adicional2)<option value="{{ $adicional2->adicional}}">
@@ -269,8 +269,8 @@
 
 <p><select name="id_localidad" id="id_localidad" class="form-control" style="width: 200px" placeholder="localidad"required> </select></p>
 <p><input type="number" name="tFijo" id="tFijo" class="form-control" style="width: 150px" placeholder="Telefono fijo"></p>
-<p><input type="number" name="tCelular" id="tCelular" class="form-control" style="width: 150px" placeholder="Celular principal" required></p>              
-<p><input type="number" name="tCelular2" id="tCelular2" class="form-control" style="width: 150px" placeholder="Celular secundario" ></p>               
+<p><input type="number" name="tCelular" id="tCelular" class="form-control" style="width: 150px" placeholder="Celular principal" required></p>
+<p><input type="number" name="tCelular2" id="tCelular2" class="form-control" style="width: 150px" placeholder="Celular secundario" ></p>
 
             </div>
         </div>
@@ -296,10 +296,10 @@
 
 
 
-                
+
                    <p>
                         <input list="tVivienda" type="text" name="tVivienda"  style="width:200px"class="form-control" placeholder="Tipo de vivienda">
-                        
+
                         <datalist name="tVivienda" id="tVivienda" >
                           <option value="">Tipo de vivienda</option>
                           @foreach($tViviendas as $tVivienda)<option value="{{ $tVivienda->tvivienda}}">
@@ -307,7 +307,7 @@
                             @endforeach
                         </datalist>
                         </p>
-                
+
                 <span>&nbsp;</span>
 <div style="width:210px"><p>
 <input type="number"name="valor"id="valor"class="form-control" placeholder="&#36; Valor del arriendo"></p>
@@ -320,7 +320,7 @@
 
                 <p>
                     <input list="sMilitar" type="text" name="sMilitar"  style="width:220px"class="form-control" placeholder="¿Presto servicio militar?">
-                    
+
                     <datalist name="sMilitar" id="sMilitar" >
                       <option value="">Tipo de vivienda</option>
                       @foreach($sMilitars as $sMilitar)<option value="{{ $sMilitar->sMilitar}}">
@@ -336,7 +336,7 @@
 
                 <p>
                     <input list="eCivil" type="text" name="eCivil"  style="width:170px"class="form-control" placeholder="Estado Civil">
-                    
+
                     <datalist name="eCivil" id="eCivil" >
                       <option value="">Estado Civil</option>
                       @foreach($eCivils as $eCivil)<option value="{{ $eCivil->e_civil}}">

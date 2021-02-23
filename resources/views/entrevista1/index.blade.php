@@ -56,7 +56,7 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($filtros as $entrevista)
+                                            @foreach ($filtros as $filtro)
                                             <tr>
                                                 <th scope="row">{{ $filtro->id}}</th>
                                                 <td>{{ $filtro->cedula}}</td>
@@ -70,9 +70,7 @@
 
                                                 <td>
 
-                                             {{-- @foreach ($entrevista1s as $entrevista1)
-                                             <td>{{ $entrevista1->entvOK}}</td>
-                                             @endforeach        --}}
+
 
 
                                                     <a href="{{url('/entrevista1/'.$filtro->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Basicos</a>
@@ -93,7 +91,7 @@
                       </div>
 
                     </form>
-                    {{ $entrevistas->links()}}
+                    {{ $filtros->links()}}
 
                     <p>
                         clic <a href="{{route('entrevista1.excel')}}">Aqui</a>
