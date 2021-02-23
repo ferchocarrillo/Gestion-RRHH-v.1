@@ -23,9 +23,12 @@
     </div>
     </body>
 
-    <form action="{{ url('/entFinalizacion/'.$filtros->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+    <form action="{{ url('/entFinalizacion')}}"
+    method="POST"
+    enctype="multipart/form-data"
+    class="form-horizontal">
       @csrf
-      @method('PATCH')
+      @method('get')
 
 
 
@@ -45,7 +48,7 @@
             <div class="col-auto"><label for="cedula">Cedula</label><input type="number" class="form-control" style="width: 200px" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $entrevista1s->cedula)}}" readonly></div>
           </p>
           <p>
-            <div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 300px" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $entrevista1s->nombres)}}" readonly></div>
+            <div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 300px" id="nombre" placeholder="nombre" name="nombre" value="{{ old('nombre', $entrevista1s->nombres)}}" readonly></div>
           </p>
           <p>
             <div class="col-auto"> <label for="telefono">Telefono</label> <input type="number" class="form-control" style="width: 180px" id="" placeholder="" name="" value="{{ old('telefono' , $entrevista1s->telefono)}}" readonly></div>
@@ -67,7 +70,7 @@
                 <div class="col-auto"><label for="cedula">Cargo</label><input type="text" class="form-control" style="width: 300px" id="" placeholder="" name="" value="{{ $entrevista1s->cargo}}" readonly></div>
               </p>
               <p>
-                <div class="col-auto"> <label for="nombres">Edad</label><input type="text" class="form-control" style="width: 50px" id="" name="" value="{{ old('edad', $entrevista1s->edad)}}" readonly></div>
+                <div class="col-auto"> <label for="edad">Edad</label><input type="text" class="form-control" style="width: 50px" id="" name="" value="{{ old('edad', $entrevista1s->edad)}}" readonly></div>
               </p>
               <p>
                 <div class="col-auto"> <label for="telefono">Lugar de nacimiento</label> <input type="text" class="form-control" style="width: 200px" id="" placeholder="" name="" value="{{ $entrevista1s->departamento}} | {{ $entrevista1s->id_ciudad}}" readonly></div>
@@ -471,7 +474,7 @@
 <div class="d-grid gap-2">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
-    <a href="{{route('entJefe.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Continuar</a>
+    <a href="{{route('entFinalizacion.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Continuar</a>
 </div>
 <br> <br>
 </div>

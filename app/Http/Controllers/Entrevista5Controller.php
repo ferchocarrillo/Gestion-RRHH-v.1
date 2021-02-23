@@ -14,6 +14,7 @@ use App\Prefijo;
 use App\Orientacion;
 use App\Adicional2;
 use App\Adicional;
+use App\Entrevista3;
 use App\Residencia;
 use App\User;
 use stdClass;
@@ -133,8 +134,8 @@ class Entrevista5Controller extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('haveaccess','entrevista5.edit');
-       $filtro=Filtro::findOrFail($id);
+       $this->authorize('haveaccess','entrevista5.edit');
+       $filtro=Entrevista3::findOrFail($id);
 
        return view('entrevista5.edit', compact('filtro'));
     }

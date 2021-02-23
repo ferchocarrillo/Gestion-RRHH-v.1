@@ -73,7 +73,7 @@ Route::get('/searchDocumento','DocumentoController@searchDocumento');
 Route::get('/searchNovedades','NovedadesController@searchNovedades');
 Route::get('/searchCoord','NovedadesController@searchCoord');
 
-Route::get('graficas.graficarPorta', 'GraficasController@graficarPorta')->name('porta.grafica');
+
 Route::get('/charts', 'ChartController@index')->name('charts');
 Route::post('/app/calculaTiempo', array('as' => 'calculaTiempo','edadController@calculaTiempo'));
 Route::post('/app/Ciudades2', array('as' => 'Ciudad2', 'uses' => 'selects2Controller@Ciudad2'));

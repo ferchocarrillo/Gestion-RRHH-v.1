@@ -132,39 +132,6 @@ class Entrevista1Controller extends Controller
 
         $entrevista1s->save();
 
-        //$filtro = new Filtro();
-       //$filtro->fregistro              = $request->fregistro;
-       //$filtro->nombre                 = $request->nombre;
-       //$filtro->cedula                 = $request->cedula;
-       //$filtro->telefono               = $request->telefono;
-       //$filtro->correo                 = $request->correo;
-       //$filtro->perfil                 = $request->cargos;
-       //$filtro->campaña                = $request->campana;
-       //$filtro->fuente                 = $request->fuente;
-       //$filtro->citadoE                = $request->citadoE;
-       //$filtro->noAplica               = $request->noAplica;
-       //$filtro->noInteresado           = $request->noInteresado;
-       //$filtro->enviadoCapa            = $request->enviadoCapa;
-       //$filtro->entrevistaJefeInm      = $request->entrevistaJefeInm;
-       //$filtro->entrevistaGerencia     = $request->entrevistaGerencia;
-       //$filtro->enviadocontratacion    = $request->enviadocontratacion;
-       //$filtro->enviadoExm             = $request->enviadoExm;
-       //$filtro->PruebasE               = $request->PruebasE;
-       //$filtro->yaTrabaja              = $request->yaTrabaja;
-       //$filtro->numeroEqu              = $request->numeroEqu;
-       //$filtro->observacion            = $request->observacion;
-       //$filtro->usuario                = $user_id.','.$user_nombre;
-       //$filtro->noAsiste               = $request->noAsiste;
-       //$filtro->NoResponde2            = $request->NoResponde2;
-       //$filtro->YaNoInt                = $request->YaNoInt;
-       //$filtro->Estudiante             = $request->Estudiante;
-       //$filtro->observacion2           = $request->observacion2;
-      //  $filtro->entvOK                 =$request->entvOK;
-        // $filtro->store()->save();
-       //Filtro::create($request->all());
-
-        //return response()->json( $entrevista1s);
-        //return back();
        return view('entrevista2.index');
     }
 
