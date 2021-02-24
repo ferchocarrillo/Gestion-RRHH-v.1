@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="inicio/styles.css"><!--estilos css directos, recordar poner el nombre de la ruta-->
-<link href="{{ asset('theme/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
+<link href="{{asset('theme/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
 <script src="{{asset('theme/vendor/bootstrap-4.1/popper.min.js')}}"></script>
 <script src="{{asset('theme/vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -23,48 +23,51 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 <body>
 
 <header>
-<div class="capsula">
-    <div class="letras">
-        <h1>Bienvenidos </h1>
-        <h2>Mentius Recursos Humanos</h2>
+     <nav>
         <a href="{{ route('login') }}">Login</a>
-    </div>
-    <img src="../theme/images/recursos9.png" alt="Imagen de primer contenedor">
-</div>
-
-<!--    <header class="hero">
-        <div class="textos-hero">
-            <h1>Bienvenido</h1>
+     </nav>
+    <div class="container">
+        <div class="letras">
+            <h1>Bienvenidos </h1>
             <h2>Mentius Recursos Humanos</h2>
-            <p>Hacemos de la excelencia nuestra mejor hoja de presentacion</p>
-            <a href="#contacto">Login</a>
-             </header>><br><br><br><br>
-        </div>-->
-    <div class="svg-hero">
-    <svg viewBox="0 0 1320 390" >
-    <path fill-opacity="1"   d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
-    <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
-    <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
-    <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
-    </svg>
+        </div>
+                <img src="/theme/images/recursos17.png" alt="Imagen de primer contenedor">
     </div>
-</header><br><br><br><br>
+</header>
+
+<div class="svg-hero">
+    <svg viewBox="0 0 1320 389" >
+        <path fill-opacity="1"   d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
+    </svg>
+</div>
 
 
     <section class="wave-contenedor webside">
         <img src="\theme\images\recursos14.jpg" alt="">
-        <div class="contenedor-textos-main"><br><br>
-        <h2 class="titulo left">¿Que Son Los Recursos Humanos?</h2>
-        <p class="parrafo">Los recursos humanos son un departamento dentro de las empresas en el que se gestiona todo lo
-             relacionado con las personas que trabajan en ella. Esto incluiría desde el reclutamiento, selección,
-             contratación, onboarding o bienvenida, formación, promoción, nóminas, contratos y despidos. En resumidas
-             cuentas, el departamento de recursos humanos debe trabajar para todas las personas que forman parte del
-             equipo humano de la empresa. Los recursos humanos son indispensables para cualquier empresa que necesite
-             crecer y contratar a los mejores trabajadores para cada puesto o ayudar a las personas que trabajan en la
-             empresa a seguir desarrollándose, formándose y creciendo.</p>
-        <!--<a href="" class="cta">Conoce más</a>  boton -->
-        </div>
-        </section>
+            <div class="contenedor-textos-main"><br><br>
+                <h2 class="titulo left">¿Que Son Los Recursos Humanos?</h2>
+                <p class="parrafo">Los recursos humanos son un departamento dentro de las empresas en el que se gestiona todo lo
+                     relacionado con las personas que trabajan en ella. Esto incluiría desde el reclutamiento, selección,
+                     contratación, onboarding o bienvenida, formación, promoción, nóminas, contratos y despidos. En resumidas
+                     cuentas, el departamento de recursos humanos debe trabajar para todas las personas que forman parte del
+                     equipo humano de la empresa. Los recursos humanos son indispensables para cualquier empresa que necesite
+                     crecer y contratar a los mejores trabajadores para cada puesto o ayudar a las personas que trabajan en la
+                     empresa a seguir desarrollándose, formándose y creciendo.</p>
+                <!--<a href="" class="cta">Conoce más</a>  boton -->
+            </div>
+    </section>
+
+
+
+
+
+
+
+
+
     <section class="info">
     <div class="contenedor">
     <h1>No contratamos personas que hace el trabajo por dinero, sino los que lo hace por amor.</h1><br><br><br><br>
@@ -128,50 +131,50 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     </section><br>
 
     <section class="info-last">
-    <section class="galeria contenedor">
-    <div class="contenedor">
-    <h2 class="titulo">GRUPO DE TRABAJO</h2><br>
-    <article class="galeria-cont">
-        <img src="\theme\images\grupo1.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo2.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo3.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo4.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo5.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo7.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo8.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo9.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo9.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo10.jpg" alt="imagenes de grupo de trabajo ">
-        <img src="\theme\images\grupo6.jpeg" alt="imagenes de grupo de trabajo ">
-    </article>
-    </div>
-    </section>
-    <div class="svg-wave">
-    <svg viewBox="0 0 1320 290" >
-    <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300" fill=" #000000fa"/>
-    <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
-    <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
-    <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
-    </svg>
-    </div>
+        <section class="galeria contenedor">
+            <div class="contenedor">
+                <h2 class="titulo">GRUPO DE TRABAJO</h2><br>
+                    <article class="galeria-cont">
+                        <img src="\theme\images\grupo1.jpg " alt="imagenes de grupo de trabajo ">
+                        <img src="\theme\images\grupo2.jpg " alt="imagenes de grupo de trabajo ">
+                        <img src="\theme\images\grupo3.jpg " alt="imagenes de grupo de trabajo ">
+                        <img src="\theme\images\grupo4.jpg " alt="imagenes de grupo de trabajo ">
+                        <img src="\theme\images\grupo5.jpg " alt="imagenes de grupo de trabajo ">
+                        <img src="\theme\images\grupo6.jpeg" alt="imagenes de grupo de trabajo ">
+                    <!--<img src="\theme\images\grupo7.jpg " alt="imagenes de grupo de trabajo ">-->
+                    <!--<img src="\theme\images\grupo8.jpg " alt="imagenes de grupo de trabajo ">-->
+                    <!--<img src="\theme\images\grupo9.jpg " alt="imagenes de grupo de trabajo ">-->
+                    <!--<img src="\theme\images\grupo10.jpg" alt="imagenes de grupo de trabajo ">-->
+                    <!--<img src="\theme\images\grupo11.png" alt="imagenes de grupo de trabajo ">-->
+                    </article>
+            </div>
+        </section>
+
+        <div class="svg-wave">
+            <svg viewBox="0 0 1320 290" >
+                <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300" fill=" #000000fa"/>
+                <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
+                <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
+                <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
+            </svg>
+        </div>
     </section>
 
     <div class="container-footer">
-    <footer>
-    <div class="logo-footer">
-    <img src="\theme\images\isotipo-slogan.png" alt="">
+        <footer>
+            <div class="logo-footer">
+                <img src="\theme\images\isotipo-slogan.png" alt="">
+            </div>
+                <div class="redes-footer">
+                    <a href="https://www.facebook.com/mentiussas/"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
+                    <a href="#"><i class="fab fa-twitter icon-redes-footer"></i></a>
+                    <a href="#"><i class="fab fa-instagram icon-redes-footer"></i></a>
+                    <a href="https://www.linkedin.com/company/mentius-s-a-s/?originalSubdomain=co"><i class="fab fa-linkedin-in icon-redes-footer"></i></i></a>
+                </div>
+            <hr>
+            <h6><i class="fa fa-copyright" aria-hidden="true">2021 Mentius Colombia, Todos los Derechos Reservados Diseñado y Desarrollado por Mauricio Giraldo</i> </h6>
+        </footer>
     </div>
-    <div class="redes-footer">
-    <a href="https://www.facebook.com/mentiussas/"><i class="fab fa-facebook-f icon-redes-footer"></i></a>
-    <a href="#"><i class="fab fa-twitter icon-redes-footer"></i></a>
-    <a href="#"><i class="fab fa-instagram icon-redes-footer"></i></a>
-    <a href="https://www.linkedin.com/company/mentius-s-a-s/?originalSubdomain=co"><i class="fab fa-linkedin-in icon-redes-footer"></i></i></a>
-    </div>
-    <hr>
-    <h6><i class="fa fa-copyright" aria-hidden="true">2021 Mentius Colombia, Todos los Derechos Reservados Diseñado y Desarrollado por Mauricio Giraldo</i> </h6>
-    </footer>
-    </div>
-
 
 
 
