@@ -331,7 +331,7 @@ return [
         ],
 
         ['text'    => 'Registro Entrevista RR.HH',
-        'url'     => 'entFinalizacion',
+        'url'     => 'entRRHH',
         'icon'    => 'fas fa-address-card',
         'icon_color' => 'orange'
         ],

@@ -14,11 +14,11 @@
 
 
 <div class="page-header">
-      <h3>REGISTRO DE RESULTADO CAPACITACION</h3>
+      <h3>REGISTRO DE RESULTADO ENTREVISTA RRHH</h3>
 </div>
 </center>
         </body>
-<form action="{{ url('/capacitacion/'.$filtro->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<form action="{{ url('/entRRHH/'.$filtro->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
     @csrf
     @method('PATCH')
 
@@ -48,7 +48,7 @@
 </div>
 </fieldset>
 
-<div>  <input type="hidden" id="fechaGerencia"  name="fechaGerencia" value="{{ $date }}" ></div>
+<div>  <input type="hidden" id="fechaRrhh"  name="fechaRrhh" value="{{ $date }}" ></div>
 
 <fieldset class="form-group">
   <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
@@ -57,19 +57,17 @@
 
  <p class="col-3">
 
-  <input list="resultadoFormacion" type="text" name="resultadoFormacion" class="form-control" placeholder="Registre aqui el resultado" >
+  <input list="resultadoRrhh" type="text" name="resultadoRrhh" class="form-control" placeholder="Registre aqui el resultado" >
 
-  <datalist name="resultadoFormacion" id="resultadoFormacion">
+  <datalist name="resultadoRrhh" id="resultadoRrhh">
     <option value="">Resultado</option>
-    @foreach($aprobaciones as $aprobacions)<option value="{{ $aprobacions->aprobacion}}">
-        {{ $aprobacions->aprobacion }}</option>
+    @foreach($resultadoRrhhs as $resultadoRrhh)<option value="{{ $resultadoRrhh->resultado}}">
+        {{ $resultadoRrhh->resultado }}</option>
       @endforeach
   </datalist>
   </p>
-
-
-  <strong><span>Observaciones Formacion</strong></span>
-  <textarea  class="col-3" name="obsFormacion" id="obsFormacion" cols="165" rows="3"></textarea>
+  <strong><span>Observaciones RRHH</strong></span>
+  <textarea  class="col-3" name="obsRrhh" id="obsRrhh" cols="165" rows="3"></textarea>
 
   <a href="{{route('resumen.index')}}" class="btn btn-primary  role="button" aria-pressed="true">ver hoja completa</a></p> 
 
@@ -79,7 +77,7 @@
 </div> 
 <p><input class="btn btn-lg btn-primary" type="submit" value="REGISTRAR">
 
-  <a href="{{route('home')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a></p> 
+  <a href="{{route('entRRHH.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a></p> 
    </div>  
   </fieldset> 
 

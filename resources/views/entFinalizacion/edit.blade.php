@@ -23,15 +23,25 @@
     </div>
     </body>
 
-    <form action="{{ url('/entFinalizacion')}}"
+    <form action="{{ url('/entFinalizacion/')}}"
     method="POST"
     enctype="multipart/form-data"
     class="form-horizontal">
       @csrf
-      @method('get')
+     
 
 
-
+      <div class="col-auto"><label for="id_filtro">
+        </label><input 
+        type="hidden" 
+        class="form-control" 
+        style="width: 200px" 
+        id="id_filtro" 
+        placeholder="id_filtro" 
+        name="id_filtro" 
+        value="{{ old('id_filtro', $entrevista1s->id_filtro)}}" 
+        readonly></div>
+      
           <div class="conteiner">
 
             <center><p>
@@ -48,7 +58,7 @@
             <div class="col-auto"><label for="cedula">Cedula</label><input type="number" class="form-control" style="width: 200px" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $entrevista1s->cedula)}}" readonly></div>
           </p>
           <p>
-            <div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 300px" id="nombre" placeholder="nombre" name="nombre" value="{{ old('nombre', $entrevista1s->nombres)}}" readonly></div>
+            <div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 300px" id="nombres" placeholder="nombre" name="nombres" value="{{ old('nombre', $entrevista1s->nombres)}}" readonly></div>
           </p>
           <p>
             <div class="col-auto"> <label for="telefono">Telefono</label> <input type="number" class="form-control" style="width: 180px" id="" placeholder="" name="" value="{{ old('telefono' , $entrevista1s->telefono)}}" readonly></div>
@@ -458,8 +468,7 @@
   </p>
   <textarea name="obsFinales" id="obsFinales" cols="35" rows="3"></textarea>
 
- <div class="col">{{ $filtros->resultadoGer}}</div>
- <div class="col">{{ $filtros->resultadoJefe}}</div>
+
  &nbsp;&nbsp;&nbsp;&nbsp;
 
 

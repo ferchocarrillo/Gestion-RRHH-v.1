@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\EntGerencia;
+use App\EntRRHH;
 use App\Entrevista5;
 use App\EntFinalizacion;
 use App\Filtro;
@@ -12,11 +12,10 @@ use App\Entrevista3;
 use App\Entrevista4;
 use App\resultadoRRHH;
 use Carbon\Carbon;
-use App\Aprobacion;
 
 use Illuminate\Http\Request;
 
-class EntGerenciaController extends Controller
+class EntRRHHController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,8 +25,8 @@ class EntGerenciaController extends Controller
     public function index()
     {
       
-        $entrevistases = Filtro::orderBy('created_at', 'desc')->where('resultadoRrhh','=','Cargo requiere segunda entrevista')->paginate(10);
-        return view('entGerencia.index',compact('entrevistases'));
+        $entrevistases = Entrevista5::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 5 ok')->paginate(10);
+        return view('entRRHH.index',compact('entrevistases'));
     }
 
     /**
@@ -107,7 +106,7 @@ class EntGerenciaController extends Controller
         $date = Carbon::now();
        // $date = $date->format('d-m-Y'); 
         $this->authorize('haveaccess','entFinalizacion.edit');
-        $aprobaciones = Aprobacion::all();
+
         $filtro  = Filtro::findOrFail($id);
         // $entFinalizacion = EntFinalizacion::findOrFail($id);
         $entrevista5s = entrevista5::findOrFail($id);
@@ -118,7 +117,7 @@ class EntGerenciaController extends Controller
         $resultadoRrhhs = resultadoRRHH::all();
         //return response()->json($entFinalizacion);
     //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
-      return view('entGerencia.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s','aprobaciones')); 
+      return view('entRRHH.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s')); 
     }
 
     /**
@@ -130,7 +129,7 @@ class EntGerenciaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $aprobaciones = Aprobacion::all();
+
         Carbon::setLocale('es');
         $date = Carbon::now();
         $resultadoRrhhs = resultadoRRHH::all();
@@ -138,7 +137,7 @@ class EntGerenciaController extends Controller
         Filtro::where('id','=',$id)->update($datosFiltro);
         $filtro=Filtro::findOrFail($id);
      //return response()->json($filtro);
-     return view('entGerencia.edit', compact('filtro', 'date','resultadoRrhhs','aprobaciones'));
+     return view('entRRHH.edit', compact('filtro', 'date','resultadoRrhhs'));
     }
 
     /**

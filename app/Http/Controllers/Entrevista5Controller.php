@@ -31,7 +31,7 @@ class Entrevista5Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Entrevista4::orderBy('id', 'asc')->where('entvOK','=','entrevista 4 ok')
+        $entrevistas = Entrevista4::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 4 ok')
         ->paginate(20);
         return view('entrevista5.index',compact( 'entrevistas'));
     }
@@ -135,7 +135,7 @@ class Entrevista5Controller extends Controller
     public function edit($id)
     {
        $this->authorize('haveaccess','entrevista5.edit');
-       $filtro=Entrevista3::findOrFail($id);
+       $filtro=Entrevista4::findOrFail($id);
 
        return view('entrevista5.edit', compact('filtro'));
     }

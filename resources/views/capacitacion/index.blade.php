@@ -5,32 +5,33 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<a href="{{route('resumen.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de capacitaciones" /></a>
+
+
 
 
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
 </center>
-
- 
- 
- 
-                </body>
-                <br>
-                <p align="right">
+            <p align="right">
                     <div class="col-md-4">
-                <form action="/searchcapacitacion" method="GET">
+                <form action="/searchfiltro" method="GET">
                 <div class="input-group">
-        <input type="searchcapacitacion" name="searchcapacitacion" class="form-control">
+        <input type="searchfiltro" name="searchfiltro" class="form-control">
         <span class="input-group-prepend">
-            <button type="submit" class="btn btn-primary">Buscar por Numero</button>
+            <button type="submit" class="btn btn-primary">Buscar por cedula</button>
             </span>
         </div>
     </form>
 </div>
 </p>
+<div class="container">
 
-<br>         <form name="f1" action="{{ url('/capacitacion')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+
+
+
+
+
+               <form name="f1" action="{{ url('/filtro/')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
                         <center>
@@ -43,55 +44,49 @@
 
                                     <table class="table table-striped table-bordered table-hover table-dark">
                                         <thead>
-                                          <tr>
+                                          <tr >
                                             <th scope="col">#</th>
+                       
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
-                                            
-
-                                            <th colspan="6">&nbsp;</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">Perfil</th>
+                                            <th scope="col">Campaña</th>
+                    
+                                    
+                                            <th colspan="2"></th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($contrataciones as $filtro)
+                                             @foreach ($entrevistases as $entrevistas)
                                             <tr>
-                                                <th scope="row">{{ $filtro->id}}</th>
-                                                <td>{{ $filtro->cedula}}</td>
-                                                <td>{{ $filtro->nombres}}</td>
-                                               <td>{{ $filtro->telefono}}</td>
-
+                                    <th scope="row">{{ $entrevistas->id}}</th>
+                                         
+                                                <td>{{ $entrevistas->cedula}}</td>
+                                                <td>{{ $entrevistas->nombre}}</td>
+                                                <td>{{ $entrevistas->telefono}}</td>
+                                                <td>{{ $entrevistas->correo}}</td>
+                                                <td>{{ $entrevistas->perfil}}</td>
+                                                <td>{{ $entrevistas->campaña}}</td>
                                       
-
-
+                               
                                                 <td>
-                                      {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}
-                                      {{-- <a href="{{url('/entrevista2/'.$entrevista->id.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>--}}
-                                      {{--<a href="{{url('/entrevista3/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>--}}
-                                           <a href="{{url('/capacitacion/'.$filtro->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Registrar Evaluacion</a>
-
+                                                    <a href="{{url('/entGerencia/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Entrevista Gerencia</a>
+                                                    {{-- <a href="{{url('/entFinalizacion/'.$entrevistas->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a> --}}
                                             </form>
                                                 </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
                                       </table>
-
                                   </div>
                               </div>
                           </div>
                       </div>
-
                     </form>
-                    {{ $contrataciones->links()}}
 
-       {{--             <p>
-                        clic <a href="{{route('entrevista1.excel')}}">Aqui</a>
-                        Descarga la entrevista en excel
-                        </p>
---}}
-
-
+                    {{ $entrevistases->links()}}
                 <!-- Bootstrap CSS-->
                 <link href="{{ asset('theme/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
             <!-- Bootstrap JS-->
@@ -104,6 +99,12 @@
                     <link rel="stylesheet" href="/css/admin_custom.css">
                     @stop
                     @section('js')
-
+            <script>
+            Swal.fire(
+              'ENTREVISTA GERENCIA',
+              'Validacion de portulado por el Gerente',
+              'success'
+            )
+            </script>
             @stop
             @endsection
