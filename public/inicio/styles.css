@@ -15,6 +15,12 @@ header{
     padding: 48px;
     width: 100%;
 }
+nav{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
 .capsula{
   width: 95%;
   max-width: 1200px;
@@ -24,11 +30,11 @@ header{
   margin: auto;
   }
 .capsula img{
-    display: block;
+    display: flex;
     height: 450px;
     object-fit: cover;
     width: auto;
-    animation: arriba 2s ease-in;
+    animation: arriba 2.5s ease-in;
 }
 .letras{
     width: 50%;
@@ -36,24 +42,24 @@ header{
 }
 .letras h1{
     font-size: 80px;
-    animation: moverDerecha 2s ease-in;
+    animation: moverDerecha 2.5s ease-in;
 }
 .letras h2{
     font-size: 30px;
-    animation: moverIzquierda 2s ease-in;
+    animation: moverIzquierda 2.5s ease-in;
 }
-.letras a{
+nav a{
     display: inline-block;
-    color: #ffffff;
+    color: #000000;
     font-weight: 300;
     text-decoration: none;
     margin-top: 30px;
-    border: 1px solid #ffffff;
+    border: 1px solid #000000;
     width: 150px;
     border-radius: 100px;
     text-align: center;
     padding: 10px 0;
-    animation: arriba 2s ease-in;
+    animation: arriba 2.5s ease-in;
 }
 @keyframes moverIzquierda{
     0% {
@@ -85,54 +91,10 @@ header{
         transform: translate(0);
     }
 }
-/*.hero{
-background-image: linear-gradient(120deg, rgba(214, 181, 245, 0.877) 0%,
-rgba(142, 197, 252, 0.459) 100%), url("../theme/images/recursos9.pg");/*degrade con image
-width: 100%;/*ancho de la image
-height: 650px;/*altura de la image
-background-repeat: no-repeat;/*si la imagen no no ocupa el espacio no se repit
-background-size: cover;/
-background-position: center;/
-background-attachment: fixed;/
-position: relative;/
-overflow: hidden;/*comando para que nada salga del her
-}
-/*.textos-hero{
-    height: 450px;/*posicion del titulo en cuanto al techo
-    color: rgb(0, 0, 0);/*color de la letra
-    display: flex;/*posicion de la letra fija
-    flex-direction: column;/*organizacion de le la letra por columnas
-    justify-content: center;/*posicion de de la letra
-    align-items: center;/*lineamiento de la letra
 
-}
-/*.textos-hero h1{
-    font-size: 80px;/*tamaño de la letra del titulo
-    -webkit-text-fill-color: #000000;
-    -webkit-text-stroke: 2px; text-shadow:  10px 3px 8px #f7f9fa;;
-    -webkit-text-stroke-color: rgb(0, 0, 0);
-}
-.textos-hero h2{
-    font-size: 70px;/*tamaño de la letra del titulo
-    -webkit-text-fill-color: #000000;
-    -webkit-text-stroke: 2px; text-shadow:  10px 3px 8px #f7f9fa;;
-    -webkit-text-stroke-color: rgb(0, 0, 0);
-}
-.textos-hero p{
-    font-size: 30px;/*tamaño de la letra del parrafo
-    margin-bottom: 30px;/*distancia del boton en cuanto al parrafo
-}
-.textos-hero a{
-    display: inline-block;/*propiedades de bloque y linea
-    text-decoration: none;/*quita la linea inferior del enlase
-    padding: 12px 28px;/*tamaño del boton
-    background-image: linear-gradient(120deg, #276f85 0%, #30849e 100%);/*color del boton en drade
-    border-radius: 30px;/*circunferencia del boton
-    color: #ffffff;/*color de la letra del boton
-}*/
 .svg-hero{
-    position: absolute;/*pocionamiento de las ondas */
-    bottom: 0;
+    position:absolute;/*pocionamiento de las ondas */
+    bottom: 270px;
     left: 0;
     width: 100%;/*ancho de las ondas*/
 }
@@ -225,11 +187,11 @@ overflow: hidden;/*comando para que nada salga del her
 /*galeria*/
 .galeria{
     background: #c4c0c071;/*color del contenedor de las imagenes*/
-    height: 600px; /*alto del contenedor */
+    height: 800px; /*alto del contenedor */
 }
 .galeria-cont{
     width: 100%;
-    height: 500px;
+    height: 650px;
      display: flex;
      flex-wrap: wrap;
     justify-content: space-evenly;
@@ -330,7 +292,7 @@ background: #2e2d2dde;
 }
 
 @media screen and (max-width:800px){
-    .textos-hero h1{
+    .letras h1{
         text-align: center;
         font-size: 50px;
     }
@@ -429,3 +391,65 @@ svg path:nth-child(4){
         d: path("M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300");
     }
 }
+@media screen and (max-width:1000px){
+     img{
+         height: 400px;
+     }
+
+@media screen and (max-width:800px){
+    img{
+        height: 370px;
+    }
+    .letras h1{
+        font-size: 70px;
+    }
+    .letras h2{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:700px){
+    img{
+        height: 250px;
+    }
+    .letras h1{
+        font-size: 40px;
+    }
+    .letras h2{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width:450px){
+    .capsula{
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .letras{
+        width: 100%;
+        text-align: center;
+    }
+    img{
+        height: 250px;
+    }
+    .letras h1{
+        font-size: 60px;
+    }
+    .letras h2{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:340px){
+    img{
+        height: 160px;
+    }
+    .letras h1{
+        font-size: 35px;
+    }
+    .letras a{
+        width: 120px;
+    }
+    .letras h2{
+        font-size: 15px;
+    }
+}
+
