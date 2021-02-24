@@ -3,30 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\EntJefe;
-use App\EntGerencia;
+use App\Entrevista5;
 use App\EntFinalizacion;
-use Illuminate\Http\Request;
 use App\Filtro;
-use App\reclutamiento;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
-use App\Departamentos;
-use App\TipoVia;
-use App\Prefijo;
-use App\Orientacion;
-use App\Adicional2;
-use App\Adicional;
 use App\Entrevista1;
 use App\Entrevista2;
 use App\Entrevista3;
 use App\Entrevista4;
-use App\Entrevista5;
-use App\Residencia;
-use App\User;
-use stdClass;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\EntFinalizacionExport;
-use Illuminate\Support\Facades\DB;
+use App\resultadoRRHH;
+use Carbon\Carbon;
+use App\Aprobacion;
+
+use Illuminate\Http\Request;
 
 class EntJefeController extends Controller
 {
@@ -37,8 +25,9 @@ class EntJefeController extends Controller
      */
     public function index()
     {
-        $entrevistas = EntFinalizacion::orderBy('id', 'asc')->where('resultado','cargo requiere segunda entrevista')->paginate(10);
-        return view('entjefe.index',compact('entrevistas'));
+      
+        $entrevistases = Filtro::orderBy('created_at', 'desc')->where('resultadoRrhh','=','Cargo requiere segunda entrevista')->paginate(10);
+        return view('entJefe.index',compact('entrevistases'));
     }
 
     /**
@@ -48,19 +37,7 @@ class EntJefeController extends Controller
      */
     public function create()
     {
-
-        $entJefe = EntJefe::all();
-        $entFinalizacion = EntFinalizacion::all();
-        $reclutamientos=Reclutamiento::all();
-        return view('entJefe.create',compact('entJefe','entFinalizacion','reclutamientos'));
-    }
-    public function searchEntGerencia( Request $request)
-    {
-
-
-        $searchEntrevista = $request->get('searchEntrevista');
-        $searchEntJefe= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
-        return view('entJefe.index', ['searchEntJefe' => $searchEntJefe]);
+        //
     }
 
     /**
@@ -73,73 +50,105 @@ class EntJefeController extends Controller
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
-        $datosEntrevista=request()->except('_token');
-        $request->validate([
-            'cedula'  => 'required|unique:ent_jefe,cedula,',
-        ]);
-        $entJefe = new EntFinalizacion();
-        $entJefe->id_filtro        = $request->id_filtro;
-        $entJefe->cedula           = $request->cedula;
-        $entJefe->nombres          = $request->nombres;
-        $entJefe->resultado        = $request->resultado;
-        $entJefe->obsFinales       = $request->obsFinales;
-        $entJefe->fechaCont        = $request->fechaCont;
-        $entJefe->resultadojefe    = $request->resultadojefe;
-        $entJefe->obsJefe          = $request->obsJefe;
+        Carbon::setLocale('es');
+        $date = Carbon::now();
 
-        $entJefe->save();
-      return view('home');
-      //  return response()->json($entJefe);
+        $datosFiltro=request()->except('_token');
+
+        if($request->hasFile('Foto')){
+            $datosFiltro['Foto']=$request->file('Foto')->store('uploads','public');
+        }
+        $request->validate([
+            'nombre'          => 'required|unique:filtros,nombre,',
+
+
+        ]);
+
+        $filtro = new Filtro();
+
+        $filtro->fregistro              = $request->fregistro;
+        $filtro->nombre                 = $request->nombre;
+        $filtro->cedula                 = $request->cedula;
+        $filtro->telefono               = $request->telefono;
+        $filtro->correo                 = $request->correo;
+        $filtro->perfil                 = $request->cargos;
+        $filtro->campaña                = $request->campana;
+        $filtro->fuente                 = $request->fuente;
+        $filtro->resultadoRrhh          = $request->resultadoRrhh;        
+        $filtro->obsRrhh                = $request->obsRrhh;          
+        $filtro->fechaRrhh              = $request->fechaRrhh;  
+        $filtro->save();
+
+        //return response()->json($filtro);
+        return back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\EntJefe  $entJefe
+     * @param  \App\EntRRHH  $entRRHH
      * @return \Illuminate\Http\Response
      */
-    public function show($id, Request $request)
+    public function show(EntRRHH $entRRHH)
     {
-
+        //
     }
 
-    /**
+     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\EntJefe  $entJefe
+     * @param  \App\EntRRHH  $entRRHH
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, Request $request)
+    public function edit($id)
     {
 
+        Carbon::setLocale('es');
+        $date = Carbon::now();
+       // $date = $date->format('d-m-Y'); 
         $this->authorize('haveaccess','entFinalizacion.edit');
-
-        $filtros=EntFinalizacion::findOrFail($id);
-        $entrevista1s=entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entrevista2s=Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entrevista3s=Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entrevista4s=Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entrevista5s=Entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        
-       return view('entJefe.edit', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtros'));
+        $aprobaciones = Aprobacion::all();
+        $filtro  = Filtro::findOrFail($id);
+        // $entFinalizacion = EntFinalizacion::findOrFail($id);
+        $entrevista5s = entrevista5::findOrFail($id);
+        // $entrevista1s = Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        // $entrevista2s = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        // $entrevista3s = Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        // $entrevista4s = Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        $resultadoRrhhs = resultadoRRHH::all();
+        //return response()->json($entFinalizacion);
+    //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
+      return view('entJefe.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s','aprobaciones')); 
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EntJefe  $entJefe
+     * @param  \App\Filtro  $filtro
      * @return \Illuminate\Http\Response
      */
-    public function update (Request $request, $id)
+    public function update(Request $request, $id)
     {
-        $datosentFinalizacion =request()->except(['_token','_method']);
-        EntFinalizacion::where('id','=',$id)->update($datosentFinalizacion);
-        $entJefe=EntFinalizacion::findOrFail($id);
-        //return response()->json($entJefe);
-        return view('entJefe.edit', compact('entJefe'));
+        $aprobaciones = Aprobacion::all();
+        Carbon::setLocale('es');
+        $date = Carbon::now();
+        $resultadoRrhhs = resultadoRRHH::all();
+        $datosFiltro =request()->except(['_token','_method']);
+        Filtro::where('id','=',$id)->update($datosFiltro);
+        $filtro=Filtro::findOrFail($id);
+     //return response()->json($filtro);
+     return view('entJefe.edit', compact('filtro', 'date','resultadoRrhhs','aprobaciones'));
     }
 
-
-
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Filtro  $filtro
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Filtro $filtro)
+    {
+        //
+    }
 }

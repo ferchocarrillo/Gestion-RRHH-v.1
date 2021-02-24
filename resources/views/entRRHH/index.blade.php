@@ -31,7 +31,7 @@
 
 
 
-               <form name="f1" action="{{ url('/filtro')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+               <form name="f1" action="{{ url('/filtro/')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
                         <center>
@@ -46,37 +46,30 @@
                                         <thead>
                                           <tr >
                                             <th scope="col">#</th>
-                                            <th scope="col">Fecha registro</th>
+                       
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
                                             <th scope="col">Correo</th>
-                                            <th scope="col">Perfil</th>
-                                            <th scope="col">Campaña</th>
-                                            <th scope="col">Observacion</th>
-                                            <th scope="col">Obs segundo filtro</th>
+                    
+                                    
                                             <th colspan="2"></th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                             @foreach ($entrevistas as $entrevistas)
-                                            <tr>$
+                                             @foreach ($entrevistases as $entrevistas)
+                                            <tr>
                                     <th scope="row">{{ $entrevistas->id}}</th>
-                                                <td>{{ $entrevistas->fregistro}}</td>
+                                         
                                                 <td>{{ $entrevistas->cedula}}</td>
-                                                <td>{{ $entrevistas->nombre}}</td>
+                                                <td>{{ $entrevistas->nombres}}</td>
                                                 <td>{{ $entrevistas->telefono}}</td>
                                                 <td>{{ $entrevistas->correo}}</td>
-                                                <td>{{ $entrevistas->perfil}}</td>
-                                                <td>{{ $entrevistas->campaña}}</td>
-                                                <td>{{ $entrevistas->observacion}}</td>
-                                                <td>{{ $entrevistas->observacion2}}</td>
+                                      
+                               
                                                 <td>
-                                                    <a href="{{url('/filtro/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
-                                                    <form action="{{url('/filtro/'.$entrevistas->id)}}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                   {{-- <button class="btn btn-info btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
+                                                    <a href="{{url('/entRRHH/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Resultado RRHH</a>
+                                                    {{-- <a href="{{url('/entFinalizacion/'.$entrevistas->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a> --}}
                                             </form>
                                                 </td>
                                             </tr>
@@ -89,7 +82,7 @@
                       </div>
                     </form>
 
-                    {{ $entrevistas->links()}}
+                    {{ $entrevistases->links()}}
                 <!-- Bootstrap CSS-->
                 <link href="{{ asset('theme/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
             <!-- Bootstrap JS-->
@@ -104,7 +97,7 @@
                     @section('js')
             <script>
             Swal.fire(
-              'RESULTADO ENTREVISTA RRHH',
+              'REGISTRO DE HV',
               'Registro de Hojas de Vida',
               'success'
             )

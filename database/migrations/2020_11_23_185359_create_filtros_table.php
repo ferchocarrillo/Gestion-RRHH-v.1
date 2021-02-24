@@ -42,6 +42,22 @@ class CreateFiltrosTable extends Migration
             $table->string('enviadocontratacion')->nullable();
             $table->longText('observacion2')->nullable();
             $table->string('entvOK')->nullable();
+            $table->string('resultadoRrhh')->nullable();
+            $table->longText('obsRrhh')->nullable();
+            $table->date('fechaRrhh')->nullable();
+            $table->string('resultadoGer')->nullable();
+            $table->longText('obsGerencia')->nullable();
+            $table->date('fechaGerencia')->nullable();
+            $table->string('resultadoJefe')->nullable();
+            $table->longText('obsJefe')->nullable();
+            $table->date('fechaJefe')->nullable();
+            $table->string('resultadoFormacion')->nullable();
+            $table->longText('obsFormacion')->nullable();
+            $table->date('fechaFormacion')->nullable();
+
+
+
+            $table->date('fechaCont')->nullable();
             $table->string('usuario');
             $table->timestamps();
         });
