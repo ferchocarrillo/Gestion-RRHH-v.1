@@ -26,7 +26,7 @@ class CapacitacionController extends Controller
     public function index()
     {
       
-        $entrevistases = Filtro::orderBy('created_at', 'desc')->where('resultadoRrhh','=','Cargo requiere segunda entrevista')->paginate(10);
+        $entrevistases = Filtro::orderBy('created_at', 'desc')->where('enviadoCapa','=','enviado capa')->paginate(10);
         return view('capacitacion.index',compact('entrevistases'));
     }
 
@@ -74,9 +74,9 @@ class CapacitacionController extends Controller
         $filtro->perfil                 = $request->cargos;
         $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
-        $filtro->resultadoRrhh          = $request->resultadoRrhh;        
-        $filtro->obsRrhh                = $request->obsRrhh;          
-        $filtro->fechaRrhh              = $request->fechaRrhh;  
+        $filtro->resultadoFormacion     = $request->resultadoFormacion;        
+        $filtro->obsFormacion           = $request->obsFormacion;          
+        $filtro->fechaFormacion         = $request->fechaFormacion;  
         $filtro->save();
 
         //return response()->json($filtro);
@@ -110,7 +110,7 @@ class CapacitacionController extends Controller
         $aprobaciones = Aprobacion::all();
         $filtro  = Filtro::findOrFail($id);
         // $entFinalizacion = EntFinalizacion::findOrFail($id);
-        $entrevista5s = entrevista5::findOrFail($id);
+       //$entrevista5s = entrevista5::findOrFail($id);
         // $entrevista1s = Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista2s = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista3s = Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
@@ -118,7 +118,7 @@ class CapacitacionController extends Controller
         $resultadoRrhhs = resultadoRRHH::all();
         //return response()->json($entFinalizacion);
     //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
-      return view('entJefe.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s','aprobaciones')); 
+      return view('capacitacion.edit', compact('date','filtro','resultadoRrhhs', 'aprobaciones')); 
     }
 
     /**
@@ -138,7 +138,7 @@ class CapacitacionController extends Controller
         Filtro::where('id','=',$id)->update($datosFiltro);
         $filtro=Filtro::findOrFail($id);
      //return response()->json($filtro);
-     return view('entJefe.edit', compact('filtro', 'date','resultadoRrhhs','aprobaciones'));
+     return view('capacitacion.edit', compact('filtro', 'date','resultadoRrhhs','aprobaciones'));
     }
 
     /**

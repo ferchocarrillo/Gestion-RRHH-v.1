@@ -18,7 +18,7 @@
 </div>
 </center>
         </body>
-<form action="{{ url('/capacitacion/'.$filtro->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<form action="{{ url('/filtro/'.$filtro->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
     @csrf
     @method('PATCH')
 
@@ -48,7 +48,7 @@
 </div>
 </fieldset>
 
-<div>  <input type="hidden" id="fechaGerencia"  name="fechaGerencia" value="{{ $date }}" ></div>
+<div>  <input type="hidden" id="fechaFormacion"  name="fechaFormacion" value="{{ $date }}" ></div>
 
 <fieldset class="form-group">
   <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">

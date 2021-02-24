@@ -30,8 +30,8 @@ class FiltroController extends Controller
     {
 
         $cargos = Cargo::all();
-        $filtros = Filtro::orderBy('cedula', 'asc')->paginate(10);
-        return view('filtro.index',compact('filtros','cargos'));
+        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
+        return view('filtro.index',compact('entrevistas','cargos'));
     }
 
     public function searchfiltro( Request $request)
