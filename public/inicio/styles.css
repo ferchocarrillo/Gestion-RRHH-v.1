@@ -66,19 +66,25 @@ nav a{
     height: 100px;/*alto de la onda*/
     width: 100%;/*ancho de las ondas*/
     position:absolute;/*pocionamiento de las ondas */
-    bottom: 480px;
-
-
+    bottom: 550px;
 
 }
+
+
+
 /*estilos generales*/
 .contenedor,
 .wave-contenedor{
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     overflow: hidden;
     margin:auto;
     padding: 0 0 80px 0;/*espaciado entre secciones*/
+}
+.contenedor h4{
+    font-size: 50px;
+    text-align: center;
+    padding: 12px 0;
 }
 .contenedor{
     padding: 10px 0;/*espacio de entre secciones abajo*/
@@ -120,12 +126,78 @@ nav a{
     color: rgb(255, 255, 255);
 }
 
+
 /*info*/
 .info{/*estilo derecuadro*/
-    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-    color: rgb(12, 12, 12);/*color de la letra*/
-    text-align:center;
-    height: 300px;/*alto de recuadro del degrade */
+    background-image: linear-gradient(120deg, #50adbb 0%, #004661 100%);
+    height: 900px;/*alto de recuadro del degrade */
+}
+
+
+
+/*carrusel de imagenes*/
+.wrapper{
+    position:absolute;
+    width: 320px;
+    margin: 150px 380px;
+    perspective: 1000px;
+
+}
+.img-area{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(-360deg) translateZ(-300px);
+    animation: animate 350s steps(10000, end) infinite;
+    background: #9c4848;
+}
+.single-img{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 250px;
+    height: 150px;
+}
+.single-img img{
+    width: 300px;
+    height: 200px;
+    border: 5px solid #4c6daa;
+}
+.single-img.img-1{
+    transform: rotateY(0deg) translateZ(600px);
+}
+.single-img.img-2{
+    transform: rotateY(40deg) translateZ(600px);
+}
+.single-img.img-3{
+    transform: rotateY(80deg) translateZ(600px);
+}
+.single-img.img-4{
+    transform: rotateY(120deg) translateZ(600px);
+}
+.single-img.img-5{
+    transform: rotateY(160deg) translateZ(600px);
+}
+.single-img.img-6{
+    transform: rotateY(200deg) translateZ(600px);
+}
+.single-img.img-7{
+    transform: rotateY(240deg) translateZ(600px);
+}
+.single-img.img-8{
+    transform: rotateY(280deg) translateZ(600px);
+}
+.single-img.img-9{
+    transform: rotateY(320deg) translateZ(600px);
+}
+@keyframes animate{
+    from{
+        transform: rotateY(1460deg);
+    }
+    to{
+        transform: rotateY(0deg);
+    }
 }
 /*Cards*/
 .content-cards{
@@ -168,7 +240,7 @@ nav a{
      display: flex;
      flex-wrap: wrap;
     justify-content: space-evenly;
-     overflow: hidden;
+
 }
 .galeria-cont>img{
     width: 30%;/*ancho dela imagen*/

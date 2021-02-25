@@ -5,6 +5,7 @@
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0,user-scalable=1">
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
+<script src="/js/app.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="inicio/styles.css"><!--estilos css directos, recordar poner el nombre de la ruta-->
@@ -66,14 +67,44 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 
 
-
-
-    <section class="info">
-    <div class="contenedor">
-    <h1>No contratamos personas que hace el trabajo por dinero, sino los que lo hace por amor.</h1><br><br><br><br>
-    <p>Una máquina puede hacer el trabajo de cincuenta hombres normales. Ninguna máquina puede hacer el trabajo de un  hombre extraordinario.</p>
+<section class="info">
+<div class="contenedor">
+    <h4>Premios Mentius</h4>
+<div class="wrapper">
+    <div class="img-area">
+        <div class="single-img img-1">
+            <img src="\theme\images\premio1.jpg" alt="imagenes del carrusel ">
+        </div>
+        <div class="single-img img-2">
+            <img src="\theme\images\premio2.jpg" alt="imagenes del carrusel ">
+        </div>
+        <div class="single-img img-3">
+            <img src="\theme\images\premio3.jpg" alt="imagenes del carrusel ">
+        </div>
+        <div class="single-img img-4">
+            <img src="\theme\images\premio4.jpg" alt="imagenes del carrusel ">
+        </div>
+        <div class="single-img img-5">
+            <img src="\theme\images\premio5.jpg" alt="imagenes del carrusel ">
+        </div>
+        <div class="single-img img-6">
+            <img src="\theme\images\premio6.jpg" alt="imagenes del carrusel ">
+        </div>
+        <div class="single-img img-7">
+            <img src="\theme\images\premio7.jpg" alt="imagenes del carrusel ">
+        </div>
+        <div class="single-img img-8">
+            <img src="\theme\images\premio8.jpg" alt="imagenes del carrusel ">
+        </div>
+        <div class="single-img img-9">
+            <img src="\theme\images\premio9.jpg" alt="imagenes del carrusel ">
+        </div>
     </div>
-    </section><br><br><br>
+</div>
+</div>
+</section><br><br><br><br>
+
+
 
     <div class="contenedor last-section">
         <div class="contenedor-textos-main">
@@ -177,7 +208,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     </div>
 
 
-
+<script src="inicio/diseño.js"></script>
 <script src="https://kit.fontawesome.com/026ce6da71.js" crossorigin="anonymous"></script>
 </body>
 </html>
