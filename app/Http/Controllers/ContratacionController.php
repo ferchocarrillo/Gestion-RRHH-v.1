@@ -31,6 +31,7 @@ use stdClass;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EntFinalizacionExport;
 use Illuminate\Support\Facades\DB;
+use App\Aprobacion;
 
 class ContratacionController extends Controller
 {
@@ -41,7 +42,7 @@ class ContratacionController extends Controller
      */
     public function index()
     {
-        $contrataciones = capacitacion::orderby('id', 'asc')->where('estado','=','Aprobado')->paginate(10);
+        $contrataciones = filtro::orderby('id', 'asc')->where('enviadocontratacion','=','enviadocontratacion')->paginate(10);
         return view('contratacion.index',compact( 'contrataciones'));
     }
 
@@ -138,13 +139,14 @@ class ContratacionController extends Controller
     public function edit($id)
 
     {
-
-
+        Carbon::setLocale('es');
+        $date = Carbon::now();
         $filtro=Filtro::findOrFail($id);
         $entrevista1ses =Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $contrataciones=Capacitacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $bancoses = Bancos::all();
-        return view('capacitacion.edit', compact('bancoses','filtro','contrataciones','entrevista1ses'));
+        $aprobaciones  = Aprobacion::all();
+        return view('contratacion.edit', compact('bancoses','filtro','contrataciones','entrevista1ses','date','aprobaciones'));
     }
 
     /**
@@ -156,10 +158,14 @@ class ContratacionController extends Controller
      */
     public function update (Request $request, $id)
     {
+
+        Carbon::setLocale('es');
+        $date = Carbon::now();
+        $aprobaciones  = Aprobacion::all();
         $datoscontratacion =request()->except(['_token','_method']);
         Contratacion::where('id','=',$id)->update($datoscontratacion);
         $contratacion=Contratacion::findOrFail($id);
         //return response()->json($contratacion);
-        return view('contratacion.edit', compact('contratacion','entFinalizacion'));
+        return view('contratacion.edit', compact('contratacion','entFinalizacion','date','aprobaciones'));
 }
 }

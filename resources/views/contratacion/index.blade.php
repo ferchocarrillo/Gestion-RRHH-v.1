@@ -44,26 +44,31 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Cedula</th>
-                        <th scope="col">Nombres y Apellidos</th>
-                        <th scope="col">Resultado Capacitacion</th>
-                        <th scope="col">Observaciones</th>
-                        <th colspan="6">&nbsp;</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Perfil</th>
+                        <th scope="col">Campaña</th>
+
+                
+                        <th colspan="2"></th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($contrataciones as $contratacion)
-
-
+                         @foreach ($contrataciones as $contratacion)
                         <tr>
-                            <th scope="row">{{ $contratacion->id_filtro}}</th>
+                <th scope="row">{{ $contratacion->id}}</th>
+                     
                             <td>{{ $contratacion->cedula}}</td>
-                            <td>{{ $contratacion->nombres}}</td>
-                            <td>{{ $contratacion->estado}}</td>
-                            <td>{{ $contratacion->observaciones}}</td>
+                            <td>{{ $contratacion->nombre}}</td>
+                            <td>{{ $contratacion->telefono}}</td>
+                            <td>{{ $contratacion->correo}}</td>
+                            <td>{{ $contratacion->perfil}}</td>
+                            <td>{{ $contratacion->campaña}}</td>
 
                             <td>
    {{--<a href="{{url('/contratacion/'.$filtro->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Registrar Documentos</a>//--}}
-                    <a href="{{url('/contratacion/'.$contratacion->id_filtro.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Registrar Documentos</a>
+                    <a href="{{url('/contratacion/'.$contratacion->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Registrar Documentos</a>
 
 
                 </form>

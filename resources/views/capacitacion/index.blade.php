@@ -31,11 +31,11 @@
 
 
 
-               <form name="f1" action="{{ url('/filtro/')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+               <form name="f1" action="{{ url('/capacitacion/')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
                         <center>
-                            <h2>Listado de Postulados</h2>
+                            <h2>Listado de Capacitados</h2>
                       </center>
                       <div class="container">
                           <div class="row justify-content-center">
@@ -72,7 +72,9 @@
                                       
                                
                                                 <td>
-                                                    <a href="{{url('/entGerencia/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Entrevista Gerencia</a>
+
+                                        
+                                                    <a href="{{url('/capacitacion/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Capacitacion</a>
                                                     {{-- <a href="{{url('/entFinalizacion/'.$entrevistas->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a> --}}
                                             </form>
                                                 </td>
@@ -101,8 +103,8 @@
                     @section('js')
             <script>
             Swal.fire(
-              'ENTREVISTA GERENCIA',
-              'Validacion de portulado por el Gerente',
+              'PROCESO DE CAPACITACION',
+              'Validacion de evaluacion del capacitacion',
               'success'
             )
             </script>

@@ -237,7 +237,7 @@
             </div>
             <div class="d-grid gap-2">
                 <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
-                <a href="{{route('entFinalizacion.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Revision</a>
+                <a href="{{route('entRRHH.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Revision</a>
             </div>
             </div>
         </div>
