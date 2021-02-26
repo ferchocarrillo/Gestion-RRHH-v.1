@@ -16,7 +16,7 @@ header{
     width: 100%;
 }
 nav{
-    position: fixed;
+    position:fixed;
     top: 20px;
     left: 20px;
 }
@@ -35,7 +35,7 @@ nav a{
 }
 
 .container{
-  width: 95%;
+  width: 100%;
   max-width: 1200px;
   display: flex;
   align-items: center;
@@ -79,7 +79,7 @@ nav a{
     max-width: 1000px;
     overflow: hidden;
     margin:auto;
-    padding: 0 0 80px 0;/*espaciado entre secciones*/
+    padding: 0 0 10px 0;/*espaciado entre secciones*/
 }
 .contenedor h4{
     font-size: 50px;
@@ -87,7 +87,7 @@ nav a{
     padding: 12px 0;
 }
 .contenedor{
-    padding: 10px 0;/*espacio de entre secciones abajo*/
+    padding: 60px 0;/*espacio de entre secciones abajo*/
 }
 .titulo{/*arreglo a todos las clase de titulos*/
     font-weight: 500;/*grosor de la letra del titulo*/
@@ -127,15 +127,16 @@ nav a{
 }
 
 
-/*info*/
-.info{/*estilo derecuadro*/
-    background-image: linear-gradient(120deg, #50adbb 0%, #004661 100%);
-    height: 900px;/*alto de recuadro del degrade */
-}
+
+
 
 
 
 /*carrusel de imagenes*/
+.info{/*estilo derecuadro*/
+    background-image: linear-gradient(120deg, #50adbb 0%, #004661 100%);
+    height: 1000px;/*alto de recuadro del degrade */
+}
 .wrapper{
     position:absolute;
     width: 320px;
@@ -148,8 +149,8 @@ nav a{
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transform: rotateY(-360deg) translateZ(-300px);
-    animation: animate 350s steps(10000, end) infinite;
+    transform: rotateY(360deg) translateZ(300px);
+    animation: animate 350s steps(100000, end) infinite;
     background: #9c4848;
 }
 .single-img{
@@ -162,7 +163,7 @@ nav a{
 .single-img img{
     width: 300px;
     height: 200px;
-    border: 5px solid #4c6daa;
+    border: 5px solid #ffffff;
 }
 .single-img.img-1{
     transform: rotateY(0deg) translateZ(600px);
@@ -199,6 +200,16 @@ nav a{
         transform: rotateY(0deg);
     }
 }
+/*7 funciones de recursos humanos*/
+.last-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 100px;
+}
+.last-section .contenedor-textos-main{
+width: 40%;
+}
 /*Cards*/
 .content-cards{
     display:flex;/*los pone uno al lado del otro*/
@@ -210,7 +221,7 @@ nav a{
     width: 30%;
     text-align:center;
     height: 350px;
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);/*sobra de la tarjeta*/
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .5);/*sobra de la tarjeta*/
     transform: scale(1);
     transition: transform 0.6s;
 }
@@ -229,49 +240,63 @@ nav a{
     font-size: 15px;/*tamaño de parrafo*/
     margin-bottom: 40px;/*distancia del boton con referencia al techo*/
 }
+
+
 /*galeria*/
-.galeria{
-    background: #c4c0c071;/*color del contenedor de las imagenes*/
-    height: 800px; /*alto del contenedor */
+.portafolio{
+    background: #b7c5dd;
 }
-.galeria-cont{
-    width: 100%;
-    height: 550px;
-     display: flex;
-     flex-wrap: wrap;
-    justify-content: space-evenly;
-
-}
-.galeria-cont>img{
-    width: 30%;/*ancho dela imagen*/
-    object-fit:cover;/*organizacion de las imagenes*/
-    margin-bottom: 50px;/*espacio de las img de la primera fila con la segunda*/
-    display: block;
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .5);/*sonbra de la caja */
-
-    transform: scale(1);
-    transition: transform 0.7s;
-    border-radius: 80px;
-}
-.galeria-cont>img:hover{
-    box-shadow: 8PX 8PX 8px 0 rgba(216, 42, 42, 0.5);/*color del borde*/
-    transform: scale(1.05);/*tamaño del efecto*/
-    cursor: pointer;/*efecto del cursor*/
-}
-/*info2*/
-.last-section{
+.galeria-port{
     display: flex;
+    justify-content: space-evenly ;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-bottom: 100px;
 }
-.last-section iframe{
-width: 100%;
-height: 80%;
+.imagen-port{
+    width: 24%;
+    margin-bottom: 50px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, .5);
+    border-radius: 100%;
+
 }
-.last-section .contenedor-textos-main{
-width: 40%;
+.imagen-port > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: #285a7cb0;
+    transition: transform .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 8PX 8PX 8px 8px rgba(216, 42, 42, 0.5);/*color del borde*/
+}
+.hover-galeria i{
+    width: 50px;
+    font-size: 50px;
+    color: #ffffff;
+}
+.hover-galeria p{
+    color: #ffffff;
+}
+.imagen-port:hover .hover-galeria{
+    transform: scale(1);
+}
+
+
+
+
 
 /*footer*/
 .container-footer{

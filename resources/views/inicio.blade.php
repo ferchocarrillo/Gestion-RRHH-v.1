@@ -62,104 +62,99 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     </section>
 
 
-
-
-
-
-
 <section class="info">
-<div class="contenedor">
-    <h4>Premios Mentius</h4>
-<div class="wrapper">
-    <div class="img-area">
-        <div class="single-img img-1">
-            <img src="\theme\images\premio1.jpg" alt="imagenes del carrusel ">
-        </div>
-        <div class="single-img img-2">
-            <img src="\theme\images\premio2.jpg" alt="imagenes del carrusel ">
-        </div>
-        <div class="single-img img-3">
-            <img src="\theme\images\premio3.jpg" alt="imagenes del carrusel ">
-        </div>
-        <div class="single-img img-4">
-            <img src="\theme\images\premio4.jpg" alt="imagenes del carrusel ">
-        </div>
-        <div class="single-img img-5">
-            <img src="\theme\images\premio5.jpg" alt="imagenes del carrusel ">
-        </div>
-        <div class="single-img img-6">
-            <img src="\theme\images\premio6.jpg" alt="imagenes del carrusel ">
-        </div>
-        <div class="single-img img-7">
-            <img src="\theme\images\premio7.jpg" alt="imagenes del carrusel ">
-        </div>
-        <div class="single-img img-8">
-            <img src="\theme\images\premio8.jpg" alt="imagenes del carrusel ">
-        </div>
-        <div class="single-img img-9">
-            <img src="\theme\images\premio9.jpg" alt="imagenes del carrusel ">
+    <div class="contenedor">
+      <h4>Premios Mentius</h4>
+        <div class="wrapper">
+            <div class="img-area">
+                <div class="single-img img-1">
+                    <img src="\theme\images\premio1.jpg" alt="imagenes del carrusel ">
+                </div>
+                <div class="single-img img-2">
+                    <img src="\theme\images\premio2.jpg" alt="imagenes del carrusel ">
+                </div>
+                <div class="single-img img-3">
+                    <img src="\theme\images\premio3.jpg" alt="imagenes del carrusel ">
+                </div>
+                <div class="single-img img-4">
+                    <img src="\theme\images\premio4.jpg" alt="imagenes del carrusel ">
+                </div>
+                <div class="single-img img-5">
+                    <img src="\theme\images\premio5.jpg" alt="imagenes del carrusel ">
+                </div>
+                <div class="single-img img-6">
+                    <img src="\theme\images\premio6.jpg" alt="imagenes del carrusel ">
+                </div>
+                <div class="single-img img-7">
+                    <img src="\theme\images\premio7.jpg" alt="imagenes del carrusel ">
+                </div>
+                <div class="single-img img-8">
+                    <img src="\theme\images\premio8.jpg" alt="imagenes del carrusel ">
+                </div>
+                <div class="single-img img-9">
+                    <img src="\theme\images\premio9.jpg" alt="imagenes del carrusel ">
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
 </section><br><br><br><br>
 
 
 
     <div class="contenedor last-section">
         <div class="contenedor-textos-main">
-        <h2 class="titulo left">7 Funciones De Recursos Humanos</h2><br><br>
-        <p class="parrafo">En calidad Mentius, tenemos el proposito de ayudarte a crear grandes experiencias de la forma correcta,
-        entendiendo mejor tu función y su importancia. Queremos estar siempre presente cuando alcances tus metas, cuando cumplas con
-        tus objetivos. Nosotros creemos en ti por eso buscaremos siempre la mejor manera de crecer juntos.</p>
-        <!--<a href="" class="cta">learn more</a>-->
+            <h2 class="titulo left">7 Funciones De Recursos Humanos</h2><br><br>
+            <p class="parrafo">En calidad Mentius, tenemos el proposito de ayudarte a crear grandes experiencias de la forma correcta,
+            entendiendo mejor tu función y su importancia. Queremos estar siempre presente cuando alcances tus metas, cuando cumplas con
+            tus objetivos. Nosotros creemos en ti por eso buscaremos siempre la mejor manera de crecer juntos.</p>
+            <!--<a href="" class="cta">learn more</a>-->
         </div>
-        <div class="ratio ratio-4x3">
-       <img src="\theme\images\recursos6.png" alt="">
-        </div>
-        </div>
+            <div class="ratio ratio-4x3">
+                 <img src="\theme\images\recursos6.png" alt="">
+            </div>
+    </div>
 
-    <section class="cards contenedor">
+<section class="cards contenedorr">
     <h2 class="titulo">Lo que debes saber de recursos humanos</h2>
-    <div class="content-cards">
-    <article class="card">
-    <i class="fas fa-clipboard-list"></i>
-    <div class="contenedor-textos-main">
-    <h3>Alinear la compañía con Recursos Humanos</h3>
-    <p>El área de Recursos Humanos tiene que tener una alta capacidad de persuasión a los altos líderes de una empresa al momento de empezar con la
-    planificación estratégica o asignación de nuevos recursos.</p>
-       <!-- <a href="#" class="cta">Conoce más </a>-->
-    </div>
-    </article>
-    <article class="card">
-    <i class="fas fa-handshake"></i>
-    <div class="contenedor-textos-main">
-    <h3>Ayudar a atraer y retener al mejor talento</h3>
-    <p>Los CEOs buscan que el área de Recursos Humanos indague y encuentren el mejor talento para que haga parte de la compañía e impulse la estrategia
-    para alcanzar las metas.</p>
-     <!-- <a href="" class="cta">Conoce más </a>-->
-    </div>
-    </article>
-    <article class="card">
-        <i class="fas fa-chalkboard-teacher"></i>
-        <div class="contenedor-textos-main">
-        <h3>Ejecutar un robusto proceso de onboarding</h3>
-        <p> Un proceso de alta calidad permite instruir y enseñar sobre la historia de la compañía, y conocer la generalidad de la industria a la cual
-        pertenece la compañía.</p>
-         <!-- <a href="" class="cta">Conoce más </a>-->
+        <div class="content-cards">
+            <article class="card">
+                <i class="fas fa-clipboard-list"></i>
+                    <div class="contenedor-textos-main">
+                        <h3>Alinear la compañía con Recursos Humanos</h3>
+                        <p>El área de Recursos Humanos tiene que tener una alta capacidad de persuasión a los altos líderes de una empresa al momento de empezar con la
+                        planificación estratégica o asignación de nuevos recursos.</p>
+                           <!-- <a href="#" class="cta">Conoce más </a>-->
+                    </div>
+            </article>
+            <article class="card">
+                <i class="fas fa-handshake"></i>
+                    <div class="contenedor-textos-main">
+                        <h3>Ayudar a atraer y retener al mejor talento</h3>
+                        <p>Los CEOs buscan que el área de Recursos Humanos indague y encuentren el mejor talento para que haga parte de la compañía e impulse la estrategia
+                        para alcanzar las metas.</p>
+                         <!-- <a href="" class="cta">Conoce más </a>-->
+                    </div>
+            </article>
+            <article class="card">
+                <i class="fas fa-chalkboard-teacher"></i>
+                    <div class="contenedor-textos-main">
+                        <h3>Ejecutar un robusto proceso de onboarding</h3>
+                        <p> Un proceso de alta calidad permite instruir y enseñar sobre la historia de la compañía, y conocer la generalidad de la industria a la cual
+                        pertenece la compañía.</p><br>
+                         <!-- <a href="" class="cta">Conoce más </a>-->
+                    </div>
+            </article>
+            <article class="card">
+                <i class="far fa-eye"></i>
+                    <div class="contenedor-textos-main">
+                        <h3>Enfocarse en el compromiso del colaborador</h3>
+                        <p>La gran mayoría de las empresas de hoy no miden ni gestionan el compromiso de los colaboradores. Es aquí donde Recursos Humanos juega un papel muy
+                        importante a la hora de impulsar el compromiso y la motivación de los colaboradores.</p>
+                         <!-- <a href="" class="cta">Conoce más</a>-->
+                    </div>
+            </article>
         </div>
-        </article>
-    <article class="card">
-        <i class="far fa-eye"></i>
-    <div class="contenedor-textos-main">
-    <h3>Enfocarse en el compromiso del colaborador</h3>
-    <p>La gran mayoría de las empresas de hoy no miden ni gestionan el compromiso de los colaboradores. Es aquí donde Recursos Humanos juega un papel muy
-    importante a la hora de impulsar el compromiso y la motivación de los colaboradores.</p>
-     <!-- <a href="" class="cta">Conoce más</a>-->
-    </div>
-    </article>
-    </div>
-    </section><br>
+</section><br>
 
 
 
@@ -173,54 +168,56 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
         <div class="imagen-port">
             <img src="\theme\images\grupo1.jpg" alt="">
             <div class="hover-galeria">
-                <p>Directora de recursos humanos </p>
+                <i class="fas fa-chart-bar"></i>
+                <p>Lider Datos  </p>
             </div>
         </div>
         <div class="imagen-port">
             <img src="\theme\images\grupo2.jpg" alt="">
             <div class="hover-galeria">
-                <p>Directora de recursos humanos </p>
+                <i class="fas fa-comment-dollar"></i>
+                <p>Contador</p>
             </div>
         </div>
         <div class="imagen-port">
             <img src="\theme\images\grupo3.jpg" alt="">
             <div class="hover-galeria">
-                <p>Directora de recursos humanos </p>
+                <i class="fas fa-diagnoses"></i>
+                <p>Analista Jr </p>
             </div>
         </div>
         <div class="imagen-port">
             <img src="\theme\images\grupo4.jpg" alt="">
             <div class="hover-galeria">
-                <p>Directora de recursos humanos </p>
+                <i class="fas fa-phone-volume"></i>
+                <p>Secretaria</p>
             </div>
         </div>
         <div class="imagen-port">
             <img src="\theme\images\grupo5.jpg" alt="">
             <div class="hover-galeria">
-                <p>Directora de recursos humanos </p>
+                <i class="fas fa-hand-holding-heart"></i>
+                <p> Lider De Bienestar</p>
             </div>
         </div>
         <div class="imagen-port">
             <img src="\theme\images\grupo6.jpeg" alt="">
             <div class="hover-galeria">
-                <p>Directora de recursos humanos </p>
+                <i class="fas fa-brain"></i>
+                <p>Psicologa </p>
             </div>
         </div>
         <div class="imagen-port">
-            <img src="\theme\images\grupo7.jpg" alt="">
+            <img src="\theme\images\grupo10.jpg" alt="">
             <div class="hover-galeria">
-                <p>Directora de recursos humanos </p>
+                <i class="fas fa-clipboard-check"></i>
+                <p>Analista De Contratacion </p>
             </div>
         </div>
         <div class="imagen-port">
             <img src="\theme\images\grupo8.jpg" alt="">
             <div class="hover-galeria">
-                <p>Directora de recursos humanos </p>
-            </div>
-        </div>
-        <div class="imagen-port">
-            <img src="\theme\images\grupo9.jpg" alt="">
-            <div class="hover-galeria">
+                <i class="fas fa-users"></i>
                 <p>Directora de recursos humanos </p>
             </div>
         </div>
@@ -229,46 +226,15 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 </section>
 
 
+<div class="svg-wave">
+    <svg viewBox="0 0 1320 290" >
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300" fill=" #000000fa"/>
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
+    </svg>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-    <section class="info-last">
-        <section class="galeria contenedor">
-            <div class="contenedor">
-                <h2 class="titulo">GRUPO DE TRABAJO</h2><br>
-                    <article class="galeria-cont">
-                        <img src="\theme\images\grupo1.jpg " alt="imagenes de grupo de trabajo ">
-                        <img src="\theme\images\grupo2.jpg " alt="imagenes de grupo de trabajo ">
-                        <img src="\theme\images\grupo3.jpg " alt="imagenes de grupo de trabajo ">
-                        <img src="\theme\images\grupo4.jpg " alt="imagenes de grupo de trabajo ">
-                        <img src="\theme\images\grupo5.jpg " alt="imagenes de grupo de trabajo ">
-                        <img src="\theme\images\grupo6.jpeg" alt="imagenes de grupo de trabajo ">
-                    <!--<img src="\theme\images\grupo7.jpg " alt="imagenes de grupo de trabajo ">-->
-                    <!--<img src="\theme\images\grupo8.jpg " alt="imagenes de grupo de trabajo ">-->
-                    <!--<img src="\theme\images\grupo9.jpg " alt="imagenes de grupo de trabajo ">-->
-                    <!--<img src="\theme\images\grupo10.jpg" alt="imagenes de grupo de trabajo ">-->
-                    <!--<img src="\theme\images\grupo11.png" alt="imagenes de grupo de trabajo ">-->
-                    </article>
-            </div>
-        </section>
-
-        <div class="svg-wave">
-            <svg viewBox="0 0 1320 290" >
-                <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300" fill=" #000000fa"/>
-                <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
-                <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
-                <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
-            </svg>
-        </div>
-    </section>
 
     <div class="container-footer">
         <footer>
