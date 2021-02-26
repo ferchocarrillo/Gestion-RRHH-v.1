@@ -161,6 +161,85 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     </div>
     </section><br>
 
+
+
+
+
+
+<section class="portafolio">
+<div class="contenedor">
+    <h2 class="titulo">Grupo De Trabajo</h2>
+    <div class="galeria-port">
+        <div class="imagen-port">
+            <img src="\theme\images\grupo1.jpg" alt="">
+            <div class="hover-galeria">
+                <p>Directora de recursos humanos </p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo2.jpg" alt="">
+            <div class="hover-galeria">
+                <p>Directora de recursos humanos </p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo3.jpg" alt="">
+            <div class="hover-galeria">
+                <p>Directora de recursos humanos </p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo4.jpg" alt="">
+            <div class="hover-galeria">
+                <p>Directora de recursos humanos </p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo5.jpg" alt="">
+            <div class="hover-galeria">
+                <p>Directora de recursos humanos </p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo6.jpeg" alt="">
+            <div class="hover-galeria">
+                <p>Directora de recursos humanos </p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo7.jpg" alt="">
+            <div class="hover-galeria">
+                <p>Directora de recursos humanos </p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo8.jpg" alt="">
+            <div class="hover-galeria">
+                <p>Directora de recursos humanos </p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo9.jpg" alt="">
+            <div class="hover-galeria">
+                <p>Directora de recursos humanos </p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="info-last">
         <section class="galeria contenedor">
             <div class="contenedor">
