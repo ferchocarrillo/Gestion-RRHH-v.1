@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use App\Contratacion;
 use App\Bancos;
 use App\capacitacion;
+use App\Filtro;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
+use App\Entrevista1;
 
 
 class DocumentoController extends Controller
@@ -118,12 +121,15 @@ class DocumentoController extends Controller
      */
     public function edit($id)
     {
-        $this->authorize('haveaccess','documento.edit');
-        $contratacions= Contratacion::all();
+        Carbon::setLocale('es');
+        $date = Carbon::now();
+        $this->authorize('haveaccess','contratacion.edit');
+        $filtro = filtro::findOrFail($id);
         $contratacion2 = capacitacion::all();
         $bancoses = Bancos::all();
-        $contratacions= Contratacion::findOrFail($id);
-        return view('documento.edit', compact('contratacions', 'bancoses','contratacion2'));
+        $contratacions= entrevista1::findOrFail($id);
+        $contrataciones= contratacion::findOrFail($id);
+        return view('contratacion.edit', compact('filtro','contrataciones','contratacions', 'bancoses','contratacion2'));
 
 
     }
