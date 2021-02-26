@@ -29,7 +29,7 @@
 
 
 
-<br>         <form name="f1" action="{{ url('/contratacion')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<br>         <form name="f1" action="{{ url('/contratacion/')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
 {{csrf_field()}}
 <form>
     <center>
