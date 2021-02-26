@@ -61,7 +61,7 @@ class NuevoEmpleadoController extends Controller
     public function store(Request $request )
     {
         {
-            $tipo_docs1 = $request->get('tipo_docs1');
+            $tpd1 = $request->get('tpd1');
             $docfam1 = $request->get('docfam1');
             $familiarp1 = $request->get('familiarp1');
             $parentescop1 = $request->get('parentescop1');
@@ -69,7 +69,7 @@ class NuevoEmpleadoController extends Controller
             $epsFam1 = $request->get('epsFam1');
             $caja1 = $request->get('caja1');
 
-            $tipo_docs2 = $request->get('tipo_docs2');
+            $tpd2 = $request->get('tpd2');
             $docfam2 = $request->get('docfam2');
             $familiarp2 = $request->get('familiarp2');
             $parentescop2 = $request->get('parentescop2');
@@ -77,7 +77,7 @@ class NuevoEmpleadoController extends Controller
             $epsFam2 = $request->get('epsFam2');
             $caja2 = $request->get('caja2');
 
-            $tipo_docs3 = $request->get('tipo_docs3');
+            $tpd3 = $request->get('tpd3');
             $docfam3 = $request->get('docfam3');
             $familiarp3 = $request->get('familiarp3');
             $parentescop3 = $request->get('parentescop3');
@@ -85,7 +85,7 @@ class NuevoEmpleadoController extends Controller
             $epsFam3 = $request->get('epsFam3');
             $caja3 = $request->get('caja3');
 
-            $tipo_docs4 = $request->get('tipo_docs4');
+            $tpd4 = $request->get('tpd4');
             $docfam4 = $request->get('docfam4');
             $familiarp4 = $request->get('familiarp4');
             $parentescop4 = $request->get('parentescop4');
@@ -112,8 +112,8 @@ class NuevoEmpleadoController extends Controller
             $nuevo = new nuevoEmpleado();
 
             $nuevo->id_filtro              = $request->id_filtro;
-            $nuevo->nombres                 = $request->nombre;
-            $nuevo->tipo_doc2                = $request->tipoDoc;
+            $nuevo->nombres                = $request->nombre;
+            $nuevo->tipo_doc2              = $request->tipoDoc;
             $nuevo->cedula                 = $request->cedula;
             $nuevo->fexpe                  = $request->fexpe;
             $nuevo->depNac                 = $request->departamento;
@@ -142,10 +142,10 @@ class NuevoEmpleadoController extends Controller
             $nuevo->Preexistencia          = $request->Preexistencia;
             $nuevo->alergias               = $request->alergias;
             $nuevo->medicamentos           = $request->medicamentos;
-            $nuevo->familiarp1             = $request->$tipo_docs1. ',' .$docfam1. ',' .$familiarp1. ',' .$parentescop1. ',' .$edadp1. ','.$epsFam1. ',' .$caja1 ;
-            $nuevo->familiarp2             = $request->$tipo_docs2. ',' .$docfam2. ',' .$familiarp2. ',' .$parentescop2. ',' .$edadp2. ','.$epsFam2. ',' .$caja2 ;
-            $nuevo->familiarp3             = $request->$tipo_docs3. ',' .$docfam3. ',' .$familiarp3. ',' .$parentescop3. ',' .$edadp3. ','.$epsFam3. ',' .$caja3 ;
-            $nuevo->familiarp4             = $request->$tipo_docs4. ',' .$docfam4. ',' .$familiarp4. ',' .$parentescop4. ',' .$edadp4. ','.$epsFam4. ',' .$caja4 ;
+            $nuevo->familiarp1             = $tpd1.','.$docfam1.','.$familiarp1.','.$parentescop1.','.$edadp1.','.$epsFam1.','.$caja1;
+            $nuevo->familiarp2             = $tpd2.','.$docfam2.','.$familiarp2.','.$parentescop2.','.$edadp2.','.$epsFam2.','.$caja2;
+            $nuevo->familiarp3             = $tpd3.','.$docfam3.','.$familiarp3.','.$parentescop3.','.$edadp3.','.$epsFam3.','.$caja3;
+            $nuevo->familiarp4             = $tpd4.','.$docfam4.','.$familiarp4.','.$parentescop4.','.$edadp4.','.$epsFam4.','.$caja4;
             $nuevo->salario                = $request->salario;
             $nuevo->ingreso                = $request->ingreso;
             $nuevo->tipo_contratos         = $request->tipo_contratos;

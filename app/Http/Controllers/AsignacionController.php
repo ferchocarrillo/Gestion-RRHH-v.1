@@ -108,10 +108,10 @@ class AsignacionController extends Controller
         $cordinadores = Supervisor::all();
         $focos = Foco::all();
         $cargos= Cargo::all();
-   
+
         $dependencias = Dependencia::all();
         $asignaciones = Asignacion::all();
-       return view('asignacion.edit', compact('asignaciones','cordinadores','focos','contatacion','cargos','dependencias'));
+       return view('asignacion.edit', compact('cargos','asignaciones','cordinadores','focos','contatacion','cargos','dependencias'));
       // return response()->json($asignaciones);
 
     }

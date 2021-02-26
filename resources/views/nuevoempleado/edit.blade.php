@@ -24,7 +24,7 @@
                 @method('PATCH')
                 <div class="col-sm-12">
                     <center><p>
-                        <div class="p-3 mb-2 bg-info text-white" id="nombres" name="nombres">
+                        <div class="card-header" id="nombres" name="nombres">
                        <h3> {{ old('nombres', $nuevos->nombres)}}</h3>
                         </div>
                     </p></center>
@@ -40,7 +40,7 @@
     <div class="row">
         <div class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Tipo de Documento:</p></strong>
         <p>
-            <input list="tipoDoc" type="text" name="tipoDoc"  style="width:100px"class="form-control">
+            <input list="tipoDoc" type="text" name="tipoDoc"  style="width:100px"class="form-control" required>
             
             <datalist name="tipoDoc" id="tipoDoc" >
               <option value="">Tipo de Documento</option>
@@ -53,7 +53,7 @@
         
         <input type="hidden" id="cedula" name="cedula" value={{ old('cedula', $nuevos->cedula)}}>
         <div class="col-6 col-md-2"><strong><p>Cedula:</p></strong><br>{{ old('cedula', $nuevos->cedula)}}</div>
-            <div id="fexpe" name="fexpe" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Fecha de Expedicion:</p></strong><input type="date"id="fexpe" name="fexpe" style="font-size:0.3cm" class="form-control" value=""></div>
+            <div id="fexpe" name="fexpe" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Fecha de Expedicion:</p></strong><input type="date"id="fexpe" name="fexpe" style="font-size:0.3cm" class="form-control" value="" required></div>
             <div class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Departamento de Expedicion:</p></strong>
                 <select name="departamento" id="departamento"class="form-control" required> <label for="departamento"></label>
                     <option value="">Escoja uno</option>
@@ -104,7 +104,7 @@
 
                 <div ><strong><p><a style="color: red">* </a>Genero:</p></strong>
                     <p>
-                        <input list="genero" type="text" name="genero"  style="width:100px" class="form-control">
+                        <input list="genero" type="text" name="genero"  style="width:100px" class="form-control" required>
                         
                         <datalist name="genero" id="genero" >
                           <option value="">Tipo de Documento</option>
@@ -121,7 +121,7 @@
 <br>
 <div ><strong><p><a style="color: red">* </a>RH:</p></strong>
     <p>
-        <input list="rh" type="text" name="rh"  style="width:100px" class="form-control">
+        <input list="rh" type="text" name="rh"  style="width:100px" class="form-control" required>
         
         <datalist name="rh" id="rh" >
           <option value="">Tipo de Documento</option>
@@ -135,7 +135,7 @@
 
     <div ><strong><p><a style="color: red">* </a>Nivel Educativo:</p></strong>
         <p>
-            <input list="nivelEdu" type="text" name="nivelEdu"  style="width:250px" class="form-control">
+            <input list="nivelEdu" type="text" name="nivelEdu"  style="width:250px" class="form-control" required>
             
             <datalist name="nivelEdu" id="nivelEdu" >
                 <option value="">Escoja uno</option>
@@ -162,7 +162,7 @@
            
             <div ><strong><p><a style="color: red">* </a>Parentesco:</p><span><br></span></strong>
                 <p>
-                    <input list="parentesco" type="text" name="parentesco"  style="width:250px" class="form-control">
+                    <input list="parentesco" type="text" name="parentesco"  style="width:250px" class="form-control" required>
                     
                     <datalist name="parentesco" id="parentesco" >
                         <option value="">Escoja uno</option>
@@ -198,9 +198,9 @@
 
 
         <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
-            <p><input list="tipo_docs1" type="text" name="tipo_docs1"  style="width:100px" class="form-control">
-               <datalist name="tipo_docs1" id="tipo_docs1" >
-                    <option value="">Escoja uno</option>
+            <p><input list="tpd1" type="text" name="tpd1"  style="width:100px" class="form-control">
+               <datalist name="tpd1" id="tpd1" >
+                    <option value="" name="tpd1" id="tpd1">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
@@ -221,9 +221,9 @@
 
 
         <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
-            <p><input list="tipo_docs2" type="text" name="tipo_docs2"  style="width:100px" class="form-control">
-               <datalist name="tipo_docs2" id="tipo_docs2" >
-                    <option value="">Escoja uno</option>
+            <p><input list="tpd2" type="text" name="tpd2"  style="width:100px" class="form-control">
+               <datalist name="tpd2" id="tpd2" >
+                    <option value="" name="tpd2" id="tpd2">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
@@ -241,9 +241,9 @@
    
     <div class="row">
         <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
-            <p><input list="tipo_docs3" type="text" name="tipo_docs3"  style="width:100px" class="form-control">
-               <datalist name="tipo_docs3" id="tipo_docs3" >
-                    <option value="">Escoja uno</option>
+            <p><input list="tpd3" type="text" name="tpd3"  style="width:100px" class="form-control">
+               <datalist name="tpd3" id="tpd3" >
+                    <option value="" name="tpd3" id="tpd3">Escoja uno</option>
                     @foreach($tipo_docs as $tipo_doc)
                 <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                     @endforeach
@@ -261,9 +261,9 @@
  
         <div class="row">
             <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
-                <p><input list="tipo_docs4" type="text" name="tipo_docs4"  style="width:100px" class="form-control">
-                   <datalist name="tipo_docs4" id="tipo_docs4" >
-                        <option value="">Escoja uno</option>
+                <p><input list="tpd4" type="text" name="tpd4"  style="width:100px" class="form-control">
+                   <datalist name="tpd4" id="tpd4" >
+                        <option value="" name="tpd4" id="tpd4">Escoja uno</option>
                         @foreach($tipo_docs as $tipo_doc)
                     <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
                         @endforeach
@@ -287,7 +287,7 @@
 
 
     <div ><strong><p><a style="color: red" >* </a>Tipo Contrato:</p><span></span></strong>
-        <p><input list="tipo_contratos" type="text" name="tipo_contratos"   class="form-control">
+        <p><input list="tipo_contratos" type="text" name="tipo_contratos"   class="form-control" required>
            <datalist name="tipo_contratos" id="tipo_contratos" >
             <option value="">Escoja uno</option>
             @foreach($tipo_contratoses as $tipo_contratos)
@@ -304,7 +304,7 @@
 <div class="row">
 
     <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Sede:</p><span></span></strong>
-        <p><input list="sede" type="text" name="sede"   class="form-control">
+        <p><input list="sede" type="text" name="sede"   class="form-control" required>
            <datalist name="sede" id="sede" >
             <option value="">Asigne una</option>
             @foreach($sedes as $sede)
@@ -315,7 +315,7 @@
         </div>
 
         <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Modalidad:</p><span></span></strong>
-            <p><input list="modalidad" type="text" name="modalidad"   class="form-control">
+            <p><input list="modalidad" type="text" name="modalidad"   class="form-control" required>
                <datalist name="modalidad" id="modalidad" >
                 <option value="">Asigne una</option>
                 @foreach($modalidades as $modalidad)
@@ -326,7 +326,7 @@
             </div>
             
             <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Tipo de Modalidad:</p><span></span></strong>
-                <p><input list="tipoModalidad" type="text" name="tipoModalidad"   class="form-control">
+                <p><input list="tipoModalidad" type="text" name="tipoModalidad"   class="form-control" required>
                    <datalist name="tipoModalidad" id="tipoModalidad" >
                     <option value="">Asigne una</option>
                     @foreach($tipoModalidades as $tipoModalidad)
@@ -345,7 +345,7 @@
 
 
         <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Fondo Cesantias:</p><span></span></strong>
-            <p><input list="cesantias" type="text" name="cesantias"   class="form-control">
+            <p><input list="cesantias" type="text" name="cesantias" class="form-control" required>
                <datalist name="cesantias" id="cesantias" >
                 <option value="">Asigne una</option>
                     @foreach($cesantiases as $cesantias)
@@ -356,7 +356,7 @@
             </div>
 
             <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Fondo Pensiones:</p><span></span></strong>
-                <p><input list="pensiones" type="text" name="pensiones"   class="form-control">
+                <p><input list="pensiones" type="text" name="pensiones"   class="form-control" required>
                    <datalist name="pensiones" id="pensiones" >
                     <option value="">Asigne una</option>
                     @foreach($pensioneses as $pensiones)
@@ -368,7 +368,7 @@
 
 
                 <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Eps:</p><span></span></strong>
-                    <p><input list="eps" type="text" name="eps"   class="form-control">
+                    <p><input list="eps" type="text" name="eps"   class="form-control" required>
                        <datalist name="eps" id="eps" >
                         <option value="">Asigne una</option>
                         @foreach($epses as $eps)
@@ -380,7 +380,7 @@
 
 
                     <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Caja Compensación:</p><span></span></strong>
-                        <p><input list="cajaComp" type="text" name="cajaComp"   class="form-control">
+                        <p><input list="cajaComp" type="text" name="cajaComp"   class="form-control" required>
                            <datalist name="cajaComp" id="cajaComp" >
                             <option value="">Asigne una</option>
                             @foreach($cajaComps as $cajaComp)
@@ -394,7 +394,7 @@
 
 
 
-                    <div id="ips" name="ips" class="col-4 col-md"><strong><p>Ips: </p></strong><input type="text" id="ips" name="ips" class="form-control"></div>
+                    <div id="ips" name="ips" class="col-4 col-md"><strong><p>Ips: </p></strong><input type="text" id="ips" name="ips" class="form-control" required></div>
                     <input type="hidden" id="arl" name="arl" class="col-6 col-md" value= "Arl Sura">
 </div>
 </div>
@@ -406,7 +406,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;
         <input type="hidden" id="Tcuenta" name="Tcuenta" class="col-6 col-md" value= "Ahorros">
 <div  type="text"><strong><p>Tipo de cuenta:</p></strong>Ahorros</div>
-<div id="nCuenta" name="nCuenta" class="col-4 col-md"><strong><p><a style="color: red">* </a>Numero de cuenta: </p></strong><input type="number" id="nCuenta" name="nCuenta" class="form-control"></div>
+<div id="nCuenta" name="nCuenta" class="col-4 col-md"><strong><p><a style="color: red">* </a>Numero de cuenta: </p></strong><input type="number" id="nCuenta" name="nCuenta" class="form-control" required></div>
 <div id="bancos" name="bancos" class="col-6 col-md-2"><strong><p>Banco:</p></strong><input id="bancos" name="bancos" class="form-control" value="{{old('bancos', $contratacion->bancos)}}"></div><br>
 
 <input type="hidden" id="estado" name="estado" value={{old('estado', $contratacion->estado)}}>
@@ -422,7 +422,7 @@
 
 
         <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Foco:</p><span></span></strong>
-            <p><input list="foco" type="text" name="foco"   class="form-control">
+            <p><input list="foco" type="text" name="foco"   class="form-control" required>
                <datalist name="foco" id="foco" >
                 <option  value="">Seleccion un foco</option>
                 @foreach($focos as $foco)<option value="{{ $foco->foco}}">
@@ -434,7 +434,7 @@
 
 
             <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Campaña:</p><span></span></strong>
-                <p><input list="campana" type="text" name="campana"   class="form-control">
+                <p><input list="campana" type="text" name="campana"   class="form-control" required>
                    <datalist name="campana" id="campana" >
                     <option  value="">Seleccion una Campaña</option>
                     @foreach($campanas as $campana)<option value="{{ $campana->campana}}">
@@ -445,7 +445,7 @@
                 </div>
 
                 <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Supervisor:</p><span></span></strong>
-                    <p><input list="supervisor" type="text" name="supervisor"   class="form-control">
+                    <p><input list="supervisor" type="text" name="supervisor"   class="form-control" required>
                        <datalist name="supervisor" id="supervisor" >
                         <option value="">Asigne uno</option>
                         @foreach($supervisores as $supervisor)

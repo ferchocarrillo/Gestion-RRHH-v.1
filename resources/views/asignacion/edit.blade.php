@@ -43,7 +43,21 @@
 
 
         <div class="col-6 col-md-3"><strong><p>Cedula:</p></strong>{{ old('cedula', $contatacion->cedula)}}</div><br>
-        <div id="perfil" name="perfil" class="col-6 col-md-3"><strong><p>Perfil:</p></strong>{{ old('perfil', $contatacion->perfil)}}</div><br>
+        <div id="perfil" name="perfil" class="col-6 col-md-3"><strong><p>Perfil:</p></strong>{{ old('perfil', $contatacion->perfil)}}
+        
+          
+                <input list="cargos" type="text" name="cargos" class="form-control" placeholder="Perfiles" >
+
+                <datalist name="cargos" id="cargos">
+                  <option value="">Perfiles</option>
+                  @foreach($cargos as $cargo)<option value="{{ old('perfil', $contatacion->perfil)}}">
+                      {{ $cargo->cargo }}</option>
+                    @endforeach
+                </datalist>
+                </p>
+        
+        
+        </div><br>
         <div class="col-6 col-md-3"><strong><p>Campaña:</p></strong>{{ old('campaña', $contatacion->campaña)}}</div>
         <div class="col-6 col-md-3"><strong><p>Estado:</p></strong>{{ old('estado', $contatacion->estado)}}</div>
 
