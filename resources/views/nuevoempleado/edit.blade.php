@@ -434,8 +434,8 @@
 
 
             <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Campaña:</p><span></span></strong>
-                <p><input list="campana" type="text" name="campana"   class="form-control" required>
-                   <datalist name="campana" id="campana" >
+                <p><input list="campaña" type="text" name="campaña"   class="form-control" required>
+                   <datalist name="campaña" id="campaña" >
                     <option  value="">Seleccion una Campaña</option>
                     @foreach($campanas as $campana)<option value="{{ $campana->campana}}">
                     {{ $campana->campana }}</option>

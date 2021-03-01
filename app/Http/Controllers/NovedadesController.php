@@ -9,6 +9,9 @@ use App\Contratacion;
 use App\Filtro;
 use Dotenv\Result\Success;
 use App\TipoNovedad;
+use App\nuevoEmpleado;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 
 class NovedadesController extends Controller
@@ -21,7 +24,7 @@ class NovedadesController extends Controller
     public function index()
     {
         
-        $activos = Asignacion::orderBy('created_at', 'desc')->paginate(10);
+        $activos = nuevoEmpleado::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
         return view('novedades.index',compact('activos'));
     }
 
@@ -66,7 +69,47 @@ class NovedadesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
+
+        Carbon::setLocale('es');
+        Carbon::now();
+        $hoy = Carbon::now();
+        
+        $date1 = $request->input('desde');
+        $date2 = $request->input('hasta');
+        $tiempoA = $hoy->floatDiffInRealDays($date1);
+        $tiempoB = $hoy->floatDiffInRealDays($date2);
+         
+        $totalDias = $tiempoB - $tiempoA + 1;
+        
+        $user_id = Auth::user()->id;
+        $user_nombre = Auth::user()->name;
+
+        $datosFiltro=request()->except('_token');
+
+
+
+
+        $filtro = new Novedades();
+
+        $filtro->id_filtro              = $request->id_filtro;
+        $filtro->nombres                = $request->nombres;
+        $filtro->cedula                 = $request->cedula;
+        $filtro->campaña                = $request->campaña;
+        $filtro->foco                   = $request->foco;
+        $filtro->cargo                  = $request->cargo;
+        $filtro->supervisor             = $request->supervisor;
+        $filtro->estado                 = $request->estado;
+        $filtro->novedad                = $request->novedad;
+        $filtro->observaciones          = $request->observaciones;
+        $filtro->desde                  = $request->desde;
+        $filtro->hasta                  = $request->hasta;
+        $filtro->totalDias              = $totalDias;
+    $filtro->save();
+
+        //return response()->json($filtro);
+        return back();
     }
 
     /**

@@ -11,6 +11,10 @@ use App\Foco;
 use App\Filtro;
 use App\nuevoEmpleado;
 use App\Supervisor;
+use App\Campana;
+use App\Sede;
+use App\Modalidad;
+use App\TipoModalidad;
 use Illuminate\Http\Request;
 
 class AsignacionController extends Controller
@@ -22,8 +26,8 @@ class AsignacionController extends Controller
      */
     public function index()
     {
-        $asignaciones = Contratacion::orderby('id', 'asc')->where('estado','=','activo')->paginate(10);
-        $contatacion= Contratacion::all();
+        $asignaciones = nuevoEmpleado::orderby('id', 'asc')->where('estado','=','activo')->paginate(10);
+        $contatacion= nuevoEmpleado::all();
         return view('asignacion.index',compact('asignaciones','contatacion'));
     }
 
@@ -42,78 +46,152 @@ class AsignacionController extends Controller
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request, Asignacion $asignaciones)
+    // /**
+    //  * Store a newly created resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @return \Illuminate\Http\Response
+    //  */
+    public function store(Request $request )
     {
-        $user_id = Auth::user()->id;
-        $user_nombre = Auth::user()->name;
-        $newEmployes = nuevoEmpleado::all();
-        $datosnuevos=request()->except('_token');
+        {
+            $tpd1 = $request->get('tpd1');
+            $docfam1 = $request->get('docfam1');
+            $familiarp1 = $request->get('familiarp1');
+            $parentescop1 = $request->get('parentescop1');
+            $edadp1 = $request->get('edadp1');
+            $epsFam1 = $request->get('epsFam1');
+            $caja1 = $request->get('caja1');
 
-        if($request->hasFile('Foto')){
-            $datosnuevos['Foto']=$request->file('Foto')->store('uploads','public');
-        }
-       /* $request->validate([
-            'nombre'          => 'required|unique:filtros,nombre,',
-        ]);*/
+            $tpd2 = $request->get('tpd2');
+            $docfam2 = $request->get('docfam2');
+            $familiarp2 = $request->get('familiarp2');
+            $parentescop2 = $request->get('parentescop2');
+            $edadp2 = $request->get('edadp2');
+            $epsFam2 = $request->get('epsFam2');
+            $caja2 = $request->get('caja2');
 
-        $asignaciones = new Contratacion();
+            $tpd3 = $request->get('tpd3');
+            $docfam3 = $request->get('docfam3');
+            $familiarp3 = $request->get('familiarp3');
+            $parentescop3 = $request->get('parentescop3');
+            $edadp3 = $request->get('edadp3');
+            $epsFam3 = $request->get('epsFam3');
+            $caja3 = $request->get('caja3');
 
-        $asignaciones->id_filtro             = $request->id_filtro;
-        $asignaciones->cedula                = $request->cedula;
-        $asignaciones->nombre               = $request->nombre;
-        
-       // $asignaciones->perfil                = $request->cargo;
-       // $asignaciones->dependencia           = $request->dependencia;
-       // $asignaciones->id_area               = $request->id_area;
-        //$asignaciones->campaña               = $request->campaña;
-        //$asignaciones->foco                  = $request->foco;
-        //$asignaciones->jinmedato             = $request->jinmedato;
-        //$asignaciones->observaciones         = $request->observaciones;
-        $asignaciones->estado                = $request->estado;
-        $asignaciones->save();
-        //return back();
-        return response()->json($asignaciones);
+            $tpd4 = $request->get('tpd4');
+            $docfam4 = $request->get('docfam4');
+            $familiarp4 = $request->get('familiarp4');
+            $parentescop4 = $request->get('parentescop4');
+            $edadp4 = $request->get('edadp4');
+            $epsFam4 = $request->get('epsFam4');
+            $caja4 = $request->get('caja4');
 
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Asignacion  $asignacion
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Asignacion $asignacion)
-    {
-        //
-    }
+            $cargos= Cargo::all();
+            $user_id = Auth::user()->id;
+            $user_nombre = Auth::user()->name;
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Asignacion  $asignacion
-     * @return \Illuminate\Http\Response
-     */
+            $datosFiltro=request()->except('_token');
+
+            if($request->hasFile('Foto')){
+                $datosFiltro['Foto']=$request->file('Foto')->store('uploads','public');
+            }
+            $request->validate([
+                'cedula'          => 'required|unique:nuevoempleado,cedula,',
+
+
+            ]);
+
+            $contatacion = new nuevoEmpleado();
+
+            $contatacion->id_filtro              = $request->id_filtro;
+            $contatacion->nombres                = $request->nombres;
+            $contatacion->tipo_doc2              = $request->tipo_doc2;
+            $contatacion->cedula                 = $request->cedula;
+            $contatacion->fexpe                  = $request->fexpe;
+            $contatacion->depNac                 = $request->depNac;
+            $contatacion->id_ciudad              = $request->id_ciudad;
+            $contatacion->correo                 = $request->correo;
+            $contatacion->tCelular               = $request->tCelular;
+            $contatacion->tFijo                  = $request->tFijo;
+            $contatacion->eCivil                 = $request->eCivil;
+            $contatacion->direccion              = $request->direccion;
+            $contatacion->residencia             = $request->residencia;
+            $contatacion->lugarNac               = $request->lugarNac;
+            $contatacion->edad                   = $request->edad;
+            $contatacion->genero                 = $request->genero;
+            $contatacion->rh                     = $request->rh;
+            $contatacion->nivelEdu               = $request->nivelEdu;
+            $contatacion->cargos                 = $request->cargos;
+            $contatacion->corporativo            = $request->corporativo;
+            $contatacion->personaContacto        = $request->personaContacto;
+            $contatacion->parentesco             = $request->parentesco;
+            $contatacion->personaDireccion       = $request->personaDireccion;
+            $contatacion->contactof              = $request->contactof;
+            $contatacion->contactoCelular        = $request->contactoCelular;
+            $contatacion->numHijos               = $request->numHijos;
+            $contatacion->hijosMAs               = $request->hijosMAs;
+            $contatacion->hijosFem               = $request->hijosFem;
+            $contatacion->Preexistencia          = $request->Preexistencia;
+            $contatacion->alergias               = $request->alergias;
+            $contatacion->medicamentos           = $request->medicamentos;
+            $contatacion->familiarp1             = $tpd1.','.$docfam1.','.$familiarp1.','.$parentescop1.','.$edadp1.','.$epsFam1.','.$caja1;
+            $contatacion->familiarp2             = $tpd2.','.$docfam2.','.$familiarp2.','.$parentescop2.','.$edadp2.','.$epsFam2.','.$caja2;
+            $contatacion->familiarp3             = $tpd3.','.$docfam3.','.$familiarp3.','.$parentescop3.','.$edadp3.','.$epsFam3.','.$caja3;
+            $contatacion->familiarp4             = $tpd4.','.$docfam4.','.$familiarp4.','.$parentescop4.','.$edadp4.','.$epsFam4.','.$caja4;
+            $contatacion->salario                = $request->salario;
+            $contatacion->ingreso                = $request->ingreso;
+            $contatacion->tipo_contratos         = $request->tipo_contratos;
+            $contatacion->supervisor             = $request->supervisor;
+            $contatacion->sede                   = $request->sede;
+            $contatacion->modalidad              = $request->modalidad;
+            $contatacion->tipoModalidad          = $request->tipoModalidad;
+            $contatacion->cesantias              = $request->cesantias;
+            $contatacion->pensiones              = $request->pensiones;
+            $contatacion->eps                    = $request->eps;
+            $contatacion->cajaComp               = $request->cajaComp;
+            $contatacion->ips                    = $request->ips;
+            $contatacion->arl                    = $request->arl;
+            $contatacion->Tcuenta                = $request->Tcuenta;
+            $contatacion->nCuenta                = $request->nCuenta;
+            $contatacion->bancos                 = $request->bancos;
+            $contatacion->estado                 = $request->estado;
+            $contatacion->foco                   = $request->foco;
+            $contatacion->campaña                = $request->campaña;
+            $contatacion->fuente                 = $request->fuente;
+
+            $contatacion->usuario                = $user_id.','.$user_nombre;
+
+
+            $contatacion->save();
+
+               //return response()->json($nuevo);
+            return back();
+    //     return response()->json($contatacion);
+
+   }
+}
+
+    
     public function edit($id)
     {
 
         $this->authorize('haveaccess','asignacion.edit');
-        $contatacion= Contratacion::findOrFail($id);
+        $contatacion= nuevoEmpleado::findOrFail($id);
         $asignaciones = Asignacion::all();
-        $cordinadores = Supervisor::all();
+        $supervisores = Supervisor::all();
+        $sedes = Sede::all();
         $focos = Foco::all();
         $cargos= Cargo::all();
-
+        $campañas = Campana::all();
+        $modalidades = Modalidad::all();
+        $tipoModalidades = TipoModalidad::all();
         $dependencias = Dependencia::all();
         $asignaciones = Asignacion::all();
-       return view('asignacion.edit', compact('cargos','asignaciones','cordinadores','focos','contatacion','cargos','dependencias'));
-      // return response()->json($asignaciones);
-
+       //return response()->json($contatacion);
+    return view('asignacion.edit', compact('tipoModalidades','modalidades','sedes','campañas','cargos','asignaciones','supervisores','focos','contatacion','dependencias'));
+      // return response()->json($asignaciones);s
     }
 
     /**
@@ -125,19 +203,20 @@ class AsignacionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $contatacion= Contratacion::findOrFail($id);
-        $asignaciones = Asignacion::all();
-        $cordinadores = Supervisor::all();
-        $focos = Foco::all();
-        $cargos= Cargo::all();
-        $newEmployes = nuevoEmpleado::all();
-        $dependencias = Dependencia::all();
-        $datosAsignaciones =request()->except(['_token','_method', 'telefono']);
-        Contratacion::where('id','=',$id)->update($datosAsignaciones);
-        //$asigantion = Asignacion::all();
-        $asignaciones=Asignacion::all();
-    // return response()->json($asigantion);
-     return view('asignacion.edit', compact('dependencias','newEmployes','cargos','focos','asignaciones','contatacion','cordinadores'));
+        $modalidades = Modalidad::all();
+        $tipoModalidades = TipoModalidad::all();
+        $sedes = Sede::all();
+        $supervisores = Supervisor::all();
+        $focos = Foco::all();    
+        $cargos = Cargo::all();
+        $campañas = Campana::all();
+        $datosFiltro =request()->except(['_token','_method']);
+        nuevoEmpleado::where('id','=',$id)->update($datosFiltro);
+        $contatacion= nuevoEmpleado::findOrFail($id);
+     //return response()->json($contatacion);
+     return view('asignacion.edit', compact('tipoModalidades','modalidades','contatacion','cargos','campañas','focos','supervisores','sedes'));
+
+       
     }
 
     /**

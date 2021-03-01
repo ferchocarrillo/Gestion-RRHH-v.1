@@ -105,19 +105,14 @@ class EntGerenciaController extends Controller
 
         Carbon::setLocale('es');
         $date = Carbon::now();
-       // $date = $date->format('d-m-Y'); 
+       
         $this->authorize('haveaccess','entFinalizacion.edit');
         $aprobaciones = Aprobacion::all();
         $filtro  = Filtro::findOrFail($id);
-        // $entFinalizacion = EntFinalizacion::findOrFail($id);
         $entrevista5s = entrevista5::findOrFail($id);
-        // $entrevista1s = Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista2s = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista3s = Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista4s = Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $resultadoRrhhs = resultadoRRHH::all();
         //return response()->json($entFinalizacion);
-    //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
+
       return view('entGerencia.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s','aprobaciones')); 
     }
 

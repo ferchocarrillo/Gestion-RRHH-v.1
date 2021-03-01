@@ -20,109 +20,173 @@
 
             <center><p>
                 <div class="card-header" id ="nombres" name="nombres">
-                  <h3> {{ $contatacion->nombre}}</h3>
+                  <h3> {{ $contatacion->nombres}}</h3>
                 </div>
             </p></center>
 
 
-
-
-            <form name="f1" action="{{ url('/asignacion')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+            <form action="{{ url('/asignacion/'.$contatacion->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                 @csrf
-                @method('POST')
+                @method('PATCH')
+
+
 
                 <div class="container">
                     <div class="row">
 <input type="hidden" id="id_filtro" name="id_filtro" value="{{$contatacion->id_filtro}}">
 <input type="hidden" id="cedula" name="cedula" value="{{ old('cedula', $contatacion->cedula)}}">
-<input type="hidden" id="nombre" name="nombre" value="{{ old('nombre', $contatacion->nombre)}}">
+<input type="hidden" id="nombres" name="nombres" value="{{ old('nombres', $contatacion->nombres)}}">
 <input type="hidden" id="ingreso" name="ingreso" value="{{ old('ingreso', $contatacion->ingreso)}}">
-<input type="hidden" id="campaña" name="campaña" value="{{ old('campaña', $contatacion->campaña)}}">
-<input type="hidden" id="estado" name="estado" value="{{ old('estado', $contatacion->estado)}}">
 
+<input type="hidden" id="estado" name="estado" value="{{ old('estado', $contatacion->estado)}}">
+<input type="hidden" id="tipo_doc2" name="tipo_doc2" value="{{ old('tipo_doc2', $contatacion->tipo_doc2)}}">
+<input type="hidden" id="fexpe" name="fexpe" value="{{ old('fexpe', $contatacion->fexpe)}}">
+<input type="hidden" id="depNac" name="depNac" value="{{ old('depNac', $contatacion->depNac)}}">
+<input type="hidden" id="id_ciudad" name="id_ciudad" value="{{ old('id_ciudad', $contatacion->id_ciudad)}}">
+<input type="hidden" id="correo" name="correo" value="{{ old('correo', $contatacion->correo)}}">
+<input type="hidden" id="tCelular" name="tCelular" value="{{ old('tCelular', $contatacion->tCelular)}}">
+<input type="hidden" id="tFijo" name="tFijo" value="{{ old('tFijo', $contatacion->tFijo)}}">
+<input type="hidden" id="eCivil" name="eCivil" value="{{ old('eCivil', $contatacion->eCivil)}}">
+<input type="hidden" id="direccion" name="direccion" value="{{ old('direccion', $contatacion->direccion)}}">
+<input type="hidden" id="residencia" name="residencia" value="{{ old('residencia', $contatacion->residencia)}}">
+<input type="hidden" id="lugarNac" name="lugarNac" value="{{ old('lugarNac', $contatacion->lugarNac)}}">
+<input type="hidden" id="edad" name="edad" value="{{ old('edad', $contatacion->edad)}}">
+<input type="hidden" id="genero" name="genero" value="{{ old('genero', $contatacion->genero)}}">
+<input type="hidden" id="rh" name="rh" value="{{ old('rh', $contatacion->rh)}}">
+<input type="hidden" id="nivelEdu" name="nivelEdu" value="{{ old('nivelEdu', $contatacion->nivelEdu)}}">
+
+<input type="hidden" id="corporativo" name="corporativo" value="{{ old('corporativo', $contatacion->corporativo)}}">
+<input type="hidden" id="personaContacto" name="personaContacto" value="{{ old('personaContacto', $contatacion->personaContacto)}}">
+<input type="hidden" id="parentesco" name="parentesco" value="{{ old('parentesco', $contatacion->parentesco)}}">
+<input type="hidden" id="personaDireccion" name="personaDireccion" value="{{ old('personaDireccion', $contatacion->personaDireccion)}}">
+<input type="hidden" id="contactof" name="contactof" value="{{ old('contactof', $contatacion->contactof)}}">
+<input type="hidden" id="contactoCelular" name="contactoCelular" value="{{ old('contactoCelular', $contatacion->contactoCelular)}}">
+<input type="hidden" id="numHijos" name="numHijos" value="{{ old('numHijos', $contatacion->numHijos)}}">
+<input type="hidden" id="hijosMAs" name="hijosMAs" value="{{ old('hijosMAs', $contatacion->hijosMAs)}}">
+<input type="hidden" id="hijosFem" name="hijosFem" value="{{ old('hijosFem', $contatacion->hijosFem)}}">
+<input type="hidden" id="Preexistencia" name="Preexistencia" value="{{ old('Preexistencia', $contatacion->Preexistencia)}}">
+<input type="hidden" id="alergias" name="alergias" value="{{ old('alergias', $contatacion->alergias)}}">
+<input type="hidden" id="familiarp1" name="familiarp1" value="{{ old('familiarp1', $contatacion->familiarp1)}}">
+<input type="hidden" id="familiarp2" name="familiarp2" value="{{ old('familiarp2', $contatacion->familiarp2)}}">
+<input type="hidden" id="familiarp3" name="familiarp3" value="{{ old('familiarp3', $contatacion->familiarp3)}}">
+<input type="hidden" id="familiarp4" name="familiarp4" value="{{ old('familiarp4', $contatacion->familiarp4)}}">
+<input type="hidden" id="tipo_contratos" name="tipo_contratos" value="{{ old('tipo_contratos', $contatacion->tipo_contratos)}}">
+<input type="hidden" id="cesantias" name="cesantias" value="{{ old('cesantias', $contatacion->cesantias)}}">
+<input type="hidden" id="pensiones" name="pensiones" value="{{ old('pensiones', $contatacion->pensiones)}}">
+<input type="hidden" id="eps" name="eps" value="{{ old('eps', $contatacion->eps)}}">
+<input type="hidden" id="cajaComp" name="cajaComp" value="{{ old('cajaComp', $contatacion->cajaComp)}}">
+<input type="hidden" id="ips" name="ips" value="{{ old('ips', $contatacion->ips)}}">
+<input type="hidden" id="arl" name="arl" value="{{ old('arl', $contatacion->arl)}}">
+<input type="hidden" id="Tcuenta" name="Tcuenta" value="{{ old('Tcuenta', $contatacion->Tcuenta)}}">
+<input type="hidden" id="nCuenta" name="nCuenta" value="{{ old('nCuenta', $contatacion->nCuenta)}}">
+<input type="hidden" id="bancos" name="bancos" value="{{ old('bancos', $contatacion->bancos)}}">
+<input type="hidden" id="fuente" name="fuente" value="{{ old('fuente', $contatacion->fuente)}}">
+
+
+
+
+
+
+    
 
 
         <div class="col-6 col-md-3"><strong><p>Cedula:</p></strong>{{ old('cedula', $contatacion->cedula)}}</div><br>
-        <div id="perfil" name="perfil" class="col-6 col-md-3"><strong><p>Perfil:</p></strong>{{ old('perfil', $contatacion->perfil)}}
-        
-          
-                <input list="cargos" type="text" name="cargos" class="form-control" placeholder="Perfiles" >
+                
+        <div class="col-6 col-md-3"><strong><p>Perfil:</p></strong>
+          <p><input list="cargos" type="text" name="cargos" class="form-control" placeholder="Perfiles" >
+            
+            <datalist name="cargos" id="cargos">
+              <option value="{{ old('cargos', $contatacion->cargos)}}">Perfiles</option>
+              @foreach($cargos as $perfil)<option value="{{ $perfil->cargo}}">
+                  {{ $perfil->cargo }}</option>
+                @endforeach
+            </datalist>
+            </p>
+        </div>
 
-                <datalist name="cargos" id="cargos">
-                  <option value="">Perfiles</option>
-                  @foreach($cargos as $cargo)<option value="{{ old('perfil', $contatacion->perfil)}}">
-                      {{ $cargo->cargo }}</option>
-                    @endforeach
-                </datalist>
-                </p>
+            <div class="col-6 col-md-3"><strong><p>Campaña:</p></strong>
+                <p><input list="campaña" type="text" name="campaña" class="form-control" placeholder="Campaña" >
+                  
+                  <datalist name="campaña" id="campaña">
+                    <option value="{{ old('campaña', $contatacion->campaña)}}">Campaña</option>
+                    @foreach($campañas as $campaña)<option value="{{ $campaña->campaña}}">
+                        {{ $campaña->campaña }}</option>
+                      @endforeach
+                  </datalist>
+                  </p>
+                </div>
+        <br>
         
-        
-        </div><br>
-        <div class="col-6 col-md-3"><strong><p>Campaña:</p></strong>{{ old('campaña', $contatacion->campaña)}}</div>
+
+
         <div class="col-6 col-md-3"><strong><p>Estado:</p></strong>{{ old('estado', $contatacion->estado)}}</div>
 
     </div>
     <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
     <!-- Force next columns to break to new line -->
-
-    <div class="col">
+    <div class="row">
+<div class="col-6 col-md-3">
     <span><strong>Foco</strong></span>
-    <input list="foco" class="col-6 col-md-3" placeholder="Foco" required>
-    <datalist id="foco" name="foco"  >
-        <option value="">Foco</option>
-    @foreach ($focos as $foco)
-    <option value="{{ $foco->foco }}">{{ $foco->foco }}</option>
-    @endforeach
-    </datalist>
-
-    <span><strong>Jefe inmediato</strong></span>
-    <input list="jinmedato" class="col-6 col-md-3" placeholder="Jefe inmediato" required>
-    <datalist id="jinmedato" name="jinmedato"  >
-        <option value="">Coordinador</option>
-        <option value="">Coordinador</option>
-        @foreach ($cordinadores as $coordinador)
-        <option value="{{$coordinador->supervisor}}">{{$coordinador->supervisor}}</option>
-
-        @endforeach
-    </datalist>
-
-    <span><strong>Cargo</strong></span>
-    <input list="cargo" class="col-6 col-md-3"  placeholder="Cargo" required>
-    <datalist id="cargo" name="cargo"  >
-        <option value="">Seleccione un cargo</option>
-        @foreach ($cargos as $cargo)
-        <option value="{{ $cargo->cargo}}">{{ $cargo->cargo }}</option>
-    @endforeach
-    </datalist>
+    <input list="foco" type="text" name="foco"   class="form-control" required>
+               <datalist name="foco" id="foco" >
+                <option  value="{{ old('foco', $contatacion->foco)}}">Seleccion un foco</option>
+                @foreach($focos as $foco)<option value="{{ $foco->foco}}">
+                  {{ $foco->foco }}</option>
+                @endforeach
+                </datalist>
 </div>
-<br>
-<br>
-<div class="row">
+<div class="col-6 col-md-2">
+    <span><strong>Supervisor</strong></span>
+    <p><input list="supervisor" type="text" name="supervisor"   class="form-control" required>
+        <datalist name="supervisor" id="supervisor" >
+         <option value=" {{ old('supervisor', $contatacion->supervisor)}}">Asigne uno</option>
+         @foreach($supervisores as $supervisor)
+     <option value="{{ $supervisor->supervisor}}">{{ $supervisor->supervisor }}</option>
+         @endforeach
+         </datalist>
+         </p>
+</div>
+<div class="col-6 col-md-2">
+    <span><strong>Sede</strong></span>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <p>
-    <span><strong>Dependencia</strong></span>
-    <select  class="form-control" name="dependencia" id="dependencia"  required>
-    <datalist id="dependencia" name="dependencia"  >
-        <option value="" >Dependencias</option>
-                        @foreach ($dependencias as $dependencia)
-                        <option value="{{ $dependencia->dependencia}}">{{ $dependencia->dependencia }}</option>
-                        @endforeach
-                    </select>
-    </datalist>
-</p>
-&nbsp;&nbsp;&nbsp;&nbsp;
-        <p>
-                        <span><strong>Area:</strong></span>
-                            <select name="id_area" id="id_area" class="form-control" style="height:45px, width:250px;"  placeholder="Area" required> </select>
-        </p>
+    <input list="sede" type="text" name="sede"   class="form-control" required>
+    <datalist name="sede" id="sede" >
+     <option value="{{ old('sede', $contatacion->sede)}}">Asigne una</option>
+     @foreach($sedes as $sede)
+    <option value="{{ $sede->sede}}">{{ $sede->sede }}</option>
+     @endforeach
+     </datalist>
+
+
+
+
+</div>
+<div class="col-6 col-md-2">
+    <span><strong>Modadidad</strong></span>
+<input list="modalidad" type="text" name="modalidad"   class="form-control" required>
+               <datalist name="modalidad" id="modalidad" >
+                <option value="{{ old('modalidad', $contatacion->modalidad)}}">Asigne una</option>
+                @foreach($modalidades as $modalidad)
+            <option value="{{ $modalidad->modalidad}}">{{ $modalidad->modalidad }}</option>
+                @endforeach
+                </datalist>
+</div>
+<div class="col-6 col-md-2">
+    <span><strong>Tipo de Modadidad</strong></span>
+    <input list="tipoModalidad" type="text" name="tipoModalidad"   class="form-control" required>
+                   <datalist name="tipoModalidad" id="tipoModalidad" >
+                    <option value="{{ old('tipoModalidad', $contatacion->tipoModalidad)}}">Asigne una</option>
+                    @foreach($tipoModalidades as $tipoModalidad)
+                <option value="{{ $tipoModalidad->tipoModalidad}}">{{ $tipoModalidad->tipoModalidad }}</option>
+                    @endforeach
+                    </datalist>
+</div>
+
 
     </div>
+<br>
 
 
-    <div class="row">
-    <textarea name="observaciones" id="observaciones" class="form-control" rows="3" placeholder="Observaciones de ingreso"></textarea>
-</div>
 <br>
     <div class="row">
                 <input class="btn btn-primary btn-lg active" type="submit" value="Asignar">
