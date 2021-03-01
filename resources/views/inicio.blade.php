@@ -48,7 +48,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
     <section class="wave-contenedor webside">
         <img src="\theme\images\recursos14.jpg" alt="">
-            <div class="contenedor-textos-main"><br><br>
+            <div class="contenedor-textos-main"><br>
                 <h2 class="titulo left">¿Que Son Los Recursos Humanos?</h2>
                 <p class="parrafo">Los recursos humanos son un departamento dentro de las empresas en el que se gestiona todo lo
                      relacionado con las personas que trabajan en ella. Esto incluiría desde el reclutamiento, selección,
@@ -64,7 +64,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 <section class="info">
     <div class="contenedor">
-      <h4>Premios Mentius</h4>
+      <h2>Premios Mentius</h2>
         <div class="wrapper">
             <div class="img-area">
                 <div class="single-img img-1">
@@ -114,8 +114,8 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
             </div>
     </div>
 
-<section class="cards contenedorr">
-    <h2 class="titulo">Lo que debes saber de recursos humanos</h2>
+<section class="cards contenedor">
+    <h2 class="titulo">Lo Que Debes Saber De Recursos Humanos</h2>
         <div class="content-cards">
             <article class="card">
                 <i class="fas fa-clipboard-list"></i>
@@ -224,6 +224,40 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     </div>
 </div>
 </section>
+
+
+<section class="clientes contenedor">
+    <h2 class="titulo">¿Que Dicen Nuestros Clientes?</h2>
+        <div class="cardss">
+            <div class="card1">
+                <img src="\theme\images\movistarr.jpg" alt="">
+                <div class="contenido-textos-card">
+                    <h5>Movistar</h5>
+                    <p>Sentimos una enorme tranquilidad al tener a Mentius como aliando para nuestros procesos.</p>
+                </div>
+            </div>
+            <div class="card1">
+                <img src="\theme\images\cliente1.jpg" alt="">
+                    <div class="contenido-textos-card">
+                        <h5>Vanti</h5>
+                        <p>Consideramos a Mentius una empresa con los estandares de calidad mas altos del mercado.</p>
+                    </div>
+            </div>
+            <div class="card1">
+                <img src="\theme\images\cliente3.png" alt="">
+                    <div class="contenido-textos-card">
+                        <h5>QNT</h5>
+                        <p>Estamos seguros que Mentius cumple a cabalidad las politicas de informacion.</p>
+                    </div>
+            </div>
+        </div>
+</section>
+
+
+
+
+
+
 
 
 <div class="svg-wave">
