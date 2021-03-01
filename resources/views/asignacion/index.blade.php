@@ -56,6 +56,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Perfil</th>
+                        <th scope="col">Foco</th>
                         <th scope="col">Campaña</th>
                         <th colspan="3">Acciones</th>
                         </tr>
@@ -65,9 +66,10 @@
                         <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$asignacion->cedula}}</td>
-                        <td>{{$asignacion->nombre}}</td>
+                        <td>{{$asignacion->nombres}}</td>
                         <td>{{$asignacion->correo}}</td>
-                        <td>{{$asignacion->perfil}}</td>
+                        <td>{{$asignacion->cargo}}</td>
+                        <td>{{$asignacion->foco}}</td>
                         <td>{{$asignacion->campaña}}</td>
                 
                         <td>

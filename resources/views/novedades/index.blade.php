@@ -10,7 +10,7 @@
 
 
 
-<form name="f1" action="{{ url('/filtro')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<form name="f1" action="{{ url('/novedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
 
@@ -31,13 +31,11 @@
                                                 <th scope="col">#</th>
                                                 <th scope="col">Cedula</th>
                                                 <th scope="col">Nombres</th>
-                                                <th scope="col">Fecha Ingreso</th>
                                                 <th scope="col">Campaña</th>
-                                                <th scope="col">Area</th>
                                                 <th scope="col">Cargo</th>
                                                 <th scope="col">Foco</th>
                                                 <th scope="col">Jefe inmediato</th>
-                                                <th scope="col">Novedades</th>
+                                     
 
                                                 <th colspan="3"></th>
                                               </tr>
@@ -51,12 +49,10 @@
                                                     <th scope="row">{{ $novedades->id}}</th>
                                                     <td>{{ $novedades->cedula}}</td>
                                                     <td>{{ $novedades->nombres}}</td>
-                                                    <td>{{ $novedades->ingreso}}</td>
                                                     <td>{{ $novedades->campaña}}</td>
-                                                    <td>{{ $novedades->id_area}}</td>
-                                                    <td>{{ $novedades->cargo}}</td>
+                                                    <td>{{ $novedades->cargos}}</td>
                                                     <td>{{ $novedades->foco}}</td>
-                                                    <td>{{ $novedades->jinmedato}}</td>
+                                                    <td>{{ $novedades->supervisor}}</td>
                                                     <td>{{ $novedades->novedad}}</td>
                                                 
                     
