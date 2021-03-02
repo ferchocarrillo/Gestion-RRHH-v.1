@@ -68,42 +68,42 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
         <div class="wrapper">
             <div class="img-area">
                 <div class="single-img img-1">
-                    <img src="\theme\images\premio1.jpg" alt="imagenes del carrusel ">
+                    <img src="\theme\images\premio1.jpg" alt="imagenes de premios mentius 1 ">
                 </div>
                 <div class="single-img img-2">
-                    <img src="\theme\images\premio2.jpg" alt="imagenes del carrusel ">
+                    <img src="\theme\images\premio2.jpg" alt="imagenes de premios mentius 2 ">
                 </div>
                 <div class="single-img img-3">
-                    <img src="\theme\images\premio3.jpg" alt="imagenes del carrusel ">
+                    <img src="\theme\images\premio3.jpg" alt="imagenes de premios mentius 3 ">
                 </div>
                 <div class="single-img img-4">
-                    <img src="\theme\images\premio4.jpg" alt="imagenes del carrusel ">
+                    <img src="\theme\images\premio4.jpg" alt="imagenes de premios mentius 4 ">
                 </div>
                 <div class="single-img img-5">
-                    <img src="\theme\images\premio5.jpg" alt="imagenes del carrusel ">
+                    <img src="\theme\images\premio5.jpg" alt="imagenes de premios mentius 5 ">
                 </div>
                 <div class="single-img img-6">
-                    <img src="\theme\images\premio6.jpg" alt="imagenes del carrusel ">
+                    <img src="\theme\images\premio6.jpg" alt="imagenes de premios mentius 6 ">
                 </div>
                 <div class="single-img img-7">
-                    <img src="\theme\images\premio7.jpg" alt="imagenes del carrusel ">
+                    <img src="\theme\images\premio7.jpg" alt="imagenes de premios mentius 7 ">
                 </div>
                 <div class="single-img img-8">
-                    <img src="\theme\images\premio8.jpg" alt="imagenes del carrusel ">
+                    <img src="\theme\images\premio8.jpg" alt="imagenes de premios mentius 8 ">
                 </div>
                 <div class="single-img img-9">
-                    <img src="\theme\images\premio9.jpg" alt="imagenes del carrusel ">
+                    <img src="\theme\images\premio9.jpg" alt="imagenes de premios mentius 9 ">
                 </div>
             </div>
         </div>
     </div>
-</section><br><br><br><br>
+</section><
 
 
 
     <div class="contenedor last-section">
         <div class="contenedor-textos-main">
-            <h2 class="titulo left">7 Funciones De Recursos Humanos</h2><br><br>
+            <h2 class="titulo left">7 Funciones De Recursos Humanos</h2>
             <p class="parrafo">En calidad Mentius, tenemos el proposito de ayudarte a crear grandes experiencias de la forma correcta,
             entendiendo mejor tu función y su importancia. Queremos estar siempre presente cuando alcances tus metas, cuando cumplas con
             tus objetivos. Nosotros creemos en ti por eso buscaremos siempre la mejor manera de crecer juntos.</p>
@@ -252,12 +252,6 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
             </div>
         </div>
 </section>
-
-
-
-
-
-
 
 
 <div class="svg-wave">

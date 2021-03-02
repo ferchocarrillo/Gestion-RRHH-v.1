@@ -128,34 +128,34 @@ nav a {
 .info {
     /*estilo derecuadro*/
     background-image: linear-gradient(to top,#1d4662  0%,  #72aab798 100%);
-    height: 1000px; /*alto de recuadro del degrade */
+    height: 600px; /*alto de recuadro del degrade */
 }
 .wrapper {
     position: absolute;
     width: 320px;
-    margin: 150px 380px;
-    perspective: 1000px;
+    margin: 10px 360px;/*posicion carrusel en cuanto a linea azul*/
+    perspective: 1500px;
 }
 .img-area {
     position: absolute;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transform: rotateY(360deg) translateZ(300px);
-    animation: animate 350s steps(100000, end) infinite;
-    background: #9c4848;
+    transform: rotateY( 300deg) translateZ(360px);
+    animation: animate 1950s steps(200000, end) infinite;/*velocidad del giro y recuadros */
+    background: #cafd13;
 }
 .single-img {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 250px;
-    height: 150px;
+    top: 40px;
+    left: 50px;
+    width: 200px;
+    height: 390px;
 }
 .single-img img {
     width: 300px;
     height: 200px;
-    border: 5px solid #ffffff;
+    border: 5px solid #000000;
 }
 .single-img.img-1 {
     transform: rotateY(0deg) translateZ(600px);
@@ -186,7 +186,7 @@ nav a {
 }
 @keyframes animate {
     from {
-        transform: rotateY(1460deg);
+        transform: rotateY(10000deg);
     }
     to {
         transform: rotateY(0deg);
@@ -243,10 +243,9 @@ h2{
 h2::after{
     background: darkblue;
     width: 100%;
-    content: '';
+    content:'' ;
     height: 6px;
     margin-top: 20px;
-    margin-bottom: 40px;
     display: block;
 }
 .portafolio {
