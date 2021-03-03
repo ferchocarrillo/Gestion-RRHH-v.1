@@ -63,7 +63,7 @@
 </div>
 </div>
 </fieldset>
-<input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
+<input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id_filtro', $filtro->id_filtro)}}"></div>
 <div class="col-sm-12">
     <center><p>
     <div class="card-header"> Informacion Academica</div>

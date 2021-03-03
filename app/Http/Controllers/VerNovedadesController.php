@@ -19,9 +19,22 @@ class VerNovedadesController extends Controller
         Carbon::setLocale('es');
         $date = Carbon::now();
 
-        $novedades = Novedades::orderby('created_at', 'desc')->where('created_at', '>=', now()->subDays(1))->paginate(10);
+        $novedades = Novedades::orderby('created_at', 'desc')->paginate(10);
         return view('verNovedades.index',compact('novedades'));
     }
+
+
+
+
+    public function searchNovedades( Request $request)
+    {
+        $novedades = Novedades::all();
+
+        $searchNovedad = $request->get('searchNovedad');
+        $novedades = Novedades::firstOrNew()->where('cedula', 'like', '%'.$searchNovedad.'%')->paginate(20);
+        return view('verNovedades.index', ['novedades' => $novedades ]);
+    }
+
 
     /**
      * Show the form for creating a new resource.

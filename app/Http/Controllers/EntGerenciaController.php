@@ -109,11 +109,11 @@ class EntGerenciaController extends Controller
         $this->authorize('haveaccess','entFinalizacion.edit');
         $aprobaciones = Aprobacion::all();
         $filtro  = Filtro::findOrFail($id);
-        $entrevista5s = entrevista5::findOrFail($id);
-        $resultadoRrhhs = resultadoRRHH::all();
+        $entrevista5s = entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+       
         //return response()->json($entFinalizacion);
 
-      return view('entGerencia.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s','aprobaciones')); 
+      return view('entGerencia.edit', compact('date','filtro', 'entrevista5s','aprobaciones')); 
     }
 
     /**
@@ -128,12 +128,12 @@ class EntGerenciaController extends Controller
         $aprobaciones = Aprobacion::all();
         Carbon::setLocale('es');
         $date = Carbon::now();
-        $resultadoRrhhs = resultadoRRHH::all();
+       
         $datosFiltro =request()->except(['_token','_method']);
         Filtro::where('id','=',$id)->update($datosFiltro);
         $filtro=Filtro::findOrFail($id);
      //return response()->json($filtro);
-     return view('entGerencia.edit', compact('filtro', 'date','resultadoRrhhs','aprobaciones'));
+     return view('entGerencia.edit', compact('filtro', 'date','aprobaciones'));
     }
 
     /**

@@ -72,7 +72,7 @@
                                       
                                
                                                 <td>
-                                                    <a href="{{url('/entJefe/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Entrevista Gerencia</a>
+                                                    <a href="{{url('/entJefe/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Entrevista Jefe Inmediato</a>
                                                     {{-- <a href="{{url('/entFinalizacion/'.$entrevistas->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a> --}}
                                             </form>
                                                 </td>

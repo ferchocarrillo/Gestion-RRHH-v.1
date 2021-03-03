@@ -21,7 +21,7 @@
 </div>
 </p>
 
-<br>         <form name="f1" action="{{ url('/nuevoempleado')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<br>         <form name="f1" action="{{ url('/nuevoempleado/')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
                         <center>
@@ -52,14 +52,12 @@
                                                 <td>{{ $nuevo->cedula}}</td>
                                                 <td>{{ $nuevo->nombre}}</td>
                                                <td>{{ $nuevo->telefono}}</td>
-
                                                 <td>{{ $nuevo->perfil}}</td>
                                                 <td>{{ $nuevo->campaña}}</td>
-
                                                 <td>
-                                                    <a href="{{url('/nuevoempleado/'.$nuevo->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Complementar Informacion</a>
-                                                   {{-- <a href="{{url('/entrevista2/'.$entrevista->id.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>
-                                                    <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>
+                                                    <a href="{{url('/nuevoempleado/'.$nuevo->id_filtro.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Complementar Informacion</a>
+
+                                               {{--     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Laborales</a>--}}
 
                                             </form>

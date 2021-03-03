@@ -167,7 +167,7 @@ class Entrevista3Controller extends Controller
     public function update(Request $request, $id)
     {
         $datosentrevista3 =request()->except(['_token','_method']);
-        entrevista3::where('id','=',$id)->update($datosentrevista3);
+        entrevista3::where('id_filtro','=',$id)->update($datosentrevista3);
         $entrevista3=entrevista3::findOrFail($id);
      //return response()->json($entrevista1);
      return view('entrevista3.edit', compact('entrevista3'));

@@ -68,7 +68,7 @@
                                       
                                
                                                 <td>
-                                                    <a href="{{url('/entRRHH/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Resultado RRHH</a>
+                                                    <a href="{{url('/entRRHH/'.$entrevistas->id_filtro.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Resultado RRHH</a>
                                                     {{-- <a href="{{url('/entFinalizacion/'.$entrevistas->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a> --}}
                                             </form>
                                                 </td>

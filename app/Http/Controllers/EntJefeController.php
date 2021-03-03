@@ -110,15 +110,15 @@ class EntJefeController extends Controller
         $aprobaciones = Aprobacion::all();
         $filtro  = Filtro::findOrFail($id);
         // $entFinalizacion = EntFinalizacion::findOrFail($id);
-        $entrevista5s = entrevista5::findOrFail($id);
+        $entrevista5s = entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista1s = Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista2s = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista3s = Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista4s = Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $resultadoRrhhs = resultadoRRHH::all();
+        
         //return response()->json($entFinalizacion);
     //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
-      return view('entJefe.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s','aprobaciones')); 
+      return view('entJefe.edit', compact('date','filtro', 'entrevista5s','aprobaciones')); 
     }
 
     /**
@@ -133,12 +133,12 @@ class EntJefeController extends Controller
         $aprobaciones = Aprobacion::all();
         Carbon::setLocale('es');
         $date = Carbon::now();
-        $resultadoRrhhs = resultadoRRHH::all();
+        
         $datosFiltro =request()->except(['_token','_method']);
         Filtro::where('id','=',$id)->update($datosFiltro);
         $filtro=Filtro::findOrFail($id);
      //return response()->json($filtro);
-     return view('entJefe.edit', compact('filtro', 'date','resultadoRrhhs','aprobaciones'));
+     return view('entJefe.edit', compact('filtro', 'date','aprobaciones'));
     }
 
     /**

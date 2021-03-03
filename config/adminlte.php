@@ -328,34 +328,35 @@ return [
 
     'submenu' => [
 
-        ['text'    =>'Formulario de Entrevista',
+        ['text'    =>'Formularios de Entrevista',
         'url'     => 'entrevista1',
         'icon'    => 'fas fa-comments',
         'icon_color' => 'orange'
         ],
 
-        ['text'    => 'Registro Entrevista RR.HH',
+
+        ['text'    => 'Resultado RR.HH',
         'url'     => 'entRRHH',
         'icon'    => 'fas fa-address-card',
         'icon_color' => 'orange'
         ],
 
-        ['text'    => 'Entrevista Jefe Inmediato',
+        ['text'    => 'Resultado Jefe Inmediato',
         'url'     => 'entJefe',
         'icon'    => 'fas fa-hand-peace',
         'icon_color' => 'orange'
         ],
 
-        ['text'    => 'Entrevista Gerencia',
+        ['text'    => 'Resultado Gerencia',
         'url'     => 'entGerencia',
         'icon'    => 'fas fa-handshake',
         'icon_color' => 'orange'
         ],
 
-        ['text'    => 'Resumen Entrevista',
+        ['text'    => 'Resumen Entrevistas',
         'url'     => 'resumen',
         'icon'    => 'fas fa-handshake',
-        'icon_color' => 'orange'
+        'icon_color' => 'green'
         ],
 
 ],

@@ -142,7 +142,7 @@ class ContratacionController extends Controller
         Carbon::setLocale('es');
         $date = Carbon::now();
         $filtro=Filtro::findOrFail($id);
-        $contratacions =Entrevista1::findOrFail($id);
+        $contratacions =Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
 
         $bancoses = Bancos::all();
         $aprobaciones  = Aprobacion::all();

@@ -16,15 +16,18 @@ class CreateNovedadesTable extends Migration
         Schema::create('novedades', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_filtro');
-            $table->unsignedBigInteger('cedula');
             $table->string('nombres');
-            $table->date('fecha');
+            $table->unsignedBigInteger('cedula');
             $table->string('campaña');
-            $table->string('area');
+            $table->string('foco');
             $table->string('cargo');
-            $table->string('jinmediato');
+            $table->string('supervisor');
+            $table->string('estado');
             $table->string('novedad');
             $table->longText('observaciones');
+            $table->date('fecha');
+            $table->date('fecha');
+            $table->integer('totalDias');
             $table->timestamps();
         });
     }
