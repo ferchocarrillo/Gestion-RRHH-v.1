@@ -30,7 +30,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     <div class="container">
         <div class="letras">
             <h1>Bienvenidos </h1>
-            <h2>Mentius Recursos Humanos</h2>
+            <h3>Mentius Recursos Humanos</h3>
         </div>
                 <img src="/theme/images/recursos17.png" alt="Imagen de primer contenedor">
     </div>
@@ -62,9 +62,9 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     </section>
 
 
-<section class="info">
+<section class="carrusel">
     <div class="contenedor">
-      <h2>Premios Mentius</h2>
+      <h1 class="carruselh1">Premios Mentius</h1 class="carruselh1">
         <div class="wrapper">
             <div class="img-area">
                 <div class="single-img img-1">
@@ -109,10 +109,17 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
             tus objetivos. Nosotros creemos en ti por eso buscaremos siempre la mejor manera de crecer juntos.</p>
             <!--<a href="" class="cta">learn more</a>-->
         </div>
-            <div class="ratio ratio-4x3">
                  <img src="\theme\images\recursos6.png" alt="">
             </div>
     </div>
+
+
+<section class="info">
+    <div class="contenedor"><br><br><br>
+        <h1 class="titulo">Mentius esta en busca de la sertificacion iso27001 "seguridad de la información"</h1>
+    </div>
+</section>
+
 
 <section class="cards contenedor">
     <h2 class="titulo">Lo Que Debes Saber De Recursos Humanos</h2>
