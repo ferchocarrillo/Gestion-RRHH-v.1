@@ -18,6 +18,7 @@
 
 
 
+
 <div class="container">
     <div class="pull-right">
         <div class="col-md-12">
@@ -27,7 +28,7 @@
                 <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
                 <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
                 <!-- Force next columns to break to new line -->
-                <h3 aline="center">Formulario de Creacion de Novedades</h3>
+                <h3 aline="center">Formulario de creacion de novedades</h3>
             </center>
 
             <center><p>
@@ -38,47 +39,37 @@
 <div> <input type="hidden" name="id_filtro" id="id_filtro" value="{{ $asignacion->id_filtro}} "></div>
 <div> <input type="hidden" name="nombres" id="nombres" value="{{ $asignacion->nombres}} "></div>
 <div> <input type="hidden" name="campaña" id="campaña" value="{{ $asignacion->campaña}} "></div>
-
-<div class="row" >
-    <div class="col"> <label style= " font-size: 13px;"><a style= "color: red; font-size: 15px;">×</a> En caso de emergencia llamar a: </label><br><input type="text" class="form-control-lg-new2" id="contacto" placeholder="contacto" name="cedula" value="{{ old('personaContacto', $asignacion->personaContacto)}}" readonly></div>
-    <div class="col"> <label style= " font-size: 13px;">Parentesco </label><br><input type="text" class="form-control-lg-new2"  placeholder="contacto" value="{{ old('parentesco', $asignacion->parentesco)}}" readonly></div>
-    <div class="col"> <label style= " font-size: 13px;">Telefono fijo </label><br><input type="text" class="form-control-lg-new2"  placeholder="no registra" value="{{ old('contactof', $asignacion->contactof)}}" readonly></div>
-    <div class="col"> <label style= " font-size: 13px;">Numero Celular </label><br><input type="text" class="form-control-lg-new2"  placeholder="contacto" value="{{ old('contactoCelular', $asignacion->contactoCelular)}}" readonly></div>
-
-
-</div>
-<hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-<div class="card-new">
-<div class="row">
-    
-    &nbsp;&nbsp;&nbsp;<div class="colNew"> <label for="cedula">Cedula</label><br><input type="text" class="form-control-lg-new" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $asignacion->cedula)}}" readonly></div>
-            <div class="colNew"> <label for="campaña">Campaña</label><input type="text" class="form-control-lg-new" id="campaña"  placeholder="campaña" name="campaña" value="{{ old('campaña', $asignacion->campaña)}}" readonly></div>
-            <div class="colNew"> <label for="cargo">Cargo</label><br><input type="text" class="form-control-lg-new" id="cargo" style="font-size: 16px;" placeholder="Cargo" name="cargo" value="{{ old('cargos', $asignacion->cargos)}}" readonly></div>
-            <div class="colNew"> <label for="foco">Foco</label><br><input type="text" class="form-control-lg-new" id="foco" placeholder="foco" name="foco" value="{{ old('foco', $asignacion->foco)}}" readonly></div>
-           <div class="colNew">  &nbsp;&nbsp;&nbsp;<label for="supervisor">Supervisor</label><br> &nbsp;&nbsp;&nbsp;<input type="text" class="form-control-lg-new" style="font-size: 16px; " id="supervisor" placeholder="supervisor" name="supervisor" value="{{ old('supervisor', $asignacion->supervisor)}}" readonly></div>
-            <div class="colNew"> <label for="estado">Estado</label><br><input type="text" class="form-control-lg-new" id="estado"  placeholder="estado" name="estado" value="{{ old('estado', $asignacion->estado)}}" readonly></div>
-        </div>
-    </div>
-          
-        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
         <div class="row">
-<div id="novedad" name="novedad" class="col-4 col-md"><strong><p><a style= "color: red; font-size: 15px;">* </a>Tipo de Novedad:</p></strong>
-<select name="novedad" id="novedad" class="form-control-lg-new3" >
+           
+            <div class="col"> <label for="cedula">Cedula</label><br><input type="text" class="form-control-lg" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $asignacion->cedula)}}" readonly></div>
+            <div class="col"> <label for="campaña">Campaña</label><input type="text" class="form-control-lg" id="campaña" style="width:80%" placeholder="campaña" name="campaña" value="{{ old('campaña', $asignacion->campaña)}}" readonly></div>
+            <div class="col"> <label for="cargo">Cargo</label><br><input type="text" class="form-control-lg" id="cargo" style="width: 350px; font-size: 16px;" placeholder="Cargo" name="cargo" value="{{ old('cargos', $asignacion->cargos)}}" readonly></div>
+        </div> 
+           <br>
+            <div class="row">   
+           
+            <div class="col"> <label for="foco">Foco</label><br><input type="text" class="form-control-lg" id="foco" placeholder="foco" name="foco" value="{{ old('foco', $asignacion->foco)}}" readonly></div>
+            <div class="col"> <label for="supervisor">Jefe Inmediato</label><input type="text" class="form-control-lg" style="width: 370px; font-size: 16px; " id="supervisor" placeholder="supervisor" name="supervisor" value="{{ old('supervisor', $asignacion->supervisor)}}" readonly></div>
+            <div class="col"> <label for="estado">Estado</label><br><input type="text" class="form-control-lg" id="estado" style="width:50%" placeholder="estado" name="estado" value="{{ old('estado', $asignacion->estado)}}" readonly></div>
+        </div>
+        <br><br>
+        <div class="row">
+<div id="novedad" name="novedad" class="col-4 col-md"><strong><p>Tipo de Novedad:</p></strong>
+<select name="novedad" id="novedad" class="form-control-lg" >
     <option value="">Seleccione una novedad</option>
 @foreach ($tipoNovedades as $tipoNovedad)
 <option value="{{ $tipoNovedad->TipoNovedad}}">{{ $tipoNovedad->TipoNovedad }}</option>
-
+    
 @endforeach
 </select>
         </div>
-       <p> <div id="desde" name="desde" class="col-4 col-md"><strong><p><a style= "color: red; font-size: 15px;">* </a>Inicio de la novedad:</p></strong>
-        <input type="date" id="desde" name="desde" class="form-control-lg-new3">
+       <p> <div id="desde" name="desde" class="col-4 col-md"><strong><p>Inicio de la novedad:</p></strong>
+        <input type="date" id="desde" name="desde" class="form-control-lg">
     </div>
     </p>
     <p>
-        <div id="hasta" name="hasta" class="col-4 col-md"><strong><p><a style= "color: red; font-size: 15px;">* </a>Fin de la novedad:</p></strong>
-            <input type="date" id="hasta" name="hasta" class="form-control-lg-new3">
+        <div id="hasta" name="hasta" class="col-4 col-md"><strong><p>Fin de la novedad:</p></strong>
+            <input type="date" id="hasta" name="hasta" class="form-control-lg">
         </div>
         </p>
     </div>
@@ -94,7 +85,7 @@
                       <input class="btn btn-primary btn-lg active" type="submit" value="Registrar Novedad">
                       &nbsp;&nbsp;&nbsp;
                      <a href="{{route('novedades.index')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
-
+    
                     </div>
     </div>
 
@@ -117,11 +108,11 @@
                          method: "POST",
                          success: function(result)
                          {
-
+        
                              $('#id_ciudad').empty();
                              $('#id_ciudad').append("<option value=''>Ingrese Ciudad o Municipio</option>");
                              $.each(result, function(index,value){
-
+        
                                  $('#id_ciudad').append("<option value='"+value.Municipio+"'>"+value.Municipio+"</option>");
                              });
                          }
@@ -129,7 +120,7 @@
                  });
              });
          </script>
-
+        
          <script>
             $(function() {
               $('#toggle-two').bootstrapToggle({
@@ -138,7 +129,7 @@
               });
             })
           </script>
-
+        
         <script>
         Swal.fire(
         'Activacion de empleados',
@@ -153,6 +144,7 @@
         <script src="{{asset('theme/vendor/bootstrap-4.1/popper.min.js')}}"></script>
         <script src="{{asset('theme/vendor/bootstrap-4.1/bootstrap.min.js')}}"></script>
         <!--<script src="{{asset('js/Portabilidad.js')}}"></script>-->
-
+        
         @endsection
-
+        
+        

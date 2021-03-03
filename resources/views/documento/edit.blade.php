@@ -71,15 +71,22 @@
         <input type="text" style="width:50px" id="cert_bancaria" name="cert_bancaria"  value="{{ old('cert_bancaria', $contratacions->cert_bancaria)}}">
        </div>
        &nbsp;&nbsp;  &nbsp;&nbsp;
-       <div class="form-group col-md-2">
-                    <label for="bancos">Banco donde abrio la cuenta</label>
-                    <select type="text" style="width:150px" name="bancos" id="bancos" placeholder="Certificacion Bancaria">
-                        <option value=>{{ old('bancos', $contratacions->bancos)}}</option>
-                        @foreach($bancoses as $bancos)<option value="{{ $bancos->banco}}">
-                            {{ $bancos->banco }}</option>
-                          @endforeach
-                    </select>
-                </div>
+
+       <div class="col-6 col-md-3"><strong><p>Banco donde abrio la cuenta:</p></strong>
+        <p><input list="bancos" type="text" name="cargos" class="form-control" placeholder="Bancos" >
+
+          <datalist name="bancos" id="bancos">
+            <option value="{{ old('bancos', $contratacions->bancos)}}">Banco</option>
+            @foreach($bancoses as $bancos)<option value="{{ $bancos->banco}}">
+                {{ $bancos->banco }}</option>
+              @endforeach
+          </datalist>
+          </p>
+      </div>
+
+
+
+
                 <div class="form-group col-md-1">
                     <label for="ex_medico">Examenes Medicos</label>
                     <input type="text" style="width:50px" id="ex_medico" name="ex_medico"  value="{{ old('ex_medico', $contratacions->ex_medico)}}">
@@ -106,22 +113,22 @@
                 <input id="cantidadcedula" name="cantidadcedula" style="width:50px"  type="number" value={{ old('cantidadcedula', $contratacions->cantidadcedula)}}>
 
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-auto">
             <label for="libreta_militar">Libreta Militar</label>
             <input type="text" style="width:60px" id="libreta_militar" name="libreta_militar"  value="{{ old('libreta_militar', $contratacions->libreta_militar)}}">
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-auto">
             <label for="cert_bachiller">Certificado Bachiller</label>
             <input type="text" style="width:50px" id="cert_bachiller" name="cert_bachiller"  value="{{ old('cert_bachiller', $contratacions->cert_bachiller)}}">
         </div>
 
-        <div class="form-group col-md-2">
+        <div class="form-group col-auto">
             <label for="cert_otros">Otras Certificaciones</label>
             <input type="text" style="width:50px" id="cert_otros" name="cert_otros"  value="{{ old('cert_otros', $contratacions->cert_otros)}}">
         </div>
-        <div class="form-group col-md-2">
+        <div class="form-group col-auto">
             <label for="cantidadcert">Cantidad Certificados</label>
-            <input id="cantidadcert" style="width:50px" name="cantidadcert" class="col col-lg-3" type="text" value={{ old('cantidadcert', $contratacions->cantidadcert)}}>
+            <input id="cantidadcert" style="width:50px" name="cantidadcert" class="col col-lg-4" type="text" value={{ old('cantidadcert', $contratacions->cantidadcert)}}>
 
             </div>
 
@@ -208,7 +215,7 @@
 
                  <div class="row">
 
-                 
+
                   <div class="form-group">
                          <div class="form-group">
                     <div class="form-check">&nbsp;&nbsp;&nbsp;

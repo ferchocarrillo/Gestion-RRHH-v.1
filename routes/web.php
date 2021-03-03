@@ -101,7 +101,7 @@ Route::resource('asignacion',       AsignacionController::class);
 Route::resource('nuevoempleado',    NuevoEmpleadoController::class);
 Route::resource('entrevistaFull',   EntrevistaFullController::class);
 Route::resource('entRRHH',          EntRRHHController::class);
-
+Route::resource('verNovedades',     verNovedadesController::class);
 
 
 

@@ -23,7 +23,7 @@ class NovedadesController extends Controller
      */
     public function index()
     {
-        
+
         $activos = nuevoEmpleado::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
         return view('novedades.index',compact('activos'));
     }
@@ -34,7 +34,7 @@ class NovedadesController extends Controller
 
     public function searchNovedades( Request $request)
 
-    {   
+    {
         $activos = Asignacion::all();
 
         $searchNovedades = $request->get('searchNovedades');
@@ -56,9 +56,9 @@ class NovedadesController extends Controller
     public function create()
     {
         $novedades = Novedades::all();
-        $activos = Contratacion::all();
-        
-        return view('novedades.create', compact('novedades','activos'));
+        $novedadeses = nuevoEmpleado::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
+
+        return view('novedades.create', compact('novedades','novedadeses'));
     }
 
     /**
@@ -69,20 +69,20 @@ class NovedadesController extends Controller
      */
     public function store(Request $request)
     {
-        
+
 
 
         Carbon::setLocale('es');
         Carbon::now();
         $hoy = Carbon::now();
-        
+
         $date1 = $request->input('desde');
         $date2 = $request->input('hasta');
         $tiempoA = $hoy->floatDiffInRealDays($date1);
         $tiempoB = $hoy->floatDiffInRealDays($date2);
-         
+
         $totalDias = $tiempoB - $tiempoA + 1;
-        
+
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
 
@@ -131,7 +131,7 @@ class NovedadesController extends Controller
      */
     public function edit($id_filtro)
     {
-        
+
         $asignacion = Asignacion::findOrFail($id_filtro);
         $tipoNovedades = TipoNovedad::all();
 

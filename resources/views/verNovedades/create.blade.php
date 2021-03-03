@@ -53,7 +53,7 @@
                                             <table class="table table-striped table-bordered table-hover table-dark">
                                                 <thead>
                                                   <tr>
-
+                                                    <th scope="col">#</th>
                                                     <th scope="col">Cedula</th>
                                                     <th scope="col">Nombres</th>
                                                     <th scope="col">Campaña</th>
@@ -71,10 +71,10 @@
                                                 <tbody>
 
 
-                                                    @foreach ($novedadeses as $novedades)
+                                                    @foreach ($activos as $novedades)
 
                                                     <tr>
-
+                                                        <th scope="row">{{ $novedades->id}}</th>
                                                         <td>{{ $novedades->cedula}}</td>
                                                         <td>{{ $novedades->nombres}}</td>
                                                         <td>{{ $novedades->campaña}}</td>
@@ -87,21 +87,42 @@
 
 
                                                         <td>
-                                                            <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Insertar Novedad</a>
+                                                            <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
 
                                                             <form action="{{url('/novedades/'.$novedades->id)}}" method="post">
 
                                                             @csrf
 
                                                             @method('DELETE')
+
+
+
+
                                                             {{--<button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
+
+
+
+
                                                     </form>
+
+
+
                                                         </td>
                                                     </tr>
                                                     @endforeach
+
+
+
+
+
                                                 </tbody>
                                               </table>
-                                              {{ $novedadeses->links() }}
+
+                                             {{-- {{ $activos->links() }}--}}
+
+
+
+
                                         </div>
                                     </div>
                                 </div>

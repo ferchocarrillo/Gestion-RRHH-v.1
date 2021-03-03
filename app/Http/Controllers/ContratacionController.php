@@ -142,11 +142,11 @@ class ContratacionController extends Controller
         Carbon::setLocale('es');
         $date = Carbon::now();
         $filtro=Filtro::findOrFail($id);
-        $entrevista1ses =Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $contrataciones=Capacitacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        $contratacions =Entrevista1::findOrFail($id);
+
         $bancoses = Bancos::all();
         $aprobaciones  = Aprobacion::all();
-        return view('contratacion.edit', compact('bancoses','filtro','contrataciones','entrevista1ses','date','aprobaciones'));
+        return view('contratacion.edit', compact('bancoses','filtro','contratacions','date','aprobaciones'));
     }
 
     /**
