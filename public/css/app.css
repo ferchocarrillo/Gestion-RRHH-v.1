@@ -759,6 +759,12 @@ pre code {
   max-width: 100%;
 }
 
+.colNew {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 800%;
+  }
+
 .row-cols-1 > * {
   flex: 0 0 100%;
   max-width: 100%;
@@ -2283,6 +2289,39 @@ select.form-control:focus::-ms-value {
   line-height: 1.5;
   border-radius: 0.3rem;
 }
+
+.form-control-lg-new {
+    height: calc(1.5em + 1rem + 2px);
+    padding: 0.5rem 1rem;
+    font-size: 1.125rem;
+    line-height: 0.5;
+    border-radius: 0.5rem;
+    outline-offset: 3px;
+
+    background-color: rgba(212, 247, 255, 0.9);
+
+
+  }
+  .form-control-lg-new2 {
+    height: calc(1.5em + 1rem + 2px);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+   
+    border-radius: 0.7rem;
+    background-color: rgba(250, 237, 227, 0.9);
+    outline-offset: 3px;
+
+  }
+  .form-control-lg-new3 {
+    height: calc(1.5em + 1rem + 2px);
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+   
+    border-radius: 0.7rem;
+    background-color: rgba(216, 216, 216, 0.9);
+    outline-offset: 3px;
+
+  }
 
 select.form-control[size],
 select.form-control[multiple] {
@@ -4966,6 +5005,19 @@ input[type=button].btn-block {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
+
+.card-new {
+    position: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    word-wrap: break-word;
+    background-color: rgb(231, 240, 236);
+    background-image: linear-gradient(#EAF2F8, #AAB7B8);
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.5rem;
+  }
 
 .card > hr {
   margin-right: 0;

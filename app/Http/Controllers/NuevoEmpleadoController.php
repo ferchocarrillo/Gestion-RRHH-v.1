@@ -164,7 +164,7 @@ class NuevoEmpleadoController extends Controller
             $nuevo->bancos                 = $request->bancos;
             $nuevo->estado                 = $request->estado;
             $nuevo->foco                   = $request->foco;
-            $nuevo->campaña                = $request->campana;
+            $nuevo->campaña                = $request->campaña;
             $nuevo->fuente                 = $request->fuente;
             $nuevo->usuario                = $user_id.','.$user_nombre;
 
@@ -193,7 +193,7 @@ class NuevoEmpleadoController extends Controller
      * @param  \App\nuevoEmpleado  $nuevoEmpleado
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_filtro, Request $request)
+    public function edit($id, Request $request)
 
     {
         $tipo_docs1 = $request->get('tipo_docs1');
@@ -230,15 +230,15 @@ class NuevoEmpleadoController extends Controller
 
 
         $t_docs= tipoDoc2 ::all();
-        $filtro = Filtro::findOrFail($id_filtro);
+        $filtro = Filtro::findOrFail($id);
         $campanas = Campana::all();
         $departamento = Departamentos::all();
-        $nuevos = Entrevista1::findOrFail($id_filtro);
+        $nuevos = Entrevista1::findOrFail($id);
         $focos = Foco::all();
         $NivelEdus = nivelEdu::all();
         $parentescos = parentesco::all();
         $tipo_docs = tipoDoc::all();
-        $nuevo2 = Entrevista2::findOrFail($id_filtro);
+        $nuevo2 = Entrevista2::findOrFail($id);
         $tipo_contratoses= tipoContrato::all();
         $supervisores = Supervisor::all();
         $sedes = Sede::all();
@@ -248,7 +248,7 @@ class NuevoEmpleadoController extends Controller
         $pensioneses = Pensiones::all();
         $epses = Eps::all();
         $cajaComps = cajaCompensacion::all();
-        $contratacion = Contratacion::findOrFail($id_filtro);
+        $contratacion = Contratacion::findOrFail($id);
         $nuevo = nuevoEmpleado::all();
         $generos = Genero::all();
         $tipo_rhs = rh::all();

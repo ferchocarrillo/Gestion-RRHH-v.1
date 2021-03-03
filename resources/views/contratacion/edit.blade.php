@@ -41,9 +41,9 @@
                 <div class="col-auto"><label for="correo">Correo</label><input type="text" class="form-control" style="width: 240px" id="correo" placeholder="correo" name="correo" value="{{ old('correo', $filtro->correo )}}"></div>
                 </p>
                 <p><div></div></p>
-              
+
               </div>
-         
+
                 <div class="row">
                   &nbsp;&nbsp;&nbsp;
                 <p>
@@ -55,15 +55,15 @@
                     <p>
                       <div class="col-auto"><label for="fuente">Fuente</label><input type="text" class="form-control" style="width: 240px" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtro->fuente )}}"></div>
                       </p>
-                      
-                      
+
+
         </div>
         <div class="row">
           <br>
         </div>
 
     </div>
-  </div> 
+  </div>
 
 
 <div class="card" style="margin-center: .5rem;">
@@ -77,7 +77,7 @@
         <div class="card" >
 
           <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="hv" id="hv1" value="Si">
+          <input class="form-check-input" type="radio" name="hv" id="hv1" value="Si"  required>
           <label class="form-check-label" for="hv1">Si</label>
         </div>
         <div class="form-check form-check-inline">
@@ -99,7 +99,7 @@
         <h5 class="card-title" style="color:#214c63;"><strong>Fotocopia de  servicio publico</strong></h5>
         <div class="card">
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="serv_publico" id="serv_publico1" value="Si">
+          <input class="form-check-input" type="radio" name="serv_publico" id="serv_publico1" value="Si"  required>
           <label class="form-check-label" for="serv_publico1">Si</label>
         </div>
         <div class="form-check form-check-inline">
@@ -126,7 +126,7 @@
         <h5 class="card-title" style="color:#214c63;"><strong>Apertura cuenta de nomina&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5>
         <div class="card">
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="cert_bancaria" id="cert_bancaria1" value="Si">
+            <input class="form-check-input" type="radio" name="cert_bancaria" id="cert_bancaria1" value="Si" required>
             <label class="form-check-label" for="cert_bancaria1">Si</label>
           </div>
           <div class="form-check form-check-inline">
@@ -137,9 +137,9 @@
             <input class="form-check-input" type="radio" name="cert_bancaria" id="cert_bancaria3" value="Pendiente" >
             <label class="form-check-label" for="cert_bancaria3" >Pendiente</label>
         </div>
-        <p><select name="bancos" id="bancos" class="form-control">
-        <option value="0">seleccione el banco</option>
-        
+        <p><select name="bancos" id="bancos" class="form-control" style="font-size: 12px" required>
+        <option value="0" >seleccione el banco</option>
+
         @foreach($bancoses as $bancos)<option value="{{ $bancos->banco}}">
             {{ $bancos->banco }}</option>
           @endforeach
@@ -154,9 +154,9 @@
         <div class="card-body">
           <h5 class="card-title" style="color:#214c63;"><strong>Examen medico ocupacional<br>emitido por el laboratorio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5>
           <div class="card">
-  
+
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="ex_medico" id="ex_medico1" value="Si">
+              <input class="form-check-input" type="radio" name="ex_medico" id="ex_medico1" value="Si" required>
               <label class="form-check-label" for="ex_medico1">Si</label>
             </div>
             <div class="form-check form-check-inline">
@@ -172,7 +172,7 @@
       </div>
     </div>
   </div>
- 
+
   </div>
 
 
@@ -186,7 +186,7 @@
           <h5 class="card-title" style="color:#214c63;"><strong>Antecedentes disciplinarios<br> emitidos por la procuraduría&nbsp;&nbsp;</strong></h5>
           <div class="card">
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="ant_procuraduria" id="ant_procuraduria1" value="Si">
+              <input class="form-check-input" type="radio" name="ant_procuraduria" id="ant_procuraduria1" value="Si" required>
               <label class="form-check-label" for="ant_procuraduria1">Si</label>
             </div>
             <div class="form-check form-check-inline">
@@ -204,13 +204,13 @@
 
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
-        
+
         <div class="card-body">
           <h5 class="card-title" style="color:#214c63;"><strong>Pasado judicial emitido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br> por la Policía Nacional</strong></h5>
           <div class="card">
-  
+
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="ant_ponal" id="ant_ponal1" value="Si">
+              <input class="form-check-input" type="radio" name="ant_ponal" id="ant_ponal1" value="Si" required>
               <label class="form-check-label" for="ant_ponal1">Si</label>
             </div>
             <div class="form-check form-check-inline">
@@ -221,10 +221,10 @@
               <input class="form-check-input" type="radio" name="ant_ponal" id="ant_ponal3" value="Pendiente">
               <label class="form-check-label" for="ant_ponal3">Pendiente</label>
           </div>
-       
+
         </div>
 
-  
+
         </div>
 
 
@@ -233,7 +233,7 @@
 
 
   </div>
-  
+
 
 
 
@@ -246,7 +246,7 @@
           <h5 class="card-title" style="color:#214c63;"><strong>Fotocopia de la libreta militar</strong></h5>
           <div class="card">
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="libreta_militar" id="libreta_militar1" value="Si">
+              <input class="form-check-input" type="radio" name="libreta_militar" id="libreta_militar1" value="Si" required>
               <label class="form-check-label" for="libreta_militar1">Si</label>
             </div>
             <div class="form-check form-check-inline">
@@ -260,23 +260,23 @@
    </div>
    <div><br><br></div>
         </div>
-        
-        
-        
-        
-        
-    
+
+
+
+
+
+
       </div>
     </div>
-  
-  
+
+
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
         <div class="card-body">
           <h5 class="card-title" style="color:#214c63;"><strong>5 fotocopias de la cedula <br>de ciudadanía ampliada al <br>150%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5>
           <div class="card">
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="copia_cedula" id="copia_cedula1" value="Si">
+              <input class="form-check-input" type="radio" name="copia_cedula" id="copia_cedula1" value="Si" required>
               <label class="form-check-label" for="copia_cedula1">Si</label>
             </div>
             <div class="form-check form-check-inline">
@@ -287,13 +287,13 @@
               <input class="form-check-input" type="radio" name="copia_cedula" id="copia_cedula3" value="Pendiente" >
               <label class="form-check-label" for="copia_cedula3" >Pendiente</label>
           </div>
-          <p><input type="number" name="cantidadcedula" id="cantidadcedula" placeholder="Cantidad entregada"  class="form-control"></p>
+          <p><input type="number" name="cantidadcedula" id="cantidadcedula" placeholder="Cantidad entregada"  class="form-control" required></p>
           </div>
          </div>
         </div>
       </div>
     </div>
-  
+
 
 
 
@@ -308,20 +308,20 @@
 <div class="card" style="margin-center: .5rem;">
   <center><h3>CERTIFICADOS DE ESTUDIOS</h3></center></div>
   <div class="container" style=" background-image: linear-gradient(#EAF2F8, #AAB7B8);  margin-center: 1.5rem;" >
- 
+
     <div class="row">
-  
-  
-  
+
+
+
 
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
         <div class="card-body">
           <h5 class="card-title" style="color:#214c63;"><strong>Certificado de bachiller&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5>
           <div class="card">
-  
+
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="cert_bachiller" id="cert_bachiller1" value="Si">
+              <input class="form-check-input" type="radio" name="cert_bachiller" id="cert_bachiller1" value="Si" required>
               <label class="form-check-label" for="cert_bachiller1">Si</label>
             </div>
             <div class="form-check form-check-inline">
@@ -332,22 +332,22 @@
               <input class="form-check-input" type="radio" name="cert_bachiller" id="cert_bachiller3" value="Pendiente">
               <label class="form-check-label" for="cert_bachiller3">Pendiente</label>
           </div>
-       
+
         </div>
         <div><br><br></div>
-  
+
         </div>
       </div>
     </div>
-  
-  
+
+
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
         <div class="card-body">
           <h5 class="card-title" style="color:#214c63;"><strong>Certificado Tecnico <br>o Tecnologo (otros)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5>
           <div class="card">
             <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_otros" id="cert_otros1" value="Si">
+    <input class="form-check-input" type="radio" name="cert_otros" id="cert_otros1" value="Si" required>
     <label class="form-check-label" for="cert_otros1">Si</label>
   </div>
   <div class="form-check form-check-inline">
@@ -358,7 +358,7 @@
     <input class="form-check-input" type="radio" name="cert_otros" id="cert_otros3" value="Pendiente">
     <label class="form-check-label" for="cert_otros3">Pendiente</label>
 </div>
-<p><input type="number" id="cantidadcert" name="cantidadcert" placeholder="Cantidad entregada"  class="form-control"></p>
+<p><input type="number" id="cantidadcert" name="cantidadcert" placeholder="Cantidad entregada"  class="form-control" required></p>
 </div>
    </div>
         </div>
@@ -367,7 +367,7 @@
     <div class="card" style="margin-center: .5rem;">
       <center><h3>REFERENCIAS</h3></center></div>
       <div class="container" style=" background-image: linear-gradient(#EAF2F8, #AAB7B8);  margin-center: 1.5rem;" >
-  
+
     <div class="row">
       <div class="col-sm-6">
         <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 2px solid;">
@@ -375,9 +375,9 @@
             <h5 class="card-title" style="color:#214c63;"><strong>2 Referencias laborales<br> últimos empleos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </strong></h5>
             <div class="card">
-    
+
              <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="ref_laborales" id="ref_laborales1" value="Si">
+              <input class="form-check-input" type="radio" name="ref_laborales" id="ref_laborales1" value="Si" required>
               <label class="form-check-label" for="ref_laborales1">Si</label>
             </div>
             <div class="form-check form-check-inline">
@@ -388,8 +388,8 @@
               <input class="form-check-input" type="radio" name="ref_laborales" id="ref_laborales3" value="Pendiente">
               <label class="form-check-label" for="ref_laborales3">Pendiente</label>
           </div>
-          <p><input type="number" id="cantidadlab" name="cantidadlab" placeholder="Cantidad entregada"  class="form-control"></p>
-    
+          <p><input type="number" id="cantidadlab" name="cantidadlab" placeholder="Cantidad entregada"  class="form-control" required></p>
+
           </div>
         </div>
       </div>
@@ -401,7 +401,7 @@
             </strong></h5>
             <div class="card">
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="ref_personales" id="ref_personales1" value="Si">
+                <input class="form-check-input" type="radio" name="ref_personales" id="ref_personales1" value="Si" required>
                 <label class="form-check-label" for="ref_personales1">Si</label>
               </div>
               <div class="form-check form-check-inline">
@@ -412,7 +412,7 @@
                 <input class="form-check-input" type="radio" name="ref_personales" id="ref_personales3" value="Pendiente">
                 <label class="form-check-label" for="ref_personales3">Pendiente</label>
             </div>
-            <p><input type="number" id="cantidadper" name="cantidadper" placeholder="Cantidad entregada"  class="form-control"></p>
+            <p><input type="number" id="cantidadper" name="cantidadper" placeholder="Cantidad entregada"  class="form-control" required></p>
           </div>
           </div>
         </div>
@@ -431,9 +431,9 @@
           <h5 class="card-title" style="color:#214c63;"><strong>Certificado EPS actual, no&nbsp;&nbsp;&nbsp;<br> mayor a 30 días
           </strong></h5>
           <div class="card">
-  
+
            <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_eps" id="cert_eps1" value="Si">
+    <input class="form-check-input" type="radio" name="cert_eps" id="cert_eps1" value="Si" required>
     <label class="form-check-label" for="cert_eps1">Si</label>
           </div>
           <div class="form-check form-check-inline">
@@ -444,8 +444,8 @@
     <input class="form-check-input" type="radio" name="cert_eps" id="cert_eps3" value="Pendiente">
     <label class="form-check-label" for="cert_eps3">Pendiente</label>
         </div>
-        
-  
+
+
         </div>
       </div>
     </div>
@@ -457,7 +457,7 @@
           </strong></h5>
           <div class="card">
             <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_pensiones" id="cert_pensiones1" value="Si">
+    <input class="form-check-input" type="radio" name="cert_pensiones" id="cert_pensiones1" value="Si" required>
     <label class="form-check-label" for="cert_pensiones1">Si</label>
             </div>
             <div class="form-check form-check-inline">
@@ -468,7 +468,7 @@
     <input class="form-check-input" type="radio" name="cert_pensiones" id="cert_pensiones3" value="Pendiente">
     <label class="form-check-label" for="cert_pensiones3">Pendiente</label>
           </div>
-         
+
         </div>
         </div>
       </div>
@@ -483,9 +483,9 @@
 
           </strong></h5>
           <div class="card">
-  
+
            <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="cert_cesantias" id="cert_cesantias1" value="Si">
+    <input class="form-check-input" type="radio" name="cert_cesantias" id="cert_cesantias1" value="Si" required>
     <label class="form-check-label" for="cert_cesantias1">Si</label>
           </div>
           <div class="form-check form-check-inline">
@@ -496,8 +496,8 @@
     <input class="form-check-input" type="radio" name="cert_cesantias" id="cert_cesantias3" value="Pendiente">
     <label class="form-check-label" for="cert_cesantias3">Pendiente</label>
         </div>
-        
-  
+
+
         </div>
       </div>
     </div>
@@ -505,9 +505,9 @@
 
   </div>
 </div>
-  
-  
-  
+
+
+
 
 
 
@@ -525,7 +525,7 @@
         <div class="card">
 
          <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="nucleo_familiar" id="nucleo_familiar1" value="Si">
+    <input class="form-check-input" type="radio" name="nucleo_familiar" id="nucleo_familiar1" value="Si" required>
     <label class="form-check-label" for="nucleo_familiar1">Si</label>
         </div>
         <div class="form-check form-check-inline">
@@ -548,7 +548,7 @@
       </strong></h5>
       <div class="card">
         <textarea class="form-control form-control-lg col-12" cols="40" placeholder="" id="documentos" name="documentos" style="height: 100px"></textarea>
-      
+
     </div>
     <div><br></div>
   </div>
@@ -556,7 +556,7 @@
 </div>
 
 
-  
+
 </div>
 
 
@@ -566,9 +566,9 @@
 
   <div class="card">
     <textarea class="form-control form-control-lg col-12" cols="40" placeholder="" id="observaciones" name="observaciones" style="height: 100px"></textarea>
-  
+
 </div>
-     
+
 
 <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
 <a href="{{route('capacitacion.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Volver</a>
@@ -584,8 +584,8 @@
 <div class="col-2"><input type="hidden" class="form-control" id="campaña" placeholder="campaña" name="campaña" value="{{ old('campaña', $filtro->campaña)}}"></div>
 <div class="col-2"><input type="hidden" class="form-control" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtro->fuente)}}"></div>
 
-<div class="col-2"><input type="hidden" class="form-control" id="residencia" placeholder="residencia" name="residencia" value="{{ old('residencia', $entrevista1ses->residencia)}}"></div>
-<div class="col-2"><input type="hidden" class="form-control" id="id_localidad" placeholder="id_localidad" name="id_localidad" value="{{ old('id_localidad', $entrevista1ses->id_localidad)}}"></div>
+<div class="col-2"><input type="hidden" class="form-control" id="residencia" placeholder="residencia" name="residencia" value="{{ old('residencia', $contratacions->residencia)}}"></div>
+<div class="col-2"><input type="hidden" class="form-control" id="id_localidad" placeholder="id_localidad" name="id_localidad" value="{{ old('id_localidad', $contratacions->id_localidad)}}"></div>
 <div class="col-2"><input type="hidden" class="form-control" id="estado" placeholder="estado" name="estado" value="activo"></div>
 
 

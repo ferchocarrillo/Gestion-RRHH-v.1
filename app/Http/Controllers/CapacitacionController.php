@@ -25,8 +25,8 @@ class CapacitacionController extends Controller
      */
     public function index()
     {
-      
-        $entrevistases = Filtro::orderBy('created_at', 'desc')->where('enviadoCapa','=','enviado capa')->paginate(10);
+
+        $entrevistases = Filtro::orderBy('created_at', 'desc')->where('enviadoCapa','=','enviadoCapa')->paginate(10);
         return view('capacitacion.index',compact('entrevistases'));
     }
 
@@ -74,9 +74,9 @@ class CapacitacionController extends Controller
         $filtro->perfil                 = $request->cargos;
         $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
-        $filtro->resultadoFormacion     = $request->resultadoFormacion;        
-        $filtro->obsFormacion           = $request->obsFormacion;          
-        $filtro->fechaFormacion         = $request->fechaFormacion;  
+        $filtro->resultadoFormacion     = $request->resultadoFormacion;
+        $filtro->obsFormacion           = $request->obsFormacion;
+        $filtro->fechaFormacion         = $request->fechaFormacion;
         $filtro->save();
 
         //return response()->json($filtro);
@@ -105,7 +105,7 @@ class CapacitacionController extends Controller
 
         Carbon::setLocale('es');
         $date = Carbon::now();
-       // $date = $date->format('d-m-Y'); 
+       // $date = $date->format('d-m-Y');
         $this->authorize('haveaccess','entFinalizacion.edit');
         $aprobaciones = Aprobacion::all();
         $filtro  = Filtro::findOrFail($id);
@@ -118,7 +118,7 @@ class CapacitacionController extends Controller
         $resultadoRrhhs = resultadoRRHH::all();
         //return response()->json($entFinalizacion);
     //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
-      return view('capacitacion.edit', compact('date','filtro','resultadoRrhhs', 'aprobaciones')); 
+      return view('capacitacion.edit', compact('date','filtro','resultadoRrhhs', 'aprobaciones'));
     }
 
     /**

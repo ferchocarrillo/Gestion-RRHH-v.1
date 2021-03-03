@@ -309,7 +309,11 @@ return [
     'icon'    => 'far fa-question-circle',
     'icon_color' => 'blue'
     ],
-
+    ['text'    => 'Registro de Novedades',
+    'url'     => 'novedades\create',
+    'icon'    => 'far fa-flag',
+    'icon_color' => 'green'
+    ],
 
 
 ],

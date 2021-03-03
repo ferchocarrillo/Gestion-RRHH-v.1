@@ -127,9 +127,9 @@ class DocumentoController extends Controller
         $filtro = filtro::findOrFail($id);
         $contratacion2 = capacitacion::all();
         $bancoses = Bancos::all();
-        $contratacions= entrevista1::findOrFail($id);
-        $contrataciones= contratacion::findOrFail($id);
-        return view('contratacion.edit', compact('filtro','contrataciones','contratacions', 'bancoses','contratacion2'));
+        $contrataciones= entrevista1::findOrFail($id);
+        $contratacions= contratacion::findOrFail($id);
+        return view('documento.edit', compact('filtro','contrataciones','contratacions', 'bancoses','contratacion2'));
 
 
     }
