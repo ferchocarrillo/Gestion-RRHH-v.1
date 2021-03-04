@@ -18,6 +18,8 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 <link rel = "preconnect" href = "https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
 <body>
 <title>Mentius-RRHH</title>
 </head>
@@ -36,14 +38,18 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     </div>
 </header>
 
-<div class="svg-hero">
-    <svg viewBox="0 0 1320 389" >
-        <path fill-opacity="1"   d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
-        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
-        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
-        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #fff "/>
-    </svg>
+
+<div class="hero-wave">
+    <div style="height: 150px;">
+        <svg viewBox="0 40 1320 390" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300"  fill="#ffffff"/>
+            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300"  fill="#ffffff"/>
+            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300"  fill="#ffffff"/>
+            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300"  fill="#ffffff"/>
+        </svg>
+    </div>
 </div>
+
 
 
     <section class="wave-contenedor webside">
@@ -104,7 +110,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     <div class="contenedor last-section">
         <div class="contenedor-textos-main">
             <h2 class="titulo left">7 Funciones De Recursos Humanos</h2>
-            <p class="parrafo">En calidad Mentius, tenemos el proposito de ayudarte a crear grandes experiencias de la forma correcta,
+            <p class="parrafo">En RRHH Mentius, tenemos el proposito de ayudarte a crear grandes experiencias de la forma correcta,
             entendiendo mejor tu función y su importancia. Queremos estar siempre presente cuando alcances tus metas, cuando cumplas con
             tus objetivos. Nosotros creemos en ti por eso buscaremos siempre la mejor manera de crecer juntos.</p>
             <!--<a href="" class="cta">learn more</a>-->
@@ -116,7 +122,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 <section class="info">
     <div class="contenedor"><br><br><br>
-        <h1 class="titulo">Mentius esta en busca de la sertificacion iso27001 "seguridad de la información"</h1>
+        <h1 class="titulo">Mentius está en busca de la certificación NTC ISO27001 (Seguridad de la Información)</h1>
     </div>
 </section>
 
@@ -175,36 +181,46 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
         <div class="imagen-port">
             <img src="\theme\images\grupo1.jpg" alt="">
             <div class="hover-galeria">
-                <i class="fas fa-chart-bar"></i>
-                <p>Lider Datos  </p>
-            </div>
-        </div>
-        <div class="imagen-port">
-            <img src="\theme\images\grupo2.jpg" alt="">
-            <div class="hover-galeria">
-                <i class="fas fa-comment-dollar"></i>
-                <p>Contador</p>
-            </div>
-        </div>
-        <div class="imagen-port">
-            <img src="\theme\images\grupo3.jpg" alt="">
-            <div class="hover-galeria">
-                <i class="fas fa-diagnoses"></i>
-                <p>Analista Jr </p>
-            </div>
-        </div>
-        <div class="imagen-port">
-            <img src="\theme\images\grupo4.jpg" alt="">
-            <div class="hover-galeria">
-                <i class="fas fa-phone-volume"></i>
-                <p>Secretaria</p>
+                <P>Tatiana Sofía Cáceres Pinzón</P>
+                <i class="fas fa-users"></i>
+                <p>Directora de recursos humanos</p>
             </div>
         </div>
         <div class="imagen-port">
             <img src="\theme\images\grupo5.jpg" alt="">
             <div class="hover-galeria">
-                <i class="fas fa-hand-holding-heart"></i>
-                <p> Lider De Bienestar</p>
+                <i class="fas fa-clipboard-check"></i>
+                <p>Juan David Martínez Fonseca <br>Analista De Contratación</p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo6.jpg" alt="">
+            <div class="hover-galeria">
+                <p>Laura Pineda Montoya</p>
+                <i class="far fa-id-badge"></i>
+                <p>Analista de Selección</p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo2.jpg" alt="">
+            <div class="hover-galeria">
+                <i class="fas fa-diagnoses"></i>
+                <p>Christian Camilo Buitrago Benitez</p>
+                <p>Analista De Recluitamiento</p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo4.jpg" alt="">
+            <div class="hover-galeria">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <p>Angie Tatiana Rodriguez Murcia <br>Auxiliar de  Nómina</p>
+            </div>
+        </div>
+        <div class="imagen-port">
+            <img src="\theme\images\grupo3.jpg" alt="">
+            <div class="hover-galeria">
+                <i class="fas fa-clipboard-check"></i>
+                <p>Analista Jr </p>
             </div>
         </div>
         <div class="imagen-port">
@@ -217,15 +233,8 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
         <div class="imagen-port">
             <img src="\theme\images\grupo10.jpg" alt="">
             <div class="hover-galeria">
-                <i class="fas fa-clipboard-check"></i>
-                <p>Analista De Contratacion </p>
-            </div>
-        </div>
-        <div class="imagen-port">
-            <img src="\theme\images\grupo8.jpg" alt="">
-            <div class="hover-galeria">
-                <i class="fas fa-users"></i>
-                <p>Directora de recursos humanos </p>
+                <i class="fas fa-comment-dollar"></i>
+                <p> </p>
             </div>
         </div>
     </div>
