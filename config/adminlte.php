@@ -315,6 +315,12 @@ return [
     'icon_color' => 'green'
     ],
 
+    ['text'    => 'Historico de Novedades',
+    'url'     => 'verNovedades',
+    'icon'    => 'fas fa-landmark',
+    'icon_color' => 'pink'
+    ],
+
 
 ],
 
