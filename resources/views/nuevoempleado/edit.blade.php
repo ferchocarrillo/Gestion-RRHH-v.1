@@ -30,7 +30,7 @@
                     </p></center>
                     </div>
                     </body>
-                    <div><input type="hidden" id="id_filtro" name="id_filtro" class="col-6 col-md-9" value="{{old('id', $filtro->id)}}" ></div><br>
+                    <div><input type="hidden" id="id_filtro" name="id_filtro" class="col-6 col-md-9" value="{{old('id_filtro', $nuevos->id_filtro)}}" ></div><br>
                 <div><input type="hidden" id="fuente" name="fuente" class="col-6 col-md-9" value="{{old('fuente', $filtro->fuente)}}" ></div><br>
             
                 

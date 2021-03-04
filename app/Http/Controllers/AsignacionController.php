@@ -107,7 +107,7 @@ class AsignacionController extends Controller
 
             $contatacion->id_filtro              = $request->id_filtro;
             $contatacion->nombres                = $request->nombres;
-            $contatacion->tipo_doc2              = $request->tipo_doc2;
+            $contatacion->tipoDoc              = $request->tipoDoc;
             $contatacion->cedula                 = $request->cedula;
             $contatacion->fexpe                  = $request->fexpe;
             $contatacion->depNac                 = $request->depNac;

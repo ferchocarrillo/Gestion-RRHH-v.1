@@ -109,11 +109,11 @@ class EntRRHHController extends Controller
 
         $filtro  = Filtro::findOrFail($id);
         // $entFinalizacion = EntFinalizacion::findOrFail($id);
-        $entrevista5s = entrevista5::findOrFail($id);
+        // $entrevista5s = entrevista5::findOrFail($id);
         // $entrevista1s = Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista2s = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista3s = Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista4s = Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        $entrevista5s = entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $resultadoRrhhs = resultadoRRHH::all();
         //return response()->json($entFinalizacion);
     //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));

@@ -72,6 +72,7 @@ Route::get('/searchcapacitacion','CapacitacionController@searchcapacitacion');
 Route::get('/searchDocumento','DocumentoController@searchDocumento');
 Route::get('/searchNovedades','NovedadesController@searchNovedades');
 Route::get('/searchCoord','NovedadesController@searchCoord');
+Route::get('/searchNovedades','VerNovedadesController@searchNovedades');
 
 
 Route::get('/charts', 'ChartController@index')->name('charts');

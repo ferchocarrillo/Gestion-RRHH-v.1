@@ -142,7 +142,7 @@ class ContratacionController extends Controller
         Carbon::setLocale('es');
         $date = Carbon::now();
         $filtro=Filtro::findOrFail($id);
-        $contratacions =Entrevista1::findOrFail($id);
+        $contratacions =Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
 
         $bancoses = Bancos::all();
         $aprobaciones  = Aprobacion::all();
@@ -163,7 +163,7 @@ class ContratacionController extends Controller
         $date = Carbon::now();
         $aprobaciones  = Aprobacion::all();
         $datoscontratacion =request()->except(['_token','_method']);
-        Contratacion::where('id','=',$id)->update($datoscontratacion);
+        Contratacion::where('id_filtro','=',$id)->update($datoscontratacion);
         $contratacion=Contratacion::findOrFail($id);
         //return response()->json($contratacion);
         return view('contratacion.edit', compact('contratacion','entFinalizacion','date','aprobaciones'));

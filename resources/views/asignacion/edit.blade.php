@@ -39,7 +39,7 @@
 <input type="hidden" id="ingreso" name="ingreso" value="{{ old('ingreso', $contatacion->ingreso)}}">
 
 <input type="hidden" id="estado" name="estado" value="{{ old('estado', $contatacion->estado)}}">
-<input type="hidden" id="tipo_doc2" name="tipo_doc2" value="{{ old('tipo_doc2', $contatacion->tipo_doc2)}}">
+<input type="hidden" id="tipoDoc" name="tipoDoc" value="{{ old('tipoDoc', $contatacion->tipoDoc)}}">
 <input type="hidden" id="fexpe" name="fexpe" value="{{ old('fexpe', $contatacion->fexpe)}}">
 <input type="hidden" id="depNac" name="depNac" value="{{ old('depNac', $contatacion->depNac)}}">
 <input type="hidden" id="id_ciudad" name="id_ciudad" value="{{ old('id_ciudad', $contatacion->id_ciudad)}}">

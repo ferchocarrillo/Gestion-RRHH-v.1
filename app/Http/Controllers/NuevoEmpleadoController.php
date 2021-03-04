@@ -113,7 +113,7 @@ class NuevoEmpleadoController extends Controller
 
             $nuevo->id_filtro              = $request->id_filtro;
             $nuevo->nombres                = $request->nombre;
-            $nuevo->tipo_doc2              = $request->tipoDoc;
+            $nuevo->tipoDoc                = $request->tipoDoc;
             $nuevo->cedula                 = $request->cedula;
             $nuevo->fexpe                  = $request->fexpe;
             $nuevo->depNac                 = $request->departamento;
@@ -233,12 +233,12 @@ class NuevoEmpleadoController extends Controller
         $filtro = Filtro::findOrFail($id);
         $campanas = Campana::all();
         $departamento = Departamentos::all();
-        $nuevos = Entrevista1::findOrFail($id);
+        $nuevos = Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $focos = Foco::all();
         $NivelEdus = nivelEdu::all();
         $parentescos = parentesco::all();
         $tipo_docs = tipoDoc::all();
-        $nuevo2 = Entrevista2::findOrFail($id);
+        $nuevo2 = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $tipo_contratoses= tipoContrato::all();
         $supervisores = Supervisor::all();
         $sedes = Sede::all();
@@ -248,8 +248,8 @@ class NuevoEmpleadoController extends Controller
         $pensioneses = Pensiones::all();
         $epses = Eps::all();
         $cajaComps = cajaCompensacion::all();
-        $contratacion = Contratacion::findOrFail($id);
-        $nuevo = nuevoEmpleado::all();
+        $contratacion = Contratacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        $nuevo = nuevoEmpleado::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $generos = Genero::all();
         $tipo_rhs = rh::all();
 

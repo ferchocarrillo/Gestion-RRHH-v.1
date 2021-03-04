@@ -150,7 +150,7 @@ class Entrevista5Controller extends Controller
     public function update(Request $request, $id)
     {
         $datosentrevista5 =request()->except(['_token','_method']);
-        entrevista5::where('id','=',$id)->update($datosentrevista5);
+        entrevista5::where('id_filtro','=',$id)->update($datosentrevista5);
         $entrevista5=entrevista5::findOrFail($id);
      //return response()->json($entrevista1);
      return view('entrevista5.edit', compact('entrevista5'));

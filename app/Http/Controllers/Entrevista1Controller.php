@@ -187,9 +187,9 @@ class Entrevista1Controller extends Controller
     {
 
 
-        $datosfiltro=request()->except(['_token','_method']);
-        filtro::where('id','=',$id)->update($datosfiltro);
-        $filtro=Filtro::findOrFail($id);
+        // $datosfiltro=request()->except(['_token','_method']);
+        // filtro::where('id','=',$id)->update($datosfiltro);
+        // $filtro=Filtro::findOrFail($id);
 
         $datosentrevista1 =request()->except(['_token','_method']);
         entrevista1::where('id_filtro','=',$id)->update($datosentrevista1);
