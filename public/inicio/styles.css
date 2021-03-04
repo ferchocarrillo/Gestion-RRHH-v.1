@@ -125,10 +125,13 @@ nav a {
 }
 
 /*carrusel de imagenes*/
-.info {
+.carrusel {
     /*estilo derecuadro*/
-    background-image: linear-gradient(to top,#1d4662  0%,  #72aab798 100%);
+    background-image: linear-gradient(to top,#1d46622a  0%,  #72aab72d 100%);
     height: 600px; /*alto de recuadro del degrade */
+}
+.carrusel h1{
+    text-align: center;
 }
 .wrapper {
     position: absolute;
@@ -142,15 +145,15 @@ nav a {
     height: 100%;
     transform-style: preserve-3d;
     transform: rotateY( 300deg) translateZ(360px);
-    animation: animate 1950s steps(200000, end) infinite;/*velocidad del giro y recuadros */
+    animation: animate 300s steps(9000, end) infinite;/*velocidad del giro y recuadros */
     background: #cafd13;
 }
 .single-img {
-    position: absolute;
-    top: 40px;
-    left: 50px;
+    position:fixed;
+    top: 30px;
+    left: 100px;
     width: 200px;
-    height: 390px;
+    height: 40px;
 }
 .single-img img {
     width: 300px;
@@ -186,7 +189,7 @@ nav a {
 }
 @keyframes animate {
     from {
-        transform: rotateY(10000deg);
+        transform: rotateY(1000deg);
     }
     to {
         transform: rotateY(0deg);
@@ -202,6 +205,21 @@ nav a {
 .last-section .contenedor-textos-main {
     width: 40%;
 }
+
+/*Info*/
+.info{
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    color: #1d4662;
+}
+.info h1{
+    text-align: center;
+}
+.info p{
+    text-align: center;
+}
+
+
+
 /*Cards*/
 .content-cards {
     display: flex; /*los pone uno al lado del otro*/
@@ -348,6 +366,7 @@ h2::after{
     width: 400px;
 }
 .container-footer footer .redes-footer {
+    text-decoration: none;
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -383,6 +402,7 @@ h2::after{
         #5443a8
     );
     color: #ffffff;
+
 }
 .container-footer footer .redes-footer .fa-linkedin-in:hover {
     background: #0274b3;

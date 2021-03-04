@@ -5,8 +5,27 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-                    <link rel="shortcut icon" href="home"><img src="\theme\images\icon\logo.jpg"  align= "center" height="70" width="150">
+
                 </body>
+
+                <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                    <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+                </center>
+                    <p
+                        <div class="col-md-4">
+                    <form action="/searchNovedades" method="GET">
+                    <div class="input-group">
+                    <p><input type="searchNovedades" name="searchNovedades" class="form-control" ></p>
+                <span class="input-group-prepend">
+                    <p><button type="submit" class="btn btn-primary">Buscar por Cedula</button></p>
+                </span>
+                </div>
+                </form>
+                </div>
+                </p>
+
+
+
 
 
 
@@ -24,7 +43,7 @@
 <div class="row">
                                     <div class="card-body">
                                  @include('custom.message')
-
+                    
                                         <table class="table table-striped table-bordered table-hover table-dark">
                                             <thead>
                                               <tr>
@@ -35,64 +54,69 @@
                                                 <th scope="col">Cargo</th>
                                                 <th scope="col">Foco</th>
                                                 <th scope="col">Jefe inmediato</th>
-
+                                                <th scope="col">Novedad</th>
+                                     
 
                                                 <th colspan="3"></th>
                                               </tr>
                                             </thead>
                                             <tbody>
-
-
+                    
+                    
                                                 @foreach ($novedades as $novedad)
-
+                    
                                                 <tr>
                                                     <th scope="row">{{ $novedad->id}}</th>
                                                     <td>{{ $novedad->cedula}}</td>
                                                     <td>{{ $novedad->nombres}}</td>
                                                     <td>{{ $novedad->campaña}}</td>
-                                                    <td>{{ $novedad->cargos}}</td>
+                                                    <td>{{ $novedad->cargo}}</td>
                                                     <td>{{ $novedad->foco}}</td>
                                                     <td>{{ $novedad->supervisor}}</td>
                                                     <td>{{ $novedad->novedad}}</td>
-
-
+                                                
+                    
                                                     <td>
-                                                        <a href="{{url('/verNovedades/'.$novedad->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
-
-                                                        <form action="{{url('/verNovedades/'.$novedad->id)}}" method="post">
-
+                                                        <a href="{{url('/novedades/'.$novedad->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
+                    
+                                                        <form action="{{url('/novedades/'.$novedad->id)}}" method="post">
+                    
                                                         @csrf
-
+                    
                                                         @method('DELETE')
-
-
-
-
+                    
+                    
+                    
+            
+                                                        
                                                         {{--<button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
-
-
-
-
+                    
+                    
+                    
+                    
                                                 </form>
-
-
-
+                    
+                                                
+                    
                                                     </td>
                                                 </tr>
                                                 @endforeach
-
-
-
-
-
+                    
+                                        
+                    
+                    
+                    
                                             </tbody>
+
                                           </table>
-
                                           {{ $novedades->links() }}
-
-
-
-
+                                          <a href="{{url('verNovedades')}}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Ver Novedades Registradas</a> 
+                    
+                                 
+                    
+                    
+                    
+                    
                                     </div>
                                 </div>
                             </div>
@@ -111,9 +135,9 @@
                                   <link rel="stylesheet" href="/css/admin_custom.css">
                                   @stop
                                   @section('js')
-
-
-
+                    
+                    
+                    
                           <script>
                           Swal.fire(
                             'REQUISICION',
@@ -122,8 +146,9 @@
                           )
                           </script>
                           @stop
-
+                    
                           @endsection
-
-
-
+                    
+                    
+                    
+                    

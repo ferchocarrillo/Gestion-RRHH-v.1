@@ -67,7 +67,8 @@
                     
                     
                     
-                    
+            
+                                                        
                                                         {{--<button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
                     
                     
@@ -75,18 +76,20 @@
                     
                                                 </form>
                     
-                    
+                                                
                     
                                                     </td>
                                                 </tr>
                                                 @endforeach
                     
-                    
+                                        
                     
                     
                     
                                             </tbody>
+
                                           </table>
+                                          <a href="{{url('verNovedades')}}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Ver Novedades Registradas</a> 
                     
                                           {{ $activos->links() }}
                     

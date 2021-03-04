@@ -35,7 +35,7 @@ class CreateNuevoEmpleadosTable extends Migration
             $table->string('rh');
             $table->string('nivelEdu');
             $table->string('cargo');
-            $table->boolean('corporativo');
+            $table->string('corporativo');
             $table->string('personaContacto');
             $table->string('parentesco');
             $table->string('personaDireccion');
@@ -44,9 +44,9 @@ class CreateNuevoEmpleadosTable extends Migration
             $table->unsignedInteger('numHijos')->nullable();
             $table->unsignedInteger('hijosMAs')->nullable();
             $table->unsignedInteger('hijosFem')->nullable();
-            $table->string('Preexistencia');
-            $table->string('alergias');
-            $table->string('medicamentos');
+            $table->string('Preexistencia')->nullable();
+            $table->string('alergias')->nullable();
+            $table->string('medicamentos')->nullable();
             $table->string('familiarp1')->nullable();
             $table->string('familiarp2')->nullable();
             $table->string('familiarp3')->nullable();
@@ -71,6 +71,7 @@ class CreateNuevoEmpleadosTable extends Migration
             $table->string('foco');
             $table->string('campaña');
             $table->string('fuente');
+            $table->string('cargos');
             $table->string('usuario');
             $table->timestamps();
         });

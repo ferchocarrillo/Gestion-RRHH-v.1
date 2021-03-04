@@ -107,7 +107,7 @@
 
       <script>
       Swal.fire(
-        'RESULTADO ENTREVISTA RRHH',
+        'RESULTADO ENTREVISTA JEFE INMEDIATO',
         'Actualiza los datos de los postulados',
         'success'
       )
