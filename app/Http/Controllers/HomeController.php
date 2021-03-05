@@ -75,7 +75,7 @@ class HomeController extends Controller
       $countfiltros  ['filtros'] = Filtro::where('citadoE', 'Citado Entrevista')->count();
       $count1filtros ['filtros'] = Filtro::where('noAplica', 'No Aplica')->count();
       $count2filtros ['filtros'] = Filtro::where('noInteresado', 'no interesado')->count();
-      $count3filtros ['filtros'] = Filtro::where('enviadoCapa', 'enviado capa')->count();
+      $count3filtros ['filtros'] = Filtro::where('enviadoCapa', 'enviadoCapa')->count();
       $count4filtros ['filtros'] = Filtro::where('enviadoExm', 'enviado a exam')->count();
       $count5filtros ['filtros'] = Filtro::where('PruebasE', 'Pruebas Eviadas')->count();
       $count6filtros ['filtros'] = Filtro::where('yaTrabaja', 'Ya trabaja')->count();
@@ -86,8 +86,16 @@ class HomeController extends Controller
       $count11filtros['filtros'] = Filtro::where('YaNoint', 'YaNoint')->count();
       $count12filtros['filtros'] = Filtro::where('estudiante', 'estudiante')->count();
       $count13filtros['filtros'] = Filtro::where('noAsisteEnt', 'noAsisteEnt')->count();
+      $count14filtros['filtros'] = Filtro::where('entrevistaJefeInm', 'entrevistaJefeInm')->count();
+      $count15filtros['filtros'] = Filtro::where('entrevistaGerencia', 'entrevistaGerencia')->count();
+      $count16filtros['filtros'] = Filtro::where('enviadocontratacion', 'enviadocontratacion')->count();
+     
 
 
+
+
+
+      
 
 
       $count00Fuentes['filtros'] = Filtro::where('fuente', 'Vincucuentas')->count();
@@ -164,7 +172,12 @@ class HomeController extends Controller
       'countRequi4ses',
       'usuarios',
       'cargo',
-      'dependencia'));
+      'count14filtros',
+      'count15filtros',
+      'count16filtros',
+        'dependencia',
+    
+    ));
     }
 
 

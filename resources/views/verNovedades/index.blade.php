@@ -43,7 +43,7 @@
 <div class="row">
                                     <div class="card-body">
                                  @include('custom.message')
-                    
+
                                         <table class="table table-striped table-bordered table-hover table-dark">
                                             <thead>
                                               <tr>
@@ -55,16 +55,16 @@
                                                 <th scope="col">Foco</th>
                                                 <th scope="col">Jefe inmediato</th>
                                                 <th scope="col">Novedad</th>
-                                     
+
 
                                                 <th colspan="3"></th>
                                               </tr>
                                             </thead>
                                             <tbody>
-                    
-                    
+
+{{--
                                                 @foreach ($novedades as $novedad)
-                    
+
                                                 <tr>
                                                     <th scope="row">{{ $novedad->id}}</th>
                                                     <td>{{ $novedad->cedula}}</td>
@@ -74,49 +74,49 @@
                                                     <td>{{ $novedad->foco}}</td>
                                                     <td>{{ $novedad->supervisor}}</td>
                                                     <td>{{ $novedad->novedad}}</td>
-                                                
-                    
+
+
                                                     <td>
                                                         <a href="{{url('/novedades/'.$novedad->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
-                    
+
                                                         <form action="{{url('/novedades/'.$novedad->id)}}" method="post">
-                    
+
                                                         @csrf
-                    
+
                                                         @method('DELETE')
-                    
-                    
-                    
-            
-                                                        
+
+
+
+
+
                                                         {{--<button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
-                    
-                    
-                    
-                    
+
+
+
+
                                                 </form>
-                    
-                                                
-                    
+
+
+
                                                     </td>
                                                 </tr>
-                                                @endforeach
-                    
-                                        
-                    
-                    
-                    
+                                                {{-- @endforeach --}}
+
+
+
+
+
                                             </tbody>
 
                                           </table>
-                                          {{ $novedades->links() }}
-                                          <a href="{{url('verNovedades')}}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Ver Novedades Registradas</a> 
-                    
-                                 
-                    
-                    
-                    
-                    
+                                          {{-- {{ $novedades->links() }} --}}
+                                          <a href="{{url('verNovedades')}}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Ver Novedades Registradas</a>
+
+
+
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -135,9 +135,9 @@
                                   <link rel="stylesheet" href="/css/admin_custom.css">
                                   @stop
                                   @section('js')
-                    
-                    
-                    
+
+
+
                           <script>
                           Swal.fire(
                             'REQUISICION',
@@ -146,9 +146,8 @@
                           )
                           </script>
                           @stop
-                    
+
                           @endsection
-                    
-                    
-                    
-                    
+
+
+

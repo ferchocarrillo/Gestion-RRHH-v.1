@@ -302,6 +302,10 @@ input[type=radio],
 input[type=checkbox] {
   box-sizing: border-box;
   padding: 0;
+  border: 1px solid rgb(235, 11, 11);
+  width: 22px;
+  height: 22px;
+
 }
 
 input[type=date],
@@ -2315,10 +2319,111 @@ select.form-control:focus::-ms-value {
   .form-control-lg-new3 {
     height: calc(1.5em + 1rem + 2px);
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    font-size:  0.9rem;
    
     border-radius: 0.7rem;
     background-color: rgba(216, 216, 216, 0.9);
+    outline-offset: 3px;
+
+  }
+
+  .form-control-lg-new4 {
+    height: calc(1.5em + 1rem + 10px);
+    width: calc(1.5em + 16rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+   
+    border-radius: 0.7rem;
+    background-color: rgba(242, 246, 246, 0.972);
+    outline-offset: 3px;
+
+  }
+  .form-control-lg-new5 {
+    height: calc(1.5em + 1rem + 10px);
+    width: calc(1.5em + 5rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+   
+    border-radius: 0.7rem;
+    background-color: rgba(242, 246, 246, 0.972);
+    outline-offset: 3px;
+
+  }
+  .form-control-lg-new6 {
+    height: calc(1.5em + 1rem + 10px);
+    width: calc(1.5em + 8rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+   
+    border-radius: 0.7rem;
+    background-color: rgba(242, 246, 246, 0.972);
+    outline-offset: 3px;
+
+  }
+  .form-control-lg-new7 {
+    height: calc(1.5em + 1rem + 10px);
+    width: calc(1.5em + 34rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+   color:#113049 ;
+    border-radius: 0.7rem;
+    background-color: rgba(242, 246, 246, 0.972);
+    outline-offset: 3px;
+
+  }
+  .form-control-lg-new8 {
+    height: calc(1.5em + 1rem + 10px);
+    width: calc(1.5em + 30rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+   color:#113049 ;
+    border-radius: 0.7rem;
+    background-color: rgba(242, 246, 246, 0.972);
+    outline-offset: 3px;
+
+  }
+  .form-control-lg-new9 {
+    height: calc(1.5em + 1rem + 10px);
+    width: calc(1.5em + 14rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    color:#113049 ;
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+
+  }
+
+  .form-control-lg-new10 {
+    height: calc(1.5em + 1rem + 10px);
+    width: calc(1.5em + 22rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    color:#113049 ;
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+
+  }
+  .form-control-lg-new11 {
+    height: calc(1.5em + 25rem + 10px);
+    width: calc(1.5em + 22rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    color:#113049 ;
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+
+  }
+  .form-control-lg-new12 {
+    height: calc(1.5em + 3rem + 7px);
+    width: calc(1.5em + 26rem + 7px);
+    padding: 0.5rem;
+    font-size: 18px;
+    color:#113049 ;
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.972);
     outline-offset: 3px;
 
   }
@@ -3812,6 +3917,9 @@ input[type=button].btn-block {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
+
+
+
 }
 
 .input-group {

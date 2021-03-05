@@ -33,7 +33,7 @@ class RequisicionController extends Controller
         $usuarios = User::all();
         $cargo = Cargo::all();
         $dependencia = Dependencia::all();
-        $requisiciones= Requisicion::orderBy('created_at', 'asc')->paginate(10);
+        $requisiciones= Requisicion::orderBy('revisado', 'asc')->paginate(10);
 
 
       $countRequises['requisicions'] = Requisicion::where('revisado', 'Aprobado')->count();
@@ -87,7 +87,7 @@ class RequisicionController extends Controller
 
         $requisicion = new Requisicion();
 
-        $requisicion->cargo             = $request->cargo;
+        $requisicion->cargo             = $request->cargos;
         $requisicion->cantidad          = $request->cantidad;
         $requisicion->sede              = $request->sede;
         $requisicion->dependencias      = $request->dependencia;
