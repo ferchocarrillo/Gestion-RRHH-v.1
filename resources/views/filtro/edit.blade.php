@@ -27,7 +27,7 @@
     <div class="form-row">
    <div class="col-3">
        <label for="fregistro">Fecha de registro incial</label>
-        <input type="date" class="form-control"
+        <input type="date" class="form-control-lg-new9"
         id="fregistro"
         placeholder="Fregistro"
         name="fregistro"

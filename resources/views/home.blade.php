@@ -27,6 +27,12 @@
 </center></div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 </body>
+
+<div class="card-header">
+<center><H4>GESTION CON LAS REQUISICIONES</H4></center>
+
+</div>
+
     <div class="row">
         <div class="col-sm-4">
           <div class="card">
@@ -348,11 +354,14 @@
 
 </div>
 
-
+<div class="card-header">
+  <center><H4>ENTREVISTAS</H4></center>
+  
+  </div>
 {{--inicio cuarto grafico filtro hojas de vida--}}
 
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-8">
       <div class="card">
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           <h5 class="card-title"><strong> FILTRO DE HOJAS DE VIDA</strong></h5>
@@ -432,12 +441,26 @@
 
             <tr>
                 <th scope="col">No Asiste Ent</th>
+                <th scope="col">Ent jefe Inmediato</th>
+                <th scope="col">Ent Gerencia</th>
+                <th scope="col">Enviado Contrat</th>
+                
+
               </tr>
             </thead>
             <tbody>
               <tr>
                 @foreach ($count13filtros as $count13filtro)
                 <td>{{ $count13filtro }}</td>
+                @endforeach
+                @foreach ($count14filtros as $count14filtro)
+                <td>{{ $count14filtro }}</td>
+                @endforeach
+                @foreach ($count15filtros as $count15filtro)
+                <td>{{ $count15filtro }}</td>
+                @endforeach
+                @foreach ($count16filtros as $count16filtro)
+                <td>{{ $count16filtro }}</td>
                 @endforeach
               </tr>
             </tbody>
@@ -448,15 +471,16 @@
         </div>
       </div>
     </div>
+
     <script>
       var ctx = document.getElementById('myChart5').getContext('2d');
       var myLineChart = new Chart(ctx, {
           type: 'bar',
           data: {
-              labels: ['Citado Entrevista', 'N/A', 'No Interesado','Enviado a Capacitacion','Enviado a Examenes','Se Remiten Pruebas','Ya Trabaja','Numero Equivocado', 'No Asiste Capacitacion', 'No Responde Segundo Llamado', 'Ya No Le Interesa', 'Estudiante','No Asiste a la Entrevista'],
+              labels: ['Citado Entrevista', 'N/A', 'No Interesado','Enviado a Capacitacion','Enviado a Examenes','Se Remiten Pruebas','Ya Trabaja','Numero Equivocado', 'No Asiste Capacitacion', 'No Responde Segundo Llamado', 'Ya No Le Interesa', 'Estudiante','No Asiste a la Entrevista','Ent jefe Inmediato','Ent Gerencia','Enviado Contrat'],
               datasets: [{
                   label: 'filtro hojas de vida',
-                  data: [{{ $countfiltro }}, {{ $count1filtro }}, {{ $count2filtro }},{{ $count3filtro }},{{ $count4filtro }},{{ $count5filtro }}, {{ $count6filtro }},{{ $count7filtro }},{{ $count9filtro }},{{ $count10filtro }},{{ $count11filtro }},{{ $count12filtro }}, {{ $count13filtro }}],
+                  data: [{{ $countfiltro }}, {{ $count1filtro }}, {{ $count2filtro }},{{ $count3filtro }},{{ $count4filtro }},{{ $count5filtro }}, {{ $count6filtro }},{{ $count7filtro }},{{ $count9filtro }},{{ $count10filtro }},{{ $count11filtro }},{{ $count12filtro }}, {{ $count13filtro }}, {{ $count14filtro }}, {{ $count15filtro }}, {{ $count16filtro }}],
                   backgroundColor: [
                       'rgba(216, 23, 23, 0.8)',
                       'rgba(216, 81, 23, 0.8)',
@@ -510,8 +534,8 @@
 <div class="col-sm-4">
     <div class="card">
       <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-        <h5 class="card-title"><strong>LUGAR DE RESIDENCIA DE LOS ENTREVISTADOS </strong></h5>
-         <canvas id="myChart7" width="260" height="260" style="background-color: white;"></canvas>
+        <h5 class="card-title"><strong>PROCEDENCIA DE LOS ENTREVISTADOS </strong></h5>
+         <canvas id="myChart7" width="160" height="160" style="background-color: white;"></canvas>
          <table class="table">
             <thead>
               <tr>
@@ -574,11 +598,20 @@
         }
     });
     </script>
+      </div>
 {{--fin sexto grafico capacitacion--}}
+
+
 
 {{--inicio quinto grafico capacitacion--}}
 
-    <div class="col-sm-4">
+<div class="card-header">
+  <center><H4>CAPACITACION</H4></center>
+  
+  </div>
+<div class="row">
+
+   <div class="col-sm-4">
       <div class="card">
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           <h5 class="card-title"><strong>RESULTADO DE CAPACITACION</strong></h5>
@@ -646,162 +679,7 @@
 {{--fin quinto grafico capacitacion--}}
 
 
-{{--inicio sexto grafico contrataciones--}}
 
-<div class="row">
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-          <h5 class="card-title"><strong> FILTRO DE HOJAS DE VIDA</strong></h5>
-           <canvas id="myChart5" width="160" height="160" style="background-color: white;"></canvas>
-           <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">C. Ent</th>
-                  <th scope="col">N/A</th>
-                  <th scope="col">No inte</th>
-                  <th scope="col">Env. Cap</th>
-              </tr>
-              <tr>
-                <br>
-
-                  <h6>Total de hojas filtradas: <strong> {{ $filtros->total() }}</strong></h6>
-
-                  @foreach ($countfiltros as $countfiltro)
-                  <td>{{ $countfiltro }}</td>
-                  @endforeach
-                  @foreach ($count1filtros as $count1filtro)
-                  <td>  {{ $count1filtro}}  </td>
-                  @endforeach
-                  @foreach ($count2filtros as $count2filtro)
-                  <td>  {{ $count2filtro}}  </td>
-                  @endforeach
-                  @foreach ($count3filtros as $count3filtro)
-                  <td>  {{ $count3filtro}}  </td>
-                  @endforeach
-                </tr>
-              <tr>
-                  <th scope="col">Env. Exm</th>
-                  <th scope="col">Pruebas Env</th>
-                  <th scope="col">Ya trabaja</th>
-                  <th scope="col"># Equivocado</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  @foreach ($count4filtros as $count4filtro)
-                  <td>{{ $count4filtro }}</td>
-                  @endforeach
-                  @foreach ($count5filtros as $count5filtro)
-                  <td>{{ $count5filtro }}</td>
-                  @endforeach
-                  @foreach ($count6filtros as $count6filtro)
-                  <td>{{ $count6filtro }}</td>
-                  @endforeach
-                  @foreach ($count7filtros as $count7filtro)
-                  <td>{{ $count7filtro }}</td>
-                  @endforeach
-                </tr>
-              </tbody>
-              <tr>
-                <th scope="col">No Asiste</th>
-                <th scope="col">No Responde2</th>
-                <th scope="col">Ya No Int</th>
-                <th scope="col">Estudiante</th>
-               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                @foreach ($count9filtros as $count9filtro)
-                <td>{{ $count9filtro }}</td>
-                @endforeach
-                @foreach ($count10filtros as $count10filtro)
-                <td>{{ $count10filtro }}</td>
-                @endforeach
-                @foreach ($count11filtros as $count11filtro)
-                <td>{{ $count11filtro }}</td>
-                @endforeach
-                @foreach ($count12filtros as $count12filtro)
-                <td>{{ $count12filtro }}</td>
-                @endforeach
-              </tr>
-            </tbody>
-
-            <tr>
-                <th scope="col">No Asiste Ent</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                @foreach ($count13filtros as $count13filtro)
-                <td>{{ $count13filtro }}</td>
-                @endforeach
-              </tr>
-            </tbody>
-
-
-
-            </table>
-        </div>
-      </div>
-    </div>
-    <script>
-      var ctx = document.getElementById('myChart5').getContext('2d');
-      var myLineChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: ['Citado Entrevista', 'N/A', 'No Interesado','Enviado a Capacitacion','Enviado a Examenes','Se Remiten Pruebas','Ya Trabaja','Numero Equivocado', 'No Asiste Capacitacion', 'No Responde Segundo Llamado', 'Ya No Le Interesa', 'Estudiante','No Asiste a la Entrevista'],
-              datasets: [{
-                  label: 'filtro hojas de vida',
-                  data: [{{ $countfiltro }}, {{ $count1filtro }}, {{ $count2filtro }},{{ $count3filtro }},{{ $count4filtro }},{{ $count5filtro }}, {{ $count6filtro }},{{ $count7filtro }},{{ $count9filtro }},{{ $count10filtro }},{{ $count11filtro }},{{ $count12filtro }}, {{ $count13filtro }}],
-                  backgroundColor: [
-                      'rgba(216, 23, 23, 0.8)',
-                      'rgba(216, 81, 23, 0.8)',
-                      'rgba(216, 128, 23, 0.8)',
-                      'rgba(216, 163, 23, 0.8)',
-                      'rgba(216, 198, 23, 0.8)',
-                      'rgba(201, 216, 23, 0.8)',
-                      'rgba(155, 216, 23, 0.8)',
-                      'rgba(108, 216, 23, 0.8)',
-                      'rgba(41, 216, 23, 0.8)',
-                      'rgba(23, 216, 70, 0.8)',
-                      'rgba(23, 216, 149, 0.8)',
-                      'rgba(23, 187, 216, 0.8)',
-                      'rgba(23, 108, 216, 0.8)'
-                  ],
-                  borderColor: [
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)',
-                      'rgba(0, 0, 0, 1)'
-
-                  ],
-                  borderWidth: 2
-              }]
-          },
-          options: {
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero: true
-                      }
-                  }]
-              }
-          }
-      });
-      </script>
-
-
-{{--fin sexto grafico contrataciones--}}
 
 
 

@@ -27,10 +27,10 @@
                           <div class="card-body">
 
 <p>
-            <input type="text" id ="titulo" name="titulo" class="form-control" placeholder="Titulo de la publicacion" required>
+            <input type="text" id ="titulo" name="titulo" class="form-control-lg-new10" placeholder="Titulo de la publicacion" required>
         </p>
         <p>
-            <select name=foco  class="form-control" required>
+            <select name=foco  class="form-control-lg-new10" required>
                <option value="0" selected>Foco
                <option value="Ventas">Ventas
                <option value="Servicio al Cliente">Servicio al Cliente
@@ -49,7 +49,7 @@
                </select>
             </p>
             <p>
-               <textarea class="form-control"  id ="informacion" name="informacion" rows="12" placeholder="Registre aqui la informacion que se publicara"></textarea>
+               <textarea class="form-control-lg-new11"  id ="informacion" name="informacion" rows="12" placeholder="Registre aqui la informacion que se publicara"></textarea>
             </p>
             </div>
         </div>
@@ -62,20 +62,20 @@
 
 <div class="row">
             <p>
-    <label for="finicio" class="text-left" >Fecha de inicio</label>
-    <input type="date" id ="finicio" name="finicio" class="form-control" placeholder="Fecha de inicio" required>
+    <label for="finicio" class="text-left" >Fecha de inicio&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <input type="date" id ="finicio" name="finicio" class="form-control-lg-new9" placeholder="Fecha de inicio" required>
 </p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <p>
-              <label for="tiempo" class="text-left" >Tiempo de vigencia</label><input type="text" id ="tiempo" name="tiempo" class="form-control" placeholder="" required>
+              <label for="tiempo" class="text-left" >Tiempo de vigencia&nbsp;&nbsp;</label><input type="text" id ="tiempo" name="tiempo" class="form-control-lg-new9" placeholder="" required>
         </p>
       </div>
 
         <div class="conteiner-foto">
 
         <label for="foto" class="text-left">Foto</label>
-        <input type="file" class="form-control" name="Foto" id "Foto" value=""  required>
+        <input type="file" class="form-control-lg-new10" name="Foto" id "Foto" value=""  required>
             </div>
             <br>
             <h3 for="publicacion"  class="card-header" style="font-size: 7mm"  >Fuentes de Publicacion</h3>
@@ -85,10 +85,10 @@
           <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="card-body">
 
-      <div style="width:100px">
+      <div >
         <tr valign="bottom">
           <td>
-            <div style="float:left; width:100%; display:flex;">
+            <div style="float:left;  display:flex;">
                 <input type="checkbox" id="vv" name="vv" value="vincuventas">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Vincuventas</label>
             </div>
@@ -97,34 +97,34 @@
         </tr>
       </div>
 
-      <div style="width:100px">
+      <div >
         <tr valign="bottom">
           <td>
-            <div style="float:left; width:100%; display:flex;">
+            <div style="float:left; display:flex;">
                 <input type="checkbox" id="ct" name="ct" value="computrabajo">
-                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Computrabajo</label>
+                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Computrabajo&nbsp;&nbsp;&nbsp;</label>
             </div>
           </td>
 
         </tr>
       </div>
 
-      <div style="width:100px">
+      <div >
         <tr valign="bottom">
           <td>
-            <div style="float:left; width:250%; display:flex;">
+            <div style="float:left; display:flex;">
                 <input type="checkbox" id="sne" name="sne" value="sne">
-                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Servicio nacional de empleo</label>
+                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;SNE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
             </div>
           </td>
 
         </tr>
       </div>
 
-      <div style="width:100px">
+      <div >
         <tr valign="bottom">
           <td>
-            <div style="float:left; width:100%; display:flex;">
+            <div style="float:left;  display:flex;">
                 <input type="checkbox" id="ccc" name="ccc" value="compensar">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Compensar</label>
             </div>
@@ -132,12 +132,13 @@
 
         </tr>
       </div>
-          <div style="width:100px">
+      <div >
             <tr valign="bottom">
               <td>
-                <div style="float:left; width:200%; display:flex;">
-                    <input type="checkbox" id="rt" name="rt" value="rt">
-                    <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Referidos Trabajadores</label>
+                <div style="float:left;  display:flex;">
+                  <input type="checkbox" id="rt" name="rt" value="rt">
+                  
+                  <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Ref Empleados</label>
                 </div>
               </td>
 
@@ -146,6 +147,7 @@
         </div>
     </div>
 </div>
+
 <div class="col-sm-6">
     <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
       <div class="card-body">
@@ -154,7 +156,7 @@
           <td>
             <div style="float:left; width:200%; display:flex;">
                 <input type="checkbox" id="rj" name="rj" value="rj">
-                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Referidos Jefes</label>
+                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Ref Jefes</label>
             </div>
           </td>
 
@@ -165,7 +167,7 @@
           <td>
             <div style="float:left; width:200%; display:flex;">
                 <input type="checkbox" id="rc" name="rc" value="rc">
-                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Referidos Clientes</label>
+                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Ref Clientes</label>
             </div>
           </td>
 

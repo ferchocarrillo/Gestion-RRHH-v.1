@@ -30,25 +30,25 @@ class="form-horizontal">
                             <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                                 <div class="card-body">
             <p>
-                <input type="date" id ="fregistro" name="fregistro" class="form-control" placeholder="fecha de registro" required>
+                <input type="date" id ="fregistro" name="fregistro" class="form-control-lg-new10" placeholder="fecha de registro" required>
             </p>
             <p>
-                <input type="text" id ="nombre" name="nombre" class="form-control" placeholder="Nombre del postulado" required>
+                <input type="text" id ="nombre" name="nombre" class="form-control-lg-new10" placeholder="Nombre del postulado" required>
             </p>
             <p>
-                <input type="number" id ="cedula" name="cedula" class="form-control" placeholder="Cedula del postulado" required>
+                <input type="number" id ="cedula" name="cedula" class="form-control-lg-new10" placeholder="Cedula del postulado" required>
             </p>
             <p>
-                <input type="text" id ="telefono" name="telefono" class="form-control" placeholder="Telefono del postulado" required>
+                <input type="text" id ="telefono" name="telefono" class="form-control-lg-new10" placeholder="Telefono del postulado" required>
             </p>
             <p>
-                <input type="mail" id ="correo" name="correo" class="form-control" placeholder="Correo del postulado" required>
+                <input type="mail" id ="correo" name="correo" class="form-control-lg-new10" placeholder="Correo del postulado" required>
             </p>
 
 
             <p>
                 
-<input list="cargos" type="text" name="cargos" class="form-control" placeholder="Perfiles" >
+<input list="cargos" type="text" name="cargos" class="form-control-lg-new10" placeholder="Perfiles" >
 
 <datalist name="cargos" id="cargos">
   <option value="">Perfiles</option>
@@ -58,7 +58,7 @@ class="form-horizontal">
 </datalist>
 </p>
 <p>
-<input list="campana" type="text" name="campana" class="form-control" placeholder="Campañas">
+<input list="campana" type="text" name="campana" class="form-control-lg-new10" placeholder="Campañas">
 
 <datalist name="campana" id="campana" >
   <option value="">Campañas</option>
@@ -69,7 +69,7 @@ class="form-horizontal">
 </p>
 
 <p>
-  <input list="fuente" type="text" name="fuente" class="form-control" placeholder="Por donde conocio la oferta">
+  <input list="fuente" type="text" name="fuente" class="form-control-lg-new10" placeholder="Por donde conocio la oferta">
   
   <datalist name="fuente" id="fuente" >
     <option value="">Fuentes</option>
@@ -188,7 +188,7 @@ class="form-horizontal">
                    </div>
                <div  class="card-header" style="font-size: 8mm" >
                                     <label for="observacion">Observaciones</label>
-                                     <textarea class="form-control" id="observacion" name="observacion" rows="3"></textarea>
+                                     <textarea class="form-control-lg-new12" id="observacion" name="observacion" rows="3"></textarea>
                             </div>
                         </div>
                     </div>

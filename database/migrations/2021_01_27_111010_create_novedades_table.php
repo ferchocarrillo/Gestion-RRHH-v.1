@@ -25,8 +25,8 @@ class CreateNovedadesTable extends Migration
             $table->string('estado');
             $table->string('novedad');
             $table->longText('observaciones');
-            $table->date('fecha');
-            $table->date('fecha');
+            $table->date('desde');
+            $table->date('hasta');
             $table->integer('totalDias');
             $table->timestamps();
         });

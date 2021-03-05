@@ -27,11 +27,11 @@
                                 <div class="col-4">
 
 <main>
-                                    <input list="cargo" class="form-control" placeholder="Cargo" required />
-                                    <datalist name="cargo" id="cargo">
+                                    <input list="cargos" name= "cargos" class="form-control-lg-new4" placeholder="Cargo"  required />
+                                    <datalist name="cargos" id="cargos" class="form-control-lg-new4">
 
 
-                            <option value="">Cargo</option>
+                            <option value="" >Cargo</option>
                             @foreach($cargo as $cargos)
                                 <option value="{{ $cargos->cargo}}">{{ $cargos->cargo }}</option>
                             @endforeach
@@ -41,12 +41,12 @@
                     </div>
 
                         <div class="col">
-                        <input type="number" id ="cantidad" name="cantidad" class="form-control" placeholder="Cantidad" required>
+                        <input type="number" id ="cantidad" name="cantidad" class="form-control-lg-new5" placeholder="Cantidad" required>
                     </div>
 
     <div class="col">
 
-        <input list="sede" class="form-control" placeholder="Sede" required />
+        <input list="sede" class="form-control-lg-new5"  name= "sede" placeholder="Sede" required />
         <datalist name="sede" id="sede" >
 
 
@@ -58,7 +58,7 @@
                     </div>
 
     <div class="col">
-                        <select name="dependencia"  id="dependencia" class="form-control" required>
+                        <select name="dependencia"  id="dependencia" class="form-control-lg-new6" required>
 
                             <option value="">Dependencias</option>
                             @foreach ($dependencias as $dependencia)
@@ -71,7 +71,7 @@
                         </div>
 
     <div class="col">
-        <select name="id_area" id="id_area" class="form-control" placeholder="Area" required> </select>
+        <select name="id_area" id="id_area" class="form-control-lg-new6" placeholder="Area" required> </select>
     </select>
     </div>
 </div>
@@ -97,10 +97,10 @@
 
             <input class="form-check-input" type="radio" value="maternidad/incapacidad" name="motivos" id="motivos">
            <strong><label class="form-check-label" for="reemplaza">
-                Reemplazo por Maternidad / Incapacidad</label></strong>
+                &nbsp;&nbsp;Reemplazo por Maternidad / Incapacidad</label></strong>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="text" id ="reemplaza"  class="col-sm-7 col-form-label" name= "reemplaza"   align='right' placeholder="A quien reemplaza?">
+                <input type="text" id ="reemplaza"  class="form-control-lg-new7" name= "reemplaza"   align='right' placeholder="A quien reemplaza?">
 
             </div>
             <br>
@@ -109,34 +109,34 @@
                 <input class="form-check-input" type="radio" value="Otro" name="motivos" id="motivos">
 
                <strong> <label class="form-check-label" for="otro">
-                Otro</label></strong>
+                &nbsp;&nbsp;Otro</label></strong>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="text" id ="cual" name="cual" class="col-sm-7 col-form-label"  align='right' placeholder="Cual?">
+                <input type="text" id ="cual" name="cual" class="form-control-lg-new7"  align='right' placeholder="Cual?">
                 </div>
 
 <br>
 <div class="form-row">
             <div><input class="form-check-input" type="radio" value="retiro" name="motivos" id="motivos">
            <strong> <label class="form-check-label" for="Retiro">
-              Retiro / Renuncia Empleado
+              &nbsp;&nbsp;Retiro / Renuncia Empleado
             </label></strong>
         </div>
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div>
             <input class="form-check-input" type="radio" value="nuevoCargo" name="motivos" id="motivos">
            <strong> <label class="form-check-label" for="nuevo_cargo">
-                Nuevo Cargo
+                &nbsp;&nbsp;Nuevo Cargo
             </label></strong>
         </div>
-    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div >
             <input class="form-check-input" type="radio" value="nuevoCupo" name="motivos" id="motivos">
            <strong> <label class="form-check-label" for="nuevo_cupo">
-                Nuevo cupo Nomina
+                &nbsp;&nbsp;Nuevo cupo Nomina
             </label></strong>
           </div>
 </div>
@@ -166,11 +166,11 @@
     <div class="card-body">
         <div class="form-row">
             <div class="col-6">
-            <input type="text" id ="tiempo" name="tiempo" class="form-control" placeholder="Tiempo de vinculacion" required>
+            <input type="text" id ="tiempo" name="tiempo" class="form-control-lg-new8" placeholder="Tiempo de vinculacion" required>
         </div>
 
         <div class="col-6">
-            <input list="dias" class="form-control" placeholder="Dias" required />
+            <input list="dias" class="form-control-lg-new8" name="dias" placeholder="Dias" required />
             <datalist name="dias" id="dias">
 
      <option value="" selected>Dias a trabajar
@@ -190,11 +190,11 @@
 
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label >
-                <input type="radio" name="jornada"value="completo"> Tiempo Completo
+                <input type="radio" name="jornada"value="completo"> &nbsp;&nbsp;Tiempo Completo
             </label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <label >
-                <input type="radio" name="jornada" value="medio"> Medio Tiempo
+                <input type="radio" name="jornada" value="medio"> &nbsp;&nbsp;Medio Tiempo
                              </label>
                           </div>
 
@@ -204,7 +204,7 @@
 
     <div class="card" style="width: 20em;">
     <label for="finicio">Fecha de inicio de actividades</label>
-    <input type="date" id="finicio" name="finicio" class="form-control" required>
+    <input type="date" id="finicio" name="finicio" class="form-control-lg-new8" required>
                           </div>
                         </div>
 
@@ -215,14 +215,21 @@
 </div>
 
     <div class="form-row">
-        <button type="submit" class="btn btn-primary btn-sm">
-            <i class="fa fa-dot-circle-o"></i>REGISTRAR
+        &nbsp;&nbsp;
+        &nbsp; 
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-file-signature">&nbsp;</i>REGISTRAR
         </button>
-        <a href=({{ route('requisicion.create')}})><button type="reset"  class="btn btn-danger btn-sm">
+        &nbsp;&nbsp;
+        &nbsp; 
+            <a href=({{ route('requisicion.create')}})><button type="reset"  class="btn btn-danger">
             <i class="fa fa-ban"></i> VOLVER
         </button></a>
      </div>
 </main>
+&nbsp;&nbsp;
+&nbsp;   &nbsp;&nbsp;
+&nbsp; 
 
     </form>
 

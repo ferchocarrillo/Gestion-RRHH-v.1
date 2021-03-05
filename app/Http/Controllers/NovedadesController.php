@@ -106,7 +106,7 @@ class NovedadesController extends Controller
         $filtro->desde                  = $request->desde;
         $filtro->hasta                  = $request->hasta;
         $filtro->totalDias              = $totalDias;
-    $filtro->save();
+        $filtro->save();
 
         //return response()->json($filtro);
         return back();

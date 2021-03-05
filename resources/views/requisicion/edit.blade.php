@@ -31,7 +31,7 @@
     <div class="form-row">
    <div class="col-3">
        <label for="cargo">Cargo</label>
-        <input type="text" class="form-control"
+        <input type="text" class="form-control-lg-new9"
         id="cargo"
         placeholder="Cargo"
         name="cargo"
@@ -39,7 +39,7 @@
     </div>
     <div class="col-3">
         <label for="cantidad">Cantidad</label>
-         <input type="number" class="form-control"
+         <input type="number" class="form-control-lg-new9"
          id="cantidad"
          placeholder="cantidad"
          name="cantidad"
@@ -48,7 +48,7 @@
          <div class="col-3">
             <label for="sede">Sede</label>
                <input type="text"
-               class="form-control"
+               class="form-control-lg-new9"
                id="sede"
                placeholder="sede"
                name="sede"
@@ -57,7 +57,7 @@
 
          <div class="col-3">
               <label for="dependencias">Dependencia</label>
-              <input type="text" class="form-control"
+              <input type="text" class="form-control-lg-new9"
               id="dependencias"
               placeholder="Dependencias"
               name="dependencias"
@@ -65,7 +65,7 @@
             </div>
          <div class="col-3">
               <label for="area">Area</label>
-              <input type="text" class="form-control"
+              <input type="text" class="form-control-lg-new9"
               id="area"
               placeholder="Area"
               name="area"
@@ -74,7 +74,7 @@
 
         <div class="col-3">
               <label for="motivos">Motivos</label>
-              <input type="text" class="form-control"
+              <input type="text" class="form-control-lg-new9"
               id="motivos"
               placeholder="Motivos"
               name="motivos"
@@ -83,7 +83,7 @@
 
         <div class="col-3">
               <label for="reemplaza">Reemplaza</label>
-              <input type="text" class="form-control"
+              <input type="text" class="form-control-lg-new9"
               id="reemplaza"
               placeholder="sin datos"
               name="reemplaza"
@@ -92,7 +92,7 @@
 
         <div class="col-3">
               <label for="cual">Cual</label>
-              <input type="text" class="form-control"
+              <input type="text" class="form-control-lg-new9"
               id="cual"
               placeholder="Cual"
               name="cual"
@@ -101,7 +101,7 @@
 
         <div class="col-3">
               <label for="tiempo">Tiempo</label>
-              <input type="text" class="form-control"
+              <input type="text" class="form-control-lg-new9"
               id="tiempo"
               placeholder="numero de grabacion"
               name="tiempo"
@@ -110,7 +110,7 @@
 
         <div class="col-3">
               <label for="dias">Dias</label>
-              <input type="text" class="form-control"
+              <input type="text" class="form-control-lg-new9"
               id="dias"
               placeholder="dias"
               name="dias"
@@ -119,7 +119,7 @@
 
            <div class="col-3">
             <label for="jornada">Jornada</label>
-            <input type="text" class="form-control"
+            <input type="text" class="form-control-lg-new9"
             id="jornada"
             placeholder="jornada"
             name="jornada"
@@ -128,7 +128,7 @@
 
          <div class="col-3">
             <label for="finicio">Fecha de inicio</label>
-            <input type="text" class="form-control"
+            <input type="text" class="form-control-lg-new9"
             id="finicio"
             placeholder="fecha inicio"
             name="finicio"
@@ -136,7 +136,7 @@
          </div>
          <div class="col-3">
             <label for="solicita">Solicita</label>
-            <input type="text" class="form-control"
+            <input type="text" class="form-control-lg-new9"
             id="solicita"
             placeholder="solicita"
             name="solicita"
@@ -147,7 +147,7 @@
     <div class="card-header" >
     <center> <h4 for="revisado">Exclusivo Area RR.HH</h4></center>
     </div>
-        <select name=revisado onchange="cambia_estadorevisado()" class="form-control">
+        <select name=revisado onchange="cambia_estadorevisado()" class="form-control-lg-new8">
 
         <option value="0" selected>Seleccione...
         <option value="Aprobado">Aprobado
