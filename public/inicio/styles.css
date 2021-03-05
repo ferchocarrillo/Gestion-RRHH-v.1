@@ -179,8 +179,8 @@ background: linear-gradient(to right, #81d1df, #4CA1AF); /* W3C, IE 10+/ Edge, F
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transform: rotateY( -300deg) translateZ(-360px);
-    animation: animate 800s steps(200000, end) infinite;/*velocidad del giro y recuadros */
+    transform: rotateY( -360deg) translateZ(-300px);
+    animation: animate 150s steps(200000, end) infinite;/*velocidad del giro y recuadros */
 }
 .single-img {
     position:fixed;
@@ -193,42 +193,156 @@ background: linear-gradient(to right, #81d1df, #4CA1AF); /* W3C, IE 10+/ Edge, F
     width: 300px;
     height: 200px;
     border: 5px solid #000000;
+    border-radius: 20px;
 }
 .single-img.img-1 {
     transform: rotateY(0deg) translateZ(600px);
 }
 .single-img.img-2 {
-    transform: rotateY(40deg) translateZ(600px);
+    transform: rotateY(45deg) translateZ(600px);
 }
 .single-img.img-3 {
-    transform: rotateY(80deg) translateZ(600px);
+    transform: rotateY(90deg) translateZ(600px);
 }
 .single-img.img-4 {
-    transform: rotateY(120deg) translateZ(600px);
+    transform: rotateY(135deg) translateZ(600px);
 }
 .single-img.img-5 {
-    transform: rotateY(160deg) translateZ(600px);
+    transform: rotateY(180deg) translateZ(600px);
 }
 .single-img.img-6 {
-    transform: rotateY(200deg) translateZ(600px);
+    transform: rotateY(225deg) translateZ(600px);
 }
 .single-img.img-7 {
-    transform: rotateY(240deg) translateZ(600px);
+    transform: rotateY(270deg) translateZ(600px);
 }
 .single-img.img-8 {
-    transform: rotateY(280deg) translateZ(600px);
+    transform: rotateY(315deg) translateZ(600px);
 }
 .single-img.img-9 {
-    transform: rotateY(320deg) translateZ(600px);
+    transform: rotateY(360deg) translateZ(600px);
 }
 @keyframes animate {
     from {
-        transform: rotateY(10000deg);
-    }
-    to {
         transform: rotateY(0deg);
     }
+    to {
+        transform: rotateY(360deg);
+    }
 }
+
+
+
+
+
+/*carrusel2*/
+.contentt-all{
+    width: 210px;
+    margin: auto;
+    perspective: 1000px;
+    position: relative;
+    margin-top: 50px;
+}
+.contentt-carrusel{
+    width: 100%;
+    position: absolute;
+    animation: rotar 30s infinite linear;
+    transform-style: preserve-3d;
+}
+.contentt-carrusel:hover{
+    animation-play-state: paused;
+    cursor: pointer;
+}
+.contentt-carrusel figure{
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    position: absolute;
+    box-shadow: 0 0 0 0 black;
+    transition:all 300ms;
+    border: 5px solid #000000;
+    border-radius: 30px;
+}
+.contentt-carrusel figure:hover{
+    box-shadow: 0 0 20px 0 black;
+    transition:all 300ms;
+}
+
+.contentt-carrusel figure:nth-child(1)  {transform: rotateY(0deg)   translateZ(450px);}
+.contentt-carrusel figure:nth-child(2)  {transform: rotateY(40deg)  translateZ(450px);}
+.contentt-carrusel figure:nth-child(3)  {transform: rotateY(80deg)  translateZ(450px);}
+.contentt-carrusel figure:nth-child(4)  {transform: rotateY(120deg) translateZ(450px);}
+.contentt-carrusel figure:nth-child(5)  {transform: rotateY(160deg) translateZ(450px);}
+.contentt-carrusel figure:nth-child(6)  {transform: rotateY(200deg) translateZ(450px);}
+.contentt-carrusel figure:nth-child(7)  {transform: rotateY(240deg) translateZ(450px);}
+.contentt-carrusel figure:nth-child(8)  {transform: rotateY(280deg) translateZ(450px);}
+.contentt-carrusel figure:nth-child(9)  {transform: rotateY(320deg) translateZ(450px);}
+.contentt-carrusel figure:nth-child(10) {transform: rotateY(360deg) translateZ(450px);}
+.contentt-carrusel img{
+    width: 100%;
+}
+.contentt-carrusel img:hover{
+    transform: scale(1.1);
+    transition: all 200ms;
+}
+@keyframes rotar{
+    from{
+        transform: rotateY(0deg);
+    }to{
+        transform: rotateY(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+/*.contentt-all{
+    width: 210px;
+    margin: auto;
+    perspective: 1000px;
+    position: relative;
+    margin-top: 50px;
+}
+.contentt-carrusel{
+    width: 100%;
+    position: absolute;
+    animation: rotar 10s infinite linear;
+    transform-style: preserve-3d;
+}
+.contentt-carrusel figure{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+}
+.contentt-carrusel figure:nth-child(1){transform: rotateY(0deg); transform: translateZ(300px);}
+.contentt-carrusel figure:nth-child(2){transform: rotateY(40deg); transform: translateZ(300px);}
+.contentt-carrusel figure:nth-child(3){transform: rotateY(80deg); transform: translateZ(300px);}
+.contentt-carrusel figure:nth-child(4){transform: rotateY(120deg); transform: translateZ(300px);}
+.contentt-carrusel figure:nth-child(5){transform: rotateY(160deg); transform: translateZ(300px);}
+.contentt-carrusel figure:nth-child(6){transform: rotateY(200deg); transform: translateZ(300px);}
+.contentt-carrusel figure:nth-child(7){transform: rotateY(240deg); transform: translateZ(300px);}
+.contentt-carrusel figure:nth-child(8){transform: rotateY(280deg); transform: translateZ(300px);}
+.contentt-carrusel figure:nth-child(9){transform: rotateY(320deg); transform: translateZ(300px);}
+.contentt-carrusel figure:nth-child(10){transform: rotateY(360deg); transform: translateZ(300px);}
+
+.contentt-carrusel img{
+    width: 100%;
+}
+@keyframes rotar{
+    from{
+        transform: rotateY(0deg);
+    }to{
+        transform: rotateY(360deg);
+    }
+}*/
+
+
 /*7 funciones de recursos humanos*/
 .last-section {
     display: flex;
@@ -309,9 +423,9 @@ h2::after{
     flex-wrap: wrap;
 }
 .imagen-port {
-    width: 24%;
+    width: 30%;
     margin-bottom: 50px;
-    height: 250px;
+    height: 320px;
     overflow: hidden;
     position: relative;
     cursor: pointer;

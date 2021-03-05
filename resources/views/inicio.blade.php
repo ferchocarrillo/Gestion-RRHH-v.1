@@ -42,10 +42,10 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 <div class="hero-wave">
     <div style="height: 150px;">
         <svg viewBox="0 40 1320 390" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300"  fill="#ffffff"/>
-            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300"  fill="#ffffff"/>
-            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300"  fill="#ffffff"/>
-            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300"  fill="#ffffff"/>
+            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300"  fill= " #ffffff "/>
+            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300"  fill= " #ffffff "/>
+            <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300"  fill= " #ffffff "/>
+            <path fill-opacity="0.9" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300"  fill= " #ffffff "/>
         </svg>
     </div>
 </div>
@@ -103,7 +103,39 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
             </div>
         </div>
     </div>
-</section><
+</section>
+
+
+<h1>Carrusel 3d</h1>
+<div class="contentt-all">
+<div class="contentt-carrusel">
+<figure><img src="\theme\images\premio4.JPG"></figure>
+<figure><img src="\theme\images\premio1.jpg"></figure>
+<figure><img src="\theme\images\premio2.jpg"></figure>
+<figure><img src="\theme\images\premio3.jpg"></figure>
+<figure><img src="\theme\images\premio4.JPG"></figure>
+<figure><img src="\theme\images\premio5.jpg"></figure>
+<figure><img src="\theme\images\premio6.jpg"></figure>
+<figure><img src="\theme\images\premio7.jpg"></figure>
+<figure><img src="\theme\images\premio8.jpg"></figure>
+<figure><img src="\theme\images\premio9.jpg"></figure>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -181,9 +213,8 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
         <div class="imagen-port">
             <img src="\theme\images\grupo1.jpg" alt="">
             <div class="hover-galeria">
-                <P>Tatiana Sofía Cáceres Pinzón</P>
                 <i class="fas fa-users"></i>
-                <p>Directora de recursos humanos</p>
+                <p>Tatiana Sofía Cáceres Pinzón<br>Directora de recursos humanos</P>
             </div>
         </div>
         <div class="imagen-port">
@@ -196,17 +227,15 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
         <div class="imagen-port">
             <img src="\theme\images\grupo6.jpg" alt="">
             <div class="hover-galeria">
-                <p>Laura Pineda Montoya</p>
                 <i class="far fa-id-badge"></i>
-                <p>Analista de Selección</p>
+                <p>Laura Esperanza Pineda Montoya<br>Analista de Selección</p>
             </div>
         </div>
         <div class="imagen-port">
             <img src="\theme\images\grupo2.jpg" alt="">
             <div class="hover-galeria">
                 <i class="fas fa-diagnoses"></i>
-                <p>Christian Camilo Buitrago Benitez</p>
-                <p>Analista De Recluitamiento</p>
+                <p>Christian Camilo Buitrago Benitez<br>Analista De Recluitamiento</p>
             </div>
         </div>
         <div class="imagen-port">
@@ -217,17 +246,17 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
             </div>
         </div>
         <div class="imagen-port">
+            <img src="\theme\images\grupo6.jpeg" alt="">
+            <div class="hover-galeria">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <p>Jhoan Fernando Mur Velosa<br>Lider de Formación </p>
+            </div>
+        </div>
+        {{-- <div class="imagen-port">
             <img src="\theme\images\grupo3.jpg" alt="">
             <div class="hover-galeria">
                 <i class="fas fa-clipboard-check"></i>
                 <p>Analista Jr </p>
-            </div>
-        </div>
-        <div class="imagen-port">
-            <img src="\theme\images\grupo6.jpeg" alt="">
-            <div class="hover-galeria">
-                <i class="fas fa-brain"></i>
-                <p>Psicologa </p>
             </div>
         </div>
         <div class="imagen-port">
@@ -236,7 +265,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
                 <i class="fas fa-comment-dollar"></i>
                 <p> </p>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 </section>
