@@ -53,9 +53,9 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 
     <section class="wave-contenedor webside">
-        <img src="\theme\images\recursos14.jpg" alt="">
+        <img src="\theme\images\recursos8.png" alt="">
             <div class="contenedor-textos-main"><br>
-                <h2 class="titulo left">¿Que Son Los Recursos Humanos?</h2>
+                <h2 class="titulo left">¿Que son los recursos humanos?</h2>
                 <p class="parrafo">Los recursos humanos son un departamento dentro de las empresas en el que se gestiona todo lo
                      relacionado con las personas que trabajan en ella. Esto incluiría desde el reclutamiento, selección,
                      contratación, onboarding o bienvenida, formación, promoción, nóminas, contratos y despidos. En resumidas
@@ -68,37 +68,26 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     </section>
 
 
+
+
+
+
 <section class="carrusel">
     <div class="contenedor">
-      <h1 class="carruselh1">Premios Mentius</h1 class="carruselh1">
+    <h2 class="carruselh1">Premios y eventos</h2 class="carruselh1">
         <div class="wrapper">
-            <div class="img-area">
-                <div class="single-img img-1">
-                    <img src="\theme\images\premio1.jpg" alt="imagenes de premios mentius 1 ">
-                </div>
-                <div class="single-img img-2">
-                    <img src="\theme\images\premio2.jpg" alt="imagenes de premios mentius 2 ">
-                </div>
-                <div class="single-img img-3">
-                    <img src="\theme\images\premio3.jpg" alt="imagenes de premios mentius 3 ">
-                </div>
-                <div class="single-img img-4">
-                    <img src="\theme\images\premio4.jpg" alt="imagenes de premios mentius 4 ">
-                </div>
-                <div class="single-img img-5">
-                    <img src="\theme\images\premio5.jpg" alt="imagenes de premios mentius 5 ">
-                </div>
-                <div class="single-img img-6">
-                    <img src="\theme\images\premio6.jpg" alt="imagenes de premios mentius 6 ">
-                </div>
-                <div class="single-img img-7">
-                    <img src="\theme\images\premio7.jpg" alt="imagenes de premios mentius 7 ">
-                </div>
-                <div class="single-img img-8">
-                    <img src="\theme\images\premio8.jpg" alt="imagenes de premios mentius 8 ">
-                </div>
-                <div class="single-img img-9">
-                    <img src="\theme\images\premio9.jpg" alt="imagenes de premios mentius 9 ">
+            <div class="contentt-all">
+                <div class="contentt-carrusel">
+                    <figure><img src="\theme\images\premio1.jpg "></figure>
+                    <figure><img src="\theme\images\premio2.jpg "></figure>
+                    <figure><img src="\theme\images\premio3.jpg "></figure>
+                    <figure><img src="\theme\images\premio4.jpg "></figure>
+                    <figure><img src="\theme\images\premio5.jpg "></figure>
+                    <figure><img src="\theme\images\premio6.jpg "></figure>
+                    <figure><img src="\theme\images\premio7.jpg "></figure>
+                    <figure><img src="\theme\images\premio8.jpg "></figure>
+                    <figure><img src="\theme\images\premio9.jpg "></figure>
+                    <figure><img src="\theme\images\premio10.jpg"></figure>
                 </div>
             </div>
         </div>
@@ -106,42 +95,9 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 </section>
 
 
-<h1>Carrusel 3d</h1>
-<div class="contentt-all">
-<div class="contentt-carrusel">
-<figure><img src="\theme\images\premio4.JPG"></figure>
-<figure><img src="\theme\images\premio1.jpg"></figure>
-<figure><img src="\theme\images\premio2.jpg"></figure>
-<figure><img src="\theme\images\premio3.jpg"></figure>
-<figure><img src="\theme\images\premio4.JPG"></figure>
-<figure><img src="\theme\images\premio5.jpg"></figure>
-<figure><img src="\theme\images\premio6.jpg"></figure>
-<figure><img src="\theme\images\premio7.jpg"></figure>
-<figure><img src="\theme\images\premio8.jpg"></figure>
-<figure><img src="\theme\images\premio9.jpg"></figure>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="contenedor last-section">
         <div class="contenedor-textos-main">
-            <h2 class="titulo left">7 Funciones De Recursos Humanos</h2>
+            <h2 class="titulo left">7 Funciones de recursos jumanos</h2>
             <p class="parrafo">En RRHH Mentius, tenemos el proposito de ayudarte a crear grandes experiencias de la forma correcta,
             entendiendo mejor tu función y su importancia. Queremos estar siempre presente cuando alcances tus metas, cuando cumplas con
             tus objetivos. Nosotros creemos en ti por eso buscaremos siempre la mejor manera de crecer juntos.</p>
@@ -160,9 +116,9 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 
 <section class="cards contenedor">
-    <h2 class="titulo">Lo Que Debes Saber De Recursos Humanos</h2>
+    <h2 class="titulo">Lo que debes saber de recursos humanos</h2>
         <div class="content-cards">
-            <article class="card">
+            <div class="card">
                 <i class="fas fa-clipboard-list"></i>
                     <div class="contenedor-textos-main">
                         <h3>Alinear la compañía con Recursos Humanos</h3>
@@ -170,8 +126,8 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
                         planificación estratégica o asignación de nuevos recursos.</p>
                            <!-- <a href="#" class="cta">Conoce más </a>-->
                     </div>
-            </article>
-            <article class="card">
+            </div>
+            <div class="card">
                 <i class="fas fa-handshake"></i>
                     <div class="contenedor-textos-main">
                         <h3>Ayudar a atraer y retener al mejor talento</h3>
@@ -179,8 +135,8 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
                         para alcanzar las metas.</p>
                          <!-- <a href="" class="cta">Conoce más </a>-->
                     </div>
-            </article>
-            <article class="card">
+            </div>
+            <div class="card">
                 <i class="fas fa-chalkboard-teacher"></i>
                     <div class="contenedor-textos-main">
                         <h3>Ejecutar un robusto proceso de onboarding</h3>
@@ -188,8 +144,8 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
                         pertenece la compañía.</p><br>
                          <!-- <a href="" class="cta">Conoce más </a>-->
                     </div>
-            </article>
-            <article class="card">
+            </div>
+            <div class="card">
                 <i class="far fa-eye"></i>
                     <div class="contenedor-textos-main">
                         <h3>Enfocarse en el compromiso del colaborador</h3>
@@ -197,9 +153,9 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
                         importante a la hora de impulsar el compromiso y la motivación de los colaboradores.</p>
                          <!-- <a href="" class="cta">Conoce más</a>-->
                     </div>
-            </article>
+            </div>
         </div>
-</section><br>
+</section>
 
 
 
@@ -208,45 +164,45 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 <section class="portafolio">
 <div class="contenedor">
-    <h2 class="titulo">Grupo De Trabajo</h2>
+    <h2 class="titulo">Grupo de trabajo</h2>
     <div class="galeria-port">
         <div class="imagen-port">
-            <img src="\theme\images\grupo1.jpg" alt="">
+            <img src="\theme\images\grupo1.png" alt="">
             <div class="hover-galeria">
                 <i class="fas fa-users"></i>
                 <p>Tatiana Sofía Cáceres Pinzón<br>Directora de recursos humanos</P>
             </div>
         </div>
         <div class="imagen-port">
-            <img src="\theme\images\grupo5.jpg" alt="">
+            <img src="\theme\images\grupo5.png" alt="">
             <div class="hover-galeria">
                 <i class="fas fa-clipboard-check"></i>
                 <p>Juan David Martínez Fonseca <br>Analista De Contratación</p>
             </div>
         </div>
         <div class="imagen-port">
-            <img src="\theme\images\grupo6.jpg" alt="">
+            <img src="\theme\images\grupo4.png" alt="">
             <div class="hover-galeria">
                 <i class="far fa-id-badge"></i>
                 <p>Laura Esperanza Pineda Montoya<br>Analista de Selección</p>
             </div>
         </div>
         <div class="imagen-port">
-            <img src="\theme\images\grupo2.jpg" alt="">
+            <img src="\theme\images\grupo2.png" alt="">
             <div class="hover-galeria">
                 <i class="fas fa-diagnoses"></i>
                 <p>Christian Camilo Buitrago Benitez<br>Analista De Recluitamiento</p>
             </div>
         </div>
         <div class="imagen-port">
-            <img src="\theme\images\grupo4.jpg" alt="">
+            <img src="\theme\images\grupo3.png" alt="">
             <div class="hover-galeria">
                 <i class="fas fa-file-invoice-dollar"></i>
                 <p>Angie Tatiana Rodriguez Murcia <br>Auxiliar de  Nómina</p>
             </div>
         </div>
         <div class="imagen-port">
-            <img src="\theme\images\grupo6.jpeg" alt="">
+            <img src="\theme\images\grupo6.png" alt="">
             <div class="hover-galeria">
                 <i class="fas fa-chalkboard-teacher"></i>
                 <p>Jhoan Fernando Mur Velosa<br>Lider de Formación </p>
@@ -272,7 +228,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 
 <section class="clientes contenedor">
-    <h2 class="titulo">¿Que Dicen Nuestros Clientes?</h2>
+    <h2 class="titulo">¿Que dicen nuestros clientes?</h2>
         <div class="cardss">
             <div class="card1">
                 <img src="\theme\images\movistarr.jpg" alt="">
@@ -301,10 +257,10 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 <div class="svg-wave">
     <svg viewBox="0 0 1320 290" >
-        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300" fill=" #000000fa"/>
-        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
-        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
-        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #000000fa "/>
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300" fill=" #d1dde2"/>
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #d1dde2"/>
+        <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #d1dde2"/>
+        <path fill-opacity="0.7" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #d1dde2"/>
     </svg>
 </div>
 
