@@ -2427,6 +2427,30 @@ select.form-control:focus::-ms-value {
     outline-offset: 3px;
 
   }
+  .form-control-lg-new13 {
+    height: calc(1.5em + 3rem + 0);
+    width: calc(1.5em + 8rem + 22px);
+    padding: 0.5rem;
+    font-size: 16px;
+    color:#113049 ;
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+    text-align: center;
+
+  }
+
+  .form-control-lg-new14 {
+    height: calc(1.5em + 3rem + 0);
+    width: calc(1.5em + 5rem + 22px);
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+   
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+
+
 
 select.form-control[size],
 select.form-control[multiple] {

@@ -38,7 +38,7 @@ class NuevoEmpleadoController extends Controller
      */
     public function index()
     {
-        $nuevos = Contratacion::orderby('id_filtro', 'asc')->where('estado','=','activo')->paginate(10);
+        $nuevos = Contratacion::orderby('created_at', 'desc')->where('estado','=','activo')->paginate(10);
         return view('nuevoempleado.index',compact('nuevos'));
     }
 

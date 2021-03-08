@@ -44,9 +44,11 @@
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Resultado RRHH</th>
-                                            <th scope="col">Resultado Gerencia</th>
                                             <th scope="col">Resultado Jefe inm</th>
-                                            <th colspan="6">Entrevista Gerencia</th>
+                                            <th scope="col">Entrevista Gerencia</th>
+                                            <th scope="col">Formacion</th>
+                                            <th colspan="3"></th>
+
                                           </tr>
                                         </thead>
                                         <tbody>
@@ -54,11 +56,11 @@
                                             <tr>
                                                 <th scope="row">{{ $entrevista->id}}</th>
                                                 <td>{{ $entrevista->cedula}}</td>
-                                                <td>{{ $entrevista->nombres}}</td>
-                                               <td>{{ $entrevista->resultado}}</td>
-
+                                                <td>{{ $entrevista->nombre}}</td>
+                                               <td>{{ $entrevista->resultadoRrhh}}</td>
                                                 <td>{{ $entrevista->resultadoGer}}</td>
                                                 <td>{{ $entrevista->resultadoJefe}}</td>
+                                                <td>{{ $entrevista->resultadoFormacion}}</td>
 
                                                 <td>
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}

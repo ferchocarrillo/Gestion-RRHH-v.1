@@ -80,7 +80,7 @@ class ContratacionController extends Controller
         $contratacion->nombre           = $request->nombres;
         $contratacion->telefono         = $request->telefono;
         $contratacion->correo           = $request->correo;
-        $contratacion->perfil           = $request->perfil;
+        $contratacion->cargos           = $request->perfil;
         $contratacion->campaña          = $request->campaña;
         $contratacion->fuente           = $request->fuente;
         $contratacion->residencia       = $request->residencia;

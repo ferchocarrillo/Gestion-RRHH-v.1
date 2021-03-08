@@ -73,7 +73,7 @@ Route::get('/searchDocumento','DocumentoController@searchDocumento');
 Route::get('/searchNovedades','NovedadesController@searchNovedades');
 Route::get('/searchCoord','NovedadesController@searchCoord');
 Route::get('/searchNovedades','VerNovedadesController@searchNovedades');
-
+Route::get('/searchverNovedades','VerNovedadesController@searchverNovedades');
 
 Route::get('/charts', 'ChartController@index')->name('charts');
 Route::post('/app/calculaTiempo', array('as' => 'calculaTiempo','edadController@calculaTiempo'));

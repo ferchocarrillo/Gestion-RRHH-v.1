@@ -25,6 +25,7 @@ use App\Entrevista5;
 use App\Residencia;
 use App\User;
 use stdClass;
+use App\nuevoEmpleado;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EntFinalizacionExport;
 use Illuminate\Support\Facades\DB;
@@ -38,7 +39,7 @@ class ResumenController extends Controller
      */
     public function index()
     {
-        $entrevistas = EntFinalizacion::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = filtro::orderBy('id', 'asc')->paginate(10);
         return view('resumen.index',compact('entrevistas'));
     }
 
