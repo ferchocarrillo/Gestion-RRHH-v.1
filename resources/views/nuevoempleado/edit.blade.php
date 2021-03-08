@@ -149,7 +149,7 @@
         </div>
         &nbsp;&nbsp;&nbsp;   
 
-    <input type="hidden" id="cargo" name="cargo" value={{ old('cargo', $nuevos->cargo)}}>
+    <input type="hidden" id="cargos" name="cargos" value={{ old('cargo', $nuevos->cargo)}}>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <p><div><strong><p>Cargo:</p></strong><div class="form-control-lg-new13">{{ old('cargo', $nuevos->cargo)}}</div></div></p>
 
@@ -421,7 +421,9 @@
         <input type="hidden" id="Tcuenta" name="Tcuenta" class="col-auto" value= "Ahorros">
 <div  type="text"><strong><p>Tipo de cuenta:</p></strong><div class="form-control-lg-new13">Ahorros</div></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<div id="nCuenta" name="nCuenta" class="col-auto"><strong><p><a style="color: red">* </a>Numero de cuenta: </p></strong><input type="number" id="nCuenta" name="nCuenta" class="form-control-lg-new13"  value="{{old('bancos', $contratacion->bancos)}}"></div><br>
+<div id="bancos" name="bancos" class="col-auto"><strong><p><a style="color: red">* </a>Banco: </p></strong><input type="text" id="bancos" name="bancos" class="form-control-lg-new13"  value="{{old('bancos', $contratacion->bancos)}}"></div><br>
+<div id="nCuenta" name="nCuenta" class="col-auto"><strong><p><a style="color: red">* </a>Numero de cuenta: </p></strong><input type="number" id="nCuenta" name="nCuenta" class="form-control-lg-new13"  value="{{old('nCuenta', $contratacion->nCuenta)}}"></div><br>
+
 
 <input type="hidden" id="estado" name="estado" value={{old('estado', $contratacion->estado)}}>
 <div class="col-auto"> <label></label><input type="hidden" class="form-control-lg-new13" id="nombre" placeholder="nombre" name="nombre" value="{{ old('nombre', $filtro->nombre)}}"></div>

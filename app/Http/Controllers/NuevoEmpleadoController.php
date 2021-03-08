@@ -129,7 +129,7 @@ class NuevoEmpleadoController extends Controller
             $nuevo->genero                 = $request->genero;
             $nuevo->rh                     = $request->rh;
             $nuevo->nivelEdu               = $request->nivelEdu;
-            $nuevo->cargo                  = $request->cargo;
+            $nuevo->cargos                 = $request->cargos;
             $nuevo->corporativo            = $request->corporativo;
             $nuevo->personaContacto        = $request->personaContacto;
             $nuevo->parentesco             = $request->parentesco;
