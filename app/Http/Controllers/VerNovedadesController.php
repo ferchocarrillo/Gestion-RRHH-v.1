@@ -16,17 +16,17 @@ class VerNovedadesController extends Controller
      */
     public function index()
     {
-        // Carbon::setLocale('es');
-        // $date = Carbon::now();
+         Carbon::setLocale('es');
+         $date = Carbon::now();
 
-        // $novedades = Novedades::orderby('created_at', 'desc')->paginate(10);
-        return view('verNovedades.index');
+        $novedades = Novedades::orderby('created_at', 'desc')->paginate(10);
+        return view('verNovedades.index',compact('novedades'));
     }
 
 
 
 
-    public function searchNovedades( Request $request)
+    public function searchverNovedades( Request $request)
     {
         $novedades = Novedades::all();
 

@@ -13,9 +13,9 @@
                 </center>
                     <p
                         <div class="col-md-4">
-                    <form action="/searchNovedades" method="GET">
+                    <form action="/searchverNovedades" method="GET">
                     <div class="input-group">
-                    <p><input type="searchNovedades" name="searchNovedades" class="form-control" ></p>
+                    <p><input type="searchverNovedades" name="searchverNovedades" class="form-control" ></p>
                 <span class="input-group-prepend">
                     <p><button type="submit" class="btn btn-primary">Buscar por Cedula</button></p>
                 </span>
@@ -62,7 +62,7 @@
                                             </thead>
                                             <tbody>
 
-{{--
+
                                                 @foreach ($novedades as $novedad)
 
                                                 <tr>
@@ -77,7 +77,7 @@
 
 
                                                     <td>
-                                                        <a href="{{url('/novedades/'.$novedad->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
+                                                        {{-- <a href="{{url('/novedades/'.$novedad->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a> --}}
 
                                                         <form action="{{url('/novedades/'.$novedad->id)}}" method="post">
 
@@ -89,7 +89,7 @@
 
 
 
-                                                        {{--<button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
+                                                    {{-- <button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button> --}}
 
 
 
@@ -100,7 +100,7 @@
 
                                                     </td>
                                                 </tr>
-                                                {{-- @endforeach --}}
+                                               @endforeach 
 
 
 
@@ -109,8 +109,8 @@
                                             </tbody>
 
                                           </table>
-                                          {{-- {{ $novedades->links() }} --}}
-                                          <a href="{{url('verNovedades')}}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Ver Novedades Registradas</a>
+                                      {{ $novedades->links() }} 
+                                          {{-- <a href="{{url('verNovedades')}}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Ver Novedades Registradas</a> --}}
 
 
 

@@ -196,7 +196,7 @@ class Entrevista1Controller extends Controller
         $entrevista1=entrevista1::findOrFail($id);
 
      //return response()->json($entrevista1, $filtro);
-     return view('entrevista1.edit', compact('entrevista1','filtro'));
+     return view('entrevista1.edit', compact('entrevista1'));
     }
 
    /**
