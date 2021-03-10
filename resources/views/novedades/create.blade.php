@@ -88,6 +88,7 @@
 
                                                         <td>
                                                             <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Insertar Novedad</a>
+                                                            <a href="{{url('/retiros/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Reportar retiro</a>
 
                                                             <form action="{{url('/novedades/'.$novedades->id)}}" method="post">
 

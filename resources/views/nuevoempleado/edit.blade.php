@@ -32,16 +32,16 @@
                     </body>
                     <div><input type="hidden" id="id_filtro" name="id_filtro" class="col-6 col-md-9" value="{{old('id_filtro', $nuevos->id_filtro)}}" ></div><br>
                 <div><input type="hidden" id="fuente" name="fuente" class="col-6 col-md-9" value="{{old('fuente', $filtro->fuente)}}" ></div><br>
-            
-                
-        
+
+
+
 
                 <div class="container">
     <div class="row">
         <div class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Tipo de Documento:</p></strong>
         <p>
             <input list="tipoDoc" type="text" name="tipoDoc"   class="form-control-lg-new13" required>
-            
+
             <datalist name="tipoDoc" id="tipoDoc" >
               <option value="">Tipo de Documento</option>
               @foreach($t_docs as $tipo_doc2)<option value="{{ $tipo_doc2->tipo_doc2}}">
@@ -50,7 +50,7 @@
             </datalist>
             </p>
         </div>
-        
+
         <input type="hidden" id="cedula" name="cedula" value={{ old('cedula', $nuevos->cedula)}}>
 
         &nbsp;&nbsp;
@@ -73,8 +73,8 @@
             <div class="row">
                 <input type="hidden" id="correo" name="correo" value={{ old('correo', $nuevos->correo)}}>
                 <input type="hidden" id="eCivil" name="eCivil" value={{ old('eCivil', $nuevos->eCivil)}}>
-                
-                
+
+
                 <div class="col-6 col-md-3"><strong><p>Correo:</p></strong><div class="form-control-lg-new13">{{ old('correo', $nuevos->correo)}}</div></div>
                 <div id="tCelular" name="tCelular" class="col-6 col-md-3"><strong><p><a style="color: red">* </a>Celular:</p></strong><input type="number"id="tCelular" name="tCelular" class="form-control-lg-new13" value="{{ old('tCelular', $nuevos->tCelular)}}"></div><br>
                 <div id="tFijo" name="tFijo" class="col-6 col-md-3"><strong><p>Tel Fijo:</p></strong><input type="number"id="tFijo" name="tFijo" class="form-control-lg-new13" value="{{ old('tFijo', $nuevos->tFijo)}}"></div><br>
@@ -87,7 +87,7 @@
                 <input type="hidden" id="residencia" name="residencia" value={{ old('residencia', $nuevos->residencia)}} | {{ old('localidad', $nuevos->id_localidad)}}>
                 <input type="hidden" id="lugarNac" name="lugarNac" value={{ old('departamento', $nuevos->departamento)}} | {{old('id_ciudad', $nuevos->id_ciudad) }} | {{ old('fnacimiento', $nuevos->fnacimiento)}}>
                 <input type="hidden" id="edad" name="edad" value={{ old('edad', $nuevos->edad)}}>
-               
+
 
 
 
@@ -107,7 +107,7 @@
                 <div ><strong><p><a style="color: red">* </a>Genero:</p></strong>
                     <p>
                         <input list="genero" type="text" name="genero"  class="form-control-lg-new13" required>
-                        
+
                         <datalist name="genero" id="genero" >
                           <option value="">Tipo de Documento</option>
                           @foreach($generos as $genero)<option value="{{ $genero->genero}}">
@@ -124,7 +124,7 @@
 <div ><strong><p><a style="color: red">* </a>RH:</p></strong>
     <p>
         <input list="rh" type="text" name="rh"  class="form-control-lg-new13" required>
-        
+
         <datalist name="rh" id="rh" >
           <option value="">Tipo de Documento</option>
           @foreach($tipo_rhs as $tipo_rh)<option value="{{ $tipo_rh->tipo_rh}}">
@@ -138,7 +138,7 @@
     <div ><strong><p><a style="color: red">* </a>Nivel Educativo:</p></strong>
         <p>
             <input list="nivelEdu" type="text" name="nivelEdu"  class="form-control-lg-new13" required>
-            
+
             <datalist name="nivelEdu" id="nivelEdu" >
                 <option value="">Escoja uno</option>
                 @foreach($NivelEdus as $nivelEdu)
@@ -147,11 +147,11 @@
             </datalist>
             </p>
         </div>
-        &nbsp;&nbsp;&nbsp;   
+        &nbsp;&nbsp;&nbsp;
 
-    <input type="hidden" id="cargos" name="cargos" value={{ old('cargo', $nuevos->cargo)}}>
+    <input type="hidden" id="cargos" name="cargos" value={{ old('cargos', $nuevos->cargos)}}>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <p><div><strong><p>Cargo:</p></strong><div class="form-control-lg-new13">{{ old('cargo', $nuevos->cargo)}}</div></div></p>
+    <p><div><strong><p>Cargo:</p></strong><div class="form-control-lg-new13">{{ old('cargos', $nuevos->cargos)}}</div></div></p>
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -161,13 +161,13 @@
         <div class="row">
 
             <div id="personaContacto" name="personaContacto" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Persona de contacto:</p></strong><input type="text"id="personaContacto" name="personaContacto" class="form-control-lg-new13" required></div><br>
-           
+
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
             <div ><strong><p><a style="color: red">* </a>Parentesco:</p><span><br></span></strong>
                 <p>
                     <input list="parentesco" type="text" name="parentesco"  class="form-control-lg-new13" required>
-                    
+
                     <datalist name="parentesco" id="parentesco" >
                         <option value="">Escoja uno</option>
                         @foreach($parentescos as $parentesco)
@@ -176,7 +176,7 @@
                     </datalist>
                     </p>
                 </div>
-           
+
 
 
 
@@ -213,7 +213,7 @@
             </div>
 
 
-        
+
         <div id="docfam1" name="docfam1" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam1" name="docfam1" class="form-control-lg-new13" ></div>
         &nbsp;
         <div id="familiarp1" name="familiarp1" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp1" name="familiarp1" class="form-control-lg-new13" value="{{old('familiarp1', $nuevo2->familiarp1)}}"></div><br>
@@ -238,7 +238,7 @@
                 </datalist>
                 </p>
             </div>
-    
+
             <div id="docfam2" name="docfam2" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam2" name="docfam2" class="form-control-lg-new13" ></div>
             <div id="familiarp2" name="familiarp2" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp2" name="familiarp2" class="form-control-lg-new13" value="{{old('familiarp2', $nuevo2->familiarp2)}}"></div><br>
             <div id="parentescop2" name="parentescop2" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop2" name="parentescop2" class="form-control-lg-new13" value="{{old('parentescop2', $nuevo2->parentescop2)}}"></div><br>
@@ -247,7 +247,7 @@
             <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam2" name="epsFam2" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja2" name="caja2" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
         </div>
-   
+
     <div class="row">
         <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
             <p><input list="tpd3" type="text" name="tpd3"  class="form-control-lg-new14">
@@ -259,7 +259,7 @@
                 </datalist>
                 </p>
             </div>
-    
+
             <div id="docfam3" name="docfam3" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam3" name="docfam3" class="form-control-lg-new13" ></div>
             <div id="familiarp3" name="familiarp3" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp3" name="familiarp3" class="form-control-lg-new13" value="{{old('familiarp3', $nuevo2->familiarp3)}}"></div><br>
             <div id="parentescop3" name="parentescop3" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop3" name="parentescop3" class="form-control-lg-new13" value="{{old('parentescop3', $nuevo2->parentescop3)}}"></div><br>
@@ -268,7 +268,7 @@
             <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam3" name="epsFam3" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja3" name="caja3" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
         </div>
- 
+
         <div class="row">
             <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
                 <p><input list="tpd4" type="text" name="tpd4"  class="form-control-lg-new14">
@@ -280,7 +280,7 @@
                     </datalist>
                     </p>
                 </div>
-        
+
                 <div id="docfam4" name="docfam4" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam4" name="docfam4" class="form-control-lg-new13" ></div>
                 <div id="familiarp4" name="familiarp4" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp4" name="familiarp4" class="form-control-lg-new13" value="{{old('familiarp4', $nuevo2->familiarp4)}}"></div><br>
                 <div id="parentescop4" name="parentescop4" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop4" name="parentescop3" class="form-control-lg-new13" value="{{old('parentescop4', $nuevo2->parentescop4)}}"></div><br>
@@ -344,11 +344,11 @@
 <div class="container">
 <div class="row">
 
-    
 
-        
-            
-           
+
+
+
+
 </div>
 </div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
@@ -403,8 +403,8 @@
                             </datalist>
                             </p>
                         </div>
-   
-      
+
+
 
 
 

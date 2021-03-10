@@ -103,7 +103,7 @@ Route::resource('nuevoempleado',    NuevoEmpleadoController::class);
 Route::resource('entrevistaFull',   EntrevistaFullController::class);
 Route::resource('entRRHH',          EntRRHHController::class);
 Route::resource('verNovedades',     verNovedadesController::class);
-
+Route::resource('retiros',          RetirosController::class);
 
 
 
