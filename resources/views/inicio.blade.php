@@ -55,7 +55,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
     <section class="wave-contenedor webside">
         <img src="\theme\images\recursos8.png" alt="">
             <div class="contenedor-textos-main"><br>
-                <h2 class="titulo left">¿Que son los recursos humanos?</h2>
+                <h2 class="titulo left">¿Qué son los recursos humanos?</h2>
                 <p class="parrafo">Los recursos humanos son un departamento dentro de las empresas en el que se gestiona todo lo
                      relacionado con las personas que trabajan en ella. Esto incluiría desde el reclutamiento, selección,
                      contratación, onboarding o bienvenida, formación, promoción, nóminas, contratos y despidos. En resumidas
@@ -97,10 +97,10 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
     <div class="contenedor last-section">
         <div class="contenedor-textos-main">
-            <h2 class="titulo left">7 Funciones de recursos jumanos</h2>
-            <p class="parrafo">En RRHH Mentius, tenemos el proposito de ayudarte a crear grandes experiencias de la forma correcta,
+            <h2 class="titulo left">7 Funciones de recursos humanos</h2>
+            <p class="parrafo">En RRHH Mentius, tenemos el propósito de ayudarte a crear grandes experiencias de la forma correcta,
             entendiendo mejor tu función y su importancia. Queremos estar siempre presente cuando alcances tus metas, cuando cumplas con
-            tus objetivos. Nosotros creemos en ti por eso buscaremos siempre la mejor manera de crecer juntos.</p>
+            tus objetivos. Nosotros creemos en tí por eso buscaremos siempre la mejor manera de crecer juntos.</p>
             <!--<a href="" class="cta">learn more</a>-->
         </div>
                  <img src="\theme\images\recursos6.png" alt="">
@@ -205,7 +205,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
             <img src="\theme\images\grupo6.png" alt="">
             <div class="hover-galeria">
                 <i class="fas fa-chalkboard-teacher"></i>
-                <p>Jhoan Fernando Mur Velosa<br>Lider de Formación </p>
+                <p>Jhoan Fernando Mur Velosa<br>Líder de Formación </p>
             </div>
         </div>
         {{-- <div class="imagen-port">
@@ -228,7 +228,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 
 <section class="clientes contenedor">
-    <h2 class="titulo">¿Que dicen nuestros clientes?</h2>
+    <h2 class="titulo">¿Qué dicen nuestros clientes?</h2>
         <div class="cardss">
             <div class="card1">
                 <img src="\theme\images\movistarr.jpg" alt="">
@@ -241,14 +241,14 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
                 <img src="\theme\images\cliente1.jpg" alt="">
                     <div class="contenido-textos-card">
                         <h5>Vanti</h5>
-                        <p>Consideramos a Mentius una empresa con los estandares de calidad mas altos del mercado.</p>
+                        <p>Consideramos a Mentius una empresa con los estándares de calidad más altos del mercado.</p>
                     </div>
             </div>
             <div class="card1">
                 <img src="\theme\images\cliente3.png" alt="">
                     <div class="contenido-textos-card">
                         <h5>QNT</h5>
-                        <p>Estamos seguros que Mentius cumple a cabalidad las politicas de informacion.</p>
+                        <p>Estamos seguros que Mentius cumple a cabalidad las políticas de informacion.</p>
                     </div>
             </div>
         </div>
