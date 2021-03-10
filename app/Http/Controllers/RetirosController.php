@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Retiros;
 use Illuminate\Http\Request;
 use App\nuevoEmpleado;
+use App\CausasRetiro;
 
 class RetirosController extends Controller
 {
@@ -58,8 +59,10 @@ class RetirosController extends Controller
      */
     public function edit($id)
     {
+
+        $causas = CausasRetiro::all();
         $filtro =nuevoEmpleado::findOrFail($id);
-        return view('retiros.edit', compact('filtro'));
+        return view('retiros.edit', compact('filtro', 'causas'));
     }
 
     /**

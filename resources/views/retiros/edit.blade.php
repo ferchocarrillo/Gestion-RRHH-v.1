@@ -25,7 +25,7 @@
 <div class="form-group">
 
     <div class="form-row">
-   <div class="col-3">
+   <div class="col-2">
        <label for="activoDesde">Activo desde</label>
         <input type="text" class="form-control-lg-new9"
         id="activoDesde"
@@ -34,7 +34,7 @@
         readonly
         value="{{ old('created_at', $filtro->created_at)}}">
     </div>
-    <div class="col-3">
+    <div class="col-2">
         <label for="cedula">Cedula</label>
          <input type="number" class="form-control-lg-new9"
          id="cedula"
@@ -42,9 +42,9 @@
          name="cedula"
          value="{{ old('cedula', $filtro->cedula)}}"
          readonly>
-        
+
         </div>
-        <div class="col-3">
+        <div class="col-2">
             <label for="cedula">Nombre</label>
              <input type="text" class="form-control-lg-new9"
              id="nombre"
@@ -53,7 +53,7 @@
              value="{{ old('nombres', $filtro->nombres)}}"
              readonly>
             </div>
-    <div class="col-3">
+    <div class="col-2">
         <label for="tcelular">Celular</label>
            <input type="number"
            class="form-control-lg-new9"
@@ -63,7 +63,7 @@
            value="{{ old('tCelular' , $filtro->tCelular)}}"
            readonly>
         </div>
-    <div class="col-3">
+    <div class="col-2">
         <label for="correo">Correo</label>
            <input type="mail"
            class="form-control-lg-new9"
@@ -73,7 +73,7 @@
            value="{{ old('correo' , $filtro->correo)}}"
            readonly>
         </div>
-    <div class="col-3">
+    <div class="col-2">
         <label for="perfil">Perfil</label>
            <input type="text"
            class="form-control-lg-new9"
@@ -83,7 +83,7 @@
            value="{{ old('cargos' , $filtro->cargos)}}"
            readonly>
         </div>
-    <div class="col-3">
+    <div class="col-2">
         <label for="campaña">Campaña</label>
            <input type="text"
            class="form-control-lg-new9"
@@ -92,9 +92,9 @@
            name="campaña"
            value="{{ old('campaña' , $filtro->campaña)}}"
            readonly>
-           
+
         </div>
-    <div class="col-3">
+    <div class="col-2">
         <label for="fuente">Fuente</label>
            <input type="text"
            class="form-control-lg-new9"
@@ -103,11 +103,47 @@
            name="fuente"
            value="{{ old('fuente' , $filtro->fuente)}}"
            readonly>
-           
+
         </div>
 
     </div>
 <p id="eliminar">* En esta seccion usted podra inactivar de la base de datos a una persona</p>
+<div class= "card_retiros">
+<div class= "row">
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p>
+    <label for="iDesde">Seleccione una Causal</label><br>
+    <input list="causalesR" type="text" name="causalesR"   class="form-control-lg-new9" placeholder="Seleccione una casusal" required>
+
+    <datalist name="causalesR" id="causalesR" >
+      <option value="">Causales Retiro</option>
+      @foreach($causas as $causa)<option value="{{ $causa->causalesR}}">
+          {{ $causa->causalesR }}</option>
+        @endforeach
+    </datalist>
+    </p>
+    &nbsp;&nbsp;&nbsp;
+<p>
+        <label for="iDesde">Inactivo desde</label><br>
+           <input type="date"
+           class="form-control-lg-new9"
+           id="iDesde"
+           placeholder="iDesde"
+           name="iDesde"
+           value="" required>
+        </p>
+
+        &nbsp;&nbsp;&nbsp;
+
+        <p>
+            <label for="obsRetiro">Observaciones</label><br>
+            <textarea name="obsRetiro" id="obsRetiro" cols="60" rows="3" class="form-control-lg-new15" required></textarea>
+            </p>
+
+        </div>
+    </div>
+
 
 
 

@@ -108,7 +108,7 @@ p {
     padding-bottom: 0.75rem;
     text-align: left;
     font-size: 22px;
-    
+
 }
 
 abbr[title],
@@ -2395,11 +2395,11 @@ select.form-control:focus::-ms-value {
   }
   .form-control-lg-new9 {
     height: calc(1.5em + 1rem + 10px);
-    width: calc(1.5em + 14rem + 10px);
+    width: calc(1.5em + 10rem + 10px);
     padding: 0.5rem 1rem;
-    font-size: 18px;
-    color:#113049 ;
-    border-radius: 0.7rem;
+    font-size: 14px;
+    color:#000508 ;
+    border-radius: 0.9rem;
     background-color: rgba(255, 255, 255, 0.972);
     outline-offset: 3px;
 
@@ -2444,7 +2444,7 @@ select.form-control:focus::-ms-value {
     padding: 0.5rem;
     font-size: 16px;
     color:#113049 ;
-    border-radius: 0.7rem;
+    border-radius: 0.9rem;
     background-color: rgba(255, 255, 255, 0.972);
     outline-offset: 3px;
     text-align: center;
@@ -2455,13 +2455,26 @@ select.form-control:focus::-ms-value {
     height: calc(1.5em + 3rem + 0);
     width: calc(1.5em + 5rem + 22px);
     padding: 0.5rem 1rem;
-    font-size: 16px;
+    font-size: 14px;
 
     border-radius: 0.7rem;
     background-color: rgba(255, 255, 255, 0.972);
     outline-offset: 3px;
 
+  }
 
+  .form-control-lg-new15 {
+    height: calc(1.5em + 3rem + 10px);
+    width: calc(1.5em + 22rem + 22px);
+    padding: 0.5rem;
+    font-size: 16px;
+    color:#113049 ;
+    border-radius: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+    text-align: left;
+
+  }
 
 select.form-control[size],
 select.form-control[multiple] {
@@ -5149,6 +5162,18 @@ input[type=button].btn-block {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
+.card_retiros{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 50%;
+    word-wrap: break-word;
+    background-color: rgb(231, 240, 236);
+    background-image: linear-gradient(#EAF2F8, #AAB7B8);
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+  }
 
 .card-new {
     position: center;
@@ -5216,15 +5241,9 @@ input[type=button].btn-block {
   background-image: linear-gradient(#EAF2F8, #AAB7B8);
   color:rgba(16, 202, 235, 0.925);
   -webkit-text-fill-color: rgba(16, 202, 235, 0.925);
-  -webkit-text-stroke: 1.2px black;text-shadow:  10px 3px 8px #436880;
+  -webkit-text-stroke: 1.2px black;
+  text-shadow:  10px 3px 8px #436880;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-------
-
-
-
-
-
-
 }
 
 .card-header:first-child {

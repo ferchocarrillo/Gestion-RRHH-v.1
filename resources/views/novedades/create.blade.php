@@ -87,9 +87,12 @@
 
 
                                                         <td>
-                                                            <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Insertar Novedad</a>
-                                                            <a href="{{url('/retiros/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Reportar retiro</a>
-
+                                                            <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Ingresar Novedad</a>
+                                                         
+                                                        </td>
+                                                        <td>
+                                                        <a href="{{url('/retiros/'.$novedades->id.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">Reportar Retiro</a>
+                                                    </td>
                                                             <form action="{{url('/novedades/'.$novedades->id)}}" method="post">
 
                                                             @csrf

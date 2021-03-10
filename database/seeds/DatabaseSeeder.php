@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
      $this->call(RhSeeder::class);
   $this->call(FiltroSeeder::class);
  $this->call(ResultadoRRHHSeeder::class);
-
+ $this->call(CausasRetiroSeeder::class);
 
 
 
