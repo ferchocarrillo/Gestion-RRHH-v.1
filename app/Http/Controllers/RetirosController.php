@@ -6,6 +6,9 @@ use App\Retiros;
 use Illuminate\Http\Request;
 use App\nuevoEmpleado;
 use App\CausasRetiro;
+use App\Filtro;
+use Carbon\carbon;
+
 
 class RetirosController extends Controller
 {
@@ -99,10 +102,11 @@ class RetirosController extends Controller
      */
     public function edit($id)
     {
-
+        $nuevos = nuevoEmpleado::all();
         $causas = CausasRetiro::all();
-        $filtro =nuevoEmpleado::findOrFail($id);
-        return view('retiros.edit', compact('filtro', 'causas'));
+        $filtro = filtro::findOrFail($id)->first();
+        $nuevos = nuevoEmpleado::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        return view('retiros.edit', compact('filtro', 'causas','nuevos'));
     }
 
     /**
@@ -121,8 +125,9 @@ class RetirosController extends Controller
         $datosFiltro =request()->except(['_token','_method']);
         Filtro::where('id','=',$id)->update($datosFiltro);
         $filtro=Filtro::findOrFail($id);
+        $nuevos = nuevoEmpleado::where('id_filtro', Filtro::findOrFail($id)->id)->first();
      //return response()->json($filtro);
-     return view('entRRHH.edit', compact('filtro', 'date','causas'));
+     return view('retiros.edit', compact('filtro', 'date','causas','nuevos'));
     }
 
     /**

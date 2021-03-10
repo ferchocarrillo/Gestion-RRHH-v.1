@@ -21,25 +21,25 @@
 </div>
 </center>
         </body>
-<form action="{{ url('/filtro/'.$filtro->id_filtro)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
-    @csrf
-    @method('PATCH')
+        <form action="{{ url('/retiros/'.$nuevos->id_filtro)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+            @csrf
+            @method('PATCH')
 
 
 
 <div class="card">
 
-
+<input type="text" name="" id="" value="{{ old('id_filtro', $nuevos->id_filtro)}}">
 
     <div class="row">
    <div class="col-3">
-       <label for="">Activo<br> Desde</label>
+       <label for="fechaCont">Activo<br> Desde</label>
         <input type="text" class="form-control-lg-new9"
-        id=""
+        id="fechaCont"
         placeholder=""
-        name=""
+        name="fechaCont"
         readonly
-        value="{{ old('created_at', $filtro->created_at)}}">
+        value="{{ old('fechaCont', $filtro->fechaCont)}}">
     </div>
     <div class="col-3">
         <label for="cedula">Cedula</label>
@@ -57,17 +57,17 @@
              id="nombre"
              placeholder="Nombres"
              name="nombre"
-             value="{{ old('nombres', $filtro->nombres)}}"
+             value="{{ old('nombres', $nuevos->nombres)}}"
              readonly>
             </div>
     <div class="col-3">
-        <label for="tcelular">Celular</label>
+        <label for="telefono">Celular</label>
            <input type="number"
            class="form-control-lg-new9"
            id=""
            placeholder="telefono"
            name=""
-           value="{{ old('tCelular' , $filtro->tCelular)}}"
+           value="{{ old('tCelular' , $nuevos->tCelular)}}"
            readonly>
         </div></div>
 <br><br>
@@ -90,7 +90,7 @@
            id="perfil"
            placeholder="perfil"
            name="perfil"
-           value="{{ old('cargos' , $filtro->cargos)}}"
+           value="{{ old('cargos' , $nuevos->cargos)}}"
            readonly>
         </div>
     <div class="col-3">
