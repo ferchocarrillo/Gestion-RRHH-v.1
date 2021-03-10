@@ -155,7 +155,7 @@ class Entrevista1Controller extends Controller
      */
     public function edit($id)
     {
-        $filtro=Filtro::findOrFail($id);
+        $filtros=Filtro::findOrFail($id);
 
         $cargos = Cargo::all();
         $cargoEnt = CargoEnt::all();
@@ -172,7 +172,7 @@ class Entrevista1Controller extends Controller
        $this->authorize('haveaccess','entrevista1.edit');
 
 
-       return view('entrevista1.edit', compact('eCivils','sMilitars','tViviendas','cargos','cargoEnt','filtro','departamento','residencia','adicional2es','adicionales','orientaciones','TipoVias','prefijos'));
+       return view('entrevista1.edit', compact('eCivils','sMilitars','tViviendas','cargos','cargoEnt','filtros','departamento','residencia','adicional2es','adicionales','orientaciones','TipoVias','prefijos'));
 
     }
 

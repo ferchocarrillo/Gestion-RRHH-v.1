@@ -194,15 +194,6 @@
                   </td>
                 </tr>
               </div>
-
-              </div>
-             </div>
-            </div>
-
-                    <div class="col-sm-6">
-                      <div class="card">
-                        <div class="card-body">
-
               <div style="width:250px">
                 <tr valign="bottom">
                   <td>
@@ -236,6 +227,16 @@
                     </tr>
                  </div>
 
+              </div>
+             </div>
+            </div>
+
+                    <div class="col-sm-6">
+                      <div class="card">
+                        <div class="card-body">
+
+
+
                          <div style="width:200px">
                            <tr valign="bottom">
                                          <td>
@@ -264,8 +265,28 @@
                                             <div style="float:left; width:100%; display:flex;">
                                                 <input type="checkbox" id="enviadocontratacion" name="enviadocontratacion" value="enviadocontratacion">
                                                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Enviado a Contratación</label>
+
                                             </div>
-                                          </td>
+                                        </td>
+                                    </tr>
+                                  </div>
+                                  <div style="width:200px">
+                                    <tr valign="bottom">
+                                      <td>
+                                        <div style="float:left; width:100%; display:flex;">
+                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="fechaCont">Fecha de Contratacion</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="fechaCont" name="fechaCont" class="form-control-lg-new13"></p>
+                                        </div>
+                                    </td>
+                                    </tr>
+                                  </div>
+                                  <div style="width:250px">
+                                    <tr valign="bottom">
+                                      <td>
+                                        <div style="float:left; width:100%; display:flex;">
+
+                                            <p>&nbsp;<input type="checkbox" id="estado" name="estado" value="activo"><label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 16px; color: rgb(0, 0, 0); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Persona activa en BD</label></p>
+                                        </div>
+                                        </td>
                                         </tr>
                                       </div>
 
@@ -274,9 +295,9 @@
                                 </div>
                                 </div>
 
-                                <div class="col-sm-12">
+                                <div >
                     <label for="observacion2">Observaciones</label>
-                    <textarea class="form-control" id="observacion2" name="observacion2" rows="3"></textarea>
+                    <textarea class="form-control-lg-new16" id="observacion2" name="observacion2" rows="3"></textarea>
                 </div>
             </div>
         </div>

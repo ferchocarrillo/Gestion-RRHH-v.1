@@ -39,7 +39,7 @@ class ResumenController extends Controller
      */
     public function index()
     {
-        $entrevistas = filtro::orderBy('id', 'asc')->paginate(10);
+        $entrevistas = filtro::orderBy('updated_at', 'desc')->where('resultadoRrhh', '<>', null)->paginate(10);
         return view('resumen.index',compact('entrevistas'));
     }
 
@@ -120,18 +120,16 @@ class ResumenController extends Controller
         $this->authorize('haveaccess','resumen.edit');
 
         $filtro=Filtro::findOrFail($id);
-        $resulEntGerencia['entFinalizacion'] = EntFinalizacion::where('resultadoGer', '<>',null);
         $entrevista1s=entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista2s=Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista3s=Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista4s=Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entrevista5s=Entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $entFinalizacion=entFinalizacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entGerencia=EntGerencia::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entJefe=EntJefe::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+
         $resumen=resumen::all();
 
-       return view('resumen.edit', compact('resulEntGerencia','resumen','entJefe','entGerencia','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
+       return view('resumen.edit', compact('resumen','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
     }
     /**
      * Update the specified resource in storage.

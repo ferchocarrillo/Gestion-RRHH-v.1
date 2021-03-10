@@ -110,6 +110,8 @@ class FiltroController extends Controller
         $filtro->YaNoInt                = $request->YaNoInt;
         $filtro->Estudiante             = $request->Estudiante;
         $filtro->observacion2           = $request->observacion2;
+        $filtro->estado                 = $request->estado;
+        $filtro->fechaCont              = $request->fechaCont;
 
 
         $filtro->save();

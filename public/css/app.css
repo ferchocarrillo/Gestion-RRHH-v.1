@@ -2465,7 +2465,7 @@ select.form-control:focus::-ms-value {
 
   .form-control-lg-new15 {
     height: calc(1.5em + 3rem + 10px);
-    width: calc(1.5em + 22rem + 22px);
+    width: calc(1.5em + 20rem + 10px);
     padding: 0.5rem;
     font-size: 16px;
     color:#113049 ;
@@ -2473,6 +2473,17 @@ select.form-control:focus::-ms-value {
     background-color: rgba(255, 255, 255, 0.972);
     outline-offset: 3px;
     text-align: left;
+
+  }
+  .form-control-lg-new16 {
+    height: calc(1.5em + 3rem + 10px);
+    width: calc(1.5em + 70rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+   color:#113049 ;
+    border-radius: 0.7rem;
+    background-color: rgba(242, 246, 246, 0.972);
+    outline-offset: 3px;
 
   }
 

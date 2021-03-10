@@ -149,7 +149,7 @@
         </div>
         &nbsp;&nbsp;&nbsp;
 
-    <input type="hidden" id="cargos" name="cargos" value={{ old('cargos', $nuevos->cargos)}}>
+    <input type="hidden" id="cargos" name="cargos" value={{ old('cargo', $nuevos->cargo)}}>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <p><div><strong><p>Cargo:</p></strong><div class="form-control-lg-new13">{{ old('cargos', $nuevos->cargos)}}</div></div></p>
 

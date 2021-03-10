@@ -24,7 +24,7 @@
 
     <center><p>
         <div class="card-header">
-           <h3>{{( $filtro->nombre)}}</h3>
+           <h3>{{( $filtros->nombre)}}</h3>
         </div>
     </p></center>
 
@@ -51,49 +51,49 @@
 
 
 <p>
-<div class="col-auto"><label for="cedula">Cedula</label><input type="number" class="form-control" style="width: 240px" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
+<div class="col-auto"><label for="cedula">Cedula</label><input type="number" class="form-control" style="width: 240px" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtros->cedula)}}"></div>
 </p>
 
 <p>
-<div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 240px" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
+<div class="col-auto"> <label for="nombres">Nombre</label><input type="text" class="form-control" style="width: 240px" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtros->nombre)}}"></div>
 </p>
 <p>
-<div class="col-auto"> <label for="telefono">Telefono</label> <input type="number" class="form-control" style="width: 240px" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono' , $filtro->telefono)}}"></div>
+<div class="col-auto"> <label for="telefono">Telefono</label> <input type="number" class="form-control" style="width: 240px" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono' , $filtros->telefono)}}"></div>
 </p>
 <p>
-<div class="col-auto"> <label for="correo">Correo</label> <input type="mail" class="form-control" style="width: 200px" id="correo" placeholder="correo" name="correo" value="{{ old('correo' , $filtro->correo)}}"></div>
+<div class="col-auto"> <label for="correo">Correo</label> <input type="mail" class="form-control" style="width: 200px" id="correo" placeholder="correo" name="correo" value="{{ old('correo' , $filtros->correo)}}"></div>
 </p>
 <p>
-<div class="col-auto"><label for="id_filtro"></label><input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtro->id)}}"></div>
-<div class="col-auto"><label for="perfil"></label><input type="hidden" class="form-control" style="width: 240px" id="perfil" placeholder="perfil" name="perfil" value="{{ old('perfil', $filtro->perfil)}}"></div>
-<div class="col-auto"><label for="campana"></label><input type="hidden" class="form-control" style="width: 240px" id="campana" placeholder="campana" name="campana" value="{{ old('campana', $filtro->campaña)}}"></div>
-<div class="col-auto"><label for="fuente"></label><input type="hidden" class="form-control" style="width: 240px" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtro->fuente)}}"></div>
-{{-- <p><input type="hidden"  id="fregistro" name="fregistro" value="{{ $filtro->fregistro }}"></p> --}}
-<p><input type="hidden"  id="nombre" name="nombre" value="{{ $filtro->nombre }}"></p>
-<p><input type="hidden"  id="cedula" name="cedula" value="{{ $filtro->cedula }}"></p>
-<p><input type="hidden"  id="telefono" name="telefono" value="{{ $filtro->telefono }}"></p>
-<p><input type="hidden"  id="correo" name="correo" value="{{ $filtro->correo }}"></p>
+<div class="col-auto"><label for="id_filtro"></label><input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtros->id)}}"></div>
+<div class="col-auto"><label for="perfil"></label><input type="hidden" class="form-control" style="width: 240px" id="perfil" placeholder="perfil" name="perfil" value="{{ old('perfil', $filtros->perfil)}}"></div>
+<div class="col-auto"><label for="campana"></label><input type="hidden" class="form-control" style="width: 240px" id="campana" placeholder="campana" name="campana" value="{{ old('campana', $filtros->campaña)}}"></div>
+<div class="col-auto"><label for="fuente"></label><input type="hidden" class="form-control" style="width: 240px" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtros->fuente)}}"></div>
+{{-- <p><input type="hidden"  id="fregistro" name="fregistro" value="{{ $filtros->fregistro }}"></p> --}}
+<p><input type="hidden"  id="nombre" name="nombre" value="{{ $filtros->nombre }}"></p>
+<p><input type="hidden"  id="cedula" name="cedula" value="{{ $filtros->cedula }}"></p>
+<p><input type="hidden"  id="telefono" name="telefono" value="{{ $filtros->telefono }}"></p>
+<p><input type="hidden"  id="correo" name="correo" value="{{ $filtros->correo }}"></p>
 
-<p><input type="hidden"  id="fuente" name="fuente" value="{{ $filtro->fuente }}"></p>
-<p><input type="hidden"  id="citadoE" name="citadoE" value="{{ $filtro->citadoE }}"></p>
-<p><input type="hidden"  id="noAplica" name="noAplica" value="{{ $filtro->noAplica }}"></p>
-<p><input type="hidden"  id="noInteresado" name="noInteresado" value="{{ $filtro->noInteresado }}"></p>
-<p><input type="hidden"  id="enviadoCapa" name="enviadoCapa" value="{{ $filtro->enviadoCapa }}"></p>
-<p><input type="hidden"  id="entrevistaJefeInm" name="entrevistaJefeInm" value="{{ $filtro->entrevistaJefeInm }}"></p>
-<p><input type="hidden"  id="entrevistaGerencia" name="entrevistaGerencia" value="{{ $filtro->entrevistaGerencia }}"></p>
-<p><input type="hidden"  id="enviadocontratacion" name="enviadocontratacion" value="{{ $filtro->enviadocontratacion }}"></p>
-<p><input type="hidden"  id="enviadoExm" name="enviadoExm" value="{{ $filtro->enviadoExm }}"></p>
-<p><input type="hidden"  id="PruebasE" name="PruebasE" value="{{ $filtro->PruebasE }}"></p>
-<p><input type="hidden"  id="yaTrabaja" name="yaTrabaja" value="{{ $filtro->yaTrabaja }}"></p>
-<p><input type="hidden"  id="numeroEqu" name="numeroEqu" value="{{ $filtro->numeroEqu }}"></p>
-<p><input type="hidden"  id="observacion" name="observacion" value="{{ $filtro->observacion }}"></p>
-<p><input type="hidden"  id="noAsiste" name="noAsiste" value="{{ $filtro->noAsiste }}"></p>
-<p><input type="hidden"  id="NoResponde2" name="NoResponde2" value="{{ $filtro->NoResponde2 }}"></p>
-<p><input type="hidden"  id="YaNoInt" name="YaNoInt" value="{{ $filtro->YaNoInt }}"></p>
-<p><input type="hidden"  id="Estudiante" name="Estudiante" value="{{ $filtro->Estudiante }}"></p>
-<p><input type="hidden"  id="observacion2" name="observacion2" value="{{ $filtro->observacion2 }}"></p>
-<p><input type="hidden"  id="noAsisteEnt" name="noAsisteEnt" value="{{ $filtro->noAsisteEnt }}"></p>
-<p><input type="hidden"  id="entvOK" name="entvOK" value="{{ $filtro->entvOK }}"></p>
+<p><input type="hidden"  id="fuente" name="fuente" value="{{ $filtros->fuente }}"></p>
+<p><input type="hidden"  id="citadoE" name="citadoE" value="{{ $filtros->citadoE }}"></p>
+<p><input type="hidden"  id="noAplica" name="noAplica" value="{{ $filtros->noAplica }}"></p>
+<p><input type="hidden"  id="noInteresado" name="noInteresado" value="{{ $filtros->noInteresado }}"></p>
+<p><input type="hidden"  id="enviadoCapa" name="enviadoCapa" value="{{ $filtros->enviadoCapa }}"></p>
+<p><input type="hidden"  id="entrevistaJefeInm" name="entrevistaJefeInm" value="{{ $filtros->entrevistaJefeInm }}"></p>
+<p><input type="hidden"  id="entrevistaGerencia" name="entrevistaGerencia" value="{{ $filtros->entrevistaGerencia }}"></p>
+<p><input type="hidden"  id="enviadocontratacion" name="enviadocontratacion" value="{{ $filtros->enviadocontratacion }}"></p>
+<p><input type="hidden"  id="enviadoExm" name="enviadoExm" value="{{ $filtros->enviadoExm }}"></p>
+<p><input type="hidden"  id="PruebasE" name="PruebasE" value="{{ $filtros->PruebasE }}"></p>
+<p><input type="hidden"  id="yaTrabaja" name="yaTrabaja" value="{{ $filtros->yaTrabaja }}"></p>
+<p><input type="hidden"  id="numeroEqu" name="numeroEqu" value="{{ $filtros->numeroEqu }}"></p>
+<p><input type="hidden"  id="observacion" name="observacion" value="{{ $filtros->observacion }}"></p>
+<p><input type="hidden"  id="noAsiste" name="noAsiste" value="{{ $filtros->noAsiste }}"></p>
+<p><input type="hidden"  id="NoResponde2" name="NoResponde2" value="{{ $filtros->NoResponde2 }}"></p>
+<p><input type="hidden"  id="YaNoInt" name="YaNoInt" value="{{ $filtros->YaNoInt }}"></p>
+<p><input type="hidden"  id="Estudiante" name="Estudiante" value="{{ $filtros->Estudiante }}"></p>
+<p><input type="hidden"  id="observacion2" name="observacion2" value="{{ $filtros->observacion2 }}"></p>
+<p><input type="hidden"  id="noAsisteEnt" name="noAsisteEnt" value="{{ $filtros->noAsisteEnt }}"></p>
+<p><input type="hidden"  id="entvOK" name="entvOK" value="{{ $filtros->entvOK }}"></p>
 
 
 

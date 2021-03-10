@@ -402,9 +402,15 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
         <!-- Force next columns to break to new line -->
 
-        <div class="col"><p class="h6">Resultado Primera Entrevista</p>{{ $entFinalizacion->resultado}}</div>
-        <div class="col"><p class="h6">Fecha</p>{{ $entFinalizacion->fechaCont}}</div>
-        <div class="col"><p class="h6">Observaciones RRHH</p>{{ $entFinalizacion->obsFinales}}</div>
+        <div class="col"><p class="h6">Resultado Primera Entrevista</p>{{ $filtro->resultadoRrhh}}</div>
+        <div class="col"><p class="h6">Fecha</p>{{ $filtro->fechaRrhh}}</div>
+        <div class="col"><p class="h6">Observaciones RRHH</p>{{ $filtro->obsRrhh}}</div>
+        <div class="col"><p class="h6">Resultado Entrevista Gerencia</p>{{ $filtro->resultadoGer}}</div>
+        <div class="col"><p class="h6">Fecha</p>{{ $filtro->fechaGerencia}}</div>
+        <div class="col"><p class="h6">Observaciones Gerencia</p>{{ $filtro->obsGerencia}}</div>
+        <div class="col"><p class="h6">Resultado EntrevistaJefe Inmediato</p>{{ $filtro->resultadoJefe}}</div>
+        <div class="col"><p class="h6">Fecha</p>{{ $filtro->fechaJefe}}</div>
+        <div class="col"><p class="h6">Observaciones Jefe Inmediato</p>{{ $filtro->obsJefe}}</div>
 
 
 

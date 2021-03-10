@@ -37,7 +37,47 @@ class RetirosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = Auth::user()->id;
+        $user_nombre = Auth::user()->name;
+        Carbon::setLocale('es');
+        $hoy = Carbon::now();
+
+        $date1 = $request->input('fechaCont');
+        $date2 = $request->input('iDesde');
+        $tiempoA = $hoy->floatDiffInRealDays($date1);
+        $tiempoB = $hoy->floatDiffInRealDays($date2);
+        $tiempo1 = $tiempoA - $tiempoB;
+
+
+        $datosFiltro=request()->except('_token');
+
+        if($request->hasFile('Foto')){
+            $datosFiltro['Foto']=$request->file('Foto')->store('uploads','public');
+        }
+        $request->validate([
+            'nombre'          => 'required|unique:filtros,nombre,',
+
+
+        ]);
+
+        $filtro = new Filtro();
+
+        $filtro->estado                 = $request->estado;
+        $filtro->causalesR              = $request->causalesR;
+        $filtro->iDesde                 = $request->iDesde;
+        $filtro->apretencion            = $request->apretencion;
+        $filtro->retejefe               = $request->retejefe;
+        $filtro->reterrhh               = $request->reterrhh;
+        $filtro->obsRetiro              = $request->obsRetiro;
+        $filtro->tiempoTotal            = $tiempo1;
+
+
+
+
+        $filtro->save();
+
+        return response()->json($filtro);
+        //return back();
     }
 
     /**
@@ -72,9 +112,17 @@ class RetirosController extends Controller
      * @param  \App\Retiros  $retiros
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Retiros $retiros)
+    public function update(Request $request, $id)
     {
-        //
+
+        Carbon::setLocale('es');
+        $date = Carbon::now();
+        $causas = CausasRetiro::all();
+        $datosFiltro =request()->except(['_token','_method']);
+        Filtro::where('id','=',$id)->update($datosFiltro);
+        $filtro=Filtro::findOrFail($id);
+     //return response()->json($filtro);
+     return view('entRRHH.edit', compact('filtro', 'date','causas'));
     }
 
     /**
