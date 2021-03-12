@@ -58,11 +58,7 @@
                                                     <th scope="col">Nombres</th>
                                                     <th scope="col">Campaña</th>
                                                     <th scope="col">Cargo</th>
-                                                    <th scope="col">Jefe Inmediato</th>
-                                                    <th scope="col">Sede</th>
-                                                    <th scope="col">Foco</th>
-                                                    <th scope="col">Modalidad</th>
-                                                    <th scope="col">Tipo</th>
+
 
 
                                                     <th colspan="3"></th>
@@ -76,14 +72,10 @@
                                                     <tr>
 
                                                         <td>{{ $novedades->cedula}}</td>
-                                                        <td>{{ $novedades->nombres}}</td>
+                                                        <td>{{ $novedades->nombre}}</td>
                                                         <td>{{ $novedades->campaña}}</td>
-                                                        <td>{{ $novedades->cargo}}</td>
-                                                        <td>{{ $novedades->supervisor}}</td>
-                                                        <td>{{ $novedades->sede}}</td>
-                                                        <td>{{ $novedades->foco}}</td>
-                                                        <td>{{ $novedades->modalidad}}</td>
-                                                        <td>{{ $novedades->tipoModalidad}}</td>
+                                                        <td>{{ $novedades->perfil}}</td>
+
 
 
                                                         <td>

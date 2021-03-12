@@ -50,7 +50,7 @@
 <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 <div class="card-new">
 <div class="row">
-    
+
     &nbsp;&nbsp;&nbsp;<div class="colNew"> <label for="cedula">Cedula</label><br><input type="text" class="form-control-lg-new" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $asignacion->cedula)}}" readonly></div>
             <div class="colNew"> <label for="campaña">Campaña</label><input type="text" class="form-control-lg-new" id="campaña"  placeholder="campaña" name="campaña" value="{{ old('campaña', $asignacion->campaña)}}" readonly></div>
             <div class="colNew"> <label for="cargo">Cargo</label><br><input type="text" class="form-control-lg-new" id="cargo" style="font-size: 16px;" placeholder="Cargo" name="cargo" value="{{ old('cargos', $asignacion->cargos)}}" readonly></div>
@@ -59,7 +59,7 @@
             <div class="colNew"> <label for="estado">Estado</label><br><input type="text" class="form-control-lg-new" id="estado"  placeholder="estado" name="estado" value="{{ old('estado', $asignacion->estado)}}" readonly></div>
         </div>
     </div>
-          
+
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 
         <div class="row">
@@ -93,7 +93,7 @@
         @method('POST')
                       <input class="btn btn-primary btn-lg active" type="submit" value="Registrar Novedad">
                       &nbsp;&nbsp;&nbsp;
-                     <a href="{{route('novedades.index')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
+                     <a href="{{route('novedades.create')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
 
                     </div>
     </div>

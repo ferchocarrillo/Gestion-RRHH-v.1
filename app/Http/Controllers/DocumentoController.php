@@ -66,7 +66,7 @@ class DocumentoController extends Controller
         $contratacions->nombre           = $request->nombres;
         $contratacions->telefono         = $request->telefono;
         $contratacions->correo           = $request->correo;
-        $contratacions->perfil           = $request->perfil;
+        $contratacions->cargos           = $request->cargos;
         $contratacions->campaña          = $request->campaña;
         $contratacions->fuente           = $request->fuente;
         $contratacions->residencia       = $request->residencia;

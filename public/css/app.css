@@ -50,6 +50,9 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+.Hola {
+    color: rgb(236, 13, 13);
+}
 
 article,
 aside,
@@ -2465,7 +2468,8 @@ select.form-control:focus::-ms-value {
 
   .form-control-lg-new15 {
     height: calc(1.5em + 3rem + 10px);
-    width: calc(1.5em + 20rem + 10px);
+    width: calc(1.5em + 12rem + 10px);
+    padding-top:6rem;
     padding: 0.5rem;
     font-size: 16px;
     color:#113049 ;
@@ -2486,6 +2490,20 @@ select.form-control:focus::-ms-value {
     outline-offset: 3px;
 
   }
+  .form-control-lg-new17 {
+    height: calc(1.5em + 3rem + 0);
+    width: calc(1.5em + 6.5rem + 18px);
+    padding: 0.5rem;
+    font-size: 16px;
+    color:#113049 ;
+    border-radius: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+    text-align: center;
+
+  }
+
+
 
 select.form-control[size],
 select.form-control[multiple] {

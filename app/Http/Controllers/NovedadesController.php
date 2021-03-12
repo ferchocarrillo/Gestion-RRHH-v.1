@@ -24,7 +24,7 @@ class NovedadesController extends Controller
     public function index()
     {
 
-        $activos = nuevoEmpleado::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
+        $activos = filtro::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
         return view('novedades.index',compact('activos'));
     }
 
@@ -56,7 +56,7 @@ class NovedadesController extends Controller
     public function create()
     {
         $novedades = Novedades::all();
-        $novedadeses = nuevoEmpleado::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
+        $novedadeses = filtro::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
 
         return view('novedades.create', compact('novedades','novedadeses'));
     }

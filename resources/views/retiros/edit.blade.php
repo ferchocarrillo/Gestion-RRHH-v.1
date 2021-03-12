@@ -17,7 +17,7 @@
 
 
 <div class="card-header">
-      <h3>Cambio de Estado de personal Activo</h3>
+      <h3>Cambio de Estado de Personal Activo a Inactivo</h3>
 </div>
 </center>
         </body>
@@ -29,7 +29,7 @@
 
 <div class="card">
 
-<input type="text" name="" id="" value="{{ old('id_filtro', $nuevos->id_filtro)}}">
+<input type="hidden" name="" id="" value="{{ old('id_filtro', $nuevos->id_filtro)}}">
 
     <div class="row">
    <div class="col-3">
@@ -117,7 +117,7 @@
 
         </div>
     </div>
-<p id="eliminar">* En esta sección usted podra inactivar de la base de datos a una persona</p>
+<BR><BR></BR></BR>
 <div class= "card_retiros">
 <div class= "row">
 
@@ -162,7 +162,8 @@
     <input type="checkbox" id="reterrhh" name="reterrhh"  data-toggle="toggle" data-size="med" data-onstyle="success" data-offstyle="danger" data-on="SI" data-off="NO" >
 </p>
 <p>
-    <label for="obsRetiro">Observaciones</label><br>
+    <label for="obsRetiro">Observaciones</label><br><br>
+
     <textarea name="obsRetiro" id="obsRetiro" cols="40" rows="3" class="form-control-lg-new15" required></textarea>
 </p>
 
@@ -210,8 +211,8 @@
 
       <script>
       Swal.fire(
-        'REGISTRO',
-        'Actualiza los datos de los postulados',
+        'RETIROS',
+        'En esta sección usted podra inactivar de la base de datos a una persona',
         'success'
       )
       </script>
