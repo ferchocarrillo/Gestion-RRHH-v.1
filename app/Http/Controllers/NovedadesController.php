@@ -56,7 +56,7 @@ class NovedadesController extends Controller
     public function create()
     {
         $novedades = Novedades::all();
-        $novedadeses = filtro::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
+        $novedadeses = nuevoEmpleado::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
 
         return view('novedades.create', compact('novedades','novedadeses'));
     }

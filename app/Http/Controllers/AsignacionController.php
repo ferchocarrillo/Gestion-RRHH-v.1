@@ -26,7 +26,7 @@ class AsignacionController extends Controller
      */
     public function index()
     {
-        $asignaciones = filtro::orderby('id', 'asc')->where('estado','=','activo')->paginate(10);
+        $asignaciones = nuevoEmpleado::orderby('id', 'asc')->where('estado','=','activo')->paginate(10);
 
         return view('asignacion.index',compact('asignaciones'));
     }
