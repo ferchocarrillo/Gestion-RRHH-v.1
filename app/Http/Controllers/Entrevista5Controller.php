@@ -31,9 +31,9 @@ class Entrevista5Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Entrevista4::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 4 ok')
+        $filtros = Entrevista4::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 4 ok')
         ->paginate(20);
-        return view('entrevista5.index',compact( 'entrevistas'));
+        return view('entrevista5.index',compact( 'filtros'));
     }
 
     /**
@@ -50,11 +50,12 @@ class Entrevista5Controller extends Controller
     }
     public function searchEntrevista5( Request $request)
     {
-
-
-        $searchEntrevista = $request->get('searchEntrevista');
-        $entrevistas5= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
-        return view('entrevista5.index', ['entrevistas5' => $entrevistas5]);
+        $filtros = Entrevista5::all();
+        $searchEntrevista = $request->get('searchEntrevista5');
+        $filtros= Entrevista5::firstOrNew()
+        ->where('cedula', 'like', '%'.$searchEntrevista.'%')
+        ->paginate(5);
+        return view('entrevista5.index', ['filtros' => $filtros]);
     }
 
     /**

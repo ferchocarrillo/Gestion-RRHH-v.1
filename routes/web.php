@@ -59,16 +59,18 @@ Route::get('entrevista2-list-excel', 'Entrevista2Controller@exportExcel')->name(
 Route::get('entrevista3-list-excel', 'Entrevista3Controller@exportExcel')->name('entrevista3.excel');
 Route::get('entrevista4-list-excel', 'Entrevista4Controller@exportExcel')->name('entrevista4.excel');
 
-Route::get('/search','RequisicionController@search');
+
+Route::get('/searchRequisicion','RequisicionController@searchRequisicion');
 Route::get('/searchusers','UserController@searchusers');
-Route::get('/searchfiltro','EntrevistaController@searchfiltro');
-Route::get('/searchEntrevista','Entrevista1Controller@searchEntrevista');
+Route::get('/searchfiltro','FiltroController@searchfiltro');
+Route::get('/searchCon','ContratacionController@searchCon');
+Route::get('/searchEntrevista1','Entrevista1Controller@searchEntrevista1');
 Route::get('/searchEntrevista2','Entrevista2Controller@searchEntrevista2');
 Route::get('/searchEntrevista3','Entrevista3Controller@searchEntrevista3');
 Route::get('/searchEntrevista4','Entrevista4Controller@searchEntrevista4');
 Route::get('/searchEntrevista5','Entrevista5Controller@searchEntrevista5');
-Route::get('/searchEntFinalizacion','EntFinalizacionController@searchEntFinalizacion');
-Route::get('/searchcapacitacion','CapacitacionController@searchcapacitacion');
+Route::get('/searchCapacitacion','CapacitacionController@searchCapacitacion');
+
 Route::get('/searchDocumento','DocumentoController@searchDocumento');
 Route::get('/searchNovedades','NovedadesController@searchNovedades');
 Route::get('/searchCoord','NovedadesController@searchCoord');

@@ -26,8 +26,8 @@ class AsignacionController extends Controller
      */
     public function index()
     {
-        $asignaciones = nuevoEmpleado::orderby('id', 'asc')->where('estado','=','activo')->paginate(10);
-       
+        $asignaciones = filtro::orderby('id', 'asc')->where('estado','=','activo')->paginate(10);
+
         return view('asignacion.index',compact('asignaciones'));
     }
 
@@ -173,7 +173,7 @@ class AsignacionController extends Controller
    }
 }
 
-    
+
     public function edit($id)
     {
 
@@ -207,7 +207,7 @@ class AsignacionController extends Controller
         $tipoModalidades = TipoModalidad::all();
         $sedes = Sede::all();
         $supervisores = Supervisor::all();
-        $focos = Foco::all();    
+        $focos = Foco::all();
         $cargos = Cargo::all();
         $campañas = Campana::all();
         $datosFiltro =request()->except(['_token','_method']);
@@ -216,7 +216,7 @@ class AsignacionController extends Controller
      //return response()->json($contatacion);
      return view('asignacion.edit', compact('tipoModalidades','modalidades','contatacion','cargos','campañas','focos','supervisores','sedes'));
 
-       
+
     }
 
     /**

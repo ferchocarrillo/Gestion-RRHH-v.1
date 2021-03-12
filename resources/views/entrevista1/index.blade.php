@@ -13,11 +13,11 @@
 </center>
     <p
         <div class="col-md-4">
-    <form action="/searchEntrevista" method="GET">
+    <form action="/searchEntrevista1" method="GET">
     <div class="input-group">
-    <p><input type="searchEntrevista" name="searchEntrevista" class="form-control" ></p>
+    <p><input type="searchEntrevista1" name="searchEntrevista1" class="form-control" ></p>
 <span class="input-group-prepend">
-    <p><button type="submit" class="btn btn-primary">Buscar por Numero</button></p>
+    <p><button type="submit" class="btn btn-primary">Buscar por Cedula</button></p>
 </span>
 </div>
 </form>
@@ -92,11 +92,11 @@
 
                     </form>
                     {{ $filtros->links()}}
-
+{{--
                     <p>
                         clic <a href="{{route('entrevista1.excel')}}">Aqui</a>
                         Descarga la entrevista en excel
-                        </p>
+                        </p> --}}
 
                     </div>
                 <!-- Bootstrap CSS-->

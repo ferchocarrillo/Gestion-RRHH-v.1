@@ -14,22 +14,22 @@
 </center>
               <p align="right">
                     <div class="col-md-4">
-                <form action="/searchcontratacion" method="GET">
+                <form action="/searchCon" method="GET">
                 <div class="input-group">
-        <input type="searchcontratacion" name="searchcontratacion" class="form-control">
+        <input type="searchCon" name="searchCon" class="form-control">
         <span class="input-group-prepend">
-            <button type="submit" class="btn btn-primary">Buscar por Numero</button>
+            <button type="submit" class="btn btn-primary">Buscar por Cedula</button>
             </span>
         </div>
     </form>
 </div>
 </p>
 <div class="container"
-              
 
 
 
-<br>         <form name="f1" action="{{ url('/contratacion/')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+
+<br>         <form name="f1" action="{{ url('/contratacion')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
 {{csrf_field()}}
 <form>
     <center>
@@ -50,15 +50,15 @@
                         <th scope="col">Perfil</th>
                         <th scope="col">Campaña</th>
 
-                
+
                         <th colspan="2"></th>
                       </tr>
                     </thead>
                     <tbody>
-                         @foreach ($contrataciones as $contratacion)
+                         @foreach ($contratacions as $contratacion)
                         <tr>
                 <th scope="row">{{ $contratacion->id}}</th>
-                     
+
                             <td>{{ $contratacion->cedula}}</td>
                             <td>{{ $contratacion->nombre}}</td>
                             <td>{{ $contratacion->telefono}}</td>
@@ -84,7 +84,7 @@
                       </div>
 
                     </form>
-                    {{ $contrataciones->links()}}
+                    {{ $contratacions->links()}}
 
        {{--             <p>
                         clic <a href="{{route('entrevista1.excel')}}">Aqui</a>

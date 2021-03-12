@@ -26,8 +26,17 @@ class CapacitacionController extends Controller
     public function index()
     {
 
-        $entrevistases = Filtro::orderBy('created_at', 'desc')->where('enviadoCapa','=','enviadoCapa')->paginate(10);
-        return view('capacitacion.index',compact('entrevistases'));
+        $filtros = Filtro::orderBy('created_at', 'desc')->where('enviadoCapa','=','enviadoCapa')->paginate(10);
+        return view('capacitacion.index',compact('filtros'));
+    }
+
+    public function searchCapacitacion( Request $request)
+    {
+
+        $filtros = Filtro::all();
+        $searchEntrevista = $request->get('searchCapacitacion');
+        $filtros= filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(20);
+        return view('capacitacion.index', ['filtros' => $filtros]);
     }
 
     /**
@@ -133,7 +142,7 @@ class CapacitacionController extends Controller
         $aprobaciones = Aprobacion::all();
         Carbon::setLocale('es');
         $date = Carbon::now();
- 
+
         $datosFiltro =request()->except(['_token','_method']);
         Filtro::where('id','=',$id)->update($datosFiltro);
         $filtro=Filtro::findOrFail($id);

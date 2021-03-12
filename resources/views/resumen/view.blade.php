@@ -23,7 +23,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 {{csrf_field()}}
 
 <div class="col-sm-12">
-    <div class="col-2"><label  for="id_filtro"></label><input  type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro"   value="{{ old('id', $filtro->id)}}"></div>
+    <div class="col-2"><label  for="id_filtro"></label><input  type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro"   value="{{ old('id_filtro', $filtro->id_filtro)}}"></div>
     <center><p>
         <div class="p-3 mb-2 bg-info text-white" id ="nombres" name="nombres">
           <h3> {{ $entrevista1s->nombres}}</h3>
@@ -273,13 +273,13 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col"><p class="h6">Motivo de retiro</p> </div>
          <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
-        
+
          <!-- Force next columns to break to new line -->
          <div class="w-100 d-none d-md-block"></div>
          <div class="col">{{ $entrevista4s->sinExp}}</div>
 
 
-        
+
          <!-- Force next columns to break to new line -->
          <div class="w-100 d-none d-md-block"></div>
          <div class="col">{{ $entrevista4s->empresa1}}</div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\entrevista3;
+use App\Entrevista3;
 use App\Entrevista2;
 use App\Entrevista1;
 use App\Filtro;
@@ -31,10 +31,13 @@ class Entrevista3Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Entrevista2::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 2 ok')
+        $filtros = Entrevista2::orderBy('created_at', 'desc')
+        ->where('entvOK','=','entrevista 2 ok')
         ->paginate(20);
-        return view('entrevista3.index',compact( 'entrevistas'));
+        return view('entrevista3.index',compact( 'filtros'));
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -43,19 +46,19 @@ class Entrevista3Controller extends Controller
      */
     public function create()
     {
-        $entrevista3 = Entrevista3::all();
+        $entrevistas = Entrevista3::all();
         $reclutamientos=Reclutamiento::all();
 
-        return view('entrevista3.create',compact('entrevistas3','reclutamientos'));
+        return view('entrevista3.create',compact('entrevistas','reclutamientos'));
     }
 
     public function searchEntrevista3( Request $request)
     {
 
 
-        $searchEntrevista = $request->get('searchEntrevista');
-        $entrevistas3= Entrevista1::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
-        return view('entrevista3.index', ['entrevistas3' => $entrevistas3]);
+        $searchEntrevista = $request->get('searchEntrevista3');
+        $filtros= Entrevista2::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(20);
+        return view('entrevista3.index', ['filtros' => $filtros]);
     }
 
     /**

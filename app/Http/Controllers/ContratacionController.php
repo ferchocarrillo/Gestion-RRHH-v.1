@@ -42,8 +42,18 @@ class ContratacionController extends Controller
      */
     public function index()
     {
-        $contrataciones = filtro::orderby('id', 'asc')->where('enviadocontratacion','=','enviadocontratacion')->paginate(10);
-        return view('contratacion.index',compact( 'contrataciones'));
+        $contratacions = contratacion::all();
+        $contratacions = filtro::orderby('id', 'asc')->where('enviadocontratacion','=','enviadocontratacion')->paginate(10);
+        return view('contratacion.index',compact( 'contratacions'));
+    }
+
+    public function searchCon( Request $request)
+    {
+        $contratacions = contratacion::all();
+        $searchCon = $request->get('searchCon');
+        $contratacions = contratacion::firstOrNew()->where('cedula', 'like', '%'.$searchCon.'%')->paginate(10);
+
+        return view('contratacion.index', ['contratacions' => $contratacions]);
     }
 
     /**

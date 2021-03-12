@@ -14,9 +14,9 @@
 </center>
     <p
         <div class="col-md-4">
-    <form action="/searchEntrevista" method="GET">
+    <form action="/searchEntrevista2" method="GET">
     <div class="input-group">
-    <p><input type="searchEntrevista" name="searchEntrevista" class="form-control" ></p>
+    <p><input type="searchEntrevista2" name="searchEntrevista2" class="form-control" ></p>
 <span class="input-group-prepend">
     <p><button type="submit" class="btn btn-primary">Buscar por Numero</button></p>
 </span>
@@ -29,7 +29,7 @@
 <div class="container">
 
 
-<br>         <form name="f1" action="{{ url('/entrevista1')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<br>         <form name="f1" action="{{ url('/entrevista2')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
                         <center>
@@ -84,10 +84,10 @@
                     </form>
                     {{ $filtros->links()}}
 
-                    <p>
+                    {{-- <p>
                         clic <a href="{{route('entrevista1.excel')}}">Aqui</a>
                         Descarga la entrevista en excel
-                        </p>
+                        </p> --}}
 
                     </div>
 

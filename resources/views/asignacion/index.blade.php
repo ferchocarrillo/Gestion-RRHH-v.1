@@ -5,7 +5,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-                    
+
 
 {{-- <a href="{{route('resumen.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de capacitaciones" /></a> --}}
 
@@ -29,7 +29,7 @@
                             <div class="card">
                                 <div class="card-body">
 <div class="row">
-                                    
+
                                     <br>
                                     <p align="right">
                                         <div class="col-md-6">
@@ -44,7 +44,7 @@
                     </div>
                     </p>
                     <br>
-                                    
+
 
                 </div>
 
@@ -56,7 +56,7 @@
                         <th scope="col">Nombre</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Perfil</th>
-                        <th scope="col">Foco</th>
+
                         <th scope="col">Campaña</th>
                         <th colspan="3">Acciones</th>
                         </tr>
@@ -66,17 +66,17 @@
                         <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$asignacion->cedula}}</td>
-                        <td>{{$asignacion->nombres}}</td>
+                        <td>{{$asignacion->nombre}}</td>
                         <td>{{$asignacion->correo}}</td>
-                        <td>{{$asignacion->cargo}}</td>
-                        <td>{{$asignacion->foco}}</td>
+                        <td>{{$asignacion->perfil}}</td>
+
                         <td>{{$asignacion->campaña}}</td>
-                
+
                         <td>
                             <form action="{{url('/asignacion/'.$asignacion->id)}}" method="post" style='display:inline'>
                                 @csrf
                                 @method('DELETE')
-                
+
                         <a href="{{url('/asignacion/'.$asignacion->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Asignar</a>
                      {{--   <button class="btn btn-warning btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
                        </form>
@@ -87,9 +87,9 @@
                         </table>
 
 
-                    
-                    
-                    
+
+
+
                 {{--    <h6>Total de Novedades:  {{ $novedadess->total() }}</h6>
                     @foreach ($countRequises as $countRequis)
                     <h6>Cantidad de Aprobados:   {{ $countRequis }}</h6>
@@ -104,12 +104,12 @@
                     <h6>Cantidad de sin Gestion:   {{ $countRequi4s }}</h6>
                     @endforeach
                     --}}
-                    
-                    
+
+
                     {{--
                                     <div class="card-body">
                                  @include('custom.message')
-                    
+
                                         <table class="table table-striped table-bordered table-hover table-dark">
                                             <thead>
                                               <tr>
@@ -127,10 +127,10 @@
                                               </tr>
                                             </thead>
                                             <tbody>
-                    
-                    
+
+
                                                 @foreach ($activos as $novedades)
-                    
+
                                                 <tr>
                                                     <th scope="row">{{ $novedades->id}}</th>
                                                     <td>{{ $novedades->cedula}}</td>
@@ -142,44 +142,44 @@
                                                     <td>{{ $novedades->jinmediato}}</td>
                                                     <td>{{ $novedades->novedad}}</td>
                                                     <td>{{ $novedades->observaciones}}</td>
-                    
+
                                                     <td>
                                                         <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
-                    
+
                                                         <form action="{{url('/novedades/'.$novedades->id)}}" method="post">
-                    
+
                                                         @csrf
-                    
+
                                                         @method('DELETE')
-                    
-                    
-                    
-                    
+
+
+
+
                                                         {{--<button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>
-                    
-                    
-                    
-                    
+
+
+
+
                                                 </form>
-                    
-                    
-                    
+
+
+
                                                     </td>
                                                 </tr>
                                                 @endforeach
-                    
-                    
-                    
-                    
-                    
+
+
+
+
+
                                             </tbody>
                                           </table>
-                    
+
                                           {{ $activos->links() }}--}}
-                    
-                    
-               
-                    
+
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -195,9 +195,9 @@
                                   <link rel="stylesheet" href="/css/admin_custom.css">
                                   @stop
                                   @section('js')
-                    
-                    
-                    
+
+
+
                           <script>
                           Swal.fire(
                             'REQUISICION',
@@ -206,9 +206,8 @@
                           )
                           </script>
                           @stop
-                    
+
                           @endsection
-                    
-                    
-                    
-                    
+
+
+

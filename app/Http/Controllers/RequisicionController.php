@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\JhonatanPermission\Models\Permission;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
-use App\JhonatanPermission\Models\Requisicion;
 use App\Cargo;
 use App\Sede;
 use App\Dependencia;
@@ -18,7 +17,7 @@ use stdClass;
 use DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\requisicionExport;
-use App\requisicion as AppRequisicion;
+use App\Requisicion;
 
 class RequisicionController extends Controller
 {
@@ -33,16 +32,34 @@ class RequisicionController extends Controller
         $usuarios = User::all();
         $cargo = Cargo::all();
         $dependencia = Dependencia::all();
+        $requisiciones= Requisicion::all();
         $requisiciones= Requisicion::orderBy('revisado', 'asc')->paginate(10);
 
 
-      $countRequises['requisicions'] = Requisicion::where('revisado', 'Aprobado')->count();
-      $countRequi2ses['requisicions'] = Requisicion::where('revisado', 'Rechazado')->count();
-      $countRequi3ses['requisicions'] = Requisicion::where('revisado', 'Pendiente')->count();
-      $countRequi4ses['requisicions'] = Requisicion::where('revisado', Null)->count();
+      $countRequises    ['requisicions'] = Requisicion::where('revisado', 'Aprobado')->count();
+      $countRequi2ses   ['requisicions'] = Requisicion::where('revisado', 'Rechazado')->count();
+      $countRequi3ses   ['requisicions'] = Requisicion::where('revisado', 'Pendiente')->count();
+      $countRequi4ses   ['requisicions'] = Requisicion::where('revisado',  Null)->count();
 
 
         return view('requisicion.index',compact('requisiciones','countRequises', 'countRequi2ses','countRequi3ses','countRequi4ses','usuarios','cargo','dependencia'));
+    }
+
+
+
+    public function searchRequisicion( Request $request)
+    {
+        $requisiciones= Requisicion::all();
+
+        $searchRequisicion = $request->get('searchRequisicion');
+        $countRequises    ['requisicions'] = Requisicion::where('revisado', 'Aprobado')->count();
+        $countRequi2ses   ['requisicions'] = Requisicion::where('revisado', 'Rechazado')->count();
+        $countRequi3ses   ['requisicions'] = Requisicion::where('revisado', 'Pendiente')->count();
+        $countRequi4ses   ['requisicions'] = Requisicion::where('revisado',  Null)->count();
+
+        $requisiciones= Requisicion::firstOrNew()->where('id', 'like', '%'.$searchRequisicion.'%')->paginate(10);
+
+        return view('requisicion.index', ['requisiciones' => $requisiciones], compact('countRequises', 'countRequi2ses','countRequi3ses','countRequi4ses'));
     }
 
     /**

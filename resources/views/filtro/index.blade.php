@@ -45,7 +45,7 @@
                                     <table class="table table-striped table-bordered table-hover table-dark">
                                         <thead>
                                           <tr >
-                                            <th scope="col">Id</th>
+
                                             <th scope="col">Fecha registro</th>
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
@@ -59,21 +59,21 @@
                                           </tr>
                                         </thead>
                                         <tbody>
-                             @foreach ($entrevistas as $entrevista)
+                             @foreach ($filtros as $filtro)
                                             <tr>
-                                    <th scope="row">{{ $entrevista->id}}</th>
-                                                <td>{{ $entrevista->fregistro}}</td>
-                                                <td>{{ $entrevista->cedula}}</td>
-                                                <td>{{ $entrevista->nombre}}</td>
-                                                <td>{{ $entrevista->telefono}}</td>
-                                                <td>{{ $entrevista->correo}}</td>
-                                                <td>{{ $entrevista->perfil}}</td>
-                                                <td>{{ $entrevista->campaña}}</td>
-                                                <td>{{ $entrevista->observacion}}</td>
-                                                <td>{{ $entrevista->observacion2}}</td>
+
+                                                <td>{{ $filtro->fregistro}}</td>
+                                                <td>{{ $filtro->cedula}}</td>
+                                                <td>{{ $filtro->nombre}}</td>
+                                                <td>{{ $filtro->telefono}}</td>
+                                                <td>{{ $filtro->correo}}</td>
+                                                <td>{{ $filtro->perfil}}</td>
+                                                <td>{{ $filtro->campaña}}</td>
+                                                <td>{{ $filtro->observacion}}</td>
+                                                <td>{{ $filtro->observacion2}}</td>
                                                 <td>
-                                                    <a href="{{url('/filtro/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
-                                                    <form action="{{url('/filtro/'.$entrevista->id)}}" method="post">
+                                                    <a href="{{url('/filtro/'.$filtro->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
+                                                    <form action="{{url('/filtro/'.$filtro->id)}}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                    {{-- <button class="btn btn-info btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
@@ -89,7 +89,7 @@
                       </div>
                     </form>
 
-                    {{ $entrevistas->links()}}
+                    {{ $filtros->links()}}
                 <!-- Bootstrap CSS-->
                 <link href="{{ asset('theme/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
             <!-- Bootstrap JS-->

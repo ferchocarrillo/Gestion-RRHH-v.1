@@ -12,20 +12,20 @@
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
 </center>
-    <p 
+    <p
         <div class="col-md-4">
-    <form action="/searchEntrevista" method="GET">
+    <form action="/searchEntrevista5" method="GET">
     <div class="input-group">
-    <p><input type="searchEntrevista" name="searchEntrevista" class="form-control" ></p>
+    <p><input type="searchEntrevista5" name="searchEntrevista5" class="form-control" ></p>
 <span class="input-group-prepend">
-    <p><button type="submit" class="btn btn-primary">Buscar por Numero</button></p>
+    <p><button type="submit" class="btn btn-primary">Buscar por Cedula</button></p>
 </span>
 </div>
 </form>
 </div>
 </p>
 <div class="container">
-<br>         <form name="f1" action="{{ url('/entrevista1')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<br>         <form name="f1" action="{{ url('/entrevista5')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
                         <center>
@@ -44,25 +44,25 @@
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
 
-                                            
+
 
                                             <th colspan="6">Etapas de la entrevista</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($entrevistas as $entrevista)
+                                            @foreach ($filtros as $filtro)
                                             <tr>
-                                                <th scope="row">{{ $entrevista->id}}</th>
-                                                <td>{{ $entrevista->cedula}}</td>
-                                                <td>{{ $entrevista->nombres}}</td>
-                                               <td>{{ $entrevista->telefono}}</td>
+                                                <th scope="row">{{ $filtro->id}}</th>
+                                                <td>{{ $filtro->cedula}}</td>
+                                                <td>{{ $filtro->nombres}}</td>
+                                               <td>{{ $filtro->telefono}}</td>
 
-                                                
+
                                                 <td>
                                                    {{--<a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Datos basicos</a>--}}
                                                   {{-- <a href="{{url('/entrevista2/'.$entrevista->id.'/edit')}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true">Familiares</a>--}}
                                                     {{--<a href="{{url('/entrevista3/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>--}}
-                                                    <a href="{{url('/entrevista5/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Adicionales</a>
+                                                    <a href="{{url('/entrevista5/'.$filtro->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Adicionales</a>
 
                                                 </form>
                                             </td>
@@ -77,12 +77,12 @@
                   </div>
 
                 </form>
-                {{ $entrevistas->links()}}
+                {{ $filtros->links()}}
 
-                <p>
+                {{-- <p>
                     clic <a href="{{route('entrevista1.excel')}}">Aqui</a>
                     Descarga la entrevista en excel
-                    </p>
+                    </p> --}}
 
                 </div>
 

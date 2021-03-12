@@ -5,51 +5,42 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-                   
+
 <div class="container">
     <div class="pull-right">
-        <div class="col-md-12">            
+        <div class="col-md-12">
     <div class="card">
     <div class="row">
                 <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-                
-                
+
+
                     <img src="\theme\images\isotipo-slogan.png" float="center" height="120" width="300">
-                   
-              
+
+
 
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {{-- 
-            
+            {{--
+
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     --}}
-            <div class="col-md-4">
-    <form action="/search" method="GET">
-    <div class="input-group">
-<input type="search" name="search" class="form-control">
-<span class="input-group-prepend">
-<button type="submit" class="btn btn-primary">Buscar por id</button>
-</span>
+
+
 </div>
-</form>
+</div>
 </div>
 
 </div>
-</div>            
 </div>
 
-</div>
-</div> 
 
 
 
-    
- 
 
-    
+
+
 
 <div class="card text-center">
  <div class="card-header">
@@ -79,6 +70,16 @@
 @endforeach&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 
+<div class="col-md-4">
+    <form action="/searchRequisicion" method="GET">
+    <div class="input-group">
+<input type="searchRequisicion" name="searchRequisicion" class="form-control">
+<span class="input-group-prepend">
+<button type="submit" class="btn btn-primary">Buscar por ID de solicitud</button>
+</span>
+</div>
+</form>
+</div>
 
 
                 <div class="card-body">
@@ -156,10 +157,10 @@
         </div>
     </div>
 </div>
-<p>
+{{-- <p>
     clic <a href="{{route('requisicion.excel')}}">Aqui</a>
     para descargar en Excel la base de requisicion
-    </p>
+    </p> --}}
 <script src="{{asset('js/app.js')}}"></script>
               </body>
               @section('css')

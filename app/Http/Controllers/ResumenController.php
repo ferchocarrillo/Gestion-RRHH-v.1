@@ -39,7 +39,7 @@ class ResumenController extends Controller
      */
     public function index()
     {
-        $entrevistas = filtro::orderBy('updated_at', 'desc')->where('resultadoRrhh', '<>', null)->paginate(10);
+        $entrevistas = nuevoEmpleado::orderBy('created_at', 'desc')->paginate(10);
         return view('resumen.index',compact('entrevistas'));
     }
 

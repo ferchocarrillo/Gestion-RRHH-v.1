@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Entrevista1;
-use App\entrevista2;
+use App\Entrevista2;
 use App\Filtro;
 use App\reclutamiento;
 use Illuminate\Http\Request;
@@ -56,13 +56,14 @@ class Entrevista2Controller extends Controller
         return view('entrevista2.create',compact('entrevistas2','reclutamientos'));
     }
 
+
     public function searchEntrevista2( Request $request)
     {
 
 
-        $searchEntrevista = $request->get('searchEntrevista');
-        $entrevistas2= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
-        return view('entrevista2.index', ['entrevistas2' => $entrevistas2]);
+        $searchEntrevista = $request->get('searchEntrevista2');
+        $filtros= Entrevista1::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(20);
+        return view('entrevista2.index', ['filtros' => $filtros]);
     }
 
     /**

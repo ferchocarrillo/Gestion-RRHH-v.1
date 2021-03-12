@@ -50,19 +50,19 @@ class Entrevista1Controller extends Controller
      */
     public function create()
     {
-        $entrevista = Entrevista1::all();
+        $filtros = Entrevista1::all();
         $reclutamientos=Reclutamiento::all();
 
-        return view('entrevista1.create',compact('entrevistas','reclutamientos'));
+        return view('entrevista1.create',compact('filtros','reclutamientos'));
     }
 
-    public function searchEntrevista( Request $request)
+    public function searchEntrevista1( Request $request)
     {
 
 
-        $searchEntrevista = $request->get('searchEntrevista');
-        $entrevistas= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(20);
-        return view('entrevista1.index', ['entrevistas' => $entrevistas]);
+        $searchEntrevista = $request->get('searchEntrevista1');
+        $filtros= filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(20);
+        return view('entrevista1.index', ['filtros' => $filtros]);
     }
 
     /**

@@ -30,17 +30,17 @@ class FiltroController extends Controller
     {
 
         $cargos = Cargo::all();
-        $entrevistas = Filtro::orderBy('id', 'asc')->paginate(10);
-        return view('filtro.index',compact('entrevistas','cargos'));
+        $filtros = Filtro::orderBy('updated_at', 'desc')->paginate(20);
+        return view('filtro.index',compact('filtros','cargos'));
     }
 
     public function searchfiltro( Request $request)
 
     {
-        $filtros = Filtro::all();
 
+        $filtros = Filtro::all();
         $searchfiltro = $request->get('searchfiltro');
-        $filtros= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchfiltro.'%')->paginate(5);
+        $filtros= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchfiltro.'%')->paginate(20);
         return view('filtro.index', ['filtros' => $filtros]);
     }
 

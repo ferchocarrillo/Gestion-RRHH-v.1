@@ -14,9 +14,9 @@
 </center>
             <p align="right">
                     <div class="col-md-4">
-                <form action="/searchfiltro" method="GET">
+                <form action="/searchCapacitacion" method="GET">
                 <div class="input-group">
-        <input type="searchfiltro" name="searchfiltro" class="form-control">
+        <input type="searchCapacitacion" name="searchCapacitacion" class="form-control">
         <span class="input-group-prepend">
             <button type="submit" class="btn btn-primary">Buscar por cedula</button>
             </span>
@@ -46,35 +46,35 @@
                                         <thead>
                                           <tr >
                                             <th scope="col">#</th>
-                       
+
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
                                             <th scope="col">Correo</th>
                                             <th scope="col">Perfil</th>
                                             <th scope="col">Campaña</th>
-                    
-                                    
+
+
                                             <th colspan="2"></th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                             @foreach ($entrevistases as $entrevistas)
+                                             @foreach ($filtros as $filtro)
                                             <tr>
-                                    <th scope="row">{{ $entrevistas->id}}</th>
-                                         
-                                                <td>{{ $entrevistas->cedula}}</td>
-                                                <td>{{ $entrevistas->nombre}}</td>
-                                                <td>{{ $entrevistas->telefono}}</td>
-                                                <td>{{ $entrevistas->correo}}</td>
-                                                <td>{{ $entrevistas->perfil}}</td>
-                                                <td>{{ $entrevistas->campaña}}</td>
-                                      
-                               
+                                    <th scope="row">{{ $filtro->id}}</th>
+
+                                                <td>{{ $filtro->cedula}}</td>
+                                                <td>{{ $filtro->nombre}}</td>
+                                                <td>{{ $filtro->telefono}}</td>
+                                                <td>{{ $filtro->correo}}</td>
+                                                <td>{{ $filtro->perfil}}</td>
+                                                <td>{{ $filtro->campaña}}</td>
+
+
                                                 <td>
 
-                                        
-                                                    <a href="{{url('/capacitacion/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Capacitacion</a>
+
+                                                    <a href="{{url('/capacitacion/'.$filtro->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Capacitacion</a>
                                                     {{-- <a href="{{url('/entFinalizacion/'.$entrevistas->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a> --}}
                                             </form>
                                                 </td>
@@ -88,7 +88,7 @@
                       </div>
                     </form>
 
-                    {{ $entrevistases->links()}}
+                    {{ $filtros->links()}}
                 <!-- Bootstrap CSS-->
                 <link href="{{ asset('theme/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
             <!-- Bootstrap JS-->

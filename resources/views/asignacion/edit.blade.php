@@ -20,7 +20,7 @@
 
             <center><p>
                 <div class="card-header" id ="nombres" name="nombres">
-                  <h3> {{ $contatacion->nombres}}</h3>
+                  <h3> {{ $contatacion->nombre}}</h3>
                 </div>
             </p></center>
 
@@ -87,18 +87,18 @@
 
 
 
-    
+
 
 
         <div class="col-6 col-md-3"><strong><p>Cedula:</p></strong>{{ old('cedula', $contatacion->cedula)}}</div><br>
-                
+
         <div class="col-6 col-md-3"><strong><p>Perfil:</p></strong>
           <p><input list="cargos" type="text" name="cargos" class="form-control" placeholder="Perfiles" >
-            
+
             <datalist name="cargos" id="cargos">
-              <option value="{{ old('cargos', $contatacion->cargos)}}">Perfiles</option>
-              @foreach($cargos as $perfil)<option value="{{ $perfil->cargo}}">
-                  {{ $perfil->cargo }}</option>
+              <option value="{{ old('perfil', $contatacion->perfil)}}">Perfiles</option>
+              @foreach($cargos as $perfil)<option value="{{ $perfil->perfil}}">
+                  {{ $perfil->perfil }}</option>
                 @endforeach
             </datalist>
             </p>
@@ -106,7 +106,7 @@
 
             <div class="col-6 col-md-3"><strong><p>Campaña:</p></strong>
                 <p><input list="campaña" type="text" name="campaña" class="form-control" placeholder="Campaña" >
-                  
+
                   <datalist name="campaña" id="campaña">
                     <option value="{{ old('campaña', $contatacion->campaña)}}">Campaña</option>
                     @foreach($campañas as $campaña)<option value="{{ $campaña->campaña}}">
@@ -116,7 +116,7 @@
                   </p>
                 </div>
         <br>
-        
+
 
 
         <div class="col-6 col-md-3"><strong><p>Estado:</p></strong>{{ old('estado', $contatacion->estado)}}</div>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\entrevista4;
+use App\Entrevista4;
 use App\Entrevista3;
 use App\Entrevista1;
 use Illuminate\Http\Request;
@@ -31,9 +31,9 @@ class Entrevista4Controller extends Controller
      */
     public function index()
     {
-        $entrevistas = Entrevista3::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 3 ok')
+        $filtros = Entrevista3::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 3 ok')
         ->paginate(20);
-        return view('entrevista4.index',compact( 'entrevistas'));
+        return view('entrevista4.index',compact( 'filtros'));
     }
 
     /**
@@ -43,19 +43,21 @@ class Entrevista4Controller extends Controller
      */
     public function create()
     {
-        $entrevista4 = Entrevista4::all();
+        $filtros = Entrevista4::all();
         $reclutamientos=Reclutamiento::all();
 
-        return view('entrevista4.create',compact('entrevistas4','reclutamientos'));
+        return view('entrevista4.create',compact('filtros','reclutamientos'));
     }
 
     public function searchEntrevista4( Request $request)
     {
 
-
-        $searchEntrevista = $request->get('searchEntrevista');
-        $entrevistas4= Entrevista1::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(5);
-        return view('entrevista4.index', ['entrevistas4' => $entrevistas4]);
+        $filtros = Entrevista4::all();
+        $searchEntrevista = $request->get('searchEntrevista4');
+        $filtros= Entrevista4::firstOrNew()
+        ->where('cedula', 'like', '%'.$searchEntrevista.'%')
+        ->paginate(5);
+        return view('entrevista4.index', ['filtros' => $filtros]);
     }
 
     /**
@@ -81,35 +83,35 @@ $date1 = $request->input('fechain1');
 $date2 = $request->input('fechart1');
 $tiempoA = $hoy->floatDiffInRealDays($date1);
 $tiempoB = $hoy->floatDiffInRealDays($date2);
- 
+
 $tiempo1 = $tiempoA - $tiempoB;
 
 $date3 = $request->input('fechain2');
 $date4 = $request->input('fechart2');
 $tiempoC = $hoy->floatDiffInRealDays($date3);
 $tiempoD = $hoy->floatDiffInRealDays($date4);
- 
+
 $tiempo2 = $tiempoC - $tiempoD;
 
 $date5 = $request->input('fechain3');
 $date6 = $request->input('fechart3');
 $tiempoE = $hoy->floatDiffInRealDays($date5);
 $tiempoF = $hoy->floatDiffInRealDays($date6);
- 
+
 $tiempo3 = $tiempoE - $tiempoF;
 
 $date7 = $request->input('fechain4');
 $date8 = $request->input('fechart4');
 $tiempoG = $hoy->floatDiffInRealDays($date7);
 $tiempoH = $hoy->floatDiffInRealDays($date8);
- 
+
 $tiempo4 = $tiempoG - $tiempoH;
 
 $date9 = $request->input('fechain5');
 $date10 = $request->input('fechart5');
 $tiempoI = $hoy->floatDiffInRealDays($date9);
 $tiempoJ = $hoy->floatDiffInRealDays($date10);
- 
+
 $tiempo5 = $tiempoI - $tiempoJ;
 
 
