@@ -11,12 +11,19 @@ use App\JhonatanPermission\Models\Entrada;
 use App\Http\Controllers\Timestamp;
 use DateTime;
 use CreateEntradasTable;
+use Carbon\Carbon;
 
 class EntradaController extends Controller
 
 
 
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *

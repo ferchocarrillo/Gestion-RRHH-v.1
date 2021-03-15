@@ -18,9 +18,16 @@ use stdClass;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\PortaExport;
 use App\Fuente;
+use Carbon\Carbon;
 
 class FiltroController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *

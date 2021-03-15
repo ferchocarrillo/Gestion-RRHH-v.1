@@ -16,9 +16,15 @@ use App\Sede;
 use App\Modalidad;
 use App\TipoModalidad;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AsignacionController extends Controller
 {
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *

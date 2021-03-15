@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use App\verNovedades;
 use App\Novedades;
-use Carbon\carbon;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class VerNovedadesController extends Controller
 {
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *

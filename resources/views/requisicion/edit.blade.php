@@ -7,7 +7,7 @@
 
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
-  
+
 </center>
 
 
@@ -31,7 +31,7 @@
     <div class="form-row">
    <div class="col-3">
        <label for="cargo">Cargo</label>
-        <input type="text" class="form-control-lg-new9"
+        <input type="text" class="form-control-lg-new18"
         id="cargo"
         placeholder="Cargo"
         name="cargo"
@@ -39,7 +39,7 @@
     </div>
     <div class="col-3">
         <label for="cantidad">Cantidad</label>
-         <input type="number" class="form-control-lg-new9"
+         <input type="number" class="form-control-lg-new18"
          id="cantidad"
          placeholder="cantidad"
          name="cantidad"
@@ -48,7 +48,7 @@
          <div class="col-3">
             <label for="sede">Sede</label>
                <input type="text"
-               class="form-control-lg-new9"
+               class="form-control-lg-new18"
                id="sede"
                placeholder="sede"
                name="sede"
@@ -57,7 +57,7 @@
 
          <div class="col-3">
               <label for="dependencias">Dependencia</label>
-              <input type="text" class="form-control-lg-new9"
+              <input type="text" class="form-control-lg-new18"
               id="dependencias"
               placeholder="Dependencias"
               name="dependencias"
@@ -65,7 +65,7 @@
             </div>
          <div class="col-3">
               <label for="area">Area</label>
-              <input type="text" class="form-control-lg-new9"
+              <input type="text" class="form-control-lg-new18"
               id="area"
               placeholder="Area"
               name="area"
@@ -74,7 +74,7 @@
 
         <div class="col-3">
               <label for="motivos">Motivos</label>
-              <input type="text" class="form-control-lg-new9"
+              <input type="text" class="form-control-lg-new18"
               id="motivos"
               placeholder="Motivos"
               name="motivos"
@@ -83,7 +83,7 @@
 
         <div class="col-3">
               <label for="reemplaza">Reemplaza</label>
-              <input type="text" class="form-control-lg-new9"
+              <input type="text" class="form-control-lg-new18"
               id="reemplaza"
               placeholder="sin datos"
               name="reemplaza"
@@ -92,7 +92,7 @@
 
         <div class="col-3">
               <label for="cual">Cual</label>
-              <input type="text" class="form-control-lg-new9"
+              <input type="text" class="form-control-lg-new18"
               id="cual"
               placeholder="Cual"
               name="cual"
@@ -101,7 +101,7 @@
 
         <div class="col-3">
               <label for="tiempo">Tiempo</label>
-              <input type="text" class="form-control-lg-new9"
+              <input type="text" class="form-control-lg-new18"
               id="tiempo"
               placeholder="numero de grabacion"
               name="tiempo"
@@ -110,7 +110,7 @@
 
         <div class="col-3">
               <label for="dias">Dias</label>
-              <input type="text" class="form-control-lg-new9"
+              <input type="text" class="form-control-lg-new18"
               id="dias"
               placeholder="dias"
               name="dias"
@@ -119,7 +119,7 @@
 
            <div class="col-3">
             <label for="jornada">Jornada</label>
-            <input type="text" class="form-control-lg-new9"
+            <input type="text" class="form-control-lg-new18"
             id="jornada"
             placeholder="jornada"
             name="jornada"
@@ -128,7 +128,7 @@
 
          <div class="col-3">
             <label for="finicio">Fecha de inicio</label>
-            <input type="text" class="form-control-lg-new9"
+            <input type="text" class="form-control-lg-new18"
             id="finicio"
             placeholder="fecha inicio"
             name="finicio"
@@ -136,7 +136,7 @@
          </div>
          <div class="col-3">
             <label for="solicita">Solicita</label>
-            <input type="text" class="form-control-lg-new9"
+            <input type="text" class="form-control-lg-new18"
             id="solicita"
             placeholder="solicita"
             name="solicita"
@@ -257,7 +257,7 @@
 <br>
 
 
-  
+
     </form>
 
 

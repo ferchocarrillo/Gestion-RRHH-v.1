@@ -24,6 +24,12 @@ use App\Exports\Entrevista4Export;
 
 class Entrevista4Controller extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -75,7 +81,10 @@ class Entrevista4Controller extends Controller
        $request->validate([
             'cedula'          => 'required|unique:entrevista4s,cedula,',
         ]);
-Carbon::setLocale('es');
+
+        date_default_timezone_set('America/Bogota');
+
+        Carbon::setLocale('es');
 Carbon::now();
 $hoy = Carbon::now();
 

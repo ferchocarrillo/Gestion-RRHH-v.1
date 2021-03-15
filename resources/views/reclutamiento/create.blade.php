@@ -137,12 +137,24 @@
               <td>
                 <div style="float:left;  display:flex;">
                   <input type="checkbox" id="rt" name="rt" value="rt">
-                  
+
                   <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Ref Empleados</label>
                 </div>
               </td>
 
             </tr>
+
+            <div style="width:100px">
+                <tr valign="bottom">
+                  <td>
+                    <div style="float:left; width:200%; display:flex;">
+                        <input type="checkbox" id="rj" name="rj" value="rj">
+                        <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Ref Jefes</label>
+                    </div>
+                  </td>
+
+                </tr>
+              </div>
           </div>
         </div>
     </div>
@@ -151,17 +163,10 @@
 <div class="col-sm-6">
     <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
       <div class="card-body">
-<div style="width:100px">
-        <tr valign="bottom">
-          <td>
-            <div style="float:left; width:200%; display:flex;">
-                <input type="checkbox" id="rj" name="rj" value="rj">
-                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Ref Jefes</label>
-            </div>
-          </td>
 
-        </tr>
-      </div>
+
+
+
       <div style="width:100px">
         <tr valign="bottom">
           <td>
@@ -215,6 +220,18 @@
             </td>
           </tr>
         </div>
+
+        <div style="width:100px">
+            <tr valign="bottom">
+              <td>
+                <div style="float:left; width:200%; display:flex;">
+                    <input type="checkbox" id="otros" name="otros" value="Otros">
+                    <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Otros</label>
+                </div>
+              </td>
+
+            </tr>
+          </div>
     </div>
     </div>
     </div>

@@ -18,6 +18,7 @@ use App\Entrevista1;
 use App\User;
 use App\Reclutamiento;
 use App\Filtro;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,10 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+            Carbon::setLocale('es');
+            date_default_timezone_set('America/Bogota');
+
     }
 
 
@@ -69,6 +74,7 @@ class HomeController extends Controller
       $count8publicas ['reclutamientos'] = Reclutamiento::where('redes', 'redes')->count();
       $count9publicas ['reclutamientos'] = Reclutamiento::where('hv', 'hv')->count();
       $count10publicas['reclutamientos'] = Reclutamiento::where('fundaciones', 'fundaciones')->count();
+      $count11publicas['reclutamientos'] = Reclutamiento::where('otros', 'otros')->count();
 
 
       $filtros = Filtro::orderBy('created_at', 'asc')->paginate(10);
@@ -89,13 +95,22 @@ class HomeController extends Controller
       $count14filtros['filtros'] = Filtro::where('entrevistaJefeInm', 'entrevistaJefeInm')->count();
       $count15filtros['filtros'] = Filtro::where('entrevistaGerencia', 'entrevistaGerencia')->count();
       $count16filtros['filtros'] = Filtro::where('enviadocontratacion', 'enviadocontratacion')->count();
-     
+
+
+
+      $respuestarrhh1s['filtros'] = Filtro::where('resultadoRrhh', 'Cargo requiere segunda entrevista')->count();
+      $respuestarrhh2s['filtros'] = Filtro::where('resultadoRrhh', 'Enviado a capacitacion')->count();
+      $respuestarrhh3s['filtros'] = Filtro::where('resultadoRrhh', 'Enviado a contratación')->count();
+      $respuestarrhh4s['filtros'] = Filtro::where('resultadoRrhh', 'No aplica para el cargo')->count();
+      $respuestarrhh5s['filtros'] = Filtro::where('resultadoRrhh', 'No contratado')->count();
+      $respuestarrhh6s['filtros'] = Filtro::where('resultadoRrhh', 'Postulado desistio de la oferta')->count();
+      $respuestarrhh7s['filtros'] = Filtro::where('resultadoRrhh', 'Otro')->count();
 
 
 
 
 
-      
+
 
 
       $count00Fuentes['filtros'] = Filtro::where('fuente', 'Vincucuentas')->count();
@@ -109,6 +124,7 @@ class HomeController extends Controller
       $count08Fuentes['filtros'] = Filtro::where('fuente', 'redes')->count();
       $count09Fuentes['filtros'] = Filtro::where('fuente', 'hv')->count();
       $count10Fuentes['filtros'] = Filtro::where('fuente', 'funda')->count();
+      $count11Fuentes['filtros'] = Filtro::where('fuente', 'otros')->count();
 
       $capacitaciones= Capacitacion::orderBy('created_at', 'asc')->paginate(10);
       $capacitacionAps ['capacitacion']= Capacitacion::where('estado','Aprobado')->count();
@@ -120,6 +136,16 @@ class HomeController extends Controller
 
 
       return view('home' ,compact(
+        'respuestarrhh1s',
+        'respuestarrhh2s',
+        'respuestarrhh3s',
+        'respuestarrhh4s',
+        'respuestarrhh5s',
+        'respuestarrhh6s',
+        'respuestarrhh7s',
+
+      'count11publicas',
+      'count11Fuentes',
       'residencias',
       'residencia1s',
       'residencia2s',
@@ -176,7 +202,7 @@ class HomeController extends Controller
       'count15filtros',
       'count16filtros',
         'dependencia',
-    
+
     ));
     }
 

@@ -19,10 +19,11 @@ use App\Residencia;
 class EntrevistaController extends Controller
 {
 
-public function __construct()
-{
-    Carbon::setLocale('es');
-}
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
 
 
     /**

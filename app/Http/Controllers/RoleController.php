@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 use App\JhonatanPermission\Models\Role;
 use App\JhonatanPermission\Models\Permission;
 use Illuminate\Support\Facades\Gate;
+use Carbon\Carbon;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *

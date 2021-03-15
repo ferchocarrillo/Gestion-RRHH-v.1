@@ -17,6 +17,12 @@ use Illuminate\Http\Request;
 
 class EntRRHHController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +30,7 @@ class EntRRHHController extends Controller
      */
     public function index()
     {
-      
+
         $entrevistases = Entrevista5::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 5 ok')->paginate(10);
         return view('entRRHH.index',compact('entrevistases'));
     }
@@ -73,9 +79,9 @@ class EntRRHHController extends Controller
         $filtro->perfil                 = $request->cargos;
         $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
-        $filtro->resultadoRrhh          = $request->resultadoRrhh;        
-        $filtro->obsRrhh                = $request->obsRrhh;          
-        $filtro->fechaRrhh              = $request->fechaRrhh;  
+        $filtro->resultadoRrhh          = $request->resultadoRrhh;
+        $filtro->obsRrhh                = $request->obsRrhh;
+        $filtro->fechaRrhh              = $request->fechaRrhh;
         $filtro->save();
 
         //return response()->json($filtro);
@@ -104,7 +110,7 @@ class EntRRHHController extends Controller
 
         Carbon::setLocale('es');
         $date = Carbon::now();
-       // $date = $date->format('d-m-Y'); 
+       // $date = $date->format('d-m-Y');
         $this->authorize('haveaccess','entFinalizacion.edit');
 
         $filtro  = Filtro::findOrFail($id);
@@ -117,7 +123,7 @@ class EntRRHHController extends Controller
         $resultadoRrhhs = resultadoRRHH::all();
         //return response()->json($entFinalizacion);
     //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
-      return view('entRRHH.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s')); 
+      return view('entRRHH.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s'));
     }
 
     /**

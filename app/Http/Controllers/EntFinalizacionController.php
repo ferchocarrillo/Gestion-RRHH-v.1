@@ -32,6 +32,12 @@ use App\resultadoRRHH;
 
 class EntFinalizacionController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -60,7 +66,7 @@ class EntFinalizacionController extends Controller
         $entFinalizaciones = EntFinalizacion::all();
         $resultados      = resultadoRRHH::all();
         return view('entFinalizacion.create',compact('entFinalizaciones','entrevista4s','entrevista3s','entrevista2s','entrevista5s','resultados','entrevista1s'));
-        
+
     }
 
 
@@ -94,7 +100,7 @@ class EntFinalizacionController extends Controller
              $entFinalizacion->obsGerencia      = $request->obsGerencia;
              $entFinalizacion->resultadoJefe    = $request->resultadoJefe;
              $entFinalizacion->obsjefe          = $request->obsjefe;
-        
+
              $entFinalizacion->obsFinales       = $request->obsFinales;
 
 
@@ -112,7 +118,7 @@ class EntFinalizacionController extends Controller
      */
     public function show()
     {
-  
+
     }
 
     /**

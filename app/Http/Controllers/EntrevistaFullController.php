@@ -6,6 +6,7 @@ use App\entrevistaFull;
 use App\JhonatanPermission\Models\EntFinalizacion;
 use App\JhonatanPermission\Models\Entrevista1;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class EntrevistaFullController extends Controller
 {

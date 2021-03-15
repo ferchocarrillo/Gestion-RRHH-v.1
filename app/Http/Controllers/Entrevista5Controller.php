@@ -24,6 +24,11 @@ use App\Exports\Entrevista5Export;
 
 class Entrevista5Controller extends Controller
 {
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *

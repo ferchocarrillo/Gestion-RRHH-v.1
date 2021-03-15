@@ -2502,6 +2502,19 @@ select.form-control:focus::-ms-value {
     text-align: center;
 
   }
+  .form-control-lg-new18 {
+    height: calc(1.5em + 3rem + 0);
+    width: calc(1.5em + 13rem + 26px);
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+
+    border-radius: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+
+  }
+
+
 
 
 

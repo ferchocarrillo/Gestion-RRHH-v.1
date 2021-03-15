@@ -18,9 +18,16 @@ use DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\requisicionExport;
 use App\Requisicion;
+use Carbon\Carbon;
 
 class RequisicionController extends Controller
 {
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
+
     /**
      * Display a listing of the resource.
      *

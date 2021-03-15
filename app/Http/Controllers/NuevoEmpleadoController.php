@@ -28,9 +28,16 @@ use App\cajaCompensacion;
 use App\Genero;
 use App\rh;
 use App\tipoDoc2;
+use Carbon\Carbon;
 
 class NuevoEmpleadoController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *

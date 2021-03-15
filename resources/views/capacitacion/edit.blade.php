@@ -55,9 +55,9 @@
       <div class="card-group" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           <div class="row">
 
- <p class="col-3">
+ <p>
 
-  <input list="resultadoFormacion" type="text" name="resultadoFormacion" class="form-control" placeholder="Registre aqui el resultado" >
+  <input list="resultadoFormacion" type="text" name="resultadoFormacion" class="form-control-lg-new15" placeholder="Registre aqui el resultado" >
 
   <datalist name="resultadoFormacion" id="resultadoFormacion">
     <option value="">Resultado</option>
@@ -65,23 +65,27 @@
         {{ $aprobacions->aprobacion }}</option>
       @endforeach
   </datalist>
-  </p>
+  </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-  <strong><span>Observaciones Formacion</strong></span>
-  <textarea  class="col-3" name="obsFormacion" id="obsFormacion" cols="165" rows="3"></textarea>
+<p><strong><span>Grupo de Capacitación</strong></span><br><input   type="text" name="ngrupo" id="ngrupo"></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-  <a href="{{route('resumen.index')}}" class="btn btn-primary  role="button" aria-pressed="true">ver hoja completa</a></p> 
+  <p><strong><span>Observaciones Formacion</strong></span><br>
+  <textarea  class="form-control-lg-new15" name="obsFormacion" id="obsFormacion" cols="165" rows="3"></textarea></p>
+  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;
 
-  
+
+  <p><a href="{{route('resumen.index')}}" class="btn btn-primary btn-lg active"  role="button" aria-pressed="true">ver hoja completa</a></p>
+
+
 </div>
 
-</div> 
-<p><input class="btn btn-lg btn-primary" type="submit" value="REGISTRAR">
+</div>
+<p><input class="btn btn-primary btn-lg active" type="submit" value="REGISTRAR">
 
-  <a href="{{route('home')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a></p> 
-   </div>  
-  </fieldset> 
+  <a href="{{route('home')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a></p>
+   </div>
+  </fieldset>
 
 
 

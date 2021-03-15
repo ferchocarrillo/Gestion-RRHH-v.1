@@ -18,6 +18,12 @@ use Illuminate\Http\Request;
 
 class EntJefeController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +31,7 @@ class EntJefeController extends Controller
      */
     public function index()
     {
-      
+
         $entrevistases = Filtro::orderBy('created_at', 'desc')->where('resultadoRrhh','=','Cargo requiere segunda entrevista')->paginate(10);
         return view('entJefe.index',compact('entrevistases'));
     }
@@ -74,9 +80,9 @@ class EntJefeController extends Controller
         $filtro->perfil                 = $request->cargos;
         $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
-        $filtro->resultadoRrhh          = $request->resultadoRrhh;        
-        $filtro->obsRrhh                = $request->obsRrhh;          
-        $filtro->fechaRrhh              = $request->fechaRrhh;  
+        $filtro->resultadoRrhh          = $request->resultadoRrhh;
+        $filtro->obsRrhh                = $request->obsRrhh;
+        $filtro->fechaRrhh              = $request->fechaRrhh;
         $filtro->save();
 
         //return response()->json($filtro);
@@ -105,7 +111,7 @@ class EntJefeController extends Controller
 
         Carbon::setLocale('es');
         $date = Carbon::now();
-       // $date = $date->format('d-m-Y'); 
+       // $date = $date->format('d-m-Y');
         $this->authorize('haveaccess','entFinalizacion.edit');
         $aprobaciones = Aprobacion::all();
         $filtro  = Filtro::findOrFail($id);
@@ -115,10 +121,10 @@ class EntJefeController extends Controller
         // $entrevista2s = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista3s = Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         // $entrevista4s = Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        
+
         //return response()->json($entFinalizacion);
     //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
-      return view('entJefe.edit', compact('date','filtro', 'entrevista5s','aprobaciones')); 
+      return view('entJefe.edit', compact('date','filtro', 'entrevista5s','aprobaciones'));
     }
 
     /**
@@ -133,7 +139,7 @@ class EntJefeController extends Controller
         $aprobaciones = Aprobacion::all();
         Carbon::setLocale('es');
         $date = Carbon::now();
-        
+
         $datosFiltro =request()->except(['_token','_method']);
         Filtro::where('id','=',$id)->update($datosFiltro);
         $filtro=Filtro::findOrFail($id);

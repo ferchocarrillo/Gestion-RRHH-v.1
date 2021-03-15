@@ -192,43 +192,7 @@
   </script>
 
 
-          <script>
-              var ctx = document.getElementById('myChart6').getContext('2d');
-              var myPieChart = new Chart(ctx, {
-                  type: 'pie',
-                  data: {
-                      labels: ['Portabilidad', 'Upgrade', 'Fija', 'Prepost'],
-                      datasets: [{
-                          label: 'Cantidad de ventas',
-                          data: [12, 19, 3, 5, 2, 3],
-                          backgroundColor: [
-                              'rgba(255, 99, 132, 0.2)',
-                              'rgba(54, 162, 235, 0.2)',
-                              'rgba(255, 206, 86, 0.2)',
 
-                              'rgba(255, 159, 64, 0.2)'
-                          ],
-                          borderColor: [
-                              'rgba(255, 99, 132, 1)',
-                              'rgba(54, 162, 235, 1)',
-                              'rgba(255, 206, 86, 1)',
-
-                              'rgba(255, 159, 64, 1)'
-                          ],
-                          borderWidth: 2
-                      }]
-                  },
-                  options: {
-                      scales: {
-                          yAxes: [{
-                              ticks: {
-                                  beginAtZero: true
-                              }
-                          }]
-                      }
-                  }
-              });
-              </script>
 {{--fin tercer grafico gestionados y pendientes --}}
 
 {{--inicio segundo grafico publicaciones--}}
@@ -245,6 +209,7 @@
                     <th>SNE</th>
                     <th>Com</th>
                     <th>Ref t</th>
+                    <th>Ref j</th>
                 </tr>
                 <tbody>
                     <tr>
@@ -265,22 +230,23 @@
                       @foreach ($count4publicas as $count4publica)
                       <td>{{ $count4publica }}</td>
                       @endforeach
+                      @foreach ($count5publicas as $count5publica)
+                    <td>{{ $count5publica }}</td>
+                    @endforeach
                   </tr>
               </tbody>
                 <tr>
-                    <th>Ref j</th>
                     <th>Ref cl</th>
                     <th>Univ</th>
                     <th>Redes</th>
                     <th>Hv p</th>
                     <th>Funda</th>
+                    <th>Otros</th>
                   </tr>
                 </thead>
             <tbody>
                 <tr>
-                    @foreach ($count5publicas as $count5publica)
-                    <td>{{ $count5publica }}</td>
-                    @endforeach
+
                     @foreach ($count6publicas as $count6publica)
                     <td>{{ $count6publica }}</td>
                     @endforeach
@@ -296,6 +262,9 @@
                     @foreach ($count10publicas as $count10publica)
                     <td>{{ $count10publica }}</td>
                     @endforeach
+                    @foreach ($count11publicas as $count11publica)
+                    <td>{{ $count11publica }}</td>
+                    @endforeach
                   </tr>
                 </tbody>
               </table>
@@ -308,7 +277,7 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Vincuventas', 'Computrabajo', 'SNE', 'Compensar','Referidos trabajadores','Referidos jefes','Referidos clientes','Universidades','Redes','Hv preseciales','Fundaciones'],
+                    labels: ['Vincuventas', 'Computrabajo', 'SNE', 'Compensar','Referidos trabajadores','Referidos jefes','Referidos clientes','Universidades','Redes','Hv preseciales','Fundaciones','Otros'],
                     datasets: [{
                         label: 'publicaciones',
                         data:[
@@ -322,19 +291,24 @@
                             {{ $count7publica }},
                             {{ $count8publica }},
                             {{ $count9publica }},
-                            {{ $count10publica }}
+                            {{ $count10publica }},
+                            {{ $count11publica }}
                             ],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(255, 206, 86, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(14, 262, 95, 0.2)',
+                            'rgba(154, 262, 85, 0.2)'
                         ],
                         borderColor: [
                             'rgba(255, 99, 132, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
-                            'rgba(255, 159, 64, 1)'
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(14, 262, 95, 1)',
+                            'rgba(154, 262, 85, 1)'
                         ],
                         borderWidth: 2
                     }]
@@ -356,7 +330,7 @@
 
 <div class="card-header">
   <center><H4>ENTREVISTAS</H4></center>
-  
+
   </div>
 {{--inicio cuarto grafico filtro hojas de vida--}}
 
@@ -444,7 +418,7 @@
                 <th scope="col">Ent jefe Inmediato</th>
                 <th scope="col">Ent Gerencia</th>
                 <th scope="col">Enviado Contrat</th>
-                
+
 
               </tr>
             </thead>
@@ -598,8 +572,112 @@
         }
     });
     </script>
-      </div>
+
 {{--fin sexto grafico capacitacion--}}
+
+
+
+{{--inicio septimo grafico resultado rrhh--}}
+
+
+
+
+<div class="col-sm-6">
+    <div class="card">
+      <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+        <h5 class="card-title"><strong>Resultado entrevista RR HH </strong></h5>
+         <canvas id="myChartRrHh" width="160" height="160" style="background-color: white;"></canvas>
+         <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Cargo requiere segunda entrevista</th>
+                <th scope="col">Enviado a capacitacion</th>
+                <th scope="col">Enviado a contratación</th>
+                <th scope="col">No aplica para el cargo</th>
+                <th scope="col">No contratado</th>
+                <th scope="col">Postulado desistió de la oferta</th>
+                <th scope="col">Otro</th>
+              </tr>
+            <tr>
+              <br>
+
+                <h6>Personas entrevistadas: <strong> {{ $residencias->total() }}</strong></h6>
+
+
+                @foreach ($respuestarrhh1s as $respuestarrhh1)
+                <td>{{ $respuestarrhh1 }}</td>
+                @endforeach
+                @foreach ($respuestarrhh2s as $respuestarrhh2)
+                <td>  {{ $respuestarrhh2}}  </td>
+                @endforeach
+                @foreach ($respuestarrhh3s as $respuestarrhh3)
+                <td>{{ $respuestarrhh3 }}</td>
+                @endforeach
+                @foreach ($respuestarrhh4s as $respuestarrhh4)
+                <td>  {{ $respuestarrhh4}}  </td>
+                @endforeach
+                @foreach ($respuestarrhh5s as $respuestarrhh5)
+                <td>{{ $respuestarrhh5 }}</td>
+                @endforeach
+                @foreach ($respuestarrhh6s as $respuestarrhh6)
+                <td>  {{ $respuestarrhh6}}  </td>
+                @endforeach
+                @foreach ($respuestarrhh7s as $respuestarrhh7)
+                <td>  {{ $respuestarrhh7}}  </td>
+                @endforeach
+              </tr>
+
+            </thead>
+          </table>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var ctx = document.getElementById('myChartRrHh').getContext('2d');
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['requiere nueva ent', 'env capa', 'env contrat', 'n/a para el cargo', 'no contratado', 'desistió', ' otro' ],
+            datasets: [{
+                label: 'Resultado Entrevistas',
+                data: [{{ $respuestarrhh1 }}, {{ $respuestarrhh2 }}, {{ $respuestarrhh3 }}, {{ $respuestarrhh4 }} , {{ $respuestarrhh5 }}, {{ $respuestarrhh6 }}, {{ $respuestarrhh7 }}],
+                backgroundColor: [
+                    'rgba(216, 23, 23, 0.8)',
+                    'rgba(23, 108, 216, 0.8)',
+                    'rgba(23, 108, 216, 0.8)',
+                    'rgba(23, 108, 216, 0.8)',
+                    'rgba(23, 108, 216, 0.8)',
+                    'rgba(23, 108, 216, 0.8)',
+                    'rgba(23, 108, 216, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)'
+
+                ],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+ </div>
+{{--fin septimo grafico resultado rrhh--}}
 
 
 
@@ -607,7 +685,7 @@
 
 <div class="card-header">
   <center><H4>CAPACITACION</H4></center>
-  
+
   </div>
 <div class="row">
 

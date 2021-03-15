@@ -33,6 +33,7 @@ class CreateReclutamiento extends Migration
         $table->string('redes')->nullable();
         $table->string('Hv')->nullable();
         $table->string('fundaciones')->nullable();
+        $table->string('otros')->nullable();
         $table->string('publica');
         $table->timestamps();
 

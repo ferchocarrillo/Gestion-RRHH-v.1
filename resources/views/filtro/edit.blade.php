@@ -234,19 +234,28 @@
                     <div class="col-sm-6">
                       <div class="card">
                         <div class="card-body">
+                            <div style="width:200px">
+                                <tr valign="bottom">
+                                              <td>
+                                            <div style="float:left; width:100%; display:flex;">
+                                                  <input type="checkbox" id="citadoE" name="citadoE" value="Citado Entrevista">
+                                                  <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Citado Entrevista</label>
+                                                 </div>
+                                             </td>
+                                           </tr>
+                                         </div>
 
+                            <div style="width:200px">
+                                <tr valign="bottom">
+                                  <td>
+                                    <div style="float:left; width:100%; display:flex;">
+                                        <input type="checkbox" id="enviadoCapa" name="enviadoCapa" value="enviadoCapa">
+                                        <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Enviado a Capacitacion</label>
+                            </div>
+                             </td>
+                              </tr>
+                               </div>
 
-
-                         <div style="width:200px">
-                           <tr valign="bottom">
-                                         <td>
-                                       <div style="float:left; width:100%; display:flex;">
-                                             <input type="checkbox" id="Estudiante" name="Estudiante" value="Estudiante">
-                                             <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Estudiante</label>
-                                            </div>
-                                        </td>
-                                      </tr>
-                                    </div>
 
                                     <div style="width:200px">
                                         <tr valign="bottom">

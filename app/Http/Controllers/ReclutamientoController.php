@@ -17,10 +17,17 @@ use stdClass;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ReclutamientoExport;
 use App\JhonatanPermission\Models\Reclutamiento;
+use Carbon\Carbon;
 
 
 class ReclutamientoController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -103,6 +110,7 @@ class ReclutamientoController extends Controller
         $reclutamiento->redes        = $request->redes;
         $reclutamiento->hv           = $request->hv;
         $reclutamiento->fundaciones  = $request->fundaciones;
+        $reclutamiento->otros        = $request->otros;
         $reclutamiento->publica      = $user_id.','.$user_nombre;
 
         $reclutamiento->save();

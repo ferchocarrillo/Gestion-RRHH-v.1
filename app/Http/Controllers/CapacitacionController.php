@@ -18,6 +18,12 @@ use Illuminate\Http\Request;
 
 class CapacitacionController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -84,6 +90,7 @@ class CapacitacionController extends Controller
         $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
         $filtro->resultadoFormacion     = $request->resultadoFormacion;
+        $filtro->ngrupo                 = $request->ngrupo;
         $filtro->obsFormacion           = $request->obsFormacion;
         $filtro->fechaFormacion         = $request->fechaFormacion;
         $filtro->save();

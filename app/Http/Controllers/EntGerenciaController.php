@@ -18,6 +18,12 @@ use Illuminate\Http\Request;
 
 class EntGerenciaController extends Controller
 {
+
+    public function __construct()
+    {
+        Carbon::setLocale('es');
+        date_default_timezone_set('America/Bogota');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +31,7 @@ class EntGerenciaController extends Controller
      */
     public function index()
     {
-      
+
         $entrevistases = Filtro::orderBy('created_at', 'desc')->where('resultadoRrhh','=','Cargo requiere segunda entrevista')->paginate(10);
         return view('entGerencia.index',compact('entrevistases'));
     }
@@ -74,9 +80,9 @@ class EntGerenciaController extends Controller
         $filtro->perfil                 = $request->cargos;
         $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
-        $filtro->resultadoRrhh          = $request->resultadoRrhh;        
-        $filtro->obsRrhh                = $request->obsRrhh;          
-        $filtro->fechaRrhh              = $request->fechaRrhh;  
+        $filtro->resultadoRrhh          = $request->resultadoRrhh;
+        $filtro->obsRrhh                = $request->obsRrhh;
+        $filtro->fechaRrhh              = $request->fechaRrhh;
         $filtro->save();
 
         //return response()->json($filtro);
@@ -105,15 +111,15 @@ class EntGerenciaController extends Controller
 
         Carbon::setLocale('es');
         $date = Carbon::now();
-       
+
         $this->authorize('haveaccess','entFinalizacion.edit');
         $aprobaciones = Aprobacion::all();
         $filtro  = Filtro::findOrFail($id);
         $entrevista5s = entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-       
+
         //return response()->json($entFinalizacion);
 
-      return view('entGerencia.edit', compact('date','filtro', 'entrevista5s','aprobaciones')); 
+      return view('entGerencia.edit', compact('date','filtro', 'entrevista5s','aprobaciones'));
     }
 
     /**
@@ -128,7 +134,7 @@ class EntGerenciaController extends Controller
         $aprobaciones = Aprobacion::all();
         Carbon::setLocale('es');
         $date = Carbon::now();
-       
+
         $datosFiltro =request()->except(['_token','_method']);
         Filtro::where('id','=',$id)->update($datosFiltro);
         $filtro=Filtro::findOrFail($id);
