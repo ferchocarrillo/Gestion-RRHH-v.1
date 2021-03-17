@@ -33,14 +33,14 @@
 
 
 
-<div class="col-3"><strong><span>Nombres</strong></span><p class="form-control">{{ old('nombre', $filtro->nombre)}}</p></div>&nbsp;
-<div class="col"><strong><span>Cedula</strong></span><p class="form-control">{{ old('cedula', $filtro->cedula)}}</p></div>&nbsp;
-<div class="col"><strong><span>Telefono</strong></span><p class="form-control">{{ old('telefono', $filtro->telefono)}}</p></div>&nbsp;
-<div class="col-3"><strong><span>Correo</strong></span><p class="form-control">{{ old('correo', $filtro->correo)}}</p></div>&nbsp;
-<div class="col-3"><strong><span>Perfil</strong></span><p class="form-control">{{ old('perfil', $filtro->perfil)}}</p></div>&nbsp;
-<div class="col-3"><strong><span>Campaña</strong></span><p class="form-control">{{ old('campaña', $filtro->campaña)}}</p></div>&nbsp;
-<div class="col-3"><strong><span>Fuente</strong></span><p class="form-control">{{ old('fuente', $filtro->fuente)}}</p></div>&nbsp;
-<div class="col"><strong><span>Fecha de registro</strong></span><p class="form-control">{{ old('fregistro', $filtro->fregistro)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Nombres</strong></span>        <p class="form-control-lg-new6">{{ old('nombre', $filtro->nombre)}}</p></div>&nbsp;
+<div class="col"><strong><span>Cedula</strong></span>           <p class="form-control-lg-new6">{{ old('cedula', $filtro->cedula)}}</p></div>&nbsp;
+<div class="col"><strong><span>Telefono</strong></span>         <p class="form-control-lg-new6">{{ old('telefono', $filtro->telefono)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Correo</strong></span>         <p class="form-control-lg-new6">{{ old('correo', $filtro->correo)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Perfil</strong></span>         <p class="form-control-lg-new6">{{ old('perfil', $filtro->perfil)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Campaña</strong></span>        <p class="form-control-lg-new6">{{ old('campaña', $filtro->campaña)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Fuente</strong></span>         <p class="form-control-lg-new6">{{ old('fuente', $filtro->fuente)}}</p></div>&nbsp;
+<div class="col"><strong><span>Fecha de registro</strong></span><p class="form-control-lg-new6">{{ old('fregistro', $filtro->fregistro)}}</p></div>&nbsp;
 
 </div>
 </div>
@@ -54,10 +54,10 @@
   <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
       <div class="card-group" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           <div class="row">
-
+            &nbsp;&nbsp;&nbsp;&nbsp;
  <p>
-
-  <input list="resultadoFormacion" type="text" name="resultadoFormacion" class="form-control-lg-new15" placeholder="Registre aqui el resultado" >
+    <p><strong><span>Resultado de la capacitación</strong></span><br>
+  <input list="resultadoFormacion" type="text" name="resultadoFormacion" class="form-control-lg-new15" placeholder="" >
 
   <datalist name="resultadoFormacion" id="resultadoFormacion">
     <option value="">Resultado</option>
@@ -68,7 +68,7 @@
   </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-<p><strong><span>Grupo de Capacitación</strong></span><br><input   type="text" name="ngrupo" id="ngrupo"></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p><strong><span>Grupo de Capacitación</strong></span><br><input   type="text" name="ngrupo" id="ngrupo" class="form-control-lg-new15"></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
   <p><strong><span>Observaciones Formacion</strong></span><br>
   <textarea  class="form-control-lg-new15" name="obsFormacion" id="obsFormacion" cols="165" rows="3"></textarea></p>

@@ -90,10 +90,10 @@
 
 
 
-        <div class="col-6 col-md-3"><strong><p>Cedula:</p></strong>{{ old('cedula', $contatacion->cedula)}}</div><br>
-
+        <div class="col-6 col-md-1"><strong><p>Cedula:</p></strong>{{ old('cedula', $contatacion->cedula)}}</div><br>
+        <div class="col-6 col-md-1"><strong><p>Estado:</p></strong>{{ old('estado', $contatacion->estado)}}</div>
         <div class="col-6 col-md-3"><strong><p>Perfil:</p></strong>
-          <p><input list="cargos" type="text" name="cargos" class="form-control" placeholder="Perfiles" >
+          <p><input list="cargos" type="text" name="cargos" class="form-control-lg-new18" placeholder="Perfiles" >
 
             <datalist name="cargos" id="cargos">
               <option value="{{ old('perfil', $contatacion->perfil)}}">Perfiles</option>
@@ -105,7 +105,7 @@
         </div>
 
             <div class="col-6 col-md-3"><strong><p>Campaña:</p></strong>
-                <p><input list="campaña" type="text" name="campaña" class="form-control" placeholder="Campaña" >
+                <p><input list="campaña" type="text" name="campaña" class="form-control-lg-new18" placeholder="Campaña" >
 
                   <datalist name="campaña" id="campaña">
                     <option value="{{ old('campaña', $contatacion->campaña)}}">Campaña</option>
@@ -115,29 +115,33 @@
                   </datalist>
                   </p>
                 </div>
-        <br>
+
+
+                <div class="col-6 col-md-3"><strong><p>Foco:</p></strong>
+
+                    <p><input list="foco" type="text" name="foco"   class="form-control-lg-new18" required>
+                               <datalist name="foco" id="foco" >
+                                <option  value="{{ old('foco', $contatacion->foco)}}">Seleccion un foco</option>
+                                @foreach($focos as $foco)<option value="{{ $foco->foco}}">
+                                  {{ $foco->foco }}</option>
+                                @endforeach
+                                </datalist>
+                            </p>
+                </div>
 
 
 
-        <div class="col-6 col-md-3"><strong><p>Estado:</p></strong>{{ old('estado', $contatacion->estado)}}</div>
+
+
 
     </div>
     <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
     <!-- Force next columns to break to new line -->
     <div class="row">
+
 <div class="col-6 col-md-3">
-    <span><strong>Foco</strong></span>
-    <input list="foco" type="text" name="foco"   class="form-control" required>
-               <datalist name="foco" id="foco" >
-                <option  value="{{ old('foco', $contatacion->foco)}}">Seleccion un foco</option>
-                @foreach($focos as $foco)<option value="{{ $foco->foco}}">
-                  {{ $foco->foco }}</option>
-                @endforeach
-                </datalist>
-</div>
-<div class="col-6 col-md-2">
     <span><strong>Supervisor</strong></span>
-    <p><input list="supervisor" type="text" name="supervisor"   class="form-control" required>
+    <p><input list="supervisor" type="text" name="supervisor"   class="form-control-lg-new18" required>
         <datalist name="supervisor" id="supervisor" >
          <option value=" {{ old('supervisor', $contatacion->supervisor)}}">Asigne uno</option>
          @foreach($supervisores as $supervisor)
@@ -146,10 +150,11 @@
          </datalist>
          </p>
 </div>
-<div class="col-6 col-md-2">
+
+<div class="col-6 col-md-3">
     <span><strong>Sede</strong></span>
 
-    <input list="sede" type="text" name="sede"   class="form-control" required>
+    <input list="sede" type="text" name="sede"   class="form-control-lg-new18" required>
     <datalist name="sede" id="sede" >
      <option value="{{ old('sede', $contatacion->sede)}}">Asigne una</option>
      @foreach($sedes as $sede)
@@ -161,9 +166,9 @@
 
 
 </div>
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-3">
     <span><strong>Modadidad</strong></span>
-<input list="modalidad" type="text" name="modalidad"   class="form-control" required>
+<input list="modalidad" type="text" name="modalidad"   class="form-control-lg-new18" required>
                <datalist name="modalidad" id="modalidad" >
                 <option value="{{ old('modalidad', $contatacion->modalidad)}}">Asigne una</option>
                 @foreach($modalidades as $modalidad)
@@ -171,9 +176,9 @@
                 @endforeach
                 </datalist>
 </div>
-<div class="col-6 col-md-2">
+<div class="col-6 col-md-3">
     <span><strong>Tipo de Modadidad</strong></span>
-    <input list="tipoModalidad" type="text" name="tipoModalidad"   class="form-control" required>
+    <input list="tipoModalidad" type="text" name="tipoModalidad"   class="form-control-lg-new18" required>
                    <datalist name="tipoModalidad" id="tipoModalidad" >
                     <option value="{{ old('tipoModalidad', $contatacion->tipoModalidad)}}">Asigne una</option>
                     @foreach($tipoModalidades as $tipoModalidad)
