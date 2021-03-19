@@ -702,8 +702,7 @@
                 </tr>
               <tr>
                 <br>
-
-                  <h6>Personas Capacitadas:  <strong>{{ $capacitaciones->total() }}</strong></h6>
+ <h6>Personas Capacitadas:  <strong>{{ $capacitacioneses->total() }}</strong></h6>
 
                   @foreach ($capacitacionAps as $capacitacionAp)
                   <td>{{ $capacitacionAp }}</td>

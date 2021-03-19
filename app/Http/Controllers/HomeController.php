@@ -43,8 +43,18 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request)
     {
+
+        $hoy = Carbon::now();
+        $month = $hoy->format('m');
+        $day   = $hoy->format('d');
+        $year  = $hoy->format('Y');
+        $date  = $hoy->format('Y-m-d');
+        $estemes = $hoy->isCurrentMonth();
+        $estedia = $hoy->isCurrentDay();
+
+
         $sede = Sede::all();
         $usuarios = User::all();
         $cargo = Cargo::all();
@@ -106,13 +116,6 @@ class HomeController extends Controller
       $respuestarrhh6s['filtros'] = Filtro::where('resultadoRrhh', 'Postulado desistio de la oferta')->count();
       $respuestarrhh7s['filtros'] = Filtro::where('resultadoRrhh', 'Otro')->count();
 
-
-
-
-
-
-
-
       $count00Fuentes['filtros'] = Filtro::where('fuente', 'Vincucuentas')->count();
       $count01Fuentes['filtros'] = Filtro::where('fuente', 'Computrabajo')->count();
       $count02Fuentes['filtros'] = Filtro::where('fuente', 'SNE')->count();
@@ -126,9 +129,18 @@ class HomeController extends Controller
       $count10Fuentes['filtros'] = Filtro::where('fuente', 'funda')->count();
       $count11Fuentes['filtros'] = Filtro::where('fuente', 'otros')->count();
 
-      $capacitaciones= Capacitacion::orderBy('created_at', 'asc')->paginate(10);
-      $capacitacionAps ['capacitacion']= Capacitacion::where('estado','Aprobado')->count();
-      $capacitacionNaps['capacitacion']= Capacitacion::where('estado','NO aprobado')->count();
+      $capacitacioneses  = Filtro::orderBy('resultadoFormacion', 'asc')->paginate(10);
+
+      $date1 = $request->input('created_at');
+//    $date->('created_at')->isSameMonth(now());
+
+
+
+
+
+
+      $capacitacionAps ['filtros']= Filtro::where('resultadoFormacion','Aprobado')->count();
+      $capacitacionNaps['filtros']= Filtro::where('resultadoFormacion','NO aprobado')->count();
 
       $residencias= Entrevista1::orderBy('created_at', 'asc')->paginate(10);
       $residencia1s['entrevista1s']= Entrevista1::where('residencia','Bogotá')->count();
@@ -136,6 +148,7 @@ class HomeController extends Controller
 
 
       return view('home' ,compact(
+
         'respuestarrhh1s',
         'respuestarrhh2s',
         'respuestarrhh3s',
@@ -143,13 +156,12 @@ class HomeController extends Controller
         'respuestarrhh5s',
         'respuestarrhh6s',
         'respuestarrhh7s',
-
+        'capacitacioneses',
       'count11publicas',
       'count11Fuentes',
       'residencias',
       'residencia1s',
       'residencia2s',
-      'capacitaciones',
       'capacitacionNaps',
       'capacitacionAps',
       'count00Fuentes',
