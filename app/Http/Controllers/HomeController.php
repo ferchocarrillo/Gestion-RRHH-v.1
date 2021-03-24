@@ -129,15 +129,10 @@ class HomeController extends Controller
       $count10Fuentes['filtros'] = Filtro::where('fuente', 'funda')->count();
       $count11Fuentes['filtros'] = Filtro::where('fuente', 'otros')->count();
 
-      $capacitacioneses  = Filtro::orderBy('resultadoFormacion', 'asc')->paginate(10);
+      $capacitacioneses  = Filtro::orderBy('created_at', 'asc')->where('resultadoFormacion','<>',null)->paginate(10);
 
       $date1 = $request->input('created_at');
 //    $date->('created_at')->isSameMonth(now());
-
-
-
-
-
 
       $capacitacionAps ['filtros']= Filtro::where('resultadoFormacion','Aprobado')->count();
       $capacitacionNaps['filtros']= Filtro::where('resultadoFormacion','NO aprobado')->count();
@@ -146,9 +141,23 @@ class HomeController extends Controller
       $residencia1s['entrevista1s']= Entrevista1::where('residencia','Bogotá')->count();
       $residencia2s['entrevista1s']= Entrevista1::where('residencia','Aledaños')->count();
 
+      $campañases = Filtro::orderBy('campaña', 'asc')->where('estado','=','Activo')->paginate(10);
+      $etbes ['filtros'] = Filtro::where('campaña', 'ETB')->where('estado','=','Activo')->count();
+      $movistares ['filtros'] = Filtro::where('campaña', 'Movistar')->where('estado','=','Activo')->count();
+      $qntes ['filtros'] = Filtro::where('campaña', 'QNT')->where('estado','=','Activo')->count();
+      $staffes ['filtros'] = Filtro::where('campaña', 'Staff Mentius')->where('estado','=','Activo')->count();
+      $vanties ['filtros'] = Filtro::where('campaña', 'Vanti')->where('estado','=','Activo')->count();
+      $vantisaces ['filtros'] = Filtro::where('campaña', 'Vanti S A C')->where('estado','=','Activo')->count();
+
 
       return view('home' ,compact(
-
+        'campañases',
+        'etbes',
+        'movistares',
+        'qntes',
+        'staffes',
+        'vanties',
+        'vantisaces',
         'respuestarrhh1s',
         'respuestarrhh2s',
         'respuestarrhh3s',

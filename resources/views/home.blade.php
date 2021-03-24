@@ -758,6 +758,104 @@
 
 
 
+{{--inicio sexto grafico campañas--}}
+
+<div class="card-header">
+    <center><H4>Personal por Campañas</H4></center>
+
+    </div>
+  <div class="row">
+
+     <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+            <h5 class="card-title"><strong>Campañas</strong></h5>
+             <canvas id="campañas" width="260" height="260" style="background-color: white;"></canvas>
+             <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ETB</th>
+                    <th scope="col">Movistar</th>
+                    <th scope="col">QNT</th>
+                    <th scope="col">Staff Mentius</th>
+                    <th scope="col">Vanti</th>
+                    <th scope="col">Vanti S A C</th>
+                  </tr>
+                <tr>
+                  <br>
+   <h6>Personal activo:  <strong>{{ $campañases->total() }}</strong></h6>
+
+                    @foreach ($etbes as $etb)
+                    <td>{{ $etb }}</td>
+                    @endforeach
+                    @foreach ($movistares as $movistar)
+                    <td>  {{ $movistar}}  </td>
+                    @endforeach
+                    @foreach ($qntes as $qnt)
+                    <td>{{ $qnt }}</td>
+                    @endforeach
+                    @foreach ($staffes as $staff)
+                    <td>  {{ $staff}}  </td>
+                    @endforeach
+                    @foreach ($vanties as $vanti)
+                    <td>{{ $vanti }}</td>
+                    @endforeach
+                    @foreach ($vantisaces as $vantisac)
+                    <td>  {{ $vantisac}}  </td>
+                    @endforeach
+                  </tr>
+                </thead>
+              </table>
+          </div>
+        </div>
+      </div>
+  </div>
+      <script>
+        var ctx = document.getElementById('campañas').getContext('2d');
+        var myLineChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['etb', 'movistar', 'qnt', 'staff', 'vanti', 'vanti sac'],
+                datasets: [{
+                    label: 'personal activo por campaña',
+                    data: [{{ $etb }}, {{ $movistar }}, {{$qnt}},{{$staff}},{{$vanti}},{{$vantisac}}],
+                    backgroundColor: [
+                        'rgba(216, 23, 23, 0.8)',
+                        'rgba(216, 23, 23, 0.8)',
+                        'rgba(216, 23, 23, 0.8)',
+                        'rgba(216, 23, 23, 0.8)',
+                        'rgba(216, 23, 23, 0.8)',
+                        'rgba(23, 108, 216, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)'
+
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+
+
+  {{--fin sexto grafico Campañas--}}
+
+
+
 
 
 
