@@ -39,7 +39,7 @@ class CargoNuevoController extends Controller
     {
         $cargos = Cargo::get();
 
-        return view('cargoNUevo.create', compact('cargos'));
+        return view('cargoNuevo.create', compact('cargos'));
     }
 
     /**

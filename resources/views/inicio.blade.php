@@ -277,7 +277,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
                     <a href="https://www.linkedin.com/company/mentius-s-a-s/?originalSubdomain=co"><i class="fab fa-linkedin-in icon-redes-footer"></i></i></a>
                 </div>
             <hr>
-            <h6><i class="fa fa-copyright" aria-hidden="true">2021 Mentius Colombia, Todos los Derechos Reservados Diseñado y Desarrollado por Mauricio Giraldo</i> </h6>
+            <h6><i class="fa fa-copyright" aria-hidden="true">2021 Mentius Colombia, Todos los Derechos Reservados</i> </h6>
         </footer>
     </div>
 

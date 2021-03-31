@@ -29,7 +29,7 @@
 
 
 
-<form name="f1" action="{{ url('/novedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+<form name="f1" action="{{ url('/verNovedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
 
@@ -100,7 +100,7 @@
 
                                                     </td>
                                                 </tr>
-                                               @endforeach 
+                                               @endforeach
 
 
 
@@ -109,7 +109,7 @@
                                             </tbody>
 
                                           </table>
-                                      {{ $novedades->links() }} 
+                                      {{ $novedades->links() }}
                                           {{-- <a href="{{url('verNovedades')}}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Ver Novedades Registradas</a> --}}
 
 

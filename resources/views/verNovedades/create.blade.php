@@ -19,7 +19,7 @@
             </center>
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
             <!-- Force next columns to break to new line -->
-            <form name="f1" action="{{ url('/novedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+            <form name="f1" action="{{ url('/verNovedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                 {{csrf_field()}}
 
 

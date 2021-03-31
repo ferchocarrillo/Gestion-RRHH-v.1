@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Asignacion;
 use App\Novedades;
+use App\verNovedades;
 use Illuminate\Http\Request;
 use App\Contratacion;
 use App\Filtro;
