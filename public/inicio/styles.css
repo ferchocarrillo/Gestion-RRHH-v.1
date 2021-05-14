@@ -10,9 +10,9 @@ body {
     font-family: "Raleway", sans-serif; /*fuentes de texto */
 }
 header {
-    background: #4CA1AF;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #99d7e2, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #81d1df, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: #4CA1AF;  fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #94c8ce, #96b2bf);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #94c8ce, #96b2bf);  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height:500px;
     padding: 48px;
     width: 100%;
@@ -45,13 +45,13 @@ nav a {
     justify-content: space-around;
     margin: auto;
 }
-.container img {
+/* .container img {
     display: block;
     height: 505px;
     object-fit: cover;
     width: auto;
     animation: arriba 2.5s ease-in;
-}
+} */
 .letras {
     width: 50%;
     color: #ffffff;
@@ -551,6 +551,13 @@ svg path:nth-child(3) {
 }
 svg path:nth-child(4) {
     animation-delay: 2s;
+}
+.img-top{
+
+    border-color: violet;
+    border-radius: 0.75em;
+    width: 50%;
+    margin-top: 4rem;
 }
 @keyframes pathAnim {
     0% {

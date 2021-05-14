@@ -34,7 +34,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
             <h1>Bienvenidos </h1>
             <h3>Mentius Recursos Humanos</h3>
         </div>
-                <img src="/theme/images/recursos17.png" alt="Imagen de primer contenedor">
+                <img class="img-top" src="/theme/images/hola.jpg" alt="Imagen de primer contenedor" >
     </div>
 </header>
 
@@ -53,7 +53,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 
     <section class="wave-contenedor webside">
-        <img src="\theme\images\recursos8.png" alt="">
+        <img src="\theme\images\corporativa.jpg" alt="">
             <div class="contenedor-textos-main"><br>
                 <h2 class="titulo left">¿Qué son los recursos humanos?</h2>
                 <p class="parrafo">Los recursos humanos son un departamento dentro de las empresas en el que se gestiona todo lo
