@@ -127,14 +127,18 @@ class DocumentoController extends Controller
      */
     public function edit($id)
     {
+
         Carbon::setLocale('es');
         $date = Carbon::now();
-        $this->authorize('haveaccess','contratacion.edit');
+        $this->authorize('haveaccess','documento.edit');
+        $contratacions= contratacion::findOrFail($id);
+        $contrataciones= entrevista1::findOrFail($id);
+
+
         $filtro = filtro::findOrFail($id);
         $contratacion2 = capacitacion::all();
         $bancoses = Bancos::all();
-        $contrataciones= entrevista1::findOrFail($id);
-        $contratacions= contratacion::findOrFail($id);
+
         return view('documento.edit', compact('filtro','contrataciones','contratacions', 'bancoses','contratacion2'));
 
 

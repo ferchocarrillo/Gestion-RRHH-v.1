@@ -51,11 +51,11 @@
         <td>{{$contratacion->correo}}</td>
 
         <td>
-            <form action="{{url('/documentos/'.$contratacion->id_filtro)}}" method="post" style='display:inline'>
+            <form action="{{url('/contratacion/'.$contratacion->id_filtro)}}" method="post" style='display:inline'>
                 @csrf
                 @method('DELETE')
 
-        <a href="{{url('/documento/'.$contratacion->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
+        <a href="{{url('/contratacion/'.$contratacion->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
       {{--  <button class="btn btn-warning btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
        </form>
     </td>
