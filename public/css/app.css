@@ -11156,7 +11156,11 @@ a.text-dark:focus {
 
   color: #060700;
 }
+#back{
+    width: 3rem;
+    height: 3rem;
 
+}
 
 }
 

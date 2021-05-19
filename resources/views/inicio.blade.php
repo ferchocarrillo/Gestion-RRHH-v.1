@@ -34,7 +34,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
             <h1>Bienvenidos </h1>
             <h3>Mentius Recursos Humanos</h3>
         </div>
-                <img class="img-top" src="/theme/images/hola.jpg" alt="Imagen de primer contenedor" >
+                <img class="img-top" src="\theme\images\IMG_3547.JPG" alt="Imagen de primer contenedor" >
     </div>
 </header>
 
@@ -53,7 +53,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 
     <section class="wave-contenedor webside">
-        <img src="\theme\images\corporativa.jpg" alt="">
+        <img src="\theme\images\IMG_3592.JPG" alt="" style="height: 80%; margin-top:8rem; border-radius:0.75rem;">
             <div class="contenedor-textos-main"><br>
                 <h2 class="titulo left">¿Qué son los recursos humanos?</h2>
                 <p class="parrafo">Los recursos humanos son un departamento dentro de las empresas en el que se gestiona todo lo
@@ -103,7 +103,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
             tus objetivos. Nosotros creemos en tí por eso buscaremos siempre la mejor manera de crecer juntos.</p>
             <!--<a href="" class="cta">learn more</a>-->
         </div>
-                 <img src="\theme\images\recursos6.png" alt="">
+                 <img src="\theme\images\foto_mentius2.png" alt="" style="height: 340px; width: 450px">
             </div>
     </div>
 
@@ -256,7 +256,7 @@ integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroa
 
 
 <div class="svg-wave">
-    <svg viewBox="0 0 1320 290" >
+    <svg viewBox="0 0 1200 290" >
         <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1110 300 L0 300" fill=" #d1dde2"/>
         <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #d1dde2"/>
         <path fill-opacity="0.5" d="M0,192 C220,100,440,100,660,192 C880,290,1100,290,1320,192 L1320 300 L0 300" fill=" #d1dde2"/>
