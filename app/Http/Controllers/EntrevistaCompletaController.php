@@ -56,7 +56,19 @@ class EntrevistaCompletaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user_id = Auth::user()->id;
+        $user_nombre = Auth::user()->name;
+        $date1 = Carbon::now();
+        $date2 = $request->input('fnacimiento');
+        $edad = $date1->diffInYears($date2);
+        $datosEntrevista=request()->except('_token');
+        $request->validate([
+            'cedula'          => 'required|unique:entrevistacompleta,cedula,',
+        ]);
+        $entrevistaCompleta = new EntrevistaCompleta();
+
+
+
     }
 
     /**
@@ -91,6 +103,8 @@ class EntrevistaCompletaController extends Controller
         $tViviendas = tVivienda::all();
         $sMilitars = sMilitar::all();
         $eCivils= eCivil::all();
+
+        $this->authorize('haveaccess','entrevistacompleta.edit');
 
         return view('entrevistacompleta.edit', compact('eCivils','sMilitars','tViviendas','cargos','cargoEnt','filtros','departamento','residencia','adicional2es','adicionales','orientaciones','TipoVias','prefijos'));
 

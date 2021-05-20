@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\JhonatanPermission\Models\Permission;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
-use App\Filtro;
+use App\Filtro2;
 use App\JhonatanPermission\Models\Perfil;
 use App\JhonatanPermission\Models\Reclutamiento;
 use stdClass;
@@ -37,7 +37,7 @@ class FiltroController extends Controller
     {
 
         $cargos = Cargo::all();
-        $filtros = Filtro::orderBy('updated_at', 'desc')->paginate(20);
+        $filtros = Filtro2::orderBy('updated_at', 'desc')->paginate(20);
         return view('filtro.index',compact('filtros','cargos'));
     }
 
@@ -45,9 +45,9 @@ class FiltroController extends Controller
 
     {
 
-        $filtros = Filtro::all();
+        $filtros = Filtro2::all();
         $searchfiltro = $request->get('searchfiltro');
-        $filtros= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchfiltro.'%')->paginate(20);
+        $filtros= Filtro2::firstOrNew()->where('cedula', 'like', '%'.$searchfiltro.'%')->paginate(20);
         return view('filtro.index', ['filtros' => $filtros]);
     }
 
@@ -61,7 +61,7 @@ class FiltroController extends Controller
     {
         $campanas= Campana::all();
         $fuentes = Fuente::all();
-        $filtros = Filtro::all();
+        $filtros = Filtro2::all();
         $cargos = Cargo::all();
         $reclutamientos = Reclutamiento::all();
         return view('filtro.create', compact('filtros','fuentes','campanas','cargos'));
@@ -89,14 +89,14 @@ class FiltroController extends Controller
 
         ]);
 
-        $filtro = new Filtro();
+        $filtro = new Filtro2();
 
         $filtro->fregistro              = $request->fregistro;
         $filtro->nombre                 = $request->nombre;
         $filtro->cedula                 = $request->cedula;
         $filtro->telefono               = $request->telefono;
         $filtro->correo                 = $request->correo;
-        $filtro->perfil                 = $request->cargos;
+        $filtro->cargo                  = $request->cargo;
         $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
         $filtro->citadoE                = $request->citadoE;
@@ -110,13 +110,12 @@ class FiltroController extends Controller
         $filtro->PruebasE               = $request->PruebasE;
         $filtro->yaTrabaja              = $request->yaTrabaja;
         $filtro->numeroEqu              = $request->numeroEqu;
-        $filtro->observacion            = $request->observacion;
         $filtro->usuario                = $user_id.','.$user_nombre;
-        $filtro->noAsiste               = $request->noAsiste;
+        $filtro->noAsisteEnt            = $request->noAsisteEnt;
         $filtro->NoResponde2            = $request->NoResponde2;
         $filtro->YaNoInt                = $request->YaNoInt;
         $filtro->Estudiante             = $request->Estudiante;
-        $filtro->observacion2           = $request->observacion2;
+
         $filtro->estado                 = $request->estado;
         $filtro->fechaCont              = $request->fechaCont;
 
@@ -133,7 +132,7 @@ class FiltroController extends Controller
      * @param  \App\Filtro  $filtro
      * @return \Illuminate\Http\Response
      */
-    public function show(Filtro $filtro)
+    public function show(Filtro2 $filtro)
     {
         //
     }
@@ -148,7 +147,7 @@ class FiltroController extends Controller
     {
 
 
-        $filtro=Filtro::findOrFail($id);
+        $filtro=Filtro2::findOrFail($id);
         return view('filtro.edit', compact('filtro'));
     }
 
@@ -162,8 +161,8 @@ class FiltroController extends Controller
     public function update(Request $request, $id)
     {
         $datosFiltro =request()->except(['_token','_method']);
-        Filtro::where('id','=',$id)->update($datosFiltro);
-        $filtro=Filtro::findOrFail($id);
+        Filtro2::where('id','=',$id)->update($datosFiltro);
+        $filtro=Filtro2::findOrFail($id);
      //return response()->json($filtro);
      return view('filtro.edit', compact('filtro'));
     }
@@ -174,7 +173,7 @@ class FiltroController extends Controller
      * @param  \App\Filtro  $filtro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Filtro $filtro)
+    public function destroy(Filtro2 $filtro)
     {
         //
     }

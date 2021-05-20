@@ -12,9 +12,9 @@
             </center>
 
 
-<form  action="{{ url('/filtro')}}" 
-method="POST" 
-enctype="multipart/form-data" 
+<form  action="{{ url('/filtro')}}"
+method="POST"
+enctype="multipart/form-data"
 class="form-horizontal">
                     {{csrf_field()}}
                     <form>
@@ -47,10 +47,10 @@ class="form-horizontal">
 
 
             <p>
-                
-<input list="cargos" type="text" name="cargos" class="form-control-lg-new10" placeholder="Perfiles" >
 
-<datalist name="cargos" id="cargos">
+<input list="cargo" type="text" name="cargo" class="form-control-lg-new10" placeholder="Cargo" required>
+
+<datalist name="cargo" id="cargo">
   <option value="">Perfiles</option>
   @foreach($cargos as $cargo)<option value="{{ $cargo->cargo}}">
       {{ $cargo->cargo }}</option>
@@ -58,7 +58,7 @@ class="form-horizontal">
 </datalist>
 </p>
 <p>
-<input list="campana" type="text" name="campana" class="form-control-lg-new10" placeholder="Campañas">
+<input list="campana" type="text" name="campana" class="form-control-lg-new10" placeholder="Campañas" required>
 
 <datalist name="campana" id="campana" >
   <option value="">Campañas</option>
@@ -69,8 +69,8 @@ class="form-horizontal">
 </p>
 
 <p>
-  <input list="fuente" type="text" name="fuente" class="form-control-lg-new10" placeholder="Por donde conocio la oferta">
-  
+  <input list="fuente" type="text" name="fuente" class="form-control-lg-new10" placeholder="de donde conocio la oferta" required>
+
   <datalist name="fuente" id="fuente" >
     <option value="">Fuentes</option>
     @foreach($fuentes as $fuente)<option value="{{ $fuente->fuente}}">
@@ -100,19 +100,30 @@ class="form-horizontal">
         <tr valign="bottom">
           <td>
             <div style="float:left; width:100%; display:flex;">
-                <input type="checkbox" id="citadoE" name="citadoE" value="Citado Entrevista">
+                <input type="checkbox" id="citadoE" name="citadoE" value="CE">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Citado entrevista</label>
             </div>
           </td>
         </tr>
       </div>
 
-    <div style="width:200px">
+    <div style="width:230px">
+        <tr valign="bottom">
+          <td>
+            <div style="float:left; width:120%; display:flex;">
+                <input type="checkbox" id="noAplica" name="noAplica" value="NA">
+                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;No Aplica por exeperiencia o perfil</label>
+            </div>
+          </td>
+        </tr>
+      </div>
+
+      <div style="width:230px">
         <tr valign="bottom">
           <td>
             <div style="float:left; width:100%; display:flex;">
-                <input type="checkbox" id="noAplica" name="noAplica" value="No Aplica">
-                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;No aplica</label>
+                <input type="checkbox" id="noInteresado" name="noInteresado" value="NI">
+                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;No Interesado en la oferta</label>
             </div>
           </td>
         </tr>
@@ -122,18 +133,7 @@ class="form-horizontal">
         <tr valign="bottom">
           <td>
             <div style="float:left; width:100%; display:flex;">
-                <input type="checkbox" id="noInteresado" name="noInteresado" value="no interesado">
-                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;No Interesado</label>
-            </div>
-          </td>
-        </tr>
-      </div>
-
-      <div style="width:200px">
-        <tr valign="bottom">
-          <td>
-            <div style="float:left; width:100%; display:flex;">
-                <input type="checkbox" id="enviadoCapa" name="enviadoCapa" value="enviado capa">
+                <input type="checkbox" id="enviadoCapa" name="enviadoCapa" value="EC">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Enviado a Capacitacion</label>
             </div>
           </td>
@@ -144,7 +144,7 @@ class="form-horizontal">
         <tr valign="bottom">
           <td>
             <div style="float:left; width:100%; display:flex;">
-                <input type="checkbox" id="enviadoExm" name="enviadoExm" value="enviado a exam">
+                <input type="checkbox" id="enviadoExm" name="enviadoExm" value="EE">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Enviado a Examenes</label>
             </div>
           </td>
@@ -154,7 +154,7 @@ class="form-horizontal">
         <tr valign="bottom">
          <td>
            <div style="float:left; width:100%; display:flex;">
-               <input type="checkbox" id="PruebasE" name="PruebasE" value="Pruebas Eviadas">
+               <input type="checkbox" id="PruebasE" name="PruebasE" value="PE">
                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Pruebas Enviadas</label>
            </div>
          </td>
@@ -165,7 +165,7 @@ class="form-horizontal">
        <tr valign="bottom">
                      <td>
                        <div style="float:left; width:100%; display:flex;">
-                           <input type="checkbox" id="yaTrabaja" name="yaTrabaja" value="Ya trabaja">
+                           <input type="checkbox" id="yaTrabaja" name="yaTrabaja" value="YT">
                            <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Ya Trabaja</label>
                        </div>
                      </td>
@@ -177,7 +177,7 @@ class="form-horizontal">
                    <tr valign="bottom">
                                  <td>
                                <div style="float:left; width:100%; display:flex;">
-                                     <input type="checkbox" id="numeroEqu" name="numeroEqu" value="Numero Equivocado">
+                                     <input type="checkbox" id="numeroEqu" name="numeroEqu" value="NE">
                                      <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Numero Equivocado</label>
                                </div>
                                </td>
@@ -186,33 +186,30 @@ class="form-horizontal">
                            <div>
                        </div>
                    </div>
-               <div  class="card-header" style="font-size: 8mm" >
+               {{--  <div  class="card-header" style="font-size: 8mm" >
                                     <label for="observacion">Observaciones</label>
                                      <textarea class="form-control-lg-new12" id="observacion" name="observacion" rows="3"></textarea>
-                            </div>
+                            </div>  --}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="form-row">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="submit" class="btn btn-primary btn-lg">
+                  <i class="fa fa-dot-circle-o"></i>REGISTRAR
+              </button>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="{{route('filtro.index')}}" class="btn btn-danger btn-lg" role="button" aria-pressed="true">Volver</a>
+
+          </div>
     </div>
-
-
-
-
     </div>
 </div>
 </fieldset>
 
-<div class="form-row">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <button type="submit" class="btn btn-primary btn-lg">
-        <i class="fa fa-dot-circle-o"></i>REGISTRAR
-    </button>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="{{route('filtro.index')}}" class="btn btn-danger btn-lg" role="button" aria-pressed="true">Volver</a>
 
-</div>
 </form>
 
 

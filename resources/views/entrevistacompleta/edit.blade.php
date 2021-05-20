@@ -42,7 +42,7 @@ font-weight: 100;
     font-weight: 200;
     height: 38px;
     text-transform: capitalize;
-    
+
     }
 
 .inputs4{
@@ -66,7 +66,7 @@ font-weight: 100;
     color: #234c63;
         font-size: 16px;
        text-transform: capitalize;
- 
+
     }
     .inputs5-1{
         color: #234c63;
@@ -77,7 +77,7 @@ font-weight: 100;
         font-weight: 200;
         height: 38px;
         text-transform: capitalize;
-     
+
         }
 
 .inputs5-1::placeholder {
@@ -87,7 +87,7 @@ font-weight: 100;
     opacity: 1;
     text-transform: capitalize;
   }
-               
+
                 .inputs6{
                     font-size: 16px;
                     color: #234c63;
@@ -97,8 +97,8 @@ font-weight: 100;
                     font-weight: 200;
                     height: 38px;
                     text-transform: capitalize;
-                  
-                    } 
+
+                    }
                     .inputs7{
                         font-size: 14px;
                         color: #234c63;
@@ -108,7 +108,7 @@ font-weight: 100;
                         font-weight: 100;
                         height: 38px;
                         text-transform: capitalize;
-                      
+
                         }
 
 .labels{
@@ -121,10 +121,51 @@ margin-left: 2rem;
     color:  #234c63;
     font-size: 18px;
     text-align: center;
+    border-radius: 0.75rem;
 }
 .form-control1{
     border-radius: 0.35rem;
     height: 38px;
+}
+.form-control0 {
+    display: block;
+    width: 100%;
+    height: calc(1.6em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    line-height: 1.6;
+    color: #495057;
+    background-color: #e9f1f1;
+    background-clip: padding-box;
+    border: 1px solid #000000;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: 14px;
+    border-radius: 0.75rem;
+    font-weight: 100;
+    height: 38px;
+    text-transform: capitalize;
+  }
+  .form-control0-1 {
+    display: block;
+    width: 100%;
+
+    padding: 0.375rem 0.75rem;
+    line-height: 1.6;
+    color: #495057;
+    background-color: #e9f1f1;
+    background-clip: padding-box;
+    border: 1px solid #000000;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    font-size: 14px;
+    border-radius: 0.75rem;
+    font-weight: 100;
+
+    text-transform: capitalize;
+  }
+
+.form-control0::placeholder{
+    color:#000000; ;
 }
 
 </style>
@@ -145,7 +186,7 @@ margin-left: 2rem;
 <div class="container">
     <center><p>
         <div class="card-header">
-           <h3>{{( $filtros->nombre)}}</h3>
+           <h3 style="text-transform: capitalize">{{( $filtros->nombre)}}</h3>
         </div>
     </p></center>
 
@@ -194,7 +235,7 @@ margin-left: 2rem;
                     </datalist>
                 </p>
                 &nbsp;&nbsp;<p><label class="etiquetas" for="fnacimiento">Fecha nacimiento</label></p><p> <input type="date" id ="fnacimiento" name="fnacimiento" class="inputs" placeholder="Fecha de venta" required></p>
-                  
+
       <p>  <select name="departamento" id="departamento" class="inputs1" required> <label for="departamento"></label>
             <option value=""> Departamento de nacimiento </option>
                 @foreach($departamento as $departamentos)
@@ -204,7 +245,7 @@ margin-left: 2rem;
     </p>
 
         <p><select name="id_ciudad" id="id_ciudad" class="inputs1" placeholder="Ciudad de nacimiento" required> </select></p>
-    
+
 </div>
 
 <div class="col-sm-12">
@@ -358,7 +399,7 @@ margin-left: 2rem;
     <div class="container">
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="row col-xs-12">
-            
+
                 &nbsp;&nbsp;&nbsp;
                     <p><input list="tVivienda" type="text" name="tVivienda"  style="width:260px"class="form-control1" placeholder="Tipo de vivienda">
                         <datalist name="tVivienda" id="tVivienda" >
@@ -409,7 +450,7 @@ margin-left: 2rem;
         <p>
             <input type="checkbox" name="sinfamilia" id="sinfamilia"  value="No registran" ><label for="sinfamilia">&nbsp;&nbsp;&nbsp;&nbsp;Sin Familiares </label>&nbsp;&nbsp;<i>*solo se debera señalar esta opcion en caso de que el postulado no cuente con ningun familiar conocido</i>
         </p>
-        
+
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="row col-xs-12">
 
@@ -434,33 +475,33 @@ margin-left: 2rem;
 
     <div class="col-sm-12">
         <center><p>
-    
-    
+
+
             <div class="card-header">
                 Informacion Academica
             </div>
         </p></center>
     </div>
-    
-    
-    
+
+
+
         <div class="container">
             <table class="table">
                 <thead>
                     <tr align="center">
-                    <th class="etiquetas">GRADO</th>
-                    <th class="etiquetas">INSTITUCION</th>
-                    <th class="etiquetas">AÑO EGRESO</th>
-                    <th class="etiquetas">TITULO OBTENDO</th>
-                    <th class="etiquetas">ESTADO</th>
+                    <th class="etiquetas" style="font-size: 15px;">GRADO</th>
+                    <th class="etiquetas" style="font-size: 15px;">INSTITUCION</th>
+                    <th class="etiquetas" style="font-size: 15px;">AÑO EGRESO</th>
+                    <th class="etiquetas" style="font-size: 15px;">TITULO OBTENDO</th>
+                    <th class="etiquetas" style="font-size: 15px;">ESTADO</th>
                     </tr>
                 </thead>
                 <tbody><tr>
                     <td>
                     <p><input type="text" id ="Grado1" name="Grado1"  class="inputs5-1" placeholder="Primaria" onlyread></p>
                     <p><input type="text" id ="Grado2" name="Grado2"  class="inputs5-1" placeholder="Secundaria" onlyread></p>
-                    <p><input type="text" id ="Grado3" name="Grado3"  class="inputs5-1" placeholder="Especializacion" onlyread></p>
-                    <p><input type="text" id ="Grado4" name="Grado4"  class="inputs5-1" placeholder="Especializacion" onlyread></p>
+                    <p><input type="text" id ="Grado3" name="Grado3"  class="inputs5-1" placeholder="Tecnico" onlyread></p>
+                    <p><input type="text" id ="Grado4" name="Grado4"  class="inputs5-1" placeholder="Tecnologo" onlyread></p>
                     <p><input type="text" id ="Grado5" name="Grado5"  class="inputs5-1" placeholder="Universitario" onlyread></p>
                     <p><input type="text" id ="Grado6" name="Grado6"  class="inputs5-1" placeholder="Especializacion" onlyread></p>
                     <p><input type="text" id ="Grado7" name="Grado7"  class="inputs5-1" placeholder="Otros"></p>
@@ -476,7 +517,7 @@ margin-left: 2rem;
                     <p><input type="text" id ="institucion7" name="institucion7" class="inputs5" placeholder=""></p>
                     <p><input type="text" id ="institucion8" name="institucion8" class="inputs5" placeholder=""></p>
                 </td>
-                   
+
                     <td>
                     <p><input type="text" id ="fecha1" name="fecha1" maxlength="4" class="inputs6" placeholder=""></p>
                     <p><input type="text" id ="fecha2" name="fecha2" maxlength="4" class="inputs6" placeholder=""></p>
@@ -486,8 +527,8 @@ margin-left: 2rem;
                     <p><input type="text" id ="fecha6" name="fecha6" maxlength="4" class="inputs6" placeholder=""></p>
                     <p><input type="text" id ="fecha7" name="fecha7" maxlength="4" class="inputs6" placeholder=""></p>
                     <p><input type="text" id ="fecha8" name="fecha8" maxlength="4" class="inputs6" placeholder=""></p>
-                
-                
+
+
                     </td>
                     <td>
                     <p><input type="text" id ="titulo1" name="titulo1" class="inputs5" placeholder=""></p>
@@ -500,7 +541,7 @@ margin-left: 2rem;
                     <p><input type="text" id ="titulo8" name="titulo8" class="inputs5" placeholder=""></p>
                     </td>
                 <td>
-                
+
                     <p><select name="estado1"  class="inputs6" required>
                         <option value="0" selected>Estado
                         <option value="Aprobado">aprobado
@@ -573,14 +614,14 @@ margin-left: 2rem;
 
         <table class="table">
         <thead><tr align="center">
-            <th class="etiquetas">Nombre de la Empresa</th>
-            <th class="etiquetas">Fecha Ingreso</th>
-            <th class="etiquetas">Fecha Retiro</th>
-            <th class="etiquetas">Cargo</th>
-            <th class="etiquetas">Jefe Inmediato</th>
-            <th class="etiquetas">Telefono</th>
-            <th class="etiquetas">Salario</th>
-            <th class="etiquetas">Motivo Retiro</th>
+            <th class="etiquetas" style="font-size: 15px;">Nombre de la Empresa</th>
+            <th class="etiquetas" style="font-size: 15px;">Fecha Ingreso</th>
+            <th class="etiquetas" style="font-size: 15px;">Fecha Retiro</th>
+            <th class="etiquetas" style="font-size: 15px;">Cargo</th>
+            <th class="etiquetas" style="font-size: 15px;">Jefe Inmediato</th>
+            <th class="etiquetas" style="font-size: 15px;">Telefono</th>
+            <th class="etiquetas" style="font-size: 15px;">Salario</th>
+            <th class="etiquetas" style="font-size: 15px;">Motivo Retiro</th>
         </tr></thead>
         <tbody><tr>
         <td>
@@ -598,12 +639,12 @@ margin-left: 2rem;
             <p><input type="date" id ="fechart2" name="fechart2" class="inputs7" placeholder=""></p>
             <p><input type="date" id ="fechart3" name="fechart3" class="inputs7" placeholder=""></p>
         </td>
-        
+
         <td>
             <p><input type="text" id ="hlcargo1" name="hlcargo1" class="inputs7" placeholder=""></p>
             <p><input type="text" id ="hlcargo2" name="hlcargo2" class="inputs7" placeholder=""></p>
             <p><input type="text" id ="hlcargo3" name="hlcargo3" class="inputs7" placeholder=""></p>
-           
+
         </td>
         <td>
             <p><input type="text" id ="jefeinm1" name="jefeinm1" class="inputs7" placeholder=""></p>
@@ -641,12 +682,12 @@ margin-left: 2rem;
             <div class="container">
                 <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                     <div class="row col-xs-12">
-                
+
             <div style="width:560px">
-                <p><input type="text" id ="aspiracion" name="aspiracion" class="form-control" placeholder="&#36; Aspiracion Salarial" required></p>
+                <p><input type="text" id ="aspiracion" name="aspiracion" class="form-control0" placeholder="&#36; Aspiracion Salarial" required></p>
             </div>
             <div style="width:455px">
-                <p><select type="text" id ="personasC" name="personasC" class="form-control" placeholder="Ha tenido personas a cargo?" required>
+                <p><select type="text" id ="personasC" name="personasC" class="form-control0" placeholder="Ha tenido personas a cargo?" required>
                       <option value="0">Ha tenido personas a cargo?</option>
                       <option value="si">Si</option>
                       <option value="no">No</option>
@@ -654,11 +695,11 @@ margin-left: 2rem;
             </div>
 
             <div style="width:1015px">
-                <p><input type="text" id ="acCambio" name="acCambio" class="form-control" placeholder="Actividades realizadas en los lapsos de cambio ocupación" required></p>
+                <p><input type="text" id ="acCambio" name="acCambio" class="form-control0" placeholder="Actividades realizadas en los lapsos de cambio ocupación" required></p>
             </div>
-    
+
             <div style="width:400px">
-                <p><select type="text" id ="otroProceso" name="otroProceso" class="form-control" placeholder="Esta en proceso de seleccion en otra empresa?" required>
+                <p><select type="text" id ="otroProceso" name="otroProceso" class="form-control0" placeholder="Esta en proceso de seleccion en otra empresa?" required>
                   <option value="0"> Esta en proceso de seleccion en otra empresa?</option>
                   <option value="si">Si</option>
                   <option value="no">No</option>
@@ -666,23 +707,23 @@ margin-left: 2rem;
             </div>
 
             <div style="width:615px">
-                <p><input type="text" id ="CualOtra" name="CualOtra" class="form-control" placeholder="Cual?"></p>
+                <p><input type="text" id ="CualOtra" name="CualOtra" class="form-control0" placeholder="Cual?"></p>
             </div>
 
             <div style="width:1015px">
-                <p><input type="text" id ="fortalezas" name="fortalezas" class="form-control" placeholder="Cuales son sus fortalezas" required></p>
+                <p><input type="text" id ="fortalezas" name="fortalezas" class="form-control0" placeholder="Cuales son sus fortalezas" required></p>
             </div>
 
             <div style="width:1015px">
-                <p><input type="text" id ="debilidades" name="debilidades" class="form-control" placeholder="Cuales son sus debilidades" required></p>
+                <p><input type="text" id ="debilidades" name="debilidades" class="form-control0" placeholder="Cuales son sus debilidades" required></p>
             </div>
 
             <div style="width:1015px">
-                <p><input type="text" id ="valores" name="valores" class="form-control" placeholder="Cuales valores le inculco su familia" required></p>
+                <p><input type="text" id ="valores" name="valores" class="form-control0" placeholder="Cuales valores le inculco su familia" required></p>
             </div>
 
             <div style="width:400px">
-                <p><select type="text" id ="cancelado" name="cancelado" class="form-control" placeholder="Le han cancelado contrato en otra empresa?" required>
+                <p><select type="text" id ="cancelado" name="cancelado" class="form-control0" placeholder="Le han cancelado contrato en otra empresa?" required>
                     <option value="0">Le han cancelado contrato en otra empresa?</option>
                     <option value="si">Si</option>
                     <option value="no">No</option>
@@ -690,11 +731,11 @@ margin-left: 2rem;
             </div>
 
             <div style="width:615px">
-                <p><input type="text" id ="motivoC" name="motivoC" class="form-control" placeholder="Motivo"></p>
+                <p><input type="text" id ="motivoC" name="motivoC" class="form-control0" placeholder="Motivo"></p>
             </div>
 
             <div style="width:400px">
-                <p><select type="text" id ="problemas" name="problemas" class="form-control" placeholder="Tiene problemas judiciales?" required>
+                <p><select type="text" id ="problemas" name="problemas" class="form-control0" placeholder="Tiene problemas judiciales?" required>
                     <option value="0">Tiene problemas judiciales?</option>
                     <option value="si">Si</option>
                     <option value="no">No</option>
@@ -702,36 +743,36 @@ margin-left: 2rem;
             </div>
 
             <div style="width:615px">
-                <p><input type="text" id ="motivoJ" name="motivoJ" class="form-control" placeholder="Motivo"></p>
+                <p><input type="text" id ="motivoJ" name="motivoJ" class="form-control0" placeholder="Motivo"></p>
             </div>
 
             <div style="width:400px">
-                <p><select type="text" id ="fuma" name="fuma" class="form-control" placeholder="Fumao consume alcohol?" required>
-                    <option value="0">Fuma?</option>
+                <p><select type="text" id ="fuma" name="fuma" class="form-control0" placeholder="Fuma o consume alcohol?" required>
+                    <option value="0">Fuma o Bebe alcohol?</option>
                     <option value="si">Si</option>
                     <option value="no">No</option>
-                </select></p>
+                    </select></p>
             </div>
 
             <div style="width:615px">
-                <p><input type="text" id ="frecuencia" name="frecuencia" class="form-control" placeholder="Con que frecuencia"></p>
+                <p><input type="text" id ="frecuencia" name="frecuencia" class="form-control0" placeholder="Con que frecuencia"></p>
             </div>
-            
+
 
             <div style="width:1015px">
-                <p><input type="text" id ="tiempoLibre" name="tiempoLibre" class="form-control" placeholder="Que hace en su tiempo libre?" required></p>
+                <p><input type="text" id ="tiempoLibre" name="tiempoLibre" class="form-control0" placeholder="Que hace en su tiempo libre?" required></p>
             </div>
 
             <div style="width:507px">
-                <p><input type="text" id ="estadoSalud" name="estadoSalud" class="form-control" placeholder="Cual es su estado de salud?" required></p>
+                <p><input type="text" id ="estadoSalud" name="estadoSalud" class="form-control0" placeholder="Cual es su estado de salud?" required></p>
             </div>
 
             <div style="width:507px">
-                <p><input type="text" id ="tratamiento" name="tratamiento" class="form-control" placeholder="Tratamientos medicos" required></p>
+                <p><input type="text" id ="tratamiento" name="tratamiento" class="form-control0" placeholder="Tratamientos medicos" required></p>
             </div>
 
             <div style="width:350px">
-                <p><select type="text" id ="accidentes" name="accidentes" class="form-control" placeholder="Ha sufrido accidentes?" required>
+                <p><select type="text" id ="accidentes" name="accidentes" class="form-control0" placeholder="Ha sufrido accidentes?" required>
                 <option value="0">Ha sufrido accidentes?</option>
                 <option value="si">Si</option>
                 <option value="no">No</option>
@@ -739,11 +780,11 @@ margin-left: 2rem;
             </div>
 
             <div style="width:665px">
-                <p><input type="text" id ="cualAc" name="cualAc" class="form-control" placeholder="Que tipo de Accidente"></p>
+                <p><input type="text" id ="cualAc" name="cualAc" class="form-control0" placeholder="Que tipo de Accidente"></p>
             </div>
 
             <div style="width:507px">
-                <p><select type="text" id ="procesosAnt" name="procesosAnt" class="form-control" placeholder="Anteriormente ha realiazado procesos en Mentius?" required>
+                <p><select type="text" id ="procesosAnt" name="procesosAnt" class="form-control0" placeholder="Anteriormente ha realiazado procesos en Mentius?" required>
                 <option value="0"> Anteriormente ha realiazado procesos en Mentius?</option>
                 <option value="si">Si</option>
                 <option value="no">No</option>
@@ -751,13 +792,13 @@ margin-left: 2rem;
             </div>
 
             <div style="width:507px">
-                <p><select type="text" id ="familiaresMent" name="familiaresMent" class="form-control" placeholder="Tiene familiares trabajando en Mentius?" required>
+                <p><select type="text" id ="familiaresMent" name="familiaresMent" class="form-control0" placeholder="Tiene familiares trabajando en Mentius?" required>
                 <option value="0">Tiene familiares trabajando en Mentius?</option>
                 <option value="si">Si</option>
                 <option value="no">No</option>
                 </select></p>
             </div>
-        
+
         </div>
     </div>
 </div>
@@ -765,7 +806,7 @@ margin-left: 2rem;
 
 
     <label for="obsgenerales" class="etiquetas">Observaciones generales</label>
-    <textarea class="form-control" id="obsgenerales" name="obsgenerales" rows="2"></textarea>
+    <textarea class="form-control0-1" id="obsgenerales" name="obsgenerales" rows="3"></textarea>
 </div>
 
 <input type="hidden" name="entvOK" id="entvOK" value="entrevista 1 ok">

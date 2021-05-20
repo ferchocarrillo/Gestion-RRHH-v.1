@@ -72,10 +72,10 @@
         <label for="perfil">Perfil</label>
            <input type="text"
            class="form-control"
-           id="perfil"
-           placeholder="perfil"
-           name="perfil"
-           value="{{ old('perfil' , $filtro->perfil)}}">
+           id="cargo"
+           placeholder="cargo"
+           name="cargo"
+           value="{{ old('cargo' , $filtro->cargo)}}">
         </div>
     <div class="col-3">
         <label for="campaña">Campaña</label>

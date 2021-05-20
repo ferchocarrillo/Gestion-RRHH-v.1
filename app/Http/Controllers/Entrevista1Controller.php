@@ -79,15 +79,11 @@ class Entrevista1Controller extends Controller
         $date1 = Carbon::now();
         $date2 = $request->input('fnacimiento');
         $edad = $date1->diffInYears($date2);
-
         $datosEntrevista=request()->except('_token');
-
         $request->validate([
             'cedula'          => 'required|unique:entrevista1s,cedula,',
         ]);
         $entrevista1s = new Entrevista1();
-
-
 
         $entrevista1s->id_filtro        = $request->id_filtro;
         $entrevista1s->cedula           = $request->cedula;
