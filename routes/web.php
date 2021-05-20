@@ -83,29 +83,31 @@ Route::post('/app/Ciudades2', array('as' => 'Ciudad2', 'uses' => 'selects2Contro
 Route::post('/app/Ciudades', array('as' => 'Ciudad', 'uses' => 'selectsController@Ciudad'));
 Route::post('/app/Ciudades3', array('as' => 'Ciudad3', 'uses' => 'selects3Controller@Ciudad3'));
 Route::post('/app/Areas', array('as' => 'Area', 'uses' => 'AreaController@Area'));
-Route::resource('requisicion',      RequisicionController::class);
-Route::resource('reclutamiento',    ReclutamientoController::class);
-Route::resource('filtro',           FiltroController::class);
-Route::resource('entrevista1',      Entrevista1Controller::class);
-Route::resource('entrevista2',      Entrevista2Controller::class);
-Route::resource('entrevista3',      Entrevista3Controller::class);
-Route::resource('entrevista4',      Entrevista4Controller::class);
-Route::resource('entrevista5',      Entrevista5Controller::class);
-Route::resource('entFinalizacion',  EntFinalizacionController::class);
-Route::resource('entGerencia',      EntGerenciaController::class);
-Route::resource('entJefe',          EntJefeController::class);
-Route::resource('resumen',          ResumenController::class);
-Route::resource('capacitacion',     CapacitacionController::class);
-Route::resource('contratacion',     ContratacionController::class);
-Route::resource('documento',        DocumentoController::class);
-Route::resource('cargoNuevo',       CargoNuevoController::class);
-Route::resource('novedades',        NovedadesController::class);
-Route::resource('asignacion',       AsignacionController::class);
-Route::resource('nuevoempleado',    NuevoEmpleadoController::class);
-Route::resource('entrevistaFull',   EntrevistaFullController::class);
-Route::resource('entRRHH',          EntRRHHController::class);
-Route::resource('verNovedades',     verNovedadesController::class);
-Route::resource('retiros',          RetirosController::class);
+Route::resource('requisicion',       RequisicionController::class);
+Route::resource('reclutamiento',     ReclutamientoController::class);
+Route::resource('filtro',            FiltroController::class);
+Route::resource('entrevista1',       Entrevista1Controller::class);
+Route::resource('entrevista2',       Entrevista2Controller::class);
+Route::resource('entrevista3',       Entrevista3Controller::class);
+Route::resource('entrevista4',       Entrevista4Controller::class);
+Route::resource('entrevista5',       Entrevista5Controller::class);
+Route::resource('entFinalizacion',   EntFinalizacionController::class);
+Route::resource('entGerencia',       EntGerenciaController::class);
+Route::resource('entJefe',           EntJefeController::class);
+Route::resource('resumen',           ResumenController::class);
+Route::resource('capacitacion',      CapacitacionController::class);
+Route::resource('contratacion',      ContratacionController::class);
+Route::resource('documento',         DocumentoController::class);
+Route::resource('cargoNuevo',        CargoNuevoController::class);
+Route::resource('novedades',         NovedadesController::class);
+Route::resource('asignacion',        AsignacionController::class);
+Route::resource('nuevoempleado',     NuevoEmpleadoController::class);
+Route::resource('entrevistaFull',    EntrevistaFullController::class);
+Route::resource('entRRHH',           EntRRHHController::class);
+Route::resource('verNovedades',      verNovedadesController::class);
+Route::resource('retiros',           RetirosController::class);
+
+Route::resource('entrevistacompleta',EntrevistaCompletaController::class);
 
 
 
