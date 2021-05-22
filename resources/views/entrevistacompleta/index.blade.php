@@ -26,7 +26,7 @@
 <div class="container">
 
 
-        <form name="f1" action="{{ url('/entrevista1')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+        <form name="f1" action="{{ url('/entrevistacompleta')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
 
@@ -73,7 +73,7 @@
 
 
 
-                                                    <a href="{{url('/entrevistacompleta/'.$filtro->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Basicos</a>
+                                                    <a href="{{url('/entrevistacompleta/'.$filtro->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Entrevistar</a>
                                                     <a href="{{url('/filtro/'.$filtro->id.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">No asiste</a>{{--
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Laborales</a>--}}

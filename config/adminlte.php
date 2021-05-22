@@ -335,7 +335,7 @@ return [
     'submenu' => [
 
         ['text'    =>'Formularios de Entrevista',
-        'url'     => 'entrevista1',
+        'url'     => 'entrevistacompleta',
         'icon'    => 'fas fa-comments',
         'icon_color' => 'orange'
         ],

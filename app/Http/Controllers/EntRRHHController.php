@@ -12,6 +12,7 @@ use App\Entrevista3;
 use App\Entrevista4;
 use App\resultadoRRHH;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 

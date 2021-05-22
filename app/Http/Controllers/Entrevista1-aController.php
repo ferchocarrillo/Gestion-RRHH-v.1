@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Filtro;
+use App\Filtro2;
 use App\reclutamiento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -62,7 +63,7 @@ class Entrevista1Controller extends Controller
 
 
         $searchEntrevista = $request->get('searchEntrevista1');
-        $filtros= filtro::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(20);
+        $filtros= filtro2::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista.'%')->paginate(20);
         return view('entrevista1.index', ['filtros' => $filtros]);
     }
 
@@ -79,53 +80,53 @@ class Entrevista1Controller extends Controller
         $date1 = Carbon::now();
         $date2 = $request->input('fnacimiento');
         $edad = $date1->diffInYears($date2);
-        $datosEntrevista=request()->except('_token');
+        // $datosEntrevista=request()->except('_token');
         $request->validate([
             'cedula'          => 'required|unique:entrevista1s,cedula,',
         ]);
         $entrevista1s = new Entrevista1();
 
-        $entrevista1s->id_filtro        = $request->id_filtro;
-        $entrevista1s->cedula           = $request->cedula;
-        $entrevista1s->nombres          = $request->nombres;
-        $entrevista1s->telefono         = $request->telefono;
-        $entrevista1s->correo           = $request->correo;
-        $entrevista1s->cargo            = $request->cargo;
-        $entrevista1s->referencia       = $request->referencia;
-        $entrevista1s->fnacimiento      = $request->fnacimiento;
-        $entrevista1s->departamento     = $request->departamento;
-        $entrevista1s->id_ciudad        = $request->id_ciudad;
-        $entrevista1s->edad             = $edad;
-        $entrevista1s->TipoVia          = $request->TipoVia;
-        $entrevista1s->dr1              = $request->dr1;
-        $entrevista1s->prefijo1         = $request->prefijo1;
-        $entrevista1s->dr2              = $request->dr2;
-        $entrevista1s->prefijo2         = $request->prefijo2;
-        $entrevista1s->dr3              = $request->dr3;
-        $entrevista1s->orientacion      = $request->orientacion;
-        $entrevista1s->adicional        = $request->adicional;
-        $entrevista1s->ad1              = $request->ad1;
-        $entrevista1s->adicional2       = $request->adicional2;
-        $entrevista1s->ad2              = $request->ad2;
-        $entrevista1s->adicional3       = $request->adicional3;
-        $entrevista1s->ad3              = $request->ad3;
-        $entrevista1s->barrio           = $request->barrio;
-        $entrevista1s->residencia       = $request->residencia;
-        $entrevista1s->id_localidad     = $request->id_localidad;
-        $entrevista1s->tFijo            = $request->tFijo;
-        $entrevista1s->tCelular         = $request->tCelular;
-        $entrevista1s->tCelular2        = $request->tCelular2;
-        $entrevista1s->tVivienda        = $request->tVivienda;
-        $entrevista1s->valor            = $request->valor;
-        $entrevista1s->arrendador       = $request->arrendador;
-        $entrevista1s->correoArr        = $request->correoArr;
-        $entrevista1s->sMilitar         = $request->sMilitar;
-        $entrevista1s->donde            = $request->donde;
-        $entrevista1s->eCivil           = $request->eCivil;
-        $entrevista1s->cuanto           = $request->cuanto;
-        $entrevista1s->quien            = $request->quien;
-        $entrevista1s->conoce           = $request->conoce;
-        $entrevista1s->entvOK           =$request->entvOK;
+        // $entrevista1s->id_filtro        = $request->id_filtro;
+        // $entrevista1s->cedula           = $request->cedula;
+        // $entrevista1s->nombres          = $request->nombres;
+        // $entrevista1s->telefono         = $request->telefono;
+        // $entrevista1s->correo           = $request->correo;
+        // $entrevista1s->cargo            = $request->cargo;
+        // $entrevista1s->referencia       = $request->referencia;
+        // $entrevista1s->fnacimiento      = $request->fnacimiento;
+        // $entrevista1s->departamento     = $request->departamento;
+        // $entrevista1s->id_ciudad        = $request->id_ciudad;
+        // $entrevista1s->edad             = $edad;
+        // $entrevista1s->TipoVia          = $request->TipoVia;
+        // $entrevista1s->dr1              = $request->dr1;
+        // $entrevista1s->prefijo1         = $request->prefijo1;
+        // $entrevista1s->dr2              = $request->dr2;
+        // $entrevista1s->prefijo2         = $request->prefijo2;
+        // $entrevista1s->dr3              = $request->dr3;
+        // $entrevista1s->orientacion      = $request->orientacion;
+        // $entrevista1s->adicional        = $request->adicional;
+        // $entrevista1s->ad1              = $request->ad1;
+        // $entrevista1s->adicional2       = $request->adicional2;
+        // $entrevista1s->ad2              = $request->ad2;
+        // $entrevista1s->adicional3       = $request->adicional3;
+        // $entrevista1s->ad3              = $request->ad3;
+        // $entrevista1s->barrio           = $request->barrio;
+        // $entrevista1s->residencia       = $request->residencia;
+        // $entrevista1s->id_localidad     = $request->id_localidad;
+        // $entrevista1s->tFijo            = $request->tFijo;
+        // $entrevista1s->tCelular         = $request->tCelular;
+        // $entrevista1s->tCelular2        = $request->tCelular2;
+        // $entrevista1s->tVivienda        = $request->tVivienda;
+        // $entrevista1s->valor            = $request->valor;
+        // $entrevista1s->arrendador       = $request->arrendador;
+        // $entrevista1s->correoArr        = $request->correoArr;
+        // $entrevista1s->sMilitar         = $request->sMilitar;
+        // $entrevista1s->donde            = $request->donde;
+        // $entrevista1s->eCivil           = $request->eCivil;
+        // $entrevista1s->cuanto           = $request->cuanto;
+        // $entrevista1s->quien            = $request->quien;
+        // $entrevista1s->conoce           = $request->conoce;
+        // $entrevista1s->entvOK           =$request->entvOK;
 
         $entrevista1s->save();
 

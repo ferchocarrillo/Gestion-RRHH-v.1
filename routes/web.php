@@ -86,12 +86,12 @@ Route::post('/app/Areas', array('as' => 'Area', 'uses' => 'AreaController@Area')
 Route::resource('requisicion',       RequisicionController::class);
 Route::resource('reclutamiento',     ReclutamientoController::class);
 Route::resource('filtro',            FiltroController::class);
-Route::resource('entrevista1',       Entrevista1Controller::class);
-Route::resource('entrevista2',       Entrevista2Controller::class);
-Route::resource('entrevista3',       Entrevista3Controller::class);
-Route::resource('entrevista4',       Entrevista4Controller::class);
-Route::resource('entrevista5',       Entrevista5Controller::class);
-Route::resource('entFinalizacion',   EntFinalizacionController::class);
+// Route::resource('entrevista1',       Entrevista1Controller::class);
+// Route::resource('entrevista2',       Entrevista2Controller::class);
+// Route::resource('entrevista3',       Entrevista3Controller::class);
+// Route::resource('entrevista4',       Entrevista4Controller::class);
+// Route::resource('entrevista5',       Entrevista5Controller::class);
+// Route::resource('entFinalizacion',   EntFinalizacionController::class);
 Route::resource('entGerencia',       EntGerenciaController::class);
 Route::resource('entJefe',           EntJefeController::class);
 Route::resource('resumen',           ResumenController::class);

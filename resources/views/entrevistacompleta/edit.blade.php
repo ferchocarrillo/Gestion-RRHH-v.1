@@ -171,12 +171,15 @@ margin-left: 2rem;
 </style>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<a href="{{route('entrevista1.index')}}"><img  style="width: 3rem; height: 3rem;" src="\theme\images\back.png" alt="retorno al index de la entrevista datos iniciales"></a>
+<a href="{{route('entrevistacompleta.index')}}"><img  style="width: 3rem; height: 3rem;" src="\theme\images\back.png" alt="retorno al index de la entrevista datos iniciales"></a>
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:800px; visibility:visible z-index:1" align= "center" height="90" width="300">
 <br>
 <br>
 <div class="page-header">
+    <form action="{{ url('/entrevistacompleta/'.$filtros->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+        @csrf
+        @method('PATCH')
 
     <br>
       <h3>ENTREVISTA LABORAL</h3>
@@ -207,9 +210,9 @@ margin-left: 2rem;
 <div class="col-auto"> <label class="etiquetas" for="correo">Correo</label> <input type="mail" class="inputs-1" id="correo" placeholder="correo" name="correo" value="{{ old('correo' , $filtros->correo)}}"></div>
 </p>
 <p>
-<div class="col-auto"><label for="id_filtro"></label><input type="hidden" class="form-control" style="width: 240px" id="id_filtro" placeholder="id" name="id_filtro" value="{{ old('id', $filtros->id)}}"></div>
-<div class="col-auto"><label for="perfil"></label><input type="hidden" class="form-control" style="width: 240px" id="perfil" placeholder="perfil" name="perfil" value="{{ old('perfil', $filtros->perfil)}}"></div>
-<div class="col-auto"><label for="campana"></label><input type="hidden" class="form-control" style="width: 240px" id="campana" placeholder="campana" name="campana" value="{{ old('campana', $filtros->campaña)}}"></div>
+
+<div class="col-auto"><label for="perfil"></label><input type="hidden" class="form-control" style="width: 240px" id="cargo" placeholder="cargo" name="cargo" value="{{ old('cargo', $filtros->cargo)}}"></div>
+<div class="col-auto"><label for="campana"></label><input type="hidden" class="form-control" style="width: 240px" id="campana" placeholder="campaña" name="campaña" value="{{ old('campaña', $filtros->campaña)}}"></div>
 <div class="col-auto"><label for="fuente"></label><input type="hidden" class="form-control" style="width: 240px" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtros->fuente)}}"></div>
 </p>
 </div>
@@ -223,20 +226,18 @@ margin-left: 2rem;
     <div class="container">
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             <div class="row col-xs-12">
-
-                <p>
-                    <input list="cargo" type="text" name="cargo"  class="inputs" placeholder="Seleccione un cargo">
-
-                    <datalist name="cargo" id="cargo" >
-                      <option value="">Campañas</option>
-                      @foreach($cargos as $cargo)<option value="{{ $cargo->cargo}}">
-                          {{ $cargo->cargo }}</option>
-                        @endforeach
-                    </datalist>
-                </p>
-                &nbsp;&nbsp;<p><label class="etiquetas" for="fnacimiento">Fecha nacimiento</label></p><p> <input type="date" id ="fnacimiento" name="fnacimiento" class="inputs" placeholder="Fecha de venta" required></p>
-
-      <p>  <select name="departamento" id="departamento" class="inputs1" required> <label for="departamento"></label>
+        <p>
+                <input list="cargo" type="text" name="cargo"  value="{{$filtros->cargo}}" class="inputs" placeholder="Seleccione un cargo">
+                <datalist name="cargo" id="cargo" >
+                <option value="">Cargos</option>
+                @foreach($cargos as $cargo)<option>
+                    {{ $cargo->cargo }}</option>
+                @endforeach
+                </datalist>
+        </p>
+&nbsp;&nbsp;
+        <p><label class="etiquetas" for="fnacimiento">Fecha nacimiento</label></p><p> <input type="date" id ="fnacimiento" name="fnacimiento" class="inputs" placeholder="Fecha de venta" required></p>
+        <p>  <select name="departamento" id="departamento" class="inputs1" required> <label for="departamento"></label>
             <option value=""> Departamento de nacimiento </option>
                 @foreach($departamento as $departamentos)
             <option value="{{ $departamentos->Nombre}}">{{ $departamentos->Nombre }}</option>
@@ -257,10 +258,7 @@ margin-left: 2rem;
 <div class="col-sm-14 col-form-label">
     <div class="input-group input-group-sm">
         <strong><span class="etiquetas" >Direccion</span></strong>&nbsp;&nbsp;
-
-        <p>
-            <input list="TipoVia" type="text" name="TipoVia"  class="form-control1" style="width: 220px"  placeholder="Tipo via">
-
+        <p><input list="TipoVia" type="text" name="TipoVia"  class="form-control1" style="width: 220px"  placeholder="Tipo via">
             <datalist name="TipoVia" id="TipoVia" >
                 <option value="">Tipo Via</option>
                 @foreach($TipoVias as $TipoVia)<option value="{{ $TipoVia->tipo_vias}}">
@@ -268,8 +266,6 @@ margin-left: 2rem;
                 @endforeach
             </datalist>
         </p>
-
-
 <p>
 <input type="text" name="dr1" id="dr1" class="form-control1"  style="width:70px" required>
 </p>
@@ -366,7 +362,7 @@ margin-left: 2rem;
 </div>
 
 <div class="input-group input-group-sm">
-    <p><input type="text" name="barrio" id="barrio" class="form-control1"  style="width:180px" placeholder="Barrio" ></p>
+    <p><input type="text" name="barrio" id="barrio" class="form-control1"  style="width:180px; text-transform: capitalize;" placeholder="Barrio" ></p>
 
                     <span>&nbsp;</span>
                     <p><select name="residencia" id="residencia" class="form-control1" style="width: 200px" required><label for="residencia"></label>
@@ -378,7 +374,7 @@ margin-left: 2rem;
 
 <p><select name="id_localidad" id="id_localidad" class="form-control1" style="width: 200px" placeholder="localidad"required> </select></p>
 <p><input type="number" name="tFijo" id="tFijo" class="form-control1" style="width: 150px" placeholder="Telefono fijo"></p>
-<p><input type="number" name="tCelular" id="tCelular" class="form-control1" style="width: 150px" placeholder="Celular principal" required></p>
+
 <p><input type="number" name="tCelular2" id="tCelular2" class="form-control1" style="width: 150px" placeholder="Celular secundario" ></p>
 
             </div>
@@ -431,7 +427,7 @@ margin-left: 2rem;
                     </datalist>
                     </p>&nbsp;
 <div style="width:260px"><p>
-    <input type="text" id ="quien" name="quien" class="form-control1" placeholder="Con Quien Vive"></p>
+    <input type="text" id ="quien" name="quien" class="form-control1" style="text-transform: capitalize" placeholder="Con Quien Vive"></p>
 </div>
 <div class="col-sm-12">
     <center><p>
@@ -445,7 +441,7 @@ margin-left: 2rem;
 
 
 
-    <div class="container">
+    {{--  <div class="container">
 
         <p>
             <input type="checkbox" name="sinfamilia" id="sinfamilia"  value="No registran" ><label for="sinfamilia">&nbsp;&nbsp;&nbsp;&nbsp;Sin Familiares </label>&nbsp;&nbsp;<i>*solo se debera señalar esta opcion en caso de que el postulado no cuente con ningun familiar conocido</i>
@@ -456,24 +452,24 @@ margin-left: 2rem;
 
 <div style="width:350px"><p><input type="text" id ="parentescop1" name="parentescop1" class="inputs3" placeholder="Parentesco"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:150px"><p><input type="text" id ="edadp1" name="edadp1" class="inputs4" placeholder="Edad"></p></div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text" id ="ocupacionp1" name="ocupacionp1" class="inputs3" placeholder="Ocupacion"></p></div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text" id ="parentescop2" name="parentescop2" class="inputs3" placeholder="Parentesco"></p></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="ocupacionp1" name="ocupacionp1" class="inputs3" placeholder="Ocupacion"></p></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="parentescop2" name="parentescop2" class="inputs3" placeholder="Parentesco"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:150px"><p><input type="text" id ="edadp2" name="edadp2" class="inputs4" placeholder="Edad"></p></div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text" id ="ocupacionp2" name="ocupacionp2" class="inputs3" placeholder="Ocupacion"></p></div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text" id ="parentescop3" name="parentescop3" class="inputs3" placeholder="Parentesco"></p></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="ocupacionp2" name="ocupacionp2" class="inputs3" placeholder="Ocupacion"></p></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="parentescop3" name="parentescop3" class="inputs3" placeholder="Parentesco"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:150px"><p><input type="text" id ="edadp3" name="edadp3" class="inputs4" placeholder="Edad"></p></div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text" id ="ocupacionp3" name="ocupacionp3" class="inputs3" placeholder="Ocupacion"></p></div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text" id ="parentescop4" name="parentescop4" class="inputs3" placeholder="Parentesco"></p></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="ocupacionp3" name="ocupacionp3" class="inputs3" placeholder="Ocupacion"></p></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="parentescop4" name="parentescop4" class="inputs3" placeholder="Parentesco"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:150px"><p><input type="text" id ="edadp4" name="edadp4" class="inputs4" placeholder="Edad"></p></div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text" id ="ocupacionp4" name="ocupacionp4" class="inputs3" placeholder="Ocupacion"></p></div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text" id ="parentescop5" name="parentescop5" class="inputs3" placeholder="Parentesco"></p></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="ocupacionp4" name="ocupacionp4" class="inputs3" placeholder="Ocupacion"></p></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="parentescop5" name="parentescop5" class="inputs3" placeholder="Parentesco"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:150px"><p><input type="text" id ="edadp5" name="edadp5" class="inputs4" placeholder="Edad"></p></div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text" id ="ocupacionp5" name="ocupacionp5" class="inputs3" placeholder="Ocupacion"></p></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="ocupacionp5" name="ocupacionp5" class="inputs3" placeholder="Ocupacion"></p></div>
             </div>
         </div>
-    </div>
+    </div>  --}}
 
-    <div class="col-sm-12">
+    {{--  <div class="col-sm-12">
         <center><p>
 
 
@@ -508,14 +504,14 @@ margin-left: 2rem;
                     <p><input type="text" id ="Grado8" name="Grado8"  class="inputs5-1" placeholder=""></p>
                     </td>
                     <td>
-                    <p><input type="text" id ="institucion1" name="institucion1" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="institucion2" name="institucion2" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="institucion3" name="institucion3" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="institucion4" name="institucion4" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="institucion5" name="institucion5" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="institucion6" name="institucion6" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="institucion7" name="institucion7" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="institucion8" name="institucion8" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="institucion1" name="institucion1"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="institucion2" name="institucion2"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="institucion3" name="institucion3"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="institucion4" name="institucion4"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="institucion5" name="institucion5"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="institucion6" name="institucion6"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="institucion7" name="institucion7"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="institucion8" name="institucion8"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
                 </td>
 
                     <td>
@@ -531,14 +527,14 @@ margin-left: 2rem;
 
                     </td>
                     <td>
-                    <p><input type="text" id ="titulo1" name="titulo1" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="titulo2" name="titulo2" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="titulo3" name="titulo3" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="titulo4" name="titulo4" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="titulo5" name="titulo5" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="titulo6" name="titulo6" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="titulo7" name="titulo7" class="inputs5" placeholder=""></p>
-                    <p><input type="text" id ="titulo8" name="titulo8" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="titulo1" name="titulo1"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="titulo2" name="titulo2"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="titulo3" name="titulo3"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="titulo4" name="titulo4"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="titulo5" name="titulo5"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="titulo6" name="titulo6"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="titulo7" name="titulo7"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+                    <p><input type="text" id ="titulo8" name="titulo8"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
                     </td>
                 <td>
 
@@ -625,9 +621,9 @@ margin-left: 2rem;
         </tr></thead>
         <tbody><tr>
         <td>
-            <p><input type="text" id ="empresa1" name="empresa1" class="inputs7" placeholder=""></p>
-            <p><input type="text" id ="empresa2" name="empresa2" class="inputs7" placeholder=""></p>
-            <p><input type="text" id ="empresa3" name="empresa3" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="empresa1" name="empresa1"  style="text-transform: capitalize" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="empresa2" name="empresa2"  style="text-transform: capitalize" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="empresa3" name="empresa3"  style="text-transform: capitalize" class="inputs7" placeholder=""></p>
             </td>
         <td>
             <p><input type="date" id ="fechain1" name="fechain1" class="inputs7" placeholder=""></p>
@@ -641,15 +637,15 @@ margin-left: 2rem;
         </td>
 
         <td>
-            <p><input type="text" id ="hlcargo1" name="hlcargo1" class="inputs7" placeholder=""></p>
-            <p><input type="text" id ="hlcargo2" name="hlcargo2" class="inputs7" placeholder=""></p>
-            <p><input type="text" id ="hlcargo3" name="hlcargo3" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="hlcargo1" name="hlcargo1"  style="text-transform: capitalize" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="hlcargo2" name="hlcargo2"  style="text-transform: capitalize" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="hlcargo3" name="hlcargo3"  style="text-transform: capitalize" class="inputs7" placeholder=""></p>
 
         </td>
         <td>
-            <p><input type="text" id ="jefeinm1" name="jefeinm1" class="inputs7" placeholder=""></p>
-            <p><input type="text" id ="jefeinm2" name="jefeinm2" class="inputs7" placeholder=""></p>
-            <p><input type="text" id ="jefeinm3" name="jefeinm3" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="jefeinm1" name="jefeinm1"  style="text-transform: capitalize" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="jefeinm2" name="jefeinm2"  style="text-transform: capitalize" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="jefeinm3" name="jefeinm3"  style="text-transform: capitalize" class="inputs7" placeholder=""></p>
         </td>
         <td>
             <p><input type="number" id ="teleinf1" name="teleinf1" class="inputs7" placeholder=""></p>
@@ -662,9 +658,9 @@ margin-left: 2rem;
             <p><input type="text" id ="salarioh3" name="salarioh3" class="inputs7" placeholder=""></p>
         </td>
         <td>
-            <p><input type="text" id ="motivor1" name="motivor1" class="inputs7" placeholder=""></p>
-            <p><input type="text" id ="motivor2" name="motivor2" class="inputs7" placeholder=""></p>
-            <p><input type="text" id ="motivor3" name="motivor3" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="motivor1" name="motivor1" style="text-transform: capitalize" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="motivor2" name="motivor2" style="text-transform: capitalize" class="inputs7" placeholder=""></p>
+            <p><input type="text" id ="motivor3" name="motivor3" style="text-transform: capitalize" class="inputs7" placeholder=""></p>
         </td>
         <td><p>
         </tbody>
@@ -689,41 +685,41 @@ margin-left: 2rem;
             <div style="width:455px">
                 <p><select type="text" id ="personasC" name="personasC" class="form-control0" placeholder="Ha tenido personas a cargo?" required>
                       <option value="0">Ha tenido personas a cargo?</option>
-                      <option value="si">Si</option>
-                      <option value="no">No</option>
+                      <option value="Si">Si</option>
+                      <option value="No">No</option>
                 </select></p>
             </div>
 
             <div style="width:1015px">
-                <p><input type="text" id ="acCambio" name="acCambio" class="form-control0" placeholder="Actividades realizadas en los lapsos de cambio ocupación" required></p>
+                <p><input type="text" id ="acCambio" name="acCambio" class="form-control0" style="text-transform: capitalize" placeholder="Actividades realizadas en los lapsos de cambio ocupación" required></p>
             </div>
 
             <div style="width:400px">
                 <p><select type="text" id ="otroProceso" name="otroProceso" class="form-control0" placeholder="Esta en proceso de seleccion en otra empresa?" required>
                   <option value="0"> Esta en proceso de seleccion en otra empresa?</option>
-                  <option value="si">Si</option>
-                  <option value="no">No</option>
+                  <option value="Si">Si</option>
+                  <option value="No">No</option>
                 </select></p>
             </div>
 
             <div style="width:615px">
-                <p><input type="text" id ="CualOtra" name="CualOtra" class="form-control0" placeholder="Cual?"></p>
+                <p><input type="text" id ="CualOtra" name="CualOtra" class="form-control0" style="text-transform: capitalize" placeholder="Cual?"></p>
             </div>
 
             <div style="width:1015px">
-                <p><input type="text" id ="fortalezas" name="fortalezas" class="form-control0" placeholder="Cuales son sus fortalezas" required></p>
+                <p><input type="text" id ="fortalezas" name="fortalezas" class="form-control0" style="text-transform: capitalize" placeholder="Cuales son sus fortalezas" required></p>
             </div>
 
             <div style="width:1015px">
-                <p><input type="text" id ="debilidades" name="debilidades" class="form-control0" placeholder="Cuales son sus debilidades" required></p>
+                <p><input type="text" id ="debilidades" name="debilidades" class="form-control0" style="text-transform: capitalize" placeholder="Cuales son sus debilidades" required></p>
             </div>
 
             <div style="width:1015px">
-                <p><input type="text" id ="valores" name="valores" class="form-control0" placeholder="Cuales valores le inculco su familia" required></p>
+                <p><input type="text" id ="valores" name="valores" class="form-control0" style="text-transform: capitalize" placeholder="Cuales valores le inculco su familia" required></p>
             </div>
 
             <div style="width:400px">
-                <p><select type="text" id ="cancelado" name="cancelado" class="form-control0" placeholder="Le han cancelado contrato en otra empresa?" required>
+                <p><select type="text" id ="cancelado" name="cancelado" class="form-control0" style="text-transform: capitalize" placeholder="Le han cancelado contrato en otra empresa?" required>
                     <option value="0">Le han cancelado contrato en otra empresa?</option>
                     <option value="si">Si</option>
                     <option value="no">No</option>
@@ -731,7 +727,7 @@ margin-left: 2rem;
             </div>
 
             <div style="width:615px">
-                <p><input type="text" id ="motivoC" name="motivoC" class="form-control0" placeholder="Motivo"></p>
+                <p><input type="text" id ="motivoC" name="motivoC" class="form-control0" style="text-transform: capitalize" placeholder="Motivo"></p>
             </div>
 
             <div style="width:400px">
@@ -743,7 +739,7 @@ margin-left: 2rem;
             </div>
 
             <div style="width:615px">
-                <p><input type="text" id ="motivoJ" name="motivoJ" class="form-control0" placeholder="Motivo"></p>
+                <p><input type="text" id ="motivoJ" name="motivoJ" class="form-control0" style="text-transform: capitalize" placeholder="Motivo"></p>
             </div>
 
             <div style="width:400px">
@@ -755,20 +751,20 @@ margin-left: 2rem;
             </div>
 
             <div style="width:615px">
-                <p><input type="text" id ="frecuencia" name="frecuencia" class="form-control0" placeholder="Con que frecuencia"></p>
+                <p><input type="text" id ="frecuencia" name="frecuencia" class="form-control0" style="text-transform: capitalize" placeholder="Con que frecuencia"></p>
             </div>
 
 
             <div style="width:1015px">
-                <p><input type="text" id ="tiempoLibre" name="tiempoLibre" class="form-control0" placeholder="Que hace en su tiempo libre?" required></p>
+                <p><input type="text" id ="tiempoLibre" name="tiempoLibre" class="form-control0" style="text-transform: capitalize" placeholder="Que hace en su tiempo libre?" required></p>
             </div>
 
             <div style="width:507px">
-                <p><input type="text" id ="estadoSalud" name="estadoSalud" class="form-control0" placeholder="Cual es su estado de salud?" required></p>
+                <p><input type="text" id ="estadoSalud" name="estadoSalud" class="form-control0" style="text-transform: capitalize" placeholder="Cual es su estado de salud?" required></p>
             </div>
 
             <div style="width:507px">
-                <p><input type="text" id ="tratamiento" name="tratamiento" class="form-control0" placeholder="Tratamientos medicos" required></p>
+                <p><input type="text" id ="tratamiento" name="tratamiento" class="form-control0" style="text-transform: capitalize" placeholder="Tratamientos medicos" required></p>
             </div>
 
             <div style="width:350px">
@@ -780,22 +776,22 @@ margin-left: 2rem;
             </div>
 
             <div style="width:665px">
-                <p><input type="text" id ="cualAc" name="cualAc" class="form-control0" placeholder="Que tipo de Accidente"></p>
+                <p><input type="text" id ="cualAc" name="cualAc" class="form-control0" style="text-transform: capitalize" placeholder="Que tipo de Accidente"></p>
             </div>
 
             <div style="width:507px">
                 <p><select type="text" id ="procesosAnt" name="procesosAnt" class="form-control0" placeholder="Anteriormente ha realiazado procesos en Mentius?" required>
                 <option value="0"> Anteriormente ha realiazado procesos en Mentius?</option>
-                <option value="si">Si</option>
-                <option value="no">No</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
                 </select></p>
             </div>
 
             <div style="width:507px">
                 <p><select type="text" id ="familiaresMent" name="familiaresMent" class="form-control0" placeholder="Tiene familiares trabajando en Mentius?" required>
                 <option value="0">Tiene familiares trabajando en Mentius?</option>
-                <option value="si">Si</option>
-                <option value="no">No</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
                 </select></p>
             </div>
 
@@ -809,12 +805,13 @@ margin-left: 2rem;
     <textarea class="form-control0-1" id="obsgenerales" name="obsgenerales" rows="3"></textarea>
 </div>
 
-<input type="hidden" name="entvOK" id="entvOK" value="entrevista 1 ok">
+<input type="hidden" name="entvOK" id="entvOK" value="entrevista 1 ok">  --}}
 
 <div class="d-grid gap-2">
     <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
-    <a href="{{route('entrevista2.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Continuar</a>
+    <a href="{{route('entrevistacompleta.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Continuar</a>
 </div>
+</form>
 <br>
 <br>
 <br>
@@ -822,10 +819,11 @@ margin-left: 2rem;
 
 </div>
         </div>
+
     </div>
 </div>
 </fieldset>
-</form>
+
 </div>
 <script src="{{asset('js/app.js')}}"></script>
 </body>
