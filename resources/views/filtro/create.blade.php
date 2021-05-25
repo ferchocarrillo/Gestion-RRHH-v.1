@@ -33,10 +33,10 @@ class="form-horizontal">
                 <input type="date" id ="fregistro" name="fregistro" class="form-control-lg-new10" placeholder="fecha de registro" required>
             </p>
             <p>
-                <input type="text" id ="nombre" name="nombre" class="form-control-lg-new10" placeholder="Nombre del postulado" required>
+                <input type="text" id ="nombre" name="nombre" class="form-control-lg-new10" placeholder="Nombre del postulado" style="text-transform: capitalize" required>
             </p>
             <p>
-                <input type="number" id ="cedula" name="cedula" class="form-control-lg-new10" placeholder="Cedula del postulado" required>
+                <input type="number" id ="cedula" name="cedula" class="form-control-lg-new10" placeholder="Cedula del postulado" maxlength="10" minlength="10" required>
             </p>
             <p>
                 <input type="text" id ="telefono" name="telefono" class="form-control-lg-new10" placeholder="Telefono del postulado" required>
@@ -100,7 +100,7 @@ class="form-horizontal">
         <tr valign="bottom">
           <td>
             <div style="float:left; width:100%; display:flex;">
-                <input type="checkbox" id="citadoE" name="citadoE" value="CE">
+                <input type="checkbox" id="citadoE" name="citadoE" value="X">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Citado entrevista</label>
             </div>
           </td>
@@ -111,7 +111,7 @@ class="form-horizontal">
         <tr valign="bottom">
           <td>
             <div style="float:left; width:120%; display:flex;">
-                <input type="checkbox" id="noAplica" name="noAplica" value="NA">
+                <input type="checkbox" id="noAplica" name="noAplica" value="X">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;No Aplica por exeperiencia o perfil</label>
             </div>
           </td>
@@ -122,7 +122,7 @@ class="form-horizontal">
         <tr valign="bottom">
           <td>
             <div style="float:left; width:100%; display:flex;">
-                <input type="checkbox" id="noInteresado" name="noInteresado" value="NI">
+                <input type="checkbox" id="noInteresado" name="noInteresado" value="X">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;No Interesado en la oferta</label>
             </div>
           </td>
@@ -133,7 +133,7 @@ class="form-horizontal">
         <tr valign="bottom">
           <td>
             <div style="float:left; width:100%; display:flex;">
-                <input type="checkbox" id="enviadoCapa" name="enviadoCapa" value="EC">
+                <input type="checkbox" id="enviadoCapa" name="enviadoCapa" value="X">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Enviado a Capacitacion</label>
             </div>
           </td>
@@ -144,7 +144,7 @@ class="form-horizontal">
         <tr valign="bottom">
           <td>
             <div style="float:left; width:100%; display:flex;">
-                <input type="checkbox" id="enviadoExm" name="enviadoExm" value="EE">
+                <input type="checkbox" id="enviadoExm" name="enviadoExm" value="X">
                 <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Enviado a Examenes</label>
             </div>
           </td>
@@ -154,7 +154,7 @@ class="form-horizontal">
         <tr valign="bottom">
          <td>
            <div style="float:left; width:100%; display:flex;">
-               <input type="checkbox" id="PruebasE" name="PruebasE" value="PE">
+               <input type="checkbox" id="PruebasE" name="PruebasE" value="X">
                <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Pruebas Enviadas</label>
            </div>
          </td>
@@ -165,7 +165,7 @@ class="form-horizontal">
        <tr valign="bottom">
                      <td>
                        <div style="float:left; width:100%; display:flex;">
-                           <input type="checkbox" id="yaTrabaja" name="yaTrabaja" value="YT">
+                           <input type="checkbox" id="yaTrabaja" name="yaTrabaja" value="X">
                            <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Ya Trabaja</label>
                        </div>
                      </td>
@@ -177,7 +177,7 @@ class="form-horizontal">
                    <tr valign="bottom">
                                  <td>
                                <div style="float:left; width:100%; display:flex;">
-                                     <input type="checkbox" id="numeroEqu" name="numeroEqu" value="NE">
+                                     <input type="checkbox" id="numeroEqu" name="numeroEqu" value="X">
                                      <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Numero Equivocado</label>
                                </div>
                                </td>

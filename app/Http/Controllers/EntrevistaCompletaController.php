@@ -25,7 +25,7 @@ use App\sMilitar;
 use App\tVivienda;
 use App\Filtro;
 use App\Filtro2;
-
+use App\parentesco;
 
 class EntrevistaCompletaController extends Controller
 {
@@ -37,7 +37,7 @@ class EntrevistaCompletaController extends Controller
     public function index()
 
     {
-        $filtros = Filtro2::orderBy('id', 'asc')->where('citadoE','=','CE')->where('noAsisteEnt','=',null)->paginate(20);
+        $filtros = Filtro2::orderBy('id', 'asc')->where('citadoE','=','X')->where('noAsisteEnt','=',null)->where('entvOK','<>','X')->paginate(20);
         return view('entrevistacompleta.index',compact( 'filtros'));
     }
 
@@ -79,9 +79,7 @@ class EntrevistaCompletaController extends Controller
         $input12 = $request->get('adicional3');
         $input13 = $request->get('ad3');
 
-
-
-  //      $datosEntrevista=request()->except('_token');
+     $datosEntrevista=request()->except('_token');
         $request->validate([
             'cedula'          => 'required|unique:entrevistacompleta,cedula,',
         ]);
@@ -125,7 +123,7 @@ class EntrevistaCompletaController extends Controller
      * @param  \App\EntrevistaCompleta  $entrevistaCompleta
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
         $filtros= Filtro2::findOrFail($id);
         $cargos = Cargo::all();
@@ -139,11 +137,17 @@ class EntrevistaCompletaController extends Controller
         $residencia = Residencia::all();
         $tViviendas = tVivienda::all();
         $sMilitars = sMilitar::all();
+        $parentescos = parentesco::all();
         $eCivils= eCivil::all();
+        $institucion1 = $request->get('institucion1');
+        $fechap1 = $request->get('fecha1');
+        $titulo1 = $request->get('titulo1');
+        $estado1 = $request->get('estado1');
+        $primaria = $institucion1. $fechap1. $titulo1. $estado1;
 
         $this->authorize('haveaccess','entrevistacompleta.edit');
 
-        return view('entrevistacompleta.edit', compact('eCivils','sMilitars','tViviendas','cargos','cargoEnt','filtros','departamento','residencia','adicional2es','adicionales','orientaciones','TipoVias','prefijos'));
+        return view('entrevistacompleta.edit', compact('primaria','parentescos','eCivils','sMilitars','tViviendas','cargos','cargoEnt','filtros','departamento','residencia','adicional2es','adicionales','orientaciones','TipoVias','prefijos'));
 
     }
 
@@ -158,10 +162,23 @@ class EntrevistaCompletaController extends Controller
     {
         $datosEntrevista =request()->except(['_token','_method']);
         Filtro2::where('id','=',$id)->update($datosEntrevista);
-        $filtro=Filtro2::findOrFail($id);
-        return response()->json($filtro);
-     // return view('entrevistacompleta.edit', compact('filtro','datosEntrevista));
-    }
+        $cargos = Cargo::all();
+        $departamento = Departamentos::all();
+        $TipoVias = TipoVia::all();
+        $prefijos = Prefijo::all();
+        $orientaciones = Orientacion::all();
+        $adicionales = Adicional::all();
+        $adicional2es = Adicional2::all();
+        $filtros=Filtro2::findOrFail($id);
+        $residencia = Residencia::all();
+        $tViviendas = tVivienda::all();
+        $sMilitars = sMilitar::all();
+        $parentescos = parentesco::all();
+        $eCivils= eCivil::all();
+        //return response()->json($filtro);
+        $this->authorize('haveaccess','entrevistacompleta.edit');
+        return view('entrevistacompleta.edit', compact('eCivils','parentescos','sMilitars','tViviendas','residencia','adicional2es','adicionales','orientaciones','prefijos','TipoVias','filtros','datosEntrevista','cargos','departamento'));
+        }
 
     /**
      * Remove the specified resource from storage.

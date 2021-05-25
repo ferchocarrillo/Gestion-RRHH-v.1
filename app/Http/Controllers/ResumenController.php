@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\resumen;
 use App\EntFinalizacion;
-use App\Filtro;
+use App\Filtro2;
 use App\reclutamiento;
 use Carbon\Carbon;
 use App\Departamentos;
@@ -17,11 +17,7 @@ use App\Adicional2;
 use App\Adicional;
 use App\EntGerencia;
 use App\EntJefe;
-use App\Entrevista1;
-use App\Entrevista2;
-use App\Entrevista3;
-use App\Entrevista4;
-use App\Entrevista5;
+
 use App\Residencia;
 use App\User;
 use stdClass;
@@ -46,7 +42,7 @@ class ResumenController extends Controller
      */
     public function index()
     {
-        $entrevistas = nuevoEmpleado::orderBy('created_at', 'desc')->paginate(10);
+        $entrevistas = Filtro2::orderBy('created_at', 'desc')->paginate(10);
         return view('resumen.index',compact('entrevistas'));
     }
 
@@ -58,10 +54,7 @@ class ResumenController extends Controller
     public function create()
     {
 
-        $resumen = resumen::all();
-        $entFinalizacion = EntFinalizacion::all();
-        $reclutamientos=Reclutamiento::all();
-        return view('resumen.create',compact('resumen','entFinalizacion','reclutamientos'));
+
     }
 
 
@@ -70,7 +63,7 @@ class ResumenController extends Controller
 
 
         $searchResumen = $request->get('searchResumen');
-        $searchResumen= Filtro::firstOrNew()->where('cedula', 'like', '%'.$searchResumen.'%')->paginate(5);
+        $searchResumen= Filtro2::firstOrNew()->where('cedula', 'like', '%'.$searchResumen.'%')->paginate(5);
         return view('resumen.index', ['searchResumen' => $searchResumen]);
     }
 
@@ -83,20 +76,7 @@ class ResumenController extends Controller
      */
     public function store(Request $request)
     {
-        $user_id = Auth::user()->id;
-        $user_nombre = Auth::user()->name;
-        $datosEntrevista=request()->except('_token');
 
-        $resumen = new resumen();
-        $resumen->id_filtro        = $request->id_filtro;
-        $resumen->cedula           = $request->cedula;
-        $resumen->nombre           = $request->nombres;
-        $resumen->resultadoGer     = $request->resultadoGer;
-        $resumen->obsGerencia      = $request->obsGerencia;
-
-        $resumen->save();
-        return back();
-        ///return response()->json($resumen);
     }
 
     /**
@@ -108,10 +88,8 @@ class ResumenController extends Controller
     public function show($id, Request $request)
     {
         $this->authorize('haveaccess','resumen.view');
-        $resumen=resumen::all();
-        $entrevista1s=Entrevista1::all();
-        $filtro=Filtro::all();
-        return view('resumen.view', compact('resumen','entrevista1s','filtro'));
+        $filtro=Filtro2::findOrFail($id);
+       return view('resumen.view', compact('filtro'));
     }
 
     /**
@@ -120,23 +98,11 @@ class ResumenController extends Controller
      * @param  \App\EntGerencia  $entGerencia
      * @return \Illuminate\Http\Response
      */
-    public function edit($id, Request $request)
+    public function edit($id)
 
     {
-
-        $this->authorize('haveaccess','resumen.edit');
-
-        $filtro=Filtro::findOrFail($id);
-        $entrevista1s=entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entrevista2s=Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entrevista3s=Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entrevista4s=Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entrevista5s=Entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entFinalizacion=entFinalizacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-
-        $resumen=resumen::all();
-
-       return view('resumen.edit', compact('resumen','entFinalizacion','entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s','filtro'));
+        $filtro=Filtro2::findOrFail($id);
+        return view('resumen.view', compact('filtro'));
     }
     /**
      * Update the specified resource in storage.
@@ -147,11 +113,7 @@ class ResumenController extends Controller
      */
         public function update (Request $request, $id)
     {
-        $datosresumen =request()->except(['_token','_method']);
-        resumen::where('id','=',$id)->update($datosresumen);
-        $resumen=resumen::findOrFail($id);
-        //return response()->json($resumen);
-        return view('resumen.edit', compact('resumen','entFinalizacion'));
+
     }
 
     /**

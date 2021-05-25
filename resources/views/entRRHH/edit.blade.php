@@ -11,7 +11,170 @@
 <br>
 
 <center>
+    <style>
+        .inputs{
+        border-radius: 0.75rem;
+        width: 180px;
+        height: 50px;
+        background-color: #e9f1f1;
+        font-weight: 100;
+        }
+        .inputs-1{
+        border-radius: 0.75rem;
+        width: 240px;
+        height: 50px;
+        background-color: #e9f1f1;
+        font-weight: 100;
+        }
+        .inputs1{
+            border-radius: 0.75rem;
+            width: 270px;
+            height: 50px;
+            background-color: #e9f1f1;
+            font-weight: 100;
+            }
 
+        .inputs2{
+            border-radius: 0.75rem;
+            width: 140px;
+            background-color: #e9f1f1;
+            font-weight: 200;
+            }
+
+        .inputs3{
+            border-radius: 0.75rem;
+            width: 370px;
+            background-color: #e9f1f1;
+            font-weight: 200;
+            height: 38px;
+            text-transform: capitalize;
+
+            }
+
+        .inputs4{
+            border-radius: 0.75rem;
+            width: 100px;
+            background-color: #e9f1f1;
+            font-weight: 200;
+            height: 38px;
+            margin-left: 2rem;
+            color: #234c63;
+            font-size: 16px;
+           text-transform: capitalize;
+            }
+
+        .inputs5{
+            border-radius: 0.75rem;
+            width: 220px;
+            background-color: #e9f1f1;
+            font-weight: 200;
+            height: 38px;
+            color: #01090e;
+                font-size: 19px;
+               text-transform: capitalize;
+
+            }
+            .inputs5-1{
+                color: #234c63;
+                font-size: 16px;
+                border-radius: 0.75rem;
+                width: 350px;
+                background-color: #e9f1f1;
+                font-weight: 200;
+                height: 38px;
+                text-transform: capitalize;
+
+                }
+
+        .inputs5-1::placeholder {
+            color: #234c63;
+            font-weight: bold;
+            font-size: 16px;
+            opacity: 1;
+            text-transform: capitalize;
+          }
+
+                        .inputs6{
+                            font-size: 16px;
+                            color: #234c63;
+                            border-radius: 0.75rem;
+                            width: 120px;
+                            background-color: #e9f1f1;
+                            font-weight: 200;
+                            height: 38px;
+                            text-transform: capitalize;
+
+                            }
+                            .inputs7{
+                                font-size: 14px;
+                                color: #234c63;
+                                border-radius: 0.75rem;
+                                width: 100px;
+                                background-color: #e9f1f1;
+                                font-weight: 100;
+                                height: 38px;
+                                text-transform: capitalize;
+
+                                }
+
+        .labels{
+        font-size: 1.3rem;
+        margin-left: 2rem;
+        }
+        .etiquetas{
+            height: 38px;
+            background: #97c8cd;
+            color:  #234c63;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 0.75rem;
+        }
+
+
+        .textarea1{
+            columns: 14;
+            width: 300px;
+            border-radius: 0.75rem;
+        }
+        .botones{
+background-color: #1da0af;
+height: 2rem;
+border-radius: 0.75rem;
+width: 150px;
+align-self: center;
+text-align: center;
+font-size: 1rem;
+text-transform: capitalize;
+font-weight: bold;
+color: #fdffff;
+margin-left: 12rem;
+        }
+        .botones:hover{
+            background-color: #165ebd;
+            height: 2rem;
+            border-radius: 0.75rem;
+            width: 150px;
+            align-self: center;
+            text-align: center;
+            font-size: 1rem;
+            text-transform: capitalize;
+            font-weight: bold;
+            color: #f2f2f3;
+            margin-left:12rem;
+                    }
+
+        .labeler{
+            word-wrap:normal;
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 12px;
+            color: rgb(26, 24, 24);
+            font-weight: bold;
+            font-style: normal;
+            padding-top: 0px;
+            cursor: pointer;"
+        }
+
+        </style>
 
 <div class="page-header">
       <h3>REGISTRO DE RESULTADO ENTREVISTA RRHH</h3>
@@ -33,14 +196,14 @@
 
 
 
-<div class="col-3"><strong><span>Nombres</strong></span><p class="form-control">{{ old('nombre', $filtro->nombre)}}</p></div>&nbsp;
-<div class="col"><strong><span>Cedula</strong></span><p class="form-control">{{ old('cedula', $filtro->cedula)}}</p></div>&nbsp;
-<div class="col"><strong><span>Telefono</strong></span><p class="form-control">{{ old('telefono', $filtro->telefono)}}</p></div>&nbsp;
-<div class="col-3"><strong><span>Correo</strong></span><p class="form-control">{{ old('correo', $filtro->correo)}}</p></div>&nbsp;
-<div class="col-3"><strong><span>Perfil</strong></span><p class="form-control">{{ old('perfil', $filtro->perfil)}}</p></div>&nbsp;
-<div class="col-3"><strong><span>Campaña</strong></span><p class="form-control">{{ old('campaña', $filtro->campaña)}}</p></div>&nbsp;
-<div class="col-3"><strong><span>Fuente</strong></span><p class="form-control">{{ old('fuente', $filtro->fuente)}}</p></div>&nbsp;
-<div class="col"><strong><span>Fecha de registro</strong></span><p class="form-control">{{ old('fregistro', $filtro->fregistro)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Nombres</strong></span><p class="inputs5">{{ old('nombre', $filtro->nombre)}}</p></div>&nbsp;
+<div class="col"><strong><span>Cedula</strong></span><p class="inputs5">{{ old('cedula', $filtro->cedula)}}</p></div>&nbsp;
+<div class="col"><strong><span>Telefono</strong></span><p class="inputs5">{{ old('telefono', $filtro->telefono)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Correo</strong></span><p class="inputs5">{{ old('correo', $filtro->correo)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Perfil</strong></span><p class="inputs5">{{ old('cargo', $filtro->cargo)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Campaña</strong></span><p class="inputs5">{{ old('campaña', $filtro->campaña)}}</p></div>&nbsp;
+<div class="col-3"><strong><span>Fuente</strong></span><p class="inputs5">{{ old('fuente', $filtro->fuente)}}</p></div>&nbsp;
+<div class="col"><strong><span>Fecha de registro</strong></span><p class="inputs5">{{ old('fregistro', $filtro->fregistro)}}</p></div>&nbsp;
 
 </div>
 </div>
@@ -53,11 +216,99 @@
 <fieldset class="form-group">
   <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
       <div class="card-group" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-          <div class="row">
 
- <p class="col-3">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div style="width:205px">
+            <tr valign="bottom">
+                          <td>
+                        <div style="float:left; width:100%; display:flex;">
+                            <input type="checkbox" id="entrevistaJefeInm" name="entrevistaJefeInm" value="X">
+                              <label class="labeler">&nbsp;Entrevista Jefe Inmediato</label>
+                             </div>
+                         </td>
+                       </tr>
+                     </div>
 
-  <input list="resultadoRrhh" type="text" name="resultadoRrhh" class="form-control" placeholder="Registre aqui el resultado" >
+        <div style="width:200px">
+           <tr valign="bottom">
+                         <td>
+                       <div style="float:left; width:100%; display:flex;">
+                        <input type="checkbox" id="entrevistaGerencia" name="entrevistaGerencia" value="X">
+                             <label class="labeler">&nbsp;Entrevista Gerencia</label>
+                            </div>
+                        </td>
+                      </tr>
+                    </div>
+        <div style="width:200px">
+            <tr valign="bottom">
+                          <td>
+                        <div style="float:left; width:100%; display:flex;">
+                            <input type="checkbox" id="enviadoCapa" name="enviadoCapa" value="X">
+                              <label class="labeler">&nbsp;Enviado a capacitación</label>
+                             </div>
+                         </td>
+                       </tr>
+                     </div>
+        <div style="width:200px">
+           <tr valign="bottom">
+                         <td>
+                       <div style="float:left; width:100%; display:flex;">
+                        <input type="checkbox" id="noAplica" name="noAplica" value="X">
+                           <label class="labeler">&nbsp;No aplica para el cargo</label>
+                            </div>
+                        </td>
+                      </tr>
+                    </div>
+        <div style="width:200px">
+            <tr valign="bottom">
+                          <td>
+                        <div style="float:left; width:100%; display:flex;">
+                         <input type="checkbox" id="noContrat" name="noContrat" value="X">
+                            <label class="labeler">&nbsp;No Contratado</label>
+                             </div>
+                         </td>
+                       </tr>
+                     </div>
+
+
+            <div style="width:205px">
+
+                <tr valign="bottom">
+
+                <td>
+                                <div style="float:left; width:100%; display:flex;">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="YaNoInt" name="YaNoInt" value="X">
+                               <label class="labeler">&nbsp;Desistio de la oferta</label>
+                                </div>
+                            </td>
+                          </tr>
+                        </div>
+            <div style="width:200px">
+                <tr valign="bottom">
+                              <td>
+                            <div style="float:left; width:100%; display:flex;">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="enviadoExm" name="enviadoExm" value="X">
+                                <label class="labeler">&nbsp;Enviado a Examenes</label>
+                                 </div>
+                             </td>
+                           </tr>
+                         </div>
+            <div style="width:250px">
+                <tr valign="bottom">
+                              <td>
+                            <div style="float:left; width:100%; display:flex;">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="enviadocontratacion" name="enviadocontratacion" value="X">
+                                <label class="labeler">&nbsp;Enviado a Contratacion</label>
+                                 </div>
+                             </td>
+                           </tr>
+                         </div>
+
+
+        <div class="row">
+  {{--<p class="col-3">
+
+   <input list="resultadoRrhh" type="text" name="resultadoRrhh" class="inputs5-1" placeholder="Registre aqui el resultado" >
 
   <datalist name="resultadoRrhh" id="resultadoRrhh">
     <option value="">Resultado</option>
@@ -65,21 +316,29 @@
         {{ $resultadoRrhh->resultado }}</option>
       @endforeach
   </datalist>
-  </p>
-  <strong><span>Observaciones RRHH</strong></span>
-  <textarea  class="col-3" name="obsRrhh" id="obsRrhh" cols="165" rows="3"></textarea>
+  </p>  --}}
 
-  <a href="{{route('resumen.index')}}" class="btn btn-primary  role="button" aria-pressed="true">ver hoja completa</a></p> 
 
-  
+
+
+
+
+
+  {{--  <strong><span>Observaciones RRHH</strong></span>  --}}
+
+  {{--  <textarea  name="obsRrhh" id="obsRrhh" cols="165" class="textarea1" rows="3"></textarea>  --}}
+
+  <a href="{{url('/resumen/'.$filtro->id.'/edit')}}" class="botones"  role="button" aria-pressed="true">ver hoja completa</a></p>
+
+
 </div>
 
-</div> 
+</div>
 <p><input class="btn btn-lg btn-primary" type="submit" value="REGISTRAR">
 
-  <a href="{{route('entRRHH.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a></p> 
-   </div>  
-  </fieldset> 
+  <a href="{{route('entRRHH.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a></p>
+   </div>
+  </fieldset>
 
 
 

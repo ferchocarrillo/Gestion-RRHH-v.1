@@ -103,9 +103,9 @@ class FiltroController extends Controller
         $filtro->noAplica               = $request->noAplica;
         $filtro->noInteresado           = $request->noInteresado;
         $filtro->enviadoCapa            = $request->enviadoCapa;
-        $filtro->entrevistaJefeInm      = $request->entrevistaJefeInm;
-        $filtro->entrevistaGerencia     = $request->entrevistaGerencia;
-        $filtro->enviadocontratacion    = $request->enviadocontratacion;
+        $filtro->entrevistaJefeInm      = $request->entJe;
+        $filtro->entrevistaGerencia     = $request->entGe;
+        $filtro->envcon                 = $request->envcon;
         $filtro->enviadoExm             = $request->enviadoExm;
         $filtro->PruebasE               = $request->PruebasE;
         $filtro->yaTrabaja              = $request->yaTrabaja;

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Filtro extends Model
 {
 
-    protected $fillable=['filtros'];
-    protected $table='filtros';
+    protected $fillable=['filtros2'];
+    protected $table='filtros2';
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\EntRRHH;
 use App\Entrevista5;
 use App\EntFinalizacion;
-use App\Filtro;
+use App\Filtro2;
 use App\Entrevista1;
 use App\Entrevista2;
 use App\Entrevista3;
@@ -32,7 +32,7 @@ class EntRRHHController extends Controller
     public function index()
     {
 
-        $entrevistases = Entrevista5::orderBy('created_at', 'desc')->where('entvOK','=','entrevista 5 ok')->paginate(10);
+        $entrevistases = Filtro2::orderBy('created_at', 'desc')->where('entvOK','=','X')->paginate(10);
         return view('entRRHH.index',compact('entrevistases'));
     }
 
@@ -70,7 +70,7 @@ class EntRRHHController extends Controller
 
         ]);
 
-        $filtro = new Filtro();
+        $filtro = new Filtro2();
 
         $filtro->fregistro              = $request->fregistro;
         $filtro->nombre                 = $request->nombre;
@@ -114,24 +114,18 @@ class EntRRHHController extends Controller
        // $date = $date->format('d-m-Y');
         $this->authorize('haveaccess','entFinalizacion.edit');
 
-        $filtro  = Filtro::findOrFail($id);
-        // $entFinalizacion = EntFinalizacion::findOrFail($id);
-        // $entrevista5s = entrevista5::findOrFail($id);
-        // $entrevista1s = Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista2s = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista3s = Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $entrevista5s = entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        $filtro  = Filtro2::findOrFail($id);
         $resultadoRrhhs = resultadoRRHH::all();
         //return response()->json($entFinalizacion);
     //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
-      return view('entRRHH.edit', compact('date','filtro','resultadoRrhhs', 'entrevista5s'));
+      return view('entRRHH.edit', compact('date','filtro','resultadoRrhhs'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Filtro  $filtro
+     * @param  \App\Filtro2  $filtro
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -141,8 +135,8 @@ class EntRRHHController extends Controller
         $date = Carbon::now();
         $resultadoRrhhs = resultadoRRHH::all();
         $datosFiltro =request()->except(['_token','_method']);
-        Filtro::where('id','=',$id)->update($datosFiltro);
-        $filtro=Filtro::findOrFail($id);
+        Filtro2::where('id','=',$id)->update($datosFiltro);
+        $filtro=Filtro2::findOrFail($id);
      //return response()->json($filtro);
      return view('entRRHH.edit', compact('filtro', 'date','resultadoRrhhs'));
     }
@@ -153,7 +147,7 @@ class EntRRHHController extends Controller
      * @param  \App\Filtro  $filtro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Filtro $filtro)
+    public function destroy(Filtro2 $filtro)
     {
         //
     }

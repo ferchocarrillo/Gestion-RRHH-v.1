@@ -46,13 +46,13 @@
                                         <thead>
                                           <tr >
                                             <th scope="col">#</th>
-                       
+
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
                                             <th scope="col">Correo</th>
-                    
-                                    
+
+
                                             <th colspan="2"></th>
                                           </tr>
                                         </thead>
@@ -60,15 +60,15 @@
                                              @foreach ($entrevistases as $entrevistas)
                                             <tr>
                                     <th scope="row">{{ $entrevistas->id}}</th>
-                                         
+
                                                 <td>{{ $entrevistas->cedula}}</td>
                                                 <td>{{ $entrevistas->nombres}}</td>
                                                 <td>{{ $entrevistas->telefono}}</td>
                                                 <td>{{ $entrevistas->correo}}</td>
-                                      
-                               
+
+
                                                 <td>
-                                                    <a href="{{url('/entRRHH/'.$entrevistas->id_filtro.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Resultado RRHH</a>
+                                                    <a href="{{url('/entRRHH/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Resultado RRHH</a>
                                                     {{-- <a href="{{url('/entFinalizacion/'.$entrevistas->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a> --}}
                                             </form>
                                                 </td>
