@@ -109,73 +109,56 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col"><p class="h6">Nombre</p></div>
                 <div class="col"><p class="h6">Parentesco</p></div>
                 <div class="col"><p class="h6">Edad</p> </div>
                 <div class="col"><p class="h6">Ocupación</p></div>
-                <div class="col"><p class="h6">Teléfono</p> </div>
-                <hr width=100% align="center"  size=3  style="border:1px outset ; noshade="noshade">
+                 <hr width=100% align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->familiarp1}}</div>
+
                 <div class="col">{{ $filtro->parentescop1}}</div>
                 <div class="col">{{ $filtro->edadp1}}</div>
                 <div class="col">{{ $filtro->ocupacionp1}}</div>
-                <div class="col">{{ $filtro->telefonop1}}</div>
+
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->familiarp2}}</div>
+
                 <div class="col">{{ $filtro->parentescop2}}</div>
                 <div class="col">{{ $filtro->edadp2}}</div>
                 <div class="col">{{ $filtro->ocupacionp2}}</div>
-                <div class="col">{{ $filtro->telefonop2}}</div>
+
 
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->familiarp3}}</div>
+
                 <div class="col">{{ $filtro->parentescop3}}</div>
                 <div class="col">{{ $filtro->edadp3}}</div>
                 <div class="col">{{ $filtro->ocupacionp3}}</div>
-                <div class="col">{{ $filtro->telefonop3}}</div>
+
 
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->familiarp4}}</div>
+
                 <div class="col">{{ $filtro->parentescop4}}</div>
                 <div class="col">{{ $filtro->edadp4}}</div>
                 <div class="col">{{ $filtro->ocupacionp4}}</div>
-                <div class="col">{{ $filtro->telefonop4}}</div>
+
 
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->familiarp5}}</div>
+
                 <div class="col">{{ $filtro->parentescop5}}</div>
                 <div class="col">{{ $filtro->edadp5}}</div>
                 <div class="col">{{ $filtro->ocupacionp5}}</div>
-                <div class="col">{{ $filtro->telefonop5}}</div>
 
 
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->familiarp6}}</div>
-                <div class="col">{{ $filtro->parentescop6}}</div>
-                <div class="col">{{ $filtro->edadp6}}</div>
-                <div class="col">{{ $filtro->ocupacionp6}}</div>
-                <div class="col">{{ $filtro->telefonop6}}</div>
 
 
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->familiarp7}}</div>
-                <div class="col">{{ $filtro->parentescop7}}</div>
-                <div class="col">{{ $filtro->edadp7}}</div>
-                <div class="col">{{ $filtro->ocupacionp7}}</div>
-                <div class="col">{{ $filtro->telefonop7}}</div>
                 <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 
             </div>
@@ -190,71 +173,76 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
 
  <div class="w-100 d-none d-md-block"></div>
- <div class="col"><p class="h6">Grado</p></div>
  <div class="col"><p class="h6">Institución</p> </div>
- <div class="col"><p class="h6">Duración en años</p></div>
- <div class="col"><p class="h6">Fecha</p></div>
-
+ <div class="col"><p class="h6">Año de Grado</p></div>
  <div class="col"><p class="h6">Titulo</p></div>
  <div class="col"><p class="h6">Estado</p> </div>
 
  <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->Grado1}}</div>
+
                 <div class="col">{{ $filtro->institucion1}} </div>
-                <div class="col">{{ $filtro->años1}}</div>
-                <div class="col">{{ $filtro->fecha1}}</div>
+                  <div class="col">{{ $filtro->fecha1}}</div>
                 <div class="col">{{ $filtro->titulo1}}</div>
                 <div class="col">{{ $filtro->estado1}}</div>
-                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->Grado2}}</div>
+
                 <div class="col">{{ $filtro->institucion2}} </div>
-                <div class="col">{{ $filtro->años2}}</div>
-                <div class="col">{{ $filtro->fecha2}}</div>
+                 <div class="col">{{ $filtro->fecha2}}</div>
                 <div class="col">{{ $filtro->titulo2}}</div>
                 <div class="col">{{ $filtro->estado2}}</div>
-                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->Grado3}}</div>
+
                 <div class="col">{{ $filtro->institucion3}} </div>
-                <div class="col">{{ $filtro->años3}}</div>
                 <div class="col">{{ $filtro->fecha3}}</div>
                 <div class="col">{{ $filtro->titulo3}}</div>
                 <div class="col">{{ $filtro->estado3}}</div>
-                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->Grado4}}</div>
+
                 <div class="col">{{ $filtro->institucion4}} </div>
-                <div class="col">{{ $filtro->años4}}</div>
                 <div class="col">{{ $filtro->fecha4}}</div>
                 <div class="col">{{ $filtro->titulo4}}</div>
                 <div class="col">{{ $filtro->estado4}}</div>
-                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->Grado5}}</div>
+
                 <div class="col">{{ $filtro->institucion5}} </div>
-                <div class="col">{{ $filtro->años5}}</div>
-                <div class="col">{{ $filtro->fecha5}}</div>
+                 <div class="col">{{ $filtro->fecha5}}</div>
                 <div class="col">{{ $filtro->titulo5}}</div>
                 <div class="col">{{ $filtro->estado5}}</div>
-                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col">{{ $filtro->Grado6}}</div>
+
                 <div class="col">{{ $filtro->institucion6}} </div>
-                <div class="col">{{ $filtro->años6}}</div>
                 <div class="col">{{ $filtro->fecha6}}</div>
                 <div class="col">{{ $filtro->titulo6}}</div>
                 <div class="col">{{ $filtro->estado6}}</div>
-                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
+
+
+                <!-- Force next columns to break to new line -->
+                <div class="w-100 d-none d-md-block"></div>
+
+                <div class="col">{{ $filtro->institucion7}} </div>
+                <div class="col">{{ $filtro->fecha7}}</div>
+                <div class="col">{{ $filtro->titulo7}}</div>
+                <div class="col">{{ $filtro->estado7}}</div>
+
             </div>
         </div>
+        <br>
+        <br>
+
+
 
         <center><h3>Historial Laboral</h3></center>
         <div class="container">
@@ -287,7 +275,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $filtro->teleinf1}}</div>
          <div class="col">{{ $filtro->salarioh1}}</div>
          <div class="col">{{ $filtro->motivor1}}</div>
-         <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
          <!-- Force next columns to break to new line -->
          <div class="w-100 d-none d-md-block"></div>
          <div class="col">{{ $filtro->empresa2}}</div>
@@ -299,7 +287,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $filtro->teleinf2}}</div>
         <div class="col">{{ $filtro->salarioh2}}</div>
          <div class="col">{{ $filtro->motivor2}}</div>
-         <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
+
          <!-- Force next columns to break to new line -->
          <div class="w-100 d-none d-md-block"></div>
          <div class="col">{{ $filtro->empresa3}}</div>
@@ -338,7 +326,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
         </div>
     </div>
-
+<br><br>
 
 <center><h3>Generalidades</h3></center>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
