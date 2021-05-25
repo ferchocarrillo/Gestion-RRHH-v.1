@@ -102,7 +102,12 @@ class ResumenController extends Controller
 
     {
         $filtro=Filtro2::findOrFail($id);
-        return view('resumen.view', compact('filtro'));
+        $date1 = Carbon::now();
+        $date2 = $filtro->fnacimiento;
+        $edad = $date1->diffInYears($date2);
+
+
+        return view('resumen.view', compact('filtro','edad'));
     }
     /**
      * Update the specified resource in storage.

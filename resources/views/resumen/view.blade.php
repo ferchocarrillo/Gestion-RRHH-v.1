@@ -48,7 +48,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
               <!-- Force next columns to break to new line -->
                <div class="w-100 d-none d-md-block"></div>
                <div class="col"><p class="h6">Persona que lo referencia:</p> {{ $filtro->referencia}}</div>
-               <div class="col"><p class="h6">Edad:</p>{{ $filtro->edad}}</div>
+               <div class="col"><p class="h6">Edad:</p>{{ $edad}}</div>
                <div class="col"><p class="h6">Fecha de nacimiento:</p> {{ $filtro->fnacimiento}}</div>
                <div class="col"><p class="h6">Departamento y ciudad de nacimiento:</p> {{ $filtro->departamento}} | {{ $filtro->id_ciudad}}</div>
                 <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
