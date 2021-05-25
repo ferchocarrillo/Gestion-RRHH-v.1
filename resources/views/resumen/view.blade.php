@@ -26,7 +26,7 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <div class="col-2"><label  for="id_filtro"></label><input  type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro"   value="{{ old('id', $filtro->id)}}"></div>
     <center><p>
         <div class="p-3 mb-2 bg-info text-white" id ="nombres" name="nombres">
-          <h3> {{ $filtro->nombres}}</h3>
+          <h3> {{ $filtro->nombre}}</h3>
         </div>
     </p></center>
     </div>
