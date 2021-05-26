@@ -10,6 +10,96 @@
     <div class="pull-right">
         <div class="col-md-12">
             <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+
+
+                <style>
+                    .inputDoc{
+                        height: calc(1.5em + 3rem + 0);
+                        width: 160px;
+                        /* width: calc(1.5em + 6.5rem + 18px); */
+                        padding: 0.5rem;
+                        font-size: 16px;
+                        color:#cedae4 ;
+                        border-radius: 0.9rem;
+                        background-color: rgba(240, 70, 70, 0.972);
+                        outline-offset: 3px;
+                        text-align: center;
+                    }
+                    .lg-new17 {
+    height: calc(1.5em + 3rem + 0);
+    width: 160px;
+    /* width: calc(1em + 6.5rem + 18px); */
+    padding: 0.5rem;
+    font-size: 16px;
+    color:#113049 ;
+    border-radius: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+    text-align: center;
+
+  }
+  .lg-new18 {
+    height: calc(1.5em + 3rem + 0);
+    width: 160px;
+    /* width: calc(1em + 6.5rem + 18px); */
+    padding: 0.5rem;
+    font-size: 16px;
+    color:#113049 ;
+    border-radius: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+    text-align: center;
+
+  }
+  .lg-new7{
+    height: calc(1.5em + 3rem + 0);
+    width: 510px;
+    /* width: calc(1em + 6.5rem + 18px); */
+    padding: 0.5rem;
+    font-size: 16px;
+    color:#113049 ;
+    border-radius: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.972);
+    outline-offset: 3px;
+    text-align: center;
+
+  }
+  p{
+font-size: 15px;
+font-weight: bold;
+text-transform: capitalize;
+font-family: Arial, Helvetica, sans-serif;
+  }
+  .labelNew{
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: capitalize;
+      width: 165px;
+
+  }
+  table{
+    width:1000px;
+    font:normal 13px Arial;
+    text-align:center;
+    border-collapse:collapse;
+    border: rgb(11, 69, 77) 5px solid;
+    margin: 16px;
+  padding: 0px;
+
+
+  }
+  table th {
+    font:bold 18px Arial;
+    background-color:rgb(108, 161, 179);
+}
+td{
+    font:normal 17px Arial;
+    border: rgb(6, 82, 95) 5px solid;
+    background-color: #ffffff;
+}
+
+                                </style>
+
             </body>
             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                 <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
@@ -17,271 +107,323 @@
                 <!-- Force next columns to break to new line -->
                 <h3 aline="center">Datos Generales</h3>
             </center>
+
+
+
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
             <!-- Force next columns to break to new line -->
-            <form name="search-form" id="search-form" action="{{ url('/documento/'.$contratacions->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+            <form action="{{ url('/documento/'.$filtro->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                 @csrf
                 @method('PATCH')
 
              <div class="card-header">
 <center><h3 id="nombre" name="nombre">
 
-    {{ old('nombre', $contratacions->nombre)}}
+    {{ old('nombre', $filtro->nombre)}}
 </h3></center>
 
              </div>
-
             <div class="container">
-                <div class="row">
-                  <div class="col">
-
-            <div id="cedula" name="cedula" class="col-6 col-md-8"><strong><p>Cedula:</p></strong>{{ old('cedula', $contratacions->cedula)}}</div><br>
-            <div id="correo" name="correo" class="col-6 col-md-8"><strong><p>Correo:</p></strong>{{ old('correo', $contratacions->correo)}}</div><br>
-            <div id="fuente" name="fuente" class="col-6 col-md-8"><strong><p>Fuente:</p></strong>{{ old('fuente', $contratacions->fuente)}}</div><br>
-            </div>
-
-            <div class="col">
-               
-                <div id="cargos" name="cargos" class="col-6 col-md-8"><strong><p>Perfil:</p></strong>{{ old('cargos', $contratacions->cargos)}}</div><br>
-                <div id="campaña" name="campaña" class="col-6 col-md-8"><strong><p>Campaña:</p></strong>{{ old('campaña', $contratacions->campaña)}}</div>
-            </div>
-
-            <div class="col">
-                <div id="telefono" name="telefono" class="col-6 col-md-8"><strong><p>Telefono:</p></strong>{{ old('telefono', $contratacions->telefono)}}</div><br>
-                <div id="residencia" name="residencia" class="col-6 col-md-8"><strong><p>Residencia:</p></strong>{{ old('residencia', $contratacions->residencia)}}</div><br>
-                <div id="localidad" name="localidad" class="col-6 col-md-8"><strong><p>Localidad:</p></strong>{{ old('localidad', $contratacions->id_localidad)}}</div>
-            </div>
-        </div>
-    </div>
-
+                <table >
+                    <thead>
+                    <tr>
+                        <th scope="col">Cedula</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Campaña</th>
+                        <th scope="col">Fuente</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Barrio y Localidad</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                        <td>{{$filtro->cedula}}</td>
+                        <td>{{$filtro->correo}}</td>
+                        <td>{{$filtro->telefono}}</td>
+                        <td>{{$filtro->cargo}}</td>
+                        <td>{{$filtro->campaña}}</td>
+                        <td>{{$filtro->fuente}}</td>
+                        <td>{{ $filtro->TipoVia}} {{ $filtro->dr1}} {{ $filtro->Prefijo1}} # {{ $filtro->dr2}} {{ $filtro->Prefijo2}} {{ $filtro->dr3}} {{ $filtro->orientacion}} {{ $filtro->adicional}} {{ $filtro->ad1}} {{ $filtro->adicional2}} {{ $filtro->ad2}} {{ $filtro->adicional3}} {{ $filtro->ad3}}</td>
+                        <td>{{old('barrio',$filtro->barrio)}} | {{ old('localidad', $filtro->id_localidad)}}</td>
+                    </td>
+                </tr>
+                  </tbody>
+                </table>
+   </div>
            <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
             <!-- Force next columns to break to new line -->
 
 <center><h3>Documentos Recibidos y/o Pendientes</h3></center>
-
-
 <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 <!-- Force next columns to break to new line -->
 
+
 <div class="row">
-
-    &nbsp;&nbsp;&nbsp;&nbsp;  <div >
-        <label for="hv">Hoja de<br>vida&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-        <input class="form-control-lg-new17" type="text" name="hv" id="hv" value="{{ old('hv', $contratacions->hv)}}">
-    </div>
-   
-    <div >
-        <label for="serv_publico">Recibo de servicio<br>publico</label>
-       <input class="form-control-lg-new17" type="text" id="serv_publico" name="serv_publico" value="{{ old('serv_publico', $contratacions->serv_publico)}}">
-    </div>
-    
-    <div >
-        <label for="cert_bancaria">Certificacion<br>Bancaria</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" class="form-control-lg-new17" id="cert_bancaria" name="cert_bancaria"  value="{{ old('cert_bancaria', $contratacions->cert_bancaria)}}">
-       </div>
-      <div> <label for="bancos">Banco donde abrio<br>la cuenta:</label>
-    
-       <input list="bancos" type="text"  id="bancos" name="bancos" class="form-control-lg-new17" placeholder="Bancos" >
-
-         <datalist name="bancos" id="bancos">
-           <option value="{{ old('bancos', $contratacions->bancos)}}">Banco</option>
-           @foreach($bancoses as $bancos)<option value="{{ $bancos->banco}}">
-               {{ $bancos->banco }}</option>
-             @endforeach
-         </datalist>
-        </div>
-    </div>
-       <br><br>
-       <div class="row">
-        &nbsp;&nbsp;&nbsp;&nbsp; <div >
-                    <label for="ex_medico">Examenes<br>Medicos</label>
-                    <input type="text" class="form-control-lg-new17" id="ex_medico" name="ex_medico"  value="{{ old('ex_medico', $contratacions->ex_medico)}}">
-                </div>
-
-                <div >
-                    <label for="ant_procuraduria">Antecendentes<br>Procuraduria</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" class="form-control-lg-new17" id="ant_procuraduria" name="ant_procuraduria"  value="{{ old('ant_procuraduria', $contratacions->ant_procuraduria)}}">
-                </div>
-                <div >
-                    <label for="ant_ponal">Certificacion<br>Policia Nacional</label>
-                    <input type="text" class="form-control-lg-new17" id="ant_ponal" name="ant_ponal"  value="{{ old('ant_ponal', $contratacions->ant_ponal)}}">
-                </div>
-
-                <div>
-                    <label for="libreta_militar">Libreta Militar</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-                    <input type="text" class="form-control-lg-new17" id="libreta_militar" name="libreta_militar"  value="{{ old('libreta_militar', $contratacions->libreta_militar)}}">
-                </div>
-             
-
+<div class="col-lg-4" >
+    @if ($filtro->hv == "Pendiente")
+    <label class="labelNew" for="hv">Hoja de vida</label>
+    <input class="inputDoc" type="text" name="hv" id="hv" value="{{ old('hv', $filtro->hv)}}">
+    @else
+    <label class="labelNew" for="hv">Hoja de vida</label>
+    <input class="lg-new17" type="text" name="hv" id="hv" value="{{ old('hv', $filtro->hv)}}">
+    @endif
 </div>
-               
-<br><br>     
-                
-     
-  
+<div class="col-lg-4" >
+    @if ($filtro->serv_publico == "Pendiente")
+    <label class="labelNew" for="serv_publico">Recibo de servicio publico</label>
+    <input class="inputDoc" type="text" id="serv_publico" name="serv_publico" value="{{ old('serv_publico', $filtro->serv_publico)}}">
+    @else
+    <label class="labelNew" for="serv_publico">Recibo de servicio publico</label>
+    <input class="lg-new17" type="text" id="serv_publico" name="serv_publico" value="{{ old('serv_publico', $filtro->serv_publico)}}">
+    @endif
+</div>
 
+<div class="col-lg-4" >
+    @if ($filtro->cert_bancaria == "Pendiente")
+    <label class="labelNew" for="cert_bancaria">Certificacion Bancaria</label>
+    <input type="text" class="inputDoc" id="cert_bancaria" name="cert_bancaria"  value="{{ old('cert_bancaria', $filtro->cert_bancaria)}}">
+    @else
+    <label class="labelNew" for="cert_bancaria">Certificacion Bancaria</label>
+    <input type="text" class="lg-new17" id="cert_bancaria" name="cert_bancaria"  value="{{ old('cert_bancaria', $filtro->cert_bancaria)}}">
+    @endif
+</div>
+  </div>
+  <br>
 
-            <div class="row">
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <div>
-                    
-                    <label for="copia_cedula">Copias<br>Cedula</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" class="form-control-lg-new17" id="copia_cedula" name="copia_cedula"  value="{{ old('copia_cedula', $contratacions->copia_cedula)}}">
-                </div>
-                
-                <div>
-                    
-                    &nbsp;<label for="cantidadcedula">Cantidad<br>de copias</label>
-                    
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                <input id="cantidadcedula" name="cantidadcedula" class="form-control-lg-new17"  type="number" value={{ old('cantidadcedula', $contratacions->cantidadcedula)}}>
-
-        </div>
-   
-        
-        <div >
-            <label for="cert_bachiller">Certificado<br>Bachiller</label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" class="form-control-lg-new17" id="cert_bachiller" name="cert_bachiller"  value="{{ old('cert_bachiller', $contratacions->cert_bachiller)}}">
-        </div>
-
-        <div >
-            <label for="cert_otros">Otras<br>Certificaciones</label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" class="form-control-lg-new17" id="cert_otros" name="cert_otros"  value="{{ old('cert_otros', $contratacions->cert_otros)}}">
-        </div>
-       
-    </div>
-    <br><br> 
-     
     <div class="row">
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <div>
-        <label for="cantidadcert">Cantidad<br>Cert.</label>
-        &nbsp;
-        <input id="cantidadcert" class="form-control-lg-new17" name="cantidadcert" class="col col-lg-4" type="text" value={{ old('cantidadcert', $contratacions->cantidadcert)}}>
+        <div class="col-lg-4" >
+            @if (empty($filtro->bancos))
+            <label class="labelNew" for="bancos">Banco donde abrio la cuenta:</label>
+            <input type="text" class="inputDoc" id="bancos" name="bancos"  value="{{ old('bancos', $filtro->bancos)}}">
+            @else
+            <label class="labelNew" for="bancos">Banco donde abrio la cuenta:</label>
+            <input type="text" class="lg-new18" id="bancos" name="bancos"  value="{{ old('bancos', $filtro->bancos)}}">
+            @endif
+         </div>
+        <div class="col-lg-4" >
+            @if ($filtro->ex_medico == "Pendiente")
+            <label class="labelNew" for="ex_medico">Examenes Medicos</label>
+            <input type="text" class="inputDoc" id="ex_medico" name="ex_medico"  value="{{ old('bancos', $filtro->ex_medico)}}">
+            @else
+            <label class="labelNew" for="ex_medico">Examenes Medicos</label>
+            <input type="text" class="lg-new17" id="ex_medico" name="ex_medico"  value="{{ old('bancos', $filtro->ex_medico)}}">
+            @endif
+        </div>
+
+    <div class="col-lg-4" >
+        @if ($filtro->ant_procuraduria == "Pendiente")
+        <label class="labelNew" for="ant_procuraduria">Antecendentes Procuraduria</label>
+        <input type="text" class="inputDoc" id="ant_procuraduria" name="ant_procuraduria"  value="{{ old('ant_procuraduria', $filtro->ant_procuraduria)}}">
+        @else
+        <label class="labelNew" for="ant_procuraduria">Antecendentes Procuraduria</label>
+        <input type="text" class="lg-new17" id="ant_procuraduria" name="ant_procuraduria"  value="{{ old('ant_procuraduria', $filtro->ant_procuraduria)}}">
+        @endif
+    </div>
+</div>
+<br>
+
+
+<div class="row">
+    <div class="col-lg-4" >
+        @if ($filtro->ant_ponal == "Pendiente")
+        <label class="labelNew" for="ant_ponal">Certificacion Policia Nacional</label>
+        <input type="text" class="inputDoc" id="ant_ponal" name="ant_ponal"  value="{{ old('ant_ponal', $filtro->ant_ponal)}}">
+        @else
+        <label class="labelNew" for="ant_ponal">Certificacion Policia Nacional</label>
+        <input type="text" class="lg-new17" id="ant_ponal" name="ant_ponal"  value="{{ old('ant_ponal', $filtro->ant_ponal)}}">
+        @endif
+    </div>
+    <div class="col-lg-4" >
+        @if ($filtro->libreta_militar == "No")
+        <label class="labelNew" for="libreta_militar">Libreta Militar</label>
+        <input type="text" class="inputDoc" id="libreta_militar" name="libreta_militar"  value="{{ old('libreta_militar', $filtro->libreta_militar)}}">
+        @else
+        <label class="labelNew" for="libreta_militar">Libreta Militar</label>
+        <input type="text" class="lg-new17" id="libreta_militar" name="libreta_militar"  value="{{ old('libreta_militar', $filtro->libreta_militar)}}">
+        @endif
+    </div>
+    <div class="col-lg-4" >
+        @if ($filtro->copia_cedula == "Pendiente")
+        <label class="labelNew" for="copia_cedula">Copias Cedula</label>
+        <input type="text" class="inputDoc" id="libreta_militar" name="copia_cedula"  value="{{ old('copia_cedula', $filtro->copia_cedula)}}">
+        @else
+        <label class="labelNew" for="copia_cedula">Copias Cedula</label>
+        <input type="text" class="lg-new17" id="copia_cedula" name="copia_cedula"  value="{{ old('copia_cedula', $filtro->copia_cedula)}}">
+        @endif
+    </div>
+ </div>
+
+ <br>
+    <div class="row">
+        <div class="col-lg-4" >
+            @if ($filtro->cantidadcedula < 1)
+            <label class="labelNew" for="cantidadcedula">Cantidad de copias</label>
+            <input type="text" class="inputDoc" id="cantidadcedula" name="cantidadcedula"  value="{{ old('cantidadcedula', $filtro->cantidadcedula)}}">
+            @else
+            <label class="labelNew" for="cantidadcedula">Cantidad de copias</label>
+            <input type="text" class="lg-new17" id="cantidadcedula" name="cantidadcedula"  value="{{ old('cantidadcedula', $filtro->cantidadcedula)}}">
+            @endif
+        </div>
+        <div class="col-lg-4" >
+            @if ($filtro->cert_bachiller == "Pendiente")
+            <label class="labelNew" for="cert_bachiller">Certificado Bachiller</label>
+            <input type="text" class="inputDoc" id="cert_bachiller" name="cert_bachiller"  value="{{ old('cert_bachiller', $filtro->cert_bachiller)}}">
+            @else
+            <label class="labelNew" for="cert_bachiller">Certificado Bachiller</label>
+            <input type="text" class="lg-new17" id="cert_bachiller" name="cert_bachiller"  value="{{ old('cert_bachiller', $filtro->cert_bachiller)}}">
+            @endif
+        </div>
+        <div class="col-lg-4" >
+            @if ($filtro->cert_otros == "Pendiente")
+            <label class="labelNew" for="cert_otros">Otras Certificaciones</label>
+            <input type="text" class="inputDoc" id="cert_otros" name="cert_otros"  value="{{ old('cert_otros', $filtro->cert_otros)}}">
+            @else
+            <label class="labelNew" for="cert_otros">Otras Certificaciones</label>
+            <input type="text" class="lg-new17" id="cert_otros" name="cert_otros"  value="{{ old('cert_otros', $filtro->cert_otros)}}">
+            @endif
+        </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-lg-4" >
+        @if ($filtro->cantidadcert <> NULL)
+        <label class="labelNew" for="cantidadcert">Cantidad Cert.</label>
+        <input type="text" class="inputDoc" id="cantidadcert" name="cantidadcert"  value="{{ old('cantidadcert', $filtro->cantidadcert)}}">
+        @else
+        <label class="labelNew" for="cantidadcert">Cantidad Cert.</label>
+        <input type="text" class="lg-new17" id="cantidadcert" name="cantidadcert"  value="{{ old('cantidadcert', $filtro->cantidadcert)}}">
+        @endif
+    </div>
+    <div class="col-lg-4" >
+        @if ($filtro->ref_laborales == "Pendiente")
+        <label class="labelNew" for="ref_laborales">Referencias Lab.</label>
+        <input type="text" class="inputDoc" id="ref_laborales" name="ref_laborales"  value="{{ old('ref_laborales', $filtro->ref_laborales)}}">
+        @else
+        <label class="labelNew" for="ref_laborales">Referencias Lab.</label>
+        <input type="text" class="lg-new17" id="ref_laborales" name="ref_laborales"  value="{{ old('ref_laborales', $filtro->ref_laborales)}}">
+        @endif
+    </div>
+    <div class="col-lg-4" >
+        @if ($filtro->cantidadlab < 2)
+        <label class="labelNew" for="cantidadlab">Cantidad Ref.</label>
+        <input type="text" class="inputDoc" id="cantidadlab" name="cantidadlab"  value="{{ old('cantidadlab', $filtro->cantidadlab)}}">
+        @else
+        <label class="labelNew" for="cantidadlab">Cantidad Ref.</label>
+        <input type="text" class="lg-new17" id="cantidadlab" name="cantidadlab"  value="{{ old('cantidadlab', $filtro->cantidadlab)}}">
+        @endif
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-4" >
+        @if ($filtro->ref_personales == "Pendiente")
+        <label class="labelNew" for="ref_personales">Referencias Personales</label>
+        <input type="text" class="inputDoc" id="ref_personales" name="ref_personales"  value="{{ old('ref_personales', $filtro->ref_personales)}}">
+        @else
+        <label class="labelNew" for="ref_personales">Referencias Personales</label>
+        <input type="text" class="lg-new17" id="ref_personales" name="ref_personales"  value="{{ old('ref_personales', $filtro->ref_personales)}}">
+        @endif
     </div>
 
-    <div>
-        <label for="ref_laborales">Referencias<br>lab.</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;
-        
-        <input id="ref_laborales" class="form-control-lg-new17" name="ref_laborales" class="col col-lg-4" type="text" value={{ old('ref_laborales', $contratacions->ref_laborales)}}>
+    <div class="col-lg-4" >
+        @if ($filtro->cantidadper < 2)
+        <label class="labelNew" for="cantidadper">Cantidad Ref.</label>
+        <input type="text" class="inputDoc" id="cantidadper" name="cantidadper"  value="{{ old('cantidadper', $filtro->cantidadper)}}">
+        @else
+        <label class="labelNew" for="cantidadper">Cantidad Ref.</label>
+        <input type="text" class="lg-new17" id="cantidadper" name="cantidadper"  value="{{ old('cantidadper', $filtro->cantidadper)}}">
+        @endif
+
+    </div>
+    <div class="col-lg-4" >
+        @if ($filtro->cert_eps == "Pendiente")
+        <label class="labelNew" for="cert_eps">Referencias Personales</label>
+        <input type="text" class="inputDoc" id="cert_eps" name="cert_eps"  value="{{ old('cert_eps', $filtro->cert_eps)}}">
+        @else
+        <label class="labelNew" for="cert_eps">Referencias Personales</label>
+        <input type="text" class="lg-new17" id="cert_eps" name="cert_eps"  value="{{ old('cert_eps', $filtro->cert_eps)}}">
+        @endif
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-4" >
+        @if ($filtro->cert_pensiones == "Pendiente")
+        <label class="labelNew" for="cert_pensiones">Certificado Pensiones</label>
+        <input type="text" class="inputDoc" id="cert_pensiones" name="cert_pensiones"  value="{{ old('cert_pensiones', $filtro->cert_pensiones)}}">
+        @else
+        <label class="labelNew" for="cert_pensiones">Certificado Pensiones</label>
+        <input type="text" class="lg-new17" id="cert_pensiones" name="cert_pensiones"  value="{{ old('cert_pensiones', $filtro->cert_pensiones)}}">
+        @endif
     </div>
 
-    <div>
-        <label for="cantidadlab">Cantidad&nbsp;&nbsp;&nbsp;&nbsp;<br>Ref.</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;
-        <input id="cantidadlab" class="form-control-lg-new17" name="cantidadlab" class="col col-lg-4" type="text" value={{ old('cantidadlab', $contratacions->cantidadlab)}}>
-    </div>
-    <div>
-        <label for="ref_personales">Referencias&nbsp;&nbsp;&nbsp;&nbsp;<br>Personales</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;
-        <input id="ref_personales" class="form-control-lg-new17" name="ref_personales" class="col col-lg-4" type="text" value={{ old('ref_personales', $contratacions->ref_personales)}}>
+    <div class="col-lg-4" >
+        @if ($filtro->cert_cesantias == "Pendiente")
+        <label class="labelNew" for="cert_cesantias">Certificado Cesantias</label>
+        <input type="text" class="inputDoc" id="cert_cesantias" name="cert_cesantias"  value="{{ old('cert_cesantias', $filtro->cert_cesantias)}}">
+        @else
+        <label class="labelNew" for="cert_cesantias">Certificado Cesantias</label>
+        <input type="text" class="lg-new17" id="cert_cesantias" name="cert_cesantias"  value="{{ old('cert_cesantias', $filtro->cert_cesantias)}}">
+        @endif
     </div>
 
+    <div class="col-lg-4">
+        <label class="labelNew" for="nucleo_familiar">Nucleo Familiar</label>
 
-   
+        <input id="nucleo_familiar" class="lg-new17" name="nucleo_familiar"  type="text" value={{ old('nucleo_familiar', $filtro->nucleo_familiar)}}>
+    </div>
+</div>
+<br>
+<div class="row">
+       <div class="col-lg-6">
+        <label class="labelNew" for="documentos">Documentos&nbsp;&nbsp;</label>
+
+        <input id="documentos" class="lg-new7" name="documentos"  type="text" value={{ old('documentos', $filtro->documentos)}}>
+    </div>
+
+       <div class="col-lg-6">
+        <label class="labelNew" for="obscont">Observaciones</label>
+
+        <input id="obscont" class="lg-new7" name="obscont"  type="text" value={{ old('obscont', $filtro->obscont)}}>
+    </div>
+
 </div>
 <br><br>
 <div class="row">
-    &nbsp;&nbsp;  &nbsp;&nbsp;
-    <div>
-        <label for="cantidadper">Cantidad<br>Ref.</label>
-        &nbsp;      
-        <input id="cantidadper" class="form-control-lg-new17" name="cantidadper" class="col col-lg-4" type="text" value={{ old('cantidadper', $contratacions->cantidadper)}}>
-    </div>
-    <div>
-        <label for="cert_eps">Certificado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>EPS</label>
-        &nbsp;      
-        <input id="cert_eps" class="form-control-lg-new17" name="cert_eps" class="col col-lg-4" type="text" value={{ old('cert_eps', $contratacions->cert_eps)}}>
-    </div>
-    <div>
-        <label for="cert_pensiones">Certificado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Pensiones</label>
-        &nbsp;      
-        <input id="cert_pensiones" class="form-control-lg-new17" name="cert_pensiones" class="col col-lg-4" type="text" value={{ old('cert_pensiones', $contratacions->cert_pensiones)}}>
-    </div>
-    <div>
-        <label for="cert_cesantias">Certificado&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>Cesantias</label>
-        &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;      
-        <input id="cert_cesantias" class="form-control-lg-new17" name="cert_cesantias" class="col col-lg-4" type="text" value={{ old('cert_cesantias', $contratacions->cert_cesantias)}}>
-    </div>
- 
-    
-
-</div>
-
-<br><br>
-<div class="row">
-    &nbsp;&nbsp;  &nbsp;&nbsp;
-    <div>
-        <label for="nucleo_familiar">Nucleo<br>Familiar</label>
-        &nbsp;&nbsp; &nbsp;    
-        <input id="nucleo_familiar" class="form-control-lg-new17" name="nucleo_familiar" class="col col-lg-4" type="text" value={{ old('nucleo_familiar', $contratacions->nucleo_familiar)}}>
-    </div>
-
-    <div>
-        <label for="documentos">Documentos&nbsp;&nbsp;</label>
-        &nbsp;&nbsp; &nbsp;    
-        <input id="documentos" class="form-control-lg-new7" name="documentos" class="col col-lg-4" type="text" value={{ old('documentos', $contratacions->documentos)}}>
-    </div>
-
-</div>
-
-
-
-<br><br>
-<div class="row">
-    &nbsp;&nbsp;  &nbsp;&nbsp;
-
-    <div>
-        <label for="observaciones">Observaciones</label>
-        &nbsp;&nbsp; &nbsp;    
-        <input id="observaciones" class="form-control-lg-new7" name="observaciones" class="col col-lg-4" type="text" value={{ old('observaciones', $contratacions->observaciones)}}>
-    </div>
-    <br><br>
-</div>
-<br><br>
-  <div class="row">
-    <div>&nbsp;&nbsp;&nbsp;
+    <div class="col-lg-6">
     <input class="form-control-lg-new7" type="radio" value="activo" id="estado" name="estado" required>
             <strong> <label for="estado">
                         El usuario quedara Registrado como Activo
-                      </label></strong>
-                    </div>
-                      </div>
-
-                      <div >
-                        <input class="form-control-lg-new7" type="radio" value="inactivo" id="estado" name="estado" required>
-              <strong> <label for="estado">
+     </label></strong>
+    </div>
+    <div class="col-lg-6">
+    <input class="form-control-lg-new7" type="radio" value="inactivo" id="estado" name="estado" required>
+            <strong> <label for="estado">
                           No continua con el proceso
-                        </label></strong>
-                      </div>
-                   </div>
-                </div>
-<div class="form-group">
-    @csrf
-    @method('PUT')
-                  <input class="btn btn-primary btn-lg active" type="submit" value="Registrar">
-                  &nbsp;&nbsp;&nbsp;
-                 <a href="{{route('documento.index')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
+            </label></strong>
+</div>
+<div class="row">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+<div class="col-lg-3">
+<input class="btn btn-primary btn-lg active" type="submit" value="Registrar">
+</div>
 
-                </div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="col-lg-3">
+
+<a href="{{route('documento.index')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
 </div>
-<br><br>
-</div>
-<br><br>
 </form>
+</div>
+</div>
+</div>
+</div>
+
+
+
 
 
 <script src="{{asset('js/app.js')}}"></script>
@@ -299,7 +441,7 @@ Swal.fire(
 </script>
 @stop
 
-  
+
 
 
 

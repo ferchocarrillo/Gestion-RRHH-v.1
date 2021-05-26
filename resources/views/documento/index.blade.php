@@ -42,28 +42,24 @@
         </tr>
 </thead>
 <tbody>
-    @foreach ($contratacions as $contratacion)
+    @foreach ($filtros as $filtro)
         <tr>
         <td>{{$loop->iteration}}</td>
-        <td>{{$contratacion->cedula}}</td>
-        <td>{{$contratacion->nombre}}</td>
-        <td>{{$contratacion->telefono}}</td>
-        <td>{{$contratacion->correo}}</td>
+        <td>{{$filtro->cedula}}</td>
+        <td>{{$filtro->nombre}}</td>
+        <td>{{$filtro->telefono}}</td>
+        <td>{{$filtro->correo}}</td>
 
         <td>
-            <form action="{{url('/contratacion/'.$contratacion->id_filtro)}}" method="post" style='display:inline'>
-                @csrf
-                @method('DELETE')
+        <a href="{{url('/documento/'.$filtro->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
 
-        <a href="{{url('/contratacion/'.$contratacion->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
-      {{--  <button class="btn btn-warning btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
        </form>
     </td>
 </tr>
         @endforeach
         </tbody>
         </table>
-        {{ $contratacions->links() }}
+        {{ $filtros->links() }}
     </div>
 <script src="{{asset('js/app.js')}}"></script>
 </body>

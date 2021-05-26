@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Contratacion;
 use App\Bancos;
 use App\capacitacion;
-use App\Filtro;
+use App\Filtro2;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Entrevista1;
@@ -29,9 +29,9 @@ class DocumentoController extends Controller
     public function index()
     {
 
-        $contratacions = Contratacion::orderBy('nombre', 'asc')->paginate(10);
-        $contratacion2 = capacitacion::orderby('id', 'asc')->where('estado','=','Aprobado')->paginate(10);
-        return view('documento.index',compact('contratacions','contratacion2'));
+        // $contratacions = Contratacion::orderBy('nombre', 'asc')->paginate(10);
+        $filtros = Filtro2::orderby('id', 'asc')->where('enviadocontratacion','=','X')->where('noContrat','=',NULL)->where('estado','=','activo')->paginate(10);
+        return view('documento.index',compact('filtros'));
     }
 
 
@@ -61,49 +61,49 @@ class DocumentoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Documento $contratacions)
+    public function store(Request $request)
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
 
-        $contratacions = new Contratacion();
-        $contratacions->id_filtro        = $request->id_filtro;
-        $contratacions->cedula           = $request->cedula;
-        $contratacions->nombre           = $request->nombres;
-        $contratacions->telefono         = $request->telefono;
-        $contratacions->correo           = $request->correo;
-        $contratacions->cargos           = $request->cargos;
-        $contratacions->campaña          = $request->campaña;
-        $contratacions->fuente           = $request->fuente;
-        $contratacions->residencia       = $request->residencia;
-        $contratacions->id_localidad     = $request->id_localidad;
-        $contratacions->hv               = $request->hv;
-        $contratacions->serv_publico     = $request->serv_publico;
-        $contratacions->cert_bancaria    = $request->cert_bancaria;
-        $contratacions->bancos           = $request->bancos;
-        $contratacions->ex_medico        = $request->ex_medico;
-        $contratacions->ant_procuraduria = $request->ant_procuraduria;
-        $contratacions->ant_ponal        = $request->ant_ponal;
-        $contratacions->copia_cedula     = $request->copia_cedula;
-        $contratacions->cantidadcedula   = $request->cantidadcedula;
-        $contratacions->libreta_militar  = $request->libreta_militar;
-        $contratacions->cert_bachiller   = $request->cert_bachiller;
-        $contratacions->cert_otros       = $request->cert_otros;
-        $contratacions->cantidadcert     = $request->cantidadcert;
-        $contratacions->ref_laborales    = $request->ref_laborales;
-        $contratacions->cantidadlab      = $request->cantidadlab;
-        $contratacions->ref_personales   = $request->ref_personales;
-        $contratacions->cantidadper      = $request->cantidadper;
-        $contratacions->cert_eps         = $request->cert_eps;
-        $contratacions->cert_pensiones   = $request->cert_pensiones;
-        $contratacions->cert_cesantias   = $request->cert_cesantias;
-        $contratacions->nucleo_familiar  = $request->nucleo_familiar;
-        $contratacions->documentos       = $request->documentos;
-        $contratacions->observaciones    = $request->observaciones;
-        $contratacions->estado           = $request->estado;
-        $contratacions->save();
+        $filtro = new Filtros();
+        $filtro->id_filtro        = $request->id_filtro;
+        $filtro->cedula           = $request->cedula;
+        $filtro->nombre           = $request->nombres;
+        $filtro->telefono         = $request->telefono;
+        $filtro->correo           = $request->correo;
+        $filtro->cargos           = $request->cargos;
+        $filtro->campaña          = $request->campaña;
+        $filtro->fuente           = $request->fuente;
+        $filtro->residencia       = $request->residencia;
+        $filtro->id_localidad     = $request->id_localidad;
+        $filtro->hv               = $request->hv;
+        $filtro->serv_publico     = $request->serv_publico;
+        $filtro->cert_bancaria    = $request->cert_bancaria;
+        $filtro->bancos           = $request->bancos;
+        $filtro->ex_medico        = $request->ex_medico;
+        $filtro->ant_procuraduria = $request->ant_procuraduria;
+        $filtro->ant_ponal        = $request->ant_ponal;
+        $filtro->copia_cedula     = $request->copia_cedula;
+        $filtro->cantidadcedula   = $request->cantidadcedula;
+        $filtro->libreta_militar  = $request->libreta_militar;
+        $filtro->cert_bachiller   = $request->cert_bachiller;
+        $filtro->cert_otros       = $request->cert_otros;
+        $filtro->cantidadcert     = $request->cantidadcert;
+        $filtro->ref_laborales    = $request->ref_laborales;
+        $filtro->cantidadlab      = $request->cantidadlab;
+        $filtro->ref_personales   = $request->ref_personales;
+        $filtro->cantidadper      = $request->cantidadper;
+        $filtro->cert_eps         = $request->cert_eps;
+        $filtro->cert_pensiones   = $request->cert_pensiones;
+        $filtro->cert_cesantias   = $request->cert_cesantias;
+        $filtro->nucleo_familiar  = $request->nucleo_familiar;
+        $filtro->documentos       = $request->documentos;
+        $filtro->obscont          = $request->obscont;
+        $filtro->estado           = $request->estado;
+        $filtro->save();
         //return response()->json($contratacions);
-        return view('documento.edit', compact('contratacions', 'bancoses','contratacion2'));
+        return view('documento.edit', compact('filtro', 'bancoses'));
 
 
     }
@@ -130,16 +130,12 @@ class DocumentoController extends Controller
 
         Carbon::setLocale('es');
         $date = Carbon::now();
-        $this->authorize('haveaccess','documento.edit');
-        $contratacions= contratacion::findOrFail($id);
-        $contrataciones= entrevista1::findOrFail($id);
-
-
-        $filtro = filtro::findOrFail($id);
-        $contratacion2 = capacitacion::all();
         $bancoses = Bancos::all();
+        $this->authorize('haveaccess','documento.edit');
+        $filtro= Filtro2::findOrFail($id);
 
-        return view('documento.edit', compact('filtro','contrataciones','contratacions', 'bancoses','contratacion2'));
+
+        return view('documento.edit', compact('filtro', 'bancoses'));
 
 
     }
@@ -158,11 +154,11 @@ class DocumentoController extends Controller
         $user_nombre = Auth::user()->name;
         $bancoses = Bancos::all();
         $datosContratacion=request()->except(['_token','_method']);
-        Contratacion::where('id','=',$id)->update($datosContratacion);
-        $contratacions=Contratacion::findOrFail($id);
+        filtro2::where('id','=',$id)->update($datosContratacion);
+        $filtro=filtro2::findOrFail($id);
 
      //   return response()->json($contratacions);
-     return view('documento.edit',compact('contratacions','bancoses'));
+     return view('documento.edit',compact('filtro','bancoses'));
     }
 
     /**
