@@ -596,7 +596,7 @@
                 <th scope="col">No aplica para el cargo</th>
                 <th scope="col">No contratado</th>
                 <th scope="col">Postulado desistió de la oferta</th>
-                <th scope="col">Otro</th>
+
               </tr>
             <tr>
               <br>
@@ -622,9 +622,7 @@
                 @foreach ($respuestarrhh6s as $respuestarrhh6)
                 <td>  {{ $respuestarrhh6}}  </td>
                 @endforeach
-                @foreach ($respuestarrhh7s as $respuestarrhh7)
-                <td>  {{ $respuestarrhh7}}  </td>
-                @endforeach
+
               </tr>
 
             </thead>
@@ -639,10 +637,10 @@
     var myLineChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['requiere nueva ent', 'env capa', 'env contrat', 'n/a para el cargo', 'no contratado', 'desistió', ' otro' ],
+            labels: ['requiere nueva ent', 'env capa', 'env contrat', 'n/a para el cargo', 'no contratado', 'desistió' ],
             datasets: [{
                 label: 'Resultado Entrevistas',
-                data: [{{ $respuestarrhh1 }}, {{ $respuestarrhh2 }}, {{ $respuestarrhh3 }}, {{ $respuestarrhh4 }} , {{ $respuestarrhh5 }}, {{ $respuestarrhh6 }}, {{ $respuestarrhh7 }}],
+                data: [{{ $respuestarrhh1 }}, {{ $respuestarrhh2 }}, {{ $respuestarrhh3 }}, {{ $respuestarrhh4 }} , {{ $respuestarrhh5 }}, {{ $respuestarrhh6 }}],
                 backgroundColor: [
                     'rgba(216, 23, 23, 0.8)',
                     'rgba(23, 108, 216, 0.8)',

@@ -46,15 +46,15 @@
                                         <thead>
                                           <tr >
                                             <th scope="col">#</th>
-                       
+
                                             <th scope="col">Cedula</th>
                                             <th scope="col">Nombres</th>
                                             <th scope="col">Telefono</th>
                                             <th scope="col">Correo</th>
-                                            <th scope="col">Perfil</th>
+                                            <th scope="col">Cargo</th>
                                             <th scope="col">Campaña</th>
-                    
-                                    
+
+
                                             <th colspan="2"></th>
                                           </tr>
                                         </thead>
@@ -62,15 +62,15 @@
                                              @foreach ($entrevistases as $entrevistas)
                                             <tr>
                                     <th scope="row">{{ $entrevistas->id}}</th>
-                                         
+
                                                 <td>{{ $entrevistas->cedula}}</td>
                                                 <td>{{ $entrevistas->nombre}}</td>
                                                 <td>{{ $entrevistas->telefono}}</td>
                                                 <td>{{ $entrevistas->correo}}</td>
-                                                <td>{{ $entrevistas->perfil}}</td>
+                                                <td>{{ $entrevistas->cargo}}</td>
                                                 <td>{{ $entrevistas->campaña}}</td>
-                                      
-                               
+
+
                                                 <td>
                                                     <a href="{{url('/entJefe/'.$entrevistas->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Entrevista Jefe Inmediato</a>
                                                     {{-- <a href="{{url('/entFinalizacion/'.$entrevistas->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Datos Consignados</a> --}}

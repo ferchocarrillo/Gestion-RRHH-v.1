@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de la entrevista datos iniciales" /></a>
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:800px; visibility:visible z-index:1" align= "auto" height="80" width="200">
+<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:800px; visibility:visible z-index:1; margin-left:5rem;" align= "auto" height="100" width="270">
 <br>
 <br>
 
@@ -216,7 +216,6 @@ margin-left: 12rem;
 <fieldset class="form-group">
   <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
       <div class="card-group" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div style="width:205px">
             <tr valign="bottom">
@@ -228,7 +227,6 @@ margin-left: 12rem;
                          </td>
                        </tr>
                      </div>
-
         <div style="width:200px">
            <tr valign="bottom">
                          <td>
@@ -269,12 +267,8 @@ margin-left: 12rem;
                          </td>
                        </tr>
                      </div>
-
-
             <div style="width:205px">
-
                 <tr valign="bottom">
-
                 <td>
                                 <div style="float:left; width:100%; display:flex;">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="YaNoInt" name="YaNoInt" value="X">
@@ -304,64 +298,21 @@ margin-left: 12rem;
                            </tr>
                          </div>
 
-
+                         <a href="{{url('/resumen/'.$filtro->id.'/edit')}}" class="botones"  role="button" aria-pressed="true">ver hoja completa</a></p>
         <div class="row">
-  {{--<p class="col-3">
-
-   <input list="resultadoRrhh" type="text" name="resultadoRrhh" class="inputs5-1" placeholder="Registre aqui el resultado" >
-
-  <datalist name="resultadoRrhh" id="resultadoRrhh">
-    <option value="">Resultado</option>
-    @foreach($resultadoRrhhs as $resultadoRrhh)<option value="{{ $resultadoRrhh->resultado}}">
-        {{ $resultadoRrhh->resultado }}</option>
-      @endforeach
-  </datalist>
-  </p>  --}}
-
-
-
-
-
-
-
-  {{--  <strong><span>Observaciones RRHH</strong></span>  --}}
-
-  {{--  <textarea  name="obsRrhh" id="obsRrhh" cols="165" class="textarea1" rows="3"></textarea>  --}}
-
-  <a href="{{url('/resumen/'.$filtro->id.'/edit')}}" class="botones"  role="button" aria-pressed="true">ver hoja completa</a></p>
-
-
-</div>
-
-</div>
 <p><input class="btn btn-lg btn-primary" type="submit" value="REGISTRAR">
-
-  <a href="{{route('entRRHH.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a></p>
-   </div>
+<a href="{{route('entRRHH.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a></p>
+</div>
+</div>
+</div>
   </fieldset>
-
-
-
-
-
-
-    </form>
-
-
-
-
-
-
-
-      <script src="{{asset('js/app.js')}}"></script>
+   </form>
+     <script src="{{asset('js/app.js')}}"></script>
               </body>
               @section('css')
               <link rel="stylesheet" href="/css/admin_custom.css">
               @stop
               @section('js')
-
-
-
       <script>
       Swal.fire(
         'RESULTADO ENTREVISTA RRHH',
@@ -370,5 +321,4 @@ margin-left: 12rem;
       )
       </script>
       @stop
-
       @endsection

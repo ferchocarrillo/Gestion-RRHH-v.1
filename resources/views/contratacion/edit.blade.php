@@ -15,46 +15,46 @@
 <br>
 
     </body>
-    <form action="{{ url('/contratacion/')}}"
+    <form action="{{ url('/contratacion/'.$filtro->id)}}"
           method="POST"
           enctype="multipart/form-data"
           class="form-horizontal"
           style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-          {{csrf_field()}}
+          @csrf
+          @method('PATCH')
 
 
-          <div class="card-header">
-           <center> <h3>{{ $filtro->nombre }}</h3></center>
-          </div>
-          <div class="container" style="background-image: linear-gradient(#ebf3f4,#ebf3f4, #ebf3f4); width: 840px; margin-center: .5rem;" >
-            <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
-              <div class="row">
+        <div class="card-header">
+         <center> <h3>{{ $filtro->nombre }}</h3></center>
+        </div>
+        <div class="container" style="background-image: linear-gradient(#ebf3f4,#ebf3f4, #ebf3f4); width: 840px; margin-center: .5rem;" >
+        <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
+        <div class="row">
 
-                &nbsp;&nbsp;&nbsp;
-          <p>
-            <div class="col-auto"><label for="cedula" style="color: rgb(41, 20, 6)">Cedula</label><input type="number" class="form-control" style="width: 240px" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula )}}"></div>
-            </p>
-            <p>
-              <div class="col-auto"><label for="cedula">Telefono</label><input type="number" class="form-control" style="width: 240px" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono', $filtro->telefono )}}"></div>
-              </p>
-               <p>
-                <div class="col-auto"><label for="correo">Correo</label><input type="text" class="form-control" style="width: 240px" id="correo" placeholder="correo" name="correo" value="{{ old('correo', $filtro->correo )}}"></div>
-                </p>
-                <p><div></div></p>
+        &nbsp;&nbsp;&nbsp;
+        <p>
+        <div class="col-auto"><label for="cedula" style="color: rgb(41, 20, 6)">Cedula</label><input type="number" class="form-control" style="width: 240px; border-radius: 0.75rem;" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula )}}"></div>
+        </p>
+        <p>
+        <div class="col-auto"><label for="cedula">Telefono</label><input type="number" class="form-control" style="width: 240px; border-radius: 0.75rem;" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono', $filtro->telefono )}}"></div>
+        </p>
+        <p>
+        <div class="col-auto"><label for="correo">Correo</label><input type="text" class="form-control" style="width: 240px; border-radius: 0.75rem;" id="correo" placeholder="correo" name="correo" value="{{ old('correo', $filtro->correo )}}"></div>
+        </p>
+        <p><div></div></p>
+        </div>
 
-              </div>
-
-                <div class="row">
-                  &nbsp;&nbsp;&nbsp;
-                <p>
-                  <div class="col-auto"><label for="perfil">Perfil</label><input type="text" class="form-control" style="width: 240px" id="perfil" placeholder="perfil" name="perfil" value="{{ old('perfil', $filtro->perfil )}}"></div>
-                  </p>
-                  <p>
-                    <div class="col-auto"><label for="campaña">Campaña</label><input type="text" class="form-control" style="width: 240px" id="campaña" placeholder="campaña" name="campaña" value="{{ old('campaña', $filtro->campaña )}}"></div>
-                    </p>
-                    <p>
-                      <div class="col-auto"><label for="fuente">Fuente</label><input type="text" class="form-control" style="width: 240px" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtro->fuente )}}"></div>
-                      </p>
+        <div class="row">
+          &nbsp;&nbsp;&nbsp;
+        <p>
+        <div class="col-auto"><label for="perfil">Perfil</label><input type="text" class="form-control" style="width: 240px; border-radius: 0.75rem;" id="cargo" placeholder="cargo" name="cargo" value="{{ old('cargo', $filtro->cargo )}}"></div>
+        </p>
+        <p>
+        <div class="col-auto"><label for="campaña">Campaña</label><input type="text" class="form-control" style="width: 240px; border-radius: 0.75rem;" id="campaña" placeholder="campaña" name="campaña" value="{{ old('campaña', $filtro->campaña )}}"></div>
+        </p>
+        <p>
+        <div class="col-auto"><label for="fuente">Fuente</label><input type="text" class="form-control" style="width: 240px; border-radius: 0.75rem;" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtro->fuente )}}"></div>
+        </p>
 
 
         </div>
@@ -75,7 +75,6 @@
       <div class="card-body">
         <h5 class="card-title" style="color:#214c63;"><strong>Hoja de vida actualizada&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br> con foto</strong></h5>
         <div class="card" >
-
           <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="hv" id="hv1" value="Si"  required>
           <label class="form-check-label" for="hv1">Si</label>
@@ -88,7 +87,6 @@
           <input class="form-check-input" type="radio" name="hv" id="hv3" value="Pendiente">
           <label class="form-check-label" for="hv3">Pendiente</label>
       </div>
-
       </div>
     </div>
   </div>
@@ -115,10 +113,6 @@
     </div>
   </div>
 </div>
-
-
-
-
 <div class="row">
   <div class="col-sm-6">
     <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
@@ -145,16 +139,14 @@
           @endforeach
         </select></p>
         </div>
- </div>
+    </div>
       </div>
     </div>
-
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
         <div class="card-body">
           <h5 class="card-title" style="color:#214c63;"><strong>Examen medico ocupacional<br>emitido por el laboratorio &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5>
           <div class="card">
-
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="ex_medico" id="ex_medico1" value="Si" required>
               <label class="form-check-label" for="ex_medico1">Si</label>
@@ -172,14 +164,8 @@
       </div>
     </div>
   </div>
-
   </div>
-
-
-
-
   <div class="row">
-
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
         <div class="card-body">
@@ -201,14 +187,11 @@
         </div>
       </div>
     </div>
-
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
-
         <div class="card-body">
           <h5 class="card-title" style="color:#214c63;"><strong>Pasado judicial emitido&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br> por la Policía Nacional</strong></h5>
           <div class="card">
-
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="ant_ponal" id="ant_ponal1" value="Si" required>
               <label class="form-check-label" for="ant_ponal1">Si</label>
@@ -221,24 +204,11 @@
               <input class="form-check-input" type="radio" name="ant_ponal" id="ant_ponal3" value="Pendiente">
               <label class="form-check-label" for="ant_ponal3">Pendiente</label>
           </div>
-
         </div>
-
-
         </div>
-
-
       </div>
     </div>
-
-
   </div>
-
-
-
-
-
-
   <div class="row">
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
@@ -260,16 +230,8 @@
    </div>
    <div><br><br></div>
         </div>
-
-
-
-
-
-
       </div>
     </div>
-
-
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
         <div class="card-body">
@@ -293,33 +255,18 @@
         </div>
       </div>
     </div>
-
-
-
-
     <div class="row">
-
 </div>
 </div>
-
-
-
-
 <div class="card" style="margin-center: .5rem;">
   <center><h3>CERTIFICADOS DE ESTUDIOS</h3></center></div>
   <div class="container" style=" background-image: linear-gradient(#EAF2F8, #AAB7B8);  margin-center: 1.5rem;" >
-
     <div class="row">
-
-
-
-
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
         <div class="card-body">
           <h5 class="card-title" style="color:#214c63;"><strong>Certificado de bachiller&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5>
           <div class="card">
-
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="cert_bachiller" id="cert_bachiller1" value="Si" required>
               <label class="form-check-label" for="cert_bachiller1">Si</label>
@@ -332,15 +279,11 @@
               <input class="form-check-input" type="radio" name="cert_bachiller" id="cert_bachiller3" value="Pendiente">
               <label class="form-check-label" for="cert_bachiller3">Pendiente</label>
           </div>
-
         </div>
         <div><br><br></div>
-
         </div>
       </div>
     </div>
-
-
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 3px solid;">
         <div class="card-body">
@@ -367,7 +310,6 @@
     <div class="card" style="margin-center: .5rem;">
       <center><h3>REFERENCIAS</h3></center></div>
       <div class="container" style=" background-image: linear-gradient(#EAF2F8, #AAB7B8);  margin-center: 1.5rem;" >
-
     <div class="row">
       <div class="col-sm-6">
         <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 2px solid;">
@@ -375,7 +317,6 @@
             <h5 class="card-title" style="color:#214c63;"><strong>2 Referencias laborales<br> últimos empleos&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </strong></h5>
             <div class="card">
-
              <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" name="ref_laborales" id="ref_laborales1" value="Si" required>
               <label class="form-check-label" for="ref_laborales1">Si</label>
@@ -389,7 +330,6 @@
               <label class="form-check-label" for="ref_laborales3">Pendiente</label>
           </div>
           <p><input type="number" id="cantidadlab" name="cantidadlab" placeholder="Cantidad entregada"  class="form-control" required></p>
-
           </div>
         </div>
       </div>
@@ -419,11 +359,9 @@
       </div>
     </div>
   </div>
-
   <div class="card" style="margin-center: .5rem;">
     <center><h3>AFILIACIONES</h3></center></div>
     <div class="container" style=" background-image: linear-gradient(#EAF2F8, #AAB7B8);  margin-center: 1.5rem;" >
-
   <div class="row">
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 2px solid;">
@@ -431,7 +369,6 @@
           <h5 class="card-title" style="color:#214c63;"><strong>Certificado EPS actual, no&nbsp;&nbsp;&nbsp;<br> mayor a 30 días
           </strong></h5>
           <div class="card">
-
            <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="cert_eps" id="cert_eps1" value="Si" required>
     <label class="form-check-label" for="cert_eps1">Si</label>
@@ -444,9 +381,7 @@
     <input class="form-check-input" type="radio" name="cert_eps" id="cert_eps3" value="Pendiente">
     <label class="form-check-label" for="cert_eps3">Pendiente</label>
         </div>
-
-
-        </div>
+       </div>
       </div>
     </div>
   </div>
@@ -468,22 +403,18 @@
     <input class="form-check-input" type="radio" name="cert_pensiones" id="cert_pensiones3" value="Pendiente">
     <label class="form-check-label" for="cert_pensiones3">Pendiente</label>
           </div>
-
         </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="col-sm-6">
       <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 2px solid;">
         <div class="card-body">
           <h5 class="card-title" style="color:#214c63;"><strong>Certificado fondo de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>cesantías,no mayor a <br>30 días
-
           </strong></h5>
           <div class="card">
-
            <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="cert_cesantias" id="cert_cesantias1" value="Si" required>
     <label class="form-check-label" for="cert_cesantias1">Si</label>
@@ -496,34 +427,22 @@
     <input class="form-check-input" type="radio" name="cert_cesantias" id="cert_cesantias3" value="Pendiente">
     <label class="form-check-label" for="cert_cesantias3">Pendiente</label>
         </div>
-
-
         </div>
       </div>
     </div>
   </div>
-
   </div>
 </div>
-
-
-
-
-
-
 <div class="card" style="margin-center: .5rem;">
   <center><h3>OTROS DOCUMENTOS</h3></center></div>
   <div class="container" style=" background-image: linear-gradient(#EAF2F8, #AAB7B8);  margin-center: 1.5rem;" >
-
 <div class="row">
   <div class="col-sm-6">
     <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 2px solid;">
       <div class="card-body">
         <h5 class="card-title" style="color:#214c63;"><strong>Documentos de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>identificación de <BR>núcleo familiar
-
         </strong></h5>
         <div class="card">
-
          <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="nucleo_familiar" id="nucleo_familiar1" value="Si" required>
     <label class="form-check-label" for="nucleo_familiar1">Si</label>
@@ -540,7 +459,6 @@
     </div>
   </div>
 </div>
-
 <div class="col-sm-6">
   <div class="card" style="background-image: linear-gradient(#ebf3f4,#96b2bf,#4dadb9, #164863); border: #ebf3f4 2px solid;">
     <div class="card-body">
@@ -548,72 +466,30 @@
       </strong></h5>
       <div class="card">
         <textarea class="form-control form-control-lg col-12" cols="40" placeholder="" id="documentos" name="documentos" style="height: 100px"></textarea>
-
     </div>
     <div><br></div>
   </div>
 </div>
 </div>
-
-
-
 </div>
-
-
 </div>
 <div class="card" style="margin-center: .5rem;">
   <center><h3>OBSERVACIONES</h3></center></div>
-
   <div class="card">
-    <textarea class="form-control form-control-lg col-12" cols="40" placeholder="" id="observaciones" name="observaciones" style="height: 100px"></textarea>
-
+    <textarea class="form-control form-control-lg col-12" cols="40" placeholder="" id="obscont" name="obscont" style="height: 100px"></textarea>
 </div>
-
-
 <input class="btn btn-lg btn-primary" type="submit" value="Registrar">
 <a href="{{route('capacitacion.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Volver</a>
   </div>
-
-
-<div class="col-2"><input type="hidden" class="form-control" id="id_filtro"  name="id_filtro" value="{{ old('id_filtro', $filtro->id)}}"></div>
-<div class="col-2"><input type="hidden" class="form-control" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $filtro->cedula)}}"></div>
-<div class="col-2"><input type="hidden" class="form-control" id="nombres" placeholder="nombres" name="nombres" value="{{ old('nombre', $filtro->nombre)}}"></div>
-<div class="col-2"><input type="hidden" class="form-control" id="telefono" placeholder="telefono" name="telefono" value="{{ old('telefono', $filtro->telefono)}}"></div>
-<div class="col-2"><input type="hidden" class="form-control" id="correo" placeholder="correo" name="correo" value="{{ old('correo', $filtro->correo)}}"></div>
-<div class="col-2"><input type="hidden" class="form-control" id="perfil" placeholder="perfil" name="perfil" value="{{ old('perfil', $filtro->perfil)}}"></div>
-<div class="col-2"><input type="hidden" class="form-control" id="campaña" placeholder="campaña" name="campaña" value="{{ old('campaña', $filtro->campaña)}}"></div>
-<div class="col-2"><input type="hidden" class="form-control" id="fuente" placeholder="fuente" name="fuente" value="{{ old('fuente', $filtro->fuente)}}"></div>
-
-<div class="col-2"><input type="hidden" class="form-control" id="residencia" placeholder="residencia" name="residencia" value="{{ old('residencia', $contratacions->residencia)}}"></div>
-<div class="col-2"><input type="hidden" class="form-control" id="id_localidad" placeholder="id_localidad" name="id_localidad" value="{{ old('id_localidad', $contratacions->id_localidad)}}"></div>
 <div class="col-2"><input type="hidden" class="form-control" id="estado" placeholder="estado" name="estado" value="activo"></div>
-
-
-
 </div>
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
             </div>
         </div>
     </div>
 </div>
 </fieldset>
 </form>
-
       <script src="{{asset('js/app.js')}}"></script>
               </body>
               @section('css')

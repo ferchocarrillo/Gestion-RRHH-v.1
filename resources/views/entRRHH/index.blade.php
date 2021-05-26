@@ -62,7 +62,7 @@
                                     <th scope="row">{{ $entrevistas->id}}</th>
 
                                                 <td>{{ $entrevistas->cedula}}</td>
-                                                <td>{{ $entrevistas->nombres}}</td>
+                                                <td>{{ $entrevistas->nombre}}</td>
                                                 <td>{{ $entrevistas->telefono}}</td>
                                                 <td>{{ $entrevistas->correo}}</td>
 

@@ -3,16 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\EntJefe;
-use App\Entrevista5;
-use App\EntFinalizacion;
-use App\Filtro;
-use App\Entrevista1;
-use App\Entrevista2;
-use App\Entrevista3;
-use App\Entrevista4;
-use App\resultadoRRHH;
+use App\Filtro2;
 use Carbon\Carbon;
 use App\Aprobacion;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -32,7 +26,7 @@ class EntJefeController extends Controller
     public function index()
     {
 
-        $entrevistases = Filtro::orderBy('created_at', 'desc')->where('resultadoRrhh','=','Cargo requiere segunda entrevista')->paginate(10);
+        $entrevistases = Filtro2::orderBy('created_at', 'desc')->where('entrevistaJefeInm','=','X')->paginate(10);
         return view('entJefe.index',compact('entrevistases'));
     }
 
@@ -70,7 +64,7 @@ class EntJefeController extends Controller
 
         ]);
 
-        $filtro = new Filtro();
+        $filtro = new Filtro2();
 
         $filtro->fregistro              = $request->fregistro;
         $filtro->nombre                 = $request->nombre;
@@ -89,16 +83,7 @@ class EntJefeController extends Controller
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\EntRRHH  $entRRHH
-     * @return \Illuminate\Http\Response
-     */
-    public function show(EntRRHH $entRRHH)
-    {
-        //
-    }
+
 
      /**
      * Show the form for editing the specified resource.
@@ -114,24 +99,17 @@ class EntJefeController extends Controller
        // $date = $date->format('d-m-Y');
         $this->authorize('haveaccess','entFinalizacion.edit');
         $aprobaciones = Aprobacion::all();
-        $filtro  = Filtro::findOrFail($id);
-        // $entFinalizacion = EntFinalizacion::findOrFail($id);
-        $entrevista5s = entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista1s = Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista2s = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista3s = Entrevista3::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        // $entrevista4s = Entrevista4::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-
-        //return response()->json($entFinalizacion);
+        $filtro  = Filtro2::findOrFail($id);
+               //return response()->json($entFinalizacion);
     //return view('entGerencia.index', compact('entrevista1s','entrevista5s','entrevista4s','entrevista3s','entrevista2s'));
-      return view('entJefe.edit', compact('date','filtro', 'entrevista5s','aprobaciones'));
+      return view('entJefe.edit', compact('date','filtro','aprobaciones'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Filtro  $filtro
+     * @param  \App\Filtro2  $filtro
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -141,8 +119,8 @@ class EntJefeController extends Controller
         $date = Carbon::now();
 
         $datosFiltro =request()->except(['_token','_method']);
-        Filtro::where('id','=',$id)->update($datosFiltro);
-        $filtro=Filtro::findOrFail($id);
+        Filtro2::where('id','=',$id)->update($datosFiltro);
+        $filtro=Filtro2::findOrFail($id);
      //return response()->json($filtro);
      return view('entJefe.edit', compact('filtro', 'date','aprobaciones'));
     }
@@ -153,7 +131,7 @@ class EntJefeController extends Controller
      * @param  \App\Filtro  $filtro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Filtro $filtro)
+    public function destroy(Filtro2 $filtro)
     {
         //
     }

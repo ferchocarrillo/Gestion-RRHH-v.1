@@ -88,54 +88,54 @@ class HomeController extends Controller
 
 
       $filtros = Filtro2::orderBy('created_at', 'asc')->paginate(10);
-      $countfiltros  ['filtros'] = Filtro2::where('citadoE', 'Citado Entrevista')->count();
-      $count1filtros ['filtros'] = Filtro2::where('noAplica', 'No Aplica')->count();
-      $count2filtros ['filtros'] = Filtro2::where('noInteresado', 'no interesado')->count();
-      $count3filtros ['filtros'] = Filtro2::where('enviadoCapa', 'enviadoCapa')->count();
-      $count4filtros ['filtros'] = Filtro2::where('enviadoExm', 'enviado a exam')->count();
-      $count5filtros ['filtros'] = Filtro2::where('PruebasE', 'Pruebas Eviadas')->count();
-      $count6filtros ['filtros'] = Filtro2::where('yaTrabaja', 'Ya trabaja')->count();
-      $count7filtros ['filtros'] = Filtro2::where('numeroEqu', 'Numero Equivocado')->count();
-      $count8filtros ['filtros'] = Filtro2::where('id', '<>',null)->count();
-      $count9filtros ['filtros'] = Filtro2::where('noAsiste', 'NoAsiste')->count();
-      $count10filtros['filtros'] = Filtro2::where('NoResponde2', 'NoResponde2')->count();
-      $count11filtros['filtros'] = Filtro2::where('YaNoint', 'YaNoint')->count();
-      $count12filtros['filtros'] = Filtro2::where('estudiante', 'estudiante')->count();
-      $count13filtros['filtros'] = Filtro2::where('noAsisteEnt', 'noAsisteEnt')->count();
-      $count14filtros['filtros'] = Filtro2::where('entrevistaJefeInm', 'entrevistaJefeInm')->count();
-      $count15filtros['filtros'] = Filtro2::where('entrevistaGerencia', 'entrevistaGerencia')->count();
-      $count16filtros['filtros'] = Filtro2::where('enviadocontratacion', 'enviadocontratacion')->count();
+      $countfiltros  ['filtros2'] = Filtro2::where('citadoE', 'X')->count();
+      $count1filtros ['filtros2'] = Filtro2::where('noAplica', 'X')->count();
+      $count2filtros ['filtros2'] = Filtro2::where('noInteresado', 'X')->count();
+      $count3filtros ['filtros2'] = Filtro2::where('enviadoCapa', 'X')->count();
+      $count4filtros ['filtros2'] = Filtro2::where('enviadoExm', 'X')->count();
+      $count5filtros ['filtros2'] = Filtro2::where('pruebasE', 'X')->count();
+      $count6filtros ['filtros2'] = Filtro2::where('yaTrabaja', 'X')->count();
+      $count7filtros ['filtros2'] = Filtro2::where('numeroEqu', 'X')->count();
+      $count8filtros ['filtros2'] = Filtro2::where('id', '<>',null)->count();
+      $count9filtros ['filtros2'] = Filtro2::where('noAsiste', 'X')->count();
+      $count10filtros['filtros2'] = Filtro2::where('noResponde2', 'X')->count();
+      $count11filtros['filtros2'] = Filtro2::where('YaNoint', 'X')->count();
+      $count12filtros['filtros2'] = Filtro2::where('estudiante', 'X')->count();
+      $count13filtros['filtros2'] = Filtro2::where('noAsiste', 'X')->count();
+      $count14filtros['filtros2'] = Filtro2::where('entrevistaJefeInm', 'X')->count();
+      $count15filtros['filtros2'] = Filtro2::where('entrevistaGerencia', 'X')->count();
+      $count16filtros['filtros2'] = Filtro2::where('enviadocontratacion', 'X')->count();
 
 
 
-      $respuestarrhh1s['filtros'] = Filtro2::where('resultadoRrhh', 'Cargo requiere segunda entrevista')->count();
-      $respuestarrhh2s['filtros'] = Filtro2::where('resultadoRrhh', 'Enviado a capacitacion')->count();
-      $respuestarrhh3s['filtros'] = Filtro2::where('resultadoRrhh', 'Enviado a contratación')->count();
-      $respuestarrhh4s['filtros'] = Filtro2::where('resultadoRrhh', 'No aplica para el cargo')->count();
-      $respuestarrhh5s['filtros'] = Filtro2::where('resultadoRrhh', 'No contratado')->count();
-      $respuestarrhh6s['filtros'] = Filtro2::where('resultadoRrhh', 'Postulado desistio de la oferta')->count();
-      $respuestarrhh7s['filtros'] = Filtro2::where('resultadoRrhh', 'Otro')->count();
+      $respuestarrhh1s['filtros'] = Filtro2::where('entrevistaJefeInm', 'X')->count();
+      $respuestarrhh2s['filtros'] = Filtro2::where('entrevistaGerencia', 'X')->count();
+      $respuestarrhh3s['filtros'] = Filtro2::where('enviadocontratacion', 'X')->count();
+      $respuestarrhh4s['filtros'] = Filtro2::where('noAplica', 'X')->count();
+      $respuestarrhh5s['filtros'] = Filtro2::where('noContrat', 'X')->count();
+      $respuestarrhh6s['filtros'] = Filtro2::where('noAsisteEnt', 'X')->count();
 
-      $count00Fuentes['filtros'] = Filtro2::where('fuente', 'Vincucuentas')->count();
-      $count01Fuentes['filtros'] = Filtro2::where('fuente', 'Computrabajo')->count();
-      $count02Fuentes['filtros'] = Filtro2::where('fuente', 'SNE')->count();
-      $count03Fuentes['filtros'] = Filtro2::where('fuente', 'Compensar')->count();
-      $count04Fuentes['filtros'] = Filtro2::where('fuente', 'rt')->count();
-      $count05Fuentes['filtros'] = Filtro2::where('fuente', 'rj')->count();
-      $count06Fuentes['filtros'] = Filtro2::where('fuente', 'rc')->count();
-      $count07Fuentes['filtros'] = Filtro2::where('fuente', 'univ')->count();
-      $count08Fuentes['filtros'] = Filtro2::where('fuente', 'redes')->count();
-      $count09Fuentes['filtros'] = Filtro2::where('fuente', 'hv')->count();
-      $count10Fuentes['filtros'] = Filtro2::where('fuente', 'funda')->count();
-      $count11Fuentes['filtros'] = Filtro2::where('fuente', 'otros')->count();
+
+      $count00Fuentes['filtros2'] = Filtro2::where('fuente', 'Vincucuentas')->count();
+      $count01Fuentes['filtros2'] = Filtro2::where('fuente', 'Computrabajo')->count();
+      $count02Fuentes['filtros2'] = Filtro2::where('fuente', 'SNE')->count();
+      $count03Fuentes['filtros2'] = Filtro2::where('fuente', 'Compensar')->count();
+      $count04Fuentes['filtros2'] = Filtro2::where('fuente', 'rt')->count();
+      $count05Fuentes['filtros2'] = Filtro2::where('fuente', 'rj')->count();
+      $count06Fuentes['filtros2'] = Filtro2::where('fuente', 'rc')->count();
+      $count07Fuentes['filtros2'] = Filtro2::where('fuente', 'univ')->count();
+      $count08Fuentes['filtros2'] = Filtro2::where('fuente', 'redes')->count();
+      $count09Fuentes['filtros2'] = Filtro2::where('fuente', 'hv')->count();
+      $count10Fuentes['filtros2'] = Filtro2::where('fuente', 'funda')->count();
+      $count11Fuentes['filtros2'] = Filtro2::where('fuente', 'otros')->count();
 
       $capacitacioneses  = Filtro2::orderBy('created_at', 'asc')->where('resultadoFormacion','<>',null)->paginate(10);
 
       $date1 = $request->input('created_at');
 //    $date->('created_at')->isSameMonth(now());
 
-      $capacitacionAps ['filtros']= Filtro2::where('resultadoFormacion','Aprobado')->count();
-      $capacitacionNaps['filtros']= Filtro2::where('resultadoFormacion','NO aprobado')->count();
+      $capacitacionAps ['filtros']= Filtro2::where('resultadoFormacion','Ap')->count();
+      $capacitacionNaps['filtros']= Filtro2::where('resultadoFormacion','NoAp')->count();
 
       $residencias= Filtro2::orderBy('created_at', 'asc')->paginate(10);
       $residencia1s['filtros']= Filtro2::where('residencia','Bogotá')->count();
@@ -164,7 +164,7 @@ class HomeController extends Controller
         'respuestarrhh4s',
         'respuestarrhh5s',
         'respuestarrhh6s',
-        'respuestarrhh7s',
+
         'capacitacioneses',
       'count11publicas',
       'count11Fuentes',

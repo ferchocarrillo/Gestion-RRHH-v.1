@@ -3,13 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\EntRRHH;
-use App\Entrevista5;
-use App\EntFinalizacion;
 use App\Filtro2;
-use App\Entrevista1;
-use App\Entrevista2;
-use App\Entrevista3;
-use App\Entrevista4;
 use App\resultadoRRHH;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -77,11 +71,9 @@ class EntRRHHController extends Controller
         $filtro->cedula                 = $request->cedula;
         $filtro->telefono               = $request->telefono;
         $filtro->correo                 = $request->correo;
-        $filtro->perfil                 = $request->cargos;
+        $filtro->cargo                  = $request->cargo;
         $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
-        $filtro->resultadoRrhh          = $request->resultadoRrhh;
-        $filtro->obsRrhh                = $request->obsRrhh;
         $filtro->fechaRrhh              = $request->fechaRrhh;
         $filtro->save();
 

@@ -79,11 +79,5 @@ Swal.fire(
 )
 </script>
 @stop
-
-
-
-
-
-
 @endsection
 

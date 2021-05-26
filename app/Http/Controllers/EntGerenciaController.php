@@ -3,16 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\EntGerencia;
-use App\Entrevista5;
-use App\EntFinalizacion;
-use App\Filtro;
-use App\Entrevista1;
-use App\Entrevista2;
-use App\Entrevista3;
-use App\Entrevista4;
-use App\resultadoRRHH;
+use App\Filtro2;
 use Carbon\Carbon;
 use App\Aprobacion;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -32,7 +26,7 @@ class EntGerenciaController extends Controller
     public function index()
     {
 
-        $entrevistases = Filtro::orderBy('created_at', 'desc')->where('resultadoRrhh','=','Cargo requiere segunda entrevista')->paginate(10);
+        $entrevistases = Filtro2::orderBy('created_at', 'desc')->where('entrevistaGerencia','=','X')->paginate(10);
         return view('entGerencia.index',compact('entrevistases'));
     }
 
@@ -65,12 +59,12 @@ class EntGerenciaController extends Controller
             $datosFiltro['Foto']=$request->file('Foto')->store('uploads','public');
         }
         $request->validate([
-            'nombre'          => 'required|unique:filtros,nombre,',
+            'entGerencia'          => 'required|unique:filtros,entGerencia,',
 
 
         ]);
 
-        $filtro = new Filtro();
+        $filtro = new Filtro2();
 
         $filtro->fregistro              = $request->fregistro;
         $filtro->nombre                 = $request->nombre;
@@ -81,24 +75,13 @@ class EntGerenciaController extends Controller
         $filtro->campaña                = $request->campana;
         $filtro->fuente                 = $request->fuente;
         $filtro->resultadoRrhh          = $request->resultadoRrhh;
-        $filtro->obsRrhh                = $request->obsRrhh;
-        $filtro->fechaRrhh              = $request->fechaRrhh;
         $filtro->save();
 
         //return response()->json($filtro);
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\EntRRHH  $entRRHH
-     * @return \Illuminate\Http\Response
-     */
-    public function show(EntRRHH $entRRHH)
-    {
-        //
-    }
+
 
      /**
      * Show the form for editing the specified resource.
@@ -112,14 +95,14 @@ class EntGerenciaController extends Controller
         Carbon::setLocale('es');
         $date = Carbon::now();
 
-        $this->authorize('haveaccess','entFinalizacion.edit');
+        $this->authorize('haveaccess','entGerencia.edit');
         $aprobaciones = Aprobacion::all();
-        $filtro  = Filtro::findOrFail($id);
-        $entrevista5s = entrevista5::where('id_filtro', Filtro::findOrFail($id)->id)->first();
+        $filtro  = Filtro2::findOrFail($id);
+
 
         //return response()->json($entFinalizacion);
 
-      return view('entGerencia.edit', compact('date','filtro', 'entrevista5s','aprobaciones'));
+      return view('entGerencia.edit', compact('date','filtro','aprobaciones'));
     }
 
     /**
@@ -136,8 +119,8 @@ class EntGerenciaController extends Controller
         $date = Carbon::now();
 
         $datosFiltro =request()->except(['_token','_method']);
-        Filtro::where('id','=',$id)->update($datosFiltro);
-        $filtro=Filtro::findOrFail($id);
+        Filtro2::where('id','=',$id)->update($datosFiltro);
+        $filtro=Filtro2::findOrFail($id);
      //return response()->json($filtro);
      return view('entGerencia.edit', compact('filtro', 'date','aprobaciones'));
     }
@@ -148,7 +131,7 @@ class EntGerenciaController extends Controller
      * @param  \App\Filtro  $filtro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Filtro $filtro)
+    public function destroy(Filtro2 $filtro)
     {
         //
     }

@@ -47,7 +47,6 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
               <!-- Force next columns to break to new line -->
                <div class="w-100 d-none d-md-block"></div>
-               <div class="col"><p class="h6">Persona que lo referencia:</p> {{ $filtro->referencia}}</div>
                <div class="col"><p class="h6">Edad:</p>{{ $edad}}</div>
                <div class="col"><p class="h6">Fecha de nacimiento:</p> {{ $filtro->fnacimiento}}</div>
                <div class="col"><p class="h6">Departamento y ciudad de nacimiento:</p> {{ $filtro->departamento}} | {{ $filtro->id_ciudad}}</div>
@@ -65,39 +64,17 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                <!-- Force next columns to break to new line -->
                <div class="w-100 d-none d-md-block"></div>
                <div class="col"><p class="h6">Tel fijo:</p>{{ $filtro->tFijo}}</div>
-               <div class="col"><p class="h6">Tel celular:</p> {{ $filtro->tCelular}}</div>
-               <div class="col"><p class="h6">Tel celular 2:</p> {{ $filtro->tCelular2}}</div>
-               <div class="col"><p class="h6"></p> {{ $filtro->xxxxx}}</div>
-
+               <div class="col"><p class="h6">Celular 2:</p> {{ $filtro->tCelular2}}</div>
+               <div class="col"><p class="h6">Tipo de Vivienda:</p>{{ $filtro->tvivienda}}</div>
                 <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 
 
                <!-- Force next columns to break to new line -->
                <div class="w-100 d-none d-md-block"></div>
-               <div class="col"><p class="h6">Tipo de Vivienda:</p>{{ $filtro->tVivienda}}</div>
-               <div class="col"><p class="h6">Valor:</p> {{ $filtro->valor}}</div>
-               <div class="col"><p class="h6">Nombre del Arrendador:</p> {{ $filtro->arrendador}}</div>
-               <div class="col"><p class="h6">Correo del Arrendador:</p> {{ $filtro->correoArr}}</div>
-
-                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-               <!-- Force next columns to break to new line -->
-               <div class="w-100 d-none d-md-block"></div>
-               <div class="col"><p class="h6">Servicio militar, donde?:</p>{{ $filtro->sMilitar}}  {{ $filtro->donde}}</div>
+               <div class="col"><p class="h6">Servicio militar:</p>{{ $filtro->sMilitar}}</div>
                <div class="col"><p class="h6">Estado Civil:</p> {{ $filtro->eCivil}}</div>
-               <div class="col"><p class="h6">Hace Cuanto:</p> {{ $filtro->cuanto}}</div>
                <div class="col"><p class="h6">Con Quien Vive:</p> {{ $filtro->quien}}</div>
                 <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-               <!-- Force next columns to break to new line -->
-               <div class="w-100 d-none d-md-block"></div>
-               <div class="col"><p class="h6">Que conoce de Mentius:</p>{{ $filtro->conoce}}  {{ $filtro->donde}}</div>
-
-
-                <hr width=80%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
-
-
 
             </div>
           </div>
@@ -109,134 +86,39 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
                 <!-- Force next columns to break to new line -->
                 <div class="w-100 d-none d-md-block"></div>
-                <div class="col"><p class="h6">Parentesco</p></div>
-                <div class="col"><p class="h6">Edad</p> </div>
-                <div class="col"><p class="h6">Ocupación</p></div>
+                <div class="col"><p class="h6">Parentesco , Edad, Ocupación</p></div>
                  <hr width=100% align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->parentescop1}}</div>
-                <div class="col">{{ $filtro->edadp1}}</div>
-                <div class="col">{{ $filtro->ocupacionp1}}</div>
+                <div class="col">{{ $filtro->parentescop1}} {{$filtro->edadp1}} {{ $filtro->ocupacionp1}}</div>
 
 
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->parentescop2}}</div>
-                <div class="col">{{ $filtro->edadp2}}</div>
-                <div class="col">{{ $filtro->ocupacionp2}}</div>
+                <div class="col">{{ $filtro->parentescop2}} {{ $filtro->edadp2}} {{ $filtro->ocupacionp2}}</div>
 
 
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->parentescop3}}</div>
-                <div class="col">{{ $filtro->edadp3}}</div>
-                <div class="col">{{ $filtro->ocupacionp3}}</div>
+                <div class="col">{{ $filtro->parentescop3}} {{ $filtro->edadp3}} {{ $filtro->ocupacionp3}}</div>
 
 
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->parentescop4}}</div>
-                <div class="col">{{ $filtro->edadp4}}</div>
-                <div class="col">{{ $filtro->ocupacionp4}}</div>
+                <div class="col">{{ $filtro->parentescop4}} {{ $filtro->edadp4}} {{ $filtro->ocupacionp4}}</div>
 
 
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->parentescop5}}</div>
-                <div class="col">{{ $filtro->edadp5}}</div>
-                <div class="col">{{ $filtro->ocupacionp5}}</div>
-
-
-
-
-                <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
+                <div class="col">{{ $filtro->parentescop5}} {{ $filtro->edadp5}} {{ $filtro->ocupacionp5}}</div>
             </div>
         </div>
+        <br><br>
 
 
 <center><h3>Historial Academico</h3></center>
 <div class="container">
     <div class="row">
- <!-- Force next columns to break to new line -->
-
-
-
- <div class="w-100 d-none d-md-block"></div>
- <div class="col"><p class="h6">Institución</p> </div>
- <div class="col"><p class="h6">Año de Grado</p></div>
- <div class="col"><p class="h6">Titulo</p></div>
- <div class="col"><p class="h6">Estado</p> </div>
-
+ <div class="col"><p class="h6">Institución , Año de Grado, Titulo, Estado</p> </div>
  <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
-
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->institucion1}} </div>
-                  <div class="col">{{ $filtro->fecha1}}</div>
-                <div class="col">{{ $filtro->titulo1}}</div>
-                <div class="col">{{ $filtro->estado1}}</div>
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->institucion2}} </div>
-                 <div class="col">{{ $filtro->fecha2}}</div>
-                <div class="col">{{ $filtro->titulo2}}</div>
-                <div class="col">{{ $filtro->estado2}}</div>
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->institucion3}} </div>
-                <div class="col">{{ $filtro->fecha3}}</div>
-                <div class="col">{{ $filtro->titulo3}}</div>
-                <div class="col">{{ $filtro->estado3}}</div>
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->institucion4}} </div>
-                <div class="col">{{ $filtro->fecha4}}</div>
-                <div class="col">{{ $filtro->titulo4}}</div>
-                <div class="col">{{ $filtro->estado4}}</div>
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->institucion5}} </div>
-                 <div class="col">{{ $filtro->fecha5}}</div>
-                <div class="col">{{ $filtro->titulo5}}</div>
-                <div class="col">{{ $filtro->estado5}}</div>
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->institucion6}} </div>
-                <div class="col">{{ $filtro->fecha6}}</div>
-                <div class="col">{{ $filtro->titulo6}}</div>
-                <div class="col">{{ $filtro->estado6}}</div>
-
-
-
-                <!-- Force next columns to break to new line -->
-                <div class="w-100 d-none d-md-block"></div>
-
-                <div class="col">{{ $filtro->institucion7}} </div>
-                <div class="col">{{ $filtro->fecha7}}</div>
-                <div class="col">{{ $filtro->titulo7}}</div>
-                <div class="col">{{ $filtro->estado7}}</div>
-
+                <div class="col">{{ $filtro->institucion1}} {{ $filtro->fecha1}} {{ $filtro->titulo1}} {{ $filtro->estado1}}</div>
+                <div class="col">{{ $filtro->institucion2}} {{ $filtro->fecha2}} {{ $filtro->titulo2}} {{ $filtro->estado2}}</div>
+                <div class="col">{{ $filtro->institucion3}} {{ $filtro->fecha3}} {{ $filtro->titulo3}} {{ $filtro->estado3}}</div>
+                <div class="col">{{ $filtro->institucion4}} {{ $filtro->fecha4}} {{ $filtro->titulo4}} {{ $filtro->estado4}}</div>
+                <div class="col">{{ $filtro->institucion5}} {{ $filtro->fecha5}} {{ $filtro->titulo5}} {{ $filtro->estado5}}</div>
+                <div class="col">{{ $filtro->institucion6}} {{ $filtro->fecha6}} {{ $filtro->titulo6}} {{ $filtro->estado6}}</div>
+                <div class="col">{{ $filtro->institucion7}} {{ $filtro->fecha7}} {{ $filtro->titulo7}} {{ $filtro->estado7}}</div>
             </div>
         </div>
         <br>
@@ -268,8 +150,11 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $filtro->empresa1}}</div>
          <div class="col">{{ $filtro->fechain1}} </div>
          <div class="col">{{ $filtro->fechart1}}</div>
-         <div class="col">{{ $filtro->tiempo1}}</div>
-
+         @if (empty($filtro->fechart1))
+         <div class="col"> </div>
+         @else
+         <div class="col">{{ $tiempo1}} meses</div>
+         @endif
          <div class="col">{{ $filtro->hlcargo1}}</div>
          <div class="col">{{ $filtro->jefeinm1}}</div>
          <div class="col">{{ $filtro->teleinf1}}</div>
@@ -281,11 +166,16 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $filtro->empresa2}}</div>
          <div class="col">{{ $filtro->fechain2}} </div>
          <div class="col">{{ $filtro->fechart2}}</div>
-         <div class="col">{{ $filtro->tiempo2}}</div>
+
+          @if (empty($filtro->fechart2))
+         <div class="col"> </div>
+         @else
+         <div class="col">{{ $tiempo2}} meses</div>
+         @endif
          <div class="col">{{ $filtro->hlcargo2}}</div>
          <div class="col">{{ $filtro->jefeinm2}}</div>
          <div class="col">{{ $filtro->teleinf2}}</div>
-        <div class="col">{{ $filtro->salarioh2}}</div>
+         <div class="col">{{ $filtro->salarioh2}}</div>
          <div class="col">{{ $filtro->motivor2}}</div>
 
          <!-- Force next columns to break to new line -->
@@ -293,7 +183,11 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $filtro->empresa3}}</div>
          <div class="col">{{ $filtro->fechain3}} </div>
          <div class="col">{{ $filtro->fechart3}}</div>
-         <div class="col">{{ $filtro->tiempo3}}</div>
+         @if (empty($filtro->fechart3))
+         <div class="col"> </div>
+         @else
+         <div class="col">{{ $tiempo3}} meses</div>
+         @endif
          <div class="col">{{ $filtro->hlcargo3}}</div>
          <div class="col">{{ $filtro->jefeinm3}}</div>
          <div class="col">{{ $filtro->teleinf3}}</div>
@@ -305,7 +199,11 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $filtro->empresa4}}</div>
          <div class="col">{{ $filtro->fechain4}} </div>
          <div class="col">{{ $filtro->fechart4}}</div>
-         <div class="col">{{ $filtro->tiempo4}}</div>
+         @if (empty($filtro->fechart4))
+         <div class="col"> </div>
+         @else
+         <div class="col">{{ $tiempo4}} meses</div>
+         @endif
          <div class="col">{{ $filtro->hlcargo4}}</div>
          <div class="col">{{ $filtro->jefeinm4}}</div>
          <div class="col">{{ $filtro->teleinf4}}</div>
@@ -317,7 +215,11 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col">{{ $filtro->empresa5}}</div>
          <div class="col">{{ $filtro->fechain5}} </div>
          <div class="col">{{ $filtro->fechart5}}</div>
-         <div class="col">{{ $filtro->tiempo5}}</div>
+         @if (empty($filtro->fechart5))
+         <div class="col"> </div>
+         @else
+         <div class="col">{{ $tiempo5}} meses</div>
+         @endif
          <div class="col">{{ $filtro->hlcargo5}}</div>
          <div class="col">{{ $filtro->jefeinm5}}</div>
          <div class="col">{{ $filtro->teleinf5}}</div>
@@ -336,11 +238,10 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <div class="col"><p class="h6">Aspiración salarial</p>  {{ $filtro->aspiracion}} </div>
         <div class="col"><p class="h6">Ha tenido personas a cargo</p>  {{ $filtro->personasC}} </div>
         <div class="col"><p class="h6">Actividades realizadas</p> {{ $filtro->acCambio}}</div>
-        <div class="col"><p class="h6">Cuanto tiempo estuvo desempleado</p>  {{ $filtro->tiempoDes}}</div>
+
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
         <!-- Force next columns to break to new line -->
         <div class="w-100 d-none d-md-block"></div>
-        <div class="col"><p class="h6">Que hizo en ese tiempo</p>  {{ $filtro->queHizo}} </div>
         <div class="col"><p class="h6">Esta en otro proceso de selección</p>  {{ $filtro->otroProceso}} </div>
         <div class="col"><p class="h6">Cual otra</p> {{ $filtro->CualOtra}}</div>
         <div class="col"><p class="h6">Mencione sus fortalezas</p>  {{ $filtro->fortalezas}} </div>
@@ -351,12 +252,6 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
         <div class="col"><p class="h6">Mencione sus debilidades</p>  {{ $filtro->debilidades}} </div>
         <div class="col"><p class="h6">Que valores le inculco su familia</p> {{ $filtro->valores}}</div>
-        <div class="col"><p class="h6">Aspectos que le generan satisfacción</p>  {{ $filtro->satisfaccion}}</div>
-        <div class="col"><p class="h6">Aspectos traumáticos</p>  {{ $filtro->traumaticos}}</div>
-
-        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-        <!-- Force next columns to break to new line -->
-        <div class="w-100 d-none d-md-block"></div>
         <div class="col"><p class="h6">¿Le han cancelado contrato? </p>  {{ $filtro->cancelado}} </div>
         <div class="col"><p class="h6">Cual fue el motivo</p>  {{ $filtro->motivoC}} </div>
         <div class="col"><p class="h6">Ha tenido problemas judiciales</p> {{ $filtro->problemas}}</div>
@@ -369,44 +264,41 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <div class="w-100 d-none d-md-block"></div>
 
         <div class="col"><p class="h6">¿Fuma? con qué frecuencia</p>  {{ $filtro->fuma}} , {{ $filtro->frecuencia}} </div>
-        <div class="col"><p class="h6">¿Tiene deudas? </p> {{ $filtro->deudas}}</div>
-        <div class="col"><p class="h6">A quien le debe</p>{{ $filtro->debeA}}</div>
-        <div class="col"><p class="h6">Cuanto y a qué plazo </p>{{$filtro->cuantoDebe}} {{ $filtro->plazo}}</div>
-
-
-        <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-        <!-- Force next columns to break to new line -->
-        <div class="w-100 d-none d-md-block"></div>
-        <div class="col"><p class="h6">¿Pertenece a algún grupo social? hace cuanto </p>  {{ $filtro->grupoSoc}} {{ $filtro->cuantoTiempo}}</div>
-        <div class="col"><p class="h6">Que hace en su tiempo libre</p> {{ $filtro->tiempoLibre}}</div>
         <div class="col"><p class="h6">¿Cuál es su estado de salud? </p>{{ $filtro->estadoSalud}}</div>
         <div class="col"><p class="h6">¿Sigue algún tratamiento? </p>{{ $filtro->tratamiento}}</div>
 
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
         <!-- Force next columns to break to new line -->
         <div class="w-100 d-none d-md-block"></div>
-        <div class="col"><p class="h6">¿Ha sufrido accidentes? </p>  {{ $filtro->acceidentes}} {{ $filtro->cuantoTiempo}}</div>
-        <div class="col"><p class="h6">Que accidente tuvo</p> {{ $filtro->cualAc}}</div>
+        <div class="col"><p class="h6">¿Ha sufrido accidentes? </p>  {{ $filtro->accidentes}} {{ $filtro->cualAc}}</div>
         <div class="col"><p class="h6">Ha tenido procesos anteriores en Mentius?</p>{{ $filtro->procesosAnt}}</div>
         <div class="col"><p class="h6">¿Tiene familiares en la compañía? </p>{{ $filtro->familiaresMent}}</div>
 
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
         <!-- Force next columns to break to new line -->
 
-        <div class="col"><p class="h6">Resultado Primera Entrevista</p>{{ $filtro->resultadoRrhh}}</div>
+        @if (empty($filtro->resultadoRRHH))
+        <div class="col"><p class="h6"></div>
+        <div class="col"><p class="h6"></div>
+        @else
+        <div class="col"><p class="h6">Resultado Primera Entrevista</p>{{ $filtro->resultadoRRHH}}</div>
         <div class="col"><p class="h6">Fecha</p>{{ $filtro->fechaRrhh}}</div>
-        <div class="col"><p class="h6">Observaciones RRHH</p>{{ $filtro->obsRrhh}}</div>
+        @endif
+
+        @if (empty($filtro->resultadoGer))
+        <div class="col"><p class="h6"></div>
+        @else
         <div class="col"><p class="h6">Resultado Entrevista Gerencia</p>{{ $filtro->resultadoGer}}</div>
-        <div class="col"><p class="h6">Fecha</p>{{ $filtro->fechaGerencia}}</div>
-        <div class="col"><p class="h6">Observaciones Gerencia</p>{{ $filtro->obsGerencia}}</div>
-        <div class="col"><p class="h6">Resultado EntrevistaJefe Inmediato</p>{{ $filtro->resultadoJefe}}</div>
-        <div class="col"><p class="h6">Fecha</p>{{ $filtro->fechaJefe}}</div>
-        <div class="col"><p class="h6">Observaciones Jefe Inmediato</p>{{ $filtro->obsJefe}}</div>
+        @endif
+@if (empty($filtro->resultadoJefe))
+<div class="col"><p class="h6"></div>
+@else
+<div class="col"><p class="h6">Resultado Entrevista Jefe</p>{{ $filtro->resultadoJefe}}</div>
+@endif
 
 
 
 
-{{--<div class="col"><p class="h6">Observaciones entrevista jefe</p> {{$filtro->obsjefe}} </div>--}}
 
 
 
@@ -429,10 +321,10 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
               @stop
               @section('js')
       <script>
-      Swal.fire(
-        'ENTREVISTA',
-        'Registre el resultado de la entrevista con la Gerencia',
-        'success'
+        Swal.fire(
+            'RESUMEN',
+            'veras el resumen de la entrevista',
+            'success'
       )
       </script>
 

@@ -101,10 +101,18 @@
                 <!--<script src="{{asset('js/Portabilidad.js')}}"></script>-->
                         <script src="{{asset('js/app.js')}}"></script>
                     </body>
-                    @section('css')
-                    <link rel="stylesheet" href="/css/admin_custom.css">
-                    @stop
-                    @section('js')
-
-            @stop
-            @endsection
+                    <script src="{{asset('js/app.js')}}"></script>
+                </body>
+                @section('css')
+                <link rel="stylesheet" href="/css/admin_custom.css">
+                @stop
+                @section('js')
+                <script>
+                Swal.fire(
+                'REGISTRO DE DOCUMENTOS DE CONTRATACION',
+                'Inserción de documentos',
+                'success'
+                )
+                </script>
+                @stop
+                @endsection
