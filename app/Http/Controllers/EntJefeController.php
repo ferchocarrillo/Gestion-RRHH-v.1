@@ -15,7 +15,7 @@ class EntJefeController extends Controller
 
     public function __construct()
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         date_default_timezone_set('America/Bogota');
     }
     /**
@@ -50,7 +50,7 @@ class EntJefeController extends Controller
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $date = Carbon::now();
 
         $datosFiltro=request()->except('_token');
@@ -94,7 +94,7 @@ class EntJefeController extends Controller
     public function edit($id)
     {
 
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $date = Carbon::now();
        // $date = $date->format('d-m-Y');
         $this->authorize('haveaccess','entFinalizacion.edit');
@@ -115,7 +115,7 @@ class EntJefeController extends Controller
     public function update(Request $request, $id)
     {
         $aprobaciones = Aprobacion::all();
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $date = Carbon::now();
 
         $datosFiltro =request()->except(['_token','_method']);

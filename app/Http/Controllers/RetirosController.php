@@ -15,7 +15,7 @@ class RetirosController extends Controller
 
     public function __construct()
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         date_default_timezone_set('America/Bogota');
     }
     /**
@@ -48,7 +48,7 @@ class RetirosController extends Controller
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $hoy = Carbon::now();
 
         $date1 = $request->input('fechaCont');
@@ -125,7 +125,7 @@ class RetirosController extends Controller
     public function update(Request $request, $id)
     {
 
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $date = Carbon::now();
         $causas = CausasRetiro::all();
         $datosFiltro =request()->except(['_token','_method']);

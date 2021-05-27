@@ -22,7 +22,7 @@ class AsignacionController extends Controller
 {
     public function __construct()
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         date_default_timezone_set('America/Bogota');
     }
     /**

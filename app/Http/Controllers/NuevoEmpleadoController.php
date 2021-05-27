@@ -11,10 +11,8 @@ use App\Cesantias;
 use App\Contratacion;
 use App\Departamentos;
 use App\Eps;
-use App\Filtro;
+use App\Filtro2;
 use App\Foco;
-use App\JhonatanPermission\Models\Entrevista1;
-use App\JhonatanPermission\Models\Entrevista2;
 use App\Modalidad;
 use App\nivelEdu;
 use App\parentesco;
@@ -35,7 +33,7 @@ class NuevoEmpleadoController extends Controller
 
     public function __construct()
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         date_default_timezone_set('America/Bogota');
     }
     /**
@@ -45,8 +43,8 @@ class NuevoEmpleadoController extends Controller
      */
     public function index()
     {
-        $nuevos = Contratacion::orderby('created_at', 'desc')->where('estado','=','activo')->paginate(10);
-        return view('nuevoempleado.index',compact('nuevos'));
+        $filtros = Filtro2::orderby('created_at', 'desc')->where('estado','=','activo')->paginate(10);
+        return view('nuevoempleado.index',compact('filtros'));
     }
 
     /**
@@ -65,46 +63,18 @@ class NuevoEmpleadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request )
+    public function store(Request $request, nuevoEmpleado $filtro )
     {
         {
-            $tpd1 = $request->get('tpd1');
-            $docfam1 = $request->get('docfam1');
-            $familiarp1 = $request->get('familiarp1');
-            $parentescop1 = $request->get('parentescop1');
-            $edadp1 = $request->get('edadp1');
-            $epsFam1 = $request->get('epsFam1');
-            $caja1 = $request->get('caja1');
-
-            $tpd2 = $request->get('tpd2');
-            $docfam2 = $request->get('docfam2');
-            $familiarp2 = $request->get('familiarp2');
-            $parentescop2 = $request->get('parentescop2');
-            $edadp2 = $request->get('edadp2');
-            $epsFam2 = $request->get('epsFam2');
-            $caja2 = $request->get('caja2');
-
-            $tpd3 = $request->get('tpd3');
-            $docfam3 = $request->get('docfam3');
-            $familiarp3 = $request->get('familiarp3');
-            $parentescop3 = $request->get('parentescop3');
-            $edadp3 = $request->get('edadp3');
-            $epsFam3 = $request->get('epsFam3');
-            $caja3 = $request->get('caja3');
-
-            $tpd4 = $request->get('tpd4');
-            $docfam4 = $request->get('docfam4');
-            $familiarp4 = $request->get('familiarp4');
-            $parentescop4 = $request->get('parentescop4');
-            $edadp4 = $request->get('edadp4');
-            $epsFam4 = $request->get('epsFam4');
-            $caja4 = $request->get('caja4');
 
 
+
+            $date1   = Carbon::now();
+            $date2   = $filtro->fnacimiento;
+            $edad    = $date1->diffInYears($date2);
 
             $user_id = Auth::user()->id;
             $user_nombre = Auth::user()->name;
-
             $datosFiltro=request()->except('_token');
 
             if($request->hasFile('Foto')){
@@ -116,69 +86,58 @@ class NuevoEmpleadoController extends Controller
 
             ]);*/
 
-            $nuevo = new nuevoEmpleado();
+            $filtro = new nuevoEmpleado();
+            $filtro->tipoDoc                = $request->tipoDoc;
+            $filtro->fexpe                  = $request->fexpe;
+            $filtro->depNac                 = $request->departamento;
+            $filtro->ciudadExp              = $request->id_ciudad;
+            $filtro->tFijo                  = $request->tFijo;
+            $filtro->eCivil                 = $request->eCivil;
+            $filtro->edad                   = $edad;
+            $filtro->genero                 = $request->genero;
+            $filtro->rh                     = $request->rh;
+            $filtro->nivelEdu               = $request->nivelEdu;
+            $filtro->correoCorp             = $request->correoCorp;
+            $filtro->nombreContacto         = $request->nombreContacto;
+            $filtro->parentescoContacto     = $request->parentesco;
+            $filtro->personaDireccion       = $request->personaDireccion;
+            $filtro->contactoCelular        = $request->contactoCelular;
+            $filtro->numHijos               = $request->numHijos;
+            $filtro->hijosMAs               = $request->hijosMAs;
+            $filtro->hijosFem               = $request->hijosFem;
+            $filtro->Preexistencia          = $request->Preexistencia;
+            $filtro->alergias               = $request->alergias;
+            $filtro->medicamentos           = $request->medicamentos;
+            $filtro->tpd1                   = $request->tpd1;
+            $filtro->tpd2                   = $request->tpd2;
+            $filtro->tpd3                   = $request->tpd3;
+            $filtro->tpd4                   = $request->tpd4;
+            $filtro->tpd5                   = $request->tpd5;
+            $filtro->docfam1                = $request->docfam1;
+            $filtro->docfam2                = $request->docfam2;
+            $filtro->docfam3                = $request->docfam3;
+            $filtro->docfam4                = $request->docfam4;
+            $filtro->docfam5                = $request->docfam5;
+            $filtro->ingreso                = $request->ingreso;
+            $filtro->tipo_contrato          = $request->tipo_contratos;
+            $filtro->supervisor             = $request->supervisor;
+            $filtro->sede                   = $request->sede;
+            $filtro->modalidad              = $request->modalidad;
+            $filtro->tipoModalidad          = $request->tipoModalidad;
+            $filtro->cesantias              = $request->cesantias;
+            $filtro->pensiones              = $request->pensiones;
+            $filtro->eps                    = $request->eps;
+            $filtro->cajaComp               = $request->cajaComp;
+            $filtro->ips                    = $request->ips;
+            $filtro->arl                    = $request->arl;
+            $filtro->Tcuenta                = $request->Tcuenta;
+            $filtro->nCuenta                = $request->nCuenta;
+            $filtro->bancos                 = $request->bancos;
+            $filtro->estado                 = $request->estado;
+            $filtro->contratacionOK         = $request->contratacionOK;
 
-            $nuevo->id_filtro              = $request->id_filtro;
-            $nuevo->nombres                = $request->nombre;
-            $nuevo->tipoDoc                = $request->tipoDoc;
-            $nuevo->cedula                 = $request->cedula;
-            $nuevo->fexpe                  = $request->fexpe;
-            $nuevo->depNac                 = $request->departamento;
-            $nuevo->id_ciudad              = $request->id_ciudad;
-            $nuevo->correo                 = $request->correo;
-            $nuevo->tCelular               = $request->tCelular;
-            $nuevo->tFijo                  = $request->tFijo;
-            $nuevo->eCivil                 = $request->eCivil;
-            $nuevo->direccion              = $request->direccion;
-            $nuevo->residencia             = $request->residencia;
-            $nuevo->lugarNac               = $request->lugarNac;
-            $nuevo->edad                   = $request->edad;
-            $nuevo->genero                 = $request->genero;
-            $nuevo->rh                     = $request->rh;
-            $nuevo->nivelEdu               = $request->nivelEdu;
-            $nuevo->cargo                  = $request->cargo;
-            $nuevo->corporativo            = $request->corporativo;
-            $nuevo->personaContacto        = $request->personaContacto;
-            $nuevo->parentesco             = $request->parentesco;
-            $nuevo->personaDireccion       = $request->personaDireccion;
-            $nuevo->contactof              = $request->contactof;
-            $nuevo->contactoCelular        = $request->contactoCelular;
-            $nuevo->numHijos               = $request->numHijos;
-            $nuevo->hijosMAs               = $request->hijosMAs;
-            $nuevo->hijosFem               = $request->hijosFem;
-            $nuevo->Preexistencia          = $request->Preexistencia;
-            $nuevo->alergias               = $request->alergias;
-            $nuevo->medicamentos           = $request->medicamentos;
-            $nuevo->familiarp1             = $tpd1.','.$docfam1.','.$familiarp1.','.$parentescop1.','.$edadp1.','.$epsFam1.','.$caja1;
-            $nuevo->familiarp2             = $tpd2.','.$docfam2.','.$familiarp2.','.$parentescop2.','.$edadp2.','.$epsFam2.','.$caja2;
-            $nuevo->familiarp3             = $tpd3.','.$docfam3.','.$familiarp3.','.$parentescop3.','.$edadp3.','.$epsFam3.','.$caja3;
-            $nuevo->familiarp4             = $tpd4.','.$docfam4.','.$familiarp4.','.$parentescop4.','.$edadp4.','.$epsFam4.','.$caja4;
-            $nuevo->salario                = $request->salario;
-            $nuevo->ingreso                = $request->ingreso;
-            $nuevo->tipo_contratos         = $request->tipo_contratos;
-            $nuevo->supervisor             = $request->supervisor;
-            $nuevo->sede                   = $request->sede;
-            $nuevo->modalidad              = $request->modalidad;
-            $nuevo->tipoModalidad          = $request->tipoModalidad;
-            $nuevo->cesantias              = $request->cesantias;
-            $nuevo->pensiones              = $request->pensiones;
-            $nuevo->eps                    = $request->eps;
-            $nuevo->cajaComp               = $request->cajaComp;
-            $nuevo->ips                    = $request->ips;
-            $nuevo->arl                    = $request->arl;
-            $nuevo->Tcuenta                = $request->Tcuenta;
-            $nuevo->nCuenta                = $request->nCuenta;
-            $nuevo->bancos                 = $request->bancos;
-            $nuevo->estado                 = $request->estado;
-            $nuevo->foco                   = $request->foco;
-            $nuevo->campaña                = $request->campaña;
-            $nuevo->fuente                 = $request->fuente;
-            $nuevo->usuario                = $user_id.','.$user_nombre;
-
-
-            $nuevo->save();
-
-               //return response()->json($nuevo);
+            $filtro->save();
+          //return response()->json($nuevo);
             return back();
         }
     }
@@ -203,49 +162,19 @@ class NuevoEmpleadoController extends Controller
     public function edit($id, Request $request)
 
     {
-        $tipo_docs1 = $request->get('tipo_docs1');
-        $docfam1 = $request->get('docfam1');
-        $familiarp1 = $request->get('familiarp1');
-        $parentescop1 = $request->get('parentescop1');
-        $edadp1 = $request->get('edadp1');
-        $epsFam1 = $request->get('epsFam1');
-        $caja1 = $request->get('caja1');
+        $filtro = Filtro2::findOrFail($id);
 
-        $tipo_docs2 = $request->tipo_docs2;
-        $docfam2 = $request->docfam2;
-        $familiarp2 = $request->familiarp2;
-        $parentescop2 = $request->parentescop2;
-        $edadp2 = $request->edadp2;
-        $epsFam2 = $request->epsFam2;
-        $caja2 = $request->caja2;
-
-        $tipo_docs3 = $request->tipo_docs3;
-        $docfam3 = $request->docfam3;
-        $familiarp3 = $request->familiarp3;
-        $parentescop3 = $request->parentescop3;
-        $edadp3 = $request->edadp3;
-        $epsFam3 = $request->epsFam3;
-        $caja3 = $request->caja3;
-
-        $tipo_docs4 = $request->tipo_docs4;
-        $docfam4 = $request->docfam4;
-        $familiarp4 = $request->familiarp4;
-        $parentescop4 = $request->parentescop4;
-        $edadp4 = $request->edadp4;
-        $epsFam4 = $request->epsFam4;
-        $caja4 = $request->caja4;
-
+        $date1   = Carbon::now();
+        $date2   = $filtro->fnacimiento;
+        $edad    = $date1->diffInYears($date2);
 
         $t_docs= tipoDoc2 ::all();
-        $filtro = Filtro::findOrFail($id);
         $campanas = Campana::all();
         $departamento = Departamentos::all();
-        $nuevos = Entrevista1::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $focos = Foco::all();
         $NivelEdus = nivelEdu::all();
         $parentescos = parentesco::all();
         $tipo_docs = tipoDoc::all();
-        $nuevo2 = Entrevista2::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $tipo_contratoses= tipoContrato::all();
         $supervisores = Supervisor::all();
         $sedes = Sede::all();
@@ -255,14 +184,11 @@ class NuevoEmpleadoController extends Controller
         $pensioneses = Pensiones::all();
         $epses = Eps::all();
         $cajaComps = cajaCompensacion::all();
-        $contratacion = Contratacion::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        $nuevo = nuevoEmpleado::where('id_filtro', Filtro::findOrFail($id)->id)->first();
         $generos = Genero::all();
         $tipo_rhs = rh::all();
 
        // return response()->json($nuevo);
-        return view('nuevoempleado.edit', compact( 'tipo_rhs','generos','t_docs','nuevo','contratacion','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','nuevo2','parentescos','NivelEdus','nuevos','filtro','focos','campanas', 'departamento'));
-
+        return view('nuevoempleado.edit', compact('tipo_rhs','generos','t_docs','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','parentescos','NivelEdus','filtro','focos','campanas', 'departamento'));
     }
 
     /**
@@ -274,11 +200,33 @@ class NuevoEmpleadoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $filtro = Filtro2::findOrFail($id);
+        $date1   = Carbon::now();
+        $date2   = $filtro->fnacimiento;
+        $edad    = $date1->diffInYears($date2);
+        $t_docs= tipoDoc2 ::all();
+        $campanas = Campana::all();
+        $departamento = Departamentos::all();
+        $focos = Foco::all();
+        $NivelEdus = nivelEdu::all();
+        $parentescos = parentesco::all();
+        $tipo_docs = tipoDoc::all();
+        $tipo_contratoses= tipoContrato::all();
+        $supervisores = Supervisor::all();
+        $sedes = Sede::all();
+        $modalidades = Modalidad::all();
+        $tipoModalidades = TipoModalidad::all();
+        $cesantiases = Cesantias::all();
+        $pensioneses = Pensiones::all();
+        $epses = Eps::all();
+        $cajaComps = cajaCompensacion::all();
+        $generos = Genero::all();
+        $tipo_rhs = rh::all();
         $datosFiltro =request()->except(['_token','_method']);
-        nuevoEmpleado::where('id','=',$id)->update($datosFiltro);
-        $nuevo=nuevoEmpleado::findOrFail($id);
-     return response()->json($datosFiltro);
-     //return view('nuevoempleado.edit', compact('nuevo'));
+        Filtro2::where('id','=',$id)->update($datosFiltro);
+
+     //return response()->json($datosFiltro);
+     return view('nuevoempleado.edit', compact('edad','tipo_rhs','generos','t_docs','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','parentescos','NivelEdus','filtro','focos','campanas', 'departamento'));
     }
 
     /**
@@ -292,3 +240,5 @@ class NuevoEmpleadoController extends Controller
         //
     }
 }
+//av boyaca 53 12 - carrera 74 a No 51a 87
+

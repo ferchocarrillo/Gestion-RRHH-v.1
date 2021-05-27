@@ -11,7 +11,7 @@ class VerNovedadesController extends Controller
 {
     public function __construct()
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         date_default_timezone_set('America/Bogota');
     }
     /**
@@ -21,16 +21,12 @@ class VerNovedadesController extends Controller
      */
     public function index()
     {
-         Carbon::setLocale('es');
-         $date = Carbon::now();
+        Carbon::setLocale('co');
+        $date = Carbon::now();
 
         $novedades = Novedades::orderby('created_at', 'desc')->paginate(10);
         return view('verNovedades.index',compact('novedades'));
     }
-
-
-
-
     public function searchverNovedades( Request $request)
     {
         $novedades = Novedades::all();

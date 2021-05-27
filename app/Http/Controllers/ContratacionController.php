@@ -33,7 +33,7 @@ class ContratacionController extends Controller
 
     public function __construct()
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         date_default_timezone_set('America/Bogota');
     }
     /**
@@ -140,7 +140,7 @@ class ContratacionController extends Controller
     public function edit($id)
 
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $date = Carbon::now();
         $bancoses = Bancos::all();
         $aprobaciones  = Aprobacion::all();
@@ -159,7 +159,7 @@ class ContratacionController extends Controller
     public function update (Request $request, $id)
     {
 
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $date = Carbon::now();
         $aprobaciones  = Aprobacion::all();
         $bancoses = Bancos::all();

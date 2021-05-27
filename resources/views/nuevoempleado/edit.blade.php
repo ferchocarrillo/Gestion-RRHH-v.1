@@ -19,20 +19,19 @@
             </center>
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
             <!-- Force next columns to break to new line -->
-            <form name="f1" action="{{ url('/nuevoempleado')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
-                {{csrf_field()}}
+            <form action="{{ url('/nuevoempleado/'.$filtro->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+                @csrf
                 @method('PATCH')
                 <div class="col-sm-12">
                     <center><p>
                         <div class="card-header">
-                           <h3>{{( $nuevos->nombres)}}</h3>
+                           <h3>{{( $filtro->nombre)}}</h3>
                         </div>
                     </p></center>
                     </div>
                     </body>
-                    <div><input type="hidden" id="id_filtro" name="id_filtro" class="col-6 col-md-9" value="{{old('id_filtro', $nuevos->id_filtro)}}" ></div><br>
-                <div><input type="hidden" id="fuente" name="fuente" class="col-6 col-md-9" value="{{old('fuente', $filtro->fuente)}}" ></div><br>
 
+                <div><input type="hidden" id="fuente" name="fuente" class="col-6 col-md-9" value="{{old('fuente', $filtro->fuente)}}" ></div><br>
 
 
 
@@ -51,10 +50,10 @@
             </p>
         </div>
 
-        <input type="hidden" id="cedula" name="cedula" value={{ old('cedula', $nuevos->cedula)}}>
+        <input type="hidden" id="cedula" name="cedula" value={{ old('cedula', $filtro->cedula)}}>
 
         &nbsp;&nbsp;
-        <div class="col-6 col-md-2"><strong><p >Cedula:</p></strong><br><div class="form-control-lg-new13">{{ old('cedula', $nuevos->cedula)}}</div></div>
+        <div class="col-6 col-md-2"><strong><p >Cedula:</p></strong><br><div class="form-control-lg-new13">{{ old('cedula', $filtro->cedula)}}</div></div>
             <div id="fexpe" name="fexpe" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Fecha de Expedicion:</p></strong><input type="date"id="fexpe" name="fexpe" class="form-control-lg-new13" value="" required></div>
             <div class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Departamento de Expedicion:</p></strong>
                 <select name="departamento" id="departamento" class="form-control-lg-new13" required> <label for="departamento"></label>
@@ -71,30 +70,24 @@
     </div>
     <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
             <div class="row">
-                <input type="hidden" id="correo" name="correo" value={{ old('correo', $nuevos->correo)}}>
-                <input type="hidden" id="eCivil" name="eCivil" value={{ old('eCivil', $nuevos->eCivil)}}>
 
-
-                <div class="col-6 col-md-3"><strong><p>Correo:</p></strong><div class="form-control-lg-new13">{{ old('correo', $nuevos->correo)}}</div></div>
-                <div id="tCelular" name="tCelular" class="col-6 col-md-3"><strong><p><a style="color: red">* </a>Celular:</p></strong><input type="number"id="tCelular" name="tCelular" class="form-control-lg-new13" value="{{ old('tCelular', $nuevos->tCelular)}}"></div><br>
-                <div id="tFijo" name="tFijo" class="col-6 col-md-3"><strong><p>Tel Fijo:</p></strong><input type="number"id="tFijo" name="tFijo" class="form-control-lg-new13" value="{{ old('tFijo', $nuevos->tFijo)}}"></div><br>
-                <div  class="col-6 col-md-3"><strong><p>Estado Civil:</p></strong><div class="form-control-lg-new13">{{ old('eCivil', $nuevos->eCivil)}} </div></div>
+                <div class="col-6 col-md-3"><strong><p>Correo:</p></strong><div class="form-control-lg-new13">{{ old('correo', $filtro->correo)}}</div></div>
+                <div id="telefono" name="telefono" class="col-6 col-md-3"><strong><p><a style="color: red">* </a>Celular:</p></strong><input type="number" class="form-control-lg-new13" value="{{ old('telefono', $filtro->telefono)}}"></div><br>
+                <div id="tFijo" name="tFijo" class="col-6 col-md-3"><strong><p>Tel Fijo:</p></strong><input type="number"id="tFijo" name="tFijo" class="form-control-lg-new13" value="{{ old('tFijo', $filtro->tFijo)}}"></div><br>
+                <div  ><strong><p>Estado Civil:</p></strong><div>{{ old('eCivil', $filtro->eCivil)}} </div></div>
             </div>
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 
             <div class="row">
-                <input type="hidden" id="direccion" name="direccion" value="{{old ('TipoVia',$nuevos->TipoVia)}} {{ $nuevos->dr1}} {{ $nuevos->Prefijo1}} # {{ $nuevos->dr2}} {{ $nuevos->Prefijo2}} - {{ $nuevos->dr3}} {{ $nuevos->orientacion}} {{ $nuevos->adicional}} {{ $nuevos->ad1}} {{ $nuevos->adicional2}} {{ $nuevos->ad2}} {{ $nuevos->adicional3}} {{ $nuevos->ad3}}">
-                <input type="hidden" id="residencia" name="residencia" value={{ old('residencia', $nuevos->residencia)}} | {{ old('localidad', $nuevos->id_localidad)}}>
-                <input type="hidden" id="lugarNac" name="lugarNac" value={{ old('departamento', $nuevos->departamento)}} | {{old('id_ciudad', $nuevos->id_ciudad) }} | {{ old('fnacimiento', $nuevos->fnacimiento)}}>
-                <input type="hidden" id="edad" name="edad" value={{ old('edad', $nuevos->edad)}}>
 
 
 
 
-                <div  class="col-6 col-md-3"><strong><p>Direccion:</p></strong><div class="form-control-lg-new13"> {{old ('TipoVia',$nuevos->TipoVia)}} {{ $nuevos->dr1}} {{ $nuevos->Prefijo1}} # {{ $nuevos->dr2}} {{ $nuevos->Prefijo2}} - {{ $nuevos->dr3}} {{ $nuevos->orientacion}} {{ $nuevos->adicional}} {{ $nuevos->ad1}} {{ $nuevos->adicional2}} {{ $nuevos->ad2}} {{ $nuevos->adicional3}} {{ $nuevos->ad3}}</div></div><br><br><br>
-                <div  class="col-6 col-md-3"><strong><p>Ciudad y localidad:</p></strong><div class="form-control-lg-new13">{{ old('residencia', $nuevos->residencia)}} | {{ old('localidad', $nuevos->id_localidad)}}</div></div><br><br>
-                <div  class="col-6 col-md-4"><strong><p>Lugar y fecha de nacimiento:</p></strong><div class="form-control-lg-new13">{{ old('departamento', $nuevos->departamento)}} | {{old('id_ciudad', $nuevos->id_ciudad) }} | {{ old('fnacimiento', $nuevos->fnacimiento)}}</div></div><br>
-                <div  class="col-6 col-md-2"><strong><p>Edad:</p></strong><div class="form-control-lg-new5">{{ old('edad', $nuevos->edad)}}</div></div>
+
+                <div  class="col-6 col-md-3"><strong><p>Direccion:</p></strong><div class="form-control-lg-new13"> {{old ('TipoVia',$filtro->TipoVia)}} {{ $filtro->dr1}} {{ $filtro->Prefijo1}} # {{ $filtro->dr2}} {{ $filtro->Prefijo2}} - {{ $filtro->dr3}} {{ $filtro->orientacion}} {{ $filtro->adicional}} {{ $filtro->ad1}} {{ $filtro->adicional2}} {{ $filtro->ad2}} {{ $filtro->adicional3}} {{ $filtro->ad3}}</div></div><br><br><br>
+                <div  class="col-6 col-md-3"><strong><p>Ciudad y localidad:</p></strong><div class="form-control-lg-new13">{{ old('residencia', $filtro->residencia)}} | {{ old('localidad', $filtro->id_localidad)}}</div></div><br><br>
+                <div  class="col-6 col-md-4"><strong><p>Lugar y fecha de nacimiento:</p></strong><div class="form-control-lg-new13">{{ old('departamento', $filtro->departamento)}} | {{old('id_ciudad', $filtro->id_ciudad) }} | {{ old('fnacimiento', $filtro->fnacimiento)}}</div></div><br>
+                <div  class="col-6 col-md-2"><strong><p>Edad:</p></strong><div class="form-control-lg-new5" id="edad" name="edad" >{{ $edad }}</div></div>
             </div>
 
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
@@ -149,7 +142,7 @@
         </div>
         &nbsp;&nbsp;&nbsp;
 
-        <div id="cargo" name="cargo" class="col-6 col-md-2"><strong><p>Cargo:</p></strong><input type="text" id="cargo" name="cargo" class="form-control-lg-new13" value="{{ old('cargo', $nuevos->cargo)}}"></div><br>
+        <div id="cargo" name="cargo" class="col-6 col-md-2"><strong><p>Cargo:</p></strong><input type="text" id="cargo" name="cargo" class="form-control-lg-new13" value="{{ old('cargo', $filtro->cargo)}}"></div><br>
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -158,12 +151,12 @@
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<input type="checkbox" id="corporativo" name="corporativo"  data-toggle="toggle" data-size="med" data-onstyle="success" data-offstyle="danger" data-on="Correo corporativo Si" data-off="Correo corportativo No" >
+<input type="checkbox" id="correoCorp" name="correoCorp"  data-toggle="toggle" data-size="med" data-onstyle="success" data-offstyle="danger" data-on="Correo corporativo Si" data-off="Correo corportativo No" >
     <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 </div>
         <div class="row">
 
-            <div id="personaContacto" name="personaContacto" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Persona de contacto:</p></strong><input type="text"id="personaContacto" name="personaContacto" class="form-control-lg-new13" required></div><br>
+            <div id="nombreContacto" name="nombreContacto" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Persona de contacto:</p></strong><input type="text"id="personaContacto" name="personaContacto" class="form-control-lg-new13" required></div><br>
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -171,7 +164,7 @@
                 <p>
                     <input list="parentesco" type="text" name="parentesco"  class="form-control-lg-new13" required>
 
-                    <datalist name="parentesco" id="parentesco" >
+                    <datalist name="parentesco" id="parentesco">
                         <option value="">Escoja uno</option>
                         @foreach($parentescos as $parentesco)
                     <option value="{{ $parentesco->parentesco}}">{{ $parentesco->parentesco }}</option>
@@ -219,11 +212,11 @@
 
         <div id="docfam1" name="docfam1" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam1" name="docfam1" class="form-control-lg-new13" ></div>
         &nbsp;
-        <div id="familiarp1" name="familiarp1" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp1" name="familiarp1" class="form-control-lg-new13" value="{{old('familiarp1', $nuevo2->familiarp1)}}"></div><br>
+        <div id="" name="" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text"  class="form-control-lg-new13" value="{{old('familiarp1', $filtro->familiarp1)}}"></div><br>
         &nbsp;
-        <div id="parentescop1" name="parentescop1" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop1" name="parentescop1" class="form-control-lg-new13" value="{{old('parentescop1', $nuevo2->parentescop1)}}"></div><br>
+        <div id="" name="" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text"  class="form-control-lg-new13" value="{{old('parentescop1', $filtro->parentescop1)}}"></div><br>
         &nbsp;
-        <div id="edadp1" name="edadp1" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp1" name="edadp1" class="form-control-lg-new13" value="{{old('edadp1', $nuevo2->edadp1)}}"></div><br>
+        <div id="" name="" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text"  class="form-control-lg-new13" value="{{old('edadp1', $filtro->edadp1)}}"></div><br>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam1" name="epsFam1" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja1" name="caja1" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
@@ -243,9 +236,9 @@
             </div>
 
             <div id="docfam2" name="docfam2" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam2" name="docfam2" class="form-control-lg-new13" ></div>
-            <div id="familiarp2" name="familiarp2" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp2" name="familiarp2" class="form-control-lg-new13" value="{{old('familiarp2', $nuevo2->familiarp2)}}"></div><br>
-            <div id="parentescop2" name="parentescop2" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop2" name="parentescop2" class="form-control-lg-new13" value="{{old('parentescop2', $nuevo2->parentescop2)}}"></div><br>
-            <div id="edadp2" name="edadp2" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp2" name="edadp2" class="form-control-lg-new13" value="{{old('edadp2', $nuevo2->edadp2)}}"></div><br>
+            <div id="" name="" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp2" name="familiarp2" class="form-control-lg-new13" value="{{old('familiarp2', $filtro->familiarp2)}}"></div><br>
+            <div id="" name="" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop2" name="parentescop2" class="form-control-lg-new13" value="{{old('parentescop2', $filtro->parentescop2)}}"></div><br>
+            <div id="" name="" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp2" name="edadp2" class="form-control-lg-new13" value="{{old('edadp2', $filtro->edadp2)}}"></div><br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam2" name="epsFam2" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja2" name="caja2" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
@@ -264,9 +257,9 @@
             </div>
 
             <div id="docfam3" name="docfam3" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam3" name="docfam3" class="form-control-lg-new13" ></div>
-            <div id="familiarp3" name="familiarp3" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp3" name="familiarp3" class="form-control-lg-new13" value="{{old('familiarp3', $nuevo2->familiarp3)}}"></div><br>
-            <div id="parentescop3" name="parentescop3" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop3" name="parentescop3" class="form-control-lg-new13" value="{{old('parentescop3', $nuevo2->parentescop3)}}"></div><br>
-            <div id="edadp3" name="edadp3" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp3" name="edadp3" class="form-control-lg-new13" value="{{old('edadp3', $nuevo2->edadp3)}}"></div><br>
+            <div id="" name="" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp3" name="familiarp3" class="form-control-lg-new13" value="{{old('familiarp3', $filtro->familiarp3)}}"></div><br>
+            <div id="" name="" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop3" name="parentescop3" class="form-control-lg-new13" value="{{old('parentescop3', $filtro->parentescop3)}}"></div><br>
+            <div id="" name="" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp3" name="edadp3" class="form-control-lg-new13" value="{{old('edadp3', $filtro->edadp3)}}"></div><br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam3" name="epsFam3" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja3" name="caja3" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
@@ -285,9 +278,9 @@
                 </div>
 
                 <div id="docfam4" name="docfam4" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam4" name="docfam4" class="form-control-lg-new13" ></div>
-                <div id="familiarp4" name="familiarp4" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp4" name="familiarp4" class="form-control-lg-new13" value="{{old('familiarp4', $nuevo2->familiarp4)}}"></div><br>
-                <div id="parentescop4" name="parentescop4" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop4" name="parentescop3" class="form-control-lg-new13" value="{{old('parentescop4', $nuevo2->parentescop4)}}"></div><br>
-                <div id="edadp4" name="edadp4" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp4" name="edadp4" class="form-control-lg-new13" value="{{old('edadp4', $nuevo2->edadp4)}}"></div><br>
+                <div id="" name="" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp4" name="familiarp4" class="form-control-lg-new13" value="{{old('familiarp4', $filtro->familiarp4)}}"></div><br>
+                <div id="" name="" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop4" name="parentescop3" class="form-control-lg-new13" value="{{old('parentescop4', $filtro->parentescop4)}}"></div><br>
+                <div id="" name="" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp4" name="edadp4" class="form-control-lg-new13" value="{{old('edadp4', $filtro->edadp4)}}"></div><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam4" name="epsFam4" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja4" name="caja4" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
@@ -424,14 +417,14 @@
         <input type="hidden" id="Tcuenta" name="Tcuenta" class="col-auto" value= "Ahorros">
 <div  type="text"><strong><p>Tipo de cuenta:</p></strong><div class="form-control-lg-new13">Ahorros</div></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<div id="bancos" name="bancos" class="col-auto"><strong><p><a style="color: red">* </a>Banco: </p></strong><input type="text" id="bancos" name="bancos" class="form-control-lg-new13"  value="{{old('bancos', $contratacion->bancos)}}"></div><br>
-<div id="nCuenta" name="nCuenta" class="col-auto"><strong><p><a style="color: red">* </a>Numero de cuenta: </p></strong><input type="number" id="nCuenta" name="nCuenta" class="form-control-lg-new13"  value="{{old('nCuenta', $contratacion->nCuenta)}}"></div><br>
+<div id="bancos" name="bancos" class="col-auto"><strong><p><a style="color: red">* </a>Banco: </p></strong><input type="text" id="bancos" name="bancos" class="form-control-lg-new13"  value="{{old('bancos', $filtro->bancos)}}"></div><br>
+<div id="nCuenta" name="nCuenta" class="col-auto"><strong><p><a style="color: red">* </a>Numero de cuenta: </p></strong><input type="number" id="nCuenta" name="nCuenta" class="form-control-lg-new13"  value="{{old('nCuenta', $filtro->nCuenta)}}"></div><br>
 
 
-<input type="hidden" id="estado" name="estado" value={{old('estado', $contratacion->estado)}}>
-<div class="col-auto"> <label></label><input type="hidden" class="form-control-lg-new13" id="nombre" placeholder="nombre" name="nombre" value="{{ old('nombre', $filtro->nombre)}}"></div>
 
-<div  class="col-auto"><strong><p>Estado: </p></strong><div class="form-control-lg-new13">{{old('estado', $contratacion->estado)}}</div></div>
+
+
+<div  class="col-auto"><strong><p>Estado: </p></strong><div class="col-6 col-md">{{old('estado', $filtro->estado)}}</div></div>
 </div>
 </div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
@@ -441,58 +434,51 @@
     <div class="row">
 
 
-        <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Foco:</p><span></span></strong>
-            <p><input list="foco" type="text" name="foco"   class="form-control-lg-new13" required>
-               <datalist name="foco" id="foco" >
-                <option  value="">Seleccion un foco</option>
-                @foreach($focos as $foco)<option value="{{ $foco->foco}}">
-                  {{ $foco->foco }}</option>
-                @endforeach
-                </datalist>
-                </p>
-            </div>
-
-
-            <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Campaña:</p><span></span></strong>
-                <p><input list="campaña" type="text" name="campaña"   class="form-control-lg-new13" required>
-                   <datalist name="campaña" id="campaña" >
-                    <option  value="">Seleccion una Campaña</option>
-                    @foreach($campanas as $campana)<option value="{{ $campana->campana}}">
-                    {{ $campana->campana }}</option>
-                    @endforeach
-                    </datalist>
-                    </p>
-                </div>
-
-                <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Supervisor:</p><span></span></strong>
-                    <p><input list="supervisor" type="text" name="supervisor"   class="form-control-lg-new13" required>
-                       <datalist name="supervisor" id="supervisor" >
-                        <option value="">Asigne uno</option>
-                        @foreach($supervisores as $supervisor)
-                    <option value="{{ $supervisor->supervisor}}">{{ $supervisor->supervisor }}</option>
-                        @endforeach
-                        </datalist>
-                        </p>
-                    </div>
-
-
-
-
-
+    <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Foco:</p><span></span></strong>
+    <p><input list="foco" type="text" name="foco"   class="form-control-lg-new13" required>
+       <datalist name="foco" id="foco" >
+        <option  value="">Seleccion un foco</option>
+        @foreach($focos as $foco)<option value="{{ $foco->foco}}">
+          {{ $foco->foco }}</option>
+        @endforeach
+        </datalist>
+        </p>
+    </div>
+    <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Campaña:</p><span></span></strong>
+          <p><input list="campaña" type="text" name="campaña"   class="form-control-lg-new13" required>
+             <datalist name="campaña" id="campaña" >
+              <option  value="">Seleccion una Campaña</option>
+              @foreach($campanas as $campana)<option value="{{ $campana->campana}}">
+              {{ $campana->campana }}</option>
+              @endforeach
+              </datalist>
+              </p>
+    </div>
+    <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Supervisor:</p><span></span></strong>
+        <p><input list="supervisor" type="text" name="supervisor"   class="form-control-lg-new13" required>
+           <datalist name="supervisor" id="supervisor" >
+            <option value="">Asigne uno</option>
+            @foreach($supervisores as $supervisor)
+        <option value="{{ $supervisor->supervisor}}">{{ $supervisor->supervisor }}</option>
+            @endforeach
+            </datalist>
+            </p>
+     </div>
 </div>
 <br><br>
 </div>
-
+<div><input type="hidden" id="contratacionOK" name="contratacionOK" value="X"></div>
 <div class="form-group">
-    @csrf
-    @method('POST')
+
                   <input class="btn btn-primary btn-lg active" type="submit" value="Registrar">
                   &nbsp;&nbsp;&nbsp;
                  <a href="{{route('nuevoempleado.index')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
 
                 </div>
+
+            </form>
 </div>
-</form>
+
 <script src="{{asset('js/app.js')}}"></script>
 </body>
 @section('css')

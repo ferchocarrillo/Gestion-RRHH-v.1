@@ -15,7 +15,7 @@ class EntGerenciaController extends Controller
 
     public function __construct()
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         date_default_timezone_set('America/Bogota');
     }
     /**
@@ -50,7 +50,7 @@ class EntGerenciaController extends Controller
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $date = Carbon::now();
 
         $datosFiltro=request()->except('_token');
@@ -92,7 +92,7 @@ class EntGerenciaController extends Controller
     public function edit($id)
     {
 
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $date = Carbon::now();
 
         $this->authorize('haveaccess','entGerencia.edit');
@@ -115,7 +115,7 @@ class EntGerenciaController extends Controller
     public function update(Request $request, $id)
     {
         $aprobaciones = Aprobacion::all();
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         $date = Carbon::now();
 
         $datosFiltro =request()->except(['_token','_method']);

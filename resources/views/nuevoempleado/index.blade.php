@@ -41,21 +41,20 @@
                                             <th scope="col">Telefono</th>
                                             <th scope="col">Perfil</th>
                                             <th scope="col">Campaña</th>
-
                                             <th colspan="6">Datos a Registrar</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($nuevos as $nuevo)
+                                            @foreach ($filtros as $filtro)
                                             <tr>
-                                                <th scope="row">{{ $nuevo->id_filtro}}</th>
-                                                <td>{{ $nuevo->cedula}}</td>
-                                                <td>{{ $nuevo->nombre}}</td>
-                                               <td>{{ $nuevo->telefono}}</td>
-                                                <td>{{ $nuevo->perfil}}</td>
-                                                <td>{{ $nuevo->campaña}}</td>
+                                                <th scope="row">{{ $filtro->id}}</th>
+                                                <td>{{ $filtro->cedula}}</td>
+                                                <td>{{ $filtro->nombre}}</td>
+                                                <td>{{ $filtro->telefono}}</td>
+                                                <td>{{ $filtro->perfil}}</td>
+                                                <td>{{ $filtro->campaña}}</td>
                                                 <td>
-                                                    <a href="{{url('/nuevoempleado/'.$nuevo->id_filtro.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Complementar Informacion</a>
+                                                    <a href="{{url('/nuevoempleado/'.$filtro->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Complementar Informacion</a>
 
                                                {{--     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-info btn-sm" role="button" aria-pressed="true">Academicos</a>
                                                     <a href="{{url('/entrevista1/'.$entrevista->id.'/edit')}}" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Laborales</a>--}}
@@ -73,7 +72,7 @@
                       </div>
 
                     </form>
-                    {{ $nuevos->links()}}
+                    {{ $filtros->links()}}
 
                     <p>
                         clic <a href="{{route('entrevista1.excel')}}">Aqui</a>

@@ -21,7 +21,7 @@ class EntrevistaController extends Controller
 
     public function __construct()
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         date_default_timezone_set('America/Bogota');
     }
 
@@ -282,7 +282,7 @@ class EntrevistaController extends Controller
      */
     public function edit($id, Request $request)
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         /*$today = Carbon::today()->toDateTimeString();
         $date1 = Carbon::createMidnightDate($today);
         $date2 = Carbon::createMidnightDate($today."+ 30 days");*/

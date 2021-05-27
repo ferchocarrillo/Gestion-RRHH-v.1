@@ -27,7 +27,7 @@ class Entrevista4Controller extends Controller
 
     public function __construct()
     {
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
         date_default_timezone_set('America/Bogota');
     }
     /**
@@ -84,7 +84,7 @@ class Entrevista4Controller extends Controller
 
         date_default_timezone_set('America/Bogota');
 
-        Carbon::setLocale('es');
+        Carbon::setLocale('co');
 Carbon::now();
 $hoy = Carbon::now();
 
