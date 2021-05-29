@@ -547,7 +547,7 @@ mark,
 .figure-img {
   margin-bottom: 0.5rem;
   line-height: 1;
-  
+
 }
 
 .figure-caption {
@@ -2482,14 +2482,13 @@ select.form-control:focus::-ms-value {
   }
   .form-control-lg-new16 {
     height: calc(1.5em + 3rem + 10px);
-    width: calc(1.5em + 70rem + 10px);
-    padding: 0.5rem 1rem;
+    width: calc(1.5em + 50rem + 10px);
     font-size: 18px;
-   color:#113049 ;
+    color:#113049 ;
     border-radius: 0.7rem;
     background-color: rgba(242, 246, 246, 0.972);
     outline-offset: 3px;
-
+    margin-left:2.5rem;
   }
   .form-control-lg-new17 {
     height: calc(1.5em + 3rem + 0);

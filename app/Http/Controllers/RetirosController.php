@@ -51,7 +51,7 @@ class RetirosController extends Controller
         $user_nombre = Auth::user()->name;
         Carbon::setLocale('co');
         $hoy = Carbon::now();
-        $filtros = Filtro2::findOrFail($id)->first();
+        $filtros = Filtro2::findOrFail($id);
         $date1 = $filtros->ingreso;
         $date2 = $filtros->iDesde;
         $tiempoA = $hoy->diffInMonths($date1);
@@ -70,23 +70,23 @@ class RetirosController extends Controller
 
         ]);
 
-        $filtro = new Filtro2();
+        $filtros = new Filtro2();
 
-        $filtro->estado                 = $request->estado;
-        $filtro->causalesR              = $request->causalesR;
-        $filtro->iDesde                 = $request->iDesde;
-        $filtro->apretencion            = $request->apretencion;
-        $filtro->retejefe               = $request->retejefe;
-        $filtro->reterrhh               = $request->reterrhh;
-        $filtro->obsRetiro              = $request->obsRetiro;
-        $filtro->tiempoTotal            = $request->tiempoTotal;
-
-
+        $filtros->estado                 = $request->estado;
+        $filtros->causalesR              = $request->causalesR;
+        $filtros->iDesde                 = $request->iDesde;
+        $filtros->apretencion            = $request->apretencion;
+        $filtros->retejefe               = $request->retejefe;
+        $filtros->reterrhh               = $request->reterrhh;
+        $filtros->obsRetiro              = $request->obsRetiro;
+        $filtros->tiempoTotal            = $request->tiempoTotal;
 
 
-        $filtro->save();
 
-        return response()->json($filtro);
+
+        $filtros->save();
+
+        return response()->json($filtros);
         //return back();
     }
 
@@ -111,7 +111,7 @@ class RetirosController extends Controller
     {
         Carbon::setLocale('co');
         $hoy = Carbon::now();
-        $filtros = Filtro2::findOrFail($id)->first();
+        $filtros = Filtro2::findOrFail($id);
         $date1 = $filtros->ingreso;
         $date2 = $filtros->iDesde;
         $tiempoA = $hoy->diffInMonths($date1);
@@ -134,7 +134,7 @@ class RetirosController extends Controller
     {
         Carbon::setLocale('co');
         $hoy = Carbon::now();
-        $filtros = Filtro2::findOrFail($id)->first();
+        $filtros = Filtro2::findOrFail($id);
         $date1 = $filtros->ingreso;
         $date2 = $filtros->iDesde;
         $tiempoA = $hoy->diffInMonths($date1);

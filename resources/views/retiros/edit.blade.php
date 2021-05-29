@@ -10,7 +10,7 @@
 <a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" style="margin-left: 8rem; heigth: 90px; width:80px;" alt="retorno al index de la entrevista datos iniciales" /></a>
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8); width: 90%; margin-left:5rem;" >
 <lin rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:80px; visibility:visible z-index:1; width: 25%; margin-left:45rem;  align: center;">
-    br
+
 <br>
 <br>
 
@@ -26,15 +26,15 @@
             @csrf
             @method('PATCH')
 
-
+<input type="hidden" name="tiempoTotal" value="{{ $tiempoTotal}}">
 
 <div class="card">
 
-<input type="hidden" name="" id="" value="{{ old('id', $filtros->id)}}">
+
 
     <div class="row">
    <div class="col-3">
-       <label for="ingreso">Activo<br> Desde</label>
+       <label for="ingreso">Activo Desde</label>
         <input type="text" class="form-control-lg-new9"
         id="ingreso"
         placeholder=""
@@ -171,9 +171,7 @@
 <p>
     <input type="hidden" id="estado" name="estado" value="inactivo">
 </p>
-<p>
-    <input type="hidden" id="tiempoTotal" name="tiempoTotal" value="{{ $tiempoTotal}}">
-</p>
+
     </div>
     </div>
 

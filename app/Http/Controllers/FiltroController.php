@@ -37,7 +37,7 @@ class FiltroController extends Controller
     {
 
         $cargos = Cargo::all();
-        $filtros = Filtro2::orderBy('updated_at', 'desc')->paginate(20);
+        $filtros = Filtro2::orderBy('updated_at', 'desc')->where('fechaRrhh', '=', NULL)->where('noAplica','<>','X')->where('estado','=',NULL)->paginate(20);
         return view('filtro.index',compact('filtros','cargos'));
     }
 
