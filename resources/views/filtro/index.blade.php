@@ -67,7 +67,7 @@
                                                 <td>{{ $filtro->nombre}}</td>
                                                 <td>{{ $filtro->telefono}}</td>
                                                 <td>{{ $filtro->correo}}</td>
-                                                <td>{{ $filtro->perfil}}</td>
+                                                <td>{{ $filtro->cargo}}</td>
                                                 <td>{{ $filtro->campaña}}</td>
                                                 <td>{{ $filtro->observacion}}</td>
                                                 <td>{{ $filtro->observacion2}}</td>

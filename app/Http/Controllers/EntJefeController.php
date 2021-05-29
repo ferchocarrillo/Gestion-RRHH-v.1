@@ -26,7 +26,7 @@ class EntJefeController extends Controller
     public function index()
     {
 
-        $entrevistases = Filtro2::orderBy('created_at', 'desc')->where('entrevistaJefeInm','=','X')->paginate(10);
+        $entrevistases = Filtro2::orderBy('created_at', 'desc')->where('entrevistaJefeInm','=','X')->where('RESULTADOjEFE','=',NULL)->paginate(10);
         return view('entJefe.index',compact('entrevistases'));
     }
 

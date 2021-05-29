@@ -26,7 +26,7 @@ class EntGerenciaController extends Controller
     public function index()
     {
 
-        $entrevistases = Filtro2::orderBy('created_at', 'desc')->where('entrevistaGerencia','=','X')->paginate(10);
+        $entrevistases = Filtro2::orderBy('created_at', 'desc')->where('entrevistaGerencia','=','X')->where('resultadoGer','=',NULL)->paginate(10);
         return view('entGerencia.index',compact('entrevistases'));
     }
 

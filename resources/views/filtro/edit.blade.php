@@ -41,7 +41,7 @@
          id="cedula"
          placeholder="cedula"
          name="cedula"
-         value="{{ old('cedula', $filtro->cedula)}}"disabled>
+         value="{{ old('cedula', $filtro->cedula)}}">
         </div>
     <div class="col-3">
         <label for="cedula">Nombre&nbsp;&nbsp</label>
@@ -371,7 +371,7 @@
                                     <tr valign="bottom">
                                       <td>
                                         <div style="float:left; width:100%; display:flex;">
-                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="fechaCont">Fecha de Contratacion</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="fechaCont" name="fechaCont" class="form-control-lg-new13"></p>
+                                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="ingreso">Fecha de Contratacion</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" id="ingreso" name="ingreso" class="form-control-lg-new13"></p>
                                         </div>
                                     </td>
                                     </tr>

@@ -87,6 +87,8 @@ class CapacitacionController extends Controller
         $filtro->ngrupo                 = $request->ngrupo;
         $filtro->obsFormacion           = $request->obsFormacion;
         $filtro->fechaFormacion         = $request->fechaFormacion;
+        $filtro->enviadocontratacion    = $request->enviadocontratacion;
+
         $filtro->save();
 
         //return response()->json($filtro);

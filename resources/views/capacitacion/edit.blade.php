@@ -78,7 +78,7 @@
                 color: #234c63;
                 font-size: 16px;
                 border-radius: 0.75rem;
-                width: 350px;
+                width: 250px;
                 background-color: #e9f1f1;
                 font-weight: 200;
                 height: 38px;
@@ -227,12 +227,24 @@ margin-left: 12rem;
         {{ $aprobacions->corto }}</option>
       @endforeach
   </datalist>
-  </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </p>
 
 
 <p><strong><span>Grupo de Capacitación</strong></span><br><input   type="text" name="ngrupo" id="ngrupo" class="inputs5-1"></p>
+<div style="width:250px; padding:25px;">
+    <tr valign="bottom">
+      <td>
+        <div style="float:left; width:100%; display:flex;">
+            <input type="checkbox" id="enviadocontratacion" name="enviadocontratacion" value="X">
+            <label style="word-wrap:normal; font-family: Verdana, Geneva, sans-serif; font-size: 12px; color: rgb(102, 102, 102); font-weight: bold; font-style: normal; padding-top: 0px; cursor: pointer;">&nbsp;Enviado a Contratación</label>
 
-  <a href="{{url('/resumen/'.$filtro->id.'/edit')}}" class="botones"  role="button" aria-pressed="true">ver hoja completa</a></p>
+        </div>
+    </td>
+</tr>
+</div>
+<a href="{{url('/resumen/'.$filtro->id.'/edit')}}" class="botones"  role="button" aria-pressed="true">ver hoja completa</a></p>
+
+
 
 
 </div>
@@ -268,8 +280,8 @@ margin-left: 12rem;
 
       <script>
       Swal.fire(
-        'RESULTADO ENTREVISTA RRHH',
-        'Actualiza los datos de los postulados',
+        'RESULTADO PROCESO DE CAPACITACION',
+        'Registra si el postulado aprueba o no',
         'success'
       )
       </script>

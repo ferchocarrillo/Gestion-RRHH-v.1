@@ -62,7 +62,7 @@
                                                 <td>{{ $filtro->cedula}}</td>
                                                 <td>{{ $filtro->nombre}}</td>
                                                 <td>{{ $filtro->telefono}}</td>
-                                                <td>{{ $filtro->perfil}}</td>
+                                                <td>{{ $filtro->cargo}}</td>
                                                 <td>{{ $filtro->campaña}}</td>
 
 

@@ -59,12 +59,13 @@ class FiltroController extends Controller
      */
     public function create()
     {
+
+
         $campanas= Campana::all();
         $fuentes = Fuente::all();
-        $filtros = Filtro2::all();
         $cargos = Cargo::all();
         $reclutamientos = Reclutamiento::all();
-        return view('filtro.create', compact('filtros','fuentes','campanas','cargos'));
+        return view('filtro.create', compact('fuentes','campanas','cargos'));
     }
 
     /**
@@ -77,17 +78,15 @@ class FiltroController extends Controller
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
-
         $datosFiltro=request()->except('_token');
-
         if($request->hasFile('Foto')){
             $datosFiltro['Foto']=$request->file('Foto')->store('uploads','public');
         }
-        $request->validate([
-            'nombre'          => 'required|unique:filtros,nombre,',
+        // $request->validate([
+        //     'nombre'          => 'required|unique:filtro,nombre,',
 
 
-        ]);
+        // ]);
 
         $filtro = new Filtro2();
 
@@ -105,7 +104,7 @@ class FiltroController extends Controller
         $filtro->enviadoCapa            = $request->enviadoCapa;
         $filtro->entrevistaJefeInm      = $request->entJe;
         $filtro->entrevistaGerencia     = $request->entGe;
-        $filtro->envcon                 = $request->envcon;
+        $filtro->enviadocontratacion    = $request->enviadocontratacion;
         $filtro->enviadoExm             = $request->enviadoExm;
         $filtro->PruebasE               = $request->PruebasE;
         $filtro->yaTrabaja              = $request->yaTrabaja;
@@ -117,7 +116,7 @@ class FiltroController extends Controller
         $filtro->Estudiante             = $request->Estudiante;
 
         $filtro->estado                 = $request->estado;
-        $filtro->fechaCont              = $request->fechaCont;
+        $filtro->ingreso               = $request->ingreso;
 
 
         $filtro->save();
@@ -145,8 +144,6 @@ class FiltroController extends Controller
      */
     public function edit($id)
     {
-
-
         $filtro=Filtro2::findOrFail($id);
         return view('filtro.edit', compact('filtro'));
     }

@@ -64,10 +64,22 @@ font-weight: 100;
     font-weight: 200;
     height: 38px;
     color: #234c63;
-        font-size: 16px;
-       text-transform: capitalize;
+    font-size: 16px;
+    text-transform: capitalize;
 
     }
+
+    .inputs5-2{
+        border-radius: 0.75rem;
+        width: 180px;
+        background-color: #e9f1f1;
+        font-weight: 200;
+        height: 38px;
+        color: #234c63;
+        font-size: 16px;
+        text-transform: capitalize;
+
+        }
     .inputs5-1{
         color: #234c63;
         font-size: 16px;
@@ -81,35 +93,33 @@ font-weight: 100;
         }
 
 .inputs5-1::placeholder {
-    color: #234c63;
-    font-weight: bold;
-    font-size: 16px;
-    opacity: 1;
-    text-transform: capitalize;
-  }
+color: #234c63;
+font-weight: bold;
+font-size: 16px;
+opacity: 1;
+text-transform: capitalize;
+}
 
-                .inputs6{
-                    font-size: 16px;
-                    color: #234c63;
-                    border-radius: 0.75rem;
-                    width: 120px;
-                    background-color: #e9f1f1;
-                    font-weight: 200;
-                    height: 38px;
-                    text-transform: capitalize;
-
-                    }
-                    .inputs7{
-                        font-size: 14px;
-                        color: #234c63;
-                        border-radius: 0.75rem;
-                        width: 100px;
-                        background-color: #e9f1f1;
-                        font-weight: 100;
-                        height: 38px;
-                        text-transform: capitalize;
-
-                        }
+.inputs6{
+font-size: 16px;
+color: #234c63;
+border-radius: 0.75rem;
+width: 120px;
+background-color: #e9f1f1;
+font-weight: 200;
+height: 38px;
+text-transform: capitalize;
+}
+.inputs7{
+font-size: 14px;
+color: #234c63;
+border-radius: 0.75rem;
+width: 100px;
+background-color: #e9f1f1;
+font-weight: 100;
+height: 38px;
+text-transform: capitalize;
+}
 
 .labels{
 font-size: 1.3rem;
@@ -167,6 +177,9 @@ margin-left: 2rem;
 .form-control0::placeholder{
     color:#000000; ;
 }
+
+
+
 
 </style>
 
@@ -447,11 +460,16 @@ margin-left: 2rem;
             <input type="checkbox" name="sinfamilia" id="sinfamilia"  value="No registran" ><label for="sinfamilia">&nbsp;&nbsp;&nbsp;&nbsp;Sin Familiares </label>&nbsp;&nbsp;<i>*solo se debera señalar esta opcion en caso de que el postulado no cuente con ningun familiar conocido</i>
         </p>
 
+
+
+
+
+
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 
             <label for="">Parentesco</label>  <div class="row col-xs-12">
  <p style="width:350px">
-     <input list="parentescop1" type="text" name="parentescop1"  class="inputs3"  required>
+     <input list="parentescop1" type="text" name="parentescop1"  class="inputs3"  >
      <datalist name="parentescop1" id="parentescop1" >
          <option value="">Escoja uno</option>
          @foreach($parentescos as $parentesco)
@@ -463,7 +481,7 @@ margin-left: 2rem;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:150px"><p><input type="number" id ="edadp1" name="edadp1" class="inputs4" placeholder="Edad"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="ocupacionp1" name="ocupacionp1" class="inputs3" placeholder="Ocupacion"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="width:350px">
-    <input list="parentescop2" type="text" name="parentescop2"  class="inputs3"  required>
+    <input list="parentescop2" type="text" name="parentescop2"  class="inputs3"  >
     <datalist name="parentescop2" id="parentescop2" >
         <option value="">Escoja uno</option>
         @foreach($parentescos as $parentesco)
@@ -476,7 +494,7 @@ margin-left: 2rem;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:150px"><p><input type="number" id ="edadp2" name="edadp2" class="inputs4" placeholder="Edad"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="ocupacionp2" name="ocupacionp2" class="inputs3" placeholder="Ocupacion"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="width:350px">
-    <input list="parentescop3" type="text" name="parentescop3"  class="inputs3"  required>
+    <input list="parentescop3" type="text" name="parentescop3"  class="inputs3"  >
     <datalist name="parentescop3" id="parentescop3" >
         <option value="">Escoja uno</option>
         @foreach($parentescos as $parentesco)
@@ -487,7 +505,7 @@ margin-left: 2rem;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:150px"><p><input type="number" id ="edadp3" name="edadp3" class="inputs4" placeholder="Edad"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="ocupacionp3" name="ocupacionp3" class="inputs3" placeholder="Ocupacion"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="width:350px">
-    <input list="parentescop4" type="text" name="parentescop4"  class="inputs3"  required>
+    <input list="parentescop4" type="text" name="parentescop4"  class="inputs3" >
     <datalist name="parentescop4" id="parentescop4" >
         <option value="">Escoja uno</option>
         @foreach($parentescos as $parentesco)
@@ -498,7 +516,7 @@ margin-left: 2rem;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:150px"><p><input type="number" id ="edadp4" name="edadp4" class="inputs4" placeholder="Edad"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div style="width:350px"><p><input type="text"  style="text-transform: capitalize" id ="ocupacionp4" name="ocupacionp4" class="inputs3" placeholder="Ocupacion"></p></div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="width:350px">
-    <input list="parentescop5" type="text" name="parentescop5"  class="inputs3"  required>
+    <input list="parentescop5" type="text" name="parentescop5"  class="inputs3"  >
     <datalist name="parentescop5" id="parentescop5" >
         <option value="">Escoja uno</option>
         @foreach($parentescos as $parentesco)
@@ -644,7 +662,7 @@ margin-left: 2rem;
 
         <input type="checkbox" name="sinExp" id="sinExp"  value="Sin Experiencia" ><label for="">&nbsp;&nbsp;&nbsp;&nbsp;Sin experiencia previa</label> &nbsp;&nbsp;<i>*esta opcion solo se debera seleccionar si el postulado no tiene ninguna experiencia laboral</i>
 
-        <table class="table">
+        <table class="table" >
         <thead><tr align="center">
             <th class="etiquetas" style="font-size: 15px;">Nombre de la Empresa</th>
             <th class="etiquetas" style="font-size: 15px;">Fecha Ingreso</th>
@@ -657,9 +675,9 @@ margin-left: 2rem;
         </tr></thead>
         <tbody><tr>
         <td>
-            <p><input type="text" id ="empresa1" name="empresa1"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
-            <p><input type="text" id ="empresa2" name="empresa2"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
-            <p><input type="text" id ="empresa3" name="empresa3"  style="text-transform: capitalize" class="inputs5" placeholder=""></p>
+            <p><input type="text" id ="empresa1" name="empresa1"  style="text-transform: capitalize" class="inputs5-2" placeholder=""></p>
+            <p><input type="text" id ="empresa2" name="empresa2"  style="text-transform: capitalize" class="inputs5-2" placeholder=""></p>
+            <p><input type="text" id ="empresa3" name="empresa3"  style="text-transform: capitalize" class="inputs5-2" placeholder=""></p>
             </td>
         <td>
             <p><input type="date" id ="fechain1" name="fechain1" class="inputs7" placeholder=""></p>
