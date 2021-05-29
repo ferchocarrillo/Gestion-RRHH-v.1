@@ -53,51 +53,37 @@
                                             <table class="table table-striped table-bordered table-hover table-dark">
                                                 <thead>
                                                   <tr>
-
                                                     <th scope="col">Cedula</th>
                                                     <th scope="col">Nombres</th>
                                                     <th scope="col">Campaña</th>
                                                     <th scope="col">Cargo</th>
-
-
-
                                                     <th colspan="3"></th>
                                                   </tr>
                                                 </thead>
                                                 <tbody>
-
-
-                                                    @foreach ($novedadeses as $novedades)
-
+                                                    @foreach ($filtros as $novedades)
                                                     <tr>
-
                                                         <td>{{ $novedades->cedula}}</td>
                                                         <td>{{ $novedades->nombre}}</td>
                                                         <td>{{ $novedades->campaña}}</td>
-                                                        <td>{{ $novedades->perfil}}</td>
-
-
-
+                                                        <td>{{ $novedades->cargo}}</td>
                                                         <td>
                                                             <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Ingresar Novedad</a>
 
                                                         </td>
                                                         <td>
-                                                        <a href="{{url('/retiros/'.$novedades->id_filtro.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">Reportar Retiro</a>
+                                                        <a href="{{url('/retiros/'.$novedades->id.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">Reportar Retiro</a>
                                                     </td>
                                                             <form action="{{url('/novedades/'.$novedades->id)}}" method="post">
-
                                                             @csrf
-
                                                             @method('DELETE')
-                                                            {{--<button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
                                                     </form>
                                                         </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
                                               </table>
-                                              {{ $novedadeses->links() }}
+                                              {{ $filtros->links() }}
                                         </div>
                                     </div>
                                 </div>

@@ -7,7 +7,7 @@ use App\Novedades;
 use App\verNovedades;
 use Illuminate\Http\Request;
 use App\Contratacion;
-use App\Filtro;
+use App\Filtro2;
 use Dotenv\Result\Success;
 use App\TipoNovedad;
 use App\nuevoEmpleado;
@@ -30,14 +30,9 @@ class NovedadesController extends Controller
      */
     public function index()
     {
-
-        $activos = filtro::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
-        return view('novedades.index',compact('activos'));
+        $filtros = Filtro2::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
+        return view('novedades.index',compact('filtros'));
     }
-
-
-
-
 
     public function searchNovedades( Request $request)
 
@@ -62,10 +57,8 @@ class NovedadesController extends Controller
      */
     public function create()
     {
-        $novedades = Novedades::all();
-        $novedadeses = nuevoEmpleado::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
-
-        return view('novedades.create', compact('novedades','novedadeses'));
+        $filtros = Filtro2::orderBy('created_at', 'desc')->where('estado','=','activo')->paginate(10);
+        return view('novedades.create', compact('filtros'));
     }
 
     /**
@@ -76,9 +69,6 @@ class NovedadesController extends Controller
      */
     public function store(Request $request)
     {
-
-
-
         Carbon::setLocale('co');
         Carbon::now();
         $hoy = Carbon::now();
@@ -90,9 +80,6 @@ class NovedadesController extends Controller
 
         $totalDias = $tiempoB - $tiempoA + 1;
 
-        $user_id = Auth::user()->id;
-        $user_nombre = Auth::user()->name;
-
         $datosFiltro=request()->except('_token');
 
 
@@ -100,14 +87,14 @@ class NovedadesController extends Controller
 
         $filtro = new Novedades();
 
-        $filtro->id_filtro              = $request->id_filtro;
-        $filtro->nombres                = $request->nombres;
+        $filtro->nombre                 = $request->nombre;
         $filtro->cedula                 = $request->cedula;
         $filtro->campaña                = $request->campaña;
         $filtro->foco                   = $request->foco;
         $filtro->cargo                  = $request->cargo;
         $filtro->supervisor             = $request->supervisor;
         $filtro->estado                 = $request->estado;
+
         $filtro->novedad                = $request->novedad;
         $filtro->observaciones          = $request->observaciones;
         $filtro->desde                  = $request->desde;
@@ -136,16 +123,16 @@ class NovedadesController extends Controller
      * @param  \App\Novedades  $novedades
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_filtro)
+    public function edit($id)
     {
 
-        $asignacion = Asignacion::findOrFail($id_filtro);
+        $filtros = Filtro2::findOrFail($id);
         $tipoNovedades = TipoNovedad::all();
 
 
 
 
-        return view('novedades.edit',compact('asignacion','tipoNovedades'));
+        return view('novedades.edit',compact('filtros','tipoNovedades'));
     }
 
     /**
@@ -155,9 +142,13 @@ class NovedadesController extends Controller
      * @param  \App\Novedades  $novedades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Novedades $novedades)
+    public function update(Request $request, $id)
     {
-        //
+        $datosNovedades =request()->except(['_token','_method']);
+        Novedades::where('id','=',$id)->update($datosNovedades);
+        $filtro=Novedades::findOrFail($id);
+     //return response()->json($filtro);
+     return view('novedades.edit', compact('filtro'));
     }
 
     /**

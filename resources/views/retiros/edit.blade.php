@@ -7,9 +7,10 @@
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de la entrevista datos iniciales" /></a>
-<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:800px; visibility:visible z-index:1" align= "auto" height="80" width="200">
+<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" style="margin-left: 8rem; heigth: 90px; width:80px;" alt="retorno al index de la entrevista datos iniciales" /></a>
+<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8); width: 90%; margin-left:5rem;" >
+<lin rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:80px; visibility:visible z-index:1; width: 25%; margin-left:45rem;  align: center;">
+    br
 <br>
 <br>
 
@@ -21,7 +22,7 @@
 </div>
 </center>
         </body>
-        <form action="{{ url('/retiros/'.$nuevos->id_filtro)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+        <form action="{{ url('/retiros/'.$filtros->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
             @csrf
             @method('PATCH')
 
@@ -29,17 +30,17 @@
 
 <div class="card">
 
-<input type="hidden" name="" id="" value="{{ old('id_filtro', $nuevos->id_filtro)}}">
+<input type="hidden" name="" id="" value="{{ old('id', $filtros->id)}}">
 
     <div class="row">
    <div class="col-3">
-       <label for="fechaCont">Activo<br> Desde</label>
+       <label for="ingreso">Activo<br> Desde</label>
         <input type="text" class="form-control-lg-new9"
-        id="fechaCont"
+        id="ingreso"
         placeholder=""
-        name="fechaCont"
+        name="ingreso"
         readonly
-        value="{{ old('fechaCont', $filtro->fechaCont)}}">
+        value="{{ old('ingreso', $filtros->ingreso)}}">
     </div>
     <div class="col-3">
         <label for="cedula">Cedula</label>
@@ -47,7 +48,7 @@
          id="cedula"
          placeholder="cedula"
          name="cedula"
-         value="{{ old('cedula', $filtro->cedula)}}"
+         value="{{ old('cedula', $filtros->cedula)}}"
          readonly>
 
         </div>
@@ -57,17 +58,17 @@
              id="nombre"
              placeholder="Nombres"
              name="nombre"
-             value="{{ old('nombres', $nuevos->nombres)}}"
+             value="{{ old('nombre', $filtros->nombre)}}"
              readonly>
             </div>
     <div class="col-3">
         <label for="telefono">Celular</label>
            <input type="number"
            class="form-control-lg-new9"
-           id=""
+           id="telefono"
            placeholder="telefono"
-           name=""
-           value="{{ old('tCelular' , $nuevos->tCelular)}}"
+           name="telefono"
+           value="{{ old('telefono' , $filtros->telefono)}}"
            readonly>
         </div></div>
 <br><br>
@@ -80,17 +81,17 @@
            id="correo"
            placeholder="correo"
            name="correo"
-           value="{{ old('correo' , $filtro->correo)}}"
+           value="{{ old('correo' , $filtros->correo)}}"
            readonly>
         </div>
     <div class="col-3">
-        <label for="perfil">Perfil</label>
+        <label for="cargo">Cargo</label>
            <input type="text"
            class="form-control-lg-new9"
-           id="perfil"
-           placeholder="perfil"
-           name="perfil"
-           value="{{ old('cargos' , $nuevos->cargos)}}"
+           id="cargo"
+           placeholder="cargo"
+           name="cargo"
+           value="{{ old('cargo' , $filtros->cargo)}}"
            readonly>
         </div>
     <div class="col-3">
@@ -100,7 +101,7 @@
            id="campaña"
            placeholder="campaña"
            name="campaña"
-           value="{{ old('campaña' , $filtro->campaña)}}"
+           value="{{ old('campaña' , $filtros->campaña)}}"
            readonly>
 
         </div>
@@ -111,7 +112,7 @@
            id="fuente"
            placeholder="fuente"
            name="fuente"
-           value="{{ old('fuente' , $filtro->fuente)}}"
+           value="{{ old('fuente' , $filtros->fuente)}}"
            readonly>
 
 
@@ -169,6 +170,9 @@
 
 <p>
     <input type="hidden" id="estado" name="estado" value="inactivo">
+</p>
+<p>
+    <input type="hidden" id="tiempoTotal" name="tiempoTotal" value="{{ $tiempoTotal}}">
 </p>
     </div>
     </div>

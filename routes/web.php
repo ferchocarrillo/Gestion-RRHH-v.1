@@ -64,11 +64,6 @@ Route::get('/searchRequisicion','RequisicionController@searchRequisicion');
 Route::get('/searchusers','UserController@searchusers');
 Route::get('/searchfiltro','FiltroController@searchfiltro');
 Route::get('/searchCon','ContratacionController@searchCon');
-Route::get('/searchEntrevista1','Entrevista1Controller@searchEntrevista1');
-Route::get('/searchEntrevista2','Entrevista2Controller@searchEntrevista2');
-Route::get('/searchEntrevista3','Entrevista3Controller@searchEntrevista3');
-Route::get('/searchEntrevista4','Entrevista4Controller@searchEntrevista4');
-Route::get('/searchEntrevista5','Entrevista5Controller@searchEntrevista5');
 Route::get('/searchCapacitacion','CapacitacionController@searchCapacitacion');
 
 Route::get('/searchDocumento','DocumentoController@searchDocumento');
@@ -86,12 +81,6 @@ Route::post('/app/Areas', array('as' => 'Area', 'uses' => 'AreaController@Area')
 Route::resource('requisicion',       RequisicionController::class);
 Route::resource('reclutamiento',     ReclutamientoController::class);
 Route::resource('filtro',            FiltroController::class);
-// Route::resource('entrevista1',       Entrevista1Controller::class);
-// Route::resource('entrevista2',       Entrevista2Controller::class);
-// Route::resource('entrevista3',       Entrevista3Controller::class);
-// Route::resource('entrevista4',       Entrevista4Controller::class);
-// Route::resource('entrevista5',       Entrevista5Controller::class);
-// Route::resource('entFinalizacion',   EntFinalizacionController::class);
 Route::resource('entGerencia',       EntGerenciaController::class);
 Route::resource('entJefe',           EntJefeController::class);
 Route::resource('resumen',           ResumenController::class);

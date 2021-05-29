@@ -6,6 +6,15 @@
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<style>
+#correoCorp{
+    margin-top: 55px;
+
+
+}
+
+</style>
 <div class="container">
     <div class="pull-right">
         <div class="col-md-12">
@@ -140,18 +149,19 @@
             </datalist>
             </p>
         </div>
-        &nbsp;&nbsp;&nbsp;
+
 
         <div id="cargo" name="cargo" class="col-6 col-md-2"><strong><p>Cargo:</p></strong><input type="text" id="cargo" name="cargo" class="form-control-lg-new13" value="{{ old('cargo', $filtro->cargo)}}"></div><br>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
+
+        <div><input type="checkbox" id="correoCorp" name="correoCorp"  data-toggle="toggle" data-size="med" data-onstyle="success" data-offstyle="danger" data-on="Correo corporativo Si" data-off="Correo corportativo No" ></div>
 
 
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-<input type="checkbox" id="correoCorp" name="correoCorp"  data-toggle="toggle" data-size="med" data-onstyle="success" data-offstyle="danger" data-on="Correo corporativo Si" data-off="Correo corportativo No" >
+
     <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 </div>
         <div class="row">
@@ -172,11 +182,7 @@
                     </datalist>
                     </p>
                 </div>
-
-
-
-
-            <div id="personaDireccion" name="personaDireccion" class="col-6 col-md-3"><strong><p><a style="color: red">* </a>Direccion:</p><br></strong><input type="text"id="personaDireccion" name="personaDireccion" class="form-control-lg-new13" required></div><br>
+            <div id="personaDireccion" name="personaDireccion" class="col-6 col-md-3"><strong><p><a style="color: red;">* </a>Direccion:</p><br></strong><input type="text"id="personaDireccion" name="personaDireccion" class="form-control-lg-new13" style="width:260px;" required></div><br>
             <div id="contactof" name="contactof" class="col-6 col-md-2"><strong><p>Telefono fijo contacto:</p></strong><input type="text"id="contactof" name="contactof" class="form-control-lg-new13" ></div><br>
             <div id="contactoCelular" name="contactoCelular" class="col-6 col-md-2"><strong><p><a style="color: red">* </a>Celular de contacto:</p></strong><input type="text"id="contactoCelular" name="contactoCelular" class="form-control-lg-new13"required ></div><br>
     </div>
@@ -236,10 +242,13 @@
             </div>
 
             <div id="docfam2" name="docfam2" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam2" name="docfam2" class="form-control-lg-new13" ></div>
+            &nbsp;
             <div id="" name="" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp2" name="familiarp2" class="form-control-lg-new13" value="{{old('familiarp2', $filtro->familiarp2)}}"></div><br>
+            &nbsp;
             <div id="" name="" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop2" name="parentescop2" class="form-control-lg-new13" value="{{old('parentescop2', $filtro->parentescop2)}}"></div><br>
+            &nbsp;
             <div id="" name="" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp2" name="edadp2" class="form-control-lg-new13" value="{{old('edadp2', $filtro->edadp2)}}"></div><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam2" name="epsFam2" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja2" name="caja2" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
         </div>
@@ -257,8 +266,11 @@
             </div>
 
             <div id="docfam3" name="docfam3" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam3" name="docfam3" class="form-control-lg-new13" ></div>
+            &nbsp;
             <div id="" name="" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp3" name="familiarp3" class="form-control-lg-new13" value="{{old('familiarp3', $filtro->familiarp3)}}"></div><br>
+            &nbsp;
             <div id="" name="" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop3" name="parentescop3" class="form-control-lg-new13" value="{{old('parentescop3', $filtro->parentescop3)}}"></div><br>
+            &nbsp;
             <div id="" name="" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp3" name="edadp3" class="form-control-lg-new13" value="{{old('edadp3', $filtro->edadp3)}}"></div><br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam3" name="epsFam3" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -278,13 +290,40 @@
                 </div>
 
                 <div id="docfam4" name="docfam4" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam4" name="docfam4" class="form-control-lg-new13" ></div>
-                <div id="" name="" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp4" name="familiarp4" class="form-control-lg-new13" value="{{old('familiarp4', $filtro->familiarp4)}}"></div><br>
-                <div id="" name="" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop4" name="parentescop3" class="form-control-lg-new13" value="{{old('parentescop4', $filtro->parentescop4)}}"></div><br>
-                <div id="" name="" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp4" name="edadp4" class="form-control-lg-new13" value="{{old('edadp4', $filtro->edadp4)}}"></div><br>
+                 &nbsp;
+                 <div id="" name="" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp4" name="familiarp4" class="form-control-lg-new13" value="{{old('familiarp4', $filtro->familiarp4)}}"></div><br>
+                 &nbsp;
+                 <div id="" name="" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop4" name="parentescop4" class="form-control-lg-new13" value="{{old('parentescop4', $filtro->parentescop4)}}"></div><br>
+                 &nbsp;
+                 <div id="" name="" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp4" name="edadp4" class="form-control-lg-new13" value="{{old('edadp4', $filtro->edadp4)}}"></div><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam4" name="epsFam4" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja4" name="caja4" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
             </div>
+
+<div class="row">
+    <div ><strong><p><a style="color: red" ></a>Tipo Documento:</p><span></span></strong>
+        <p><input list="tpd5" type="text" name="tpd5"  class="form-control-lg-new14">
+           <datalist name="tpd5" id="tpd5" >
+                <option value="" name="tpd5" id="tpd5">Escoja uno</option>
+                @foreach($tipo_docs as $tipo_doc)
+            <option value="{{ $tipo_doc->tipo_doc}}">{{ $tipo_doc->tipo_doc }}</option>
+                @endforeach
+            </datalist>
+            </p>
+        </div>
+
+        <div id="docfam5" name="docfam5" class="col-6 col-md-2"><strong><p>Documento:</p></strong><input type="text"id="docfam5" name="docfam5" class="form-control-lg-new13" ></div>
+         &nbsp;
+        <div id="" name="" class="col-6 col-md-2"><strong><p>Nombre:</p></strong><input type="text" id="familiarp5" name="familiarp5" class="form-control-lg-new13" value="{{old('familiarp5', $filtro->familiarp5)}}"></div><br>
+         &nbsp;
+        <div id="" name="" class="col-6 col-md-2"><strong><p>Parentesco:</p></strong><input type="text" id="parentescop5" name="parentescop5" class="form-control-lg-new13" value="{{old('parentescop5', $filtro->parentescop5)}}"></div><br>
+         &nbsp;
+        <div id="" name="" class="col-6 col-md-2"><strong><p>Edad:</p></strong><input type="text" id="edadp4" name="edadp5" class="form-control-lg-new13" value="{{old('edadp5', $filtro->edadp5)}}"></div><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div ><p><strong>EPS:</strong></p><input type="checkbox" id="epsFam5" name="epsFam5" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div ><p><strong>Caja:</strong></p><input type="checkbox" id="caja5" name="caja5" data-toggle="toggle" data-size="med"  data-onstyle="success" data-offstyle="danger" data-on="Si" data-off="No"></div>
+    </div>
 </div>
 <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 <div class="container">
@@ -444,16 +483,14 @@
         </datalist>
         </p>
     </div>
-    <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Campaña:</p><span></span></strong>
-          <p><input list="campaña" type="text" name="campaña"   class="form-control-lg-new13" required>
-             <datalist name="campaña" id="campaña" >
-              <option  value="">Seleccion una Campaña</option>
-              @foreach($campanas as $campana)<option value="{{ $campana->campana}}">
-              {{ $campana->campana }}</option>
-              @endforeach
-              </datalist>
-              </p>
-    </div>
+
+
+
+    <div id="campaña" name="campaña" class="col-4 col-md"><strong><p>Campaña: </p></strong><input type="text" id="campaña" name="campaña" class="form-control-lg-new13" value="{{ old('campaña', $filtro->campaña)}}"></div>
+
+
+
+
     <div class="col-4 col-md"><strong><p><a style="color: red" >* </a>Supervisor:</p><span></span></strong>
         <p><input list="supervisor" type="text" name="supervisor"   class="form-control-lg-new13" required>
            <datalist name="supervisor" id="supervisor" >

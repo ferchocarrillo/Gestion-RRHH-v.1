@@ -23,12 +23,6 @@
                 </form>
                 </div>
                 </p>
-
-
-
-
-
-
 <form name="f1" action="{{ url('/verNovedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
@@ -55,6 +49,9 @@
                                                 <th scope="col">Foco</th>
                                                 <th scope="col">Jefe inmediato</th>
                                                 <th scope="col">Novedad</th>
+                                                <th scope="col">Observacion</th>
+                                                <th scope="col">Inicio Fin</th>
+                                                <th scope="col">Total dias</th>
 
 
                                                 <th colspan="3"></th>
@@ -68,65 +65,31 @@
                                                 <tr>
                                                     <th scope="row">{{ $novedad->id}}</th>
                                                     <td>{{ $novedad->cedula}}</td>
-                                                    <td>{{ $novedad->nombres}}</td>
+                                                    <td>{{ $novedad->nombre}}</td>
                                                     <td>{{ $novedad->campaña}}</td>
                                                     <td>{{ $novedad->cargo}}</td>
                                                     <td>{{ $novedad->foco}}</td>
                                                     <td>{{ $novedad->supervisor}}</td>
                                                     <td>{{ $novedad->novedad}}</td>
-
-
-                                                    <td>
-                                                        {{-- <a href="{{url('/novedades/'.$novedad->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a> --}}
-
-                                                        <form action="{{url('/novedades/'.$novedad->id)}}" method="post">
-
-                                                        @csrf
-
-                                                        @method('DELETE')
-
-
-
-
-
-                                                    {{-- <button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button> --}}
-
-
-
-
-                                                </form>
-
-
-
+                                                    <td>{{ $novedad->observaciones}}</td>
+                                                    <td>{{ $novedad->desde}} {{ $novedad->hasta}}</td>
+                                                    <td>{{ $novedad->totalDias}}</td>
+                                                   <td>
+                                              </form>
                                                     </td>
                                                 </tr>
                                                @endforeach
-
-
-
-
-
                                             </tbody>
-
                                           </table>
                                       {{ $novedades->links() }}
-                                          {{-- <a href="{{url('verNovedades')}}" class="btn btn-success btn-lg" role="button" aria-pressed="true">Ver Novedades Registradas</a> --}}
-
-
-
-
-
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
                     <p>
-                        clic <a href="{{route('requisicion.excel')}}">Aqui</a>
+                       clic <a href="{{route('requisicion.excel')}}">Aqui</a>
                         para descargar en Excel la base de novedades
                         </p>
                     <script src="{{asset('js/app.js')}}"></script>

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\verNovedades;
 use App\Novedades;
+use App\Filtro2;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class VerNovedadesController extends Controller
@@ -23,15 +25,14 @@ class VerNovedadesController extends Controller
     {
         Carbon::setLocale('co');
         $date = Carbon::now();
-
-        $novedades = Novedades::orderby('created_at', 'desc')->paginate(10);
+        $novedades = Novedades::orderby('created_at', 'desc')->where('estado','=','activo')->paginate(10);
         return view('verNovedades.index',compact('novedades'));
     }
     public function searchverNovedades( Request $request)
     {
-        $novedades = Novedades::all();
+        $filtro = Novedades::all();
 
-        $searchNovedad = $request->get('searchNovedad');
+        $searchNovedad = $request->get('searchverNovedades');
         $novedades = Novedades::firstOrNew()->where('cedula', 'like', '%'.$searchNovedad.'%')->paginate(20);
         return view('verNovedades.index', ['novedades' => $novedades ]);
     }
@@ -75,9 +76,9 @@ class VerNovedadesController extends Controller
      * @param  \App\verNovedades  $verNovedades
      * @return \Illuminate\Http\Response
      */
-    public function edit(verNovedades $verNovedades)
+    public function edit(Request $request)
     {
-        //
+
     }
 
     /**
