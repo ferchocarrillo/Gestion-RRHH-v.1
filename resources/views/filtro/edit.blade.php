@@ -4,20 +4,15 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" style="margin-left: 8rem; heigth: 90px; width:80px;" alt="retorno al index de la entrevista datos iniciales" /></a>
+<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" style="margin-left: 2rem; heigth: 60px; width:50px;" alt="retorno al index de la entrevista datos iniciales" /></a>
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8); width: 90%; margin-left:5rem;" >
-<lin rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:80px; visibility:visible z-index:1; width: 25%; margin-left:45rem;  align: center;">
-    br
-<br>
-<br>
-
+    <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:100px; visibility:visible z-index:1; width: 25%; margin-left:33rem;  align: center;">
+<br><br><br>
 <center>
-
-
-<div class="page-header">
-    <br>
-      <h3>Editor de registro de postulados</h3>
-      <br>
+    <div class="card-header">
+    
+      <h3>Editor de Registro de Postulados</h3>
+    
 </div>
 </center>
         </body>

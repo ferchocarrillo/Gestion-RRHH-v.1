@@ -4,13 +4,12 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de la entrevista datos iniciales" /></a>
-<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:800px; visibility:visible z-index:1; margin-left:5rem;" align= "auto" height="100" width="270">
-<br>
-<br>
+<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" style="margin-left: 2rem; heigth: 60px; width:50px;" alt="retorno al index de la entrevista datos iniciales" /></a>
+<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8); width: 90%; margin-left:5rem;" ></center>
+    <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:100px; visibility:visible z-index:1; width: 25%; margin-left:33rem;  align: center;">
+<br><br><br>
 
-<center>
+
     <style>
         .inputs{
         border-radius: 0.75rem;
@@ -175,11 +174,11 @@ margin-left: 12rem;
         }
 
         </style>
-
-<div class="page-header">
+        <center>
+<div class="card-header">
       <h3>REGISTRO DE RESULTADO CAPACITACION</h3>
 </div>
-</center>
+
         </body>
 <form action="{{ url('/capacitacion/'.$filtro->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
     @csrf
@@ -187,7 +186,7 @@ margin-left: 12rem;
 
 
 <h3>DATOS GENERALES</h3>
-
+</center>
 <fieldset class="form-group">
   <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
       <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
@@ -201,7 +200,7 @@ margin-left: 12rem;
             <div class="col-3"><strong><span>Correo</strong></span><p class="inputs5">{{ old('correo', $filtro->correo)}}</p></div>&nbsp;
             <div class="col-3"><strong><span>Perfil</strong></span><p class="inputs5">{{ old('cargo', $filtro->cargo)}}</p></div>&nbsp;
             <div class="col-3"><strong><span>Campaña</strong></span><p class="inputs5">{{ old('campaña', $filtro->campaña)}}</p></div>&nbsp;
-            <div class="col-3"><strong><span>Fuente</strong></span><p class="inputs5">{{ old('fuente', $filtro->fuente)}}</p></div>&nbsp;
+            <div class="col-3"><strong><span>Fuente</strong></span><p class="inputs5">{{ old('fuente', $filtro->fuente)}}</p></div>
             <div class="col"><strong><span>Fecha de registro</strong></span><p class="inputs5">{{ old('fregistro', $filtro->fregistro)}}</p></div>&nbsp;
 
 </div>
@@ -231,7 +230,7 @@ margin-left: 12rem;
 
 
 <p><strong><span>Grupo de Capacitación</strong></span><br><input   type="text" name="ngrupo" id="ngrupo" class="inputs5-1"></p>
-<div style="width:250px; padding:25px;">
+<div style="width:200px;>
     <tr valign="bottom">
       <td>
         <div style="float:left; width:100%; display:flex;">

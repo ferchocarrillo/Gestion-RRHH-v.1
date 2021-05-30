@@ -1,19 +1,75 @@
 @extends('adminlte::page')
 @section('content')
+@include('custom.message')
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+<style>
+
+    .label-h6{
+padding: 10px;
+        font-size: 12px;
+}
+.form-control-lg-new18{
+    margin: 0.75rem;
+    width: 220px;
+
+}
+
+.select-1{
+    width: 25rem;
+    border-radius: 0.75em;
+    height: 40px;
+    line-height: 2rem;
+    margin: 2rem;
+    
+}
+.textarea-1{
+    width: 30rem;
+    border-radius: 0.75em;
+    height: 120px;
+    line-height: 2rem;
+    margin: 2rem;
+
+}
+
+.input-mute{
+    width: 100%;
+    height: 30px;
+    background-color: #cfd7e0;
+    border-radius: 0.50rem;
+    color: rgb(0, 0, 0);
+    border-color: rgb(6, 25, 87);
+    font-size: 14px;
+
+    
+}
+.oculto{
+    width: 100%;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 0.75em;
+    font-size: 14px;
+}
+
+</style>
+
+
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-    <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
-
+    <img src="\theme\images\isotipo-slogan.png" float="left" height="80" width="260">
 </center>
-
-
 <center>
-
-
 <div class="card-header">
       <h3>Editor de Gestion Requisicion</h3>
 </div>
@@ -30,7 +86,7 @@
 
     <div class="form-row">
    <div class="col-3">
-       <label for="cargo">Cargo</label>
+       <label for="cargo" class="label-h6">Cargo</label>
         <input type="text" class="form-control-lg-new18"
         id="cargo"
         placeholder="Cargo"
@@ -38,7 +94,7 @@
         value="{{ old('cargo', $requisicion->cargo)}}">
     </div>
     <div class="col-3">
-        <label for="cantidad">Cantidad</label>
+        <label for="cantidad" class="label-h6">Cantidad</label>
          <input type="number" class="form-control-lg-new18"
          id="cantidad"
          placeholder="cantidad"
@@ -46,7 +102,7 @@
          value="{{ old('cantidad', $requisicion->cantidad)}}">
         </div>
          <div class="col-3">
-            <label for="sede">Sede</label>
+            <label for="sede" class="label-h6">Sede</label>
                <input type="text"
                class="form-control-lg-new18"
                id="sede"
@@ -56,7 +112,7 @@
             </div>
 
          <div class="col-3">
-              <label for="dependencias">Dependencia</label>
+              <label for="dependencias" class="label-h6">Dependencia</label>
               <input type="text" class="form-control-lg-new18"
               id="dependencias"
               placeholder="Dependencias"
@@ -64,7 +120,7 @@
               value="{{ old('dependencias', $requisicion->dependencias)}}">
             </div>
          <div class="col-3">
-              <label for="area">Area</label>
+              <label for="area" class="label-h6">Area</label>
               <input type="text" class="form-control-lg-new18"
               id="area"
               placeholder="Area"
@@ -73,7 +129,7 @@
             </div>
 
         <div class="col-3">
-              <label for="motivos">Motivos</label>
+              <label for="motivos" class="label-h6">Motivos</label>
               <input type="text" class="form-control-lg-new18"
               id="motivos"
               placeholder="Motivos"
@@ -82,7 +138,7 @@
             </div>
 
         <div class="col-3">
-              <label for="reemplaza">Reemplaza</label>
+              <label for="reemplaza" class="label-h6">Reemplaza</label>
               <input type="text" class="form-control-lg-new18"
               id="reemplaza"
               placeholder="sin datos"
@@ -91,7 +147,7 @@
            </div>
 
         <div class="col-3">
-              <label for="cual">Cual</label>
+              <label for="cual" class="label-h6">Cual</label>
               <input type="text" class="form-control-lg-new18"
               id="cual"
               placeholder="Cual"
@@ -100,7 +156,7 @@
            </div>
 
         <div class="col-3">
-              <label for="tiempo">Tiempo</label>
+              <label for="tiempo" class="label-h6">Tiempo</label>
               <input type="text" class="form-control-lg-new18"
               id="tiempo"
               placeholder="numero de grabacion"
@@ -109,7 +165,7 @@
            </div>
 
         <div class="col-3">
-              <label for="dias">Dias</label>
+              <label for="dias" class="label-h6">Dias</label>
               <input type="text" class="form-control-lg-new18"
               id="dias"
               placeholder="dias"
@@ -118,7 +174,7 @@
            </div>
 
            <div class="col-3">
-            <label for="jornada">Jornada</label>
+            <label for="jornada" class="label-h6">Jornada</label>
             <input type="text" class="form-control-lg-new18"
             id="jornada"
             placeholder="jornada"
@@ -127,7 +183,7 @@
          </div>
 
          <div class="col-3">
-            <label for="finicio">Fecha de inicio</label>
+            <label for="finicio" class="label-h6">Fecha de inicio</label>
             <input type="text" class="form-control-lg-new18"
             id="finicio"
             placeholder="fecha inicio"
@@ -135,7 +191,7 @@
             value="{{ old('finicio', $requisicion->finicio)}}">
          </div>
          <div class="col-3">
-            <label for="solicita">Solicita</label>
+            <label for="solicita" class="label-h6">Solicita</label>
             <input type="text" class="form-control-lg-new18"
             id="solicita"
             placeholder="solicita"
@@ -147,7 +203,9 @@
     <div class="card-header" >
     <center> <h4 for="revisado">Exclusivo Area RR.HH</h4></center>
     </div>
-        <select name=revisado onchange="cambia_estadorevisado()" class="form-control-lg-new8">
+    <div class="row">
+        <div>
+        <select name=revisado onchange="cambia_estadorevisado()" class="select-1">
 
         <option value="0" selected>Seleccione...
         <option value="Aprobado">Aprobado
@@ -156,9 +214,9 @@
 
         </select>
        </div>
-    <div>
+    
         <div>
-        <textarea class="form-control"  id ="observaciones" name="observaciones" rows="3" placeholder="Observaciones Area RR.HH"></textarea>
+        <textarea class="textarea-1"  id ="observaciones" name="observaciones" rows="3" placeholder="Observaciones Area RR.HH"></textarea>
         </div>
     </div>
 </div>
@@ -170,68 +228,38 @@
     <div class="form-row">
  <div class="col-6">
         <div class="input-group-prepend">
-        <span class="input-group-text" >Edad</span>
-        <input type="text" class="form-control" name="edad" id="edad">
+        <span class="input-mute" >Edad</span>
+        <input type="text" class="oculto" name="edad" id="edad">
         </div>
   </div>
 <br>
 <div class="col-6">
     <div class="input-group-prepend">
-    <span class="input-group-text" >Profesion</span>
-    <input type="text" class="form-control" name="profesion" id="profesion">
+    <span class="input-mute" >Profesion</span>
+    <input type="text" class="oculto" name="profesion" id="profesion">
     </div>
 </div>
 <br>
 
 <div class="col-6">
     <div class="input-group-prepend">
-    <span class="input-group-text" >Orientacion Sexual</span>
-    <input type="text" class="form-control" name="orientacion" id="orientacion">
+    <span class="input-mute" >Orientacion Sexual</span>
+    <input type="text" class="oculto" name="orientacion" id="orientacion">
     </div>
 </div>
 
 <br>
 <div class="col-6">
     <div class="input-group-prepend">
-    <span class="input-group-text" >Raza</span>
-    <input type="text" class="form-control" name="raza" id="raza">
+    <span class="input-mute" >Raza</span>
+    <input type="text" class="oculto" name="raza" id="raza">
     </div>
 </div>
 <br>
 <div class="col-6">
     <div class="input-group-prepend">
-    <span class="input-group-text" >Culto o religion</span>
-    <input type="text" class="form-control" name="culto" id="culto">
-    </div>
-</div>
-
-
-<br>
-<div class="col-6">
-    <div class="input-group-prepend">
-    <span class="input-group-text" >Empresa Imposibilitada</span>
-    <input type="text" class="form-control" name="imposibilita" id="imposibilita">
-    </div>
-</div>
-<br>
-<div class="col-6">
-    <div class="input-group-prepend">
-    <span class="input-group-text" >Sexo</span>
-    <input type="text" class="form-control" name="sexo" id="sexo">
-    </div>
-</div>
-<br>
-<div class="col-6">
-    <div class="input-group-prepend">
-    <span class="input-group-text" >Discapacidad Fisica</span>
-    <input type="text" class="form-control" name="disfisica" id="disfisica">
-    </div>
-</div>
-<br>
-<div class="col-6">
-    <div class="input-group-prepend">
-    <span class="input-group-text" >Discapacidad Mental</span>
-    <input type="text" class="form-control" name="dismental" id="dismental">
+    <span class="input-mute" >Culto o religion</span>
+    <input type="text" class="oculto" name="culto" id="culto">
     </div>
 </div>
 
@@ -239,8 +267,38 @@
 <br>
 <div class="col-6">
     <div class="input-group-prepend">
-    <span class="input-group-text" >Nacionalidad o Region del Pais</span>
-    <input type="text" class="form-control" name="nacionalidad" id="nacionalidad">
+    <span class="input-mute" >Empresa Imposibilitada</span>
+    <input type="text" class="oculto" name="imposibilita" id="imposibilita">
+    </div>
+</div>
+<br>
+<div class="col-6">
+    <div class="input-group-prepend">
+    <span class="input-mute" >Sexo</span>
+    <input type="text" class="oculto" name="sexo" id="sexo">
+    </div>
+</div>
+<br>
+<div class="col-6">
+    <div class="input-group-prepend">
+    <span class="input-mute" >Discapacidad Fisica</span>
+    <input type="text" class="oculto" name="disfisica" id="disfisica">
+    </div>
+</div>
+<br>
+<div class="col-6">
+    <div class="input-group-prepend">
+    <span class="input-mute" >Discapacidad Mental</span>
+    <input type="text" class="oculto" name="dismental" id="dismental">
+    </div>
+</div>
+
+
+<br>
+<div class="col-6">
+    <div class="input-group-prepend">
+    <span class="input-mute" >Nacionalidad o Region del Pais</span>
+    <input type="text" class="oculto" name="nacionalidad" id="nacionalidad">
     </div>
 </div>
 <br><br>

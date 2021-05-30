@@ -6,9 +6,6 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-
-
-
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
 </center>

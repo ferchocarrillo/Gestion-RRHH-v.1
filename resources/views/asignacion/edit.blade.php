@@ -11,11 +11,25 @@
 .inputclass{
 width: 180px;
 border-radius: 0.75rem;
-height: 2.7rem;
+height: calc(1.5em + 0.5rem + 5px);
 background-color: #EAF2F8;
 margin-left: 1rem;
 
     }
+
+    .new15 {
+        height: calc(1.5em + 0.5rem + 5px);
+        width: calc(1.5em + 11rem + 10px);
+        padding-top:6rem;
+        padding: 0.5rem;
+        font-size: 16px;
+        color:#113049 ;
+        border-radius: 0.9rem;
+        background-color: #EAF2F8;
+        outline-offset: 3px;
+        text-align: left;
+    
+      }
 
 
 </style>
@@ -98,7 +112,7 @@ margin-left: 1rem;
 
 <div class="col-6 col-md-3">
     <span><strong>Supervisor</strong></span>
-    <p><input list="supervisor" type="text" name="supervisor"   class="form-control-lg-new18" required>
+    <p><input list="supervisor" type="text" name="supervisor"   class="new15" required>
         <datalist name="supervisor" id="supervisor" >
          <option value=" {{ old('supervisor', $filtro->supervisor)}}">Asigne uno</option>
          @foreach($supervisores as $supervisor)
@@ -111,7 +125,7 @@ margin-left: 1rem;
 <div class="col-6 col-md-3">
     <span><strong>Sede</strong></span>
 
-    <input list="sede" type="text" name="sede"   class="form-control-lg-new18" required>
+    <input list="sede" type="text" name="sede"   class="new15" required>
     <datalist name="sede" id="sede" >
      <option value="{{ old('sede', $filtro->sede)}}">Asigne una</option>
      @foreach($sedes as $sede)
@@ -125,7 +139,7 @@ margin-left: 1rem;
 </div>
 <div class="col-6 col-md-3">
     <span><strong>Modadidad</strong></span>
-<input list="modalidad" type="text" name="modalidad"   class="form-control-lg-new18" required>
+<input list="modalidad" type="text" name="modalidad"   class="new15" required>
                <datalist name="modalidad" id="modalidad" >
                 <option value="{{ old('modalidad', $filtro->modalidad)}}">Asigne una</option>
                 @foreach($modalidades as $modalidad)
@@ -135,7 +149,7 @@ margin-left: 1rem;
 </div>
 <div class="col-6 col-md-3">
     <span><strong>Tipo de Modadidad</strong></span>
-    <input list="tipoModalidad" type="text" name="tipoModalidad"   class="form-control-lg-new18" required>
+    <input list="tipoModalidad" type="text" name="tipoModalidad"   class="new15" required>
                    <datalist name="tipoModalidad" id="tipoModalidad" >
                     <option value="{{ old('tipoModalidad', $filtro->tipoModalidad)}}">Asigne una</option>
                     @foreach($tipoModalidades as $tipoModalidad)

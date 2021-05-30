@@ -13,6 +13,7 @@
             </body>
             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                 <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
+            </center>
                 <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
                 <!-- Force next columns to break to new line -->
                 <h3 aline="center">Formulario de Ingreso de Novedades</h3>

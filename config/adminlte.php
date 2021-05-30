@@ -266,15 +266,11 @@ return [
 ],
 ['header' => 'RR.HH'],
 [
-    'text' => 'PROCESOS',
+    'text' => 'RECLUTAMIENTO',
     'icon' => 'fab fa-wpforms',
 
     'submenu' => [
-        ['text'    =>'Creacion de cargo nuevo',
-        'url'     => 'cargoNuevo',
-        'icon'    => 'fas fa-box',
-        'icon_color' => 'purple'
-        ],
+     
 
     ['text'    => 'Revision de requisicion',
     'url'     => 'requisicion',
@@ -294,42 +290,16 @@ return [
     'icon_color' => 'red'
     ],
 
-    ['text'    => 'Actualizacion de historial',
-    'url'     => 'filtro',
-    'icon'    => 'fa fa-thumbs-up',
-    'icon_color' => 'grey'
+       ['text'    =>'Creacion de cargo nuevo',
+    'url'     => 'cargoNuevo',
+    'icon'    => 'fas fa-box',
+    'icon_color' => 'purple'
     ],
-    ['text'    => 'Documentos recibidos',
-    'url'     => 'contratacion',
-    'icon'    => 'fas fa-file-signature',
-    'icon_color' => 'orange'
-    ],
-    ['text'    => 'Formato de ingreso',
-    'url'     => 'nuevoempleado',
-    'icon'    => 'far fa-question-circle',
-    'icon_color' => 'blue'
-    ],
-    ['text'    => 'Registro de Novedades',
-    'url'     => 'novedades\create',
-    'icon'    => 'far fa-flag',
-    'icon_color' => 'green'
-    ],
-
-    ['text'    => 'Historico de Novedades',
-    'url'     => 'verNovedades',
-    'icon'    => 'fas fa-landmark',
-    'icon_color' => 'pink'
-    ],
-
 
 ],
-
-
-
-
 ],
 [
-    'text' => 'ENTREVISTAS',
+    'text' => 'SELECCION',
     'icon' => 'fab fa-wpforms',
 
     'submenu' => [
@@ -367,6 +337,35 @@ return [
 
 ],
 ],
+
+
+
+
+[   'text' => 'CONTRATACIONES',
+    'icon' => 'fab fa-wpforms',
+
+    'submenu' => [
+
+        ['text'    => 'Actualizacion de historial',
+        'url'     => 'filtro',
+        'icon'    => 'fa fa-thumbs-up',
+        'icon_color' => 'grey'
+        ],
+        ['text'    => 'Documentos recibidos',
+        'url'     => 'contratacion',
+        'icon'    => 'fas fa-file-signature',
+        'icon_color' => 'orange'
+        ],
+        ['text'    => 'Formato de ingreso',
+        'url'     => 'nuevoempleado',
+        'icon'    => 'far fa-question-circle',
+        'icon_color' => 'blue'
+        ],
+      
+    
+
+],
+],
 ['header' => 'FORMACION'],
 [
     'text' => 'REPORTES',
@@ -382,7 +381,7 @@ return [
     ],
 ],
 ],
-['header' => 'DATAS'],
+['header' => 'AREA DATOS Y ESTADISTICAS'],
 [
     'text' => 'ASIGNACIONES',
     'icon' => 'fab fa-wpforms',
@@ -393,6 +392,17 @@ return [
     'url'     => 'asignacion',
     'icon'    => 'fa fa-id-badge',
     'icon_color' => 'yellow'
+    ],
+    ['text'    => 'Registro de Novedades',
+    'url'     => 'novedades\create',
+    'icon'    => 'far fa-flag',
+    'icon_color' => 'green'
+    ],
+
+    ['text'    => 'Historico de Novedades',
+    'url'     => 'verNovedades',
+    'icon'    => 'fas fa-landmark',
+    'icon_color' => 'pink'
     ],
 ],
 ],
