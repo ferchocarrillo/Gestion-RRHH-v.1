@@ -192,7 +192,7 @@ margin-left: 2rem;
     color:#000000; ;
 }
 tr{
-    
+
 }
 table {
     table-layout: fixed;
@@ -602,6 +602,7 @@ table {
                         <option value="Aprobado">aprobado
                         <option value="Aplazado">aplazado
                         <option value="Retirado">retirado
+                        <option value="En curso">en curso
                         <option value="Veriicado">verificado
                     </select></p>
                     <p><select name="estado4"  class="inputs6" >
@@ -609,6 +610,7 @@ table {
                         <option value="Aprobado">aprobado
                         <option value="Aplazado">aplazado
                         <option value="Retirado">retirado
+                        <option value="En curso">en curso
                         <option value="Veriicado">verificado
                     </select></p>
                     <p><select name="estado5"  class="inputs6">
@@ -616,6 +618,7 @@ table {
                         <option value="Aprobado">aprobado
                         <option value="Aplazado">aplazado
                         <option value="Retirado">retirado
+                        <option value="En curso">en curso
                         <option value="Veriicado">verificado
                     </select></p>
                     <p><select name="estado6"  class="inputs6">
@@ -623,6 +626,7 @@ table {
                         <option value="Aprobado">aprobado
                         <option value="Aplazado">aplazado
                         <option value="Retirado">retirado
+                        <option value="En curso">en curso
                         <option value="Veriicado">verificado
                     </select></p>
                     <p><select name="estado7"  class="inputs6">
@@ -630,6 +634,7 @@ table {
                         <option value="Aprobado">aprobado
                         <option value="Aplazado">aplazado
                         <option value="Retirado">retirado
+                        <option value="En curso">en curso
                         <option value="Veriicado">verificado
                     </select></p>
 
@@ -728,8 +733,8 @@ table {
                       <option value="No">No</option>
                 </select></p>
             </div>
-        
-     
+
+
 
             <div >
                 <p><input type="text" id ="acCambio" name="acCambio" class="form-control0" style="text-transform: capitalize" placeholder="Actividades realizadas en los lapsos de cambio ocupación" required></p>
@@ -747,12 +752,12 @@ table {
             <div>
                 <p><input type="text" id ="CualOtra" name="CualOtra" class="form-control0" style="text-transform: capitalize" placeholder="Cual?"></p>
             </div>
-   
+
 
             <div>
                 <p><input type="text" id ="fortalezas" name="fortalezas" class="form-control0" style="text-transform: capitalize" placeholder="Cuales son sus fortalezas" required></p>
             </div>
-        </div>  
+        </div>
         <div class="row">
             <div>
                 <p><input type="text" id ="debilidades" name="debilidades" class="form-control0" style="text-transform: capitalize" placeholder="Cuales son sus debilidades" required></p>
@@ -761,7 +766,7 @@ table {
             <div>
                 <p><input type="text" id ="valores" name="valores" class="form-control0" style="text-transform: capitalize" placeholder="Cuales valores le inculco su familia" required></p>
             </div>
-      
+
 
             <div>
                 <p><select type="text" id ="cancelado" name="cancelado" class="form-control0" style="text-transform: capitalize" placeholder="Le han cancelado contrato en otra empresa?" required>
@@ -783,7 +788,7 @@ table {
                     <option value="no">No</option>
                 </select></p>
             </div>
-       
+
             <div>
                 <p><input type="text" id ="motivoJ" name="motivoJ" class="form-control0" style="text-transform: capitalize" placeholder="Motivo"></p>
             </div>
@@ -800,7 +805,7 @@ table {
             <div>
                 <p><input type="text" id ="frecuencia" name="frecuencia" class="form-control0" style="text-transform: capitalize" placeholder="Con que frecuencia"></p>
             </div>
-      
+
 
             <div>
                 <p><input type="text" id ="tiempoLibre" name="tiempoLibre" class="form-control0" style="text-transform: capitalize" placeholder="Que hace en su tiempo libre?" required></p>
@@ -814,7 +819,7 @@ table {
             <div>
                 <p><input type="text" id ="tratamiento" name="tratamiento" class="form-control0" style="text-transform: capitalize" placeholder="Tratamientos medicos" required></p>
             </div>
-     
+
 
             <div>
                 <p><select type="text" id ="accidentes" name="accidentes" class="form-control0" placeholder="Ha sufrido accidentes?" required>
@@ -873,7 +878,7 @@ table {
 </div>
         </div>
 
-  
+
 
 </fieldset>
 

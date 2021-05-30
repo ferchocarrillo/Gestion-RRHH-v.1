@@ -2,6 +2,19 @@
 @section('content')
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
+
+<style>
+
+tr{
+font-size: 9px;
+font-family: 'Times New Roman', Times, serif;
+}
+th{
+}
+
+
+</style>
+
 <div class="container" >
     <div class="pull-right">
         <div class="col-md-20" >
@@ -34,14 +47,14 @@
 </div>
 
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <div class="card">
             <div class="card-body"style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
            <h5 class="card-title"><strong>REQUISICIONES</strong></h5>
 
 {{--inicio primer grafico requisiciones--}}
 
-               <canvas id="RQ1" width="160" height="160" style="background-color: white;"></canvas>
+               <canvas id="RQ1" width="160" height="200" style="background-color: white;"></canvas>
                 <table class="table">
                  <thead>
                   <tr>
@@ -118,7 +131,7 @@
 
 {{--inicio tercer grafico gestionados y pendientes--}}
 
-<div class="col-sm-4">
+<div class="col-sm-3">
     <div class="card">
       <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <h5 class="card-title"><strong>REQUERIMIENTOS GESTIONADOS Y PENDIENTES</strong></h5>
@@ -196,11 +209,11 @@
 {{--fin tercer grafico gestionados y pendientes --}}
 
 {{--inicio segundo grafico publicaciones--}}
-        <div class="col-sm-4">
+        <div class="col-sm-6">
           <div class="card">
             <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
               <h5 class="card-title"><strong>LUGAR DE PUBLICACIONES REALIZADAS</strong></h5>
-               <canvas id="RQ2" width="160" height="160" style="background-color: white;"></canvas>
+               <canvas id="RQ2" width="120" height="60" style="background-color: white;"></canvas>
                <table class="table">
                 <thead>
                  <tr>
@@ -210,6 +223,7 @@
                     <th>Com</th>
                     <th>Ref t</th>
                     <th>Ref j</th>
+                    <th>Ref cl</th>
                 </tr>
                 <tbody>
                     <tr>
@@ -233,23 +247,29 @@
                       @foreach ($count5publicas as $count5publica)
                     <td>{{ $count5publica }}</td>
                     @endforeach
+                    @foreach ($count6publicas as $count6publica)
+                    <td>{{ $count6publica }}</td>
+                    @endforeach
+
+
                   </tr>
+
               </tbody>
                 <tr>
-                    <th>Ref cl</th>
+
                     <th>Univ</th>
                     <th>Redes</th>
                     <th>Hv p</th>
                     <th>Funda</th>
                     <th>Otros</th>
+                    <th>El empleo</th>
+                    <th>Magneto</th>
                   </tr>
                 </thead>
             <tbody>
                 <tr>
 
-                    @foreach ($count6publicas as $count6publica)
-                    <td>{{ $count6publica }}</td>
-                    @endforeach
+
                     @foreach ($count7publicas as $count7publica)
                     <td>{{ $count7publica }}</td>
                     @endforeach
@@ -265,6 +285,12 @@
                     @foreach ($count11publicas as $count11publica)
                     <td>{{ $count11publica }}</td>
                     @endforeach
+                    @foreach ($count12publicas as $count12publica)
+                    <td>{{ $count12publica }}</td>
+                    @endforeach
+                    @foreach ($count13publicas as $count13publica)
+                    <td>{{ $count13publica }}</td>
+                    @endforeach
                   </tr>
                 </tbody>
               </table>
@@ -277,7 +303,7 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Vincuventas', 'Computrabajo', 'SNE', 'Compensar','Referidos trabajadores','Referidos jefes','Referidos clientes','Universidades','Redes','Hv preseciales','Fundaciones','Otros'],
+                    labels: ['Vincuventas', 'Computrabajo', 'SNE', 'Compensar','Referidos trabajadores','Referidos jefes','Referidos clientes','Universidades','Redes','Hv preseciales','Fundaciones','Otros','el empleo','Magneto'],
                     datasets: [{
                         label: 'publicaciones',
                         data:[
@@ -292,7 +318,9 @@
                             {{ $count8publica }},
                             {{ $count9publica }},
                             {{ $count10publica }},
-                            {{ $count11publica }}
+                            {{ $count11publica }},
+                            {{ $count12publica }},
+                            {{ $count13publica }}
                             ],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -300,7 +328,15 @@
                             'rgba(255, 206, 86, 0.2)',
                             'rgba(255, 159, 64, 0.2)',
                             'rgba(14, 262, 95, 0.2)',
-                            'rgba(154, 262, 85, 0.2)'
+                            'rgba(154, 262, 85, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(14, 262, 95, 0.2)',
+                            'rgba(154, 262, 85, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)'
                         ],
                         borderColor: [
                             'rgba(255, 99, 132, 1)',
@@ -308,7 +344,15 @@
                             'rgba(255, 206, 86, 1)',
                             'rgba(255, 159, 64, 1)',
                             'rgba(14, 262, 95, 1)',
-                            'rgba(154, 262, 85, 1)'
+                            'rgba(154, 262, 85, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(14, 262, 95, 1)',
+                            'rgba(154, 262, 85, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)'
                         ],
                         borderWidth: 2
                     }]
@@ -335,18 +379,19 @@
 {{--inicio cuarto grafico filtro hojas de vida--}}
 
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-6">
       <div class="card">
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           <h5 class="card-title"><strong> FILTRO DE HOJAS DE VIDA</strong></h5>
-           <canvas id="myChart5" width="160" height="160" style="background-color: white;"></canvas>
+           <canvas id="myChart5" width="180" height="200" style="background-color: white;"></canvas>
            <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">C. Ent</th>
-                  <th scope="col">N/A</th>
-                  <th scope="col">No inte</th>
-                  <th scope="col">Env. Cap</th>
+                  <th scope="col">Citado<br>Entrevista</th>
+                  <th scope="col">No<br>Aplica</th>
+                  <th scope="col">No<br>Interesado</th>
+                  <th scope="col">Enviado<br>Examenes</th>
+                  <th scope="col">Pruebas<br>Enviadas</th>
               </tr>
               <tr>
                 <br>
@@ -365,19 +410,24 @@
                   @foreach ($count3filtros as $count3filtro)
                   <td>  {{ $count3filtro}}  </td>
                   @endforeach
+                  @foreach ($count4filtros as $count4filtro)
+                  <td>{{ $count4filtro }}</td>
+                  @endforeach
+
+
                 </tr>
               <tr>
-                  <th scope="col">Env. Exm</th>
-                  <th scope="col">Pruebas Env</th>
-                  <th scope="col">Ya trabaja</th>
-                  <th scope="col"># Equivocado</th>
+
+                <th scope="col">Ya<br>Trabaja</th>
+                <th scope="col">Numero<br>Equivocado</th>
+                <th scope="col">No Res 2do<br>llamado</th>
+                <th scope="col">Ya No<br>Interesado</th>
+                <th scope="col">Es Estudiante</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  @foreach ($count4filtros as $count4filtro)
-                  <td>{{ $count4filtro }}</td>
-                  @endforeach
+
                   @foreach ($count5filtros as $count5filtro)
                   <td>{{ $count5filtro }}</td>
                   @endforeach
@@ -387,20 +437,26 @@
                   @foreach ($count7filtros as $count7filtro)
                   <td>{{ $count7filtro }}</td>
                   @endforeach
+                  @foreach ($count8filtros as $count8filtro)
+                  <td>{{ $count8filtro }}</td>
+                  @endforeach
+                  @foreach ($count9filtros as $count9filtro)
+                  <td>{{ $count9filtro }}</td>
+                  @endforeach
                 </tr>
               </tbody>
               <tr>
-                <th scope="col">No Asiste</th>
-                <th scope="col">No Responde2</th>
-                <th scope="col">Ya No Int</th>
-                <th scope="col">Estudiante</th>
+
+                <th scope="col">No<br>Asiste Citacion</th>
+                <th scope="col">No Asiste<br>Entrevista</th>
+                <th scope="col">Enviado<br>Contratación</th>
+                <th scope="col">No Contratado</th>
+                <th scope="col">Enviado<br>Capacitacion</th>
                </tr>
             </thead>
             <tbody>
               <tr>
-                @foreach ($count9filtros as $count9filtro)
-                <td>{{ $count9filtro }}</td>
-                @endforeach
+
                 @foreach ($count10filtros as $count10filtro)
                 <td>{{ $count10filtro }}</td>
                 @endforeach
@@ -410,26 +466,28 @@
                 @foreach ($count12filtros as $count12filtro)
                 <td>{{ $count12filtro }}</td>
                 @endforeach
-              </tr>
-            </tbody>
-
-            <tr>
-                <th scope="col">No Asiste Ent</th>
-                <th scope="col">Ent jefe Inmediato</th>
-                <th scope="col">Ent Gerencia</th>
-                <th scope="col">Enviado Contrat</th>
-
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
                 @foreach ($count13filtros as $count13filtro)
                 <td>{{ $count13filtro }}</td>
                 @endforeach
                 @foreach ($count14filtros as $count14filtro)
                 <td>{{ $count14filtro }}</td>
                 @endforeach
+
+              </tr>
+            </tbody>
+
+            <tr>
+
+                <th scope="col">Enviado Entrevista<br>Jefe In.</th>
+                <th scope="col">Enviado Entrevista<br>Gerencia</th>
+
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
                 @foreach ($count15filtros as $count15filtro)
                 <td>{{ $count15filtro }}</td>
                 @endforeach
@@ -451,7 +509,7 @@
       var myLineChart = new Chart(ctx, {
           type: 'bar',
           data: {
-              labels: ['Citado Entrevista', 'N/A', 'No Interesado','Enviado a Capacitacion','Enviado a Examenes','Se Remiten Pruebas','Ya Trabaja','Numero Equivocado', 'No Asiste Capacitacion', 'No Responde Segundo Llamado', 'Ya No Le Interesa', 'Estudiante','No Asiste a la Entrevista','Ent jefe Inmediato','Ent Gerencia','Enviado Contrat'],
+              labels: ['Citado Entrevista', 'no aplica', 'No Interesado','Enviado Exam.','Se Remiten Pruebas','Ya Trabaja','Numero Equivocado','No Responde Segundo Llamado', 'Ya No Le Interesa', 'Estudiante','No Asiste Citacion','No Asiste a la Entrevista','Enviado Contratación', 'No contratado','Enviado Capacitación','Ent. jefe Inm.', 'Ent. Gerencia'],
               datasets: [{
                   label: 'filtro hojas de vida',
                   data: [{{ $countfiltro }}, {{ $count1filtro }}, {{ $count2filtro }},{{ $count3filtro }},{{ $count4filtro }},{{ $count5filtro }}, {{ $count6filtro }},{{ $count7filtro }},{{ $count9filtro }},{{ $count10filtro }},{{ $count11filtro }},{{ $count12filtro }}, {{ $count13filtro }}, {{ $count14filtro }}, {{ $count15filtro }}, {{ $count16filtro }}],
@@ -468,9 +526,15 @@
                       'rgba(23, 216, 70, 0.8)',
                       'rgba(23, 216, 149, 0.8)',
                       'rgba(23, 187, 216, 0.8)',
-                      'rgba(23, 108, 216, 0.8)'
+                      'rgba(23, 108, 216, 0.8)',
+                      'rgba(216, 23, 23, 0.8)',
+                      'rgba(216, 81, 23, 0.8)',
+                      'rgba(216, 128, 23, 0.8)'
                   ],
                   borderColor: [
+                      'rgba(0, 0, 0, 1)',
+                      'rgba(0, 0, 0, 1)',
+                      'rgba(0, 0, 0, 1)',
                       'rgba(0, 0, 0, 1)',
                       'rgba(0, 0, 0, 1)',
                       'rgba(0, 0, 0, 1)',
@@ -504,12 +568,12 @@
 
 {{--fin cuarto grafico filtro hojas de vida--}}
 {{--inicio sexto grafico capacitacion--}}
-
-<div class="col-sm-4">
+<div class="col-sm-6">
+<div class="row">
     <div class="card">
       <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         <h5 class="card-title"><strong>PROCEDENCIA DE LOS ENTREVISTADOS </strong></h5>
-         <canvas id="myChart7" width="160" height="160" style="background-color: white;"></canvas>
+         <canvas id="myChart7" width="160" height="80" style="background-color: white;"></canvas>
          <table class="table">
             <thead>
               <tr>
@@ -519,7 +583,7 @@
             <tr>
               <br>
 
-                <h6>Personas Entrevista: <strong> {{ $residencias->total() }}</strong></h6>
+                <h6>Personas Entrevistadas: <strong> {{ $residencias->total() }}</strong></h6>
 
                 @foreach ($residencia1s as $residencia1)
                 <td>{{ $residencia1 }}</td>
@@ -541,7 +605,7 @@
   <script>
     var ctx = document.getElementById('myChart7').getContext('2d');
     var myLineChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'doughnut',
         data: {
             labels: ['Bogotá', 'Alrededores'],
             datasets: [{
@@ -582,26 +646,23 @@
 
 
 
-<div class="col-sm-6">
+<div class="row">
     <div class="card">
       <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-        <h5 class="card-title"><strong>Resultado entrevista RR HH </strong></h5>
-         <canvas id="myChartRrHh" width="160" height="160" style="background-color: white;"></canvas>
+        <h5 class="card-title"><strong>Resultados Jefe inmediato , Gerencia </strong></h5>
+         <canvas id="myChartRrHh" width="180" height="110" style="background-color: white;"></canvas>
          <table class="table">
             <thead>
               <tr>
-                <th scope="col">Cargo requiere segunda entrevista</th>
-                <th scope="col">Enviado a capacitacion</th>
-                <th scope="col">Enviado a contratación</th>
-                <th scope="col">No aplica para el cargo</th>
-                <th scope="col">No contratado</th>
-                <th scope="col">Postulado desistió de la oferta</th>
-
+                <th scope="col">Aprobado Jefe inmediato</th>
+                <th scope="col">No Aprobado Jefe Inmediato</th>
+                <th scope="col">Aprobado Gerencia</th>
+                <th scope="col">No Aprobado Gerencia</th>
               </tr>
             <tr>
               <br>
 
-                <h6>Personas entrevistadas: <strong> {{ $residencias->total() }}</strong></h6>
+                <h6>Personas Entrevistadas: <strong> {{ $residencias->total() }}</strong></h6>
 
 
                 @foreach ($respuestarrhh1s as $respuestarrhh1)
@@ -616,12 +677,7 @@
                 @foreach ($respuestarrhh4s as $respuestarrhh4)
                 <td>  {{ $respuestarrhh4}}  </td>
                 @endforeach
-                @foreach ($respuestarrhh5s as $respuestarrhh5)
-                <td>{{ $respuestarrhh5 }}</td>
-                @endforeach
-                @foreach ($respuestarrhh6s as $respuestarrhh6)
-                <td>  {{ $respuestarrhh6}}  </td>
-                @endforeach
+
 
               </tr>
 
@@ -630,22 +686,18 @@
       </div>
     </div>
   </div>
-
-
+</div>
   <script>
     var ctx = document.getElementById('myChartRrHh').getContext('2d');
     var myLineChart = new Chart(ctx, {
-        type: 'line',
+        type: 'doughnut',
         data: {
-            labels: ['requiere nueva ent', 'env capa', 'env contrat', 'n/a para el cargo', 'no contratado', 'desistió' ],
+            labels: ['Aprobado jefe inmediato', 'No Aprobado jefe inmediato', 'Aprobado Gerencia', 'No Aprobado Gerencia' ],
             datasets: [{
                 label: 'Resultado Entrevistas',
-                data: [{{ $respuestarrhh1 }}, {{ $respuestarrhh2 }}, {{ $respuestarrhh3 }}, {{ $respuestarrhh4 }} , {{ $respuestarrhh5 }}, {{ $respuestarrhh6 }}],
+                data: [{{ $respuestarrhh1 }}, {{ $respuestarrhh2 }}, {{ $respuestarrhh3 }}, {{ $respuestarrhh4 }}],
                 backgroundColor: [
                     'rgba(216, 23, 23, 0.8)',
-                    'rgba(23, 108, 216, 0.8)',
-                    'rgba(23, 108, 216, 0.8)',
-                    'rgba(23, 108, 216, 0.8)',
                     'rgba(23, 108, 216, 0.8)',
                     'rgba(23, 108, 216, 0.8)',
                     'rgba(23, 108, 216, 0.8)'
@@ -654,11 +706,7 @@
                     'rgba(0, 0, 0, 1)',
                     'rgba(0, 0, 0, 1)',
                     'rgba(0, 0, 0, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(0, 0, 0, 1)',
-                    'rgba(0, 0, 0, 1)',
                     'rgba(0, 0, 0, 1)'
-
                 ],
                 borderWidth: 3
             }]
@@ -674,8 +722,187 @@
         }
     });
     </script>
+    <div class="col-sm-12">
+        <div class="card">
+          <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+            <h5 class="card-title"><strong>DISTRIBUCION DE FOCOS</strong></h5>
+             <canvas id="focosDistribucion" width="980" height="200" style="background-color: white;"></canvas>
+             <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Citado<br>Entrevista</th>
+                    <th scope="col">No<br>Aplica</th>
+                    <th scope="col">No<br>Interesado</th>
+                    <th scope="col">Enviado<br>Examenes</th>
+                    <th scope="col">Pruebas<br>Enviadas</th>
+                </tr>
+                <tr>
+                  <br>
+
+                    <h6>DISTRIBUCION DE FOCOS: <strong> {{ $filtros->total() }}</strong></h6>
+
+                    {{--  @foreach ($cargorequises as $cargorequis)
+                    <td>{{ $cargorequis }}</td>
+                    @endforeach  --}}
+
+
+
+                  </tr>
+                {{--  <tr>
+
+                  <th scope="col">Ya<br>Trabaja</th>
+                  <th scope="col">Numero<br>Equivocado</th>
+                  <th scope="col">No Res 2do<br>llamado</th>
+                  <th scope="col">Ya No<br>Interesado</th>
+                  <th scope="col">Es Estudiante</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+
+                    @foreach ($count5filtros as $count5filtro)
+                    <td>{{ $count5filtro }}</td>
+                    @endforeach
+                    @foreach ($count6filtros as $count6filtro)
+                    <td>{{ $count6filtro }}</td>
+                    @endforeach
+                    @foreach ($count7filtros as $count7filtro)
+                    <td>{{ $count7filtro }}</td>
+                    @endforeach
+                    @foreach ($count8filtros as $count8filtro)
+                    <td>{{ $count8filtro }}</td>
+                    @endforeach
+                    @foreach ($count9filtros as $count9filtro)
+                    <td>{{ $count9filtro }}</td>
+                    @endforeach
+                  </tr>
+                </tbody>
+                <tr>
+
+                  <th scope="col">No<br>Asiste Citacion</th>
+                  <th scope="col">No Asiste<br>Entrevista</th>
+                  <th scope="col">Enviado<br>Contratación</th>
+                  <th scope="col">No Contratado</th>
+                  <th scope="col">Enviado<br>Capacitacion</th>
+                 </tr>
+              </thead>
+              <tbody>
+                <tr>
+
+                  @foreach ($count10filtros as $count10filtro)
+                  <td>{{ $count10filtro }}</td>
+                  @endforeach
+                  @foreach ($count11filtros as $count11filtro)
+                  <td>{{ $count11filtro }}</td>
+                  @endforeach
+                  @foreach ($count12filtros as $count12filtro)
+                  <td>{{ $count12filtro }}</td>
+                  @endforeach
+                  @foreach ($count13filtros as $count13filtro)
+                  <td>{{ $count13filtro }}</td>
+                  @endforeach
+                  @foreach ($count14filtros as $count14filtro)
+                  <td>{{ $count14filtro }}</td>
+                  @endforeach
+
+                </tr>
+              </tbody>
+
+              <tr>
+
+                  <th scope="col">Enviado Entrevista<br>Jefe In.</th>
+                  <th scope="col">Enviado Entrevista<br>Gerencia</th>
+
+
+
+                </tr>  --}}
+              </thead>
+              <tbody>
+                <tr>
+
+                  @foreach ($count15filtros as $count15filtro)
+                  <td>{{ $count15filtro }}</td>
+                  @endforeach
+                  @foreach ($count16filtros as $count16filtro)
+                  <td>{{ $count16filtro }}</td>
+                  @endforeach
+                </tr>
+              </tbody>
+
+
+
+              </table>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        var ctx = document.getElementById('focosDistribucion').getContext('2d');
+        var myLineChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Citado Entrevista', 'no aplica', 'No Interesado','Enviado Exam.','Se Remiten Pruebas','Ya Trabaja','Numero Equivocado','No Responde Segundo Llamado', 'Ya No Le Interesa', 'Estudiante','No Asiste Citacion','No Asiste a la Entrevista','Enviado Contratación', 'No contratado','Enviado Capacitación','Ent. jefe Inm.', 'Ent. Gerencia'],
+                datasets: [{
+                    label: 'filtro hojas de vida',
+                    data: [{{ $countfiltro }}, {{ $count1filtro }}, {{ $count2filtro }},{{ $count3filtro }},{{ $count4filtro }},{{ $count5filtro }}, {{ $count6filtro }},{{ $count7filtro }},{{ $count9filtro }},{{ $count10filtro }},{{ $count11filtro }},{{ $count12filtro }}, {{ $count13filtro }}, {{ $count14filtro }}, {{ $count15filtro }}, {{ $count16filtro }}],
+                    backgroundColor: [
+                        'rgba(216, 23, 23, 0.8)',
+                        'rgba(216, 81, 23, 0.8)',
+                        'rgba(216, 128, 23, 0.8)',
+                        'rgba(216, 163, 23, 0.8)',
+                        'rgba(216, 198, 23, 0.8)',
+                        'rgba(201, 216, 23, 0.8)',
+                        'rgba(155, 216, 23, 0.8)',
+                        'rgba(108, 216, 23, 0.8)',
+                        'rgba(41, 216, 23, 0.8)',
+                        'rgba(23, 216, 70, 0.8)',
+                        'rgba(23, 216, 149, 0.8)',
+                        'rgba(23, 187, 216, 0.8)',
+                        'rgba(23, 108, 216, 0.8)',
+                        'rgba(216, 23, 23, 0.8)',
+                        'rgba(216, 81, 23, 0.8)',
+                        'rgba(216, 128, 23, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(0, 0, 0, 1)'
+
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+
+
+
+
  </div>
 {{--fin septimo grafico resultado rrhh--}}
+
 
 
 
@@ -691,7 +918,7 @@
       <div class="card">
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           <h5 class="card-title"><strong>RESULTADO DE CAPACITACION</strong></h5>
-           <canvas id="myChart6" width="260" height="260" style="background-color: white;"></canvas>
+           <canvas id="myChart6" width="80" height="80" style="background-color: white;"></canvas>
            <table class="table">
               <thead>
                 <tr>
@@ -725,6 +952,81 @@
                   label: 'filtro hojas de vida',
                   data: [{{ $capacitacionAp }}, {{ $capacitacionNap }}],
                   backgroundColor: [
+                    'rgba(23, 108, 216, 0.8)'
+                  'rgba(216, 23, 23, 0.8)'
+
+
+                  ],
+                  borderColor: [
+                      'rgba(0, 0, 0, 1)',
+
+                      'rgba(0, 0, 0, 1)'
+
+                  ],
+                  borderWidth: 2
+              }]
+          },
+          options: {
+              scales: {
+                  yAxes: [{
+                      ticks: {
+                          beginAtZero: true
+                      }
+                  }]
+              }
+          }
+      });
+      </script>
+
+
+{{--fin quinto grafico capacitacion--}}
+
+{{--inicio quinto grafico contratacion--}}
+
+<div class="card-header">
+  <center><H4>CONTRATACION</H4></center>
+
+  </div>
+<div class="row">
+
+   <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+          <h5 class="card-title"><strong>RESULTADO DE CONTRATACION</strong></h5>
+           <canvas id="contratacion" width="80" height="80" style="background-color: white;"></canvas>
+           <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">NO contatado</th>
+                  <th scope="col">Contatado</th>
+                </tr>
+              <tr>
+                <br>
+ <h6>Personas Capacitadas:  <strong>{{ $contratacionEnvs->total() }}</strong></h6>
+
+                  @foreach ($noContratados as $noContratado)
+                  <td>{{ $noContratado }}</td>
+                  @endforeach
+                  @foreach ($ContratacionOks as $ContratacionOk)
+                  <td>  {{ $ContratacionOk}}  </td>
+                  @endforeach
+                </tr>
+              </thead>
+            </table>
+        </div>
+      </div>
+    </div>
+</div>
+    <script>
+      var ctx = document.getElementById('contratacion').getContext('2d');
+      var myLineChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: ['No Contratado', 'Contratados'],
+              datasets: [{
+                  label: 'filtro hojas de vida',
+                  data: [{{ $noContratado }}, {{ $ContratacionOk }}],
+                  backgroundColor: [
                       'rgba(216, 23, 23, 0.8)',
 
                       'rgba(23, 108, 216, 0.8)'
@@ -751,7 +1053,7 @@
       </script>
 
 
-{{--fin quinto grafico capacitacion--}}
+{{--fin quinto grafico contratacion--}}
 
 
 
