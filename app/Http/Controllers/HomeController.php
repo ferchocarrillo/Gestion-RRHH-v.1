@@ -19,6 +19,7 @@ use App\User;
 use App\Reclutamiento;
 use App\Filtro2;
 use Carbon\Carbon;
+use SebastianBergmann\CodeCoverage\Report\Xml\Totals;
 
 class HomeController extends Controller
 {
@@ -66,16 +67,17 @@ class HomeController extends Controller
 
       $requisiciones = Requisicion::orderBy('revisado', 'asc')->paginate(10);
 
+
       $pruebaRequises['requisicions'] = Requisicion::where('revisado','<>',NULL)->count();
       $countRequises ['requisicions'] = Requisicion::where('revisado', 'Aprobado')->count();
       $countRequi2ses['requisicions'] = Requisicion::where('revisado', 'Rechazado')->count();
       $countRequi3ses['requisicions'] = Requisicion::where('revisado', 'Pendiente')->count();
       $countRequi4ses['requisicions'] = Requisicion::where('revisado', null)->count();
 
+      $contarrequisiciones = Requisicion::sum('cantidad','<>', null);
+    //   $contarrequisiciones['requisicions']=Requisicion::all()->collect($contarrequisiciones)->sum('cantidad');
 
 
-$cargorequises = Requisicion::sum('cantidad');
-collect($requisiciones)->sum('cantidad');
 
 
       $publicaciones = Reclutamiento::orderBy('created_at', 'asc')->paginate(10);
@@ -134,6 +136,20 @@ collect($requisiciones)->sum('cantidad');
       $count11Fuentes['filtros2'] = Filtro2::where('fuente', 'otros')->count();
 
       $capacitacioneses  = Filtro2::orderBy('created_at', 'asc')->where('enviadoCapa','=','X')->paginate(10);
+      $campaetbs['filtros2'] = Filtro2::where('campaña', 'ETB')->count();
+      $campamovistars['filtros2'] = Filtro2::where('campaña', 'Movistar')->count();
+      $campaqnts['filtros2'] = Filtro2::where('campaña', 'QNT')->count();
+      $campastaffs['filtros2'] = Filtro2::where('campaña', 'Staff Mentius')->count();
+      $campavantis['filtros2'] = Filtro2::where('campaña', 'Vanti')->count();
+      $campavantisacs['filtros2'] = Filtro2::where('campaña', 'Vanti S A C')->count();
+
+
+$aproetbs['filtros2'] = Filtro2::where('campaña','=','ETB')->where('resultadoFormacion','=','Aprobado')->count();
+$reproetbs['filtros2'] = Filtro2::where('campaña','=','ETB')->where('resultadoFormacion','=','No Aprobado')->count();
+
+$apromovistars['filtros2'] = Filtro2::where('campaña','=','Movistar')->where('resultadoFormacion','=','Aprobado')->count();
+$repromovistars['filtros2'] = Filtro2::where('campaña','=','Movistar')->where('resultadoFormacion','=','No Aprobado')->count();
+
 
       $date1 = $request->input('created_at');
 //    $date->('created_at')->isSameMonth(now());
@@ -160,6 +176,19 @@ collect($requisiciones)->sum('cantidad');
       $ContratacionOks['filtros']= Filtro2::where('contratacionOK','=','X')->count();
 
       return view('home' ,compact(
+        'aproetbs',
+        'reproetbs',
+        'apromovistars',
+        'repromovistars',
+
+
+'contarrequisiciones',
+'campaetbs',
+'campamovistars',
+'campaqnts',
+'campastaffs',
+'campavantis',
+'campavantisacs',
         'campañases',
         'etbes',
         'movistares',
@@ -213,7 +242,7 @@ collect($requisiciones)->sum('cantidad');
       'count2filtros',
       'count1filtros',
       'countfiltros',
-      'cargorequises',
+
       'pruebaRequises',
       'count10publicas',
       'count9publicas',

@@ -228,7 +228,8 @@ th{
                 <tbody>
                     <tr>
                       <br>
-                        <h6>Total de Publicaciones:<strong>  {{ $publicaciones->total() }}</strong></h6>
+                      <div class="row" >
+                        <h6>Total de Publicaciones:<strong>  {{ $publicaciones->total() }}</strong></h6>&nbsp;&nbsp;&nbsp; <h6> Personal Requerido <strong> {{$contarrequisiciones}} </strong>Personas</h6></div>
                       @foreach ($countpublicas as $countpublica)
                       <td>{{ $countpublica }}</td>
                       @endforeach
@@ -697,8 +698,8 @@ th{
                 label: 'Resultado Entrevistas',
                 data: [{{ $respuestarrhh1 }}, {{ $respuestarrhh2 }}, {{ $respuestarrhh3 }}, {{ $respuestarrhh4 }}],
                 backgroundColor: [
-                    'rgba(216, 23, 23, 0.8)',
-                    'rgba(23, 108, 216, 0.8)',
+                    'rgb(4, 156, 212, 0.8)',
+                    'rgb(116, 180, 60, 0.8 )',
                     'rgba(23, 108, 216, 0.8)',
                     'rgba(23, 108, 216, 0.8)'
                 ],
@@ -725,155 +726,84 @@ th{
     <div class="col-sm-12">
         <div class="card">
           <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-            <h5 class="card-title"><strong>DISTRIBUCION DE FOCOS</strong></h5>
-             <canvas id="focosDistribucion" width="980" height="200" style="background-color: white;"></canvas>
+            <h5 class="card-title"><strong>DISTRIBUCION DE CAMPAÑAS EN LAS ENTREVISTAS</strong></h5>
+             <canvas id="distribucioncampanas" width="980" height="200" style="background-color: white;"></canvas>
              <table class="table">
                 <thead>
-                  <tr>
-                    <th scope="col">Citado<br>Entrevista</th>
-                    <th scope="col">No<br>Aplica</th>
-                    <th scope="col">No<br>Interesado</th>
-                    <th scope="col">Enviado<br>Examenes</th>
-                    <th scope="col">Pruebas<br>Enviadas</th>
-                </tr>
+
                 <tr>
                   <br>
 
-                    <h6>DISTRIBUCION DE FOCOS: <strong> {{ $filtros->total() }}</strong></h6>
+                    <h6>DISTRIBUCION DE CAMPAÑAS: <strong> {{ $filtros->total() }}</strong></h6>
 
-                    {{--  @foreach ($cargorequises as $cargorequis)
-                    <td>{{ $cargorequis }}</td>
-                    @endforeach  --}}
+
+
+
+
+
+
+
 
 
 
                   </tr>
-                {{--  <tr>
+              <tr>
 
-                  <th scope="col">Ya<br>Trabaja</th>
-                  <th scope="col">Numero<br>Equivocado</th>
-                  <th scope="col">No Res 2do<br>llamado</th>
-                  <th scope="col">Ya No<br>Interesado</th>
-                  <th scope="col">Es Estudiante</th>
+                  <th scope="col">ETB</th>
+                  <th scope="col">MOVISTAR</th>
+                  <th scope="col">QNT</th>
+                  <th scope="col">STAFF</th>
+                  <th scope="col">VANTI</th>
+                  <th scope="col">VANTI SAC</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
 
-                    @foreach ($count5filtros as $count5filtro)
-                    <td>{{ $count5filtro }}</td>
+                    @foreach ($campaetbs as $campaetb)
+                    <td>{{ $campaetb }}</td>
                     @endforeach
-                    @foreach ($count6filtros as $count6filtro)
-                    <td>{{ $count6filtro }}</td>
+                    @foreach ($campamovistars as $campamovistar)
+                    <td>{{ $campamovistar }}</td>
                     @endforeach
-                    @foreach ($count7filtros as $count7filtro)
-                    <td>{{ $count7filtro }}</td>
+                    @foreach ($campaqnts as $campaqnt)
+                    <td>{{ $campaqnt }}</td>
                     @endforeach
-                    @foreach ($count8filtros as $count8filtro)
-                    <td>{{ $count8filtro }}</td>
+                    @foreach ($campastaffs as $campastaff)
+                    <td>{{ $campastaff }}</td>
                     @endforeach
-                    @foreach ($count9filtros as $count9filtro)
-                    <td>{{ $count9filtro }}</td>
+                    @foreach ($campavantis as $campavanti)
+                    <td>{{ $campavanti }}</td>
+                    @endforeach
+                    @foreach ( $campavantisacs as $campavantisac)
+                    <td>{{$campavantisac}}</td>
                     @endforeach
                   </tr>
-                </tbody>
-                <tr>
-
-                  <th scope="col">No<br>Asiste Citacion</th>
-                  <th scope="col">No Asiste<br>Entrevista</th>
-                  <th scope="col">Enviado<br>Contratación</th>
-                  <th scope="col">No Contratado</th>
-                  <th scope="col">Enviado<br>Capacitacion</th>
-                 </tr>
               </thead>
               <tbody>
-                <tr>
-
-                  @foreach ($count10filtros as $count10filtro)
-                  <td>{{ $count10filtro }}</td>
-                  @endforeach
-                  @foreach ($count11filtros as $count11filtro)
-                  <td>{{ $count11filtro }}</td>
-                  @endforeach
-                  @foreach ($count12filtros as $count12filtro)
-                  <td>{{ $count12filtro }}</td>
-                  @endforeach
-                  @foreach ($count13filtros as $count13filtro)
-                  <td>{{ $count13filtro }}</td>
-                  @endforeach
-                  @foreach ($count14filtros as $count14filtro)
-                  <td>{{ $count14filtro }}</td>
-                  @endforeach
-
-                </tr>
-              </tbody>
-
-              <tr>
-
-                  <th scope="col">Enviado Entrevista<br>Jefe In.</th>
-                  <th scope="col">Enviado Entrevista<br>Gerencia</th>
-
-
-
-                </tr>  --}}
-              </thead>
-              <tbody>
-                <tr>
-
-                  @foreach ($count15filtros as $count15filtro)
-                  <td>{{ $count15filtro }}</td>
-                  @endforeach
-                  @foreach ($count16filtros as $count16filtro)
-                  <td>{{ $count16filtro }}</td>
-                  @endforeach
-                </tr>
-              </tbody>
-
-
-
               </table>
           </div>
         </div>
       </div>
 
       <script>
-        var ctx = document.getElementById('focosDistribucion').getContext('2d');
+        var ctx = document.getElementById('distribucioncampanas').getContext('2d');
         var myLineChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Citado Entrevista', 'no aplica', 'No Interesado','Enviado Exam.','Se Remiten Pruebas','Ya Trabaja','Numero Equivocado','No Responde Segundo Llamado', 'Ya No Le Interesa', 'Estudiante','No Asiste Citacion','No Asiste a la Entrevista','Enviado Contratación', 'No contratado','Enviado Capacitación','Ent. jefe Inm.', 'Ent. Gerencia'],
+                labels: ['ETB', 'MOVISTAR', 'QNT','STAFF MENTIUS','VANTI','VANTI SAC'],
                 datasets: [{
-                    label: 'filtro hojas de vida',
-                    data: [{{ $countfiltro }}, {{ $count1filtro }}, {{ $count2filtro }},{{ $count3filtro }},{{ $count4filtro }},{{ $count5filtro }}, {{ $count6filtro }},{{ $count7filtro }},{{ $count9filtro }},{{ $count10filtro }},{{ $count11filtro }},{{ $count12filtro }}, {{ $count13filtro }}, {{ $count14filtro }}, {{ $count15filtro }}, {{ $count16filtro }}],
+                    label:'Entrevistados por campaña',
+                    data: [{{ $campaetb }}, {{ $campamovistar }}, {{ $campaqnt }},{{ $campastaff }},{{ $campavanti }},{{ $campavantisac }}],
                     backgroundColor: [
-                        'rgba(216, 23, 23, 0.8)',
-                        'rgba(216, 81, 23, 0.8)',
-                        'rgba(216, 128, 23, 0.8)',
-                        'rgba(216, 163, 23, 0.8)',
-                        'rgba(216, 198, 23, 0.8)',
-                        'rgba(201, 216, 23, 0.8)',
-                        'rgba(155, 216, 23, 0.8)',
-                        'rgba(108, 216, 23, 0.8)',
-                        'rgba(41, 216, 23, 0.8)',
-                        'rgba(23, 216, 70, 0.8)',
-                        'rgba(23, 216, 149, 0.8)',
-                        'rgba(23, 187, 216, 0.8)',
-                        'rgba(23, 108, 216, 0.8)',
-                        'rgba(216, 23, 23, 0.8)',
-                        'rgba(216, 81, 23, 0.8)',
-                        'rgba(216, 128, 23, 0.8)'
+                        'rgba(4, 156, 212, 0.8)',
+                        'rgba(116, 180, 60, 0.8)',
+                        '#e43435',
+                        '#1c4c6c',
+                        '#ffc447',
+                        '#607584'
                     ],
                     borderColor: [
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(0, 0, 0, 1)',
                         'rgba(0, 0, 0, 1)',
                         'rgba(0, 0, 0, 1)',
                         'rgba(0, 0, 0, 1)',
@@ -918,7 +848,7 @@ th{
       <div class="card">
         <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           <h5 class="card-title"><strong>RESULTADO DE CAPACITACION</strong></h5>
-           <canvas id="myChart6" width="80" height="80" style="background-color: white;"></canvas>
+           <canvas id="capacitacionresultado" width="80" height="80" style="background-color: white;"></canvas>
            <table class="table">
               <thead>
                 <tr>
@@ -927,57 +857,255 @@ th{
                 </tr>
               <tr>
                 <br>
- <h6>Personas Capacitadas:  <strong>{{ $capacitacioneses->total() }}</strong></h6>
+                <h6>Personas Capacitadas:  <strong>{{ $capacitacioneses->total() }}</strong></h6>
+                @foreach ($capacitacionAps as $capacitacionAp)
+                <td>{{ $capacitacionAp }}</td>
+                @endforeach
+                @foreach ($capacitacionNaps as $capacitacionNap)
+                <td>  {{ $capacitacionNap}}  </td>
+                @endforeach
+                </tr>
+              </thead>
+            </table>
+        </div>
+      </div>
+    </div> </div>
 
-                  @foreach ($capacitacionAps as $capacitacionAp)
-                  <td>{{ $capacitacionAp }}</td>
-                  @endforeach
-                  @foreach ($capacitacionNaps as $capacitacionNap)
-                  <td>  {{ $capacitacionNap}}  </td>
-                  @endforeach
+<script>
+    var ctx = document.getElementById('capacitacionresultado').getContext('2d');
+    var myLineChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['No aprobado', 'Aprobado'],
+            datasets: [{
+                label: 'Capacitados',
+                data: [{{ $capacitacionNap }}, {{ $capacitacionAp }}],
+                backgroundColor: [
+                    'rgba(216, 23, 23, 0.8)',
+
+                    'rgba(23, 108, 216, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(0, 0, 0, 1)',
+
+                    'rgba(0, 0, 0, 1)'
+
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
+
+    {{--inicio capacitacion--}}
+    <div class="row">
+   <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+          <h5 class="card-title"><strong>ETB</strong></h5>
+           <canvas id="etbcapa" width="80" height="80" style="background-color: white;"></canvas>
+           <table class="table">
+              <thead>
+
+                <tr>
+                  <th scope="col">ETB Aprobado</th>
+                  <th scope="col">ETB No aprobados</th>
+                </tr>
+
+
+                <tr>
+                @foreach ($aproetbs as $aproetb)
+                <td>{{ $aproetb }}</td>
+                @endforeach
+                @foreach ($reproetbs as $reproetb)
+                <td>  {{ $reproetb}}  </td>
+                @endforeach
                 </tr>
               </thead>
             </table>
         </div>
       </div>
     </div>
-</div>
-    <script>
-      var ctx = document.getElementById('myChart6').getContext('2d');
-      var myLineChart = new Chart(ctx, {
-          type: 'pie',
-          data: {
-              labels: ['Aprobados', 'No Aprobados'],
-              datasets: [{
-                  label: 'filtro hojas de vida',
-                  data: [{{ $capacitacionAp }}, {{ $capacitacionNap }}],
-                  backgroundColor: [
+
+<script>
+    var ctx = document.getElementById('etbcapa').getContext('2d');
+    var myLineChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['No aprobado', 'Aprobado'],
+            datasets: [{
+                label: 'Capacitados',
+                data: [{{ $reproetb }}, {{ $aproetb }}],
+                backgroundColor: [
+                    'rgba(216, 23, 23, 0.8)',
+
                     'rgba(23, 108, 216, 0.8)'
-                  'rgba(216, 23, 23, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(0, 0, 0, 1)',
+
+                    'rgba(0, 0, 0, 1)'
+
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+    </script>
 
 
-                  ],
-                  borderColor: [
-                      'rgba(0, 0, 0, 1)',
+{{--fin capacitacion--}}
 
-                      'rgba(0, 0, 0, 1)'
+<div class="col-sm-4">
+    <div class="card">
+      <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+        <h5 class="card-title"><strong>MOVISTAR</strong></h5>
+         <canvas id="movistarcapa" width="80" height="80" style="background-color: white;"></canvas>
+         <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Movistar Aprobados</th>
+                <th scope="col">Movistar No aprobados</th>
+              </tr>
+            <tr>
+                @foreach ($repromovistars as $repromovistar)
+                <td>  {{ $repromovistar}}  </td>
+                @endforeach
+              @foreach ($apromovistars as $apromovistar)
+              <td>{{ $apromovistar }}</td>
+              @endforeach
 
-                  ],
-                  borderWidth: 2
+              </tr>
+            </thead>
+          </table>
+      </div>
+    </div>
+  </div>
+
+<script>
+  var ctx = document.getElementById('movistarcapa').getContext('2d');
+  var myLineChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ['No aprobado', 'Aprobado'],
+          datasets: [{
+              label: 'Capacitados',
+              data: [{{ $repromovistar }}, {{ $apromovistar }}],
+              backgroundColor: [
+                  'rgba(216, 23, 23, 0.8)',
+
+                  'rgba(23, 108, 216, 0.8)'
+              ],
+              borderColor: [
+                  'rgba(0, 0, 0, 1)',
+
+                  'rgba(0, 0, 0, 1)'
+
+              ],
+              borderWidth: 2
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
               }]
-          },
-          options: {
-              scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero: true
-                      }
-                  }]
-              }
           }
-      });
-      </script>
+      }
+  });
+  </script>
 
+{{--inicio QNT--}}
+<div class="col-sm-4">
+    <div class="card">
+      <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+        <h5 class="card-title"><strong>QNT</strong></h5>
+         <canvas id="qntcapa" width="80" height="80" style="background-color: white;"></canvas>
+         <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Movistar Aprobados</th>
+                <th scope="col">Movistar No aprobados</th>
+              </tr>
+            <tr>
+                @foreach ($repromovistars as $repromovistar)
+                <td>  {{ $repromovistar}}  </td>
+                @endforeach
+              @foreach ($apromovistars as $apromovistar)
+              <td>{{ $apromovistar }}</td>
+              @endforeach
+
+              </tr>
+            </thead>
+          </table>
+      </div>
+    </div>
+  </div>
+
+<script>
+  var ctx = document.getElementById('qntcapa').getContext('2d');
+  var myLineChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ['No aprobado', 'Aprobado'],
+          datasets: [{
+              label: 'Capacitados',
+              data: [{{ $repromovistar }}, {{ $apromovistar }}],
+              backgroundColor: [
+                  'rgba(216, 23, 23, 0.8)',
+
+                  'rgba(23, 108, 216, 0.8)'
+              ],
+              borderColor: [
+                  'rgba(0, 0, 0, 1)',
+
+                  'rgba(0, 0, 0, 1)'
+
+              ],
+              borderWidth: 2
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });
+  </script>
+
+
+{{--fin QNT-}}
+
+
+
+
+
+
+</div>
 
 {{--fin quinto grafico capacitacion--}}
 
