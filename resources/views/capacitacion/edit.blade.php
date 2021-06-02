@@ -69,13 +69,14 @@
             font-weight: 200;
             height: 38px;
             color: #01090e;
-                font-size: 19px;
+                font-size: 15px;
                text-transform: capitalize;
+               padding: 1rem;
 
             }
             .inputs5-1{
                 color: #234c63;
-                font-size: 16px;
+                font-size: 15px;
                 border-radius: 0.75rem;
                 width: 250px;
                 background-color: #e9f1f1;

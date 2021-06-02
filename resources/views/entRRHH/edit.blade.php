@@ -242,7 +242,7 @@ margin-left: 12rem;
                           <td>
                         <div style="float:left; width:100%; display:flex;">
                             <input type="checkbox" id="enviadoCapa" name="enviadoCapa" value="X">
-                              <label class="labeler">&nbsp;Enviado a capacitación</label>
+                              <label class="labeler">&nbsp;Enviado a Capacitación</label>
                              </div>
                          </td>
                        </tr>
@@ -272,7 +272,7 @@ margin-left: 12rem;
                 <td>
                                 <div style="float:left; width:100%; display:flex;">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="YaNoInt" name="YaNoInt" value="X">
-                               <label class="labeler">&nbsp;Desistio de la oferta</label>
+                               <label class="labeler">&nbsp;Desistio de la Oferta</label>
                                 </div>
                             </td>
                           </tr>

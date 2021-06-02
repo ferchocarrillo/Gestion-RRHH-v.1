@@ -14,7 +14,7 @@ use App\JhonatanPermission\Models\Requisicion;
 use App\Cargo;
 use App\Sede;
 use App\Dependencia;
-
+use App\Novedades;
 use App\User;
 use App\Reclutamiento;
 use App\Filtro2;
@@ -146,13 +146,22 @@ class HomeController extends Controller
 
 $aproetbs['filtros2'] = Filtro2::where('campaña','=','ETB')->where('resultadoFormacion','=','Aprobado')->count();
 $reproetbs['filtros2'] = Filtro2::where('campaña','=','ETB')->where('resultadoFormacion','=','No Aprobado')->count();
-
 $apromovistars['filtros2'] = Filtro2::where('campaña','=','Movistar')->where('resultadoFormacion','=','Aprobado')->count();
 $repromovistars['filtros2'] = Filtro2::where('campaña','=','Movistar')->where('resultadoFormacion','=','No Aprobado')->count();
+$aproqnts ['filtros2'] = Filtro2::where('campaña','=','QNT')->where('resultadoFormacion','=','Aprobado')->count();
+$reproqnts['filtros2'] = Filtro2::where('campaña','=','QNT')->where('resultadoFormacion','=','No Aprobado')->count();
+$aprovantis ['filtros2'] = Filtro2::where('campaña','=','Vanti')->where('resultadoFormacion','=','Aprobado')->count();
+$reprovantis['filtros2'] = Filtro2::where('campaña','=','Vanti')->where('resultadoFormacion','=','No Aprobado')->count();
+$aprostaffs ['filtros2'] = Filtro2::where('campaña','=','Staff Mentius')->where('resultadoFormacion','=','Aprobado')->count();
+$reprostaffs['filtros2'] = Filtro2::where('campaña','=','Staff Mentius')->where('resultadoFormacion','=','No Aprobado')->count();
+$aprosacs ['filtros2'] = Filtro2::where('campaña','=','Vanti S A C')->where('resultadoFormacion','=','Aprobado')->count();
+$reprosacs['filtros2'] = Filtro2::where('campaña','=','Vanti S A C')->where('resultadoFormacion','=','No Aprobado')->count();
 
 
       $date1 = $request->input('created_at');
 //    $date->('created_at')->isSameMonth(now());
+
+      $numeroCapacitacions ['filtros']= Filtro2::where('resultadoFormacion','<>',NULL)->count();
 
       $capacitacionAps ['filtros']= Filtro2::where('resultadoFormacion','Aprobado')->count();
       $capacitacionNaps['filtros']= Filtro2::where('resultadoFormacion','No Aprobado')->count();
@@ -175,20 +184,231 @@ $repromovistars['filtros2'] = Filtro2::where('campaña','=','Movistar')->where('
       $noContratados['filtros']= Filtro2::where('noContrat','=','X')->count();
       $ContratacionOks['filtros']= Filtro2::where('contratacionOK','=','X')->count();
 
+
+
+$edad1s['filtros'] = Filtro2::where('estado','=','activo')->where('edad','>=',0) ->Where('edad','<=',20)->count();
+$edad2s['filtros'] = Filtro2::where('estado','=','activo')->where('edad','>=',20)->Where('edad','<=',25) ->count();
+$edad3s['filtros'] = Filtro2::where('estado','=','activo')->where('edad','>=',25)->Where('edad','<=',30) ->count();
+$edad4s['filtros'] = Filtro2::where('estado','=','activo')->where('edad','>',30 )->Where('edad','<=',35) ->count();
+$edad5s['filtros'] = Filtro2::where('estado','=','activo')->where('edad','>',35 )->Where('edad','<=',40)->count();
+$edad6s['filtros'] = Filtro2::where('estado','=','activo')->where('edad','>',40 )->Where('edad','<=',45)->count();
+$edad7s['filtros'] = Filtro2::where('estado','=','activo')->where('edad','>',45 )->Where('edad','<=',50)->count();
+$edad8s['filtros'] = Filtro2::where('estado','=','activo')->where('edad','>',50 )->Where('edad','<=',55)->count();
+$edad9s['filtros'] = Filtro2::where('estado','=','activo')->where('edad','>',55)->count();
+
+
+$localidad1s ['filtros'] = Filtro2::where('estado','=','activo')->where('residencia','=','Bogotá')->count();
+$localidad2s ['filtros'] = Filtro2::where('estado','=','activo')->where('residencia','=','Aledaños')->count();
+
+$Usas['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Usaquén')->count();
+$Chapis['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Usaquén')->count();
+$SantaFes['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Santa Fe')->count();
+$SanCris['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','San Cristóbal')->count();
+$Usmes['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Usme')->count();
+$Tunjuelitos['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Tunjuelito')->count();
+$Bosas['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Bosa')->count();
+$Kennedys['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Kennedy')->count();
+$Fontibóns['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Fontibón')->count();
+$Engativás['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Engativá')->count();
+$Subas['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Suba')->count();
+$BarriosUnidoss['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Barrios Unidos')->count();
+$Teusaquillos['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Teusaquillo')->count();
+$LosMártiress['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Los Mártires')->count();
+$AntonioNariños['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Antonio Nariño')->count();
+$PuenteArandas['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Puente Aranda')->count();
+$LaCandelarias['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','La Candelaria')->count();
+$RafaelUribeUribes['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Rafael Uribe Uribe')->count();
+$CiudadBolívars['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Ciudad Bolívar')->count();
+$Sumapazs['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Sumapaz')->count();
+
+
+
+
+$Soachas['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Soacha')->count();
+$Facatativás['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Facatativá')->count();
+$Chías['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Chía')->count();
+$Zipaquirás['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Zipaquirá')->count();
+$Mosqueras['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Mosquera')->count();
+$Madrids['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Madrid')->count();
+$Funzas['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Funza')->count();
+$Cajicás['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Cajicá')->count();
+$Sibatés['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Sibaté')->count();
+$Tocancipás['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Tocancipá')->count();
+$Tabios['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Tabio')->count();
+$LaCaleras['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','La Calera')->count();
+$Sopós['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Sopó')->count();
+$Cotas['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Cota')->count();
+$Tenjos['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Tenjo')->count();
+$ElRosals['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','El Rosal')->count();
+$Gachancipás['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Gachancipá')->count();
+$Bojacás['filtros']=Filtro2::where('estado','=','activo')->where('id_localidad','=','Bojacá')->count();
+
+
+
+$hijos0s ['filtros']=Filtro2::where('estado','=','activo')->where('numhijos','=',NUll)->count();
+$hijos1s ['filtros']=Filtro2::where('estado','=','activo')->where('numhijos','=',1)->count();
+$hijos2s ['filtros']=Filtro2::where('estado','=','activo')->where('numhijos','=',2)->count();
+$hijos3s ['filtros']=Filtro2::where('estado','=','activo')->where('numhijos','=',3)->count();
+$hijos4s ['filtros']=Filtro2::where('estado','=','activo')->where('numhijos','>=',4)->count();
+
+$ninos ['filtros']=Filtro2::where('estado','=','activo')->sum('hijosMas');
+$ninas ['filtros']=Filtro2::where('estado','=','activo')->sum('hijosFem');
+
+
+$novedades = Novedades::orderBy('created_at', 'asc')->paginate(10);
+
+
+$novedadescampañases = Novedades::orderBy('campaña', 'asc')->where('estado','=','activo')->paginate(10);
+$novedadesetbes ['novedades'] = Novedades::where('campaña', 'ETB')->where('estado','=','activo')->count();
+$novedadesmovistares ['novedades'] = Novedades::where('campaña', 'Movistar')->where('estado','=','activo')->count();
+$novedadesqntes ['novedades'] = Novedades::where('campaña', 'QNT')->where('estado','=','activo')->count();
+$novedadesstaffes ['novedades'] = Novedades::where('campaña', 'Staff Mentius')->where('estado','=','activo')->count();
+$novedadesvanties ['novedades'] = Novedades::where('campaña', 'Vanti')->where('estado','=','activo')->count();
+$novedadesvantisaces ['novedades'] = Novedades::where('campaña', 'Vanti S A C')->where('estado','=','activo')->count();
+
+
+$Aislamientos['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Aislamiento')->count();
+$Calamidads['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Calamidad')->count();
+$Capacitacións['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Capacitación')->count();
+$CumplimientoDeMetas['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Cumplimiento De Meta')->count();
+$Epss['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Eps')->count();
+$Incapacidads['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Incapacidad')->count();
+$Injustificadas['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Injustificada')->count();
+$LicenciaDeLutos['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Licencia De Luto')->count();
+$LicenciaDeMaternidads['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Licencia De Maternidad')->count();
+$LicenciaNoRemuneradas['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Licencia No Remunerada')->count();
+$NoReportas['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','No Reporta')->count();
+$Permisos['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Permiso')->count();
+$PosibleRenuncias['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Posible Renuncia')->count();
+$ProblemasTécnicoss['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Problemas Técnicos')->count();
+$SinConexións['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Sin Conexión')->count();
+$Suspensións['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Suspensión')->count();
+$Vacacioness['novedades'] = Novedades::where('estado','=','activo')->where('novedad','=','Vacaciones')->count();
+
+$renuncias['filtros']=Filtro2::where('causalesR','=','Renuncia Voluntaria')->count();
+$Abandonos['filtros']=Filtro2::where('causalesR','=','Abandono De Cargo')->count();
+$conjustaCausas['filtros']=Filtro2::where('causalesR','=','Terminacion De Contrato Justa Causa')->count();
+$MalasPracticass['filtros']=Filtro2::where('causalesR','=','Malas Practicas')->count();
+$disciplinarios['filtros']=Filtro2::where('causalesR','=','Procesos Disciplinarios')->count();
+$finetapas['filtros']=Filtro2::where('causalesR','=','Finalizacion Etapa Productiva Sena')->count();
+$periodopruebas['filtros']=Filtro2::where('causalesR','=','Periodo De Prueba')->count();
+$sinjustacasusas['filtros']=Filtro2::where('causalesR','=','Sin Justa Causa')->count();
+$perioriodoabandonos['filtros']=Filtro2::where('causalesR','=','Periodo De Prueba Y Abandono De Cargo')->count();
+
+
+
+
       return view('home' ,compact(
+
+
+'renuncias','Abandonos','conjustaCausas','MalasPracticass','disciplinarios','finetapas','periodopruebas','sinjustacasusas','perioriodoabandonos',
+
+
+        'Aislamientos',
+        'Calamidads',
+        'Capacitacións',
+        'CumplimientoDeMetas',
+        'Epss',
+        'Incapacidads',
+        'Injustificadas',
+        'LicenciaDeLutos',
+        'LicenciaDeMaternidads',
+        'LicenciaNoRemuneradas',
+        'NoReportas',
+        'Permisos',
+        'PosibleRenuncias',
+        'ProblemasTécnicoss',
+        'SinConexións',
+        'Suspensións',
+        'Vacacioness',
+
+
+        'novedadesetbes',
+'novedadesmovistares',
+'novedadesqntes',
+'novedadesstaffes',
+'novedadesvanties',
+'novedadesvantisaces',
+
+
+        'novedades',
+
+        'ninos',
+        'ninas',
+        'hijos0s',
+        'hijos1s',
+        'hijos2s',
+        'hijos3s',
+        'hijos4s',
+        'Usas',
+        'Chapis',
+        'SantaFes',
+        'SanCris',
+        'Usmes',
+        'Tunjuelitos',
+        'Bosas',
+        'Kennedys',
+        'Fontibóns',
+        'Engativás',
+        'Subas',
+        'BarriosUnidoss',
+        'Teusaquillos',
+        'LosMártiress',
+        'AntonioNariños',
+        'PuenteArandas',
+        'LaCandelarias',
+        'RafaelUribeUribes',
+        'CiudadBolívars',
+        'Sumapazs',
+        'Soachas',
+        'Facatativás',
+        'Chías',
+        'Zipaquirás',
+        'Mosqueras',
+        'Madrids',
+        'Funzas',
+        'Cajicás',
+        'Sibatés',
+        'Tocancipás',
+        'Tabios',
+        'LaCaleras',
+        'Sopós',
+        'Cotas',
+        'Tenjos',
+        'ElRosals',
+        'Gachancipás',
+        'Bojacás',
+        'localidad1s',
+        'localidad2s',
+        'edad1s',
+        'edad2s',
+        'edad3s',
+        'edad4s',
+        'edad5s',
+        'edad6s',
+        'edad7s',
+        'edad8s',
+        'edad9s',
+        'numeroCapacitacions',
         'aproetbs',
         'reproetbs',
         'apromovistars',
         'repromovistars',
-
-
-'contarrequisiciones',
-'campaetbs',
-'campamovistars',
-'campaqnts',
-'campastaffs',
-'campavantis',
-'campavantisacs',
+        'aproqnts',
+        'reproqnts',
+        'aprostaffs',
+        'reprostaffs',
+        'aprovantis',
+        'reprovantis',
+        'aprosacs',
+        'reprosacs',
+        'contarrequisiciones',
+        'campaetbs',
+        'campamovistars',
+        'campaqnts',
+        'campastaffs',
+        'campavantis',
+        'campavantisacs',
         'campañases',
         'etbes',
         'movistares',
@@ -200,72 +420,69 @@ $repromovistars['filtros2'] = Filtro2::where('campaña','=','Movistar')->where('
         'respuestarrhh2s',
         'respuestarrhh3s',
         'respuestarrhh4s',
-
         'capacitacioneses',
-      'count11publicas',
-      'count12publicas',
-      'count13publicas',
-      'count11Fuentes',
-      'residencias',
-      'residencia1s',
-      'residencia2s',
-      'capacitacionNaps',
-      'capacitacionAps',
-      'count00Fuentes',
-      'count01Fuentes',
-      'count02Fuentes',
-      'count03Fuentes',
-      'count04Fuentes',
-      'count05Fuentes',
-      'count06Fuentes',
-      'count07Fuentes',
-      'count08Fuentes',
-      'count09Fuentes',
-      'count10Fuentes',
-      'filtros',
-      'publicaciones',
-      'requisiciones',
-      'count16filtros',
-      'count15filtros',
-      'count14filtros',
-      'count13filtros',
-      'count12filtros',
-      'count11filtros',
-      'count10filtros',
-      'count9filtros',
-      'count8filtros',
-      'count7filtros',
-      'count6filtros',
-      'count5filtros',
-      'count4filtros',
-      'count3filtros',
-      'count2filtros',
-      'count1filtros',
-      'countfiltros',
-
-      'pruebaRequises',
-      'count10publicas',
-      'count9publicas',
-      'count8publicas',
-      'count7publicas',
-      'count6publicas',
-      'count5publicas',
-      'count4publicas',
-      'count3publicas',
-      'count2publicas',
-      'countpublicas',
-      'count1publicas',
-      'countRequises',
-      'countRequi2ses',
-      'countRequi3ses',
-      'countRequi4ses',
-      'usuarios',
-      'cargo',
+        'count11publicas',
+        'count12publicas',
+        'count13publicas',
+        'count11Fuentes',
+        'residencias',
+        'residencia1s',
+        'residencia2s',
+        'capacitacionNaps',
+        'capacitacionAps',
+        'count00Fuentes',
+        'count01Fuentes',
+        'count02Fuentes',
+        'count03Fuentes',
+        'count04Fuentes',
+        'count05Fuentes',
+        'count06Fuentes',
+        'count07Fuentes',
+        'count08Fuentes',
+        'count09Fuentes',
+        'count10Fuentes',
+        'filtros',
+        'publicaciones',
+        'requisiciones',
+        'count16filtros',
+        'count15filtros',
+        'count14filtros',
+        'count13filtros',
+        'count12filtros',
+        'count11filtros',
+        'count10filtros',
+        'count9filtros',
+        'count8filtros',
+        'count7filtros',
+        'count6filtros',
+        'count5filtros',
+        'count4filtros',
+        'count3filtros',
+        'count2filtros',
+        'count1filtros',
+        'countfiltros',
+        'pruebaRequises',
+        'count10publicas',
+        'count9publicas',
+        'count8publicas',
+        'count7publicas',
+        'count6publicas',
+        'count5publicas',
+        'count4publicas',
+        'count3publicas',
+        'count2publicas',
+        'countpublicas',
+        'count1publicas',
+        'countRequises',
+        'countRequi2ses',
+        'countRequi3ses',
+        'countRequi4ses',
+        'usuarios',
+        'cargo',
         'dependencia',
         'contratacionEnvs',
-'noContratados',
-'ContratacionOks',
-
+        'noContratados',
+        'ContratacionOks',
     ));
     }
 

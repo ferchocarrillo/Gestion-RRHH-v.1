@@ -67,6 +67,8 @@ class AsignacionController extends Controller
             $user_id = Auth::user()->id;
             $user_nombre = Auth::user()->name;
 
+
+
             $datosFiltro=request()->except('_token');
 
             if($request->hasFile('Foto')){
@@ -78,7 +80,15 @@ class AsignacionController extends Controller
 
             ]);
 
+
+
+
             $filtro = new filtro2();
+
+            $carbon1 = new \Carbon\Carbon("2021-01-01 00:00:00");
+            $date9 = $filtro->fnacimiento;
+            $edad = $carbon1->floatDiffInYears($date9);
+            $edad = number_format($edad,1,'.',',');
 
 
             $filtro->cargo                  = $request->cargo;
@@ -89,6 +99,8 @@ class AsignacionController extends Controller
             $filtro->sede                   = $request->sede;
             $filtro->modalidad              = $request->modalidad;
             $filtro->tipoModalidad          = $request->tipoModalidad;
+            $filtro->edad                   = $request->edad;
+
             $filtro->save();
 
                return response()->json($filtro);
@@ -99,11 +111,18 @@ class AsignacionController extends Controller
 }
 
 
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
 
         $this->authorize('haveaccess','asignacion.edit');
         $filtro= Filtro2::findOrFail($id);
+        $carbon1 = new \Carbon\Carbon("2021-01-01 00:00:00");
+        $date9 = $filtro->fnacimiento;
+        $edad = $carbon1->floatDiffInYears($date9);
+        $edad = number_format($edad,1,'.',',');
+
+
+
         $supervisores = Supervisor::all();
         $sedes = Sede::all();
         $focos = Foco::all();
@@ -113,7 +132,7 @@ class AsignacionController extends Controller
         $tipoModalidades = TipoModalidad::all();
         $dependencias = Dependencia::all();
        //return response()->json($contatacion);
-    return view('asignacion.edit', compact('filtro','tipoModalidades','modalidades','sedes','campañas','cargos','supervisores','focos','dependencias'));
+    return view('asignacion.edit', compact('edad','filtro','tipoModalidades','modalidades','sedes','campañas','cargos','supervisores','focos','dependencias'));
 
     }
 
@@ -126,6 +145,11 @@ class AsignacionController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $filtro= Filtro2::findOrFail($id);
+        $carbon1 = new \Carbon\Carbon("2021-01-01 00:00:00");
+        $date9 = $filtro->fnacimiento;
+        $edad = $carbon1->floatDiffInYears($date9);
+        $edad = number_format($edad,1,'.',',');
         $modalidades = Modalidad::all();
         $tipoModalidades = TipoModalidad::all();
         $sedes = Sede::all();
@@ -137,7 +161,7 @@ class AsignacionController extends Controller
         Filtro2::where('id','=',$id)->update($datosFiltro);
         $filtro= Filtro2::findOrFail($id);
      //return response()->json($filtros);
-     return view('asignacion.edit', compact('filtro','tipoModalidades','modalidades','cargos','campañas','focos','supervisores','sedes'));
+     return view('asignacion.edit', compact('edad','filtro','tipoModalidades','modalidades','cargos','campañas','focos','supervisores','sedes'));
 
 
     }

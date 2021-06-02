@@ -28,7 +28,7 @@ margin-left: 1rem;
         background-color: #EAF2F8;
         outline-offset: 3px;
         text-align: left;
-    
+
       }
 
 
@@ -157,7 +157,7 @@ margin-left: 1rem;
                     @endforeach
                     </datalist>
 </div>
-
+<input type="text" id="edad" name="edad" value="{{ $edad }}">
 
     </div>
 <br>
