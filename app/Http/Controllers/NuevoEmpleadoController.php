@@ -240,5 +240,5 @@ class NuevoEmpleadoController extends Controller
         //
     }
 }
-//av boyaca 53 12 - carrera 74 a No 51a 87
+
 
