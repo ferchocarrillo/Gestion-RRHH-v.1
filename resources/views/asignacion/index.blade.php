@@ -62,22 +62,22 @@
                         </tr>
                 </thead>
                 <tbody>
-                    @foreach ($asignaciones as $asignacion)
+                    @foreach ($filtros as $filtro)
                         <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$asignacion->cedula}}</td>
-                        <td>{{$asignacion->nombre}}</td>
-                        <td>{{$asignacion->correo}}</td>
-                        <td>{{$asignacion->perfil}}</td>
+                        <td>{{$filtro->cedula}}</td>
+                        <td>{{$filtro->nombre}}</td>
+                        <td>{{$filtro->correo}}</td>
+                        <td>{{$filtro->cargo}}</td>
 
-                        <td>{{$asignacion->campaña}}</td>
+                        <td>{{$filtro->campaña}}</td>
 
                         <td>
-                            <form action="{{url('/asignacion/'.$asignacion->id)}}" method="post" style='display:inline'>
+                            <form action="{{url('/asignacion/'.$filtro->id)}}" method="post" style='display:inline'>
                                 @csrf
                                 @method('DELETE')
 
-                        <a href="{{url('/asignacion/'.$asignacion->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Asignar</a>
+                        <a href="{{url('/asignacion/'.$filtro->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Asignar</a>
                      {{--   <button class="btn btn-warning btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
                        </form>
                     </td>
@@ -85,129 +85,30 @@
                         @endforeach
                         </tbody>
                         </table>
-
-
-
-
-
-                {{--    <h6>Total de Novedades:  {{ $novedadess->total() }}</h6>
-                    @foreach ($countRequises as $countRequis)
-                    <h6>Cantidad de Aprobados:   {{ $countRequis }}</h6>
-                    @endforeach
-                    @foreach ($countRequi2ses as $countRequi2s)
-                    <h6>Cantidad de Rechazados:   {{ $countRequi2s }}</h6>
-                    @endforeach
-                    @foreach ($countRequi3ses as $countRequi3s)
-                    <h6>Cantidad de Pendientes:   {{ $countRequi3s }}</h6>
-                    @endforeach
-                    @foreach ($countRequi4ses as $countRequi4s)
-                    <h6>Cantidad de sin Gestion:   {{ $countRequi4s }}</h6>
-                    @endforeach
-                    --}}
-
-
-                    {{--
-                                    <div class="card-body">
-                                 @include('custom.message')
-
-                                        <table class="table table-striped table-bordered table-hover table-dark">
-                                            <thead>
-                                              <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Cedula</th>
-                                                <th scope="col">Nombres</th>
-                                                <th scope="col">Fecha</th>
-                                                <th scope="col">Campaña</th>
-                                                <th scope="col">Area</th>
-                                                <th scope="col">Cargo</th>
-                                                <th scope="col">Jefe inmediato</th>
-                                                <th scope="col">Novedades</th>
-                                                <th scope="col">Observaciones</th>
-                                                <th colspan="3"></th>
-                                              </tr>
-                                            </thead>
-                                            <tbody>
-
-
-                                                @foreach ($activos as $novedades)
-
-                                                <tr>
-                                                    <th scope="row">{{ $novedades->id}}</th>
-                                                    <td>{{ $novedades->cedula}}</td>
-                                                    <td>{{ $novedades->nombres}}</td>
-                                                    <td>{{ $novedades->fecha}}</td>
-                                                    <td>{{ $novedades->campaña}}</td>
-                                                    <td>{{ $novedades->area}}</td>
-                                                    <td>{{ $novedades->cargo}}</td>
-                                                    <td>{{ $novedades->jinmediato}}</td>
-                                                    <td>{{ $novedades->novedad}}</td>
-                                                    <td>{{ $novedades->observaciones}}</td>
-
-                                                    <td>
-                                                        <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Editar</a>
-
-                                                        <form action="{{url('/novedades/'.$novedades->id)}}" method="post">
-
-                                                        @csrf
-
-                                                        @method('DELETE')
-
-
-
-
-                                                        {{--<button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>
-
-
-
-
-                                                </form>
-
-
-
-                                                    </td>
-                                                </tr>
-                                                @endforeach
-
-
-
-
-
-                                            </tbody>
-                                          </table>
-
-                                          {{ $activos->links() }}--}}
-
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p>
-                        clic <a href="{{route('requisicion.excel')}}">Aqui</a>
-                        para descargar en Excel la base de requisicion
-                        </p>
-                    <script src="{{asset('js/app.js')}}"></script>
-                                  </body>
-                                  @section('css')
-                                  <link rel="stylesheet" href="/css/admin_custom.css">
-                                  @stop
-                                  @section('js')
-
-
-
-                          <script>
-                          Swal.fire(
-                            'REQUISICION',
-                            'Listado de solicitudes',
-                            'success'
-                          )
-                          </script>
-                          @stop
-
-                          @endsection
-
+    {{ $filtros->links() }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    clic <a href="{{route('requisicion.excel')}}">Aqui</a>
+    para descargar en Excel la base de requisicion
+    </p>
+<script src="{{asset('js/app.js')}}"></script>
+              </body>
+              @section('css')
+              <link rel="stylesheet" href="/css/admin_custom.css">
+              @stop
+              @section('js')
+      <script>
+      Swal.fire(
+        'REQUISICION',
+        'Listado de solicitudes',
+        'success'
+      )
+      </script>
+      @stop
+      @endsection
 
 

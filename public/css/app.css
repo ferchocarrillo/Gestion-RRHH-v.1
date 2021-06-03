@@ -547,7 +547,7 @@ mark,
 .figure-img {
   margin-bottom: 0.5rem;
   line-height: 1;
-  
+
 }
 
 .figure-caption {
@@ -2335,11 +2335,9 @@ select.form-control:focus::-ms-value {
     height: calc(1.5em + 1rem + 2px);
     padding: 0.5rem 1rem;
     font-size:  0.9rem;
-
     border-radius: 0.7rem;
     background-color: rgba(216, 216, 216, 0.9);
     outline-offset: 3px;
-
   }
 
   .form-control-lg-new4 {
@@ -2347,12 +2345,12 @@ select.form-control:focus::-ms-value {
     width: calc(1.5em + 16rem + 10px);
     padding: 0.5rem 1rem;
     font-size: 16px;
-
     border-radius: 0.7rem;
     background-color: rgba(242, 246, 246, 0.972);
     outline-offset: 3px;
 
   }
+
   .form-control-lg-new5 {
     height: calc(1.5em + 1rem + 10px);
     width: calc(1.5em + 5rem + 10px);
@@ -2406,6 +2404,7 @@ select.form-control:focus::-ms-value {
     border-radius: 0.9rem;
     background-color: rgba(255, 255, 255, 0.972);
     outline-offset: 3px;
+    
 
   }
 
@@ -2482,14 +2481,13 @@ select.form-control:focus::-ms-value {
   }
   .form-control-lg-new16 {
     height: calc(1.5em + 3rem + 10px);
-    width: calc(1.5em + 70rem + 10px);
-    padding: 0.5rem 1rem;
+    width: calc(1.5em + 50rem + 10px);
     font-size: 18px;
-   color:#113049 ;
+    color:#113049 ;
     border-radius: 0.7rem;
     background-color: rgba(242, 246, 246, 0.972);
     outline-offset: 3px;
-
+    margin-left:2.5rem;
   }
   .form-control-lg-new17 {
     height: calc(1.5em + 3rem + 0);
@@ -11162,6 +11160,23 @@ a.text-dark:focus {
     height: 3rem;
 
 }
+.rqetiqueta-1{
+    width: 2rem;
+}
+.rqpeque-1 {
+    height: calc(1.5em + 1rem + 5px);
+    width: calc(1.5em + 8rem + 10px);
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    border-radius: 0.7rem;
+    background-color: rgba(242, 246, 246, 0.972);
+    outline-offset: 3px;
+    -webkit-border-radius: 0.7rem;
+    -moz-border-radius: 0.7rem;
+    -ms-border-radius: 0.7rem;
+    -o-border-radius: 0.7rem;
+}
+
 
 }
 

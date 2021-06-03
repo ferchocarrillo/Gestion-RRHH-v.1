@@ -6,8 +6,9 @@ use App\Retiros;
 use Illuminate\Http\Request;
 use App\nuevoEmpleado;
 use App\CausasRetiro;
-use App\Filtro;
+use App\Filtro2;
 use Carbon\carbon;
+use Illuminate\Support\Facades\Auth;
 
 
 class RetirosController extends Controller
@@ -44,18 +45,18 @@ class RetirosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
         Carbon::setLocale('co');
         $hoy = Carbon::now();
-
-        $date1 = $request->input('fechaCont');
-        $date2 = $request->input('iDesde');
-        $tiempoA = $hoy->floatDiffInRealDays($date1);
-        $tiempoB = $hoy->floatDiffInRealDays($date2);
-        $tiempo1 = $tiempoA - $tiempoB;
+        $filtros = Filtro2::findOrFail($id);
+        $date1 = $filtros->ingreso;
+        $date2 = $filtros->iDesde;
+        $tiempoA = $hoy->diffInMonths($date1);
+        $tiempoB = $hoy->diffInMonths($date2);
+        $tiempoTotal = ($tiempoB - $tiempoA);
 
 
         $datosFiltro=request()->except('_token');
@@ -69,23 +70,23 @@ class RetirosController extends Controller
 
         ]);
 
-        $filtro = new Filtro();
+        $filtros = new Filtro2();
 
-        $filtro->estado                 = $request->estado;
-        $filtro->causalesR              = $request->causalesR;
-        $filtro->iDesde                 = $request->iDesde;
-        $filtro->apretencion            = $request->apretencion;
-        $filtro->retejefe               = $request->retejefe;
-        $filtro->reterrhh               = $request->reterrhh;
-        $filtro->obsRetiro              = $request->obsRetiro;
-        $filtro->tiempoTotal            = $tiempo1;
-
-
+        $filtros->estado                 = $request->estado;
+        $filtros->causalesR              = $request->causalesR;
+        $filtros->iDesde                 = $request->iDesde;
+        $filtros->apretencion            = $request->apretencion;
+        $filtros->retejefe               = $request->retejefe;
+        $filtros->reterrhh               = $request->reterrhh;
+        $filtros->obsRetiro              = $request->obsRetiro;
+        $filtros->tiempoTotal            = $request->tiempoTotal;
 
 
-        $filtro->save();
 
-        return response()->json($filtro);
+
+        $filtros->save();
+
+        return response()->json($filtros);
         //return back();
     }
 
@@ -106,13 +107,20 @@ class RetirosController extends Controller
      * @param  \App\Retiros  $retiros
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        $nuevos = nuevoEmpleado::all();
+        Carbon::setLocale('co');
+        $hoy = Carbon::now();
+        $filtros = Filtro2::findOrFail($id);
+        $date1 = $filtros->ingreso;
+        $date2 = $filtros->iDesde;
+        $tiempoA = $hoy->diffInMonths($date1);
+        $tiempoB = $hoy->diffInMonths($date2);
+        $tiempoTotal = ($tiempoA - $tiempoB);
+
         $causas = CausasRetiro::all();
-        $filtro = filtro::findOrFail($id)->first();
-        $nuevos = nuevoEmpleado::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-        return view('retiros.edit', compact('filtro', 'causas','nuevos'));
+
+        return view('retiros.edit', compact('filtros', 'causas'));
     }
 
     /**
@@ -124,16 +132,20 @@ class RetirosController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         Carbon::setLocale('co');
-        $date = Carbon::now();
+        $hoy = Carbon::now();
+        $filtros = Filtro2::findOrFail($id);
+        $date1 = $filtros->ingreso;
+        $date2 = $filtros->iDesde;
+        $tiempoA = $hoy->diffInMonths($date1);
+        $tiempoB = $hoy->diffInMonths($date2);
+        $tiempoTotal = ($tiempoA - $tiempoB);
         $causas = CausasRetiro::all();
         $datosFiltro =request()->except(['_token','_method']);
-        Filtro::where('id','=',$id)->update($datosFiltro);
-        $filtro=Filtro::findOrFail($id);
-        $nuevos = nuevoEmpleado::where('id_filtro', Filtro::findOrFail($id)->id)->first();
-     //return response()->json($filtro);
-     return view('retiros.edit', compact('filtro', 'date','causas','nuevos'));
+        Filtro2::where('id','=',$id)->update($datosFiltro);
+        $filtros=Filtro2::findOrFail($id);
+
+     return view('retiros.edit', compact('filtros', 'hoy','causas','tiempoTotal'));
     }
 
     /**

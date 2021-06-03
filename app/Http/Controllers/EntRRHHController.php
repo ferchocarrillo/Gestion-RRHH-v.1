@@ -26,7 +26,7 @@ class EntRRHHController extends Controller
     public function index()
     {
 
-        $entrevistases = Filtro2::orderBy('created_at', 'desc')->where('entvOK','=','X')->paginate(10);
+        $entrevistases = Filtro2::orderBy('created_at', 'desc')->where('entvOK','=','X')->where('fechaRrhh','=',NULL)->paginate(10);
         return view('entRRHH.index',compact('entrevistases'));
     }
 

@@ -7,9 +7,23 @@
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de la entrevista datos iniciales" /></a>
-<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:800px; visibility:visible z-index:1" align= "auto" height="80" width="200">
+<style>
+
+    .new15{
+        width: 900px;
+    margin: 35px;
+    border-radius: 0.75rem;
+    outline-offset: 3px;
+    background-color: rgba(255, 255, 255, 0.972);
+    border-color: #497579;
+    
+    }
+    
+    </style>
+<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" style="margin-left: 8rem; heigth: 50px; width:40px;" alt="retorno al index de la entrevista datos iniciales" /></a>
+<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8); width: 90%; margin-left:5rem;" >
+<lin rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:25px; left:44rem; visibility:visible z-index:1; width: 20%;   align: center;">
+
 <br>
 <br>
 
@@ -21,25 +35,25 @@
 </div>
 </center>
         </body>
-        <form action="{{ url('/retiros/'.$nuevos->id_filtro)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+        <form action="{{ url('/retiros/'.$filtros->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
             @csrf
             @method('PATCH')
 
-
+{{--  <input type="hidden" name="tiempoTotal" value="{{ $tiempoTotal}}">  --}}
 
 <div class="card">
 
-<input type="hidden" name="" id="" value="{{ old('id_filtro', $nuevos->id_filtro)}}">
+
 
     <div class="row">
    <div class="col-3">
-       <label for="fechaCont">Activo<br> Desde</label>
+       <label for="ingreso">Activo Desde</label>
         <input type="text" class="form-control-lg-new9"
-        id="fechaCont"
+        id="ingreso"
         placeholder=""
-        name="fechaCont"
+        name="ingreso"
         readonly
-        value="{{ old('fechaCont', $filtro->fechaCont)}}">
+        value="{{ old('ingreso', $filtros->ingreso)}}">
     </div>
     <div class="col-3">
         <label for="cedula">Cedula</label>
@@ -47,7 +61,7 @@
          id="cedula"
          placeholder="cedula"
          name="cedula"
-         value="{{ old('cedula', $filtro->cedula)}}"
+         value="{{ old('cedula', $filtros->cedula)}}"
          readonly>
 
         </div>
@@ -57,17 +71,17 @@
              id="nombre"
              placeholder="Nombres"
              name="nombre"
-             value="{{ old('nombres', $nuevos->nombres)}}"
+             value="{{ old('nombre', $filtros->nombre)}}"
              readonly>
             </div>
     <div class="col-3">
         <label for="telefono">Celular</label>
            <input type="number"
            class="form-control-lg-new9"
-           id=""
+           id="telefono"
            placeholder="telefono"
-           name=""
-           value="{{ old('tCelular' , $nuevos->tCelular)}}"
+           name="telefono"
+           value="{{ old('telefono' , $filtros->telefono)}}"
            readonly>
         </div></div>
 <br><br>
@@ -80,17 +94,17 @@
            id="correo"
            placeholder="correo"
            name="correo"
-           value="{{ old('correo' , $filtro->correo)}}"
+           value="{{ old('correo' , $filtros->correo)}}"
            readonly>
         </div>
     <div class="col-3">
-        <label for="perfil">Perfil</label>
+        <label for="cargo">Cargo</label>
            <input type="text"
            class="form-control-lg-new9"
-           id="perfil"
-           placeholder="perfil"
-           name="perfil"
-           value="{{ old('cargos' , $nuevos->cargos)}}"
+           id="cargo"
+           placeholder="cargo"
+           name="cargo"
+           value="{{ old('cargo' , $filtros->cargo)}}"
            readonly>
         </div>
     <div class="col-3">
@@ -100,7 +114,7 @@
            id="campaña"
            placeholder="campaña"
            name="campaña"
-           value="{{ old('campaña' , $filtro->campaña)}}"
+           value="{{ old('campaña' , $filtros->campaña)}}"
            readonly>
 
         </div>
@@ -111,13 +125,13 @@
            id="fuente"
            placeholder="fuente"
            name="fuente"
-           value="{{ old('fuente' , $filtro->fuente)}}"
+           value="{{ old('fuente' , $filtros->fuente)}}"
            readonly>
 
 
         </div>
     </div>
-<BR><BR></BR></BR>
+<br>
 <div class= "card_retiros">
 <div class= "row">
 
@@ -161,30 +175,25 @@
         <label for="reterrhh">¿Se realizo rentención<br> por parte <br>RRHH?</label><br>
     <input type="checkbox" id="reterrhh" name="reterrhh"  data-toggle="toggle" data-size="med" data-onstyle="success" data-offstyle="danger" data-on="SI" data-off="NO" >
 </p>
-<p>
-    <label for="obsRetiro">Observaciones</label><br><br>
 
-    <textarea name="obsRetiro" id="obsRetiro" cols="40" rows="3" class="form-control-lg-new15" required></textarea>
-</p>
-
-<p>
     <input type="hidden" id="estado" name="estado" value="inactivo">
-</p>
-    </div>
-    </div>
-
-
-
-
-
-            </div>
 
 <p>
+    <label for="obsRetiro">Observaciones</label>
 
+    <textarea name="obsRetiro" id="obsRetiro" cols="40" rows="3" class="new15" required></textarea>
+</p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p>
     <input class="btn btn-lg btn-primary" type="submit" value="EDITAR">
-
     <a href="{{route('filtro.index')}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">VOLVER</a>
 </p>
+
+
+    </div>
+
+    </div>
+    </div>
     </form>
 
 

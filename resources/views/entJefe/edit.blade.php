@@ -4,13 +4,13 @@
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('js/app.js') }}" defer></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de la entrevista datos iniciales" /></a>
-<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-<link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:800px; visibility:visible z-index:1; margin-left:5rem;" align= "auto" height="100" width="270">
-<br>
-<br>
 
-<center>
+
+<a href="{{route('filtro.index')}}"><img src="https://images.cooltext.com/5506399.png" style="margin-left: 2rem; heigth: 60px; width:50px;" alt="retorno al index de la entrevista datos iniciales" /></a>
+<center style="background-image: linear-gradient(#EAF2F8, #AAB7B8); width: 90%; margin-left:5rem;" >
+    <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png" style="position:absolute; top:50px; left:100px; visibility:visible z-index:1; width: 25%; margin-left:33rem;  align: center;">
+<br><br><br>
+
     <style>
         .inputs{
         border-radius: 0.75rem;
@@ -175,8 +175,8 @@ margin-left: 12rem;
         }
 
         </style>
-
-<div class="page-header">
+<center>
+<div class="card-header">
       <h3>REGISTRO DE RESULTADO ENTREVISTA JEFE INMEDIATO</h3>
 </div>
 </center>
@@ -184,18 +184,11 @@ margin-left: 12rem;
 <form action="{{ url('/entJefe/'.$filtro->id)}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
     @csrf
     @method('PATCH')
-
-
     <h3>DATOS GENERALES</h3>
-
     <fieldset class="form-group">
       <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
           <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
               <div class="row">
-
-
-
-
                 <div class="col-3"><strong><span>Nombres</strong></span><p class="inputs5">{{ old('nombre', $filtro->nombre)}}</p></div>&nbsp;
                 <div class="col"><strong><span>Cedula</strong></span><p class="inputs5">{{ old('cedula', $filtro->cedula)}}</p></div>&nbsp;
                 <div class="col"><strong><span>Telefono</strong></span><p class="inputs5">{{ old('telefono', $filtro->telefono)}}</p></div>&nbsp;

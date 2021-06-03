@@ -41,7 +41,7 @@
                                               @foreach ($cargoses as $cargo)
                                               <tr>
                                                   <th scope="row"  >{{ $cargo->id}}</th>
-                                                  <td style="font-size: 8mm">{{ $cargo->cargo}}
+                                                  <td style="font-size: 5mm">{{ $cargo->cargo}}
 
                                                   <td>
 

@@ -43,7 +43,7 @@ class ContratacionController extends Controller
      */
     public function index()
     {
-        $contratacions = filtro2::orderby('id', 'asc')->where('enviadocontratacion','=','X')->where('noContrat','=',NULL)->paginate(10);
+        $contratacions = filtro2::orderby('id', 'asc')->where('enviadocontratacion','=','X')->where('noContrat','=',NULL)->where('contratacionOK','=',NULL)->paginate(10);
         return view('contratacion.index',compact( 'contratacions'));
     }
 

@@ -53,7 +53,7 @@
   }
   .lg-new7{
     height: calc(1.5em + 3rem + 0);
-    width: 510px;
+    width: 480px;
     /* width: calc(1em + 6.5rem + 18px); */
     padding: 0.5rem;
     font-size: 16px;
@@ -78,7 +78,7 @@ font-family: Arial, Helvetica, sans-serif;
 
   }
   table{
-    width:1000px;
+    width:800px;
     font:normal 13px Arial;
     text-align:center;
     border-collapse:collapse;
@@ -289,13 +289,8 @@ td{
 <br>
 <div class="row">
     <div class="col-lg-4" >
-        @if ($filtro->cantidadcert <> NULL)
-        <label class="labelNew" for="cantidadcert">Cantidad Cert.</label>
-        <input type="text" class="inputDoc" id="cantidadcert" name="cantidadcert"  value="{{ old('cantidadcert', $filtro->cantidadcert)}}">
-        @else
         <label class="labelNew" for="cantidadcert">Cantidad Cert.</label>
         <input type="text" class="lg-new17" id="cantidadcert" name="cantidadcert"  value="{{ old('cantidadcert', $filtro->cantidadcert)}}">
-        @endif
     </div>
     <div class="col-lg-4" >
         @if ($filtro->ref_laborales == "Pendiente")

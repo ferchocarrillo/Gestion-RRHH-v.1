@@ -8,11 +8,7 @@
             </body>
             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                 <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
-
             </center>
-
-
-
                 <form name="f1" action="{{ url('/requisicion')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                     {{csrf_field()}}
                     <form>
@@ -25,61 +21,39 @@
                         <div class="card-body">
                             <div class="form-row">
                                 <div class="col-4">
-
 <main>
-                                    <input list="cargos" name= "cargos" class="form-control-lg-new4" placeholder="Cargo"  required />
-                                    <datalist name="cargos" id="cargos" class="form-control-lg-new4">
-
-
+                        <input list="cargos" name= "cargos" class="form-control-lg-new4" placeholder="Cargo"  required />
+                        <datalist name="cargos" id="cargos" class="form-control-lg-new4">
                             <option value="" >Cargo</option>
                             @foreach($cargo as $cargos)
                                 <option value="{{ $cargos->cargo}}">{{ $cargos->cargo }}</option>
                             @endforeach
-
                         </datalist>
-
                     </div>
-
                         <div class="col">
                         <input type="number" id ="cantidad" name="cantidad" class="form-control-lg-new5" placeholder="Cantidad" required>
                     </div>
-
     <div class="col">
-
         <input list="sede" class="form-control-lg-new5"  name= "sede" placeholder="Sede" required />
         <datalist name="sede" id="sede" >
-
-
                            <option value="">Sede</option>
                            @foreach($sede as $sedes)
                                <option value="{{ $sedes->sede}}">{{ $sedes->sede }}</option>
                            @endforeach
                         </datalist>
                     </div>
-
-    <div class="col">
-                        <select name="dependencia"  id="dependencia" class="form-control-lg-new6" required>
-
-                            <option value="">Dependencias</option>
-                            @foreach ($dependencias as $dependencia)
-                            <option value="{{ $dependencia->dependencia}}">{{ $dependencia->dependencia }}</option>
-                            @endforeach
-
-                        </select>
-
-
+                <div class="col">
+                    <select name="dependencia"  id="dependencia" class="form-control-lg-new6" required>
+                      <option value="">Dependencias</option>
+                      @foreach ($dependencias as $dependencia)
+                      <option value="{{ $dependencia->dependencia}}">{{ $dependencia->dependencia }}</option>
+                      @endforeach
+                    </select>
                         </div>
-
-    <div class="col">
-        <select name="id_area" id="id_area" class="form-control-lg-new6" placeholder="Area" required> </select>
-    </select>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
+                <div class="col">
+                <select name="id_area" id="id_area" class="form-control-lg-new6" placeholder="Area" required> </select>
+                </select>
+                </div></div></div></div></div></div>
 <div class="panel panel-default">
     <div class="card text-center">
         <div class="card-header">
@@ -87,55 +61,45 @@
                 Motivo de la Requisición</h3>
           </div>
 <div class="card" >
-
     <div class="container" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-        <div class="pull-right" >
-    <div class="card-body" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);" >
-
+        <div class="pull-right">
+    <div class="card-body">
         <div class="form-row">
-
-
-            <input class="form-check-input" type="radio" value="maternidad/incapacidad" name="motivos" id="motivos">
-           <strong><label class="form-check-label" for="reemplaza">
-                &nbsp;&nbsp;Reemplazo por Maternidad / Incapacidad</label></strong>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="text" id ="reemplaza"  class="form-control-lg-new7" name= "reemplaza"   align='right' placeholder="A quien reemplaza?">
-
-            </div>
-            <br>
-            <div class="form-row">
-
-                <input class="form-check-input" type="radio" value="Otro" name="motivos" id="motivos">
-
-               <strong> <label class="form-check-label" for="otro">
+        <input class="form-check-input" type="radio" value="maternidad/incapacidad" name="motivos" id="motivos">
+        <strong><label class="rqetiqueta-1" for="reemplaza">&nbsp;&nbsp;Reemplazo por Maternidad / Incapacidad</label></strong>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <input type="text" id ="reemplaza"  class="form-control-lg-new4" name= "reemplaza" align='right' placeholder="A quien reemplaza?">
+         </div><br>
+         <div class="form-row">
+            <input class="form-check-input" type="radio" value="Otro" name="motivos" id="motivos">
+               <strong> <label class="rqetiqueta-1" for="otro">
                 &nbsp;&nbsp;Otro</label></strong>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="text" id ="cual" name="cual" class="form-control-lg-new7"  align='right' placeholder="Cual?">
+                <input type="text" id ="cual" name="cual" class="form-control-lg-new4"  align='right' placeholder="Cual?">
                 </div>
 
 <br>
 <div class="form-row">
             <div><input class="form-check-input" type="radio" value="retiro" name="motivos" id="motivos">
-           <strong> <label class="form-check-label" for="Retiro">
+           <strong> <label class="rqetiqueta-1" for="Retiro">
               &nbsp;&nbsp;Retiro / Renuncia Empleado
             </label></strong>
         </div>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div>
             <input class="form-check-input" type="radio" value="nuevoCargo" name="motivos" id="motivos">
-           <strong> <label class="form-check-label" for="nuevo_cargo">
+           <strong> <label class="rqetiqueta-1" for="nuevo_cargo">
                 &nbsp;&nbsp;Nuevo Cargo
             </label></strong>
         </div>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div >
             <input class="form-check-input" type="radio" value="nuevoCupo" name="motivos" id="motivos">
-           <strong> <label class="form-check-label" for="nuevo_cupo">
+           <strong> <label class="rqetiqueta-1" for="nuevo_cupo">
                 &nbsp;&nbsp;Nuevo cupo Nomina
             </label></strong>
           </div>
@@ -166,11 +130,11 @@
     <div class="card-body">
         <div class="form-row">
             <div class="col-6">
-            <input type="text" id ="tiempo" name="tiempo" class="form-control-lg-new8" placeholder="Tiempo de vinculacion" required>
+            <input type="text" id ="tiempo" name="tiempo" class="form-control-lg-new4" placeholder="Tiempo de vinculacion" required>
         </div>
 
         <div class="col-6">
-            <input list="dias" class="form-control-lg-new8" name="dias" placeholder="Dias" required />
+            <input list="dias" class="form-control-lg-new4" name="dias" placeholder="Dias" required />
             <datalist name="dias" id="dias">
 
      <option value="" selected>Dias a trabajar
@@ -184,12 +148,12 @@
     <div class="card-group">
         <div class="card" style="width: 20em;">
 
-        <label for="radio" style="align-content: fa-pull-left">Jornada Laboral Requerida</label>
+        <label for="radio" class="rqetiqueta-1">Jornada Laboral Requerida</label>
 
         <div class="row">
 
 
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label >
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label >
                 <input type="radio" name="jornada"value="completo"> &nbsp;&nbsp;Tiempo Completo
             </label>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -204,7 +168,7 @@
 
     <div class="card" style="width: 20em;">
     <label for="finicio">Fecha de inicio de actividades</label>
-    <input type="date" id="finicio" name="finicio" class="form-control-lg-new8" required>
+    <input type="date" id="finicio" name="finicio" class="form-control-lg-new4" required>
                           </div>
                         </div>
 
@@ -216,12 +180,12 @@
 
     <div class="form-row">
         &nbsp;&nbsp;
-        &nbsp; 
+        &nbsp;
         <button type="submit" class="btn btn-primary">
             <i class="fas fa-file-signature">&nbsp;</i>REGISTRAR
         </button>
         &nbsp;&nbsp;
-        &nbsp; 
+        &nbsp;
             <a href=({{ route('requisicion.create')}})><button type="reset"  class="btn btn-danger">
             <i class="fa fa-ban"></i> VOLVER
         </button></a>
@@ -229,7 +193,7 @@
 </main>
 &nbsp;&nbsp;
 &nbsp;   &nbsp;&nbsp;
-&nbsp; 
+&nbsp;
 
     </form>
 

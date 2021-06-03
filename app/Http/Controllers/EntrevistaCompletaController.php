@@ -37,7 +37,7 @@ class EntrevistaCompletaController extends Controller
     public function index()
 
     {
-        $filtros = Filtro2::orderBy('id', 'asc')->where('citadoE','=','X')->where('noAsisteEnt','=',null)->where('entvOK','<>','X')->paginate(20);
+        $filtros = Filtro2::orderBy('id', 'asc')->where('citadoE','=','X')->where('noAsisteEnt','=',null)->where('entvOK','=',NULL)->paginate(20);
         return view('entrevistacompleta.index',compact( 'filtros'));
     }
 
@@ -126,6 +126,8 @@ class EntrevistaCompletaController extends Controller
     public function edit($id, Request $request)
     {
         $filtros= Filtro2::findOrFail($id);
+
+
         $cargos = Cargo::all();
         $cargoEnt = CargoEnt::all();
         $departamento = Departamentos::all();
@@ -144,6 +146,7 @@ class EntrevistaCompletaController extends Controller
         $titulo1 = $request->get('titulo1');
         $estado1 = $request->get('estado1');
         $primaria = $institucion1. $fechap1. $titulo1. $estado1;
+
 
         $this->authorize('haveaccess','entrevistacompleta.edit');
 

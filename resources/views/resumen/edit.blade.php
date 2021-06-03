@@ -8,13 +8,7 @@
 <link rel="shortcut icon" href="home"><img src="\theme\images\isotipo-slogan.png"  align= "auto" height="80" width="200">
 
 
-<div class="page-header">
-    <br>
-      <h3>Resumen de la informacion</h3>
-</div>
-</center>
-<br>
-
+</body>
 <form action="{{ url('/resumen/')}}"
 method="POST"
 enctype="multipart/form-data"
@@ -22,18 +16,22 @@ class="form-horizontal"
 style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
 {{csrf_field()}}
 
-<div class="col-sm-12">
-    <div class="col-2"><label  for="id_filtro"></label><input  type="hidden" class="form-control" id="id_filtro" placeholder="id" name="id_filtro"   value="{{ old('id', $filtro->id)}}"></div>
-    <center><p>
-        <div class="p-3 mb-2 bg-info text-white" id ="nombres" name="nombres">
-          <h3> {{ $filtro->nombre}}</h3>
+<div class="page-header">
+    <br>
+      <h3>Resumen de la informacion</h3>
+</div>
+</center>
+<br>
+    <div class="card-header">
+        <center><p>
+            <div id ="nombres" name="nombres">
+              <h3> {{ $filtro->nombre}}</h3>
+            </div>
+        </p></center>
         </div>
-    </p></center>
-    </div>
-    </body>
-
-
           <center><h3>Datos Generales</h3></center>
+
+          
           <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
 
           <div class="container">
@@ -123,16 +121,10 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
         </div>
         <br>
         <br>
-
-
-
         <center><h3>Historial Laboral</h3></center>
         <div class="container">
             <div class="row">
          <!-- Force next columns to break to new line -->
-
-
-
          <div class="w-100 d-none d-md-block"></div>
          <div class="col"><p class="h6">Empresa</p></div>
          <div class="col"><p class="h6">Fecha de inicio</p> </div>
@@ -143,9 +135,8 @@ style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
          <div class="col"><p class="h6">Teléfono</p> </div>
          <div class="col"><p class="h6">Salario</p> </div>
          <div class="col"><p class="h6">Motivo de retiro</p> </div>
-         <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade">
-
-         <!-- Force next columns to break to new line -->
+         <hr width=100%  align="center"  size=3  style="border:1px outset ; noshade="noshade";>
+         {{--Force next columns to break to new line--}}
          <div class="w-100 d-none d-md-block"></div>
          <div class="col">{{ $filtro->empresa1}}</div>
          <div class="col">{{ $filtro->fechain1}} </div>

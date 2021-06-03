@@ -66,7 +66,7 @@ class DocumentoController extends Controller
         $user_id = Auth::user()->id;
         $user_nombre = Auth::user()->name;
 
-        $filtro = new Filtros();
+        $filtro = new Filtro2();
         $filtro->id_filtro        = $request->id_filtro;
         $filtro->cedula           = $request->cedula;
         $filtro->nombre           = $request->nombres;

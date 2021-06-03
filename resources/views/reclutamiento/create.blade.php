@@ -7,10 +7,7 @@
             <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
             </body>
             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
-                <img src="\theme\images\isotipo-slogan.png" alt="logo de la empresa" float="left" height="120" width="300">
-
-
-
+                <img src="\theme\images\isotipo-slogan.png" float="left" height="80" width="260">
             </center>
 
        <div class="card-header">

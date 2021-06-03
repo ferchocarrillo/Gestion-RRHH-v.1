@@ -33,7 +33,7 @@ class NuevoEmpleadoController extends Controller
 
     public function __construct()
     {
-        Carbon::setLocale('co');
+        Carbon::setLocale('es');
         date_default_timezone_set('America/Bogota');
     }
     /**
@@ -43,7 +43,7 @@ class NuevoEmpleadoController extends Controller
      */
     public function index()
     {
-        $filtros = Filtro2::orderby('created_at', 'desc')->where('estado','=','activo')->paginate(10);
+        $filtros = Filtro2::orderby('created_at', 'desc')->where('estado','=','activo')->where('contratacionOK','=',NULL)->paginate(10);
         return view('nuevoempleado.index',compact('filtros'));
     }
 
@@ -63,14 +63,11 @@ class NuevoEmpleadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, nuevoEmpleado $filtro )
+    public function store(Request $request )
     {
         {
-
-
-
             $date1   = Carbon::now();
-            $date2   = $filtro->fnacimiento;
+            $date2   = $request->input('fnacimiento');
             $edad    = $date1->diffInYears($date2);
 
             $user_id = Auth::user()->id;
@@ -86,20 +83,22 @@ class NuevoEmpleadoController extends Controller
 
             ]);*/
 
-            $filtro = new nuevoEmpleado();
+            $filtro = new Filtro2();
+
+
             $filtro->tipoDoc                = $request->tipoDoc;
             $filtro->fexpe                  = $request->fexpe;
             $filtro->depNac                 = $request->departamento;
-            $filtro->ciudadExp              = $request->id_ciudad;
+            $filtro->id_ciudad              = $request->id_ciudad;
+            $filtro->telefono               = $request->telefono;
             $filtro->tFijo                  = $request->tFijo;
-            $filtro->eCivil                 = $request->eCivil;
             $filtro->edad                   = $edad;
             $filtro->genero                 = $request->genero;
             $filtro->rh                     = $request->rh;
             $filtro->nivelEdu               = $request->nivelEdu;
             $filtro->correoCorp             = $request->correoCorp;
             $filtro->nombreContacto         = $request->nombreContacto;
-            $filtro->parentescoContacto     = $request->parentesco;
+            $filtro->parentesco             = $request->parentesco;
             $filtro->personaDireccion       = $request->personaDireccion;
             $filtro->contactoCelular        = $request->contactoCelular;
             $filtro->numHijos               = $request->numHijos;
@@ -119,7 +118,7 @@ class NuevoEmpleadoController extends Controller
             $filtro->docfam4                = $request->docfam4;
             $filtro->docfam5                = $request->docfam5;
             $filtro->ingreso                = $request->ingreso;
-            $filtro->tipo_contrato          = $request->tipo_contratos;
+            $filtro->tipo_contratos         = $request->tipo_contratos;
             $filtro->supervisor             = $request->supervisor;
             $filtro->sede                   = $request->sede;
             $filtro->modalidad              = $request->modalidad;
@@ -136,8 +135,11 @@ class NuevoEmpleadoController extends Controller
             $filtro->estado                 = $request->estado;
             $filtro->contratacionOK         = $request->contratacionOK;
 
+
+
             $filtro->save();
-          //return response()->json($nuevo);
+
+               //return response()->json($nuevo);
             return back();
         }
     }
@@ -163,11 +165,9 @@ class NuevoEmpleadoController extends Controller
 
     {
         $filtro = Filtro2::findOrFail($id);
-
         $date1   = Carbon::now();
-        $date2   = $filtro->fnacimiento;
+        $date2   = $request->input('fnacimiento');
         $edad    = $date1->diffInYears($date2);
-
         $t_docs= tipoDoc2 ::all();
         $campanas = Campana::all();
         $departamento = Departamentos::all();
@@ -188,7 +188,8 @@ class NuevoEmpleadoController extends Controller
         $tipo_rhs = rh::all();
 
        // return response()->json($nuevo);
-        return view('nuevoempleado.edit', compact('tipo_rhs','generos','t_docs','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','parentescos','NivelEdus','filtro','focos','campanas', 'departamento'));
+        return view('nuevoempleado.edit', compact('edad', 'tipo_rhs','generos','t_docs','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','parentescos','NivelEdus','filtro','focos','campanas', 'departamento'));
+
     }
 
     /**
@@ -200,9 +201,10 @@ class NuevoEmpleadoController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $filtro = Filtro2::findOrFail($id);
         $date1   = Carbon::now();
-        $date2   = $filtro->fnacimiento;
+        $date2   = $request->input('fnacimiento');
         $edad    = $date1->diffInYears($date2);
         $t_docs= tipoDoc2 ::all();
         $campanas = Campana::all();
@@ -224,9 +226,9 @@ class NuevoEmpleadoController extends Controller
         $tipo_rhs = rh::all();
         $datosFiltro =request()->except(['_token','_method']);
         Filtro2::where('id','=',$id)->update($datosFiltro);
-
-     //return response()->json($datosFiltro);
-     return view('nuevoempleado.edit', compact('edad','tipo_rhs','generos','t_docs','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','parentescos','NivelEdus','filtro','focos','campanas', 'departamento'));
+        $filtro=Filtro2::findOrFail($id);
+//     return response()->json($datosFiltro);
+     return view('nuevoempleado.edit', compact('edad', 'tipo_rhs','generos','t_docs','cajaComps','epses','pensioneses','cesantiases','tipoModalidades','modalidades','sedes','supervisores','tipo_contratoses','tipo_docs','parentescos','NivelEdus','filtro','focos','campanas', 'departamento'));
     }
 
     /**

@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <a href="{{route('home')}}"><img src="https://images.cooltext.com/5506399.png" width="60" height="70" alt="retorno al index de capacitaciones" /></a>
 
-
 <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
     <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
 </center>

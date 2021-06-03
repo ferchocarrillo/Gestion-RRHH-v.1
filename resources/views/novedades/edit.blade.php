@@ -32,31 +32,29 @@
 
             <center><p>
                 <div class="card-header">
-                   <h3>{{( $asignacion->nombres)}}</h3>
+                   <h3>{{( $filtros->nombre)}}</h3>
                 </div>
             </p></center>
-<div> <input type="hidden" name="id_filtro" id="id_filtro" value="{{ $asignacion->id_filtro}} "></div>
-<div> <input type="hidden" name="nombres" id="nombres" value="{{ $asignacion->nombres}} "></div>
-<div> <input type="hidden" name="campaña" id="campaña" value="{{ $asignacion->campaña}} "></div>
 
 <div class="row" >
-    <div class="col"> <label style= " font-size: 13px;"><a style= "color: red; font-size: 15px;">×</a> En caso de emergencia llamar a: </label><br><input type="text" class="form-control-lg-new2" id="contacto" placeholder="contacto" name="cedula" value="{{ old('personaContacto', $asignacion->personaContacto)}}" readonly></div>
-    <div class="col"> <label style= " font-size: 13px;">Parentesco </label><br><input type="text" class="form-control-lg-new2"  placeholder="contacto" value="{{ old('parentesco', $asignacion->parentesco)}}" readonly></div>
-    <div class="col"> <label style= " font-size: 13px;">Telefono fijo </label><br><input type="text" class="form-control-lg-new2"  placeholder="no registra" value="{{ old('contactof', $asignacion->contactof)}}" readonly></div>
-    <div class="col"> <label style= " font-size: 13px;">Numero Celular </label><br><input type="text" class="form-control-lg-new2"  placeholder="contacto" value="{{ old('contactoCelular', $asignacion->contactoCelular)}}" readonly></div>
+
+    <div class="col"> <label style= " font-size: 13px;"><a style= "color: red; font-size: 15px;">×</a> En caso de emergencia llamar a: </label><br><input type="text" class="form-control-lg-new2" id="contacto" placeholder="contacto" name="cedula" value="{{ old('personaContacto', $filtros->personaContacto)}}" readonly></div>
+    <div class="col"> <label style= " font-size: 13px;">Parentesco </label><br><input type="text" class="form-control-lg-new2"  placeholder="contacto" value="{{ old('parentesco', $filtros->parentesco)}}" readonly></div>
+    <div class="col"> <label style= " font-size: 13px;">Telefono fijo </label><br><input type="text" class="form-control-lg-new2"  placeholder="no registra" value="{{ old('contactof', $filtros->contactof)}}" readonly></div>
+    <div class="col"> <label style= " font-size: 13px;">Numero Celular </label><br><input type="text" class="form-control-lg-new2"  placeholder="contacto" value="{{ old('contactoCelular', $filtros->contactoCelular)}}" readonly></div>
 
 
 </div>
 <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 <div class="card-new">
 <div class="row">
-
-    &nbsp;&nbsp;&nbsp;<div class="colNew"> <label for="cedula">Cedula</label><br><input type="text" class="form-control-lg-new" id="cedula" placeholder="cedula" name="cedula" value="{{ old('cedula', $asignacion->cedula)}}" readonly></div>
-            <div class="colNew"> <label for="campaña">Campaña</label><input type="text" class="form-control-lg-new" id="campaña"  placeholder="campaña" name="campaña" value="{{ old('campaña', $asignacion->campaña)}}" readonly></div>
-            <div class="colNew"> <label for="cargo">Cargo</label><br><input type="text" class="form-control-lg-new" id="cargo" style="font-size: 16px;" placeholder="Cargo" name="cargo" value="{{ old('cargos', $asignacion->cargos)}}" readonly></div>
-            <div class="colNew"> <label for="foco">Foco</label><br><input type="text" class="form-control-lg-new" id="foco" placeholder="foco" name="foco" value="{{ old('foco', $asignacion->foco)}}" readonly></div>
-           <div class="colNew">  &nbsp;&nbsp;&nbsp;<label for="supervisor">Supervisor</label><br> &nbsp;&nbsp;&nbsp;<input type="text" class="form-control-lg-new" style="font-size: 16px; " id="supervisor" placeholder="supervisor" name="supervisor" value="{{ old('supervisor', $asignacion->supervisor)}}" readonly></div>
-            <div class="colNew"> <label for="estado">Estado</label><br><input type="text" class="form-control-lg-new" id="estado"  placeholder="estado" name="estado" value="{{ old('estado', $asignacion->estado)}}" readonly></div>
+    <input type="hidden" name="nombre" id="nombre" value="{{( $filtros->nombre)}}">
+    &nbsp;&nbsp;&nbsp;<div class="colNew"> <label for="cedula">Cedula</label><br><input type="text" class="form-control-lg-new" placeholder="cedula" name="cedula" id="cedula" value="{{ old('cedula', $filtros->cedula)}}" readonly></div>
+            <div class="colNew"> <label for="campaña">Campaña</label><input type="text" class="form-control-lg-new"   placeholder="campaña" id="campaña" name="campaña" value="{{ old('campaña', $filtros->campaña)}}" readonly></div>
+            <div class="colNew"> <label for="cargo">Cargo</label><br><input type="text" class="form-control-lg-new"  style="font-size: 16px;" placeholder="Cargo" id="cargo" name="cargo"  value="{{ old('cargo', $filtros->cargo)}}" readonly></div>
+            <div class="colNew"> <label for="foco">Foco</label><br><input type="text" class="form-control-lg-new"  placeholder="foco" id="foco" name="foco" value="{{ old('foco', $filtros->foco)}}" readonly></div>
+           <div class="colNew">  &nbsp;&nbsp;&nbsp;<label for="supervisor">Supervisor</label><br> &nbsp;&nbsp;&nbsp;<input type="text" class="form-control-lg-new" style="font-size: 16px;" placeholder="supervisor" id="supervisor" name="supervisor" value="{{ old('supervisor', $filtros->supervisor)}}" readonly></div>
+            <div class="colNew"> <label for="estado">Estado</label><br><input type="text" class="form-control-lg-new"   placeholder="estado" id="estado" name="estado" value="{{ old('estado', $filtros->estado)}}" readonly></div>
         </div>
     </div>
 
@@ -85,7 +83,7 @@
     <br><br>
     <div class="row">
         <div id="observaciones" name="observaciones" class="col-4 col-md"><strong><p>Observaciones:</p></strong>
-    <textarea name="observaciones" id="observaciones"  style="width:100%" rows="3"></textarea>
+    <textarea name="observaciones" id="observaciones"  style="width:100%; border-radius: 0.75em;" rows="3" required></textarea>
     <br><br>
 
     <div class="form-group">
@@ -94,10 +92,8 @@
                       <input class="btn btn-primary btn-lg active" type="submit" value="Registrar Novedad">
                       &nbsp;&nbsp;&nbsp;
                      <a href="{{route('novedades.create')}}" class="btn btn-info btn-lg active" role="button" aria-pressed="true">Regresar</a>
-
                     </div>
     </div>
-
 </form>
 
             <script src="{{asset('js/app.js')}}"></script>

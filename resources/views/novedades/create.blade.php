@@ -13,10 +13,9 @@
             </body>
             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                 <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
-                <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-                <!-- Force next columns to break to new line -->
-                <h3 aline="center">Formulario de Ingreso de Novedades</h3>
             </center>
+               
+               <center><h3 class="card-header" aline="center">Formulario de Ingreso de Novedades</h3></center>
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
             <!-- Force next columns to break to new line -->
             <form name="f1" action="{{ url('/novedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
@@ -53,51 +52,37 @@
                                             <table class="table table-striped table-bordered table-hover table-dark">
                                                 <thead>
                                                   <tr>
-
                                                     <th scope="col">Cedula</th>
                                                     <th scope="col">Nombres</th>
                                                     <th scope="col">Campaña</th>
                                                     <th scope="col">Cargo</th>
-
-
-
                                                     <th colspan="3"></th>
                                                   </tr>
                                                 </thead>
                                                 <tbody>
-
-
-                                                    @foreach ($novedadeses as $novedades)
-
+                                                    @foreach ($filtros as $novedades)
                                                     <tr>
-
                                                         <td>{{ $novedades->cedula}}</td>
                                                         <td>{{ $novedades->nombre}}</td>
                                                         <td>{{ $novedades->campaña}}</td>
-                                                        <td>{{ $novedades->perfil}}</td>
-
-
-
+                                                        <td>{{ $novedades->cargo}}</td>
                                                         <td>
                                                             <a href="{{url('/novedades/'.$novedades->id.'/edit')}}" class="btn btn-primary btn-sm" role="button" aria-pressed="true">Ingresar Novedad</a>
 
                                                         </td>
                                                         <td>
-                                                        <a href="{{url('/retiros/'.$novedades->id_filtro.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">Reportar Retiro</a>
+                                                        <a href="{{url('/retiros/'.$novedades->id.'/edit')}}" class="btn btn-success btn-sm" role="button" aria-pressed="true">Reportar Retiro</a>
                                                     </td>
                                                             <form action="{{url('/novedades/'.$novedades->id)}}" method="post">
-
                                                             @csrf
-
                                                             @method('DELETE')
-                                                            {{--<button class="btn btn-danger btn-sm" onclick="return confirm('Borrar?');" type="submit"aria-pressed="true">Borrar</button>--}}
                                                     </form>
                                                         </td>
                                                     </tr>
                                                     @endforeach
                                                 </tbody>
                                               </table>
-                                              {{ $novedadeses->links() }}
+                                              {{ $filtros->links() }}
                                         </div>
                                     </div>
                                 </div>
