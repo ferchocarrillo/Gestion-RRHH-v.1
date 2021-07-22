@@ -6,18 +6,8 @@
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-
-
-
-
-    <form name="f1" action="{{ url('/novedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
-        {{csrf_field()}}
-        @method('POST')
-
-
-
-
+<form name="f1" action="{{ url('/novedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
+   {{csrf_field()}}
 <div class="container">
     <div class="pull-right">
         <div class="col-md-12">
@@ -42,8 +32,6 @@
     <div class="col"> <label style= " font-size: 13px;">Parentesco </label><br><input type="text" class="form-control-lg-new2"  placeholder="contacto" value="{{ old('parentesco', $filtros->parentesco)}}" readonly></div>
     <div class="col"> <label style= " font-size: 13px;">Telefono fijo </label><br><input type="text" class="form-control-lg-new2"  placeholder="no registra" value="{{ old('contactof', $filtros->contactof)}}" readonly></div>
     <div class="col"> <label style= " font-size: 13px;">Numero Celular </label><br><input type="text" class="form-control-lg-new2"  placeholder="contacto" value="{{ old('contactoCelular', $filtros->contactoCelular)}}" readonly></div>
-
-
 </div>
 <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
 <div class="card-new">
@@ -57,16 +45,13 @@
             <div class="colNew"> <label for="estado">Estado</label><br><input type="text" class="form-control-lg-new"   placeholder="estado" id="estado" name="estado" value="{{ old('estado', $filtros->estado)}}" readonly></div>
         </div>
     </div>
-
         <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
-
         <div class="row">
 <div id="novedad" name="novedad" class="col-4 col-md"><strong><p><a style= "color: red; font-size: 15px;">* </a>Tipo de Novedad:</p></strong>
 <select name="novedad" id="novedad" class="form-control-lg-new3" >
     <option value="">Seleccione una novedad</option>
 @foreach ($tipoNovedades as $tipoNovedad)
 <option value="{{ $tipoNovedad->TipoNovedad}}">{{ $tipoNovedad->TipoNovedad }}</option>
-
 @endforeach
 </select>
         </div>
@@ -81,11 +66,11 @@
         </p>
     </div>
     <br><br>
+<input type="hidden" name="totalDias" value="{{ $totalDias }}">
     <div class="row">
         <div id="observaciones" name="observaciones" class="col-4 col-md"><strong><p>Observaciones:</p></strong>
     <textarea name="observaciones" id="observaciones"  style="width:100%; border-radius: 0.75em;" rows="3" required></textarea>
     <br><br>
-
     <div class="form-group">
         @csrf
         @method('POST')
@@ -95,7 +80,6 @@
                     </div>
     </div>
 </form>
-
             <script src="{{asset('js/app.js')}}"></script>
         </body>
         @section('css')

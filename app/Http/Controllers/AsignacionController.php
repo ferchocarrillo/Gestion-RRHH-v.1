@@ -35,6 +35,20 @@ class AsignacionController extends Controller
 
         return view('asignacion.index',compact('filtros'));
     }
+/**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function searchAsignaciones( Request $request)
+    {
+
+        $filtros = Filtro2::all();
+        $searchAsignaciones = $request->get('searchAsignaciones');
+        $filtros= Filtro2::firstOrNew()->where('cedula', 'like', '%'.$searchAsignaciones.'%')->paginate(20);
+        return view('asignacion.index', ['filtros' => $filtros]);
+    }
 
     /**
      * Show the form for creating a new resource.

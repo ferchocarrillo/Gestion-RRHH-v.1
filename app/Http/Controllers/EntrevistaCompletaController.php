@@ -41,6 +41,17 @@ class EntrevistaCompletaController extends Controller
         return view('entrevistacompleta.index',compact( 'filtros'));
     }
 
+    public function searchEntrevista1( Request $request)
+    {
+        $contratacions = Filtro2::all();
+        $searchEntrevista1 = $request->get('searchEntrevista1');
+        $contratacions = Filtro2::firstOrNew()->where('cedula', 'like', '%'.$searchEntrevista1.'%')->paginate(10);
+
+        return view('entrevistacompleta.index', ['filtros' => $contratacions]);
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *

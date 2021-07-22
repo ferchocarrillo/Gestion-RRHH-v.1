@@ -6,6 +6,36 @@
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<style>
+    .buscador{
+       color:aliceblue;
+       background:rgb(8, 147, 240);
+       width: auto;
+       height: 35px;
+       border-radius: 0.75rem;
+       font-size: 18px;
+    }
+    .inputs-1{
+       border-radius: 0.75rem;
+       display: block;
+       width: 300px;
+       height: calc(2.25rem + 2px);
+       padding: 0.375rem 0.75rem;
+       font-size: 1rem;
+       font-weight: 400;
+       line-height: 1.5;
+       color: #495057;
+       background-color: #fff;
+       background-clip: padding-box;
+       border: 1px solid #ced4da;
+       box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+       transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+       text-transform: capitalize;
+       margin-left: 4rem;
+    }
+
+    </style>
 <div class="container">
     <div class="pull-right">
         <div class="col-md-12">
@@ -23,20 +53,37 @@
             <form name="f1" action="{{ url('/novedades')}}" method="POST" enctype="multipart/form-data" class="form-horizontal">
                 {{csrf_field()}}
 
-
                 <p align="right">
                     <div class="col-md-4">
                 <form action="/searchNovedades" method="GET">
                 <div class="input-group">
-            <input type="searchNovedades" name="searchNovedades" class="form-control">
+            <input type="hidden" name="searchNovedades" class="form-control">
             <span class="input-group-prepend">
-            <button type="submit" class="btn btn-primary">Buscar por cedula</button>
+            {{-- <button type="submit" class="btn btn-primary">Buscar por Cedula</button> --}}
             </span>
             </div>
             </form>
             </div>
             </p>
               </nav>
+
+              <fieldset class="form-group">
+                <div class="container" >
+                    <div class="card" style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
+                        <div class="row">
+                            <div class="input-group">
+                                <div class="form-outline">
+
+                                    <form action="/searchNovedades" method="GET">
+                                        <input type="search" name="searchNovedades" class="inputs-1" value="">
+                                        </div>
+                                        <button type="submit" class="buscador"><i class="fas fa-search"></i> Numero de Cedula</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
 
 
 

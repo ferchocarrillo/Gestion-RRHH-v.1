@@ -14,7 +14,7 @@
             <center style="background-image: linear-gradient(#EAF2F8, #AAB7B8);">
                 <img src="\theme\images\isotipo-slogan.png" float="left" height="120" width="300">
             </center>
-               
+
                <center><h3 class="card-header" aline="center">Formulario de Ingreso de Novedades</h3></center>
             <hr width=100%  align="center"  size=3  style="border:1px inset ; noshade="noshade">
             <!-- Force next columns to break to new line -->
@@ -26,9 +26,9 @@
                     <div class="col-md-4">
                 <form action="/searchNovedades" method="GET">
                 <div class="input-group">
-            <input type="searchNovedades" name="searchNovedades" class="form-control">
+            <input type="search" name="searchNovedades" class="form-control">
             <span class="input-group-prepend">
-            <button type="submit" class="btn btn-primary">Buscar por cedula</button>
+            <button type="submit" class="btn btn-primary">Buscar por Cedula</button>
             </span>
             </div>
             </form>

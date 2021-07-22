@@ -37,16 +37,39 @@ class NovedadesController extends Controller
     public function searchNovedades( Request $request)
 
     {
-        $activos = Asignacion::all();
+        // $activos = Asignacion::all();
 
+        // $searchNovedades = $request->get('searchNovedades');
+        // $activos= Asignacion::firstOrNew()->where('cedula', 'like', '%'.$searchNovedades.'%')->paginate(30);
+        // $novedades = Novedades::where('Id_filtro', '=', $activos->id)->get();
+
+        // return Asignacion::make('otra.novedad')
+        // ->with('asignacion', $activos)
+        // ->with('novedades', $novedades);
+        $filtros = Filtro2::all();
         $searchNovedades = $request->get('searchNovedades');
-        $activos= Asignacion::firstOrNew()->where('cedula', 'like', '%'.$searchNovedades.'%')->paginate(30);
-        $novedades = Novedades::where('Id_filtro', '=', $activos->id)->get();
-
-        return Asignacion::make('otra.novedad')
-        ->with('asignacion', $activos)
-        ->with('novedades', $novedades);
+        $filtros= Filtro2::firstOrNew()->where('cedula', 'like', '%'.$searchNovedades.'%')->paginate(20);
+        return view('novedades.index', ['filtros' => $filtros]);
     }
+
+    public function searchVerNovedades( Request $request)
+
+    {
+        // $activos = Asignacion::all();
+
+        // $searchNovedades = $request->get('searchNovedades');
+        // $activos= Asignacion::firstOrNew()->where('cedula', 'like', '%'.$searchNovedades.'%')->paginate(30);
+        // $novedades = Novedades::where('Id_filtro', '=', $activos->id)->get();
+
+        // return Asignacion::make('otra.novedad')
+        // ->with('asignacion', $activos)
+        // ->with('novedades', $novedades);
+        $novedades = Novedades::all();
+        $searchVerNovedades = $request->get('searchVerNovedades');
+        $novedades= Novedades::firstOrNew()->where('cedula', 'like', '%'.$searchVerNovedades.'%')->paginate(20);
+        return view('novedades.index', ['novedades' => $novedades]);
+    }
+
 
 
 
@@ -80,13 +103,14 @@ class NovedadesController extends Controller
 
         $totalDias = $tiempoB - $tiempoA + 1;
 
+
+        // $datosNovedades = request()->except('_token');
+
+        // Novedades::insert($datosNovedades);
+        // return back();
+
         $datosFiltro=request()->except('_token');
-
-
-
-
         $filtro = new Novedades();
-
         $filtro->nombre                 = $request->nombre;
         $filtro->cedula                 = $request->cedula;
         $filtro->campaña                = $request->campaña;
@@ -94,12 +118,11 @@ class NovedadesController extends Controller
         $filtro->cargo                  = $request->cargo;
         $filtro->supervisor             = $request->supervisor;
         $filtro->estado                 = $request->estado;
-
         $filtro->novedad                = $request->novedad;
         $filtro->observaciones          = $request->observaciones;
         $filtro->desde                  = $request->desde;
         $filtro->hasta                  = $request->hasta;
-        $filtro->totalDias              = $totalDias;
+        $filtro->totalDias              = $request->totalDias;
         $filtro->save();
 
         //return response()->json($filtro);
@@ -123,16 +146,26 @@ class NovedadesController extends Controller
      * @param  \App\Novedades  $novedades
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
 
         $filtros = Filtro2::findOrFail($id);
         $tipoNovedades = TipoNovedad::all();
+        Carbon::setLocale('co');
+        Carbon::now();
+        $hoy = Carbon::now();
+
+        $date1 = $request->input('desde');
+        $date2 = $request->input('hasta');
+        $tiempoA = $hoy->floatDiffInRealDays($date1);
+        $tiempoB = $hoy->floatDiffInRealDays($date2);
+
+        $totalDias = $tiempoB - $tiempoA + 1;
 
 
 
 
-        return view('novedades.edit',compact('filtros','tipoNovedades'));
+        return view('novedades.edit',compact('totalDias','filtros','tipoNovedades'));
     }
 
     /**
@@ -144,11 +177,23 @@ class NovedadesController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        Carbon::setLocale('co');
+        Carbon::now();
+        $hoy = Carbon::now();
+
+        $date1 = $request->input('desde');
+        $date2 = $request->input('hasta');
+        $tiempoA = $hoy->floatDiffInRealDays($date1);
+        $tiempoB = $hoy->floatDiffInRealDays($date2);
+
+        $totalDias = $tiempoB - $tiempoA + 1;
+
         $datosNovedades =request()->except(['_token','_method']);
         Novedades::where('id','=',$id)->update($datosNovedades);
         $filtro=Novedades::findOrFail($id);
      //return response()->json($filtro);
-     return view('novedades.edit', compact('filtro'));
+     return view('novedades.edit', compact('totalDias','filtro'));
     }
 
     /**

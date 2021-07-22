@@ -65,12 +65,12 @@ Route::get('/searchusers','UserController@searchusers');
 Route::get('/searchfiltro','FiltroController@searchfiltro');
 Route::get('/searchCon','ContratacionController@searchCon');
 Route::get('/searchCapacitacion','CapacitacionController@searchCapacitacion');
-
 Route::get('/searchDocumento','DocumentoController@searchDocumento');
 Route::get('/searchNovedades','NovedadesController@searchNovedades');
 Route::get('/searchCoord','NovedadesController@searchCoord');
-Route::get('/searchNovedades','VerNovedadesController@searchNovedades');
-Route::get('/searchverNovedades','VerNovedadesController@searchverNovedades');
+Route::get('/searchVerNovedades','NovedadesController@searchVerNovedades');
+Route::get('/searchAsignaciones','AsignacionController@searchAsignaciones');
+Route::get('/searchEntrevista1','EntrevistaCompletaController@searchEntrevista1');
 
 Route::get('/charts', 'ChartController@index')->name('charts');
 Route::post('/app/calculaTiempo', array('as' => 'calculaTiempo','edadController@calculaTiempo'));
