@@ -157,7 +157,7 @@ margin-left: 1rem;
                     @endforeach
                     </datalist>
 </div>
-<input type="text" id="edad" name="edad" value="{{ $edad }}">
+<input type="hidden" id="edad" name="edad" value="{{ $edad }}">
 
     </div>
 <br>
